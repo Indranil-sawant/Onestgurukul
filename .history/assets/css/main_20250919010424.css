@@ -1187,7 +1187,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/back9.png") no-repeat center center / cover;
+  background: url("../img/back4.png") no-repeat center center / cover;
   filter: blur(px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -1196,7 +1196,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .about::before {
-    background: url("../img/back9.png") no-repeat top center / contain;
+    background: url("../img/back0.jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
@@ -1665,32 +1665,6 @@ section,
 /*--------------------------------------------------------------
 # Students Life Block Section
 --------------------------------------------------------------*/
-.students-life-block{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.students-life-block::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back9.png") no-repeat center center / cover;
-  filter: blur(px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .students-life-block::before {
-    background: url("../img/back9.png") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .students-life-block .hero-image-wrapper {
   position: relative;
 }
