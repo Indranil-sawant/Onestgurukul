@@ -212,4 +212,33 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 });
 
 
-  
+  const texts = [
+    "Where Children Learn Not Just for Exams, But for Life.",
+    "Nurturing Curiosity, Creativity, and Confidence.",
+    "Building a Strong Foundation for a Bright Future.",
+    "Education Beyond Classrooms, Towards Excellence.",
+    "Inspiring Young Minds to Achieve Greatness."
+  ];
+
+  let index = 0;
+  const element = document.getElementById("changingText");
+
+  function changeText() {
+    // Fade out
+    element.style.opacity = 0;
+
+    setTimeout(() => {
+      element.textContent = texts[index];
+      element.style.opacity = 1; // Fade in
+      index = (index + 1) % texts.length;
+    }, 500); // Wait for fade-out before changing text
+  }
+
+  // Initial style
+  element.style.transition = "opacity 0.5s ease-in-out";
+  element.textContent = texts[index];
+
+  index++;
+
+  // Change every 3 seconds
+  setInterval(changeText, 3000);

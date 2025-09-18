@@ -773,7 +773,25 @@ section,
 
 
 .onestheader{
-  margin-top: -80px;
+      font-size: 5rem;
+    font-family: 'Comic Sans MS', 'Baloo 2', cursive; /* playful fonts */
+    font-weight: 700;
+    text-align: center;
+    color: #ff6f61; /* cheerful coral */
+    text-shadow: 3px 3px 0px #ffd166,   /* yellow shadow */
+                 6px 6px 0px #06d6a0,   /* green shadow */
+                 9px 9px 0px #118ab2;   /* blue shadow */
+    letter-spacing: 2px;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 .hero {
   position: relative;
@@ -1174,32 +1192,33 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------  ------*/
-.about{
+.about {
   position: relative;
   overflow: hidden;
 
   z-index: 1; /* keep content above */
-}
-.about::before {
+} 
+
+
+.about::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
+  background: url("../img/education/open (1).jpg") no-repeat center center / cover;
   filter: blur(0px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
 }
-
-/* Mobile / vertical image */
 @media (max-width: 768px) {
   .about::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
+    background: url("../img/education/open (24).jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
+
 .about .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -1994,32 +2013,6 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.testimonials::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .testamonials::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .testimonials {
   position: relative;
   overflow: hidden;
@@ -2340,44 +2333,10 @@ section,
     margin-top: 10px;
   }
 }
-.parent-icon {
-  font-size: 60px;   /* size of the icon */
-  color: #f1c40f;    /* yellow theme to match your header/logo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
 
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
-.stats{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.stats::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .stats::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .stats .intro-content {
   margin-bottom: 2rem;
 }
@@ -2661,32 +2620,6 @@ section,
 /*--------------------------------------------------------------
 # Recent News Section
 --------------------------------------------------------------*/
-.recent-news{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.recent-news::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .recent-news::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .recent-news .post-item {
   background-color: var(--surface-color);
   border-radius: 8px;
@@ -2836,32 +2769,6 @@ section,
 /*--------------------------------------------------------------
 # Events Section
 --------------------------------------------------------------*/
-.events{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.events::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .events::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .events .event-item {
   background-color: var(--surface-color);
   border-radius: 16px;
@@ -5723,32 +5630,6 @@ section,
 /*--------------------------------------------------------------
 # News Hero Section
 --------------------------------------------------------------*/
-.news-hero{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.news-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .news-hero::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .news-hero .featured-post {
   border-radius: 8px;
   overflow: hidden;

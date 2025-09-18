@@ -772,9 +772,39 @@ section,
 --------------------------------------------------------------*/
 
 
-.onestheader{
-  margin-top: -80px;
-}
+  .onestheader {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-family: 'Baloo 2', 'Comic Sans MS', cursive;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: -20px;
+    letter-spacing: 2px;
+    display: inline-block;
+
+    /* gradient for main text */
+    background: linear-gradient(90deg, #FFD700, #FFB800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 2px 2px 0px #000,
+                 4px 4px 6px rgba(0,0,0,0.6);
+
+    transition: transform 0.25s ease;
+  }
+
+  /* Nest highlighted differently */
+  .onestheader span {
+    color: #000; /* black for contrast */
+    -webkit-text-fill-color: #000;
+    background: none;
+    text-shadow: 2px 2px 0px #FFD700;
+  }
+
+  /* Subtle hover effect */
+  .onestheader:hover {
+    transform: scale(1.02);
+  }
 .hero {
   position: relative;
   overflow: hidden;
@@ -1174,32 +1204,33 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------  ------*/
-.about{
+.about {
   position: relative;
   overflow: hidden;
 
   z-index: 1; /* keep content above */
-}
-.about::before {
+} 
+
+
+.about::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
+  background: url("../img/education/open (1).jpg") no-repeat center center / cover;
   filter: blur(0px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
 }
-
-/* Mobile / vertical image */
 @media (max-width: 768px) {
   .about::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
+    background: url("../img/education/open (24).jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
+
 .about .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -1994,32 +2025,6 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.testimonials::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .testamonials::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .testimonials {
   position: relative;
   overflow: hidden;
@@ -2340,44 +2345,10 @@ section,
     margin-top: 10px;
   }
 }
-.parent-icon {
-  font-size: 60px;   /* size of the icon */
-  color: #f1c40f;    /* yellow theme to match your header/logo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
 
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
-.stats{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.stats::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .stats::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .stats .intro-content {
   margin-bottom: 2rem;
 }
@@ -2661,32 +2632,6 @@ section,
 /*--------------------------------------------------------------
 # Recent News Section
 --------------------------------------------------------------*/
-.recent-news{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.recent-news::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .recent-news::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .recent-news .post-item {
   background-color: var(--surface-color);
   border-radius: 8px;
@@ -2836,32 +2781,6 @@ section,
 /*--------------------------------------------------------------
 # Events Section
 --------------------------------------------------------------*/
-.events{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.events::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .events::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .events .event-item {
   background-color: var(--surface-color);
   border-radius: 16px;
@@ -5723,32 +5642,6 @@ section,
 /*--------------------------------------------------------------
 # News Hero Section
 --------------------------------------------------------------*/
-.news-hero{
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1; /* keep content above */
-}
-.news-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/back8.png") no-repeat center center / cover;
-  filter: blur(0px) brightness(0.9); /* blur + darken */
-  opacity: 0.6; /* transparency */
-  z-index: -1; /* put behind content */
-}
-
-/* Mobile / vertical image */
-@media (max-width: 768px) {
-  .news-hero::before {
-    background: url("../img/back0.jpg") no-repeat top center / contain;
-    background-color: #FEFFC4; /* fills any empty space at bottom */
-  }
-}
 .news-hero .featured-post {
   border-radius: 8px;
   overflow: hidden;
