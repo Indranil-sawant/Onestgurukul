@@ -783,7 +783,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/education/open (1).jpg") no-repeat center center / cover;
+  background: url("../img/back8.png") no-repeat center center / cover;
   filter: blur(0px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -792,7 +792,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .hero::before {
-    background: url("../img/education/open (24).jpg") no-repeat top center / contain;
+    background: url("../img/back0.jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
