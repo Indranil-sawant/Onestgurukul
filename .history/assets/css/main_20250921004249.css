@@ -5893,7 +5893,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .news-hero::before {
-    background: url("../img/back9.png") no-repeat top center / contain;
+    background: url("../img/back0.jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
