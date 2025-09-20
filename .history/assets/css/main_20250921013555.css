@@ -2465,6 +2465,10 @@ section,
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
   
+  background-size: cover;   /* ensures it covers fully */
+  width: 100%;
+  min-height: 100vh;        /* makes it at least full screen height */
+  padding: 60px 20px;   
 }
 
 /* Mobile / vertical image */

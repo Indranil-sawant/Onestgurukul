@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 68,
+            "activePatchIndex": 70,
             "patches": [
                 {
                     "date": 1758224954296,
@@ -280,6 +280,14 @@
                 {
                     "date": 1758394990364,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -250,9 +250,10 @@\n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n \n         <div class=\"row\">\n           <div class=\"col-lg-6 d-flex align-items-center\" data-aos=\"fade-right\" data-aos-delay=\"200\">\n-            <img src=\"assets/img/school.png\" class=\"img-fluid rounded\" alt=\"Campus Life\">\n+            <img src=\"assets/img/school.png\" class=\"img-fluid rounded\" alt=\"Campus Life\" style=\"height:100%; width:100% ; box-shadow: 0 8px 20px rgba(0, 0, 0.5, 0.7);\n+  border-radius: 12px;\">\n           </div>\n           <div class=\"col-lg-6\" data-aos=\"fade-left\" data-aos-delay=\"100\">\n             <div class=\"student-life-intro\">\n               <h3>Vibrant Campus Experience</h3>\n"
+                },
+                {
+                    "date": 1758399027456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,18 +41,17 @@\n         \n       </a>\n \n       \n-      <nav id=\"navmenu\" class=\"navmenu\">\n+        <nav id=\"navmenu\" class=\"navmenu\">\n         <ul>\n-          <li><a href=\"index.html\" class=\"\">Home</a></li>\n+          <li><a href=\"index.html\" >Home</a></li>\n           <li class=\"dropdown\"><a href=\"about.html\"><span>About Us</span></a>\n           </li>\n \n           <li><a href=\"students-life.html\">Curriculum</a></li>\n           <li><a href=\"campus-facilities.html\">Campus &amp; Facilities</a></li>\n           <li><a href=\"admissions.html\">Admissions</a></li>\n-          <li><a href=\"event-details.html\"></a></li>\n           <li><a href=\"contact.html\">Contact</a></li>\n         </ul>\n         <i class=\"mobile-nav-toggle d-xl-none bi bi-list\"></i>\n       </nav>\n"
+                },
+                {
+                    "date": 1758399234981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -675,5 +675,19 @@\n   index++;\n \n   // Change every 3 seconds\n   setInterval(changeText, 3000);\n-  </script>\n\\ No newline at end of file\n+  </script>\n+\n+  <!--Start of Tawk.to Script-->\n+<script type=\"text/javascript\">\n+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\n+(function(){\n+var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];\n+s1.async=true;\n+s1.src='https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';\n+s1.charset='UTF-8';\n+s1.setAttribute('crossorigin','*');\n+s0.parentNode.insertBefore(s1,s0);\n+})();\n+</script>\n+<!--End of Tawk.to Script-->\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1758224954296,
