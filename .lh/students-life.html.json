@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 70,
+            "activePatchIndex": 84,
             "patches": [
                 {
                     "date": 1758224954296,
@@ -288,6 +288,62 @@
                 {
                     "date": 1758399234981,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -675,5 +675,19 @@\n   index++;\n \n   // Change every 3 seconds\n   setInterval(changeText, 3000);\n-  </script>\n\\ No newline at end of file\n+  </script>\n+\n+  <!--Start of Tawk.to Script-->\n+<script type=\"text/javascript\">\n+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\n+(function(){\n+var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];\n+s1.async=true;\n+s1.src='https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';\n+s1.charset='UTF-8';\n+s1.setAttribute('crossorigin','*');\n+s0.parentNode.insertBefore(s1,s0);\n+})();\n+</script>\n+<!--End of Tawk.to Script-->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1758445992540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,9 @@\n                   </a>\n               </div>\n             </div>  \n \n-              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\">\n+              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\" style=\"margin-top:20px; margin-bottom:20px\">\n                 <div class=\"info-item\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n"
+                },
+                {
+                    "date": 1758446001392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,9 @@\n                   </a>\n               </div>\n             </div>  \n \n-              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\" style=\"margin-top:20px; margin-bottom:20px\">\n+              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\" style=\"margin-top:20px; margin-top:20px\">\n                 <div class=\"info-item\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n"
+                },
+                {
+                    "date": 1758446027270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,9 @@\n                   </a>\n               </div>\n             </div>  \n \n-              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\" style=\"margin-top:20px; margin-top:20px\">\n+              <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\">\n                 <div class=\"info-item\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n"
+                },
+                {
+                    "date": 1758446062423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n                 <div class=\"info-item\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n-                  <div class=\"info-text\">\n+                  <div class=\"info-text\" style=\"margin-top:20px;\">\n                     <strong>Confidence & Stage Skills</strong>\n                     <span>Regular debates , recitations and performance to boost public speaking.</span>\n                   </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1758446078567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,13 +131,13 @@\n               </div>\n             </div>  \n \n               <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\">\n-                <div class=\"info-item\">\n+                <div class=\"info-item\" style=\"margin-top:20px;\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n-                  <div class=\"info-text\" style=\"margin-top:20px;\">\n+                  <div class=\"info-text\" >\n                     <strong>Confidence & Stage Skills</strong>\n                     <span>Regular debates , recitations and performance to boost public speaking.</span>\n                   </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1758446087738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n               </div>\n             </div>  \n \n               <div class=\"info-grid\" data-aos=\"fade-up\" data-aos-delay=\"500\" style=\"text-align:justify;\">\n-                <div class=\"info-item\" style=\"margin-top:20px;\">\n+                <div class=\"info-item\" style=\"margin-top:40px;\">\n                   <div class=\"info-icon\">\n                     <i class=\"bi bi-calendar-event\"></i>\n                   </div>\n                   <div class=\"info-text\" >\n"
+                },
+                {
+                    "date": 1758446260107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,12 @@\n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n-        <h2 style=\"font-size:4rem\">Students Life</h2>\n+        <section class=\"student-life\">\n+  <h2>Student Life</h2>\n+</section>\n+\n        \n       </div><!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n"
+                },
+                {
+                    "date": 1758446265408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,10 +68,10 @@\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n         <section class=\"student-life\">\n-  <h2>Student Life</h2>\n-</section>\n+            <h2>Student Life</h2>\n+        </section>\n \n        \n       </div><!-- End Section Title -->\n \n"
+                },
+                {
+                    "date": 1758446350519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,12 +67,9 @@\n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n-        <section class=\"student-life\">\n-            <h2>Student Life</h2>\n-        </section>\n-\n+        <h2 style=\"font-size:4rem\">Students Life</h2>\n        \n       </div><!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n"
+                },
+                {
+                    "date": 1758446546348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n-        <h2 style=\"font-size:4rem\">Students Life</h2>\n+        <h2 style=\"\">Students Life</h2>\n        \n       </div><!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n"
+                },
+                {
+                    "date": 1758446555100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,15 @@\n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n-        <h2 style=\"\">Students Life</h2>\n+        <h2 style=\" font-size: 4rem;\n+  font-weight: bold;\n+  color: #fff;\n+  padding: 15px 40px;\n+  background: rgba(0, 0, 0, 0.3); /* translucent layer */\n+  backdrop-filter: blur(8px);      /* blur effect */\n+  border-radius: 12px;\">Students Life</h2>\n        \n       </div><!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n"
+                },
+                {
+                    "date": 1758447497631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,15 +67,9 @@\n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n       <!-- Section Title -->\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n-        <h2 style=\" font-size: 4rem;\n-  font-weight: bold;\n-  color: #fff;\n-  padding: 15px 40px;\n-  background: rgba(0, 0, 0, 0.3); /* translucent layer */\n-  backdrop-filter: blur(8px);      /* blur effect */\n-  border-radius: 12px;\">Students Life</h2>\n+        <h2 style=\"\">Students Life</h2>\n        \n       </div><!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n"
+                },
+                {
+                    "date": 1758447520447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,13 +65,13 @@\n     \n \n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n-      <!-- Section Title -->\n+      <!-- Section Title \n       <div class=\"container section-title\" data-aos=\"fade-up\">\n         <h2 style=\"font-size:4rem\">Students Life</h2>\n        \n-      </div><!-- End Section Title -->\n+      </div<!-- End Section Title -->\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n \n         <div class=\"row align-items-center g-5 mb-5\">\n"
+                },
+                {
+                    "date": 1758447526042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     \n \n     <section id=\"students-life-block\" class=\"students-life-block section\">\n \n-      <!-- Section Title \n+      <!-- Section Title -\n       <div class=\"container section-title\" data-aos=\"fade-up\">\n         <h2 style=\"font-size:4rem\">Students Life</h2>\n        \n       </div<!-- End Section Title -->\n"
                 }
             ],
             "date": 1758224954296,

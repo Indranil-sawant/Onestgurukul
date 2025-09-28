@@ -1705,114 +1705,6 @@ section,
 /*--------------------------------------------------------------
 # Students Life Block Section
 --------------------------------------------------------------*/
-.ezy__service13 {
-	/* Bootstrap variables */
-	--bs-body-color: #2B323C;
-	--bs-body-bg: rgb(255, 255, 255);
-
-	/* Easy Frontend variables */
-	--ezy-theme-color: rgb(13, 110, 253);
-	--ezy-theme-color-rgb: 13, 110, 253;
-
-	background: var(--bs-body-bg);
-	overflow: hidden;
-	padding: 60px 0;
-}
-
-@media (min-width: 768px) {
-	.ezy__service13 {
-		padding: 100px 0;
-	}
-}
-
-/* Gray Block Style */
-.gray .ezy__service13,
-.ezy__service13.gray {
-	/* Bootstrap variables */
-	--bs-body-bg: rgb(246, 246, 246);
-}
-
-/* Dark Gray Block Style */
-.dark-gray .ezy__service13,
-.ezy__service13.dark-gray {
-	/* Bootstrap variables */
-	--bs-body-color: #ffffff;
-	--bs-body-bg: rgb(30, 39, 53);
-}
-
-/* Dark Block Style */
-.dark .ezy__service13,
-.ezy__service13.dark {
-	/* Bootstrap variables */
-	--bs-body-color: #ffffff;
-	--bs-body-bg: rgb(11, 23, 39);
-}
-
-.ezy__service13-heading {
-	font-weight: bold;
-	font-size: 25px;
-	line-height: 25px;
-	color: var(--bs-body-color);
-}
-
-@media (min-width: 768px) {
-	.ezy__service13-heading {
-		font-size: 45px;
-		line-height: 45px;
-	}
-}
-
-.ezy__service13-sub-heading {
-	font-size: 18px;
-	line-height: 25px;
-	color: var(--bs-body-color);
-	opacity: .8;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(1n) .ezy__service13-icon {
-	background-color: rgba(252, 110, 92, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(2n) .ezy__service13-icon {
-	background-color: rgba(4, 121, 193, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(3n) .ezy__service13-icon {
-	background-color: rgba(255, 214, 0, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-icon {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	font-size: 32px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.ezy__service13-title {
-	color: var(--bs-body-color);
-}
-
-.ezy__service13-content {
-	color: var(--bs-body-color);
-	opacity: .8;
-}
-
-.ezy__service13-bg-holder {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 20px;
-	height: 100%;
-	min-height: 200px;
-}
-
-
 .students-life-block{
   position: relative;
   overflow: hidden;
@@ -1826,7 +1718,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/") no-repeat center center / cover;
+  background: url("../img/back8.png") no-repeat center center / cover;
   filter: blur(px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -1835,7 +1727,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .students-life-block::before {
-    background: url("../img/") no-repeat top center / contain;
+    background: url("../img/back9.png") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }

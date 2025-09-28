@@ -1705,114 +1705,6 @@ section,
 /*--------------------------------------------------------------
 # Students Life Block Section
 --------------------------------------------------------------*/
-.ezy__service13 {
-	/* Bootstrap variables */
-	--bs-body-color: #2B323C;
-	--bs-body-bg: rgb(255, 255, 255);
-
-	/* Easy Frontend variables */
-	--ezy-theme-color: rgb(13, 110, 253);
-	--ezy-theme-color-rgb: 13, 110, 253;
-
-	background: var(--bs-body-bg);
-	overflow: hidden;
-	padding: 60px 0;
-}
-
-@media (min-width: 768px) {
-	.ezy__service13 {
-		padding: 100px 0;
-	}
-}
-
-/* Gray Block Style */
-.gray .ezy__service13,
-.ezy__service13.gray {
-	/* Bootstrap variables */
-	--bs-body-bg: rgb(246, 246, 246);
-}
-
-/* Dark Gray Block Style */
-.dark-gray .ezy__service13,
-.ezy__service13.dark-gray {
-	/* Bootstrap variables */
-	--bs-body-color: #ffffff;
-	--bs-body-bg: rgb(30, 39, 53);
-}
-
-/* Dark Block Style */
-.dark .ezy__service13,
-.ezy__service13.dark {
-	/* Bootstrap variables */
-	--bs-body-color: #ffffff;
-	--bs-body-bg: rgb(11, 23, 39);
-}
-
-.ezy__service13-heading {
-	font-weight: bold;
-	font-size: 25px;
-	line-height: 25px;
-	color: var(--bs-body-color);
-}
-
-@media (min-width: 768px) {
-	.ezy__service13-heading {
-		font-size: 45px;
-		line-height: 45px;
-	}
-}
-
-.ezy__service13-sub-heading {
-	font-size: 18px;
-	line-height: 25px;
-	color: var(--bs-body-color);
-	opacity: .8;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(1n) .ezy__service13-icon {
-	background-color: rgba(252, 110, 92, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(2n) .ezy__service13-icon {
-	background-color: rgba(4, 121, 193, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-list .ezy__service13-card:nth-of-type(3n) .ezy__service13-icon {
-	background-color: rgba(255, 214, 0, 1);
-	color: #ffffff;
-}
-
-.ezy__service13-icon {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	font-size: 32px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.ezy__service13-title {
-	color: var(--bs-body-color);
-}
-
-.ezy__service13-content {
-	color: var(--bs-body-color);
-	opacity: .8;
-}
-
-.ezy__service13-bg-holder {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 20px;
-	height: 100%;
-	min-height: 200px;
-}
-
-
 .students-life-block{
   position: relative;
   overflow: hidden;
@@ -1826,7 +1718,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/") no-repeat center center / cover;
+  background: url("../img/back8.png") no-repeat center center / cover;
   filter: blur(px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -1835,7 +1727,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .students-life-block::before {
-    background: url("../img/") no-repeat top center / contain;
+    background: url("../img/back9.png") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
@@ -2716,9 +2608,8 @@ section,
 }
 
 .stats .metric-card {
-  background-color: var(--ezy-card-bg);
+    background-color: var(--ezy-card-bg);
   box-shadow: var(--ezy-card-box-shadow);
-  border: black;
   border-radius: 1.5rem;
   padding: 2.5rem 2rem;
   height: 100%;
@@ -3355,135 +3246,7 @@ section,
 /*--------------------------------------------------------------
 # Recent News Section
 --------------------------------------------------------------*/
-.ezy__portfolio8 {
-  /* Bootstrap variables */
-  --bs-body-color: #252d39;
-  --bs-body-bg: rgb(255, 255, 255);
 
-  /* Easy Frontend variables */
-  --ezy-theme-color: rgb(13, 110, 253);
-  --ezy-theme-color-rgb: 13, 110, 253;
-  --ezy-item-bg: #ffffff;
-  --ezy-item-shadow: 0px 4px 44px rgba(159, 190, 218, 0.17);
-
-  background-color: var(--bs-body-bg);
-  overflow: hidden;
-  padding: 60px 0;
-}
-
-@media (min-width: 768px) {
-  .ezy__portfolio8 {
-    padding: 100px 0;
-  }
-}
-
-/* Gray Block Style */
-.gray .ezy__portfolio8,
-.ezy__portfolio8.gray {
-  /* Bootstrap variables */
-  --bs-body-bg: rgb(246, 246, 246);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: #f6f6f6;
-  --ezy-item-shadow: 0px 4px 44px rgba(186, 155, 155, 0.17);
-}
-
-/* Dark Gray Block Style */
-.dark-gray .ezy__portfolio8,
-.ezy__portfolio8.dark-gray {
-  /* Bootstrap variables */
-  --bs-body-color: #ffffff;
-  --bs-body-bg: rgb(30, 39, 53);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: #222f3e;
-  --ezy-item-shadow: none;
-}
-
-/* Dark Block Style */
-.dark .ezy__portfolio8,
-.ezy__portfolio8.dark {
-  /* Bootstrap variables */
-  --bs-body-color: #ffffff;
-  --bs-body-bg: rgb(11, 23, 39);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: #162231;
-  --ezy-item-shadow: none;
-}
-
-.ezy__portfolio8-heading {
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 25px;
-  color: var(--bs-body-color);
-}
-
-@media (min-width: 768px) {
-  .ezy__portfolio8-heading {
-    font-size: 45px;
-    line-height: 45px;
-  }
-}
-
-.ezy__portfolio8-sub-heading {
-  font-size: 16px;
-  line-height: 22px;
-  color: var(--bs-body-color);
-}
-
-.ezy__portfolio8-item {
-  background-color: var(--ezy-item-bg);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--ezy-item-shadow);
-  transition: transform 0.25s ease-in-out;
-}
-
-.ezy__portfolio8-item:hover {
-  transform: translateY(-5px);
-}
-
-.ezy__portfolio8-banner {
-  border-radius: 10px;
-}
-
-.ezy__portfolio8-list [class*="col-"]:nth-of-type(1n) .ezy__portfolio8-banner {
-  background-color: #c5e8e2;
-}
-
-.ezy__portfolio8-list [class*="col-"]:nth-of-type(2n) .ezy__portfolio8-banner {
-  background-color: #b6cbf4;
-}
-
-.ezy__portfolio8-list [class*="col-"]:nth-of-type(3n) .ezy__portfolio8-banner {
-  background-color: #fcc4c4;
-}
-
-.ezy__portfolio8-banner img {
-  border-radius: 10px;
-  margin-bottom: -50px;
-}
-
-.ezy__portfolio8-content {
-  margin-top: 50px;
-}
-
-.ezy__portfolio8-content * {
-  color: var(--bs-body-color);
-}
-
-.ezy__portfolio8-btn {
-  padding: 7px 20px;
-  min-width: 120px;
-  border-color: var(--ezy-theme-color);
-}
-
-.ezy__portfolio8-btn:hover {
-  color: #fff;
-  background-color: var(--ezy-theme-color);
-  border-color: var(--ezy-theme-color);
-}
 
 /*--------------------------------------------------------------
 # Events Section
@@ -3501,7 +3264,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/") no-repeat center center / cover;
+  background: url("../img/back8.png") no-repeat center center / cover;
   filter: blur(0px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -3510,7 +3273,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .events::before {
-    background: url("../img/") no-repeat top center / contain;
+    background: url("../img/back0.jpg") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
@@ -5004,129 +4767,7 @@ section,
     font-size: 14px;
   }
 }
-.ezy__featured15 {
-  /* Bootstrap variables */
-  --bs-body-color: #23262f;
-  --bs-body-bg: rgb(255, 255, 255);
 
-  /* Easy Frontend variables */
-  --ezy-theme-color: rgb(13, 110, 253);
-  --ezy-theme-color-rgb: 13, 110, 253;
-  --ezy-item-bg: rgb(239, 244, 253);
-  --ezy-item-icon-bg: rgb(239, 244, 253);
-
-  background-color: var(--bs-body-bg);
-  overflow: hidden;
-  padding: 60px 0;
-}
-
-@media (min-width: 768px) {
-  .ezy__featured15 {
-    padding: 100px 0;
-  }
-}
-
-/* Gray Block Style */
-.gray .ezy__featured15,
-.ezy__featured15.gray {
-  /* Bootstrap variables */
-  --bs-body-bg: rgb(239, 244, 253);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: #fff;
-  --ezy-item-icon-bg: #fff;
-}
-
-/* Dark Gray Block Style */
-.dark-gray .ezy__featured15,
-.ezy__featured15.dark-gray {
-  /* Bootstrap variables */
-  --bs-body-color: #ffffff;
-  --bs-body-bg: rgb(30, 39, 53);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: rgb(11, 23, 39);
-  --ezy-item-icon-bg: rgb(9, 19, 32);
-}
-
-/* Dark Block Style */
-.dark .ezy__featured15,
-.ezy__featured15.dark {
-  /* Bootstrap variables */
-  --bs-body-color: #ffffff;
-  --bs-body-bg: rgb(11, 23, 39);
-
-  /* Easy Frontend variables */
-  --ezy-item-bg: rgb(30, 39, 53);
-  --ezy-item-icon-bg: rgb(30, 39, 53);
-}
-
-.ezy__featured15-heading {
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 25px;
-  color: var(--bs-body-color);
-}
-
-@media (min-width: 768px) {
-  .ezy__featured15-heading {
-    font-size: 45px;
-    line-height: 45px;
-  }
-}
-
-.ezy__featured15-sub-heading {
-  font-size: 18px;
-  line-height: 25px;
-  color: var(--bs-body-color);
-}
-
-.ezy__featured15-item {
-  background-color: var(--ezy-item-bg);
-  border-radius: 90px 0 0 90px;
-}
-
-.ezy__featured15-icon {
-  width: 74px;
-  height: 74px;
-  background-color: var(--ezy-item-icon-bg);
-  color: var(--ezy-theme-color);
-  border-radius: 50%;
-  font-size: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: -37px 45px 0 -45px;
-  box-shadow: 0 4px 34px 0 rgba(163, 190, 241, 0.12);
-  z-index: 1;
-  top: 50%;
-}
-
-.ezy__featured15-bg-holder {
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 20px;
-  min-height: 150px;
-  width: 100%;
-  float: right;
-}
-
-@media (min-width: 991px) {
-  .ezy__featured15-bg-holder {
-    width: 50vw;
-    border-radius: 0 20px 20px 0;
-  }
-}
-
-.ezy__featured15-title {
-  color: var(--bs-body-color);
-}
-
-.ezy__featured15-content {
-  color: var(--bs-body-color);
-  opacity: 0.7;
-}
 /*--------------------------------------------------------------
 # Students Life Section
 --------------------------------------------------------------*/
@@ -5144,7 +4785,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/") no-repeat center center / cover;
+  background: url("../img/back9.png") no-repeat center center / cover;
   filter: blur(px) brightness(0.9); /* blur + darken */
   opacity: 0.6; /* transparency */
   z-index: -1; /* put behind content */
@@ -5153,7 +4794,7 @@ section,
 /* Mobile / vertical image */
 @media (max-width: 768px) {
   .students-life::before {
-    background: url("../img/") no-repeat top center / contain;
+    background: url("../img/back9.png") no-repeat top center / contain;
     background-color: #FEFFC4; /* fills any empty space at bottom */
   }
 }
