@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1758399012308,
@@ -16,6 +16,14 @@
                 {
                     "date": 1758399255224,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -267,5 +267,19 @@\n   <script src=\"assets/js/main.js\"></script>\n \n </body>\n \n-</html>\n\\ No newline at end of file\n+</html>\n+\n+<!--Start of Tawk.to Script-->\n+<script type=\"text/javascript\">\n+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\n+(function(){\n+var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];\n+s1.async=true;\n+s1.src='https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';\n+s1.charset='UTF-8';\n+s1.setAttribute('crossorigin','*');\n+s0.parentNode.insertBefore(s1,s0);\n+})();\n+</script>\n+<!--End of Tawk.to Script-->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1759591985949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,12 @@\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n         <div class=\"contact-main-wrapper\">\n           <div class=\"map-wrapper\">\n-            <iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n+            <iframe src=\"<div class=\"ratio ratio-4x3\">\n+                  <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin\n+\" allowfullscreen=\"\" loading=\"lazy\"></iframe>\n+                </div>\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n           </div>\n \n           <div class=\"contact-content\">\n             <div class=\"contact-cards-container\" data-aos=\"fade-up\" data-aos-delay=\"300\">\n"
+                },
+                {
+                    "date": 1759592013852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,12 +73,10 @@\n \n       <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">\n         <div class=\"contact-main-wrapper\">\n           <div class=\"map-wrapper\">\n-            <iframe src=\"<div class=\"ratio ratio-4x3\">\n-                  <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin\n-\" allowfullscreen=\"\" loading=\"lazy\"></iframe>\n-                </div>\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n+            <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin\n+\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n           </div>\n \n           <div class=\"contact-content\">\n             <div class=\"contact-cards-container\" data-aos=\"fade-up\" data-aos-delay=\"300\">\n"
                 }
             ],
             "date": 1758399012308,

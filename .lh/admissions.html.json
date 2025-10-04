@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1758398994962,
@@ -12,6 +12,26 @@
                 {
                     "date": 1758399240491,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -385,5 +385,18 @@\n   <script src=\"assets/js/main.js\"></script>\n \n </body>\n \n-</html>\n\\ No newline at end of file\n+</html>\n+<!--Start of Tawk.to Script-->\n+<script type=\"text/javascript\">\n+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\n+(function(){\n+var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];\n+s1.async=true;\n+s1.src='https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';\n+s1.charset='UTF-8';\n+s1.setAttribute('crossorigin','*');\n+s0.parentNode.insertBefore(s1,s0);\n+})();\n+</script>\n+<!--End of Tawk.to Script-->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1759591447440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n \n         <div class=\"row mt-5 campus-visit\">\n           <div class=\"col-lg-6\" data-aos=\"fade-right\" data-aos-delay=\"100\">\n             <div class=\"visit-image\">\n-              <img src=\"assets/img/education/campus-5.webp\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\">\n+              <img src=\"assets/img/inf\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\">\n               <div class=\"image-caption\">Experience our beautiful campus in person</div>\n             </div>\n           </div>\n           <div class=\"col-lg-6\" data-aos=\"fade-left\" data-aos-delay=\"200\">\n"
+                },
+                {
+                    "date": 1759591462289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n \n         <div class=\"row mt-5 campus-visit\">\n           <div class=\"col-lg-6\" data-aos=\"fade-right\" data-aos-delay=\"100\">\n             <div class=\"visit-image\">\n-              <img src=\"assets/img/inf\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\">\n+              <img src=\"assets/img/infra (7).JPG\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\">\n               <div class=\"image-caption\">Experience our beautiful campus in person</div>\n             </div>\n           </div>\n           <div class=\"col-lg-6\" data-aos=\"fade-left\" data-aos-delay=\"200\">\n"
+                },
+                {
+                    "date": 1759591493493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n \n         <div class=\"row mt-5 campus-visit\">\n           <div class=\"col-lg-6\" data-aos=\"fade-right\" data-aos-delay=\"100\">\n             <div class=\"visit-image\">\n-              <img src=\"assets/img/infra (7).JPG\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\">\n+              <img src=\"assets/img/infra (7).JPG\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\" style=\"height:600px;\">\n               <div class=\"image-caption\">Experience our beautiful campus in person</div>\n             </div>\n           </div>\n           <div class=\"col-lg-6\" data-aos=\"fade-left\" data-aos-delay=\"200\">\n"
+                },
+                {
+                    "date": 1759591515800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n \n         <div class=\"row mt-5 campus-visit\">\n           <div class=\"col-lg-6\" data-aos=\"fade-right\" data-aos-delay=\"100\">\n             <div class=\"visit-image\">\n-              <img src=\"assets/img/infra (7).JPG\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\" style=\"height:600px;\">\n+              <img src=\"assets/img/infra (7).JPG\" class=\"img-fluid\" alt=\"Campus Visit\" loading=\"lazy\" style=\"height:600px; width:700px; object-fit:cover;\">\n               <div class=\"image-caption\">Experience our beautiful campus in person</div>\n             </div>\n           </div>\n           <div class=\"col-lg-6\" data-aos=\"fade-left\" data-aos-delay=\"200\">\n"
+                },
+                {
+                    "date": 1759591617723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -267,9 +267,13 @@\n                 <li><i class=\"bi bi-people\"></i> Information sessions with admissions staff</li>\n                 <li><i class=\"bi bi-building\"></i> Residence hall viewings</li>\n                 <li><i class=\"bi bi-mortarboard\"></i> Faculty meetings (by appointment)</li>\n               </ul>\n-              <a href=\"#\" class=\"btn btn-schedule\">Schedule Your Visit</a>\n+             <a href=\"mailto:asiync07@gmail.com?subject=Schedule%20a%20Visit%20-%20O'Nest%20Gurukul&body=Dear%20O'Nest%20Gurukul%20Team%2C%0A%0AI%20would%20like%20to%20schedule%20a%20visit%20to%20the%20Gurukul.%0A%0APlease%20find%20my%20details%20below%3A%0A%0A-%20Visitor's%20Name%3A%0A-%20Child's%20Name%20(if%20applicable)%3A%0A-%20Preferred%20Date%20and%20Time%3A%0A-%20Contact%20Number%3A%0A-%20Any%20specific%20queries%3A%0A%0ALooking%20forward%20to%20your%20confirmation.%0A%0ARegards%2C%0A[Your%20Name]\" \n+   class=\"btn btn-schedule\">\n+   Schedule Your Visit\n+</a>\n+\n               <div class=\"virtual-option\">\n                 <span>Can't visit in person?</span>\n                 <a href=\"#\" class=\"virtual-link\">Take a Virtual Tour <i class=\"bi bi-arrow-right\"></i></a>\n               </div>\n"
                 }
             ],
             "date": 1758398994962,
