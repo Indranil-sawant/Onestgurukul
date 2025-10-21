@@ -267,40 +267,31 @@
                   </div>
                 </div>
                 <div class="tour-actions">
-                 <button class="btn-primary" id="openModalBtn">Schedule Your Visit</button>
+                  <button class="btn-primary" id="openModalBtn">Schedule Visit</button>
 
-<!-- Modal -->
+<!-- Modal Popup -->
 <div id="visitModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Schedule Your Campus Visit</h2>
-
-    <form id="visitForm" 
-          action="https://script.google.com/macros/s/AKfycbxBlgd6t2hZeJe_qIxfRcuW_eh413qnU0F1hj4SehzI2oAZCfb66_r7myHWAvjaU6Un/exec" 
-          method="POST" 
-          target="hidden_iframe">
-      
+    
+    <form id="visitForm">
       <label for="name">Full Name</label>
-      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
       <label for="email">Email Address</label>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
 
       <label for="date">Preferred Visit Date</label>
-      <input type="date" name="date" required>
+      <input type="date" id="date" name="date" required>
 
       <label for="message">Message</label>
-      <textarea name="message" placeholder="Any specific questions?"></textarea>
+      <textarea id="message" name="message" rows="4" placeholder="Any specific questions?"></textarea>
 
       <button type="submit" class="btn-primary">Send Request</button>
-
-      <div id="successMessage" class="success-message" style="display:none;">
-        ✅ Your request has been submitted!
-      </div>
     </form>
 
-    <!-- Hidden iframe -->
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <div id="successMessage" class="success-message">✅ Your request has been submitted!</div>
   </div>
 </div>
 
@@ -696,37 +687,60 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById('visitModal');
-  const openBtn = document.getElementById('openModalBtn');
-  const closeBtn = document.querySelector('.close');
-  const form = document.getElementById('visitForm');
-  const successMessage = document.getElementById('successMessage');
+const modal = document.getElementById('visitModal');
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.querySelector('.close');
+const form = document.getElementById('visitForm');
+const successMessage = document.getElementById('successMessage');
 
-  // Open modal
-  openBtn.addEventListener('click', e => {
-    e.preventDefault();
-    modal.style.display = 'block';
-  });
+// Open popup
+openBtn.addEventListener('click', e => {
+  e.preventDefault();
+  modal.style.display = 'block';
+});
 
-  // Close modal
-  closeBtn.addEventListener('click', () => modal.style.display = 'none');
-  window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+// Close popup
+closeBtn.addEventListener('click', () => modal.style.display = 'none');
+window.addEventListener('click', e => {
+  if (e.target === modal) modal.style.display = 'none';
+});
 
-  // Show success message when iframe loads
-  const iframe = document.querySelector('iframe[name="hidden_iframe"]');
-  iframe.addEventListener('load', () => {
-    if(form.submitted) {
+// Handle form submission
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+
+  const data = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    date: form.date.value.trim(),
+    message: form.message.value.trim()
+  };
+
+  try {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbyjSWOIHu3CXBNU9X2hiGeZs9QeujRMz406NZ8fAT1J8T3wggC3ygAGVyqaH02-Pu4/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
       successMessage.style.display = 'block';
       form.reset();
       setTimeout(() => {
         successMessage.style.display = 'none';
         modal.style.display = 'none';
       }, 2500);
+    } else {
+      alert("Error submitting form. Please try again.");
     }
-  });
-
-  // Flag form submission
-  form.addEventListener('submit', () => { form.submitted = true; });
+  } catch (error) {
+    alert("Network error — please check your connection.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Request";
+  }
 });
 </script>
