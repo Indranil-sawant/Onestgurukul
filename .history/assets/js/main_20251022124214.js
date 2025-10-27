@@ -185,7 +185,7 @@ form.addEventListener("submit", function() {
 });
 
 
-
+<script>
   const body = document.body;
   const toggleBtn = document.getElementById('theme-toggle');
   const icon = toggleBtn.querySelector('i');
@@ -211,4 +211,4 @@ form.addEventListener("submit", function() {
       localStorage.setItem('theme', 'dark');
     }
   });
-
+</script>

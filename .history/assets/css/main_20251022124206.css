@@ -20,15 +20,14 @@
   }
  
   /* Global Colors - Warm, nurturing palette for education theme */
-:root { 
-  --background-color: #f8f4e9;   /* Soft cream background, evoking a warm nest */
-  --default-color: #2c3e50;      /* Deep slate for text, trustworthy and readable */
-  --heading-color: #1a252f;      /* Navy-inspired dark for headings, professional depth */
-  --accent-color: #1e48d2cf;     /* Cool blue accent for energy and CTAs */
-  --surface-color: #fdfbf5;      /* Light off-white with warm tint for cards/sections */
-  --contrast-color: #ffffff;     /* White for overlays on accents */
-}
-
+  :root { 
+    --background-color: #f8f4e9;   /* Soft cream background, evoking a warm nest */
+    --default-color: #2c3e50;      /* Deep slate for text, trustworthy and readable */
+    --heading-color: #1a252f;      /* Navy-inspired dark for headings, professional depth */
+    --accent-color: #1e48d2cf;       /* Terracotta orange accent for energy and CTAs (e.g., admissions) */
+    --surface-color: #fdfbf5;      /* Light off-white with warm tint for cards/sections */
+    --contrast-color: #ffffff;     /* White for overlays on accents */
+  }
 
   /* Nav Menu Colors - Subtle warmth for better engagement */
   :root {
@@ -47,14 +46,14 @@
   }
 
   /* Dark Preset - Earthy tones for night mode */
-.dark-background {
-  --background-color: #2c1810;   /* Deep brown for a cozy, nest-like dark mode */
-  --default-color: #e8d5b7;      /* Warm off-white text */
-  --heading-color: #ffffff;
-  --surface-color: #3e2c1f;      /* Darker earth for cards */
-  --contrast-color: #ffffff;
-  --accent-color: #f4a460;       /* Lighter terracotta for visibility */
-}
+  .dark-background {
+    --background-color: #2c1810;    /* Deep brown for a cozy, nest-like dark mode */
+    --default-color: #e8d5b7;       /* Warm off-white text */
+    --heading-color: #ffffff;
+    --surface-color: #3e2c1f;       /* Darker earth for cards */
+    --contrast-color: #ffffff;
+    --accent-color: #f4a460;        /* Lighter terracotta for visibility */
+  }
 
 
 /* Smooth scroll */

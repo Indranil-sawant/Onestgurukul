@@ -186,29 +186,22 @@ form.addEventListener("submit", function() {
 
 
 
+  const toggle = document.getElementById('theme-toggle');
   const body = document.body;
-  const toggleBtn = document.getElementById('theme-toggle');
-  const icon = toggleBtn.querySelector('i');
 
-  // 1️⃣ Load the saved theme (if any)
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    body.classList.add('dark-background');
-    icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-  } else {
-    body.classList.add('light-background');
+  // Check for saved preference
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggle.checked = true;
   }
 
-  // 2️⃣ Toggle theme on click
-  toggleBtn.addEventListener('click', () => {
-    if (body.classList.contains('dark-background')) {
-      body.classList.replace('dark-background', 'light-background');
-      icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-      localStorage.setItem('theme', 'light');
-    } else {
-      body.classList.replace('light-background', 'dark-background');
-      icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      body.classList.add('dark-mode');
       localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
     }
   });
 
