@@ -1,3 +1,5 @@
+
+
 (function() {
   "use strict";
 
@@ -210,25 +212,55 @@ form.addEventListener("submit", function() {
     }
   });
 
-
-document.documentElement.style.colorScheme = "light";
-
 // === Banner Carousel ===
 (function () {
-  const carouselElement = document.getElementById('ogCarousel');
-  if (carouselElement) {
-    // Initialize Bootstrap carousel
-    const carousel = new bootstrap.Carousel(carouselElement, {
-      interval: 5000,        // Auto-rotate every 5 seconds
-      ride: 'carousel',
-      pause: 'hover'         // Pause on hover
+  const slides = document.querySelectorAll(".banner-carousel .slide");
+  const dotsContainer = document.querySelector(".banner-carousel .dots");
+  const nextBtn = document.querySelector(".banner-carousel .next");
+  const prevBtn = document.querySelector(".banner-carousel .prev");
+  let index = 0;
+  let timer;
+
+  function createDots() {
+    slides.forEach((_, i) => {
+      const btn = document.createElement("button");
+      if (i === 0) btn.classList.add("active");
+      btn.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(btn);
     });
   }
+
+  function goToSlide(n) {
+    slides[index].classList.remove("active");
+    dotsContainer.children[index].classList.remove("active");
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add("active");
+    dotsContainer.children[index].classList.add("active");
+    resetTimer();
+  }
+
+  function nextSlide() {
+    goToSlide(index + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(index - 1);
+  }
+
+  function autoSlide() {
+    timer = setInterval(() => {
+      nextSlide();
+    }, 4000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    autoSlide();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  createDots();
+  autoSlide();
 })();
-
-// Force light mode on load (ignore system theme)
-localStorage.setItem("theme", "light");
-document.body.classList.remove("dark");
-document.body.classList.add("light");
-
-

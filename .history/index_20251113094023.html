@@ -103,133 +103,15 @@
     </div>
   </header>
   
-<script>
-/* ===== Robust Onest Carousel Script ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = Array.from(document.querySelectorAll(".og-carousel-slide"));
-  if (!slides.length) return; // nothing to do
-
-  const nextBtn = document.querySelector(".og-carousel-next");
-  const prevBtn = document.querySelector(".og-carousel-prev");
-  const dotsContainer = document.querySelector(".og-carousel-dots");
-
-  let index = slides.findIndex(s => s.classList.contains("active"));
-  if (index < 0) index = 0;
-  let timer = null;
-  const AUTOPLAY_MS = 5000;
-
-  // Initialize slides (ensure only `index` is active)
-  function initSlides() {
-    slides.forEach((s, i) => {
-      s.classList.toggle("active", i === index);
-    });
-  }
-
-  // Create dots if container exists
-  function createDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = "";
-    slides.forEach((_, i) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = i === index ? "og-dot og-dot-active" : "og-dot";
-      btn.addEventListener("click", () => goTo(i));
-      dotsContainer.appendChild(btn);
-    });
-  }
-
-  function updateDots() {
-    if (!dotsContainer) return;
-    const dots = Array.from(dotsContainer.children);
-    dots.forEach((d, i) => d.classList.toggle("og-dot-active", i === index));
-  }
-
-  function goTo(n) {
-    const newIndex = ((n % slides.length) + slides.length) % slides.length; // safe wrap
-    if (newIndex === index) return;
-    slides[index].classList.remove("active");
-    slides[newIndex].classList.add("active");
-    index = newIndex;
-    updateDots();
-    resetTimer();
-  }
-
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
-
-  // Autoplay
-  function autoPlay() {
-    clearInterval(timer);
-    timer = setInterval(() => next(), AUTOPLAY_MS);
-  }
-  function resetTimer() {
-    clearInterval(timer);
-    autoPlay();
-  }
-
-  // Optional: pause on hover
-  const carouselSection = document.querySelector(".og-carousel-section");
-  if (carouselSection) {
-    carouselSection.addEventListener("mouseenter", () => clearInterval(timer));
-    carouselSection.addEventListener("mouseleave", () => autoPlay());
-  }
-
-  // Button listeners (only if they exist)
-  if (nextBtn) nextBtn.addEventListener("click", next);
-  if (prevBtn) prevBtn.addEventListener("click", prev);
-
-  // Keyboard support
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") next();
-    if (e.key === "ArrowLeft") prev();
-  });
-
-  // Touch support (swipe)
-  (function addTouchSupport() {
-    let startX = 0;
-    let endX = 0;
-    const threshold = 40; // px
-
-    carouselSection && carouselSection.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    }, {passive: true});
-
-    carouselSection && carouselSection.addEventListener("touchmove", (e) => {
-      endX = e.touches[0].clientX;
-    }, {passive: true});
-
-    carouselSection && carouselSection.addEventListener("touchend", () => {
-      const dx = endX - startX;
-      if (Math.abs(dx) > threshold) {
-        if (dx < 0) next();
-        else prev();
-      }
-      startX = endX = 0;
-    });
-  })();
-
-  // Initialize everything
-  initSlides();
-  createDots();
-  autoPlay();
-});
-</script>
 
   <main class="main">
-    <!-- ====== TOP MOVING NOTICE BAR ====== -->
-<div class="og-ticker-bar">
-  <div class="og-ticker-content">
-    📢 Admissions Open 2025–26 • New Events Coming Soon • Follow Us on Instagram @onestgurukul • Enroll Today!
-  </div>
-</div>
-
 <section class="og-carousel-section">
 
   <div class="og-carousel-container">
 
     <!-- Slide 1 -->
     <div class="og-carousel-slide active">
-      <img src="assets/img/banner_1.png" class="og-carousel-bg" alt="">
+      <img src="assets/img/banner1.jpg" class="og-carousel-bg" alt="">
       <div class="og-carousel-content">
         <h1 class="og-carousel-title">Onest Gurukul
           <span>Where Learning Feels Like Home</span>
@@ -244,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Slide 2 -->
     <div class="og-carousel-slide">
-      <img src="assets/img/banner2.png" class="og-carousel-bg" alt="">
+      <img src="assets/img/banner2.jpg" class="og-carousel-bg" alt="">
       <div class="og-carousel-content">
         <h1 class="og-carousel-title">A Safe & Caring Space
           <span>For Every Child to Grow</span>
@@ -258,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Slide 3 -->
     <div class="og-carousel-slide">
-      <img src="assets/img/banner3.png" class="og-carousel-bg" alt="">
+      <img src="assets/img/banner3.jpg" class="og-carousel-bg" alt="">
       <div class="og-carousel-content">
         <h1 class="og-carousel-title">Modern Education
           <span>With Traditional Values</span>

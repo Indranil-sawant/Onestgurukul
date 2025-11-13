@@ -102,184 +102,30 @@
 
     </div>
   </header>
-  
-<script>
-/* ===== Robust Onest Carousel Script ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = Array.from(document.querySelectorAll(".og-carousel-slide"));
-  if (!slides.length) return; // nothing to do
+      <section class="hero-banner">
+  <img src="assets/img/banner1.jpg" alt="Onest Gurukul Banner" class="hero-bg">
 
-  const nextBtn = document.querySelector(".og-carousel-next");
-  const prevBtn = document.querySelector(".og-carousel-prev");
-  const dotsContainer = document.querySelector(".og-carousel-dots");
+  <div class="hero-content">
+    <h1 class="floating-text">
+      Onest Gurukul  
+      <span>Where Learning Feels Like Home</span>
+    </h1>
 
-  let index = slides.findIndex(s => s.classList.contains("active"));
-  if (index < 0) index = 0;
-  let timer = null;
-  const AUTOPLAY_MS = 5000;
+    <p class="hero-sub">
+      Nurturing young minds with values, creativity, and modern education.
+    </p>
 
-  // Initialize slides (ensure only `index` is active)
-  function initSlides() {
-    slides.forEach((s, i) => {
-      s.classList.toggle("active", i === index);
-    });
-  }
+    <div class="hero-btns">
+      <a href="admissions.html" class="btn hero-btn-primary">Start Admission</a>
+      <a href="about.html" class="btn hero-btn-secondary">Know More</a>
+    </div>
+  </div>
 
-  // Create dots if container exists
-  function createDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = "";
-    slides.forEach((_, i) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = i === index ? "og-dot og-dot-active" : "og-dot";
-      btn.addEventListener("click", () => goTo(i));
-      dotsContainer.appendChild(btn);
-    });
-  }
+  <div class="hero-overlay"></div>
+</section>
 
-  function updateDots() {
-    if (!dotsContainer) return;
-    const dots = Array.from(dotsContainer.children);
-    dots.forEach((d, i) => d.classList.toggle("og-dot-active", i === index));
-  }
-
-  function goTo(n) {
-    const newIndex = ((n % slides.length) + slides.length) % slides.length; // safe wrap
-    if (newIndex === index) return;
-    slides[index].classList.remove("active");
-    slides[newIndex].classList.add("active");
-    index = newIndex;
-    updateDots();
-    resetTimer();
-  }
-
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
-
-  // Autoplay
-  function autoPlay() {
-    clearInterval(timer);
-    timer = setInterval(() => next(), AUTOPLAY_MS);
-  }
-  function resetTimer() {
-    clearInterval(timer);
-    autoPlay();
-  }
-
-  // Optional: pause on hover
-  const carouselSection = document.querySelector(".og-carousel-section");
-  if (carouselSection) {
-    carouselSection.addEventListener("mouseenter", () => clearInterval(timer));
-    carouselSection.addEventListener("mouseleave", () => autoPlay());
-  }
-
-  // Button listeners (only if they exist)
-  if (nextBtn) nextBtn.addEventListener("click", next);
-  if (prevBtn) prevBtn.addEventListener("click", prev);
-
-  // Keyboard support
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") next();
-    if (e.key === "ArrowLeft") prev();
-  });
-
-  // Touch support (swipe)
-  (function addTouchSupport() {
-    let startX = 0;
-    let endX = 0;
-    const threshold = 40; // px
-
-    carouselSection && carouselSection.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    }, {passive: true});
-
-    carouselSection && carouselSection.addEventListener("touchmove", (e) => {
-      endX = e.touches[0].clientX;
-    }, {passive: true});
-
-    carouselSection && carouselSection.addEventListener("touchend", () => {
-      const dx = endX - startX;
-      if (Math.abs(dx) > threshold) {
-        if (dx < 0) next();
-        else prev();
-      }
-      startX = endX = 0;
-    });
-  })();
-
-  // Initialize everything
-  initSlides();
-  createDots();
-  autoPlay();
-});
-</script>
 
   <main class="main">
-    <!-- ====== TOP MOVING NOTICE BAR ====== -->
-<div class="og-ticker-bar">
-  <div class="og-ticker-content">
-    📢 Admissions Open 2025–26 • New Events Coming Soon • Follow Us on Instagram @onestgurukul • Enroll Today!
-  </div>
-</div>
-
-<section class="og-carousel-section">
-
-  <div class="og-carousel-container">
-
-    <!-- Slide 1 -->
-    <div class="og-carousel-slide active">
-      <img src="assets/img/banner_1.png" class="og-carousel-bg" alt="">
-      <div class="og-carousel-content">
-        <h1 class="og-carousel-title">Onest Gurukul
-          <span>Where Learning Feels Like Home</span>
-        </h1>
-        <p class="og-carousel-text">A perfect blend of values, creativity & modern learning.</p>
-        <div class="og-carousel-buttons">
-          <a href="admissions.html" class="og-btn og-btn-primary">Start Admission</a>
-          <a href="about.html" class="og-btn og-btn-secondary">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="og-carousel-slide">
-      <img src="assets/img/banner2.png" class="og-carousel-bg" alt="">
-      <div class="og-carousel-content">
-        <h1 class="og-carousel-title">A Safe & Caring Space
-          <span>For Every Child to Grow</span>
-        </h1>
-        <p class="og-carousel-text">Beautiful environment, passionate teachers, joyful learning.</p>
-        <div class="og-carousel-buttons">
-          <a href="gallery.html" class="og-btn og-btn-primary">See Gallery</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="og-carousel-slide">
-      <img src="assets/img/banner3.png" class="og-carousel-bg" alt="">
-      <div class="og-carousel-content">
-        <h1 class="og-carousel-title">Modern Education
-          <span>With Traditional Values</span>
-        </h1>
-        <p class="og-carousel-text">STEM + Arts + Yoga + Personality Development.</p>
-        <div class="og-carousel-buttons">
-          <a href="about.html" class="og-btn og-btn-secondary">Know More</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Controls -->
-  <button class="og-carousel-prev">&#10094;</button>
-  <button class="og-carousel-next">&#10095;</button>
-
-  <!-- Dots -->
-  <div class="og-carousel-dots"></div>
-
-</section>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section" >
@@ -289,7 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-              <h3 id="changingText" style="font-size:4rem; font-weight:bold;">Where Children Learn Not Just for Exams, But for Life.</h3>
+              <h1 class="onestheader"style="font-size: 5rem;">O'NEST Gurukul</h1>
+              <h3 id="changingText" style="font-size:3rem; font-weight:bold;">Where Children Learn Not Just for Exams, But for Life.</h3>
               <br>
               <p>At Onest, education is rooted in ethics, creativity, and real-world skills. Our approach builds strong character along with academic excellence.</p>
               <br>

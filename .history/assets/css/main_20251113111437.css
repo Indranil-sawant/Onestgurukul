@@ -23,13 +23,16 @@
 }
 
   /* Global Colors - Warm, nurturing palette for education theme */
-:root {
+:root { 
+ :root {
   --background-color: #f8f4e9;   /* Soft cream */
   --default-color: #2c3e50;      /* Slate text */
   --heading-color: #1a252f;      /* Dark navy */
   --accent-color: #0f766e;       /* Teal (replaces red) */
   --surface-color: #c0ecff;      /* Soft aqua */
   --contrast-color: #ffffff;     /* White text */
+}
+
 }
 
 
@@ -10368,29 +10371,14 @@ form button.btn-primary { margin-top:20px; width:100%; }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .og-carousel-section {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .og-carousel-section .carousel-inner,
-  .og-carousel-section .carousel-item {
-    height: 100%;
-  }
-
-  .og-carousel-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
   .og-carousel-title {
     font-size: 3.2rem;
   }
-
   .og-carousel-title span {
     font-size: 1rem;
+  }
+  .og-carousel-section {
+    height: 80vh;
   }
 }
 

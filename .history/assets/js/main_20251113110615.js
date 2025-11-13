@@ -232,3 +232,47 @@ document.body.classList.remove("dark");
 document.body.classList.add("light");
 
 
+// ---------------- HERO CAROUSEL ----------------
+(function(){
+  const slides = document.querySelectorAll(".og-carousel-slide");
+  const nextBtn = document.querySelector(".og-carousel-next");
+  const prevBtn = document.querySelector(".og-carousel-prev");
+  const dotsContainer = document.querySelector(".og-carousel-dots");
+
+  let index = 0;
+  let timer;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    if(i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    slides[index].classList.remove("active");
+    dotsContainer.children[index].classList.remove("active");
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add("active");
+    dotsContainer.children[index].classList.add("active");
+    resetTimer();
+  }
+
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  nextBtn.addEventListener("click", next);
+  prevBtn.addEventListener("click", prev);
+
+  function autoPlay() {
+    timer = setInterval(next, 5000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    autoPlay();
+  }
+
+  autoPlay();
+})();

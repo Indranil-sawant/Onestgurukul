@@ -23,13 +23,13 @@
 }
 
   /* Global Colors - Warm, nurturing palette for education theme */
-:root {
-  --background-color: #f8f4e9;   /* Soft cream */
-  --default-color: #2c3e50;      /* Slate text */
-  --heading-color: #1a252f;      /* Dark navy */
-  --accent-color: #0f766e;       /* Teal (replaces red) */
-  --surface-color: #c0ecff;      /* Soft aqua */
-  --contrast-color: #ffffff;     /* White text */
+:root { 
+  --background-color: #f8f4e9;   /* Soft cream background, evoking a warm nest */
+  --default-color: #2c3e50;      /* Deep slate for text, trustworthy and readable */
+  --heading-color: #1a252f;      /* Navy-inspired dark for headings, professional depth */
+  --accent-color: #ff0000cf;     /* Cool blue accent for energy and CTAs */
+  --surface-color: #c0ecffff;      /* Light off-white with warm tint for cards/sections */
+  --contrast-color: #000000ff;     /* White for overlays on accents */
 }
 
 
@@ -10258,8 +10258,7 @@ form button.btn-primary { margin-top:20px; width:100%; }
 
 /* Floating Title */
 .og-carousel-title {
-  color:white;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   animation: ogfloat 3.5s ease-in-out infinite;
 }
@@ -10368,32 +10367,16 @@ form button.btn-primary { margin-top:20px; width:100%; }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .og-carousel-section {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .og-carousel-section .carousel-inner,
-  .og-carousel-section .carousel-item {
-    height: 100%;
-  }
-
-  .og-carousel-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
   .og-carousel-title {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
-
   .og-carousel-title span {
     font-size: 1rem;
   }
+  .og-carousel-section {
+    height: 80vh;
+  }
 }
-
 /* ================= NOTICE TICKER BAR ================= */
 
 .og-ticker-bar {
@@ -10431,3 +10414,4 @@ form button.btn-primary { margin-top:20px; width:100%; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+height: 82vh;

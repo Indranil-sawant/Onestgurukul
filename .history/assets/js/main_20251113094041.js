@@ -1,3 +1,5 @@
+
+
 (function() {
   "use strict";
 
@@ -213,17 +215,58 @@ form.addEventListener("submit", function() {
 
 document.documentElement.style.colorScheme = "light";
 
+
 // === Banner Carousel ===
 (function () {
-  const carouselElement = document.getElementById('ogCarousel');
-  if (carouselElement) {
-    // Initialize Bootstrap carousel
-    const carousel = new bootstrap.Carousel(carouselElement, {
-      interval: 5000,        // Auto-rotate every 5 seconds
-      ride: 'carousel',
-      pause: 'hover'         // Pause on hover
+  const slides = document.querySelectorAll(".banner-carousel .slide");
+  const dotsContainer = document.querySelector(".banner-carousel .dots");
+  const nextBtn = document.querySelector(".banner-carousel .next");
+  const prevBtn = document.querySelector(".banner-carousel .prev");
+  let index = 0;
+  let timer;
+
+  function createDots() {
+    slides.forEach((_, i) => {
+      const btn = document.createElement("button");
+      if (i === 0) btn.classList.add("active");
+      btn.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(btn);
     });
   }
+
+  function goToSlide(n) {
+    slides[index].classList.remove("active");
+    dotsContainer.children[index].classList.remove("active");
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add("active");
+    dotsContainer.children[index].classList.add("active");
+    resetTimer();
+  }
+
+  function nextSlide() {
+    goToSlide(index + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(index - 1);
+  }
+
+  function autoSlide() {
+    timer = setInterval(() => {
+      nextSlide();
+    }, 4000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    autoSlide();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  createDots();
+  autoSlide();
 })();
 
 // Force light mode on load (ignore system theme)
@@ -232,3 +275,47 @@ document.body.classList.remove("dark");
 document.body.classList.add("light");
 
 
+// ---------------- HERO CAROUSEL ----------------
+(function(){
+  const slides = document.querySelectorAll(".og-carousel-slide");
+  const nextBtn = document.querySelector(".og-carousel-next");
+  const prevBtn = document.querySelector(".og-carousel-prev");
+  const dotsContainer = document.querySelector(".og-carousel-dots");
+
+  let index = 0;
+  let timer;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    if(i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    slides[index].classList.remove("active");
+    dotsContainer.children[index].classList.remove("active");
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add("active");
+    dotsContainer.children[index].classList.add("active");
+    resetTimer();
+  }
+
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  nextBtn.addEventListener("click", next);
+  prevBtn.addEventListener("click", prev);
+
+  function autoPlay() {
+    timer = setInterval(next, 5000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    autoPlay();
+  }
+
+  autoPlay();
+})();
