@@ -1101,90 +1101,90 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin: 0;
 }
-.upcoming-event {
-    background: linear-gradient(135deg, #fff7b3, #ffe873, #ffdf4d, #fff1c2);
-    padding: 35px 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(255, 200, 0, 0.45);
-    color: #4b3e00;
-    position: relative;
-    overflow: hidden;
-    animation: eventPulse 4s infinite alternate;
-}
-
-/* Soft pulsing glow */
-@keyframes eventPulse {
-    0% { box-shadow: 0 0 18px #ffe470; }
-    100% { box-shadow: 0 0 35px #ffd84d; }
-}
-
-/* Shiny diagonal streak */
-.upcoming-event::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -120%;
-    width: 60%;
-    height: 150%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: shineSweep 6s infinite ease-in-out;
-}
-
-/* Shine animation */
-@keyframes shineSweep {
-    0% { left: -120%; }
-    100% { left: 140%; }
-}
-
-/* Heading */
-.upcoming-event h3 {
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    color: #ffffffff;
-}
-
-/* Sub-text */
-.upcoming-event p {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 600;
-    color: #ffffffff;
-    margin-bottom: 25px;
-}
-
-/* Highlight button-like label */
-.upcoming-event .event-badge {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #ffdd3a;
-    color: #3d3300;
-    font-weight: 800;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255, 210, 50, 0.7);
-    animation: badgePulse 2.2s infinite ease-in-out;
-}
-
-/* Badge animation */
-@keyframes badgePulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.07); }
-    100% { transform: scale(1); }
-}
 
 .hero .upcoming-event {
   background: var(--heading-color);
   color: var(--contrast-color);
   padding: 0;
   margin: 30px 0 0;
+}
+.event-content {
+    background: linear-gradient(135deg, #fff6a1, #ffe45e, #fddf74, #fff3c2);
+    padding: 45px;
+    border-radius: 30px;
+    box-shadow: 0 12px 45px rgba(255, 200, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #4b3e00;
+    animation: eventGlow 3.5s infinite ease-in-out alternate;
+}
+
+/* Animated glow effect */
+@keyframes eventGlow {
+    0% { box-shadow: 0 0 22px #ffe970; }
+    100% { box-shadow: 0 0 40px #ffd84d; }
+}
+
+/* Shiny diagonal beam */
+.event-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shineMove 5s infinite ease;
+}
+
+/* Shine animation */
+@keyframes shineMove {
+    0% { left: -120%; }
+    100% { left: 140%; }
+}
+
+/* Big bold heading */
+.event-content h2 {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4a3d00;
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+.event-content p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #5a4a00;
+}
+
+/* Highlight banner line */
+.event-content .admission-highlight {
+    background: #ffdd3a;
+    color: #3a3200;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(255, 210, 50, 0.6);
+    animation: pulseBanner 2s infinite;
+}
+
+/* Gentle pulsing effect */
+@keyframes pulseBanner {
+    0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 210, 50, 0.6); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 210, 50, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 210, 50, 0.6); }
 }
 
 .hero .upcoming-event .event-content {
@@ -1253,7 +1253,7 @@ section,
 
 .hero .upcoming-event .event-content .event-info h3 {
   font-size: 1.6rem;
-  color: white;
+  color: var(--contrast-color);
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -4938,8 +4938,7 @@ section,
   text-align: center;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: color-mix(in srgb, #fc7600ff, transparent 85%);
-
+  background-color: color-mix(in srgb, var(--heading-color), transparent 95%);
   transition: all 0.3s ease;
 }
 
@@ -4951,7 +4950,7 @@ section,
 .admissions .deadlines-card .deadline-item .deadline-date {
   font-size: 1.2rem;
   font-weight: 700;
-  color: black;
+  color: var(--accent-color);
   margin-bottom: 0.8rem;
 }
 
@@ -5519,9 +5518,9 @@ section,
 }
 
 .programs-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: black;
+  color: #0f766e;
   position: relative;
 }
 
@@ -5534,8 +5533,8 @@ section,
 }
 
 .programs-btn {
-  background: var(--accent-color);
-  color: #000000ff;
+  background: #14b8a6;
+  color: #fff;
   padding: 12px 24px;
   font-weight: 700;
   border-radius: 12px;
@@ -5544,7 +5543,7 @@ section,
 }
 
 .programs-btn:hover {
-  background: #000000ff;
+  background: #0f766e;
 }
 
 /* Program Card */
@@ -5604,7 +5603,7 @@ section,
 
 .program-badge {
   display: inline-block;
-  background: var(--accent-color);
+  background: #14b8a6;
   padding: 8px 14px;
   border-radius: 12px;
   font-weight: 600;
@@ -5614,7 +5613,7 @@ section,
 }
 
 .program-view-btn {
-  background: var(--accent-color);
+  background: #0f766e;
   color: #fff;
   padding: 10px 20px;
   border-radius: 12px;
@@ -5625,7 +5624,7 @@ section,
 }
 
 .program-view-btn:hover {
-  background:black;
+  background: #14b8a6;
 }
 
 .ezy__about6 {
@@ -10600,22 +10599,19 @@ form button.btn-primary { margin-top:20px; width:100%; }
 }
 
 .og-btn-primary {
-  background: var(--accent-color);
-  color: black;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
- 
+  background: #b59911ff;
+  color: #fff;
 }
 .og-btn-primary:hover {
-  background: #000000ff;
-  color: var(--background-color)
+  background: #0b4f49;
 }
 
 .og-btn-secondary {
-  background: #f7c72aff;
-  color: #000000ff;
+  background: #fff;
+  color: #b09e17ff;
 }
 .og-btn-secondary:hover {
-  background: #000000ff;
+  background: #e6fffa;
 }
 
 /* Arrows */
@@ -10624,7 +10620,7 @@ form button.btn-primary { margin-top:20px; width:100%; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(253, 217, 36, 0.92);
+  background: rgba(255,255,255,0.3);
   border: none;
   padding: 12px 18px;
   font-size: 26px;
@@ -10632,12 +10628,11 @@ form button.btn-primary { margin-top:20px; width:100%; }
   cursor: pointer;
   z-index: 10;
   transition: 0.3s;
-  
 }
 
 .og-carousel-prev:hover,
 .og-carousel-next:hover {
-  background: #e0c01fff;
+  background: #b89d14ff;
   color: #fff;
 }
 

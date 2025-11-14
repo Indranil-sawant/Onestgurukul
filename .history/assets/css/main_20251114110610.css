@@ -5519,9 +5519,9 @@ section,
 }
 
 .programs-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: black;
+  color: #0f766e;
   position: relative;
 }
 
@@ -5534,8 +5534,8 @@ section,
 }
 
 .programs-btn {
-  background: var(--accent-color);
-  color: #000000ff;
+  background: #14b8a6;
+  color: #fff;
   padding: 12px 24px;
   font-weight: 700;
   border-radius: 12px;
@@ -5544,7 +5544,7 @@ section,
 }
 
 .programs-btn:hover {
-  background: #000000ff;
+  background: #0f766e;
 }
 
 /* Program Card */
@@ -5604,7 +5604,7 @@ section,
 
 .program-badge {
   display: inline-block;
-  background: var(--accent-color);
+  background: #14b8a6;
   padding: 8px 14px;
   border-radius: 12px;
   font-weight: 600;
@@ -5614,7 +5614,7 @@ section,
 }
 
 .program-view-btn {
-  background: var(--accent-color);
+  background: #0f766e;
   color: #fff;
   padding: 10px 20px;
   border-radius: 12px;
@@ -5625,7 +5625,7 @@ section,
 }
 
 .program-view-btn:hover {
-  background:black;
+  background: #14b8a6;
 }
 
 .ezy__about6 {
@@ -10601,21 +10601,20 @@ form button.btn-primary { margin-top:20px; width:100%; }
 
 .og-btn-primary {
   background: var(--accent-color);
-  color: black;
+  color: var(--contrast-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
  
 }
 .og-btn-primary:hover {
-  background: #000000ff;
-  color: var(--background-color)
+  background: var(--background-color));
 }
 
 .og-btn-secondary {
-  background: #f7c72aff;
-  color: #000000ff;
+  background: #fff;
+  color: var(--background-color)
 }
 .og-btn-secondary:hover {
-  background: #000000ff;
+  background: #e6fffa;
 }
 
 /* Arrows */
@@ -10624,7 +10623,7 @@ form button.btn-primary { margin-top:20px; width:100%; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(253, 217, 36, 0.92);
+  background: rgba(255,255,255,0.3);
   border: none;
   padding: 12px 18px;
   font-size: 26px;
@@ -10632,12 +10631,11 @@ form button.btn-primary { margin-top:20px; width:100%; }
   cursor: pointer;
   z-index: 10;
   transition: 0.3s;
-  
 }
 
 .og-carousel-prev:hover,
 .og-carousel-next:hover {
-  background: #e0c01fff;
+  background: #b89d14ff;
   color: #fff;
 }
 

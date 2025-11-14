@@ -25,13 +25,12 @@
   /* Global Colors - Warm, nurturing palette for education theme */
 :root {
   --background-color: #EBE389;   /* Soft light yellow (for main background) */
-  --default-color: #000000ff;      /* Dark charcoal text for high readability */
+  --default-color: #3a3a3a;      /* Dark charcoal text for high readability */
   --heading-color: #1f1f1f;      /* Even stronger for headings */
   --accent-color: #FF9B00;       /* Primary accent (bold golden-yellow) */
   --secondary-accent: #FFC900;   /* Slightly lighter accent for hover, etc */
-  --highlight-color: value-card  /* Bright yellow for highlights, call-to-action */
-  --contrast-color: #ffffff;   
-  --surface-color:  #f7d766ff;  /* White for text/buttons on dark backgrounds */
+  --highlight-color: #FFE100;    /* Bright yellow for highlights, call-to-action */
+  --contrast-color: #ffffff;     /* White for text/buttons on dark backgrounds */
 }
 
 
@@ -101,7 +100,7 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color-scheme: light;
   }
@@ -109,12 +108,12 @@
     background-color: #ffffff !important;
     color: #000000 !important;
   }
-}                 
+}
 
 .apply-btn {
   display: inline-block;
   padding: 12px 28px;
-  background: linear-gradient(135deg, #ffe13aff, #34495e);
+  background: linear-gradient(135deg, #1e48d2cf, #34495e);
   color: #fff;
   font-weight: 600;
   font-size: 16px;
@@ -126,7 +125,7 @@
 }
 
 .apply-btn:hover {
-  background: linear-gradient(135deg,  #efe529ff, #34495e);
+  background: linear-gradient(135deg,  #1e48d2cf, #34495e);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
@@ -220,7 +219,7 @@ h6 {
   --default-color: #000000;
   --heading-color: #000000;
   color: var(--default-color);
-  background-color:  var(--secondary-accent);
+  background-color: #f8f4e9;
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -1101,84 +1100,6 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin: 0;
 }
-.upcoming-event {
-    background: linear-gradient(135deg, #fff7b3, #ffe873, #ffdf4d, #fff1c2);
-    padding: 35px 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(255, 200, 0, 0.45);
-    color: #4b3e00;
-    position: relative;
-    overflow: hidden;
-    animation: eventPulse 4s infinite alternate;
-}
-
-/* Soft pulsing glow */
-@keyframes eventPulse {
-    0% { box-shadow: 0 0 18px #ffe470; }
-    100% { box-shadow: 0 0 35px #ffd84d; }
-}
-
-/* Shiny diagonal streak */
-.upcoming-event::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -120%;
-    width: 60%;
-    height: 150%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: shineSweep 6s infinite ease-in-out;
-}
-
-/* Shine animation */
-@keyframes shineSweep {
-    0% { left: -120%; }
-    100% { left: 140%; }
-}
-
-/* Heading */
-.upcoming-event h3 {
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    color: #ffffffff;
-}
-
-/* Sub-text */
-.upcoming-event p {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 600;
-    color: #ffffffff;
-    margin-bottom: 25px;
-}
-
-/* Highlight button-like label */
-.upcoming-event .event-badge {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #ffdd3a;
-    color: #3d3300;
-    font-weight: 800;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255, 210, 50, 0.7);
-    animation: badgePulse 2.2s infinite ease-in-out;
-}
-
-/* Badge animation */
-@keyframes badgePulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.07); }
-    100% { transform: scale(1); }
-}
 
 .hero .upcoming-event {
   background: var(--heading-color);
@@ -1253,7 +1174,7 @@ section,
 
 .hero .upcoming-event .event-content .event-info h3 {
   font-size: 1.6rem;
-  color: white;
+  color: var(--contrast-color);
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -4455,55 +4376,7 @@ section,
   height: 3px;
   background-color: var(--accent-color);
 }
-.application-steps {
-    background: linear-gradient(135deg, #ffc861ff, #ffba5a, #ffe05a, #ffd17dff);
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    color: #fff;
-    animation: funkyGlow 4s infinite alternate;
-    
-}
 
-/* Funky Glow Animation */
-@keyframes funkyGlow {
-    0% { box-shadow: 0 0 15px #ff6f61; }
-    50% { box-shadow: 0 0 25px #ffe05a; }
-    100% { box-shadow: 0 0 35px #f8ff7dff; }
-}
-
-.application-steps h2 {
-    font-size: 32px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 800;
-    color: #fff;
-}
-
-.application-steps ul {
-    list-style: none;
-    padding: 0;
-}
-
-.application-steps ul li {
-    background: rgba(255, 255, 255, 0.25);
-    margin: 12px 0;
-    padding: 15px 20px;
-    border-radius: 15px;
-    font-size: 18px;
-    font-weight: 600;
-    backdrop-filter: blur(5px);
-    color: #222;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-/* Hover Effect */
-.application-steps ul li:hover {
-    transform: translateY(-5px) scale(1.03);
-    background: rgba(255, 255, 255, 0.4);
-}
 .admissions .application-steps {
   background-color: var(--surface-color);
   padding: 2rem;
@@ -4523,7 +4396,7 @@ section,
   top: 15px;
   height: calc(100% - 30px);
   width: 2px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .admissions .application-steps .step-item {
@@ -4562,82 +4435,6 @@ section,
   margin-bottom: 0;
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
-}
-.requirements-card {
-    background: linear-gradient(145deg, #ffe259, #f6d365, #ffea8a);
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(255, 200, 0, 0.45);
-    color: #5a4a00;
-    position: relative;
-    overflow: hidden;
-    animation: yellowPulse 3s infinite ease-in-out alternate;
-}
-
-/* Funky neon glow */
-@keyframes yellowPulse {
-    0% { box-shadow: 0 0 25px #ffec70; }
-    100% { box-shadow: 0 0 40px #ffd84d; }
-}
-
-/* Soft light flare circles */
-.requirements-card::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 150px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.35);
-    border-radius: 50%;
-    filter: blur(15px);
-}
-
-.requirements-card::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: -30px;
-    width: 180px;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
-    filter: blur(20px);
-}
-
-.requirements-card h3 {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 22px;
-    text-transform: uppercase;
-    color: #574800;
-    letter-spacing: 2px;
-}
-
-.requirements-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.requirements-card ul li {
-    background: rgba(255, 255, 255, 0.35);
-    margin: 12px 0;
-    padding: 14px 18px;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 600;
-    color: #4a3d00;
-    backdrop-filter: blur(5px);
-    transition: 0.3s ease;
-    border-left: 5px solid #ffdf3e; /* yellow highlight */
-}
-
-/* Hover: extra glow + move */
-.requirements-card ul li:hover {
-    background: rgba(255, 255, 255, 0.55);
-    transform: translateX(6px) scale(1.02);
-    box-shadow: 0 0 12px rgba(255, 220, 70, 0.7);
 }
 
 .admissions .requirements-card {
@@ -4750,101 +4547,6 @@ section,
 .admissions .tuition-card .financial-aid .btn-aid:hover {
   background-color: color-mix(in srgb, var(--accent-color), var(--heading-color) 20%);
 }
-.contact-form-card {
-    background: linear-gradient(135deg, #ffe45e, #fddf74, #fff0a8);
-    padding: 35px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(255, 200, 0, 0.45);
-    position: relative;
-    overflow: hidden;
-    animation: contactGlow 3s infinite alternate ease-in-out;
-}
-
-/* Soft glow animation */
-@keyframes contactGlow {
-    0% { box-shadow: 0 0 20px #ffe970; }
-    100% { box-shadow: 0 0 35px #ffd84d; }
-}
-
-/* Decorative blurred circles */
-.contact-form-card::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    right: -20px;
-    width: 140px;
-    height: 140px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    filter: blur(15px);
-}
-
-.contact-form-card::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: -35px;
-    width: 180px;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
-    filter: blur(18px);
-}
-
-.contact-form-card h3 {
-    text-transform: uppercase;
-    font-size: 28px;
-    font-weight: 800;
-    color: #574800;
-    margin-bottom: 25px;
-    letter-spacing: 1.5px;
-}
-
-/* INPUT FIELDS */
-.contact-form-card input,
-.contact-form-card textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border-radius: 12px;
-    border: none;
-    margin-bottom: 15px;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.65);
-    box-shadow: 0 3px 8px rgba(255, 200, 0, 0.25);
-    outline: none;
-    transition: 0.3s ease;
-    color: #3d3300;
-}
-
-/* On focus */
-.contact-form-card input:focus,
-.contact-form-card textarea:focus {
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 10px rgba(255, 210, 0, 0.6);
-    transform: scale(1.02);
-}
-
-/* BUTTON */
-.contact-form-card button {
-    width: 100%;
-    padding: 14px;
-    background: #ffdd3a;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #3d3d00;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.contact-form-card button:hover {
-    background: #ffe97a;
-    box-shadow: 0 0 12px rgba(255, 215, 40, 0.7);
-    transform: translateY(-3px);
-}
-
 
 .admissions .contact-form-card {
   background-color: var(--surface-color);
@@ -4858,7 +4560,7 @@ section,
 .admissions .contact-form-card .form-select {
   padding: 0.6rem 1rem;
   color: var(--default-color);
-  background-color: var(--contrast-color);
+  background-color: var(--surface-color);
   font-size: 14px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
   border-radius: 6px;
@@ -4938,8 +4640,7 @@ section,
   text-align: center;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: color-mix(in srgb, #fc7600ff, transparent 85%);
-
+  background-color: color-mix(in srgb, var(--heading-color), transparent 95%);
   transition: all 0.3s ease;
 }
 
@@ -4951,7 +4652,7 @@ section,
 .admissions .deadlines-card .deadline-item .deadline-date {
   font-size: 1.2rem;
   font-weight: 700;
-  color: black;
+  color: var(--accent-color);
   margin-bottom: 0.8rem;
 }
 
@@ -5519,9 +5220,9 @@ section,
 }
 
 .programs-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: black;
+  color: #0f766e;
   position: relative;
 }
 
@@ -5534,8 +5235,8 @@ section,
 }
 
 .programs-btn {
-  background: var(--accent-color);
-  color: #000000ff;
+  background: #14b8a6;
+  color: #fff;
   padding: 12px 24px;
   font-weight: 700;
   border-radius: 12px;
@@ -5544,7 +5245,7 @@ section,
 }
 
 .programs-btn:hover {
-  background: #000000ff;
+  background: #0f766e;
 }
 
 /* Program Card */
@@ -5604,7 +5305,7 @@ section,
 
 .program-badge {
   display: inline-block;
-  background: var(--accent-color);
+  background: #14b8a6;
   padding: 8px 14px;
   border-radius: 12px;
   font-weight: 600;
@@ -5614,7 +5315,7 @@ section,
 }
 
 .program-view-btn {
-  background: var(--accent-color);
+  background: #0f766e;
   color: #fff;
   padding: 10px 20px;
   border-radius: 12px;
@@ -5625,7 +5326,7 @@ section,
 }
 
 .program-view-btn:hover {
-  background:black;
+  background: #14b8a6;
 }
 
 .ezy__about6 {
@@ -10600,22 +10301,19 @@ form button.btn-primary { margin-top:20px; width:100%; }
 }
 
 .og-btn-primary {
-  background: var(--accent-color);
-  color: black;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
- 
+  background: #b59911ff;
+  color: #fff;
 }
 .og-btn-primary:hover {
-  background: #000000ff;
-  color: var(--background-color)
+  background: #0b4f49;
 }
 
 .og-btn-secondary {
-  background: #f7c72aff;
-  color: #000000ff;
+  background: #fff;
+  color: #b09e17ff;
 }
 .og-btn-secondary:hover {
-  background: #000000ff;
+  background: #e6fffa;
 }
 
 /* Arrows */
@@ -10624,7 +10322,7 @@ form button.btn-primary { margin-top:20px; width:100%; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(253, 217, 36, 0.92);
+  background: rgba(255,255,255,0.3);
   border: none;
   padding: 12px 18px;
   font-size: 26px;
@@ -10632,12 +10330,11 @@ form button.btn-primary { margin-top:20px; width:100%; }
   cursor: pointer;
   z-index: 10;
   transition: 0.3s;
-  
 }
 
 .og-carousel-prev:hover,
 .og-carousel-next:hover {
-  background: #e0c01fff;
+  background: #b89d14ff;
   color: #fff;
 }
 
@@ -10702,7 +10399,7 @@ form button.btn-primary { margin-top:20px; width:100%; }
 
 .og-ticker-bar {
   width: 100%;
-  background: var(--contrast-color);
+  background: #ffcc02ff;
   padding: 6px 0;
   overflow: hidden;
   position: relative;
