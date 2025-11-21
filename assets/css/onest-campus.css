@@ -1,0 +1,1194 @@
+/* ==========================================================================
+   ONEST GURUKUL - CAMPUS FACILITIES PAGE STYLES
+   File: assets/css/onest-campus.css
+   ========================================================================== */
+
+/* --- Theme Variables --- */
+:root {
+    /* Brand Colors */
+    --onest-campus-primary: #FACC15;
+    /* Vibrant Yellow */
+    --onest-campus-primary-dark: #EAB308;
+    /* Darker Yellow for hover */
+    --onest-campus-secondary: #111111;
+    /* Deep Black */
+
+    /* Backgrounds */
+    --onest-campus-bg: #ffffff;
+    --onest-campus-bg-alt: #f9fafb;
+    /* Very light gray for sections */
+    --onest-campus-bg-card: #ffffff;
+
+    /* Text */
+    --onest-campus-text: #1f2937;
+    /* Dark Gray for readability */
+    --onest-campus-text-muted: #4b5563;
+    /* Muted Gray */
+    --onest-campus-text-light: #ffffff;
+
+    /* Borders & Shadows */
+    --onest-campus-border: #e5e7eb;
+    --onest-campus-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --onest-campus-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --onest-campus-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --onest-campus-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Typography */
+    --onest-campus-font: 'Poppins', sans-serif;
+
+    /* Misc */
+    --onest-campus-radius: 16px;
+    --onest-campus-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark Mode Variables --- */
+.onest-campus-dark-mode {
+    --onest-campus-bg: #111111;
+    /* Deep Gray */
+    --onest-campus-bg-alt: #1a1a1a;
+    /* Slightly lighter gray */
+    --onest-campus-bg-card: #222222;
+    /* Card background */
+
+    --onest-campus-text: #f3f4f6;
+    /* Off-white for text */
+    --onest-campus-text-muted: #9ca3af;
+    /* Light gray */
+
+    --onest-campus-border: #374151;
+
+    --onest-campus-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --onest-campus-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Global Reset & Wrapper --- */
+.onest-campus-wrapper {
+    font-family: var(--onest-campus-font);
+    background-color: var(--onest-campus-bg);
+    color: var(--onest-campus-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+.onest-campus-wrapper * {
+    box-sizing: border-box;
+}
+
+.onest-campus-wrapper a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--onest-campus-transition);
+}
+
+.onest-campus-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.onest-campus-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.onest-campus-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Buttons --- */
+.onest-campus-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--onest-campus-transition);
+    border: 2px solid transparent;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.onest-campus-btn-primary {
+    background-color: var(--onest-campus-primary);
+    color: #000;
+    box-shadow: 0 4px 14px 0 rgba(250, 204, 21, 0.39);
+}
+
+.onest-campus-btn-primary:hover {
+    background-color: var(--onest-campus-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.23);
+}
+
+.onest-campus-btn-outline {
+    background-color: transparent;
+    border-color: var(--onest-campus-text);
+    color: var(--onest-campus-text);
+}
+
+.onest-campus-btn-outline:hover {
+    background-color: var(--onest-campus-text);
+    color: var(--onest-campus-bg);
+    transform: translateY(-2px);
+}
+
+.onest-campus-btn-white {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.onest-campus-btn-white:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* --- Header --- */
+.onest-campus-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--onest-campus-border);
+    padding: 16px 0;
+    transition: all 0.3s ease;
+}
+
+.onest-campus-dark-mode .onest-campus-header {
+    background-color: rgba(17, 17, 17, 0.85);
+}
+
+.onest-campus-dark-mode .onest-campus-logo img {
+    filter: brightness(0) invert(1);
+}
+
+.onest-campus-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.onest-campus-logo img {
+    height: 85px;
+    width: auto;
+}
+
+.onest-campus-nav-list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.onest-campus-nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--onest-campus-text);
+    position: relative;
+    padding: 5px 0;
+}
+
+.onest-campus-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--onest-campus-primary);
+    transition: width 0.3s ease;
+}
+
+.onest-campus-nav-link:hover::after,
+.onest-campus-nav-link.active::after {
+    width: 100%;
+}
+
+.onest-campus-theme-toggle {
+    background: none;
+    border: none;
+    color: var(--onest-campus-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-left: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.onest-campus-theme-toggle:hover {
+    background-color: var(--onest-campus-bg-alt);
+}
+
+.onest-campus-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--onest-campus-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+/* --- Mobile Menu --- */
+.onest-campus-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--onest-campus-bg);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.onest-campus-mobile-menu.active {
+    right: 0;
+}
+
+.onest-campus-mobile-close {
+    align-self: flex-end;
+    font-size: 1.75rem;
+    cursor: pointer;
+    margin-bottom: 40px;
+    color: var(--onest-campus-text);
+}
+
+.onest-campus-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.onest-campus-mobile-list a {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* --- Hero Section --- */
+.onest-campus-hero {
+    padding: 160px 0;
+    background-image: url('../img/infra (1).JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.onest-campus-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.onest-campus-hero .onest-campus-container {
+    position: relative;
+    z-index: 2;
+}
+
+.onest-campus-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.onest-campus-hero-title span {
+    color: var(--onest-campus-primary);
+}
+
+.onest-campus-hero-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Stats Section --- */
+.onest-campus-stats-section {
+    padding: 60px 0;
+    background-color: var(--onest-campus-bg);
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.onest-campus-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    background: var(--onest-campus-bg-card);
+    padding: 40px;
+    border-radius: var(--onest-campus-radius);
+    box-shadow: var(--onest-campus-shadow-lg);
+    border: 1px solid var(--onest-campus-border);
+}
+
+.onest-campus-stat-item {
+    text-align: center;
+}
+
+.onest-campus-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--onest-campus-primary-dark);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.onest-campus-stat-label {
+    font-size: 1rem;
+    color: var(--onest-campus-text-muted);
+    font-weight: 500;
+}
+
+/* --- Facilities Grid --- */
+.onest-campus-facilities-section {
+    padding: 100px 0;
+}
+
+.onest-campus-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.onest-campus-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--onest-campus-text);
+}
+
+.onest-campus-facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.onest-campus-facility-card {
+    background: var(--onest-campus-bg-card);
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow);
+    border: 1px solid var(--onest-campus-border);
+    transition: var(--onest-campus-transition);
+}
+
+.onest-campus-facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--onest-campus-shadow-xl);
+}
+
+.onest-campus-facility-img {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.onest-campus-facility-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.onest-campus-facility-card:hover .onest-campus-facility-img img {
+    transform: scale(1.08);
+}
+
+.onest-campus-facility-content {
+    padding: 32px;
+}
+
+.onest-campus-facility-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(250, 204, 21, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--onest-campus-primary-dark);
+    margin-bottom: 20px;
+}
+
+.onest-campus-facility-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.onest-campus-facility-list {
+    margin-bottom: 24px;
+}
+
+.onest-campus-facility-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--onest-campus-text-muted);
+}
+
+.onest-campus-facility-list li i {
+    color: var(--onest-campus-primary-dark);
+    font-size: 1.1rem;
+}
+
+/* --- Virtual Tour Section --- */
+.onest-campus-tour-section {
+    padding: 100px 0;
+    background-color: var(--onest-campus-bg-alt);
+}
+
+.onest-campus-tour-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .onest-campus-tour-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-campus-tour-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: var(--onest-campus-text);
+}
+
+.onest-campus-tour-content p {
+    font-size: 1.1rem;
+    color: var(--onest-campus-text-muted);
+    margin-bottom: 32px;
+}
+
+.onest-campus-tour-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.onest-campus-tour-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.onest-campus-tour-feature i {
+    font-size: 1.5rem;
+    color: var(--onest-campus-primary);
+    background: var(--onest-campus-bg-card);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--onest-campus-shadow-sm);
+}
+
+.onest-campus-tour-video {
+    position: relative;
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow-xl);
+}
+
+.onest-campus-tour-video video {
+    width: 100%;
+    display: block;
+}
+
+.onest-campus-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.onest-campus-play-overlay:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.onest-campus-play-btn {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--onest-campus-primary-dark);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.onest-campus-play-overlay:hover .onest-campus-play-btn {
+    transform: scale(1.1);
+}
+
+/* --- Map Section --- */
+.onest-campus-map-section {
+    padding: 100px 0;
+}
+
+.onest-campus-map-container {
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow-lg);
+    height: 500px;
+    position: relative;
+}
+
+.onest-campus-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Green Campus Section --- */
+.onest-campus-green-section {
+    padding: 60px 0;
+    background-color: var(--onest-campus-bg-alt);
+}
+
+.onest-campus-green-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .onest-campus-green-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-campus-text-lg {
+    font-size: 1.1rem;
+    color: var(--onest-campus-text-muted);
+    margin-bottom: 24px;
+}
+
+.onest-campus-green-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.onest-campus-green-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.onest-campus-green-list li i {
+    width: 32px;
+    height: 32px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.onest-campus-green-img {
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow-lg);
+    height: 300px;
+    /* Fixed height for compactness */
+}
+
+.onest-campus-green-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Library Section --- */
+.onest-campus-library-section {
+    padding: 60px 0;
+}
+
+.onest-campus-library-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .onest-campus-library-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-campus-library-img {
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow-lg);
+    height: 300px;
+    /* Compact height */
+}
+
+.onest-campus-library-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.onest-campus-library-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.onest-campus-library-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.onest-campus-library-content p {
+    color: var(--onest-campus-text-muted);
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+
+.onest-campus-library-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.library-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.library-item i {
+    font-size: 1.25rem;
+    color: var(--onest-campus-primary-dark);
+    background: var(--onest-campus-bg-card);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--onest-campus-shadow-sm);
+}
+
+.library-item strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.library-item p {
+    margin: 0;
+    color: var(--onest-campus-text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Safety Section --- */
+.onest-campus-safety-section {
+    padding: 60px 0;
+    background-color: var(--onest-campus-bg-alt);
+}
+
+.onest-campus-safety-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .onest-campus-safety-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-campus-safety-img {
+    border-radius: var(--onest-campus-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-campus-shadow-lg);
+    order: 2;
+    height: 300px;
+    /* Compact height */
+}
+
+@media (min-width: 992px) {
+    .onest-campus-safety-img {
+        order: 1;
+    }
+}
+
+.onest-campus-safety-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.onest-campus-safety-content {
+    order: 1;
+}
+
+@media (min-width: 992px) {
+    .onest-campus-safety-content {
+        order: 2;
+    }
+}
+
+.onest-campus-safety-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.safety-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.safety-item i {
+    font-size: 1.25rem;
+    color: var(--onest-campus-primary-dark);
+    background: var(--onest-campus-bg-card);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--onest-campus-shadow-sm);
+}
+
+.safety-item strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.safety-item p {
+    margin: 0;
+    color: var(--onest-campus-text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- CTA Section --- */
+.onest-campus-cta-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #111111 0%, #222222 100%);
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.onest-campus-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.onest-campus-cta-box h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--onest-campus-primary);
+}
+
+.onest-campus-cta-box p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+}
+
+.onest-campus-cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* --- Footer --- */
+.onest-campus-footer {
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+}
+
+.onest-campus-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.onest-campus-footer-col h4 {
+    color: #fff;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.onest-campus-footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.onest-campus-footer-col ul li a {
+    color: #a3a3a3;
+    transition: color 0.3s;
+}
+
+.onest-campus-footer-col ul li a:hover {
+    color: var(--onest-campus-primary);
+    padding-left: 4px;
+}
+
+.onest-campus-footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 32px;
+    text-align: center;
+    color: #737373;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .onest-campus-nav-list {
+        display: none;
+    }
+
+    .onest-campus-mobile-toggle {
+        display: block;
+    }
+
+    .onest-campus-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .onest-campus-stats-grid {
+        padding: 24px;
+        gap: 24px;
+    }
+}
+
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-campus-container {
+        padding: 0 20px;
+    }
+
+    .onest-campus-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-campus-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-campus-stats-grid {
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .onest-campus-tour-grid,
+    .onest-campus-green-grid,
+    .onest-campus-library-grid,
+    .onest-campus-safety-grid {
+        gap: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-campus-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-campus-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
+    .onest-campus-logo img {
+        height: 72px;
+    }
+
+    .onest-campus-nav-list {
+        display: none;
+    }
+
+    .onest-campus-mobile-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .onest-campus-hero {
+        padding: 100px 0 80px;
+    }
+
+    .onest-campus-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-campus-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .onest-campus-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .onest-campus-hero .onest-campus-btn {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .onest-campus-hero div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px !important;
+    }
+
+    /* Stats Section */
+    .onest-campus-stats-section {
+        padding: 40px 0;
+        margin-top: 0;
+        background: var(--onest-campus-bg-alt);
+    }
+
+    .onest-campus-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 24px;
+        box-shadow: var(--onest-campus-shadow);
+    }
+
+    .onest-campus-stat-number {
+        font-size: 2rem;
+    }
+
+    .onest-campus-stat-label {
+        font-size: 0.9rem;
+    }
+
+    /* Facilities Grid */
+    .onest-campus-facilities-section {
+        padding: 60px 0;
+    }
+
+    .onest-campus-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-campus-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-campus-facilities-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-campus-facility-img {
+        height: 200px;
+    }
+
+    .onest-campus-facility-content {
+        padding: 24px;
+    }
+
+    /* Feature Sections (Green, Library, Safety) */
+    .onest-campus-green-section,
+    .onest-campus-library-section,
+    .onest-campus-safety-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-green-grid,
+    .onest-campus-library-grid,
+    .onest-campus-safety-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Reorder for mobile: Image first, Content second */
+    .onest-campus-green-img,
+    .onest-campus-library-img,
+    .onest-campus-safety-img {
+        order: -1;
+        height: 240px;
+    }
+
+    .onest-campus-green-content,
+    .onest-campus-library-content,
+    .onest-campus-safety-content {
+        order: 1;
+    }
+
+    .onest-campus-library-content h2,
+    .onest-campus-section-title {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .onest-campus-text-lg,
+    .onest-campus-library-content p,
+    .onest-campus-safety-content p {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .onest-campus-green-list,
+    .onest-campus-library-features,
+    .onest-campus-safety-features {
+        margin-top: 20px;
+    }
+
+    /* Virtual Tour */
+    .onest-campus-tour-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-tour-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-campus-tour-content h2 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .onest-campus-tour-content p {
+        text-align: center;
+    }
+
+    .onest-campus-tour-features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-campus-tour-feature {
+        background: var(--onest-campus-bg-card);
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: var(--onest-campus-shadow-sm);
+    }
+
+    /* Map Section */
+    .onest-campus-map-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-map-container {
+        height: 300px;
+    }
+
+    /* CTA Section */
+    .onest-campus-cta-section {
+        padding: 50px 0;
+        margin-top: 0;
+    }
+
+    .onest-campus-cta-box h2 {
+        font-size: 1.75rem;
+    }
+
+    .onest-campus-cta-box p {
+        font-size: 1rem;
+    }
+
+    .onest-campus-cta-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Footer */
+    .onest-campus-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-campus-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-campus-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-campus-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-campus-facility-img,
+    .onest-campus-green-img,
+    .onest-campus-library-img,
+    .onest-campus-safety-img {
+        height: 200px;
+    }
+
+    .onest-campus-section-title {
+        font-size: 1.5rem;
+    }
+}

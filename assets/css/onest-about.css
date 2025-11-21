@@ -1,0 +1,898 @@
+/* ==========================================================================
+   ONEST GURUKUL - ABOUT PAGE STYLES
+   File: assets/css/onest-about.css
+   ========================================================================== */
+
+/* --- Theme Variables --- */
+:root {
+    /* Brand Colors */
+    --onest-about-primary: #FACC15;
+    /* Vibrant Yellow */
+    --onest-about-primary-dark: #EAB308;
+    /* Darker Yellow for hover */
+    --onest-about-secondary: #111111;
+    /* Deep Black */
+
+    /* Backgrounds */
+    --onest-about-bg: #ffffff;
+    --onest-about-bg-alt: #f9fafb;
+    /* Very light gray for sections */
+    --onest-about-bg-card: #ffffff;
+
+    /* Text */
+    --onest-about-text: #1f2937;
+    /* Dark Gray for readability */
+    --onest-about-text-muted: #4b5563;
+    /* Muted Gray */
+    --onest-about-text-light: #ffffff;
+
+    /* Borders & Shadows */
+    --onest-about-border: #e5e7eb;
+    --onest-about-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --onest-about-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --onest-about-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --onest-about-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Typography */
+    --onest-about-font: 'Poppins', sans-serif;
+
+    /* Misc */
+    --onest-about-radius: 16px;
+    --onest-about-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark Mode Variables --- */
+.onest-about-dark-mode {
+    --onest-about-bg: #111111;
+    /* Deep Gray */
+    --onest-about-bg-alt: #1a1a1a;
+    /* Slightly lighter gray */
+    --onest-about-bg-card: #222222;
+    /* Card background */
+
+    --onest-about-text: #f3f4f6;
+    /* Off-white for text */
+    --onest-about-text-muted: #9ca3af;
+    /* Light gray */
+
+    --onest-about-border: #374151;
+
+    --onest-about-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --onest-about-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Global Reset & Wrapper --- */
+.onest-about-wrapper {
+    font-family: var(--onest-about-font);
+    background-color: var(--onest-about-bg);
+    color: var(--onest-about-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+.onest-about-wrapper * {
+    box-sizing: border-box;
+}
+
+.onest-about-wrapper a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--onest-about-transition);
+}
+
+.onest-about-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.onest-about-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.onest-about-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Buttons --- */
+.onest-about-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--onest-about-transition);
+    border: 2px solid transparent;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.onest-about-btn-primary {
+    background-color: var(--onest-about-primary);
+    color: #000;
+    box-shadow: 0 4px 14px 0 rgba(250, 204, 21, 0.39);
+}
+
+.onest-about-btn-primary:hover {
+    background-color: var(--onest-about-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.23);
+}
+
+.onest-about-btn-outline {
+    background-color: transparent;
+    border-color: var(--onest-about-text);
+    color: var(--onest-about-text);
+}
+
+.onest-about-btn-outline:hover {
+    background-color: var(--onest-about-text);
+    color: var(--onest-about-bg);
+    transform: translateY(-2px);
+}
+
+.onest-about-btn-white {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.onest-about-btn-white:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* --- Header --- */
+.onest-about-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--onest-about-border);
+    padding: 16px 0;
+    transition: all 0.3s ease;
+}
+
+.onest-about-dark-mode .onest-about-header {
+    background-color: rgba(17, 17, 17, 0.85);
+}
+
+.onest-about-dark-mode .onest-about-logo img {
+    filter: brightness(0) invert(1);
+}
+
+.onest-about-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.onest-about-logo img {
+    height: 95px;
+    width: 95px;
+}
+
+.onest-about-nav-list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.onest-about-nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--onest-about-text);
+    position: relative;
+    padding: 5px 0;
+}
+
+.onest-about-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--onest-about-primary);
+    transition: width 0.3s ease;
+}
+
+.onest-about-nav-link:hover::after,
+.onest-about-nav-link.active::after {
+    width: 100%;
+}
+
+.onest-about-theme-toggle {
+    background: none;
+    border: none;
+    color: var(--onest-about-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-left: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.onest-about-theme-toggle:hover {
+    background-color: var(--onest-about-bg-alt);
+}
+
+.onest-about-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--onest-about-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+/* --- Mobile Menu --- */
+.onest-about-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--onest-about-bg);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.onest-about-mobile-menu.active {
+    right: 0;
+}
+
+.onest-about-mobile-close {
+    align-self: flex-end;
+    font-size: 1.75rem;
+    cursor: pointer;
+    margin-bottom: 40px;
+    color: var(--onest-about-text);
+}
+
+.onest-about-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.onest-about-mobile-list a {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* --- Hero Section --- */
+.onest-about-hero {
+    padding: 140px 0;
+    background-image: url('../img/staff0.jpg');
+    /* You can replace 'school2.jpg' with 'about.jpg' if you upload it */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.onest-about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.onest-about-hero .onest-about-container {
+    position: relative;
+    z-index: 2;
+}
+
+.onest-about-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.onest-about-hero-title span {
+    color: var(--onest-about-primary);
+}
+
+.onest-about-hero-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Mission & Vision --- */
+.onest-about-mv-section {
+    padding: 80px 0;
+}
+
+.onest-about-mv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .onest-about-mv-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-about-mv-card {
+    background: var(--onest-about-bg-card);
+    padding: 40px;
+    border-radius: var(--onest-about-radius);
+    box-shadow: var(--onest-about-shadow);
+    border: 1px solid var(--onest-about-border);
+    transition: var(--onest-about-transition);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.onest-about-mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--onest-about-shadow-lg);
+    border-color: var(--onest-about-primary);
+}
+
+.onest-about-mv-icon {
+    font-size: 2.5rem;
+    color: var(--onest-about-primary);
+    margin-bottom: 20px;
+}
+
+.onest-about-mv-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.onest-about-mv-text {
+    color: var(--onest-about-text-muted);
+    font-size: 1.05rem;
+}
+
+/* --- Timeline Section --- */
+.onest-about-timeline-section {
+    padding: 80px 0;
+    background-color: var(--onest-about-bg-alt);
+}
+
+.onest-about-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.onest-about-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.onest-about-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.onest-about-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--onest-about-border);
+    transform: translateX(-50%);
+}
+
+.onest-about-timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    width: 50%;
+    padding: 0 40px;
+}
+
+.onest-about-timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.onest-about-timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.onest-about-timeline-dot {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--onest-about-primary);
+    border-radius: 50%;
+    border: 4px solid var(--onest-about-bg-alt);
+    z-index: 2;
+}
+
+.onest-about-timeline-item:nth-child(odd) .onest-about-timeline-dot {
+    right: -10px;
+}
+
+.onest-about-timeline-item:nth-child(even) .onest-about-timeline-dot {
+    left: -10px;
+}
+
+.onest-about-timeline-content {
+    background: var(--onest-about-bg-card);
+    padding: 24px;
+    border-radius: var(--onest-about-radius);
+    box-shadow: var(--onest-about-shadow);
+    border: 1px solid var(--onest-about-border);
+}
+
+.onest-about-timeline-year {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--onest-about-primary-dark);
+    margin-bottom: 8px;
+}
+
+.onest-about-dark-mode .onest-about-timeline-year {
+    color: var(--onest-about-primary);
+}
+
+/* --- Values Grid --- */
+.onest-about-values-section {
+    padding: 80px 0;
+}
+
+.onest-about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.onest-about-value-card {
+    background: var(--onest-about-bg-card);
+    padding: 32px;
+    border-radius: var(--onest-about-radius);
+    text-align: center;
+    border: 1px solid var(--onest-about-border);
+    transition: var(--onest-about-transition);
+}
+
+.onest-about-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--onest-about-shadow-lg);
+}
+
+.onest-about-value-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(250, 204, 21, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 1.75rem;
+    color: var(--onest-about-primary-dark);
+}
+
+.onest-about-value-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* --- Leadership Section --- */
+.onest-about-leadership-section {
+    padding: 80px 0;
+    background-color: var(--onest-about-bg-alt);
+}
+
+.onest-about-leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .onest-about-leadership-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.onest-about-leadership-img {
+    border-radius: var(--onest-about-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-about-shadow-lg);
+}
+
+.onest-about-leadership-img img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.onest-about-leadership-img:hover img {
+    transform: scale(1.03);
+}
+
+.onest-about-leadership-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.onest-about-leadership-content p {
+    color: var(--onest-about-text-muted);
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+}
+
+/* --- Parent Orientation (Programs) --- */
+.onest-about-programs-section {
+    padding: 80px 0;
+}
+
+.onest-about-program-card {
+    background: var(--onest-about-bg-card);
+    border: 1px solid var(--onest-about-border);
+    border-radius: var(--onest-about-radius);
+    padding: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: var(--onest-about-shadow);
+}
+
+@media (min-width: 768px) {
+    .onest-about-program-card {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.onest-about-program-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.onest-about-program-info h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.onest-about-program-tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.onest-about-program-tag {
+    background: rgba(250, 204, 21, 0.15);
+    color: #b45309;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.onest-about-dark-mode .onest-about-program-tag {
+    color: var(--onest-about-primary);
+}
+
+/* --- Footer --- */
+.onest-about-footer {
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+}
+
+.onest-about-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.onest-about-footer-col h4 {
+    color: #fff;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.onest-about-footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.onest-about-footer-col ul li a {
+    color: #a3a3a3;
+    transition: color 0.3s;
+}
+
+.onest-about-footer-col ul li a:hover {
+    color: var(--onest-about-primary);
+    padding-left: 4px;
+}
+
+.onest-about-footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 32px;
+    text-align: center;
+    color: #737373;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-about-container {
+        padding: 0 20px;
+    }
+
+    .onest-about-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-about-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-about-mv-grid,
+    .onest-about-leadership-grid {
+        gap: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-about-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-about-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
+    .onest-about-logo img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .onest-about-nav-list {
+        display: none;
+    }
+
+    .onest-about-mobile-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .onest-about-hero {
+        padding: 100px 0 80px;
+    }
+
+    .onest-about-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-about-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .onest-about-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .onest-about-hero .onest-about-btn {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .onest-about-hero div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px !important;
+    }
+
+    /* Mission & Vision */
+    .onest-about-mv-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-mv-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-about-mv-card {
+        padding: 24px;
+    }
+
+    .onest-about-mv-title {
+        font-size: 1.5rem;
+    }
+
+    /* Timeline Section */
+    .onest-about-timeline-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-about-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-about-timeline::before {
+        left: 20px;
+    }
+
+    .onest-about-timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        margin-bottom: 32px;
+        text-align: left !important;
+    }
+
+    .onest-about-timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .onest-about-timeline-dot {
+        left: 10px !important;
+        right: auto !important;
+    }
+
+    .onest-about-timeline-content {
+        padding: 20px;
+    }
+
+    .onest-about-timeline-year {
+        font-size: 1.25rem;
+    }
+
+    /* Values Section */
+    .onest-about-values-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-values-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-about-value-card {
+        padding: 24px;
+    }
+
+    /* Leadership Section */
+    .onest-about-leadership-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-about-leadership-img {
+        order: -1;
+        /* Image first */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .onest-about-leadership-content {
+        text-align: center;
+        order: 1;
+    }
+
+    .onest-about-leadership-content h3 {
+        font-size: 1.75rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-about-leadership-content p {
+        font-size: 1rem;
+    }
+
+    /* Programs Section */
+    .onest-about-programs-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-program-card {
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .onest-about-program-icon {
+        margin: 0 auto;
+    }
+
+    .onest-about-program-tags {
+        justify-content: center;
+    }
+
+    /* Footer */
+    .onest-about-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-about-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-about-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-about-section-title {
+        font-size: 1.5rem;
+    }
+
+    .onest-about-mv-icon {
+        font-size: 2rem;
+    }
+}
