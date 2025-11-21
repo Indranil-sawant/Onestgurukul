@@ -95,4 +95,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* --- Infrastructure Gallery Lightbox --- */
+    const galleryItems = document.querySelectorAll('.onest-campus-gallery-item');
+    const modal = document.getElementById('onest-campus-gallery-modal');
+    const modalImg = document.getElementById('onest-campus-modal-img');
+    const closeBtn = document.querySelector('.onest-campus-gallery-close');
+    const prevBtn = document.querySelector('.onest-campus-gallery-prev');
+    const nextBtn = document.querySelector('.onest-campus-gallery-next');
+    let currentImageIndex = 0;
+
+    // Create array of all images
+    const images = Array.from(galleryItems).map(item => {
+        return item.querySelector('img').src;
+    });
+
+    function openModal(index) {
+        currentImageIndex = index;
+        modal.style.display = 'block';
+        modalImg.src = images[currentImageIndex];
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImg.src = images[currentImageIndex];
+    }
+
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImg.src = images[currentImageIndex];
+    }
+
+    // Event listeners
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openModal(index));
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (nextBtn) nextBtn.addEventListener('click', showNextImage);
+    if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
+
+    // Close modal when clicking outside the image
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (modal && modal.style.display === 'block') {
+            if (e.key === 'ArrowRight') showNextImage();
+            if (e.key === 'ArrowLeft') showPrevImage();
+            if (e.key === 'Escape') closeModal();
+        }
+    });
+
 });

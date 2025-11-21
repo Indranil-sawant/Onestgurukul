@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --- Gallery Lightbox --- */
-    const galleryItems = document.querySelectorAll('.onest-student-life-gallery-item');
+    const galleryItems = document.querySelectorAll('.onest-student-life-gallery-item, .onest-student-life-artwork-grid .onest-student-life-gallery-item');
     const modal = document.getElementById('onest-gallery-modal');
     const modalImg = document.getElementById('onest-modal-img');
     const closeBtn = document.querySelector('.onest-gallery-close');
