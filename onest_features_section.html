@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onest Features Section Redesign</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+       COPY THIS CSS BLOCK
+       ========================================= */
+
+        /* --- ONEST FEATURES SECTION STYLES --- */
+        .onest-features-section {
+            --onest-yellow: #FACC15;
+            --onest-yellow-hover: #EAB308;
+            --onest-dark: #111827;
+            --onest-gray: #4B5563;
+            --onest-light-gray: #F3F4F6;
+            --onest-white: #FFFFFF;
+            --onest-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            --onest-shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+
+            position: relative;
+            padding: 80px 0;
+            background-color: var(--onest-white);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .onest-features-section * {
+            box-sizing: border-box;
+        }
+
+        /* Background Decorative Blob */
+        .onest-features-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(250, 204, 21, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .onest-features-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .onest-features-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        /* Desktop Layout */
+        @media (min-width: 992px) {
+            .onest-features-wrapper {
+                grid-template-columns: 0.8fr 1.2fr;
+                align-items: center;
+            }
+        }
+
+        /* Left Content Column */
+        .onest-features-intro {
+            text-align: left;
+        }
+
+        .onest-features-badge {
+            display: inline-block;
+            background-color: rgba(250, 204, 21, 0.2);
+            color: #854D0E;
+            /* Darker yellow/brown for contrast */
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .onest-features-heading {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--onest-dark);
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        .onest-features-subheading {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--onest-gray);
+            margin-bottom: 32px;
+        }
+
+        .onest-features-accent-line {
+            width: 80px;
+            height: 6px;
+            background-color: var(--onest-yellow);
+            border-radius: 3px;
+        }
+
+        /* Right Grid Column */
+        .onest-features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .onest-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Feature Cards */
+        .onest-features-card {
+            background-color: var(--onest-white);
+            border: 1px solid var(--onest-light-gray);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .onest-features-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--onest-shadow-hover);
+            border-color: var(--onest-yellow);
+        }
+
+        /* Icon Box */
+        .onest-features-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: var(--onest-light-gray);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .onest-features-card:hover .onest-features-icon-box {
+            background-color: var(--onest-yellow);
+        }
+
+        .onest-features-icon-box i {
+            font-size: 24px;
+            color: var(--onest-dark);
+            transition: all 0.3s ease;
+        }
+
+        .onest-features-card:hover .onest-features-icon-box i {
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* Card Content */
+        .onest-features-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--onest-dark);
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .onest-features-card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--onest-gray);
+            margin: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .onest-features-heading {
+                font-size: 2rem;
+            }
+
+            .onest-features-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; background-color: #f9f9f9;">
+
+    <!-- =========================================
+       COPY THIS SECTION HTML
+       ========================================= -->
+
+    <section class="onest-features-section">
+        <div class="onest-features-container">
+            <div class="onest-features-wrapper">
+
+                <!-- Left Content Side -->
+                <div class="onest-features-intro">
+                    <div class="onest-features-badge">Why Choose Us</div>
+                    <h2 class="onest-features-heading">Where Little Minds Begin Big Journeys.</h2>
+                    <p class="onest-features-subheading">
+                        Learning is the work of childhood — a blend of mental and physical effort. At O’Nest, we train
+                        young minds and bodies with the right skills, values, and creativity to shape their future.
+                    </p>
+                    <div class="onest-features-accent-line"></div>
+                </div>
+
+                <!-- Right Cards Grid -->
+                <div class="onest-features-grid">
+
+                    <!-- Card 1 -->
+                    <div class="onest-features-card">
+                        <div class="onest-features-icon-box">
+                            <i class="fa fa-bar-chart"></i>
+                        </div>
+                        <h3 class="onest-features-card-title">Proposed CBSE</h3>
+                        <p class="onest-features-card-text">
+                            Our proposed CBSE curriculum fosters holistic learning, skill development, and critical
+                            thinking through a student-centered approach.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="onest-features-card">
+                        <div class="onest-features-icon-box">
+                            <i class="fa fa-file-text"></i>
+                        </div>
+                        <h3 class="onest-features-card-title">Classes I to XII</h3>
+                        <p class="onest-features-card-text">
+                            Classes I–XI follow a curriculum that builds strong academics, creativity, and critical
+                            thinking for confident growth.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="onest-features-card">
+                        <div class="onest-features-icon-box">
+                            <i class="fa fa-language"></i>
+                        </div>
+                        <h3 class="onest-features-card-title">Learning in English</h3>
+                        <p class="onest-features-card-text">
+                            All classes are taught in English, fostering fluency, comprehension, and global readiness
+                            for every student.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="onest-features-card">
+                        <div class="onest-features-icon-box">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h3 class="onest-features-card-title">15:1 Ratio</h3>
+                        <p class="onest-features-card-text">
+                            With a 15:1 student-teacher ratio, every student receives personalized attention and
+                            guidance for optimal learning.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

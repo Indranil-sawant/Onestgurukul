@@ -5513,19 +5513,19 @@ section,
 
 /* ========= Primary School Program Section ========= */
 
-.og-programs-section {
+.programs-section {
   padding: 60px 0;
   background: linear-gradient(135deg, #fdfdfd, #f8faff);
 }
 
-.og-programs-title {
+.programs-title {
   font-size: 4rem;
   font-weight: 800;
   color: black;
   position: relative;
 }
 
-.og-programs-title::after {
+.programs-title::after {
   content: "✨";
   position: absolute;
   left: -40px;
@@ -5533,7 +5533,7 @@ section,
   top: -10px;
 }
 
-.og-programs-btn {
+.programs-btn {
   background: var(--accent-color);
   color: #000000ff;
   padding: 12px 24px;
@@ -5543,12 +5543,12 @@ section,
   transition: 0.3s;
 }
 
-.og-programs-btn:hover {
+.programs-btn:hover {
   background: #000000ff;
 }
 
 /* Program Card */
-.og-program-card {
+.program-card {
   background: #ffffff;
   border-radius: 22px;
   padding: 30px;
@@ -5558,13 +5558,13 @@ section,
   transition: 0.3s ease;
 }
 
-.og-program-card:hover {
+.program-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 
 /* Decorative blob */
-.og-program-card::before {
+.program-card::before {
   content: "";
   position: absolute;
   width: 220px;
@@ -5577,32 +5577,32 @@ section,
 }
 
 /* Reverse card */
-.og-program-card.og-program-card-reverse::before {
+.program-card.reverse::before {
   left: -60px;
   background: #e0ecff;
 }
 
-.og-program-img img {
+.program-img img {
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.og-program-text {
+.program-text {
   padding: 20px 30px;
 }
 
-.og-program-text h3 {
+.program-text h3 {
   font-size: 2rem;
   color: #0f2e2a;
   font-weight: 700;
 }
 
-.og-program-text p {
+.program-text p {
   font-size: 1.2rem;
   color: #455655;
 }
 
-.og-program-badge {
+.program-badge {
   display: inline-block;
   background: var(--accent-color);
   padding: 8px 14px;
@@ -5613,7 +5613,7 @@ section,
   margin-bottom: 12px;
 }
 
-.og-program-view-btn {
+.program-view-btn {
   background: var(--accent-color);
   color: #fff;
   padding: 10px 20px;
@@ -5624,7 +5624,7 @@ section,
   transition: 0.3s;
 }
 
-.og-program-view-btn:hover {
+.program-view-btn:hover {
   background:black;
 }
 

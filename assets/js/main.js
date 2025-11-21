@@ -1,4 +1,4 @@
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -44,7 +44,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -100,7 +100,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -123,13 +123,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
@@ -138,8 +138,8 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -169,11 +169,11 @@ let errorEl = form.querySelector(".error-message");
 
 let submitted = false;
 
-form.addEventListener("submit", function() {
+form.addEventListener("submit", function () {
   submitted = true;
 
   setTimeout(() => {
-    if(submitted) {
+    if (submitted) {
       successEl.style.display = "block";
       errorEl.style.display = "none";
       form.reset();
@@ -184,31 +184,31 @@ form.addEventListener("submit", function() {
 
 
 
-  const body = document.body;
-  const toggleBtn = document.getElementById('theme-toggle');
-  const icon = toggleBtn.querySelector('i');
+const body = document.body;
+const toggleBtn = document.getElementById('theme-toggle');
+const icon = toggleBtn.querySelector('i');
 
-  // 1️⃣ Load the saved theme (if any)
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    body.classList.add('dark-background');
-    icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+// 1️⃣ Load the saved theme (if any)
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  body.classList.add('dark-background');
+  icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+} else {
+  body.classList.add('light-background');
+}
+
+// 2️⃣ Toggle theme on click
+toggleBtn.addEventListener('click', () => {
+  if (body.classList.contains('dark-background')) {
+    body.classList.replace('dark-background', 'light-background');
+    icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+    localStorage.setItem('theme', 'light');
   } else {
-    body.classList.add('light-background');
+    body.classList.replace('light-background', 'dark-background');
+    icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+    localStorage.setItem('theme', 'dark');
   }
-
-  // 2️⃣ Toggle theme on click
-  toggleBtn.addEventListener('click', () => {
-    if (body.classList.contains('dark-background')) {
-      body.classList.replace('dark-background', 'light-background');
-      icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-      localStorage.setItem('theme', 'light');
-    } else {
-      body.classList.replace('light-background', 'dark-background');
-      icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
+});
 
 
 document.documentElement.style.colorScheme = "light";
@@ -232,3 +232,38 @@ document.body.classList.remove("dark");
 document.body.classList.add("light");
 
 
+let slideIndex = 0;
+const slides = document.querySelectorAll('.onest-carousel-slide');
+const totalSlides = slides.length;
+let autoSlideInterval;
+
+function showSlide(n) {
+  // Wrap around
+  slideIndex = (n + totalSlides) % totalSlides;
+
+  // Remove active class from all
+  slides.forEach(slide => slide.classList.remove('active'));
+
+  // Add active to current
+  slides[slideIndex].classList.add('active');
+}
+
+function moveSlide(n) {
+  showSlide(slideIndex + n);
+  resetTimer();
+}
+
+function autoPlay() {
+  moveSlide(1);
+}
+
+function resetTimer() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(autoPlay, 5000);
+}
+
+// Init
+if (slides.length > 0) {
+  showSlide(0);
+  resetTimer();
+}
