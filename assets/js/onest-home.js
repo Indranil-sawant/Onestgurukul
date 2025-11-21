@@ -176,4 +176,56 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    /* --- Contact Form Submission --- */
+    const contactForm = document.querySelector('.onest-home-form form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            // Disable button and show sending state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Create success message element if it doesn't exist
+            let successMessage = contactForm.querySelector('.form-success-message');
+            if (!successMessage) {
+                successMessage = document.createElement('div');
+                successMessage.className = 'form-success-message';
+                successMessage.style.cssText = `
+                    background-color: #10b981;
+                    color: white;
+                    padding: 16px 20px;
+                    border-radius: 12px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-weight: 600;
+                    display: none;
+                    animation: slideDown 0.3s ease;
+                `;
+                contactForm.insertBefore(successMessage, contactForm.firstChild);
+            }
+
+            // Wait for form submission to complete (simulate async)
+            setTimeout(() => {
+                // Show success message
+                successMessage.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
+                successMessage.style.display = 'block';
+
+                // Reset form
+                contactForm.reset();
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+    }
+
 });

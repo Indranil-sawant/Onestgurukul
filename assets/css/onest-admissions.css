@@ -1,0 +1,836 @@
+/* ==========================================================================
+   ONEST GURUKUL - ADMISSIONS PAGE STYLES
+   File: assets/css/onest-admissions.css
+   ========================================================================== */
+
+/* --- Theme Variables --- */
+:root {
+    /* Brand Colors */
+    --onest-admissions-primary: #FACC15;
+    --onest-admissions-primary-dark: #EAB308;
+    --onest-admissions-secondary: #111111;
+
+    /* Backgrounds */
+    --onest-admissions-bg: #ffffff;
+    --onest-admissions-bg-alt: #f9fafb;
+    --onest-admissions-bg-card: #ffffff;
+
+    /* Text */
+    --onest-admissions-text: #1f2937;
+    --onest-admissions-text-muted: #4b5563;
+    --onest-admissions-text-light: #ffffff;
+
+    /* Borders & Shadows */
+    --onest-admissions-border: #e5e7eb;
+    --onest-admissions-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --onest-admissions-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Typography */
+    --onest-admissions-font: 'Poppins', sans-serif;
+
+    /* Misc */
+    --onest-admissions-radius: 16px;
+    --onest-admissions-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark Mode Variables --- */
+.onest-admissions-dark-mode {
+    --onest-admissions-bg: #111111;
+    --onest-admissions-bg-alt: #1a1a1a;
+    --onest-admissions-bg-card: #222222;
+
+    --onest-admissions-text: #f3f4f6;
+    --onest-admissions-text-muted: #9ca3af;
+
+    --onest-admissions-border: #374151;
+
+    --onest-admissions-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Global Reset & Wrapper --- */
+.onest-admissions-wrapper {
+    font-family: var(--onest-admissions-font);
+    background-color: var(--onest-admissions-bg);
+    color: var(--onest-admissions-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+.onest-admissions-wrapper * {
+    box-sizing: border-box;
+}
+
+.onest-admissions-wrapper a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--onest-admissions-transition);
+}
+
+.onest-admissions-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.onest-admissions-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.onest-admissions-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Buttons --- */
+.onest-admissions-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--onest-admissions-transition);
+    border: 2px solid transparent;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.onest-admissions-btn-primary {
+    background-color: var(--onest-admissions-primary);
+    color: #000;
+    box-shadow: 0 4px 14px 0 rgba(250, 204, 21, 0.39);
+}
+
+.onest-admissions-btn-primary:hover {
+    background-color: var(--onest-admissions-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.23);
+}
+
+.onest-admissions-btn-white {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.onest-admissions-btn-white:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* --- Header --- */
+.onest-admissions-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--onest-admissions-border);
+    padding: 16px 0;
+    transition: all 0.3s ease;
+}
+
+.onest-admissions-dark-mode .onest-admissions-header {
+    background-color: rgba(17, 17, 17, 0.85);
+}
+
+.onest-admissions-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.onest-admissions-logo img {
+    height: 64px;
+    width: auto;
+}
+
+.onest-admissions-nav-list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.onest-admissions-nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--onest-admissions-text);
+    position: relative;
+    padding: 5px 0;
+}
+
+.onest-admissions-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--onest-admissions-primary);
+    transition: width 0.3s ease;
+}
+
+.onest-admissions-nav-link:hover::after,
+.onest-admissions-nav-link.active::after {
+    width: 100%;
+}
+
+.onest-admissions-theme-toggle {
+    background: none;
+    border: none;
+    color: var(--onest-admissions-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-left: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.onest-admissions-theme-toggle:hover {
+    background-color: var(--onest-admissions-bg-alt);
+}
+
+.onest-admissions-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--onest-admissions-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+/* --- Mobile Menu --- */
+.onest-admissions-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--onest-admissions-bg);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.onest-admissions-mobile-menu.active {
+    right: 0;
+}
+
+.onest-admissions-mobile-close {
+    align-self: flex-end;
+    font-size: 1.75rem;
+    cursor: pointer;
+    margin-bottom: 40px;
+    color: var(--onest-admissions-text);
+}
+
+.onest-admissions-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.onest-admissions-mobile-list a {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* --- Hero Section --- */
+.onest-admissions-hero {
+    padding: 140px 0;
+    background-image: url('../img/education/kids2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.onest-admissions-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.onest-admissions-hero .onest-admissions-container {
+    position: relative;
+    z-index: 2;
+}
+
+.onest-admissions-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.onest-admissions-hero-title span {
+    color: var(--onest-admissions-primary);
+}
+
+.onest-admissions-hero-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Info Cards --- */
+.onest-admissions-info-section {
+    padding: 80px 0;
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.onest-admissions-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.onest-admissions-info-card {
+    background: var(--onest-admissions-bg-card);
+    padding: 40px 32px;
+    border-radius: var(--onest-admissions-radius);
+    box-shadow: var(--onest-admissions-shadow-lg);
+    border: 1px solid var(--onest-admissions-border);
+    text-align: center;
+    transition: var(--onest-admissions-transition);
+}
+
+.onest-admissions-info-card:hover {
+    transform: translateY(-8px);
+}
+
+.onest-admissions-info-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(250, 204, 21, 0.15);
+    color: var(--onest-admissions-primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin: 0 auto 24px;
+}
+
+.onest-admissions-info-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.onest-admissions-info-card p {
+    color: var(--onest-admissions-text-muted);
+    margin: 0;
+}
+
+/* --- Section Common --- */
+.onest-admissions-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.onest-admissions-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--onest-admissions-text);
+}
+
+/* --- Process Steps --- */
+.onest-admissions-process-section {
+    padding: 80px 0;
+}
+
+.onest-admissions-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.onest-admissions-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.onest-admissions-step-number {
+    min-width: 56px;
+    height: 56px;
+    background: var(--onest-admissions-primary);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.onest-admissions-step-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.onest-admissions-step-content p {
+    color: var(--onest-admissions-text-muted);
+    margin: 0;
+}
+
+/* --- Fee Structure --- */
+.onest-admissions-fee-section {
+    padding: 80px 0;
+    background-color: var(--onest-admissions-bg-alt);
+}
+
+.onest-admissions-fee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.onest-admissions-fee-card {
+    background: var(--onest-admissions-bg-card);
+    padding: 48px 32px;
+    border-radius: var(--onest-admissions-radius);
+    box-shadow: var(--onest-admissions-shadow);
+    border: 2px solid var(--onest-admissions-border);
+    text-align: center;
+    transition: var(--onest-admissions-transition);
+    position: relative;
+}
+
+.onest-admissions-fee-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--onest-admissions-shadow-lg);
+}
+
+.onest-admissions-fee-card-popular {
+    border-color: var(--onest-admissions-primary);
+    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.2);
+}
+
+.onest-admissions-popular-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--onest-admissions-primary);
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.onest-admissions-fee-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(250, 204, 21, 0.15);
+    color: var(--onest-admissions-primary-dark);
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.onest-admissions-fee-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--onest-admissions-primary-dark);
+    margin: 16px 0 8px;
+}
+
+.onest-admissions-fee-period {
+    color: var(--onest-admissions-text-muted);
+    margin-bottom: 32px;
+}
+
+.onest-admissions-fee-features {
+    text-align: left;
+}
+
+.onest-admissions-fee-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--onest-admissions-border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.onest-admissions-fee-features li:last-child {
+    border-bottom: none;
+}
+
+.onest-admissions-fee-features i {
+    color: var(--onest-admissions-primary-dark);
+    font-size: 1.1rem;
+}
+
+/* --- Eligibility Section --- */
+.onest-admissions-eligibility-section {
+    padding: 80px 0;
+}
+
+.onest-admissions-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.onest-admissions-criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.onest-admissions-criteria-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.onest-admissions-criteria-icon {
+    min-width: 56px;
+    height: 56px;
+    background: rgba(250, 204, 21, 0.15);
+    color: var(--onest-admissions-primary-dark);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.onest-admissions-criteria-item h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.onest-admissions-criteria-item p {
+    color: var(--onest-admissions-text-muted);
+    margin: 0;
+}
+
+.onest-admissions-eligibility-img {
+    border-radius: var(--onest-admissions-radius);
+    overflow: hidden;
+    box-shadow: var(--onest-admissions-shadow-lg);
+}
+
+.onest-admissions-eligibility-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Form Section --- */
+.onest-admissions-form-section {
+    padding: 80px 0;
+    background-color: var(--onest-admissions-bg-alt);
+}
+
+.onest-admissions-form-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--onest-admissions-bg-card);
+    padding: 48px;
+    border-radius: var(--onest-admissions-radius);
+    box-shadow: var(--onest-admissions-shadow-lg);
+    border: 1px solid var(--onest-admissions-border);
+}
+
+.onest-admissions-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.onest-admissions-form-group {
+    margin-bottom: 24px;
+}
+
+.onest-admissions-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--onest-admissions-text);
+}
+
+.onest-admissions-input,
+.onest-admissions-input select {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--onest-admissions-border);
+    background-color: var(--onest-admissions-bg-alt);
+    color: var(--onest-admissions-text);
+    font-family: var(--onest-admissions-font);
+    font-size: 1rem;
+    transition: var(--onest-admissions-transition);
+}
+
+.onest-admissions-input:focus {
+    outline: none;
+    border-color: var(--onest-admissions-primary);
+    background-color: var(--onest-admissions-bg);
+    box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.1);
+}
+
+textarea.onest-admissions-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* --- Footer --- */
+.onest-admissions-footer {
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+}
+
+.onest-admissions-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.onest-admissions-footer-col h4 {
+    color: #fff;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.onest-admissions-footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.onest-admissions-footer-col ul li a {
+    color: #a3a3a3;
+    transition: color 0.3s;
+}
+
+.onest-admissions-footer-col ul li a:hover {
+    color: var(--onest-admissions-primary);
+    padding-left: 4px;
+}
+
+.onest-admissions-footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 32px;
+    text-align: center;
+    color: #737373;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-admissions-container {
+        padding: 0 20px;
+    }
+
+    .onest-admissions-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-admissions-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-admissions-split-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-admissions-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-admissions-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
+    .onest-admissions-logo img {
+        height: 56px;
+    }
+
+    .onest-admissions-nav-list {
+        display: none;
+    }
+
+    .onest-admissions-mobile-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .onest-admissions-hero {
+        padding: 100px 0 80px;
+    }
+
+    .onest-admissions-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-admissions-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    /* Info Section */
+    .onest-admissions-info-section {
+        padding: 40px 0;
+        margin-top: 0;
+    }
+
+    .onest-admissions-info-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-admissions-info-card {
+        padding: 32px 24px;
+    }
+
+    /* Process Steps */
+    .onest-admissions-process-section {
+        padding: 50px 0;
+    }
+
+    .onest-admissions-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-admissions-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-admissions-steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Fee Structure */
+    .onest-admissions-fee-section {
+        padding: 50px 0;
+    }
+
+    .onest-admissions-fee-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-admissions-fee-card {
+        padding: 40px 24px;
+    }
+
+    .onest-admissions-fee-amount {
+        font-size: 2.5rem;
+    }
+
+    /* Eligibility */
+    .onest-admissions-eligibility-section {
+        padding: 50px 0;
+    }
+
+    .onest-admissions-split-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-admissions-eligibility-img {
+        order: -1;
+    }
+
+    /* Form */
+    .onest-admissions-form-section {
+        padding: 50px 0;
+    }
+
+    .onest-admissions-form-wrapper {
+        padding: 32px 24px;
+    }
+
+    .onest-admissions-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .onest-admissions-input {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .onest-admissions-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-admissions-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-admissions-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-admissions-section-title {
+        font-size: 1.5rem;
+    }
+
+    .onest-admissions-fee-amount {
+        font-size: 2rem;
+    }
+}
