@@ -865,8 +865,12 @@
     }
 
     /* Header */
+    .onest-student-life-header {
+        padding: 8px 0;
+    }
+
     .onest-student-life-logo img {
-        height: 90px;
+        height: 60px;
     }
 
     .onest-student-life-nav-list {

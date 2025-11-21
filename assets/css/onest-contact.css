@@ -518,8 +518,12 @@ textarea.onest-contact-input {
     }
 
     /* Header */
+    .onest-contact-header {
+        padding: 8px 0;
+    }
+
     .onest-contact-logo img {
-        height: 90px;
+        height: 60px;
     }
 
     .onest-contact-nav-list {

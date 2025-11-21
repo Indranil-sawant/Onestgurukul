@@ -897,8 +897,12 @@
     }
 
     /* Header */
+    .onest-home-header {
+        padding: 8px 0;
+    }
+
     .onest-home-logo img {
-        height: 90px;
+        height: 60px;
     }
 
     .onest-home-nav-list {

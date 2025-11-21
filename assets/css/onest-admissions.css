@@ -701,8 +701,12 @@ textarea.onest-admissions-input {
     }
 
     /* Header */
+    .onest-admissions-header {
+        padding: 8px 0;
+    }
+
     .onest-admissions-logo img {
-        height: 90px;
+        height: 60px;
     }
 
     .onest-admissions-nav-list {

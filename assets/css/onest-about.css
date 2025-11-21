@@ -698,8 +698,12 @@
     }
 
     /* Header */
+    .onest-about-header {
+        padding: 8px 0;
+    }
+
     .onest-about-logo img {
-        height: 90px;
+        height: 60px;
         width: auto;
     }
 

@@ -1125,8 +1125,12 @@
     }
 
     /* Header */
+    .onest-campus-header {
+        padding: 8px 0;
+    }
+
     .onest-campus-logo img {
-        height: 90px;
+        height: 60px;
     }
 
     .onest-campus-nav-list {
