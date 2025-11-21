@@ -480,8 +480,40 @@ textarea.onest-contact-input {
     font-size: 0.9rem;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-contact-container {
+        padding: 0 20px;
+    }
+
+    .onest-contact-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-contact-info-grid {
+        gap: 24px;
+    }
+
+    .onest-contact-split {
+        gap: 32px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-contact-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-contact-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
     .onest-contact-nav-list {
         display: none;
     }
@@ -490,11 +522,110 @@ textarea.onest-contact-input {
         display: block;
     }
 
-    .onest-contact-hero-title {
-        font-size: 2.5rem;
+    /* Hero Section */
+    .onest-contact-hero {
+        padding: 100px 0 80px;
     }
 
+    .onest-contact-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-contact-hero-text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Contact Info Grid */
+    .onest-contact-info-section {
+        padding: 40px 0;
+        margin-top: 0;
+    }
+
+    .onest-contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-contact-info-card {
+        padding: 32px 24px;
+    }
+
+    .onest-contact-icon-box {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-contact-info-card h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Map & Form Section */
+    .onest-contact-main-section {
+        padding: 50px 0;
+    }
+
+    .onest-contact-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Map */
+    .onest-contact-map-wrapper {
+        min-height: 300px;
+        height: 300px;
+        order: -1;
+        /* Map first on mobile */
+    }
+
+    /* Form */
     .onest-contact-form-wrapper {
-        padding: 32px;
+        padding: 24px;
+        order: 1;
+    }
+
+    .onest-contact-form-title {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .onest-contact-form-text {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+    }
+
+    .onest-contact-input {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    .onest-contact-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Footer */
+    .onest-contact-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-contact-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-contact-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-contact-form-title {
+        font-size: 1.5rem;
     }
 }

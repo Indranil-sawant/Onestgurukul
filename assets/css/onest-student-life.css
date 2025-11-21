@@ -626,8 +626,43 @@
     font-size: 0.9rem;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-student-life-container {
+        padding: 0 20px;
+    }
+
+    .onest-student-life-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-student-life-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-student-life-daily-grid,
+    .onest-student-life-subjects-grid,
+    .onest-student-life-trust-grid,
+    .onest-student-life-clubs-grid {
+        gap: 32px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-student-life-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-student-life-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
     .onest-student-life-nav-list {
         display: none;
     }
@@ -636,7 +671,172 @@
         display: block;
     }
 
+    /* Hero Section */
+    .onest-student-life-hero {
+        padding: 100px 0 80px;
+    }
+
     .onest-student-life-hero-title {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-student-life-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .onest-student-life-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .onest-student-life-hero .onest-student-life-btn {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .onest-student-life-hero div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px !important;
+    }
+
+    /* Daily Life Section */
+    .onest-student-life-daily-section {
+        padding: 50px 0;
+    }
+
+    .onest-student-life-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-student-life-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-student-life-daily-grid {
+        gap: 40px;
+    }
+
+    .onest-student-life-daily-item {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-student-life-daily-img {
+        order: -1;
+        /* Image first */
+    }
+
+    .onest-student-life-daily-content {
+        order: 1;
+        text-align: center;
+    }
+
+    .onest-student-life-daily-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-student-life-daily-content p {
+        font-size: 1rem;
+    }
+
+    /* Subjects Section */
+    .onest-student-life-subjects-section {
+        padding: 50px 0;
+    }
+
+    .onest-student-life-subjects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-student-life-subject-card {
+        padding: 24px;
+    }
+
+    /* Trust/Why Choose Us Section */
+    .onest-student-life-trust-section {
+        padding: 50px 0;
+    }
+
+    .onest-student-life-trust-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-student-life-trust-card {
+        padding: 24px;
+    }
+
+    .onest-student-life-trust-icon {
+        font-size: 2rem;
+    }
+
+    /* Growth Section */
+    .onest-student-life-growth-section {
+        padding: 50px 16px;
+    }
+
+    .onest-student-life-growth-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-student-life-growth-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    /* Clubs Section */
+    .onest-student-life-clubs-section {
+        padding: 50px 0;
+    }
+
+    .onest-student-life-clubs-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-student-life-club-img {
+        height: 180px;
+    }
+
+    .onest-student-life-club-content {
+        padding: 20px;
+    }
+
+    /* Footer */
+    .onest-student-life-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-student-life-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-student-life-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-student-life-section-title {
+        font-size: 1.5rem;
+    }
+
+    .onest-student-life-daily-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .onest-student-life-club-img {
+        height: 160px;
     }
 }

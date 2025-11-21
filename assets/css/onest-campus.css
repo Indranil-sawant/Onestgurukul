@@ -910,3 +910,277 @@
         gap: 24px;
     }
 }
+
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-campus-container {
+        padding: 0 20px;
+    }
+
+    .onest-campus-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-campus-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-campus-stats-grid {
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .onest-campus-tour-grid,
+    .onest-campus-green-grid,
+    .onest-campus-library-grid,
+    .onest-campus-safety-grid {
+        gap: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-campus-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-campus-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
+    .onest-campus-nav-list {
+        display: none;
+    }
+
+    .onest-campus-mobile-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .onest-campus-hero {
+        padding: 100px 0 80px;
+    }
+
+    .onest-campus-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-campus-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .onest-campus-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .onest-campus-hero .onest-campus-btn {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .onest-campus-hero div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px !important;
+    }
+
+    /* Stats Section */
+    .onest-campus-stats-section {
+        padding: 40px 0;
+        margin-top: 0;
+        background: var(--onest-campus-bg-alt);
+    }
+
+    .onest-campus-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 24px;
+        box-shadow: var(--onest-campus-shadow);
+    }
+
+    .onest-campus-stat-number {
+        font-size: 2rem;
+    }
+
+    .onest-campus-stat-label {
+        font-size: 0.9rem;
+    }
+
+    /* Facilities Grid */
+    .onest-campus-facilities-section {
+        padding: 60px 0;
+    }
+
+    .onest-campus-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-campus-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-campus-facilities-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-campus-facility-img {
+        height: 200px;
+    }
+
+    .onest-campus-facility-content {
+        padding: 24px;
+    }
+
+    /* Feature Sections (Green, Library, Safety) */
+    .onest-campus-green-section,
+    .onest-campus-library-section,
+    .onest-campus-safety-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-green-grid,
+    .onest-campus-library-grid,
+    .onest-campus-safety-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Reorder for mobile: Image first, Content second */
+    .onest-campus-green-img,
+    .onest-campus-library-img,
+    .onest-campus-safety-img {
+        order: -1;
+        height: 240px;
+    }
+
+    .onest-campus-green-content,
+    .onest-campus-library-content,
+    .onest-campus-safety-content {
+        order: 1;
+    }
+
+    .onest-campus-library-content h2,
+    .onest-campus-section-title {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .onest-campus-text-lg,
+    .onest-campus-library-content p,
+    .onest-campus-safety-content p {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .onest-campus-green-list,
+    .onest-campus-library-features,
+    .onest-campus-safety-features {
+        margin-top: 20px;
+    }
+
+    /* Virtual Tour */
+    .onest-campus-tour-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-tour-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-campus-tour-content h2 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .onest-campus-tour-content p {
+        text-align: center;
+    }
+
+    .onest-campus-tour-features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-campus-tour-feature {
+        background: var(--onest-campus-bg-card);
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: var(--onest-campus-shadow-sm);
+    }
+
+    /* Map Section */
+    .onest-campus-map-section {
+        padding: 50px 0;
+    }
+
+    .onest-campus-map-container {
+        height: 300px;
+    }
+
+    /* CTA Section */
+    .onest-campus-cta-section {
+        padding: 50px 0;
+        margin-top: 0;
+    }
+
+    .onest-campus-cta-box h2 {
+        font-size: 1.75rem;
+    }
+
+    .onest-campus-cta-box p {
+        font-size: 1rem;
+    }
+
+    .onest-campus-cta-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Footer */
+    .onest-campus-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-campus-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-campus-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-campus-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-campus-facility-img,
+    .onest-campus-green-img,
+    .onest-campus-library-img,
+    .onest-campus-safety-img {
+        height: 200px;
+    }
+
+    .onest-campus-section-title {
+        font-size: 1.5rem;
+    }
+}

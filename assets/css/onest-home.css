@@ -853,17 +853,46 @@
     font-size: 0.9rem;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-home-container {
+        padding: 0 20px;
+    }
+
     .onest-home-hero-title {
-        font-size: 3rem;
+        font-size: 3.25rem;
     }
 
-    .onest-home-intro-grid {
+    .onest-home-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-home-intro-grid,
+    .onest-home-contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 48px;
     }
 
+    .onest-home-program-content {
+        padding: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-home-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-home-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
     .onest-home-nav-list {
         display: none;
     }
@@ -871,26 +900,246 @@
     .onest-home-mobile-toggle {
         display: block;
     }
-}
 
-@media (max-width: 768px) {
-    .onest-home-hero-title {
-        font-size: 2.5rem;
+    /* Ticker */
+    .onest-home-ticker {
+        font-size: 0.85rem;
+        padding: 10px 0;
     }
 
+    /* Hero Section */
+    .onest-home-hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .onest-home-hero-content {
+        margin-left: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .onest-home-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 20px;
+    }
+
+    .onest-home-hero-text {
+        font-size: 1rem;
+        margin: 0 auto 32px;
+    }
+
+    .onest-home-hero-nav {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .onest-home-hero-nav-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Buttons */
+    .onest-home-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .onest-home-hero-content .onest-home-btn {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Sections */
     .onest-home-section {
         padding: 60px 0;
     }
 
-    .onest-home-program-content {
+    .onest-home-section-title {
+        font-size: 1.75rem;
+    }
+
+    .onest-home-section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    /* Intro Section */
+    .onest-home-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-home-intro-img-wrapper {
+        order: -1;
+        /* Image first */
+    }
+
+    .onest-home-badge {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Features Grid */
+    .onest-home-features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-home-feature-card {
         padding: 32px 24px;
     }
 
+    .onest-home-feature-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+
+    .onest-home-feature-title {
+        font-size: 1.25rem;
+    }
+
+    /* Event Banner */
+    .onest-home-event-banner {
+        padding: 32px 24px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .onest-home-event-date {
+        order: -1;
+    }
+
+    /* Programs Section */
+    .onest-home-programs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .onest-home-program-card {
+        flex-direction: column !important;
+        margin-bottom: 24px;
+    }
+
+    .onest-home-program-img {
+        min-height: 220px;
+        order: -1;
+        /* Image first */
+    }
+
+    .onest-home-program-content {
+        padding: 32px 24px;
+        text-align: center;
+    }
+
+    .onest-home-program-badge {
+        align-self: center;
+    }
+
+    /* Stats Section */
+    .onest-home-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .onest-home-stat-item {
+        padding: 20px;
+    }
+
+    .onest-home-stat-item h4 {
+        font-size: 2.5rem;
+    }
+
+    .onest-home-stat-item p {
+        font-size: 0.95rem;
+    }
+
+    /* Testimonials */
     .onest-home-testimonial-card {
         padding: 40px 24px;
     }
 
     .onest-home-testimonial-text {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        margin-bottom: 24px;
+    }
+
+    .onest-home-testimonial-author {
+        font-size: 1rem;
+    }
+
+    /* Contact Section */
+    .onest-home-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .onest-home-contact-info {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-home-contact-card {
+        padding: 24px;
+    }
+
+    .onest-home-contact-icon {
+        font-size: 2rem;
+    }
+
+    .onest-home-form {
+        padding: 32px 24px;
+    }
+
+    .onest-home-input {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .onest-home-footer {
+        padding: 60px 0 20px;
+    }
+
+    .onest-home-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-home-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-home-section-title {
+        font-size: 1.5rem;
+    }
+
+    .onest-home-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .onest-home-stat-item h4 {
+        font-size: 2rem;
+    }
+
+    .onest-home-program-img {
+        min-height: 200px;
+    }
+
+    .onest-home-testimonial-text {
+        font-size: 1.05rem;
     }
 }

@@ -659,8 +659,41 @@
     font-size: 0.9rem;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
+/* --- Responsive Improvements --- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .onest-about-container {
+        padding: 0 20px;
+    }
+
+    .onest-about-hero-title {
+        font-size: 3rem;
+    }
+
+    .onest-about-section-title {
+        font-size: 2.25rem;
+    }
+
+    .onest-about-mv-grid,
+    .onest-about-leadership-grid {
+        gap: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* General Layout */
+    .onest-about-wrapper {
+        overflow-x: hidden;
+    }
+
+    .onest-about-container {
+        padding: 0 16px;
+    }
+
+    /* Header */
     .onest-about-nav-list {
         display: none;
     }
@@ -669,12 +702,72 @@
         display: block;
     }
 
-    .onest-about-hero-title {
-        font-size: 2.5rem;
+    /* Hero Section */
+    .onest-about-hero {
+        padding: 100px 0 80px;
     }
-}
 
-@media (max-width: 768px) {
+    .onest-about-hero-title {
+        font-size: 2.25rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-about-hero-text {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .onest-about-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .onest-about-hero .onest-about-btn {
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .onest-about-hero div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px !important;
+    }
+
+    /* Mission & Vision */
+    .onest-about-mv-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-mv-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-about-mv-card {
+        padding: 24px;
+    }
+
+    .onest-about-mv-title {
+        font-size: 1.5rem;
+    }
+
+    /* Timeline Section */
+    .onest-about-timeline-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-section-header {
+        margin-bottom: 40px;
+    }
+
+    .onest-about-section-title {
+        font-size: 1.75rem;
+    }
+
     .onest-about-timeline::before {
         left: 20px;
     }
@@ -683,6 +776,7 @@
         width: 100%;
         padding-left: 50px;
         padding-right: 0;
+        margin-bottom: 32px;
         text-align: left !important;
     }
 
@@ -693,5 +787,103 @@
     .onest-about-timeline-dot {
         left: 10px !important;
         right: auto !important;
+    }
+
+    .onest-about-timeline-content {
+        padding: 20px;
+    }
+
+    .onest-about-timeline-year {
+        font-size: 1.25rem;
+    }
+
+    /* Values Section */
+    .onest-about-values-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-values-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .onest-about-value-card {
+        padding: 24px;
+    }
+
+    /* Leadership Section */
+    .onest-about-leadership-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .onest-about-leadership-img {
+        order: -1;
+        /* Image first */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .onest-about-leadership-content {
+        text-align: center;
+        order: 1;
+    }
+
+    .onest-about-leadership-content h3 {
+        font-size: 1.75rem;
+        margin-bottom: 16px;
+    }
+
+    .onest-about-leadership-content p {
+        font-size: 1rem;
+    }
+
+    /* Programs Section */
+    .onest-about-programs-section {
+        padding: 50px 0;
+    }
+
+    .onest-about-program-card {
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .onest-about-program-icon {
+        margin: 0 auto;
+    }
+
+    .onest-about-program-tags {
+        justify-content: center;
+    }
+
+    /* Footer */
+    .onest-about-footer {
+        padding: 50px 0 20px;
+    }
+
+    .onest-about-footer-grid {
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .onest-about-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .onest-about-section-title {
+        font-size: 1.5rem;
+    }
+
+    .onest-about-mv-icon {
+        font-size: 2rem;
     }
 }
