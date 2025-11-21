@@ -158,7 +158,7 @@
 }
 
 .onest-contact-logo img {
-    height: 85px;
+    height: 110px;
     width: auto;
 }
 
@@ -170,7 +170,7 @@
 
 .onest-contact-nav-link {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--onest-contact-text);
     position: relative;
     padding: 5px 0;
@@ -519,7 +519,7 @@ textarea.onest-contact-input {
 
     /* Header */
     .onest-contact-logo img {
-        height: 72px;
+        height: 90px;
     }
 
     .onest-contact-nav-list {
