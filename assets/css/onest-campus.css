@@ -177,7 +177,7 @@
 }
 
 .onest-campus-logo img {
-    height: 48px;
+    height: 64px;
     width: auto;
 }
 
@@ -953,6 +953,10 @@
     }
 
     /* Header */
+    .onest-campus-logo img {
+        height: 56px;
+    }
+
     .onest-campus-nav-list {
         display: none;
     }
