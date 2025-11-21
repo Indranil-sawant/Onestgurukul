@@ -246,15 +246,15 @@
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 320px;
     height: 100vh;
     background-color: var(--onest-about-bg);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-    z-index: 1001;
+    z-index: 999;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 24px;
+    padding: 80px 24px 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .onest-about-mobile-menu.active {
@@ -702,6 +702,15 @@
         padding: 6px 0;
     }
 
+    .onest-about-header-inner {
+        min-height: 0 !important;
+    }
+
+    .onest-about-logo {
+        line-height: 0;
+        display: block;
+    }
+
     .onest-about-logo img {
         height: 50px;
         width: auto;
@@ -713,6 +722,7 @@
 
     .onest-about-mobile-toggle {
         display: block;
+        line-height: 1;
     }
 
     /* Hero Section */
