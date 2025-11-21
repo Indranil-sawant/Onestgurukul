@@ -167,6 +167,10 @@
     background-color: rgba(17, 17, 17, 0.85);
 }
 
+.onest-home-dark-mode .onest-home-logo img {
+    filter: brightness(0) invert(1);
+}
+
 .onest-home-header-inner {
     display: flex;
     justify-content: space-between;
@@ -174,7 +178,7 @@
 }
 
 .onest-home-logo img {
-    height: 64px;
+    height: 85px;
     width: auto;
 }
 
@@ -894,7 +898,7 @@
 
     /* Header */
     .onest-home-logo img {
-        height: 56px;
+        height: 72px;
     }
 
     .onest-home-nav-list {

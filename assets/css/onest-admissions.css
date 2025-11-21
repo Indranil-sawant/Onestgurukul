@@ -146,6 +146,10 @@
     background-color: rgba(17, 17, 17, 0.85);
 }
 
+.onest-admissions-dark-mode .onest-admissions-logo img {
+    filter: brightness(0) invert(1);
+}
+
 .onest-admissions-header-inner {
     display: flex;
     justify-content: space-between;
@@ -153,7 +157,7 @@
 }
 
 .onest-admissions-logo img {
-    height: 64px;
+    height: 85px;
     width: auto;
 }
 
@@ -698,7 +702,7 @@ textarea.onest-admissions-input {
 
     /* Header */
     .onest-admissions-logo img {
-        height: 56px;
+        height: 72px;
     }
 
     .onest-admissions-nav-list {
