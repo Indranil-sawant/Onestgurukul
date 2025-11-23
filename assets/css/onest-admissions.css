@@ -157,7 +157,7 @@
 }
 
 .onest-admissions-logo img {
-    height: 85px;
+    height: 110px;
     width: auto;
 }
 
@@ -169,7 +169,7 @@
 
 .onest-admissions-nav-link {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--onest-admissions-text);
     position: relative;
     padding: 5px 0;
@@ -223,15 +223,15 @@
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 320px;
     height: 100vh;
     background-color: var(--onest-admissions-bg);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-    z-index: 1001;
+    z-index: 999;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 24px;
+    padding: 80px 24px 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .onest-admissions-mobile-menu.active {
@@ -701,8 +701,21 @@ textarea.onest-admissions-input {
     }
 
     /* Header */
+    .onest-admissions-header {
+        padding: 6px 0;
+    }
+
+    .onest-admissions-header-inner {
+        min-height: 0 !important;
+    }
+
+    .onest-admissions-logo {
+        line-height: 0;
+        display: block;
+    }
+
     .onest-admissions-logo img {
-        height: 72px;
+        height: 50px;
     }
 
     .onest-admissions-nav-list {
@@ -711,6 +724,7 @@ textarea.onest-admissions-input {
 
     .onest-admissions-mobile-toggle {
         display: block;
+        line-height: 1;
     }
 
     /* Hero Section */
