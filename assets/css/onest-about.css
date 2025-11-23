@@ -7,23 +7,17 @@
 :root {
     /* Brand Colors */
     --onest-about-primary: #FACC15;
-    /* Vibrant Yellow */
     --onest-about-primary-dark: #EAB308;
-    /* Darker Yellow for hover */
     --onest-about-secondary: #111111;
-    /* Deep Black */
 
     /* Backgrounds */
     --onest-about-bg: #ffffff;
     --onest-about-bg-alt: #f9fafb;
-    /* Very light gray for sections */
     --onest-about-bg-card: #ffffff;
 
     /* Text */
     --onest-about-text: #1f2937;
-    /* Dark Gray for readability */
     --onest-about-text-muted: #4b5563;
-    /* Muted Gray */
     --onest-about-text-light: #ffffff;
 
     /* Borders & Shadows */
@@ -43,22 +37,24 @@
 
 /* --- Dark Mode Variables --- */
 .onest-about-dark-mode {
-    --onest-about-bg: #111111;
-    /* Deep Gray */
-    --onest-about-bg-alt: #1a1a1a;
-    /* Slightly lighter gray */
-    --onest-about-bg-card: #222222;
-    /* Card background */
+    /* Golden Mode Palette */
+    --onest-about-bg: #FFF9D9;
+    --onest-about-bg-alt: #FFF3B0;
+    --onest-about-bg-card: #FFF3B0;
 
-    --onest-about-text: #f3f4f6;
-    /* Off-white for text */
-    --onest-about-text-muted: #9ca3af;
-    /* Light gray */
+    --onest-about-text: #000000;
+    --onest-about-text-muted: #333333;
+    --onest-about-text-light: #000000;
 
-    --onest-about-border: #374151;
+    --onest-about-border: rgba(232, 185, 35, 0.2);
 
-    --onest-about-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-about-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-about-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-about-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-about-primary: #FACC15;
+    --onest-about-primary-dark: #E8B923;
+    --onest-about-secondary: #FFEBA1;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -166,11 +162,12 @@
 }
 
 .onest-about-dark-mode .onest-about-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-about-border);
 }
 
 .onest-about-dark-mode .onest-about-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-about-header-inner {
@@ -661,6 +658,30 @@
     text-align: center;
     color: #737373;
     font-size: 0.9rem;
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-about-dark-mode .onest-about-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-about-border);
+}
+
+.onest-about-dark-mode .onest-about-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-about-dark-mode .onest-about-footer-col h4 {
+    color: #000000;
+}
+
+.onest-about-dark-mode .onest-about-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-about-dark-mode .onest-about-footer-col ul li a:hover {
+    color: #000000;
 }
 
 /* --- Responsive Improvements --- */

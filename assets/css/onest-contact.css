@@ -7,24 +7,18 @@
 :root {
     /* Brand Colors */
     --onest-contact-primary: #FACC15;
-    /* Vibrant Yellow */
     --onest-contact-primary-dark: #EAB308;
-    /* Darker Yellow for hover */
     --onest-contact-secondary: #111111;
-    /* Deep Black */
 
     /* Backgrounds */
     --onest-contact-bg: #ffffff;
     --onest-contact-bg-alt: #f9fafb;
-    /* Very light gray for sections */
     --onest-contact-bg-card: #ffffff;
     --onest-contact-input-bg: #f3f4f6;
 
     /* Text */
     --onest-contact-text: #1f2937;
-    /* Dark Gray for readability */
     --onest-contact-text-muted: #4b5563;
-    /* Muted Gray */
     --onest-contact-text-light: #ffffff;
 
     /* Borders & Shadows */
@@ -43,23 +37,25 @@
 
 /* --- Dark Mode Variables --- */
 .onest-contact-dark-mode {
-    --onest-contact-bg: #111111;
-    /* Deep Gray */
-    --onest-contact-bg-alt: #1a1a1a;
-    /* Slightly lighter gray */
-    --onest-contact-bg-card: #222222;
-    /* Card background */
-    --onest-contact-input-bg: #2a2a2a;
+    /* Golden Mode Palette */
+    --onest-contact-bg: #FFF9D9;
+    --onest-contact-bg-alt: #FFF3B0;
+    --onest-contact-bg-card: #FFF3B0;
+    --onest-contact-input-bg: #FFF3B0;
 
-    --onest-contact-text: #f3f4f6;
-    /* Off-white for text */
-    --onest-contact-text-muted: #9ca3af;
-    /* Light gray */
+    --onest-contact-text: #000000;
+    --onest-contact-text-muted: #333333;
+    --onest-contact-text-light: #000000;
 
-    --onest-contact-border: #374151;
+    --onest-contact-border: rgba(232, 185, 35, 0.2);
 
-    --onest-contact-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-contact-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-contact-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-contact-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-contact-primary: #FACC15;
+    --onest-contact-primary-dark: #E8B923;
+    --onest-contact-secondary: #FFEBA1;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -144,11 +140,12 @@
 }
 
 .onest-contact-dark-mode .onest-contact-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-contact-border);
 }
 
 .onest-contact-dark-mode .onest-contact-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-contact-header-inner {
@@ -650,4 +647,28 @@ textarea.onest-contact-input {
     .onest-contact-form-title {
         font-size: 1.5rem;
     }
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-contact-dark-mode .onest-contact-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-contact-border);
+}
+
+.onest-contact-dark-mode .onest-contact-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-contact-dark-mode .onest-contact-footer-col h4 {
+    color: #000000;
+}
+
+.onest-contact-dark-mode .onest-contact-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-contact-dark-mode .onest-contact-footer-col ul li a:hover {
+    color: #000000;
 }

@@ -36,17 +36,24 @@
 
 /* --- Dark Mode Variables --- */
 .onest-admissions-dark-mode {
-    --onest-admissions-bg: #111111;
-    --onest-admissions-bg-alt: #1a1a1a;
-    --onest-admissions-bg-card: #222222;
+    /* Golden Mode Palette */
+    --onest-admissions-bg: #FFF9D9;
+    --onest-admissions-bg-alt: #FFF3B0;
+    --onest-admissions-bg-card: #FFF3B0;
 
-    --onest-admissions-text: #f3f4f6;
-    --onest-admissions-text-muted: #9ca3af;
+    --onest-admissions-text: #000000;
+    --onest-admissions-text-muted: #333333;
+    --onest-admissions-text-light: #000000;
 
-    --onest-admissions-border: #374151;
+    --onest-admissions-border: rgba(232, 185, 35, 0.2);
 
-    --onest-admissions-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-admissions-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-admissions-primary: #FACC15;
+    --onest-admissions-primary-dark: #E8B923;
+    --onest-admissions-secondary: #FFEBA1;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -143,11 +150,12 @@
 }
 
 .onest-admissions-dark-mode .onest-admissions-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-admissions-border);
 }
 
 .onest-admissions-dark-mode .onest-admissions-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-admissions-header-inner {
@@ -664,6 +672,30 @@ textarea.onest-admissions-input {
     text-align: center;
     color: #737373;
     font-size: 0.9rem;
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-admissions-dark-mode .onest-admissions-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-admissions-border);
+}
+
+.onest-admissions-dark-mode .onest-admissions-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-admissions-dark-mode .onest-admissions-footer-col h4 {
+    color: #000000;
+}
+
+.onest-admissions-dark-mode .onest-admissions-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-admissions-dark-mode .onest-admissions-footer-col ul li a:hover {
+    color: #000000;
 }
 
 /* --- Responsive Improvements --- */

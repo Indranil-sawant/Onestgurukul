@@ -7,23 +7,17 @@
 :root {
     /* Brand Colors */
     --onest-campus-primary: #FACC15;
-    /* Vibrant Yellow */
     --onest-campus-primary-dark: #EAB308;
-    /* Darker Yellow for hover */
     --onest-campus-secondary: #111111;
-    /* Deep Black */
 
     /* Backgrounds */
     --onest-campus-bg: #ffffff;
     --onest-campus-bg-alt: #f9fafb;
-    /* Very light gray for sections */
     --onest-campus-bg-card: #ffffff;
 
     /* Text */
     --onest-campus-text: #1f2937;
-    /* Dark Gray for readability */
     --onest-campus-text-muted: #4b5563;
-    /* Muted Gray */
     --onest-campus-text-light: #ffffff;
 
     /* Borders & Shadows */
@@ -43,22 +37,24 @@
 
 /* --- Dark Mode Variables --- */
 .onest-campus-dark-mode {
-    --onest-campus-bg: #111111;
-    /* Deep Gray */
-    --onest-campus-bg-alt: #1a1a1a;
-    /* Slightly lighter gray */
-    --onest-campus-bg-card: #222222;
-    /* Card background */
+    /* Golden Mode Palette */
+    --onest-campus-bg: #FFF9D9;
+    --onest-campus-bg-alt: #FFF3B0;
+    --onest-campus-bg-card: #FFF3B0;
 
-    --onest-campus-text: #f3f4f6;
-    /* Off-white for text */
-    --onest-campus-text-muted: #9ca3af;
-    /* Light gray */
+    --onest-campus-text: #000000;
+    --onest-campus-text-muted: #333333;
+    --onest-campus-text-light: #000000;
 
-    --onest-campus-border: #374151;
+    --onest-campus-border: rgba(232, 185, 35, 0.2);
 
-    --onest-campus-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-campus-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-campus-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-campus-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-campus-primary: #FACC15;
+    --onest-campus-primary-dark: #E8B923;
+    --onest-campus-secondary: #FFEBA1;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -167,11 +163,12 @@
 }
 
 .onest-campus-dark-mode .onest-campus-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-campus-border);
 }
 
 .onest-campus-dark-mode .onest-campus-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-campus-header-inner {
@@ -1412,4 +1409,28 @@
         max-width: 95%;
         max-height: 70vh;
     }
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-campus-dark-mode .onest-campus-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-campus-border);
+}
+
+.onest-campus-dark-mode .onest-campus-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-campus-dark-mode .onest-campus-footer-col h4 {
+    color: #000000;
+}
+
+.onest-campus-dark-mode .onest-campus-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-campus-dark-mode .onest-campus-footer-col ul li a:hover {
+    color: #000000;
 }

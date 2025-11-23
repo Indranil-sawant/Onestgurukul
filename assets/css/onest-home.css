@@ -43,22 +43,32 @@
 
 /* --- Dark Mode Variables --- */
 .onest-home-dark-mode {
-    --onest-home-bg: #111111;
-    /* Deep Gray, not pitch black */
-    --onest-home-bg-alt: #1a1a1a;
-    /* Slightly lighter gray */
-    --onest-home-bg-card: #222222;
-    /* Card background */
+    /* User Requested Golden Palette (Black Text) */
+    --onest-home-bg: #FFF9D9;
+    --onest-home-bg-alt: #FFF3B0;
+    /* Section BG */
+    --onest-home-bg-card: #FFF3B0;
+    /* Card BG */
 
-    --onest-home-text: #f3f4f6;
-    /* Off-white for text */
-    --onest-home-text-muted: #9ca3af;
-    /* Light gray */
+    --onest-home-text: #000000;
+    /* Pure Black for maximum readability */
+    --onest-home-text-muted: #333333;
+    /* Dark Gray */
+    --onest-home-text-light: #000000;
+    /* Black */
 
-    --onest-home-border: #374151;
+    --onest-home-border: rgba(232, 185, 35, 0.2);
+    /* #E8B92333 */
 
-    --onest-home-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-home-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-home-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-home-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-home-primary: #FACC15;
+    --onest-home-primary-dark: #E8B923;
+    /* Accent */
+    --onest-home-secondary: #FFEBA1;
+    /* Nav/Footer BG */
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -164,11 +174,14 @@
 }
 
 .onest-home-dark-mode .onest-home-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    /* #FFEBA1 (Nav BG) with opacity */
+    border-bottom-color: var(--onest-home-border);
 }
 
 .onest-home-dark-mode .onest-home-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
+    /* Keep original logo colors */
 }
 
 .onest-home-header-inner {
@@ -653,8 +666,8 @@
 }
 
 .onest-home-dark-mode .onest-home-program-badge {
-    color: var(--onest-home-primary);
-    background: rgba(250, 204, 21, 0.1);
+    color: #000000;
+    background: var(--onest-home-primary);
 }
 
 /* --- Stats Section --- */
@@ -1014,21 +1027,23 @@
     /* Features Grid */
     .onest-home-features-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
     .onest-home-feature-card {
-        padding: 32px 24px;
+        padding: 24px 20px;
     }
 
     .onest-home-feature-icon {
-        width: 56px;
-        height: 56px;
-        font-size: 1.5rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+        margin-bottom: 16px;
     }
 
     .onest-home-feature-title {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
 
     /* Event Banner */
@@ -1168,4 +1183,73 @@
     .onest-home-testimonial-text {
         font-size: 1.05rem;
     }
+}
+
+/* --- Golden Mode Component Overrides --- */
+.onest-home-dark-mode .onest-home-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-home-border);
+}
+
+.onest-home-dark-mode .onest-home-footer-col h4 {
+    color: #000000;
+}
+
+.onest-home-dark-mode .onest-home-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-home-dark-mode .onest-home-footer-col ul li a:hover {
+    color: #000000;
+}
+
+.onest-home-dark-mode .onest-home-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-home-dark-mode .onest-home-event-banner {
+    background: linear-gradient(135deg, #FACC15 0%, #E8B923 100%);
+    border: 1px solid var(--onest-home-border);
+    color: #000000;
+}
+
+.onest-home-dark-mode .onest-home-hero-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.onest-home-dark-mode .onest-home-hero-content {
+    color: #FFF;
+    /* Revert to white text for dark overlay */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.onest-home-dark-mode .onest-home-hero-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.onest-home-dark-mode .onest-home-hero-nav-btn:hover {
+    background: var(--onest-home-primary);
+    color: #000000;
+}
+
+.onest-home-dark-mode .onest-home-stats {
+    color: #000000;
+}
+
+.onest-home-dark-mode .onest-home-stat-item {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: var(--onest-home-border);
+}
+
+.onest-home-dark-mode .onest-home-stat-item p {
+    color: #000000;
+}
+
+/* Force black title in Stats section to override inline style */
+.onest-home-dark-mode .onest-home-stats .onest-home-section-title {
+    color: #000000 !important;
 }

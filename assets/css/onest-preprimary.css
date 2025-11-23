@@ -7,9 +7,9 @@
 :root {
     /* Brand Colors */
     --onest-bg: #ffffff;
-    --onest-text: #222;
+    --onest-text: #1f2937;
     --onest-primary: #FACC15;
-    --onest-card-bg: #fafafa;
+    --onest-card-bg: #ffffff;
 
     /* Specific Variables */
     --onest-preprimary-primary: #FACC15;
@@ -42,25 +42,33 @@
 }
 
 /* --- Dark Mode Variables --- */
+/* --- Dark Mode Variables --- */
 .dark-mode {
-    --onest-bg: #1c1c1c;
-    --onest-text: #f5f5f5;
+    --onest-bg: #FFF9D9;
+    --onest-text: #000000;
     --onest-primary: #FACC15;
-    --onest-card-bg: #242424;
+    --onest-card-bg: #FFF3B0;
 }
 
 .onest-preprimary-dark-mode {
-    --onest-preprimary-bg: #111111;
-    --onest-preprimary-bg-alt: #1a1a1a;
-    --onest-preprimary-bg-card: #222222;
+    /* Golden Mode Palette */
+    --onest-preprimary-bg: #FFF9D9;
+    --onest-preprimary-bg-alt: #FFF3B0;
+    --onest-preprimary-bg-card: #FFF3B0;
 
-    --onest-preprimary-text: #f3f4f6;
-    --onest-preprimary-text-muted: #9ca3af;
+    --onest-preprimary-text: #000000;
+    --onest-preprimary-text-muted: #333333;
+    --onest-preprimary-text-light: #000000;
 
-    --onest-preprimary-border: #374151;
+    --onest-preprimary-border: rgba(232, 185, 35, 0.2);
 
-    --onest-preprimary-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-preprimary-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-preprimary-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-preprimary-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-preprimary-primary: #FACC15;
+    --onest-preprimary-primary-dark: #E8B923;
+    --onest-preprimary-secondary: #FFEBA1;
 }
 
 /* --- Global Wrapper --- */
@@ -168,11 +176,12 @@
 }
 
 .onest-preprimary-dark-mode .onest-preprimary-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-preprimary-border);
 }
 
 .onest-preprimary-dark-mode .onest-preprimary-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-preprimary-header-inner {
@@ -1119,4 +1128,28 @@
         height: 40px;
         font-size: 1.2rem;
     }
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-preprimary-dark-mode .onest-preprimary-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-preprimary-border);
+}
+
+.onest-preprimary-dark-mode .onest-preprimary-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-preprimary-dark-mode .onest-preprimary-footer-col h4 {
+    color: #000000;
+}
+
+.onest-preprimary-dark-mode .onest-preprimary-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-preprimary-dark-mode .onest-preprimary-footer-col ul li a:hover {
+    color: #000000;
 }

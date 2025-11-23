@@ -7,23 +7,17 @@
 :root {
     /* Brand Colors */
     --onest-student-life-primary: #FACC15;
-    /* Vibrant Yellow */
     --onest-student-life-primary-dark: #EAB308;
-    /* Darker Yellow for hover */
     --onest-student-life-secondary: #111111;
-    /* Deep Black */
 
     /* Backgrounds */
     --onest-student-life-bg: #ffffff;
     --onest-student-life-bg-alt: #f9fafb;
-    /* Very light gray for sections */
     --onest-student-life-bg-card: #ffffff;
 
     /* Text */
     --onest-student-life-text: #1f2937;
-    /* Dark Gray for readability */
     --onest-student-life-text-muted: #4b5563;
-    /* Muted Gray */
     --onest-student-life-text-light: #ffffff;
 
     /* Borders & Shadows */
@@ -43,22 +37,24 @@
 
 /* --- Dark Mode Variables --- */
 .onest-student-life-dark-mode {
-    --onest-student-life-bg: #111111;
-    /* Deep Gray */
-    --onest-student-life-bg-alt: #1a1a1a;
-    /* Slightly lighter gray */
-    --onest-student-life-bg-card: #222222;
-    /* Card background */
+    /* Golden Mode Palette */
+    --onest-student-life-bg: #FFF9D9;
+    --onest-student-life-bg-alt: #FFF3B0;
+    --onest-student-life-bg-card: #FFF3B0;
 
-    --onest-student-life-text: #f3f4f6;
-    /* Off-white for text */
-    --onest-student-life-text-muted: #9ca3af;
-    /* Light gray */
+    --onest-student-life-text: #000000;
+    --onest-student-life-text-muted: #333333;
+    --onest-student-life-text-light: #000000;
 
-    --onest-student-life-border: #374151;
+    --onest-student-life-border: rgba(232, 185, 35, 0.2);
 
-    --onest-student-life-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --onest-student-life-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --onest-student-life-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-student-life-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand Colors Adaptation */
+    --onest-student-life-primary: #FACC15;
+    --onest-student-life-primary-dark: #E8B923;
+    --onest-student-life-secondary: #FFEBA1;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -166,11 +162,12 @@
 }
 
 .onest-student-life-dark-mode .onest-student-life-header {
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(255, 235, 161, 0.95);
+    border-bottom-color: var(--onest-student-life-border);
 }
 
 .onest-student-life-dark-mode .onest-student-life-logo img {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .onest-student-life-header-inner {
@@ -377,6 +374,8 @@
     border-radius: var(--onest-student-life-radius);
     overflow: hidden;
     box-shadow: var(--onest-student-life-shadow-lg);
+    height: 350px;
+    /* Fixed height for uniformity */
 }
 
 .onest-student-life-daily-img img {
@@ -1100,6 +1099,11 @@
         gap: 32px;
         margin-bottom: 40px;
     }
+
+    .onest-student-life-daily-img {
+        height: 250px;
+        /* Smaller height for mobile */
+    }
 }
 
 /* Small Phones (max-width: 480px) */
@@ -1119,4 +1123,38 @@
     .onest-student-life-club-img {
         height: 160px;
     }
+}
+
+/* --- Golden Mode Footer Overrides --- */
+.onest-student-life-dark-mode .onest-student-life-footer {
+    background-color: #FFEBA1;
+    color: #000000;
+    border-top: 1px solid var(--onest-student-life-border);
+}
+
+.onest-student-life-dark-mode .onest-student-life-footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.onest-student-life-dark-mode .onest-student-life-footer-col h4 {
+    color: #000000;
+}
+
+.onest-student-life-dark-mode .onest-student-life-footer-col ul li a {
+    color: #333333;
+}
+
+.onest-student-life-dark-mode .onest-student-life-footer-col ul li a:hover {
+    color: #000000;
+}
+
+/* --- Fix Student Growth Section Visibility in Golden Mode --- */
+.onest-student-life-dark-mode .onest-student-life-growth-section {
+    color: #000000;
+}
+
+.onest-student-life-dark-mode .onest-student-life-growth-text {
+    color: #333333;
+    opacity: 1;
 }
