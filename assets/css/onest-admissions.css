@@ -631,8 +631,8 @@ textarea.onest-admissions-input {
 
 /* --- Footer --- */
 .onest-admissions-footer {
-    background-color: #0a0a0a;
-    color: #e5e5e5;
+    background-color: #EFF6FF;
+    color: var(--onest-admissions-text);
     padding: 80px 0 30px;
     font-size: 0.95rem;
 }
@@ -645,7 +645,7 @@ textarea.onest-admissions-input {
 }
 
 .onest-admissions-footer-col h4 {
-    color: #fff;
+    color: var(--onest-admissions-text);
     margin-bottom: 24px;
     font-size: 1.1rem;
     font-weight: 700;
@@ -657,7 +657,7 @@ textarea.onest-admissions-input {
 }
 
 .onest-admissions-footer-col ul li a {
-    color: #a3a3a3;
+    color: var(--onest-admissions-text-muted);
     transition: color 0.3s;
 }
 
@@ -667,10 +667,10 @@ textarea.onest-admissions-input {
 }
 
 .onest-admissions-footer-bottom {
-    border-top: 1px solid #262626;
+    border-top: 1px solid #E5E7EB;
     padding-top: 32px;
     text-align: center;
-    color: #737373;
+    color: var(--onest-admissions-text-muted);
     font-size: 0.9rem;
 }
 

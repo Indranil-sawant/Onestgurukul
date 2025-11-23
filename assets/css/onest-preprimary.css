@@ -952,9 +952,10 @@
 
 /* --- Footer --- */
 .onest-preprimary-footer {
-    background-color: var(--onest-preprimary-secondary);
-    color: #fff;
-    padding: 64px 0 24px;
+    background-color: #EFF6FF;
+    color: var(--onest-preprimary-text);
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
 }
 
 .onest-preprimary-footer-grid {
@@ -965,10 +966,11 @@
 }
 
 .onest-preprimary-footer-col h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    color: var(--onest-preprimary-text);
     margin-bottom: 24px;
-    color: var(--onest-preprimary-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .onest-preprimary-footer-col ul li {
@@ -976,8 +978,8 @@
 }
 
 .onest-preprimary-footer-col ul li a {
-    color: #a3a3a3;
-    transition: var(--onest-preprimary-transition);
+    color: var(--onest-preprimary-text-muted);
+    transition: color 0.3s;
 }
 
 .onest-preprimary-footer-col ul li a:hover {

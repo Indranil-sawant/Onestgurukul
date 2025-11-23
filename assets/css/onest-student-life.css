@@ -784,8 +784,8 @@
 
 /* --- Footer --- */
 .onest-student-life-footer {
-    background-color: #0a0a0a;
-    color: #e5e5e5;
+    background-color: #EFF6FF;
+    color: var(--onest-student-life-text);
     padding: 80px 0 30px;
     font-size: 0.95rem;
 }
@@ -798,7 +798,7 @@
 }
 
 .onest-student-life-footer-col h4 {
-    color: #fff;
+    color: var(--onest-student-life-text);
     margin-bottom: 24px;
     font-size: 1.1rem;
     font-weight: 700;
@@ -810,7 +810,7 @@
 }
 
 .onest-student-life-footer-col ul li a {
-    color: #a3a3a3;
+    color: var(--onest-student-life-text-muted);
     transition: color 0.3s;
 }
 
@@ -820,10 +820,10 @@
 }
 
 .onest-student-life-footer-bottom {
-    border-top: 1px solid #262626;
+    border-top: 1px solid #E5E7EB;
     padding-top: 32px;
     text-align: center;
-    color: #737373;
+    color: var(--onest-student-life-text-muted);
     font-size: 0.9rem;
 }
 
