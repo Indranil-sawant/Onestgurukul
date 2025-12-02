@@ -542,7 +542,13 @@
 /* --- Event Banner --- */
 .onest-home-event-banner {
     margin-top: 64px;
-    background: linear-gradient(135deg, #111111 0%, #2d2d2d 100%);
+    background-color: #002147;
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 10px, transparent 11px),
+        radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 15px, transparent 16px),
+        radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 20px, transparent 21px),
+        radial-gradient(circle at 90% 85%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 12px, transparent 13px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100px, transparent 101px);
     color: #fff;
     padding: 40px;
     border-radius: var(--onest-home-radius);
@@ -559,12 +565,12 @@
 .onest-home-event-banner::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05));
-    transform: skewX(-20deg);
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .onest-home-event-date {
@@ -672,11 +678,20 @@
 
 /* --- Stats Section --- */
 .onest-home-stats {
-    background-color: var(--onest-home-secondary);
+    background-color: #002147;
+    background-image:
+        radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 8px, transparent 9px),
+        radial-gradient(circle at 95% 95%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 12px, transparent 13px),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 18px, transparent 19px),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 14px, transparent 15px);
     color: #fff;
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.onest-home-stats .onest-home-section-title {
+    color: #ffffff;
 }
 
 .onest-home-stats-grid {
@@ -690,10 +705,11 @@
 
 .onest-home-stat-item {
     padding: 24px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: var(--onest-home-radius);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: var(--onest-home-shadow-sm);
 }
 
 .onest-home-stat-item h4 {
@@ -1209,11 +1225,7 @@
     color: #333333;
 }
 
-.onest-home-dark-mode .onest-home-event-banner {
-    background: linear-gradient(135deg, #FACC15 0%, #E8B923 100%);
-    border: 1px solid var(--onest-home-border);
-    color: #000000;
-}
+/* Dark mode overrides removed to preserve dark blue design */
 
 .onest-home-dark-mode .onest-home-hero-overlay {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
@@ -1236,20 +1248,4 @@
     color: #000000;
 }
 
-.onest-home-dark-mode .onest-home-stats {
-    color: #000000;
-}
-
-.onest-home-dark-mode .onest-home-stat-item {
-    background: rgba(255, 255, 255, 0.5);
-    border-color: var(--onest-home-border);
-}
-
-.onest-home-dark-mode .onest-home-stat-item p {
-    color: #000000;
-}
-
-/* Force black title in Stats section to override inline style */
-.onest-home-dark-mode .onest-home-stats .onest-home-section-title {
-    color: #000000 !important;
-}
+/* Stats dark mode overrides removed */
