@@ -816,7 +816,12 @@
 /* --- CTA Section --- */
 .onest-campus-cta-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, #111111 0%, #222222 100%);
+    background-color: #002147;
+    background-image:
+        radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 8px, transparent 9px),
+        radial-gradient(circle at 95% 95%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 12px, transparent 13px),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 18px, transparent 19px),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 14px, transparent 15px);
     color: #fff;
     text-align: center;
     margin-top: 40px;
@@ -831,7 +836,7 @@
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 12px;
-    color: var(--onest-campus-primary);
+    color: #fff;
 }
 
 .onest-campus-cta-box p {
@@ -1016,11 +1021,19 @@
 }
 
 /* --- Footer --- */
+/* --- Footer --- */
 .onest-campus-footer {
-    background-color: #0a0a0a;
-    color: #e5e5e5;
+    background-color: #002147;
+    background-image:
+        radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 8px, transparent 9px),
+        radial-gradient(circle at 95% 95%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 12px, transparent 13px),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 18px, transparent 19px),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 14px, transparent 15px);
+    color: #fff;
     padding: 80px 0 30px;
     font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .onest-campus-footer-grid {
@@ -1028,6 +1041,8 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 48px;
     margin-bottom: 64px;
+    position: relative;
+    z-index: 2;
 }
 
 .onest-campus-footer-col h4 {
@@ -1043,7 +1058,7 @@
 }
 
 .onest-campus-footer-col ul li a {
-    color: #a3a3a3;
+    color: rgba(255, 255, 255, 0.7);
     transition: color 0.3s;
 }
 
@@ -1053,11 +1068,13 @@
 }
 
 .onest-campus-footer-bottom {
-    border-top: 1px solid #262626;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 32px;
     text-align: center;
-    color: #737373;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* --- Responsive --- */
@@ -1260,6 +1277,7 @@
     }
 
     .onest-campus-library-content h2,
+    .onest-campus-safety-content h2,
     .onest-campus-section-title {
         font-size: 1.75rem;
         text-align: center;
@@ -1270,6 +1288,11 @@
     .onest-campus-safety-content p {
         text-align: center;
         font-size: 0.95rem;
+    }
+
+    .onest-campus-library-content,
+    .onest-campus-safety-content {
+        text-align: center;
     }
 
     .onest-campus-green-list,
@@ -1412,25 +1435,4 @@
 }
 
 /* --- Golden Mode Footer Overrides --- */
-.onest-campus-dark-mode .onest-campus-footer {
-    background-color: #FFEBA1;
-    color: #000000;
-    border-top: 1px solid var(--onest-campus-border);
-}
-
-.onest-campus-dark-mode .onest-campus-footer-bottom {
-    border-top-color: rgba(0, 0, 0, 0.1);
-    color: #333333;
-}
-
-.onest-campus-dark-mode .onest-campus-footer-col h4 {
-    color: #000000;
-}
-
-.onest-campus-dark-mode .onest-campus-footer-col ul li a {
-    color: #333333;
-}
-
-.onest-campus-dark-mode .onest-campus-footer-col ul li a:hover {
-    color: #000000;
-}
+/* Golden Mode Footer Overrides Removed */
