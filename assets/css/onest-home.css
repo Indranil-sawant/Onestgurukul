@@ -492,14 +492,41 @@
 
 /* --- Features Grid --- */
 .onest-home-features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 24px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.onest-home-features-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.onest-home-features-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.onest-home-features-grid::-webkit-scrollbar-thumb {
+    background-color: var(--onest-home-border);
+    border-radius: 20px;
+}
+
+@media (min-width: 1024px) {
+    .onest-home-features-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
 }
 
 .onest-home-feature-card {
     background: var(--onest-home-bg-card);
-    padding: 40px 32px;
+    padding: 32px 24px;
     border-radius: var(--onest-home-radius);
     box-shadow: var(--onest-home-shadow);
     transition: var(--onest-home-transition);
@@ -507,6 +534,18 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    min-width: 280px;
+    /* For mobile scroll */
+    scroll-snap-align: center;
+}
+
+@media (min-width: 1024px) {
+    .onest-home-feature-card {
+        min-width: 0;
+        width: auto;
+        padding: 24px 20px;
+        /* Slightly tighter padding for 5-col */
+    }
 }
 
 .onest-home-feature-card:hover {
@@ -599,83 +638,202 @@
     letter-spacing: 1px;
 }
 
-/* --- Programs Section --- */
+/* --- Programs Section (Kids Friendly Redesign) --- */
+.onest-home-programs-section {
+    background-color: #FFFBEB;
+    /* Soft warm yellow */
+    background-image: radial-gradient(#FCD34D 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    position: relative;
+}
+
 .onest-home-programs-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 24px;
     margin-bottom: 64px;
+    text-align: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .onest-home-programs-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        text-align: left;
+    }
+}
+
+.onest-home-programs-header .onest-home-section-title {
+    color: #1F2937;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.onest-home-programs-header .onest-home-section-subtitle {
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    color: #4B5563;
 }
 
 .onest-home-program-card {
-    background: var(--onest-home-bg-card);
-    border-radius: var(--onest-home-radius);
+    background: #ffffff;
+    border-radius: 32px;
     overflow: hidden;
-    box-shadow: var(--onest-home-shadow);
-    margin-bottom: 40px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06);
+    margin-bottom: 48px;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--onest-home-border);
-    transition: var(--onest-home-transition);
+    border: 3px solid #F3F4F6;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy transition */
 }
 
 .onest-home-program-card:hover {
-    box-shadow: var(--onest-home-shadow-xl);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    border-color: #FDE047;
+}
+
+.onest-home-program-card:last-child {
+    margin-bottom: 0;
 }
 
 @media (min-width: 992px) {
     .onest-home-program-card {
         flex-direction: row;
         align-items: stretch;
+        min-height: 400px;
     }
 
     .onest-home-program-card.reverse {
         flex-direction: row-reverse;
     }
+
+    .onest-home-program-img {
+        width: 48%;
+        flex: none;
+    }
+
+    .onest-home-program-content {
+        width: 52%;
+        padding: 64px;
+    }
 }
 
 .onest-home-program-img {
-    flex: 1;
-    min-height: 320px;
+    position: relative;
     overflow: hidden;
+    min-height: 280px;
 }
 
 .onest-home-program-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.7s ease;
+    transition: transform 0.8s ease;
 }
 
 .onest-home-program-card:hover .onest-home-program-img img {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+/* Cute overlay on image hover */
+.onest-home-program-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.onest-home-program-card:hover .onest-home-program-img::after {
+    opacity: 1;
 }
 
 .onest-home-program-content {
-    flex: 1;
-    padding: 48px;
+    padding: 40px 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .onest-home-program-badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(250, 204, 21, 0.15);
-    color: #b45309;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #FEF3C7;
+    /* Light Amber */
+    color: #B45309;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    align-self: flex-start;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 0 rgba(245, 158, 11, 0.2);
 }
 
-.onest-home-dark-mode .onest-home-program-badge {
-    color: #000000;
-    background: var(--onest-home-primary);
+/* Varying badge colors for fun */
+.onest-home-program-card:nth-child(2) .onest-home-program-badge {
+    background: #DBEAFE;
+    /* Light Blue */
+    color: #1E40AF;
+    box-shadow: 0 2px 0 rgba(37, 99, 235, 0.2);
+}
+
+.onest-home-program-card:nth-child(3) .onest-home-program-badge {
+    background: #FCE7F3;
+    /* Light Pink */
+    color: #BE185D;
+    box-shadow: 0 2px 0 rgba(219, 39, 119, 0.2);
+}
+
+.onest-home-program-card:nth-child(4) .onest-home-program-badge {
+    background: #D1FAE5;
+    /* Light Green */
+    color: #047857;
+    box-shadow: 0 2px 0 rgba(5, 150, 105, 0.2);
+}
+
+.onest-home-program-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.onest-home-program-desc {
+    color: #4B5563;
+    margin: 0 0 32px 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.onest-home-program-action {
+    align-self: flex-start;
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-weight: 700;
+    box-shadow: 0 4px 0 #EAB308;
+    /* 3D Button Effect */
+    transform: translateY(0);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.onest-home-program-action:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #EAB308;
+    background-color: #FDE047;
+}
+
+.onest-home-program-action:active {
+    transform: translateY(4px);
+    box-shadow: none;
 }
 
 /* --- Stats Section --- */
@@ -1276,5 +1434,3 @@
     background: var(--onest-home-primary);
     color: #000000;
 }
-
-/* Stats dark mode overrides removed */
