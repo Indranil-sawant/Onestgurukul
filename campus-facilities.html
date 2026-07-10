@@ -93,7 +93,7 @@
                 "xs": "4px",
                 "xl": "80px",
                 "md": "24px",
-                "container-max": "1120px"
+                "container-max": "80%"
             },
           "fontFamily": {
             "label-md": ["Hanken Grotesk"],
@@ -117,142 +117,133 @@
       }
     }
   </script>
-  <style>
+    <style>
     .glass-nav {
-      background: rgba(251, 248, 255, 0.85);
+      background: rgba(251, 248, 255, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
-
     .luxury-shadow {
-      box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1);
     }
-
     .hover-lift {
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
     }
-
     .hover-lift:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
     }
-
     .parallax-bg {
       background-position: center;
       background-size: cover;
     }
-
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
-
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
-
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-
-        #onest-campus-mobile-menu.active {
-            transform: translateX(0);
-        }
-        .glass-nav {
-            background: rgba(251, 248, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .luxury-shadow {
-            box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
-        }
-        .hover-lift {
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
-        }
-        .parallax-bg {
-            background-position: center;
-            background-size: cover;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Lightbox modal stylings */
-        .onest-campus-gallery-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(17, 17, 17, 0.9);
-            backdrop-filter: blur(8px);
-        }
-        .onest-campus-gallery-modal-content {
-            margin: auto;
-            display: block;
-            max-width: 80%;
-            max-height: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .onest-campus-gallery-close {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .onest-campus-gallery-close:hover {
-            color: #FACC15;
-        }
-        .onest-campus-gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 16px;
-            cursor: pointer;
-            font-size: 24px;
-            border-radius: 50%;
-            transition: 0.3s;
-        }
-        .onest-campus-gallery-nav:hover {
-            background: #FACC15;
-            color: black;
-        }
-        .onest-campus-gallery-prev {
-            left: 32px;
-        }
-        .onest-campus-gallery-next {
-            right: 32px;
-        }
-    </style>
+    #onest-campus-mobile-menu.active {
+      transform: translateX(0);
+    }
+    .glass-panel {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .animate-subtle-zoom {
+      animation: subtleZoom 20s infinite alternate linear;
+    }
+    @keyframes subtleZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    /* Timeline horizontal scroll hide */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Masonry grid */
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .masonry-grid { column-count: 2; }
+    }
+    @media (min-width: 1024px) {
+      .masonry-grid { column-count: 3; }
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
+    /* Lightbox modal stylings */
+    .onest-campus-gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    .onest-campus-gallery-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .onest-campus-gallery-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .onest-campus-gallery-close:hover {
+      color: #FACC15;
+    }
+    .onest-campus-gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    .onest-campus-gallery-nav:hover {
+      background: #FACC15;
+      color: black;
+    }
+    .onest-campus-gallery-prev { left: 32px; }
+    .onest-campus-gallery-next { right: 32px; }
+  </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-on-background/10">
 <div class="flex justify-between items-center h-[90px] px-gutter max-w-container-max mx-auto">
@@ -260,433 +251,847 @@
 <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
-<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="index.html">Home</a>
-<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="about.html">About Us</a>
-<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" style="color: #FF6B9D; font-weight: 600;" href="preprimary.html">⭐ Pre-Primary</a>
-<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="students-life.html">Curriculum</a>
+<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="index.html">Home</a>
+<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="about.html">About Us</a>
+<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" style="color: #FF6B9D; font-weight: 600;" href="preprimary.html">⭐ Pre-Primary</a>
+<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="students-life.html">Curriculum</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="campus-facilities.html">Campus &amp; Facilities</a>
-<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
+<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
 </nav>
 <div class="flex items-center space-x-4">
 <!-- Theme Toggle -->
-<button id="onest-campus-theme-toggle" class="p-2.5 rounded-full text-on-surface-variant hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
+<button id="onest-campus-theme-toggle" class="p-2.5 rounded-full text-white/80 hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
 <i class="bi bi-moon-fill text-xl"></i>
 </button>
 <a href="admissions.html" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md font-bold hover:scale-95 transition-transform active:scale-90 inline-block text-xs md:text-sm">
 Admissions
 </a>
-<button id="onest-campus-mobile-toggle" class="md:hidden p-2 text-on-surface-variant hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+<button id="onest-home-mobile-toggle" class="md:hidden p-2 text-white/80 hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
 <i class="bi bi-list text-2xl"></i>
 </button>
 </div>
 </div>
 <!-- Mobile Menu -->
-<div id="onest-campus-mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background/95 backdrop-blur-lg border-l border-on-background/10 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col">
+<div id="onest-home-mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-secondary text-white border-l border-on-background/10 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col">
 <div class="flex justify-between items-center mb-8">
 <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="h-16">
-<button id="onest-campus-mobile-close" class="p-2 text-on-surface-variant" aria-label="Close Menu">
+<button id="onest-home-mobile-close" class="p-2 text-white/80" aria-label="Close Menu">
 <i class="bi bi-x text-3xl"></i>
 </button>
 </div>
 <nav class="flex flex-col space-y-6 text-xl">
-<a href="index.html" class="text-on-surface-variant hover:text-primary font-semibold">Home</a>
-<a href="about.html" class="text-on-surface-variant hover:text-primary font-semibold">About Us</a>
+<a href="index.html" class="text-white/80 hover:text-[#facc15] font-semibold">Home</a>
+<a href="about.html" class="text-white/80 hover:text-[#facc15] font-semibold">About Us</a>
 <a href="preprimary.html" class="hover:text-primary font-semibold" style="color: #FF6B9D;">⭐ Pre-Primary</a>
-<a href="students-life.html" class="text-on-surface-variant hover:text-primary font-semibold">Curriculum</a>
+<a href="students-life.html" class="text-white/80 hover:text-[#facc15] font-semibold">Curriculum</a>
 <a href="campus-facilities.html" class="text-primary font-bold">Campus &amp; Facilities</a>
-<a href="contact.html" class="text-on-surface-variant hover:text-primary font-semibold">Contact</a>
+<a href="contact.html" class="text-white/80 hover:text-[#facc15] font-semibold">Contact</a>
 <a href="admissions.html" class="bg-primary text-on-primary py-3 rounded-lg text-center font-bold">Admissions</a>
 </nav>
 </div>
 </header>
-<main class="pt-[90px]">
-<!-- Hero Section -->
-<section class="relative min-h-[500px] md:h-[650px] flex items-center overflow-hidden py-12 md:py-0">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-background/60 backdrop-blur-[1px] z-10"></div>
-        <div class="w-full h-full bg-cover bg-center parallax-bg" style="background-image: url('assets/img/infra (1).JPG')"></div>
+<main class="pt-[90px] relative z-10">
+  <!-- Hero Section -->
+  <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent z-10"></div>
+      <div class="absolute inset-0 bg-cover bg-center animate-subtle-zoom" style="background-image: url('assets/img/infra (1).JPG')"></div>
+    </div>
+    
+    <div class="container mx-auto px-gutter relative z-20 -mt-12 text-center">
+      <span class="inline-block py-2 px-5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold uppercase tracking-[0.25em] mb-6 border border-white/30 shadow-lg">Discover The Future</span>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight font-bold drop-shadow-xl max-w-5xl mx-auto">
+        A Campus Designed to <br/><span class="text-[#facc15]">Inspire Every Child.</span>
+      </h1>
+      <p class="text-base md:text-xl text-white/90 mb-12 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
+        A thoughtfully designed learning environment where technology, nature, creativity, and academic excellence come together.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition-transform shadow-xl w-full sm:w-auto" href="contact.html">Book Campus Visit</a>
+        <a class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-white/20 transition-colors w-full sm:w-auto flex items-center justify-center gap-2" href="#virtual-tour">
+          <i class="bi bi-play-circle-fill text-lg text-[#facc15]"></i> Watch Virtual Tour
+        </a>
       </div>
-      <div class="container mx-auto px-gutter relative z-20">
-        <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
-          <span class="inline-block py-1.5 px-4 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs font-bold border border-primary/20">Architectural Excellence</span>
-          <h1 class="font-display-lg text-3xl md:text-5xl lg:text-display-lg text-on-surface mb-6 leading-tight font-bold">Experience Our <span class="text-primary">Vibrant Campus</span></h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto text-center">Step into a world designed for learning, creativity, and growth. Our state-of-the-art infrastructure provides the perfect environment for students to explore their potential and thrive.</p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-            <a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold flex items-center justify-center space-x-2 hover:bg-primary/90 transition-all text-sm w-full sm:w-auto" href="#facilities">
-              <span>Explore Facilities</span>
-              <span class="material-symbols-outlined text-sm">arrow_downward</span>
-            </a>
-            <a class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-label-md font-bold hover:bg-primary/5 transition-all text-sm w-full sm:w-auto flex items-center justify-center" href="#virtual-tour">Take a Virtual Tour</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Stats Section -->
-    <section class="py-12 bg-surface border-b border-on-background/5">
-      <div class="container mx-auto px-gutter">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div class="onest-campus-stat-item p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">10+</span>
-            <span class="text-on-surface-variant text-sm font-semibold">Smart Classrooms</span>
-          </div>
-          <div class="onest-campus-stat-item p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">8+</span>
-            <span class="text-on-surface-variant text-sm font-semibold">Acres of Campus</span>
-          </div>
-          <div class="onest-campus-stat-item p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">200+</span>
-            <span class="text-on-surface-variant text-sm font-semibold">Happy Students</span>
-          </div>
-          <div class="onest-campus-stat-item p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">24/7</span>
-            <span class="text-on-surface-variant text-sm font-semibold">Security &amp; Safety</span>
-          </div>
+  <!-- Campus at a Glance -->
+  <section class="relative z-30 -mt-20 pb-20 px-gutter">
+    <div class="container mx-auto max-w-container-max">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center hover-lift border border-white/60 shadow-lg bg-white/70 backdrop-blur-xl">
+          <span class="text-4xl md:text-5xl font-bold text-primary mb-2">10+</span>
+          <span class="text-secondary/80 font-bold uppercase tracking-wider text-xs">Smart Classrooms</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center hover-lift border border-white/60 shadow-lg bg-white/70 backdrop-blur-xl">
+          <span class="text-4xl md:text-5xl font-bold text-primary mb-2">8 Acres</span>
+          <span class="text-secondary/80 font-bold uppercase tracking-wider text-xs">Green Campus</span>
+        </div>
+        <!-- Card 3 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center hover-lift border border-white/60 shadow-lg bg-white/70 backdrop-blur-xl">
+          <span class="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</span>
+          <span class="text-secondary/80 font-bold uppercase tracking-wider text-xs">Security</span>
+        </div>
+        <!-- Card 4 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center hover-lift border border-white/60 shadow-lg bg-white/70 backdrop-blur-xl">
+          <span class="text-4xl md:text-5xl font-bold text-primary mb-2">100%</span>
+          <span class="text-secondary/80 font-bold uppercase tracking-wider text-xs">Safe Transport</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- World-Class Infrastructure Grid (Bento Style) -->
-    <section class="py-12 md:py-20 bg-surface-container-low overflow-hidden" id="facilities">
-      <div class="container mx-auto px-gutter">
-        <div class="text-center mb-16 reveal">
-          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">World-Class Infrastructure</h2>
-          <div class="w-24 h-1.5 bg-primary-container mx-auto rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[950px]">
-          <!-- Labs -->
-          <div class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" data-facility="labs">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/compressed/atudy (6).jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">biotech</span>
-              <h3 class="font-headline-md text-headline-md mb-2">Labs &amp; Innovation</h3>
-              <ul class="space-y-2 opacity-90 max-w-md font-body-md list-disc list-inside">
-                <li>Modern Science Labs (Physics, Chemistry, Biology)</li>
-                <li>Advanced Computer Center</li>
-                <li>Robotics &amp; Maker Space</li>
-              </ul>
-            </div>
+  <!-- World-Class Infrastructure -->
+  <section class="py-24 relative overflow-hidden" id="facilities">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">World-Class Infrastructure</h2>
+        <p class="text-lg text-secondary/70 max-w-2xl mx-auto">Facilities engineered to foster critical thinking, creativity, and physical well-being.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+        <!-- Science Centre (Span 8) -->
+        <div class="md:col-span-8 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" onclick="openFacilityModal('science')">
+          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/compressed/atudy (6).jpg')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          
+          <div class="absolute top-6 left-6 z-10">
+            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Discovery</span>
           </div>
-          <!-- Academic / Library -->
-          <div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 100ms;" data-facility="library">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/infra (6).JPG')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">auto_stories</span>
-              <h3 class="font-headline-md text-headline-md mb-2">The Knowledge Hub</h3>
-              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
-                <li>Well-Stocked Main Library</li>
-                <li>Digital e-Library resources</li>
-                <li>Quiet Study &amp; Reading Zones</li>
-              </ul>
+
+          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="text-3xl md:text-4xl text-white mb-3 font-bold">Science Centre</h3>
+            <p class="text-white/80 text-sm md:text-base mb-5 max-w-xl leading-relaxed">Hands-on learning powered by modern laboratories and cutting-edge equipment.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Physics</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Chemistry</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Biology</span>
             </div>
-          </div>
-          <!-- Smart Classrooms -->
-          <div class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 200ms;" data-facility="classrooms">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/education/open (2).jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">devices</span>
-              <h3 class="font-headline-md text-headline-md mb-2">Smart Classrooms</h3>
-              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
-                <li>Smart Digital Projectors &amp; Screens</li>
-                <li>Open-Air Interactive Learning Zones</li>
-                <li>Ergonomic learning environments</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Sports Complex -->
-          <div class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 300ms;" data-facility="sports">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/open (25) - Edited.jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">fitness_center</span>
-              <h3 class="font-headline-md text-headline-md mb-2">Sports &amp; Wellness</h3>
-              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
-                <li>Expansive Athletic Turf Playgrounds</li>
-                <li>Dedicated Yoga &amp; Meditation Hall</li>
-                <li>Equipped Indoor Games Arena</li>
-              </ul>
-            </div>
+            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
+              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Additional Facilities (Dining & Arts) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-md">
-          <div class="group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal h-[350px] onest-bento-card cursor-pointer" data-facility="dining">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/food-min.jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">utensils</span>
-              <h3 class="font-headline-md text-headline-md mb-2">Living &amp; Dining</h3>
-              <ul class="space-y-1 opacity-90 font-body-md list-disc list-inside">
-                <li>Hygienic and spacious Dining Hall</li>
-                <li>Nutritious, organic Sattvic Meals</li>
-                <li>Comfortable child-friendly rest zones</li>
-              </ul>
-            </div>
+        <!-- Computer Centre (Span 4) -->
+        <div class="md:col-span-4 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 100ms;" onclick="openFacilityModal('innovation')">
+          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/infra-(2).jpg')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          
+          <div class="absolute top-6 left-6 z-10">
+            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Technology</span>
           </div>
-          <div class="group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal h-[350px] onest-bento-card cursor-pointer" data-facility="arts">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/compressed/atudy (7) - Edited.jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-8 text-white">
-              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">palette</span>
-              <h3 class="font-headline-md text-headline-md mb-2">Arts &amp; Culture</h3>
-              <ul class="space-y-1 opacity-90 font-body-md list-disc list-inside">
-                <li>Fully equipped Music &amp; Dance Studio</li>
-                <li>Art &amp; Craft development rooms</li>
-                <li>Vibrant outdoor Open Auditorium</li>
-              </ul>
+
+          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="text-2xl md:text-3xl text-white mb-3 font-bold">Innovation Hub</h3>
+            <p class="text-white/80 text-sm mb-5 leading-relaxed">Equipped with the latest technology for coding and design.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Robotics</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Coding</span>
+            </div>
+            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
+              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Art Studio (Span 5) -->
+        <div class="md:col-span-5 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 200ms;" onclick="openFacilityModal('art')">
+          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/compressed/atudy (7) - Edited.jpg')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          
+          <div class="absolute top-6 left-6 z-10">
+            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Creativity</span>
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="text-2xl md:text-3xl text-white mb-3 font-bold">Art &amp; Music</h3>
+            <p class="text-white/80 text-sm mb-5 leading-relaxed">Dedicated spaces designed to nurture artistic expression.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Visual Arts</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Sound Studio</span>
+            </div>
+            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
+              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Smart Classrooms (Span 7) -->
+        <div class="md:col-span-7 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 300ms;" onclick="openFacilityModal('smart-classrooms')">
+          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/education/open (2).jpg')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          
+          <div class="absolute top-6 left-6 z-10">
+            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Academics</span>
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="text-3xl md:text-4xl text-white mb-3 font-bold">Smart Classrooms</h3>
+            <p class="text-white/80 text-sm md:text-base mb-5 max-w-xl leading-relaxed">Ergonomic spaces integrating interactive digital boards and natural lighting.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Interactive Panels</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Ergonomic Seating</span>
+              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Climate Controlled</span>
+            </div>
+            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
+              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Learning Spaces (Editorial) -->
+  <section class="py-24 relative z-10 overflow-hidden">
+    <!-- Ambient background shape -->
+    <div class="absolute top-1/4 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/3"></div>
+
+    <div class="container mx-auto px-gutter max-w-container-max flex flex-col gap-12 md:gap-24">
+      <!-- Section 1 (Image Left) -->
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="w-full lg:w-1/2 relative reveal">
+          <!-- Decorative backing -->
+          <div class="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl -z-10 transform -rotate-2"></div>
+          
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] max-h-[500px] shadow-2xl relative">
+            <img src="assets/img/infra (4).JPG" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Classroom">
+          </div>
+          
+          <!-- Upgraded Floating Card -->
+          <div class="absolute -bottom-8 -right-4 md:-right-8 bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-[2rem] shadow-xl w-56 md:w-64 border border-white/50 luxury-shadow">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined text-2xl">router</span>
+            </div>
+            <span class="text-4xl font-display font-bold text-secondary block mb-1">100%</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-secondary/70 font-bold">Digitally Enabled</span>
+          </div>
+        </div>
+        
+        <div class="w-full lg:w-1/2 reveal pt-12 lg:pt-0" style="transition-delay: 200ms;">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-[2px] bg-primary"></div>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">Smart Infrastructure</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-8 font-display font-bold leading-tight">Designed for <br/>Deep Focus.</h2>
+          <p class="text-lg text-secondary/80 mb-10 leading-relaxed border-l-4 border-primary/20 pl-6">Our smart classrooms break away from traditional confines. Large windows allow natural light to pour in, while dynamic seating arrangements facilitate collaborative learning.</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <i class="bi bi-grid-1x2"></i>
+              </div>
+              <span class="text-secondary font-bold">Flexible Modular Layouts</span>
+            </div>
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <i class="bi bi-sun"></i>
+              </div>
+              <span class="text-secondary font-bold">Optimized Natural Lighting</span>
+            </div>
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <i class="bi bi-soundwave"></i>
+              </div>
+              <span class="text-secondary font-bold">Premium Acoustic Treatment</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Green Campus Section -->
-    <section class="py-12 md:py-20 bg-surface border-t border-on-background/5">
-      <div class="container mx-auto px-gutter">
-        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div class="w-full md:w-1/2 reveal">
-            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs font-bold border border-primary/20">Sustainability</span>
-            <h2 class="font-display-lg text-4xl md:text-5xl text-on-surface mb-6 leading-tight font-bold">A Green <span class="text-primary">Gurukul.</span></h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Nature is our greatest teacher. Our campus is nestled amidst lush green hills, providing a serene, healthy, and pollution-free environment where students learn to respect and coexist with nature.</p>
+      <!-- Section 2 (Image Right) -->
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="w-full lg:w-1/2 reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-[2px] bg-primary"></div>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">Creative Expression</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-8 font-display font-bold leading-tight">The Dance <br/>Studio.</h2>
+          <p class="text-lg text-secondary/80 mb-10 leading-relaxed border-l-4 border-primary/20 pl-6">A specialized space featuring sprung floors and wall-to-wall mirrors, encouraging physical expression, rhythm, and confidence.</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-sm">layers</span>
+              </div>
+              <span class="text-secondary font-bold">Injury-free Sprung Flooring</span>
+            </div>
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-sm">speaker</span>
+              </div>
+              <span class="text-secondary font-bold">Professional Audio Systems</span>
+            </div>
+            <div class="flex items-center gap-4 group cursor-default">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-sm">fit_screen</span>
+              </div>
+              <span class="text-secondary font-bold">Wall-to-wall Mirrors</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full lg:w-1/2 relative reveal" style="transition-delay: 200ms;">
+          <!-- Decorative backing -->
+          <div class="absolute -inset-4 bg-gradient-to-bl from-primary/10 to-transparent rounded-3xl -z-10 transform rotate-2"></div>
+
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] max-h-[500px] shadow-2xl relative">
+            <img src="assets/img/open (22) - Edited.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Dance Studio">
+          </div>
+          
+          <!-- Upgraded Floating Card -->
+          <div class="absolute top-1/2 -left-12 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-[2rem] shadow-xl w-56 md:w-64 border border-white/50 luxury-shadow hidden lg:block">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined text-2xl">theater_comedy</span>
+            </div>
+            <span class="text-4xl font-display font-bold text-secondary block mb-1">50+</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-secondary/70 font-bold">Performances Annually</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Knowledge Hub (Library) -->
+  <section class="relative py-24 z-10">
+    <div class="container mx-auto px-gutter max-w-container-max relative z-20">
+      <div class="bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
+        <!-- Abstract gradient inside the library container -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent z-0"></div>
+        
+        <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+          <div class="w-full lg:w-1/2 reveal">
+            <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Library</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-6 leading-tight font-bold">The Knowledge Hub.</h2>
+            <p class="text-lg text-secondary/80 mb-10 max-w-lg leading-relaxed">More than a library—a sanctuary of learning. Designed with warm lighting, wood textures, and comfortable seating to inspire deep reading and research.</p>
             
-            <div class="space-y-6">
-              <!-- Item 1 -->
-              <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
-                  <span class="material-symbols-outlined text-2xl">park</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-on-surface text-lg">8+ Acres Ecological Cover</h4>
-                  <p class="text-on-surface-variant text-sm mt-0.5">Explore and learn in a rich, biodiverse ecosystem of indigenous flora and safe outdoor trails.</p>
-                </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
+                <span class="text-3xl font-bold text-primary block mb-1">35k+</span>
+                <span class="text-sm font-bold text-secondary/80">Books &amp; Journals</span>
               </div>
-              <!-- Item 2 -->
-              <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
-                  <span class="material-symbols-outlined text-2xl">potted_plant</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-on-surface text-lg">Organic Gardening &amp; Farming</h4>
-                  <p class="text-on-surface-variant text-sm mt-0.5">Hands-on experience in agriculture, botany, and learning core principles of ecological care.</p>
-                </div>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
+                <span class="text-3xl font-bold text-primary block mb-1">Digital</span>
+                <span class="text-sm font-bold text-secondary/80">e-Library Access</span>
               </div>
-              <!-- Item 3 -->
-              <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
-                  <span class="material-symbols-outlined text-2xl">solar_power</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-on-surface text-lg">Solar Powered Smart Grids</h4>
-                  <p class="text-on-surface-variant text-sm mt-0.5">Reducing carbon footprint with modern clean solar grids backing smart classrooms.</p>
-                </div>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
+                <span class="text-3xl font-bold text-primary block mb-1">Pods</span>
+                <span class="text-sm font-bold text-secondary/80">Quiet Reading Pods</span>
+              </div>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
+                <span class="text-3xl font-bold text-primary block mb-1">Lounge</span>
+                <span class="text-sm font-bold text-secondary/80">Collaborative Lounge</span>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 relative reveal" style="transition-delay: 200ms;">
-            <div class="relative z-10 rounded-2xl overflow-hidden aspect-[4/3] luxury-shadow border border-primary/10">
-              <div class="absolute top-4 left-4 z-20 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">nature_people</span>
-                <span>8 Acres Campus</span>
-              </div>
-              <img src="assets/img/school.png" alt="Green Campus View" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+          <div class="w-full lg:w-1/2 relative h-[500px] rounded-3xl overflow-hidden shadow-lg border border-white/60 reveal">
+            <img src="assets/img/infra (6).JPG" class="w-full h-full object-cover" alt="Library Interior">
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Transportation & Safety -->
-    <section class="py-12 md:py-20 bg-surface-container-low">
-      <div class="container mx-auto px-gutter">
-        <div class="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
-          <div class="w-full md:w-1/2 relative reveal" style="transition-delay: 200ms;">
-            <div class="relative z-10 rounded-2xl overflow-hidden aspect-video luxury-shadow">
-              <img src="assets/img/digital_Safety.jpg" alt="Security Monitoring Center" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
-          </div>
-          <div class="w-full md:w-1/2 reveal">
-            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs">Peace of Mind</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Uncompromising Safety &amp; Mobility</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">We prioritize the well-being and security of our students through advanced surveillance networks, campus medics, and secure GPS transit.</p>
-            <ul class="space-y-6">
-              <li class="flex items-start space-x-4">
-                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary-container text-xl">shield</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-on-surface text-lg">24/7 Smart CCTV Surveillance</h4>
-                  <p class="font-body-md text-on-surface-variant">Continuous security monitoring across all gates, pathways, and corridors.</p>
-                </div>
-              </li>
-              <li class="flex items-start space-x-4">
-                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary-container text-xl">directions_bus</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-on-surface text-lg">GPS-Tracked Safe Transport</h4>
-                  <p class="font-body-md text-on-surface-variant">Secure transport fleet with real-time GPS tracking and transit updates.</p>
-                </div>
-              </li>
-              <li class="flex items-start space-x-4">
-                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary-container text-xl">medical_services</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-on-surface text-lg">Resident Campus Medical Infirmary</h4>
-                  <p class="font-body-md text-on-surface-variant">Dedicated on-campus medical center equipped with paramedics and emergency support.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Virtual Tour Section -->
-    <section id="virtual-tour" class="py-12 md:py-20 bg-surface">
-      <div class="container mx-auto px-gutter">
-        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div class="w-full md:w-1/2 reveal">
-            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs">Virtual Walkthrough</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Take a Virtual Campus Tour</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Can't visit us in person yet? No problem. Experience the magic of O'Nest Gurukul from the comfort of your home. Walk through our corridors, peek into our classrooms, and feel the energy of our campus.</p>
-            <div class="flex flex-col space-y-4 mb-8">
-              <div class="flex items-center space-x-3">
-                <span class="material-symbols-outlined text-primary text-xl">videocam</span>
-                <span class="font-body-md text-on-surface-variant"><strong>Immersive View:</strong> High-definition video walkthrough</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-symbols-outlined text-primary text-xl">explore</span>
-                <span class="font-body-md text-on-surface-variant"><strong>Guided Experience:</strong> Explore key academic and sports landmarks</span>
-              </div>
-            </div>
-            <a href="contact.html" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold inline-block hover:bg-primary/90 transition-all text-sm">Schedule a Physical Visit</a>
-          </div>
-          <div class="w-full md:w-1/2 reveal" style="transition-delay: 200ms;">
-            <div class="onest-campus-tour-video relative rounded-2xl overflow-hidden luxury-shadow group cursor-pointer aspect-video bg-black">
-              <video class="w-full h-full object-cover" poster="assets/img/campus3.png" loop muted playsinline>
-                <source src="assets/img/education/video-5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="onest-campus-play-overlay absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-                <div class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
-                  <i class="bi bi-play-fill text-4xl ml-1"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="py-12 md:py-20 bg-surface-container-low">
-      <div class="container mx-auto px-gutter">
-        <div class="text-center mb-12 reveal">
-          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Locate Us</h2>
-          <p class="font-body-md text-on-surface-variant">Nestled in the serene, hills-side surroundings of Ratnagiri.</p>
-        </div>
-        <div class="rounded-2xl overflow-hidden luxury-shadow h-[450px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-full"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Infrastructure Gallery -->
-    <section class="py-12 md:py-20 bg-surface border-t border-on-background/5">
-      <div class="container mx-auto px-gutter">
-        <div class="text-center mb-12 reveal">
-          <h2 class="font-headline-lg text-headline-lg text-on-surface">Campus Vignettes</h2>
-          <p class="font-body-md text-on-surface-variant">A visual journey through the corners of Onest Gurukul.</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-md reveal" style="transition-delay: 100ms;">
-          <!-- Image 1 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="0">
-            <img src="assets/img/infra (1).JPG" alt="O'Nest Gurukul Infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 2 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="1">
-            <img src="assets/img/infra-(2).jpg" alt="Campus Building" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 3 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="2">
-            <img src="assets/img/infra (3).JPG" alt="School Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 4 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="3">
-            <img src="assets/img/infra (4).JPG" alt="Modern Classrooms" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 5 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="4">
-            <img src="assets/img/infra (5).JPG" alt="Campus Infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 6 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="5">
-            <img src="assets/img/infra (6).JPG" alt="Learning Spaces" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-          <!-- Image 7 -->
-          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="6">
-            <img src="assets/img/infra (7).JPG" alt="Campus Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Lightbox Modal -->
-    <div id="onest-campus-gallery-modal" class="onest-campus-gallery-modal">
-      <span class="onest-campus-gallery-close">&times;</span>
-      <button class="onest-campus-gallery-nav onest-campus-gallery-prev" aria-label="Previous image">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <img class="onest-campus-gallery-modal-content" id="onest-campus-modal-img" alt="Campus Facility Zoomed Image">
-      <button class="onest-campus-gallery-nav onest-campus-gallery-next" aria-label="Next image">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-
-    <!-- Infrastructure Detail Modal -->
-    <div id="onest-facility-detail-modal" class="fixed inset-0 z-[9999] hidden bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
-      <div class="bg-background max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl border border-on-background/10 transform scale-95 opacity-0 transition-all duration-300 relative p-8">
-        <!-- Close Button -->
-        <button id="onest-facility-modal-close" class="absolute top-4 right-4 p-2 text-on-surface-variant hover:bg-primary/10 rounded-full transition-colors" aria-label="Close modal">
-          <i class="bi bi-x text-2xl"></i>
-        </button>
-        <!-- Modal Content -->
-        <div id="onest-facility-modal-body" class="space-y-6">
-          <!-- Content injected dynamically via JS -->
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="py-12 md:py-20 px-gutter bg-surface">
-      <div class="max-w-container-max mx-auto bg-primary text-on-primary rounded-2xl p-12 md:p-24 relative overflow-hidden text-center reveal">
-        <div class="relative z-10">
-          <h2 class="font-display-lg text-headline-lg md:text-display-lg mb-8 text-white">Ready to see it in person?</h2>
-          <p class="font-body-lg text-body-lg opacity-80 mb-12 max-w-xl mx-auto text-white">Book a personalized campus tour today and witness the pinnacle of educational infrastructure.</p>
-          <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-            <a href="contact.html" class="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:scale-105 transition-transform inline-block">Schedule Visit</a>
-            <a href="admissions.html" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:bg-white/20 transition-all inline-block">Apply Now</a>
+  <!-- Sports & Wellness -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="flex flex-col lg:flex-row justify-between items-end mb-12 reveal">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Energy &amp; Motion.</h2>
+          <p class="text-lg text-secondary/80">A sprawling sports complex built to nurture champions. From competitive athletics to mindful yoga, we believe in holistic physical development.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[500px]">
+        <!-- Main Image -->
+        <div class="md:col-span-8 rounded-3xl overflow-hidden relative group luxury-shadow reveal">
+          <img src="assets/img/open (25) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Football">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-8 left-8">
+            <h3 class="text-3xl text-white mb-2 font-bold">Football &amp; Athletics</h3>
+            <p class="text-white/80 text-sm md:text-base">Professional grade turf and athletic tracks.</p>
+          </div>
+        </div>
+        
+        <!-- Side Images -->
+        <div class="md:col-span-4 flex flex-col gap-6">
+          <div class="flex-1 rounded-3xl overflow-hidden relative group luxury-shadow reveal" style="transition-delay: 100ms;">
+             <img src="assets/img/compressed/atudy (11) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Yoga">
+             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+             <div class="absolute bottom-6 left-6">
+                <h3 class="text-xl text-white mb-1 font-bold">Yoga &amp; Meditation</h3>
+                <p class="text-white/80 text-xs">Dedicated tranquil spaces.</p>
+             </div>
+          </div>
+          <div class="flex-1 rounded-3xl overflow-hidden relative group luxury-shadow reveal" style="transition-delay: 200ms;">
+             <img src="assets/img/infra (1).JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Indoor Games">
+             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+             <div class="absolute bottom-6 left-6">
+                <h3 class="text-xl text-white mb-1 font-bold">Indoor Sports</h3>
+                <p class="text-white/80 text-xs">Table tennis, chess, and more.</p>
+             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Green Campus (Story Cards) -->
+  <section class="relative py-24 overflow-hidden z-10">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/img/school.png" class="w-full h-full object-cover" alt="Aerial Campus View">
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
+    </div>
+    
+    <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+      <div class="text-center mb-16 reveal">
+         <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Sustainability</span>
+         <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 font-bold">A Breath of Fresh Air.</h2>
+         <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Nestled in 8 acres of lush greenery, our campus is a living laboratory for environmental stewardship.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer">
+           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">nature_people</span>
+           <h3 class="text-xl font-bold text-secondary mb-3">Nature Trails</h3>
+           <p class="text-secondary/80 text-sm leading-relaxed">Outdoor classrooms set amongst indigenous flora, turning every nature walk into a lesson in biodiversity.</p>
+        </div>
+        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer" style="transition-delay: 100ms;">
+           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">yard</span>
+           <h3 class="text-xl font-bold text-secondary mb-3">Organic Farming</h3>
+           <p class="text-secondary/80 text-sm leading-relaxed">Students get their hands dirty learning the principles of sustainable agriculture and harvesting fresh produce.</p>
+        </div>
+        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer" style="transition-delay: 200ms;">
+           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">solar_power</span>
+           <h3 class="text-xl font-bold text-secondary mb-3">Solar Energy</h3>
+           <p class="text-secondary/80 text-sm leading-relaxed">Powering our smart infrastructure with clean, renewable energy arrays spread across the campus rooftops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Security -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Uncompromising Security.</h2>
+        <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Your child’s safety is our paramount responsibility. Period.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10">
+          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
+             <img src="assets/img/digital_Safety.jpg" class="w-full h-full object-cover" alt="CCTV">
+             <div class="absolute inset-0 bg-black/5"></div>
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-xl">videocam</span>
+              </div>
+              <div>
+                <span class="font-bold text-xl text-secondary block leading-none">120+</span>
+                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">CCTV Cameras</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-secondary mb-2">Safe Campus</h3>
+            <p class="text-sm text-secondary/80">Real-time monitoring across all corridors and access points ensuring a secure perimeter.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10" style="transition-delay: 100ms;">
+          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
+             <img src="assets/img/school.png" class="w-full h-full object-cover" alt="Transport">
+             <div class="absolute inset-0 bg-black/5"></div>
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-xl">directions_bus</span>
+              </div>
+              <div>
+                <span class="font-bold text-xl text-secondary block leading-none">Live</span>
+                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">GPS Tracking</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-secondary mb-2">Secure Transport</h3>
+            <p class="text-sm text-secondary/80">Fleet of modern buses equipped with GPS, female attendants, and real-time parent alerts.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10" style="transition-delay: 200ms;">
+          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
+             <img src="assets/img/infra (1).JPG" class="w-full h-full object-cover" alt="Medical">
+             <div class="absolute inset-0 bg-black/5"></div>
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-xl">medical_services</span>
+              </div>
+              <div>
+                <span class="font-bold text-xl text-secondary block leading-none">24/7</span>
+                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">Medical Staff</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-secondary mb-2">Medical Centre</h3>
+            <p class="text-sm text-secondary/80">Fully equipped infirmary with resident nurses and tie-ups with top local hospitals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Experience (Image Timeline) -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+       <div class="mb-16 reveal">
+          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">A Day at O'Nest.</h2>
+          <p class="text-lg text-secondary/80 max-w-2xl">Experience the rhythm of student life, from morning inspiration to afternoon creation.</p>
+       </div>
+
+       <!-- Horizontal scrolling timeline container -->
+       <div class="relative w-full overflow-x-auto pb-12 hide-scrollbar timeline-container cursor-grab active:cursor-grabbing">
+          <div class="flex gap-6 min-w-max">
+             
+             <!-- Timeline Item 1 -->
+             <div class="w-72 group flex flex-col">
+                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+                   <img src="assets/img/open (25) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">08:00 AM</span>
+                   <h4 class="text-lg text-secondary font-bold mb-1">Morning Assembly</h4>
+                   <p class="text-xs text-secondary/80 leading-relaxed">Starting the day with mindfulness and community spirit.</p>
+                </div>
+             </div>
+
+             <!-- Timeline Item 2 -->
+             <div class="w-72 group flex flex-col">
+                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+                   <img src="assets/img/education/open (2).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">09:00 AM</span>
+                   <h4 class="text-lg text-secondary font-bold mb-1">Smart Learning</h4>
+                   <p class="text-xs text-secondary/80 leading-relaxed">Interactive academic sessions in tech-enabled spaces.</p>
+                </div>
+             </div>
+
+             <!-- Timeline Item 3 -->
+             <div class="w-72 group flex flex-col">
+                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+                   <img src="assets/img/food-min.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">12:30 PM</span>
+                   <h4 class="text-lg text-secondary font-bold mb-1">Nutritious Lunch</h4>
+                   <p class="text-xs text-secondary/80 leading-relaxed">Organic, sattvic meals in the spacious dining hall.</p>
+                </div>
+             </div>
+
+             <!-- Timeline Item 4 -->
+             <div class="w-72 group flex flex-col">
+                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+                   <img src="assets/img/compressed/atudy (6).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">01:30 PM</span>
+                   <h4 class="text-lg text-secondary font-bold mb-1">Hands-on Labs</h4>
+                   <p class="text-xs text-secondary/80 leading-relaxed">Practical experiments and coding in the innovation hubs.</p>
+                </div>
+             </div>
+
+             <!-- Timeline Item 5 -->
+             <div class="w-72 group flex flex-col">
+                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+                   <img src="assets/img/compressed/atudy (7) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative pl-5 border-l-2 border-transparent pb-6">
+                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">03:00 PM</span>
+                   <h4 class="text-lg text-secondary font-bold mb-1">Arts &amp; Sports</h4>
+                   <p class="text-xs text-secondary/80 leading-relaxed">Cultivating talents on the field and in the studios.</p>
+                </div>
+             </div>
+             
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- Virtual Tour (Laptop Mockup) -->
+  <section class="py-24 relative z-10" id="virtual-tour">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-16">
+        
+        <!-- Mockup -->
+        <div class="w-full lg:w-[60%] reveal">
+           <div class="relative w-full max-w-3xl mx-auto">
+              <!-- Laptop Frame -->
+              <div class="bg-gray-800 rounded-t-2xl p-2.5 pb-0 shadow-2xl relative z-10 border-t border-l border-r border-gray-700">
+                 <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                 <div class="bg-black rounded-lg overflow-hidden aspect-video relative group">
+                    <video class="w-full h-full object-cover" poster="assets/img/campus3.png" loop muted playsinline>
+                      <source src="assets/img/education/video-5.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/50 transition-all cursor-pointer">
+                       <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 hover:scale-110 transition-transform shadow-lg">
+                          <i class="bi bi-play-fill text-white text-3xl ml-1"></i>
+                       </div>
+                    </div>
+                    <!-- 360 Badge -->
+                    <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20">
+                      360° Preview
+                    </div>
+                 </div>
+              </div>
+              <!-- Laptop Base -->
+              <div class="h-3 bg-gray-300 rounded-b-xl shadow-xl relative z-20">
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gray-400 rounded-b-sm"></div>
+              </div>
+           </div>
+        </div>
+
+        <!-- Content -->
+        <div class="w-full lg:w-[40%] reveal" style="transition-delay: 200ms;">
+           <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Immersive Experience</span>
+           <h2 class="text-4xl md:text-5xl text-secondary mb-6 font-bold">Explore From Anywhere.</h2>
+           
+           <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined text-lg">school</span>
+                 </div>
+                 <div>
+                    <h4 class="text-base font-bold text-secondary mb-1">Explore Classrooms</h4>
+                    <p class="text-xs text-secondary/70">Step inside our smart learning environments.</p>
+                 </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined text-lg">science</span>
+                 </div>
+                 <div>
+                    <h4 class="text-base font-bold text-secondary mb-1">Visit Laboratories</h4>
+                    <p class="text-xs text-secondary/70">See the cutting-edge tools in our science hub.</p>
+                 </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined text-lg">sports_basketball</span>
+                 </div>
+                 <div>
+                    <h4 class="text-base font-bold text-secondary mb-1">Walk Through Sports Complex</h4>
+                    <p class="text-xs text-secondary/70">Experience the scale of our athletic facilities.</p>
+                 </div>
+              </div>
+           </div>
+
+           <a href="contact.html" class="inline-block bg-secondary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors shadow-md text-sm">Start Full Tour</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Campus Map -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="text-center mb-12 reveal">
+         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Campus Masterplan.</h2>
+         <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Hover over the zones to discover how our 8-acre campus is meticulously zoned for academics, sports, and nature.</p>
+      </div>
+
+      <!-- Stylized Map Container -->
+      <div class="relative w-full aspect-[16/9] md:aspect-[21/9] bg-white/50 rounded-3xl overflow-hidden border border-primary/20 shadow-xl reveal">
+         <!-- Abstract Map Graphics -->
+         <img src="assets/img/school.png" class="w-full h-full object-cover opacity-70 mix-blend-multiply" alt="Map Illustration">
+         
+         <!-- Map Hotspots -->
+         <div class="absolute top-[30%] left-[20%] group">
+            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+               <h4 class="font-bold text-sm text-secondary mb-1">Academic Block</h4>
+               <p class="text-[10px] text-secondary/70">Smart Classrooms &amp; Admin</p>
+            </div>
+         </div>
+
+         <div class="absolute top-[45%] left-[50%] group">
+            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+               <h4 class="font-bold text-sm text-secondary mb-1">Sports Complex</h4>
+               <p class="text-[10px] text-secondary/70">Turf, Tracks &amp; Courts</p>
+            </div>
+         </div>
+
+         <div class="absolute top-[60%] left-[75%] group">
+            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+               <h4 class="font-bold text-sm text-secondary mb-1">The Knowledge Hub</h4>
+               <p class="text-[10px] text-secondary/70">Library &amp; E-Resources</p>
+            </div>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Gallery (Pinterest Masonry) -->
+  <section class="py-24 relative z-10 border-t border-primary/10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="text-center mb-12 reveal">
+         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Moments Captured.</h2>
+      </div>
+
+      <div class="masonry-grid reveal">
+         <!-- Image 1 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/infra (1).JPG" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Architecture">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Architecture</span>
+            </div>
+         </div>
+         <!-- Image 2 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/infra-(2).jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Landscape">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Landscape</span>
+            </div>
+         </div>
+         <!-- Image 3 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/education/open (2).jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Classroom">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Academics</span>
+            </div>
+         </div>
+         <!-- Image 4 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/compressed/atudy (6).jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Labs">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Innovation Labs</span>
+            </div>
+         </div>
+         <!-- Image 5 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/open (25) - Edited.jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Sports">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Sports Complex</span>
+            </div>
+         </div>
+         <!-- Image 6 -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50">
+            <img src="assets/img/infra (6).JPG" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Library">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">The Knowledge Hub</span>
+            </div>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox Modal -->
+  <div id="onest-campus-gallery-modal" class="onest-campus-gallery-modal">
+    <span class="onest-campus-gallery-close">&times;</span>
+    <button class="onest-campus-gallery-nav onest-campus-gallery-prev" aria-label="Previous image">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <img class="onest-campus-gallery-modal-content rounded-xl shadow-2xl max-h-[90vh] overflow-y-auto" id="onest-campus-modal-img" alt="Campus Facility Zoomed Image">
+    <button class="onest-campus-gallery-nav onest-campus-gallery-next" aria-label="Next image">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Why Parents Love Our Campus -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-gutter max-w-container-max">
+       <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl md:text-4xl text-secondary mb-4 font-bold">Why Parents Love Our Campus</h2>
+       </div>
+
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">science</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Future-Ready Tech</h4>
+             <p class="text-sm text-secondary/70">Classrooms and labs equipped with the latest technology to prepare students for tomorrow.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal" style="transition-delay: 50ms;">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">verified_user</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Absolute Safety</h4>
+             <p class="text-sm text-secondary/70">Stringent security protocols, CCTV, and trained staff ensuring complete peace of mind.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal" style="transition-delay: 100ms;">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">eco</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Connection to Nature</h4>
+             <p class="text-sm text-secondary/70">Expansive green spaces that encourage outdoor learning and physical well-being.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal" style="transition-delay: 150ms;">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">groups</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Exceptional Faculty</h4>
+             <p class="text-sm text-secondary/70">Dedicated teachers who utilize our infrastructure to deliver personalized education.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal" style="transition-delay: 200ms;">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">sports_gymnastics</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Holistic Sports</h4>
+             <p class="text-sm text-secondary/70">Facilities that support both competitive sports and personal wellness like yoga.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white/60 border border-primary/10 shadow-sm hover-lift reveal" style="transition-delay: 250ms;">
+             <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-xl">architecture</span>
+             </div>
+             <h4 class="text-lg text-secondary font-bold mb-2">Inspiring Architecture</h4>
+             <p class="text-sm text-secondary/70">Aesthetic, well-lit spaces that students love to learn in every single day.</p>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- Book a Campus Visit (Premium CTA) -->
+  <section class="relative py-32 overflow-hidden z-10" id="book-visit">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/infra (1).JPG');"></div>
+    <div class="absolute inset-0 bg-white/70 backdrop-blur-md"></div>
+    
+    <div class="container mx-auto px-gutter max-w-4xl relative z-10">
+      <div class="bg-white/90 backdrop-blur-xl border border-white shadow-2xl p-10 md:p-16 rounded-[2rem] text-center reveal">
+         <h2 class="text-4xl md:text-5xl text-secondary mb-6 font-bold leading-tight">The Best Way to Experience O'Nest Gurukul is to Visit It.</h2>
+         <p class="text-lg text-secondary/80 mb-10 max-w-xl mx-auto leading-relaxed">Walk the corridors, meet our educators, and see the environment where your child will thrive.</p>
+         
+         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="contact.html" class="bg-primary text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:scale-105 transition-transform shadow-md w-full sm:w-auto">Book Visit</a>
+            <a href="admissions.html" class="bg-white border border-primary/20 text-primary px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-primary/5 transition-colors w-full sm:w-auto shadow-sm">Talk to Admissions</a>
+            <a href="#" class="text-secondary font-bold text-sm hover:text-primary transition-colors underline underline-offset-4 w-full sm:w-auto mt-2 sm:mt-0 ml-0 sm:ml-2">Download Prospectus</a>
+         </div>
+      </div>
+    </div>
+  </section>
+</main>
 
   <!-- Footer -->
   <footer class="bg-surface-container-high border-t border-on-background/5">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
       <div class="md:col-span-1">
         <div class="font-headline-md text-headline-md text-primary mb-6 font-bold">ONEST GURUKUL</div>
-        <p class="font-body-md text-on-secondary-fixed-variant mb-6 text-on-surface-variant">Empowering minds through innovation and excellence. Join our global community of learners.</p>
+        <p class="font-body-md text-on-secondary-fixed-variant mb-6 text-white/80">Empowering minds through innovation and excellence. Join our global community of learners.</p>
         <div class="flex space-x-4">
           <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 1"><span class="material-symbols-outlined text-sm">public</span></a>
           <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 2"><span class="material-symbols-outlined text-sm">share</span></a>
@@ -696,23 +1101,23 @@ Admissions
       <div>
         <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Resources</h4>
         <ul class="space-y-4 text-sm font-semibold">
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="campus-facilities.html">Campus Map</a></li>
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Alumni Network</a></li>
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Faculty Portal</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="campus-facilities.html">Campus Map</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Alumni Network</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Careers</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Faculty Portal</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Legal</h4>
         <ul class="space-y-4 text-sm font-semibold">
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Privacy Policy</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Terms of Service</a></li>
+          <li><a class="font-body-md text-white/80 hover:text-[#facc15] transition-colors" href="#">Accessibility</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Newsletter</h4>
-        <p class="font-body-md text-on-surface-variant mb-4">Stay updated with campus news.</p>
+        <p class="font-body-md text-white/80 mb-4">Stay updated with campus news.</p>
         <form class="flex flex-col space-y-3">
           <input class="bg-surface p-3 rounded-lg border-0 ring-1 ring-on-background/10 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email Address" type="email" aria-label="Newsletter Email" />
           <button class="bg-primary text-on-primary py-3 rounded-lg font-label-md font-bold hover:opacity-90 transition-all">Subscribe</button>
@@ -720,7 +1125,7 @@ Admissions
       </div>
     </div>
     <div class="border-t border-on-background/10 py-6 text-center">
-      <p class="font-label-sm text-on-surface-variant text-xs font-semibold">© 2024 Onest Gurukul. Excellence in Education.</p>
+      <p class="font-label-sm text-white/80 text-xs font-semibold">© 2024 Onest Gurukul. Excellence in Education.</p>
     </div>
   </footer>
 
@@ -776,6 +1181,102 @@ Admissions
     })();
   </script>
 
-</body>
+
+  <!-- Facility Detail Modal -->
+  <div id="facility-modal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 relative" id="facility-modal-content">
+      <button onclick="closeFacilityModal()" class="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center z-10 transition-colors">
+        <i class="bi bi-x text-2xl"></i>
+      </button>
+      <div class="h-64 sm:h-80 relative">
+        <img id="facility-modal-img" src="" class="w-full h-full object-cover" alt="Facility Image">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <h3 id="facility-modal-title" class="text-3xl font-bold text-white mb-2" style="font-family: 'Libre Caslon Text', serif;"></h3>
+          <div id="facility-modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+      <div class="p-6 md:p-8">
+        <p id="facility-modal-desc" class="text-gray-700 text-base md:text-lg leading-relaxed mb-8"></p>
+        <div class="flex justify-end border-t border-gray-100 pt-6">
+          <a id="facility-modal-cta" href="admissions.html" class="bg-[#735c00] text-white px-8 py-3.5 rounded-xl font-bold hover:bg-black transition-colors shadow-md">Apply for Admission</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const facilityData = {
+      'science': {
+        title: 'Science Centre',
+        image: 'assets/img/compressed/atudy (6).jpg',
+        tags: ['Physics', 'Chemistry', 'Biology'],
+        description: 'Our state-of-the-art Science Centre offers hands-on learning powered by modern laboratories and cutting-edge equipment. It provides a safe and inspiring environment for students to conduct experiments, test hypotheses, and turn theoretical knowledge into practical understanding.',
+        ctaLink: 'admissions.html'
+      },
+      'innovation': {
+        title: 'Innovation Hub',
+        image: 'assets/img/infra-(2).jpg',
+        tags: ['Robotics', 'Coding'],
+        description: 'Equipped with the latest technology for coding, design, and robotics, the Innovation Hub is where future tech leaders are born. Students learn problem-solving and algorithmic thinking through interactive, project-based learning.',
+        ctaLink: 'admissions.html'
+      },
+      'art': {
+        title: 'Art & Music',
+        image: 'assets/img/compressed/atudy (7) - Edited.jpg',
+        tags: ['Visual Arts', 'Sound Studio'],
+        description: 'Dedicated spaces designed to nurture artistic expression. Our Art & Music studios provide students with high-quality instruments, acoustic environments, and premium art supplies to explore their creativity without bounds.',
+        ctaLink: 'admissions.html'
+      },
+      'smart-classrooms': {
+        title: 'Smart Classrooms',
+        image: 'assets/img/education/open (2).jpg',
+        tags: ['Interactive Panels', 'Ergonomic Seating', 'Climate Controlled'],
+        description: 'Ergonomic spaces integrating interactive digital boards and natural lighting. Our classrooms break away from traditional confines, offering dynamic seating arrangements that facilitate collaborative learning and digital exploration.',
+        ctaLink: 'admissions.html'
+      }
+    };
+
+    function openFacilityModal(id) {
+      const modal = document.getElementById('facility-modal');
+      const content = document.getElementById('facility-modal-content');
+      const data = facilityData[id];
+      
+      if(!data) return;
+
+      document.getElementById('facility-modal-img').src = data.image;
+      document.getElementById('facility-modal-title').innerText = data.title;
+      document.getElementById('facility-modal-desc').innerText = data.description;
+      document.getElementById('facility-modal-cta').href = data.ctaLink;
+      
+      const tagsHtml = data.tags.map(tag => `<span class="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ ${tag}</span>`).join('');
+      document.getElementById('facility-modal-tags').innerHTML = tagsHtml;
+
+      modal.classList.remove('hidden');
+      void modal.offsetWidth;
+      modal.classList.remove('opacity-0');
+      content.classList.remove('scale-95');
+    }
+
+    function closeFacilityModal() {
+      const modal = document.getElementById('facility-modal');
+      const content = document.getElementById('facility-modal-content');
+      
+      modal.classList.add('opacity-0');
+      content.classList.add('scale-95');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    document.getElementById('facility-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeFacilityModal();
+      }
+    });
+  </script>
+
+  <script src="assets/js/onest-home.js"></script>\n</body>
 
 </html>

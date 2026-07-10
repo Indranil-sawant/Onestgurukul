@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Curriculum &amp; Student Life - O'Nest Gurukul</title>
+  <title>A Day at O'Nest Gurukul - A Cinematic Storytelling Journey</title>
   <meta name="description"
-    content="Experience the vibrant student life at Onest Gurukul. From academics to sports and arts, we nurture every aspect of a child's growth.">
-  <meta name="keywords" content="Student Life, Gurukul Activities, Holistic Education, Sports, Arts, Clubs">
+    content="Experience a day in the life of an O'Nest Gurukul student. A cinematic interactive journey of learning, creativity, sports, and happiness.">
+  <meta name="keywords" content="Student Life, Curriculum, Onest Gurukul, Ratnagiri, CBSE School">
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -98,13 +98,39 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Gradient blob animations */
+    /* Ambient Glow Blobs */
     @keyframes float {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-20px) scale(1.05); }
     }
     .floating-blob {
       animation: float 8s ease-in-out infinite;
+    }
+    /* Animated footprints */
+    .footprint-track {
+      position: absolute;
+      width: 4px;
+      background: rgba(115, 92, 0, 0.15);
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+    @media (min-width: 1024px) {
+      .footprint-track {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .footprint-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #735c00;
+      border: 3px solid #fdfbf7;
+      position: absolute;
+      left: -6px;
+      transition: all 0.4s ease;
     }
     /* Custom scrollbar */
     ::-webkit-scrollbar {
@@ -120,7 +146,7 @@
   </style>
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary">
+<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
   <!-- Sticky TopNavBar -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
@@ -153,255 +179,295 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-background/98 backdrop-blur-lg transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
-    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-secondary cursor-pointer p-2 hover:bg-primary/10 rounded-full">
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
       <i class="bi bi-x text-4xl"></i>
     </div>
     <ul class="flex flex-col gap-6 text-center text-xl font-bold">
-      <li><a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a></li>
-      <li><a href="about.html" class="text-secondary hover:text-primary transition-colors">About Us</a></li>
-      <li><a href="preprimary.html" class="text-secondary hover:text-primary transition-colors" style="color: #FF6B9D;">⭐ Pre-Primary</a></li>
-      <li><a href="students-life.html" class="text-primary border-b-2 border-primary pb-1">Curriculum</a></li>
-      <li><a href="campus-facilities.html" class="text-secondary hover:text-primary transition-colors">Campus &amp; Facilities</a></li>
-      <li><a href="contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a></li>
-      <li class="mt-4"><a href="admissions.html" class="bg-primary text-white px-8 py-3.5 rounded-xl block shadow-md font-extrabold">Apply Now</a></li>
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors" style="color: #FF6B9D;">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
     </ul>
   </div>
 
   <main class="pt-[90px]">
 
-    <!-- HERO SECTION -->
-    <section class="relative h-[55vh] min-h-[400px] overflow-hidden bg-black text-white flex items-center">
+    <!-- HERO SECTION (Cinematic Story Opening) -->
+    <section class="relative h-[85vh] min-h-[550px] overflow-hidden bg-black text-white flex items-center">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/compressed/atudy (8).jpg');"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
-        <div class="max-w-3xl space-y-4">
-          <nav class="text-sm font-semibold tracking-wider text-primary-light flex items-center gap-2 mb-2">
-            <a href="index.html" class="hover:underline">Home</a>
-            <i class="bi bi-chevron-right text-xs"></i>
-            <span>Curriculum &amp; Student Life</span>
-          </nav>
-          <h1 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">
-            Where Every Talent<br/><span class="text-primary-light">Finds a Supportive Home</span>
+        <div class="max-w-3xl space-y-6">
+          <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block">
+            🎬 A Day in the Life of an O'Nest Student
+          </span>
+          <h1 class="font-display text-4xl md:text-7xl text-white font-bold leading-tight">
+            Every Big Dream<br/><span class="text-primary-light">Begins With a Smile.</span>
           </h1>
           <p class="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
-            Beyond the classroom, our campus is a vibrant tapestry of culture, athletics, and community, designed to nurture the holistic excellence of every modern scholar.
+            Follow the journey of our students through an ordinary day filled with extraordinary discoveries, music, sports, nature, and deep friendships.
           </p>
+          <a href="#story-start" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm shadow-md">
+            Explore Today's Journey
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- METRICS STRIP -->
-    <section class="py-12 bg-white border-y border-primary/10">
-      <div class="container mx-auto px-gutter max-w-container-max">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div class="p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">50+</span>
-            <span class="text-secondary text-sm font-bold uppercase tracking-wider">Active Clubs</span>
+    <!-- CORE STORY SCROLL PIPELINE -->
+    <section id="story-start" class="relative py-24 bg-gradient-to-b from-[#fdfbf7] via-white to-[#fdfbf7]">
+      <!-- Footprints tracking line -->
+      <div class="footprint-track">
+        <div class="footprint-dot top-[8%]" id="dot-c1"></div>
+        <div class="footprint-dot top-[17%]" id="dot-c2"></div>
+        <div class="footprint-dot top-[26%]" id="dot-c3"></div>
+        <div class="footprint-dot top-[35%]" id="dot-c4"></div>
+        <div class="footprint-dot top-[44%]" id="dot-c5"></div>
+        <div class="footprint-dot top-[53%]" id="dot-c6"></div>
+        <div class="footprint-dot top-[62%]" id="dot-c7"></div>
+        <div class="footprint-dot top-[71%]" id="dot-c8"></div>
+        <div class="footprint-dot top-[80%]" id="dot-c9"></div>
+        <div class="footprint-dot top-[89%]" id="dot-c10"></div>
+        <div class="footprint-dot top-[98%]" id="dot-c11"></div>
+      </div>
+
+      <div class="container mx-auto px-gutter max-w-container-max space-y-36">
+
+        <!-- CHAPTER 1: GOOD MORNING -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 01 : 🌅 Good Morning</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">The Best Days Always Begin With A Smile</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              The school bus rolls in, and the air fills with laughter. Teachers greet every child by name at the gate, welcoming them into a green campus flooded with morning sunshine.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "We step off the bus, wave goodbye to mom and dad, and wave hello to a day full of possibilities."
+            </div>
           </div>
-          <div class="p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">100%</span>
-            <span class="text-secondary text-sm font-bold uppercase tracking-wider">Participation</span>
-          </div>
-          <div class="p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">25+</span>
-            <span class="text-secondary text-sm font-bold uppercase tracking-wider">Sports Disciplines</span>
-          </div>
-          <div class="p-4">
-            <span class="block text-4xl font-bold text-primary mb-2">12k+</span>
-            <span class="text-secondary text-sm font-bold uppercase tracking-wider">Alumni Network</span>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/school2.jpg" alt="Good Morning welcome" class="w-full h-full object-cover">
+            </div>
           </div>
         </div>
+
+        <!-- CHAPTER 2: ASSEMBLY & YOGA -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 02 : 🧘 Morning Assembly</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Focus &amp; Shared energy</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              A calm circle of breathing cycles and prayers. We align our thoughts with morning yoga postures, celebrating student birthdays and listening to the thought of the day.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Starting the morning with deep breaths sets the tone for calm and focus."
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-1">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/open (25) - Edited.jpg" alt="Morning assembly" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 3: CLASSROOM ADVENTURE -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 03 : 📚 Classroom Adventure</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Active Discovery, Not Memorization</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              Step inside classrooms where math becomes a puzzle and science model showcases trigger discussions. No rows of silent desks—just hands raising to ask, argue, and discover.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "We learn by building, discussing, and questioning, finding answers together."
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/study_session.jpg" alt="Classroom learning" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 4: DISCOVERY LAB -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 04 : 🔬 Discovery Lab</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Young Minds, Real Science</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              Curious eyes peering through microscopes and working with coding kits. Our lab is an innovation workspace for solar designs, chemical reactions, and basic robotics.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Hands-on experiments help us turn theories into working reality."
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-1">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/compressed/atudy (8).jpg" alt="Discovery science lab" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 5: CREATIVE STUDIO -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 05 : 🎨 Creative Studio</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Expressing the Unspoken</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              Hands covered in paint, voices tracing notes, and scripts rehearsed for drama. Here, children find their unique voice through fine art, rhythm, and clay designs.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "We explore emotions and build confidence with every stroke and melody."
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Arts and crafts" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 6: LUNCHTIME -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 06 : 🍎 Lunchtime</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Sharing Meals, Building Bonds</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              A warm dining space where friends share home-cooked meals and talk about their day. Teachers dine alongside students, fostering a close community.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Laughter and friendly conversations make this the warmest hour of the day."
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-1">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/parents.jpg" alt="Dining experience" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 7: PLAYGROUND -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 07 : ⚽ Playground</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Maximum Energy &amp; Cheers</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              The playground comes alive with sports, goals scored, sprints, and team cheers. Our students learn leadership, teamwork, and resilience through active outdoor play.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "We play hard, support our teammates, and celebrate together."
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/students-sports.png" alt="Playground activities" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 8: NATURE -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 08 : 🌱 Nature &amp; Gardening</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Sowing Seeds for Tomorrow</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              Students plant seeds in the school garden, track rainwater harvesting systems, and study butterfly habitats in outdoor biology classes.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Learning to care for nature helps us grow into responsible global citizens."
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-1">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/education/kids2.jpg" alt="Nature gardening" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 9: FRIENDSHIP -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 09 : 🤝 Friendship</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Supported &amp; Valued</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              Sharing books, collaborating on group projects, and celebrating birthdays. We nurture a space of kindness where every student feels supported and respected.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "We support each other in class and on the playground, growing together."
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/compressed/atudy (1).jpg" alt="Friendship study" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 10: ACHIEVEMENTS -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 10 : 🏆 Achievements</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Celebrating Every Milestone</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              From science fairs and Olympiads to sports contests and creative arts events, we celebrate every milestone and encourage our students to excel.
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Every effort is recognized, building confidence and character."
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-1">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/compressed/atudy (17)L.jpg" alt="Achievements" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 11: HOME TIME -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
+          <div class="lg:col-span-5 space-y-6 text-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 11 : 🌇 Home Time</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">"See You Tomorrow!"</h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
+              As the golden sunset covers the campus, school buses line up and parents wait. Hugs are shared, and one child smiles, waving: *"See you tomorrow!"*
+            </p>
+            <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
+              "Waving goodbye after a day full of happy learning memories."
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
+              <img src="assets/img/education/kids3.jpg" alt="Waving goodbye" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- DAILY TIMELINE -->
-    <section class="py-24 bg-gradient-to-b from-[#fbf8ff] via-[#fdfbf7] to-[#fbf8ff] relative overflow-hidden">
-      <div class="absolute top-[20%] left-[-5%] w-[450px] h-[450px] bg-primary/5 rounded-full blur-[100px] pointer-events-none floating-blob"></div>
-
-      <div class="container mx-auto px-gutter max-w-container-max">
-        <div class="text-center mb-20 reveal">
-          <span class="text-xs uppercase tracking-[0.2em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 shadow-sm inline-block">
-            ✨ Our Daily Rhythm
-          </span>
-          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold mt-6">A Balanced Path to Excellence</h2>
-        </div>
-
-        <div class="space-y-24">
-          <!-- Item 1 -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
-            <div class="lg:col-span-5 space-y-6 text-left">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest block">01 . Morning Ritual</span>
-              <h3 class="font-display text-2xl md:text-4xl font-bold text-secondary">Yoga &amp; Mindfulness</h3>
-              <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-                Our day starts with yoga and stretches that energize the body, helping students start their day with a positive mindset.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🧘 Mindfulness</span>
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🌬️ Breathing Cycles</span>
-              </div>
-            </div>
-            <div class="lg:col-span-7">
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-                <img src="assets/img/open (25) - Edited.jpg" alt="Yoga Session" class="w-full h-full object-cover">
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
-            <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest block">02 . Academics</span>
-              <h3 class="font-display text-2xl md:text-4xl font-bold text-secondary">Engaging Study Sessions</h3>
-              <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-                Interactive learning methods and modern facilities bring topics to life, encouraging reasoning and conceptual logic.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🧪 Practical Labs</span>
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">📐 Math Logic</span>
-              </div>
-            </div>
-            <div class="lg:col-span-7 lg:order-1">
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-                <img src="assets/img/study_session.jpg" alt="Study Session" class="w-full h-full object-cover">
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
-            <div class="lg:col-span-5 space-y-6 text-left">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest block">03 . Creativity</span>
-              <h3 class="font-display text-2xl md:text-4xl font-bold text-secondary">Creative Exploration</h3>
-              <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-                We balance core academic courses with art workshops, musical training, drama clubs, and crafts.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🎨 Art &amp; Design</span>
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🎵 Vocal Music</span>
-              </div>
-            </div>
-            <div class="lg:col-span-7">
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-                <img src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Art session" class="w-full h-full object-cover">
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
-            <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest block">04 . Physical Growth</span>
-              <h3 class="font-display text-2xl md:text-4xl font-bold text-secondary">Sports &amp; Fitness</h3>
-              <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-                Providing opportunities for athletic growth and teamwork in soccer, cricket, basketball, and track events.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">⚽ Outdoor Sports</span>
-                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">🤝 Teamwork</span>
-              </div>
-            </div>
-            <div class="lg:col-span-7 lg:order-1">
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-                <img src="assets/img/students-sports.png" alt="Sports play" class="w-full h-full object-cover">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE SUBJECTS -->
-    <section class="py-24 bg-white relative">
-      <div class="container mx-auto px-gutter max-w-container-max text-center">
-        <div class="max-w-2xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
-            Core Curriculum
-          </span>
-          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Subjects We Teach</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-          <!-- Subject 1 -->
-          <div class="bg-background p-8 rounded-3xl border border-primary/10 hover-lift text-left shadow-sm">
-            <div class="w-12 h-12 rounded-xl bg-amber-50 text-primary flex items-center justify-center text-xl mb-6"><i class="bi bi-translate"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Languages</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Developing multilingual reading and communication skills across English, Hindi, and regional languages.</p>
-          </div>
-          <!-- Subject 2 -->
-          <div class="bg-background p-8 rounded-3xl border border-primary/10 hover-lift text-left shadow-sm">
-            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-accent flex items-center justify-center text-xl mb-6"><i class="bi bi-calculator"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Mathematics</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Cultivating analytical reasoning, problem solving, and math logic from basic counting to algebra.</p>
-          </div>
-          <!-- Subject 3 -->
-          <div class="bg-background p-8 rounded-3xl border border-primary/10 hover-lift text-left shadow-sm">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary flex items-center justify-center text-xl mb-6"><i class="bi bi-virus"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Science &amp; EVS</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Fostering inquiry-led learning through practical laboratory experiments and natural environment sessions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMMERSIVE STUDENT GALLERY (LIGHTBOX ENABLED) -->
-    <section class="py-24 bg-surface-container-low/40 relative">
-      <div class="container mx-auto px-gutter max-w-container-max text-center">
-        <div class="max-w-2xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
-            Portfolios
-          </span>
-          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Moments in Student Life</h2>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/compressed/atudy (1).jpg', 'Collaborative Group Projects')">
-            <img src="assets/img/compressed/atudy (1).jpg" alt="Kids studying" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
-              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
-            </div>
-          </div>
-          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/compressed/atudy (2).jpg', 'Focus on Reading & Library Hours')">
-            <img src="assets/img/compressed/atudy (2).jpg" alt="Reading session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
-              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
-            </div>
-          </div>
-          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/compressed/atudy (5).jpg', 'Modern Computer Science Labs')">
-            <img src="assets/img/compressed/atudy (5).jpg" alt="Computer lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
-              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
-            </div>
-          </div>
-          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/compressed/atudy (8).jpg', 'Hands-on Biology Experiments')">
-            <img src="assets/img/compressed/atudy (8).jpg" alt="Biology class" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
-              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
+    <!-- FINAL CTA (Emotional Closing) -->
     <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
       <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('assets/img/school2.jpg');"></div>
       <div class="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] pointer-events-none floating-blob"></div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
         <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
-          Let's Build Your Child's Future Together
+          Every Child Deserves Days Like These
         </span>
-        <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Apply for Admission Today</h2>
+        <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Begin Their Journey Today</h2>
         <p class="text-white/80 max-w-2xl mx-auto font-body text-base md:text-lg">
-          Nurture coordination, rhythm, and confidence in your child's early developmental years. Reach out to admissions today.
+          Give your child an education filled with curiosity, confidence, friendships, and happy learning memories.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
           <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
-            Apply Now <i class="bi bi-arrow-right"></i>
+            Apply for Admission <i class="bi bi-arrow-right"></i>
           </a>
           <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
-            Book a Visit
+            Book a Campus Visit
           </a>
         </div>
       </div>
@@ -454,32 +520,9 @@
     </div>
   </footer>
 
-  <!-- Lightbox Gallery Modal -->
-  <div id="lightbox-modal" class="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 hidden">
-    <button class="absolute top-8 right-8 text-white text-4xl hover:scale-110 transition-transform" onclick="closeLightbox()">&times;</button>
-    <div class="max-w-4xl w-full text-center space-y-4">
-      <img id="lightbox-img" src="" alt="Lightbox image" class="max-h-[75vh] mx-auto rounded-2xl border-4 border-white shadow-2xl object-contain">
-      <p id="lightbox-caption" class="text-white/90 font-bold text-lg font-display"></p>
-    </div>
-  </div>
-
   <!-- Scripts -->
   <script src="assets/js/onest-home.js"></script>
   <script>
-    // Lightbox triggers
-    function openLightbox(src, caption) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-caption').textContent = caption;
-      const modal = document.getElementById('lightbox-modal');
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
     // Scroll reveal observe script
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
@@ -493,6 +536,38 @@
 
       document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
+      });
+
+      // Highlight footprint dots based on scrolling progress
+      const dots = [
+        { id: 'dot-c1', targetIndex: 0 },
+        { id: 'dot-c2', targetIndex: 1 },
+        { id: 'dot-c3', targetIndex: 2 },
+        { id: 'dot-c4', targetIndex: 3 },
+        { id: 'dot-c5', targetIndex: 4 },
+        { id: 'dot-c6', targetIndex: 5 },
+        { id: 'dot-c7', targetIndex: 6 },
+        { id: 'dot-c8', targetIndex: 7 },
+        { id: 'dot-c9', targetIndex: 8 },
+        { id: 'dot-c10', targetIndex: 9 },
+        { id: 'dot-c11', targetIndex: 10 }
+      ];
+
+      const revealsList = document.querySelectorAll('.reveal');
+      window.addEventListener('scroll', () => {
+        revealsList.forEach((el, index) => {
+          const rect = el.getBoundingClientRect();
+          const dot = document.getElementById(dots[index]?.id);
+          if (dot) {
+            if (rect.top < window.innerHeight * 0.5) {
+              dot.classList.add('bg-primary-light', 'scale-125');
+              dot.classList.remove('bg-primary');
+            } else {
+              dot.classList.add('bg-primary');
+              dot.classList.remove('bg-primary-light', 'scale-125');
+            }
+          }
+        });
       });
     });
   </script>

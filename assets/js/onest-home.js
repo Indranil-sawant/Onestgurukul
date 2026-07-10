@@ -43,12 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileLinks = document.querySelectorAll('.onest-home-mobile-list a');
 
     function openMenu() {
-        if (mobileMenu) mobileMenu.classList.add('active');
+        if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+        }
         document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
 
     function closeMenu() {
-        if (mobileMenu) mobileMenu.classList.remove('active');
+        if (mobileMenu) {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+        }
         document.body.style.overflow = '';
     }
 

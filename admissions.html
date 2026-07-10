@@ -26,6 +26,13 @@
 
   <!-- Page Specific CSS -->
   <link href="assets/css/onest-admissions.css" rel="stylesheet">
+
+<style>
+.onest-admissions-mobile-menu { background: #0B2545 !important; color: white !important; }
+.onest-admissions-nav-link { color: rgba(255,255,255,0.8) !important; }
+.onest-admissions-nav-link:hover { color: #facc15 !important; }
+.onest-admissions-mobile-close { color: white !important; }
+</style>
 </head>
 
 <body>
@@ -57,15 +64,15 @@
             aria-label="Toggle Dark Mode">
             <i class="bi bi-moon-fill"></i>
           </button>
-          <button id="onest-admissions-mobile-toggle" class="onest-admissions-mobile-toggle" aria-label="Open Menu">
+          <button id="onest-home-mobile-toggle" class="onest-home-mobile-toggle md:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
             <i class="bi bi-list"></i>
           </button>
         </div>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="onest-admissions-mobile-menu" class="onest-admissions-mobile-menu">
-        <div id="onest-admissions-mobile-close" class="onest-admissions-mobile-close">
+      <div id="onest-home-mobile-menu" class="onest-admissions-mobile-menu">
+        <div id="onest-home-mobile-close" class="onest-admissions-mobile-close">
           <i class="bi bi-x"></i>
         </div>
         <ul class="onest-admissions-mobile-list">
@@ -346,6 +353,6 @@
     })();
   </script>
 
-</body>
+  <script src="assets/js/onest-home.js"></script>\n</body>
 
 </html>
