@@ -33,60 +33,108 @@
 .onest-admissions-nav-link:hover { color: #facc15 !important; }
 .onest-admissions-mobile-close { color: white !important; }
 </style>
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
+            "primary-light": "#facc15",     /* Bright Golden Accent */
+            "secondary": "#002147",         /* Deep Royal Blue */
+            "accent": "#059669",            /* Emerald Green Accent */
+            "on-surface": "#1f2937",        /* Dark Charcoal */
+            "background": "#fdfbf7",        /* Warm White Base */
+            "surface-card": "#ffffff",      /* Pure White Card */
+            "outline-variant": "#e5e7eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "12px",
+            "xl": "16px",
+            "2xl": "24px",
+            "3xl": "32px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "48px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xs": "4px",
+            "xl": "80px",
+            "md": "24px",
+            "container-max": "1400px"
+          },
+          "fontFamily": {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
 <body>
 
   <div class="onest-admissions-wrapper">
 
-    <!-- Header -->
-    <header class="onest-admissions-header">
-      <div class="onest-admissions-container onest-admissions-header-inner">
-        <a href="index.html" class="onest-admissions-logo">
-          <img src="assets/img/onest.svg" alt="O'Nest Gurukul">
+    <!-- Sticky TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+        <span class="font-display font-bold text-xl tracking-tight text-secondary hidden sm:inline-block">O'Nest <span class="text-primary block text-xs tracking-[0.2em] uppercase -mt-1">Gurukul</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-sm tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
         </a>
-
-        <nav class="onest-admissions-nav">
-          <ul class="onest-admissions-nav-list">
-            <li><a href="index.html" class="onest-admissions-nav-link">Home</a></li>
-            <li><a href="about.html" class="onest-admissions-nav-link">About Us</a></li>
-            <li><a href="preprimary.html" class="onest-admissions-nav-link" style="color: #FF6B9D; font-weight: 600;">⭐
-                Pre-Primary</a></li>
-            <li><a href="students-life.html" class="onest-admissions-nav-link">Curriculum</a></li>
-            <li><a href="campus-facilities.html" class="onest-admissions-nav-link">Campus &amp; Facilities</a></li>
-            <li><a href="contact.html" class="onest-admissions-nav-link">Contact</a></li>
-            <li><a href="admissions.html" class="onest-admissions-btn onest-admissions-btn-primary">Admissions</a></li>
-          </ul>
-        </nav>
-
-        <div style="display: flex; align-items: center;">
-          <button id="onest-admissions-theme-toggle" class="onest-admissions-theme-toggle"
-            aria-label="Toggle Dark Mode">
-            <i class="bi bi-moon-fill"></i>
-          </button>
-          <button id="onest-home-mobile-toggle" class="onest-home-mobile-toggle md:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
       </div>
+    </div>
+  </header>
 
-      <!-- Mobile Menu -->
-      <div id="onest-home-mobile-menu" class="onest-admissions-mobile-menu">
-        <div id="onest-home-mobile-close" class="onest-admissions-mobile-close">
-          <i class="bi bi-x"></i>
-        </div>
-        <ul class="onest-admissions-mobile-list">
-          <li><a href="index.html" class="onest-admissions-nav-link">Home</a></li>
-          <li><a href="about.html" class="onest-admissions-nav-link">About Us</a></li>
-          <li><a href="preprimary.html" class="onest-admissions-nav-link" style="color: #FF6B9D; font-weight: 600;">⭐
-              Pre-Primary</a></li>
-          <li><a href="students-life.html" class="onest-admissions-nav-link">Curriculum</a></li>
-          <li><a href="campus-facilities.html" class="onest-admissions-nav-link">Campus & Facilities</a></li>
-          <li><a href="contact.html" class="onest-admissions-nav-link">Contact</a></li>
-          <li><a href="admissions.html" class="onest-admissions-nav-link">Admissions</a></li>
-        </ul>
-      </div>
-    </header>
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold">
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors" style="color: #FF6B9D;">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+
 
     <!-- Hero Section -->
     <section class="onest-admissions-hero">

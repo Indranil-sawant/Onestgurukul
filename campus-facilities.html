@@ -72,7 +72,7 @@
             "secondary-fixed": "#e5e2e1",
             "error-container": "#ffdad6",
             "surface-container-highest": "#e3e1ec",
-            "secondary": "#5f5e5e",
+            "secondary": "#002147",
             "tertiary": "#ac2a5d",
             "surface": "#fbf8ff",
             "inverse-on-surface": "#f1effa",
@@ -244,53 +244,59 @@
   </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-on-background/10">
-<div class="flex justify-between items-center h-[90px] px-gutter max-w-container-max mx-auto">
-<a href="index.html" class="flex items-center">
-<img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
-</a>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="index.html">Home</a>
-<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="about.html">About Us</a>
-<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" style="color: #FF6B9D; font-weight: 600;" href="preprimary.html">⭐ Pre-Primary</a>
-<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="students-life.html">Curriculum</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="campus-facilities.html">Campus &amp; Facilities</a>
-<a class="text-white/80 font-label-md hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center space-x-4">
-<!-- Theme Toggle -->
-<button id="onest-campus-theme-toggle" class="p-2.5 rounded-full text-white/80 hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
-<i class="bi bi-moon-fill text-xl"></i>
-</button>
-<a href="admissions.html" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md font-bold hover:scale-95 transition-transform active:scale-90 inline-block text-xs md:text-sm">
-Admissions
-</a>
-<button id="onest-home-mobile-toggle" class="md:hidden p-2 text-white/80 hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
-<i class="bi bi-list text-2xl"></i>
-</button>
-</div>
-</div>
-<!-- Mobile Menu -->
-<div id="onest-home-mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-secondary text-white border-l border-on-background/10 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col">
-<div class="flex justify-between items-center mb-8">
-<img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="h-16">
-<button id="onest-home-mobile-close" class="p-2 text-white/80" aria-label="Close Menu">
-<i class="bi bi-x text-3xl"></i>
-</button>
-</div>
-<nav class="flex flex-col space-y-6 text-xl">
-<a href="index.html" class="text-white/80 hover:text-[#facc15] font-semibold">Home</a>
-<a href="about.html" class="text-white/80 hover:text-[#facc15] font-semibold">About Us</a>
-<a href="preprimary.html" class="hover:text-primary font-semibold" style="color: #FF6B9D;">⭐ Pre-Primary</a>
-<a href="students-life.html" class="text-white/80 hover:text-[#facc15] font-semibold">Curriculum</a>
-<a href="campus-facilities.html" class="text-primary font-bold">Campus &amp; Facilities</a>
-<a href="contact.html" class="text-white/80 hover:text-[#facc15] font-semibold">Contact</a>
-<a href="admissions.html" class="bg-primary text-on-primary py-3 rounded-lg text-center font-bold">Admissions</a>
-</nav>
-</div>
-</header>
-<main class="pt-[90px] relative z-10">
+<!-- Sticky TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+        <span class="font-display font-bold text-xl tracking-tight text-secondary hidden sm:inline-block">O'Nest <span class="text-primary block text-xs tracking-[0.2em] uppercase -mt-1">Gurukul</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-sm tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="students-life.html">Curriculum</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
+        </a>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold">
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+\n  <main class="pt-[90px] relative z-10">
   <!-- Hero Section -->
   <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
@@ -569,26 +575,26 @@ Admissions
             <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-6 leading-tight font-bold">The Knowledge Hub.</h2>
             <p class="text-lg text-secondary/80 mb-10 max-w-lg leading-relaxed">More than a library—a sanctuary of learning. Designed with warm lighting, wood textures, and comfortable seating to inspire deep reading and research.</p>
             
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
-                <span class="text-3xl font-bold text-primary block mb-1">35k+</span>
-                <span class="text-sm font-bold text-secondary/80">Books &amp; Journals</span>
+            <div class="grid grid-cols-2 gap-2 sm:gap-4">
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-3 sm:p-5 shadow-sm">
+                <span class="text-xl sm:text-3xl font-bold text-primary block mb-1">35k+</span>
+                <span class="text-xs sm:text-sm font-bold text-secondary/80">Books &amp; Journals</span>
               </div>
-              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
-                <span class="text-3xl font-bold text-primary block mb-1">Digital</span>
-                <span class="text-sm font-bold text-secondary/80">e-Library Access</span>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-3 sm:p-5 shadow-sm">
+                <span class="text-xl sm:text-3xl font-bold text-primary block mb-1">Digital</span>
+                <span class="text-xs sm:text-sm font-bold text-secondary/80">e-Library Access</span>
               </div>
-              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
-                <span class="text-3xl font-bold text-primary block mb-1">Pods</span>
-                <span class="text-sm font-bold text-secondary/80">Quiet Reading Pods</span>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-3 sm:p-5 shadow-sm">
+                <span class="text-xl sm:text-3xl font-bold text-primary block mb-1">Pods</span>
+                <span class="text-xs sm:text-sm font-bold text-secondary/80">Quiet Reading Pods</span>
               </div>
-              <div class="bg-white/60 border border-white/80 rounded-2xl p-5 shadow-sm">
-                <span class="text-3xl font-bold text-primary block mb-1">Lounge</span>
-                <span class="text-sm font-bold text-secondary/80">Collaborative Lounge</span>
+              <div class="bg-white/60 border border-white/80 rounded-2xl p-3 sm:p-5 shadow-sm">
+                <span class="text-xl sm:text-3xl font-bold text-primary block mb-1">Lounge</span>
+                <span class="text-xs sm:text-sm font-bold text-secondary/80">Collaborative Lounge</span>
               </div>
             </div>
           </div>
-          <div class="w-full lg:w-1/2 relative h-[500px] rounded-3xl overflow-hidden shadow-lg border border-white/60 reveal">
+          <div class="w-full lg:w-1/2 relative h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg border border-white/60 reveal">
             <img src="assets/img/infra (6).JPG" class="w-full h-full object-cover" alt="Library Interior">
           </div>
         </div>

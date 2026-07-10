@@ -146,11 +146,12 @@
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="contact.html">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <!-- Theme Toggle -->
-        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
           <i class="bi bi-moon-fill text-xl"></i>
         </button>
-        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform inline-block text-sm shadow-md border border-primary/20">
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
           Apply Now
         </a>
         <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
@@ -168,15 +169,20 @@
     <ul class="flex flex-col gap-6 text-center text-xl font-bold">
       <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
       <li><a href="about.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">About Us</a></li>
-      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors" style="color: #FF6B9D;">⭐ Pre-Primary</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
       <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
       <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
       <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
       <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
     </ul>
   </div>
-
-  <main class="pt-[90px]">
+\n  <main class="pt-[90px]">
 
     <!-- HERO SECTION -->
     <section class="relative h-[55vh] min-h-[400px] overflow-hidden bg-black text-white flex items-center">

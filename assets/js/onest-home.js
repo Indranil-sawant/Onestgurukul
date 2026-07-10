@@ -7,34 +7,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Theme Toggle --- */
     const themeToggle = document.getElementById('onest-home-theme-toggle');
+    const mobileThemeToggle = document.getElementById('onest-mobile-theme-toggle');
     const body = document.body;
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
+    const mobileIcon = mobileThemeToggle ? mobileThemeToggle.querySelector('i') : null;
 
-    // Check local storage
+    // Apply saved theme on load
     const currentTheme = localStorage.getItem('onest-theme');
     if (currentTheme === 'dark') {
         body.classList.add('onest-home-dark-mode');
-        if (icon) icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('onest-home-dark-mode');
-            const isDark = body.classList.contains('onest-home-dark-mode');
-
-            // Update Icon
-            if (icon) {
-                if (isDark) {
-                    icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-                } else {
-                    icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-                }
-            }
-
-            // Save preference
-            localStorage.setItem('onest-theme', isDark ? 'dark' : 'light');
+        [icon, mobileIcon].forEach(i => {
+            if (i) i.classList.replace('bi-moon-fill', 'bi-sun-fill');
         });
     }
+
+    function toggleTheme() {
+        body.classList.toggle('onest-home-dark-mode');
+        const isDark = body.classList.contains('onest-home-dark-mode');
+
+        // Update Icons
+        [icon, mobileIcon].forEach(i => {
+            if (i) {
+                if (isDark) {
+                    i.classList.replace('bi-moon-fill', 'bi-sun-fill');
+                } else {
+                    i.classList.replace('bi-sun-fill', 'bi-moon-fill');
+                }
+            }
+        });
+
+        // Save preference
+        localStorage.setItem('onest-theme', isDark ? 'dark' : 'light');
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
 
     /* --- Mobile Menu --- */
     const mobileToggle = document.getElementById('onest-home-mobile-toggle');
