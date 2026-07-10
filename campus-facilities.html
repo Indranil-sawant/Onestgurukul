@@ -241,6 +241,110 @@
     }
     .onest-campus-gallery-prev { left: 32px; }
     .onest-campus-gallery-next { right: 32px; }
+
+    /* --- Premium BEM Facility Card Design System --- */
+    .onest-facility-card {
+      background: #ffffff;
+      border: 1px solid rgba(115, 92, 0, 0.08);
+      border-radius: 26px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .onest-facility-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(115, 92, 0, 0.04);
+      border-color: rgba(115, 92, 0, 0.2);
+    }
+    .onest-facility-card:active {
+      transform: translateY(-2px) scale(0.99);
+    }
+    .onest-facility-card-image-wrapper {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+      background-color: #f3f4f6;
+    }
+    .onest-facility-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .onest-facility-card:hover .onest-facility-card-image {
+      transform: scale(1.05);
+    }
+    .onest-facility-card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: left;
+    }
+    .onest-facility-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(115, 92, 0, 0.06);
+      color: #735c00;
+      border: 1px solid rgba(115, 92, 0, 0.1);
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+    .onest-facility-card-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #002147;
+      margin-bottom: 12px;
+      line-height: 1.25;
+      font-family: var(--onest-font-heading);
+    }
+    @media (min-width: 768px) {
+      .onest-facility-card-title {
+        font-size: 32px;
+      }
+    }
+    .onest-facility-card-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .onest-facility-card-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #735c00;
+      transition: color 0.3s ease, gap 0.3s ease;
+      margin-top: auto;
+    }
+    .onest-facility-card:hover .onest-facility-card-cta {
+      color: #002147;
+      gap: 12px;
+    }
+    .onest-facility-card-cta i {
+      transition: transform 0.3s ease;
+    }
+    .onest-facility-card:hover .onest-facility-card-cta i {
+      transform: translateX(4px);
+    }
+  </style>
   </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -304,7 +408,7 @@
       <div class="absolute inset-0 bg-cover bg-center animate-subtle-zoom" style="background-image: url('assets/img/infra (1).JPG')"></div>
     </div>
     
-    <div class="container mx-auto px-gutter relative z-20 -mt-12 text-center">
+    <div class="container mx-auto px-3 md:px-gutter relative z-20 -mt-12 text-center">
       <span class="inline-block py-2 px-5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold uppercase tracking-[0.25em] mb-6 border border-white/30 shadow-lg">Discover The Future</span>
       <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight font-bold drop-shadow-xl max-w-5xl mx-auto">
         A Campus Designed to <br/><span class="text-[#facc15]">Inspire Every Child.</span>
@@ -352,100 +456,96 @@
 
   <!-- World-Class Infrastructure -->
   <section class="py-24 relative overflow-hidden" id="facilities">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="mb-16 text-center reveal">
         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">World-Class Infrastructure</h2>
         <p class="text-lg text-secondary/70 max-w-2xl mx-auto">Facilities engineered to foster critical thinking, creativity, and physical well-being.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-auto">
         <!-- Science Centre (Span 8) -->
-        <div class="md:col-span-8 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" onclick="openFacilityModal('science')">
-          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/compressed/atudy (6).jpg')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-          
-          <div class="absolute top-6 left-6 z-10">
-            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Discovery</span>
-          </div>
-
-          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <h3 class="text-3xl md:text-4xl text-white mb-3 font-bold">Science Centre</h3>
-            <p class="text-white/80 text-sm md:text-base mb-5 max-w-xl leading-relaxed">Hands-on learning powered by modern laboratories and cutting-edge equipment.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Physics</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Chemistry</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Biology</span>
+        <div class="md:col-span-8 reveal" onclick="openFacilityModal('science')">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/compressed/atudy (6).jpg" alt="Science Centre" loading="lazy">
             </div>
-            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
-              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-            </button>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🔬 Science Lab</span>
+              <h3 class="onest-facility-card-title">Science Centre</h3>
+              <p class="onest-facility-card-description">Hands-on learning powered by modern laboratories and cutting-edge equipment.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Physics</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Chemistry</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Biology</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Explore Facility <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Computer Centre (Span 4) -->
-        <div class="md:col-span-4 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 100ms;" onclick="openFacilityModal('innovation')">
-          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/infra-(2).jpg')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-          
-          <div class="absolute top-6 left-6 z-10">
-            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Technology</span>
-          </div>
-
-          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <h3 class="text-2xl md:text-3xl text-white mb-3 font-bold">Innovation Hub</h3>
-            <p class="text-white/80 text-sm mb-5 leading-relaxed">Equipped with the latest technology for coding and design.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Robotics</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Coding</span>
+        <div class="md:col-span-4 reveal" style="transition-delay: 100ms;" onclick="openFacilityModal('innovation')">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/infra-(2).jpg" alt="Innovation Hub" loading="lazy">
             </div>
-            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
-              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-            </button>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🤖 AI &amp; Robotics</span>
+              <h3 class="onest-facility-card-title">Innovation Hub</h3>
+              <p class="onest-facility-card-description">Equipped with the latest technology for coding and design.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Robotics</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Coding</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Explore Facility <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
         
         <!-- Art Studio (Span 5) -->
-        <div class="md:col-span-5 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 200ms;" onclick="openFacilityModal('art')">
-          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/compressed/atudy (7) - Edited.jpg')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-          
-          <div class="absolute top-6 left-6 z-10">
-            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Creativity</span>
-          </div>
-
-          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <h3 class="text-2xl md:text-3xl text-white mb-3 font-bold">Art &amp; Music</h3>
-            <p class="text-white/80 text-sm mb-5 leading-relaxed">Dedicated spaces designed to nurture artistic expression.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Visual Arts</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Sound Studio</span>
+        <div class="md:col-span-5 reveal" style="transition-delay: 200ms;" onclick="openFacilityModal('art')">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Art &amp; Music" loading="lazy">
             </div>
-            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
-              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-            </button>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🎨 Music &amp; Arts</span>
+              <h3 class="onest-facility-card-title">Art &amp; Music</h3>
+              <p class="onest-facility-card-description">Dedicated spaces designed to nurture artistic expression.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Visual Arts</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Sound Studio</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Explore Facility <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Smart Classrooms (Span 7) -->
-        <div class="md:col-span-7 group relative overflow-hidden rounded-3xl luxury-shadow reveal min-h-[400px] cursor-pointer" style="transition-delay: 300ms;" onclick="openFacilityModal('smart-classrooms')">
-          <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1.5s] ease-out" style="background-image: url('assets/img/education/open (2).jpg')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-          
-          <div class="absolute top-6 left-6 z-10">
-            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/30">Academics</span>
-          </div>
-
-          <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <h3 class="text-3xl md:text-4xl text-white mb-3 font-bold">Smart Classrooms</h3>
-            <p class="text-white/80 text-sm md:text-base mb-5 max-w-xl leading-relaxed">Ergonomic spaces integrating interactive digital boards and natural lighting.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Interactive Panels</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Ergonomic Seating</span>
-              <span class="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ Climate Controlled</span>
+        <div class="md:col-span-7 reveal" style="transition-delay: 300ms;" onclick="openFacilityModal('smart-classrooms')">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/education/open (2).jpg" alt="Smart Classrooms" loading="lazy">
             </div>
-            <button class="flex items-center gap-2 text-[#facc15] font-bold text-sm group/btn hover:text-white transition-colors">
-              Explore Facility <i class="bi bi-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-            </button>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🏫 Smart Class</span>
+              <h3 class="onest-facility-card-title">Smart Classrooms</h3>
+              <p class="onest-facility-card-description">Ergonomic spaces integrating interactive digital boards and natural lighting.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Interactive Panels</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Ergonomic Seating</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Climate Controlled</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Explore Facility <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -457,7 +557,7 @@
     <!-- Ambient background shape -->
     <div class="absolute top-1/4 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/3"></div>
 
-    <div class="container mx-auto px-gutter max-w-container-max flex flex-col gap-12 md:gap-24">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max flex flex-col gap-12 md:gap-24">
       <!-- Section 1 (Image Left) -->
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div class="w-full lg:w-1/2 relative reveal">
@@ -564,7 +664,7 @@
 
   <!-- The Knowledge Hub (Library) -->
   <section class="relative py-24 z-10">
-    <div class="container mx-auto px-gutter max-w-container-max relative z-20">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max relative z-20">
       <div class="bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
         <!-- Abstract gradient inside the library container -->
         <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent z-0"></div>
@@ -604,7 +704,7 @@
 
   <!-- Sports & Wellness -->
   <section class="py-24 relative z-10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="flex flex-col lg:flex-row justify-between items-end mb-12 reveal">
         <div class="max-w-2xl">
           <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Energy &amp; Motion.</h2>
@@ -612,34 +712,55 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[500px]">
-        <!-- Main Image -->
-        <div class="md:col-span-8 rounded-3xl overflow-hidden relative group luxury-shadow reveal">
-          <img src="assets/img/open (25) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Football">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-          <div class="absolute bottom-8 left-8">
-            <h3 class="text-3xl text-white mb-2 font-bold">Football &amp; Athletics</h3>
-            <p class="text-white/80 text-sm md:text-base">Professional grade turf and athletic tracks.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto">
+        <!-- Football & Athletics -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/open (25) - Edited.jpg" alt="Football &amp; Athletics" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">⚽ Olympic Sports</span>
+              <h3 class="onest-facility-card-title">Football &amp; Track</h3>
+              <p class="onest-facility-card-description">Professional grade turf and athletic tracks for comprehensive field events.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
         
-        <!-- Side Images -->
-        <div class="md:col-span-4 flex flex-col gap-6">
-          <div class="flex-1 rounded-3xl overflow-hidden relative group luxury-shadow reveal" style="transition-delay: 100ms;">
-             <img src="assets/img/compressed/atudy (11) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Yoga">
-             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-             <div class="absolute bottom-6 left-6">
-                <h3 class="text-xl text-white mb-1 font-bold">Yoga &amp; Meditation</h3>
-                <p class="text-white/80 text-xs">Dedicated tranquil spaces.</p>
-             </div>
+        <!-- Yoga & Meditation -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/compressed/atudy (11) - Edited.jpg" alt="Yoga &amp; Meditation" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🧘 Mindfulness</span>
+              <h3 class="onest-facility-card-title">Yoga &amp; Wellness</h3>
+              <p class="onest-facility-card-description">Dedicated tranquil spaces constructed to help focus young minds and energy.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
-          <div class="flex-1 rounded-3xl overflow-hidden relative group luxury-shadow reveal" style="transition-delay: 200ms;">
-             <img src="assets/img/infra (1).JPG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Indoor Games">
-             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-             <div class="absolute bottom-6 left-6">
-                <h3 class="text-xl text-white mb-1 font-bold">Indoor Sports</h3>
-                <p class="text-white/80 text-xs">Table tennis, chess, and more.</p>
-             </div>
+        </div>
+
+        <!-- Indoor Sports -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/infra (1).JPG" alt="Indoor Sports" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">♟️ Indoor Games</span>
+              <h3 class="onest-facility-card-title">Indoor Arena</h3>
+              <p class="onest-facility-card-description">Table tennis, chess, and multi-game facilities to stimulate logic and reflexes.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -653,7 +774,7 @@
       <div class="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
     </div>
     
-    <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max relative z-10">
       <div class="text-center mb-16 reveal">
          <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Sustainability</span>
          <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 font-bold">A Breath of Fresh Air.</h2>
@@ -661,20 +782,55 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer">
-           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">nature_people</span>
-           <h3 class="text-xl font-bold text-secondary mb-3">Nature Trails</h3>
-           <p class="text-secondary/80 text-sm leading-relaxed">Outdoor classrooms set amongst indigenous flora, turning every nature walk into a lesson in biodiversity.</p>
+        <!-- Nature Trails -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/evs.jpeg" alt="Nature Trails" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🌿 Nature Trails</span>
+              <h3 class="onest-facility-card-title">Nature Classrooms</h3>
+              <p class="onest-facility-card-description">Outdoor classrooms set amongst indigenous flora, turning every nature walk into a lesson in biodiversity.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer" style="transition-delay: 100ms;">
-           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">yard</span>
-           <h3 class="text-xl font-bold text-secondary mb-3">Organic Farming</h3>
-           <p class="text-secondary/80 text-sm leading-relaxed">Students get their hands dirty learning the principles of sustainable agriculture and harvesting fresh produce.</p>
+
+        <!-- Organic Farming -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/compressed/atudy (10).jpg" alt="Organic Farming" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🚜 Hands-on Farming</span>
+              <h3 class="onest-facility-card-title">Organic Farming</h3>
+              <p class="onest-facility-card-description">Students get their hands dirty learning the principles of sustainable agriculture and harvesting fresh produce.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bg-white/70 backdrop-blur-xl border border-white/80 p-8 rounded-3xl shadow-lg hover-lift reveal cursor-pointer" style="transition-delay: 200ms;">
-           <span class="material-symbols-outlined text-4xl text-primary mb-4 block">solar_power</span>
-           <h3 class="text-xl font-bold text-secondary mb-3">Solar Energy</h3>
-           <p class="text-secondary/80 text-sm leading-relaxed">Powering our smart infrastructure with clean, renewable energy arrays spread across the campus rooftops.</p>
+
+        <!-- Solar Energy -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/infra (4).JPG" alt="Solar Energy" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">☀️ Clean Energy</span>
+              <h3 class="onest-facility-card-title">Solar Energy</h3>
+              <p class="onest-facility-card-description">Powering our smart infrastructure with clean, renewable energy arrays spread across the campus rooftops.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -682,73 +838,70 @@
 
   <!-- Safety & Security -->
   <section class="py-24 relative z-10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="text-center mb-16 reveal">
         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Uncompromising Security.</h2>
         <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Your child’s safety is our paramount responsibility. Period.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10">
-          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
-             <img src="assets/img/digital_Safety.jpg" class="w-full h-full object-cover" alt="CCTV">
-             <div class="absolute inset-0 bg-black/5"></div>
-          </div>
-          <div class="px-2 pb-4">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined text-xl">videocam</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Safe Campus -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/digital_Safety.jpg" alt="Safe Campus" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🛡️ CCTV Protected</span>
+              <h3 class="onest-facility-card-title">Safe Campus</h3>
+              <p class="onest-facility-card-description">Real-time monitoring across all corridors and access points ensuring a secure perimeter.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">120+ CCTV Cameras</span>
               </div>
-              <div>
-                <span class="font-bold text-xl text-secondary block leading-none">120+</span>
-                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">CCTV Cameras</span>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
               </div>
             </div>
-            <h3 class="text-lg font-bold text-secondary mb-2">Safe Campus</h3>
-            <p class="text-sm text-secondary/80">Real-time monitoring across all corridors and access points ensuring a secure perimeter.</p>
           </div>
         </div>
         
-        <!-- Card 2 -->
-        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10" style="transition-delay: 100ms;">
-          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
-             <img src="assets/img/school.png" class="w-full h-full object-cover" alt="Transport">
-             <div class="absolute inset-0 bg-black/5"></div>
-          </div>
-          <div class="px-2 pb-4">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined text-xl">directions_bus</span>
+        <!-- Secure Transport -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/school.png" alt="Secure Transport" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🚌 Live GPS</span>
+              <h3 class="onest-facility-card-title">Secure Transport</h3>
+              <p class="onest-facility-card-description">Fleet of modern buses equipped with GPS, female attendants, and real-time parent alerts.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Live GPS Tracking</span>
               </div>
-              <div>
-                <span class="font-bold text-xl text-secondary block leading-none">Live</span>
-                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">GPS Tracking</span>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
               </div>
             </div>
-            <h3 class="text-lg font-bold text-secondary mb-2">Secure Transport</h3>
-            <p class="text-sm text-secondary/80">Fleet of modern buses equipped with GPS, female attendants, and real-time parent alerts.</p>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-white/60 rounded-3xl p-4 shadow-lg hover-lift reveal border border-primary/10" style="transition-delay: 200ms;">
-          <div class="rounded-2xl overflow-hidden aspect-video mb-5 relative">
-             <img src="assets/img/infra (1).JPG" class="w-full h-full object-cover" alt="Medical">
-             <div class="absolute inset-0 bg-black/5"></div>
-          </div>
-          <div class="px-2 pb-4">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined text-xl">medical_services</span>
+        <!-- Medical Centre -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/img/infra (1).JPG" alt="Medical Centre" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🩺 24/7 Medical Staff</span>
+              <h3 class="onest-facility-card-title">Medical Centre</h3>
+              <p class="onest-facility-card-description">Fully equipped infirmary with resident nurses and tie-ups with top local hospitals.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">24/7 Nurses on Site</span>
               </div>
-              <div>
-                <span class="font-bold text-xl text-secondary block leading-none">24/7</span>
-                <span class="text-[10px] uppercase tracking-widest text-secondary/70 font-bold">Medical Staff</span>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
               </div>
             </div>
-            <h3 class="text-lg font-bold text-secondary mb-2">Medical Centre</h3>
-            <p class="text-sm text-secondary/80">Fully equipped infirmary with resident nurses and tie-ups with top local hospitals.</p>
           </div>
         </div>
       </div>
@@ -757,7 +910,7 @@
 
   <!-- Campus Experience (Image Timeline) -->
   <section class="py-24 relative z-10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
        <div class="mb-16 reveal">
           <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">A Day at O'Nest.</h2>
           <p class="text-lg text-secondary/80 max-w-2xl">Experience the rhythm of student life, from morning inspiration to afternoon creation.</p>
@@ -839,7 +992,7 @@
 
   <!-- Virtual Tour (Laptop Mockup) -->
   <section class="py-24 relative z-10" id="virtual-tour">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-16">
         
         <!-- Mockup -->
@@ -913,7 +1066,7 @@
 
   <!-- Interactive Campus Map -->
   <section class="py-24 relative z-10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="text-center mb-12 reveal">
          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Campus Masterplan.</h2>
          <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Hover over the zones to discover how our 8-acre campus is meticulously zoned for academics, sports, and nature.</p>
@@ -954,7 +1107,7 @@
 
   <!-- Campus Gallery (Pinterest Masonry) -->
   <section class="py-24 relative z-10 border-t border-primary/10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
       <div class="text-center mb-12 reveal">
          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Moments Captured.</h2>
       </div>
@@ -1020,7 +1173,7 @@
 
   <!-- Why Parents Love Our Campus -->
   <section class="py-24 relative z-10">
-    <div class="container mx-auto px-gutter max-w-container-max">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
        <div class="text-center mb-16 reveal">
           <h2 class="text-3xl md:text-4xl text-secondary mb-4 font-bold">Why Parents Love Our Campus</h2>
        </div>
@@ -1077,7 +1230,7 @@
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/infra (1).JPG');"></div>
     <div class="absolute inset-0 bg-white/70 backdrop-blur-md"></div>
     
-    <div class="container mx-auto px-gutter max-w-4xl relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-4xl relative z-10">
       <div class="bg-white/90 backdrop-blur-xl border border-white shadow-2xl p-10 md:p-16 rounded-[2rem] text-center reveal">
          <h2 class="text-4xl md:text-5xl text-secondary mb-6 font-bold leading-tight">The Best Way to Experience O'Nest Gurukul is to Visit It.</h2>
          <p class="text-lg text-secondary/80 mb-10 max-w-xl mx-auto leading-relaxed">Walk the corridors, meet our educators, and see the environment where your child will thrive.</p>
