@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admissions | ONEST GURUKUL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700&amp;family=Libre+Caslon+Text:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Libre+Caslon+Text:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb1c5",
+                    "primary": "#735c00",
+                    "on-surface": "#1a1b22",
+                    "background": "#fbf8ff",
+                    "outline": "#7f7660",
+                    "on-tertiary-container": "#a52458",
+                    "surface-container-low": "#f4f2fd",
+                    "on-tertiary-fixed-variant": "#8c0a46",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeedf7",
+                    "primary-container": "#facc15",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1b22",
+                    "surface-bright": "#fbf8ff",
+                    "primary-fixed": "#ffe083",
+                    "on-surface-variant": "#4d4632",
+                    "on-secondary-container": "#656464",
+                    "inverse-surface": "#2f3038",
+                    "surface-tint": "#735c00",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary-container": "#ffc0cf",
+                    "on-primary-fixed-variant": "#574500",
+                    "secondary-container": "#e5e2e1",
+                    "surface-container-high": "#e8e7f1",
+                    "inverse-primary": "#eec200",
+                    "primary-fixed-dim": "#eec200",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-variant": "#e3e1ec",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-primary-container": "#6c5700",
+                    "outline-variant": "#d1c6ab",
+                    "on-tertiary-fixed": "#3f001b",
+                    "on-primary-fixed": "#231b00",
+                    "secondary-fixed": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e3e1ec",
+                    "secondary": "#5f5e5e",
+                    "tertiary": "#ac2a5d",
+                    "surface": "#fbf8ff",
+                    "inverse-on-surface": "#f1effa",
+                    "surface-dim": "#dad9e3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "headline-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(251, 248, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+        }
+        .luxury-card {
+            background-color: #FFF3B0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .luxury-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(250, 204, 21, 0.15);
+        }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: #d1c6ab;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .step-line::after { display: none; }
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="glass-nav sticky top-0 z-50">
+<div class="max-w-container-max mx-auto px-gutter h-[72px] flex justify-between items-center">
+<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">
+                ONEST GURUKUL
+            </div>
+<nav class="hidden md:flex items-center space-x-md">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-md py-sm rounded-lg hover:shadow-lg transition-all active:scale-95">
+                Apply Now
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[716px] flex items-center overflow-hidden bg-surface-container-low">
+
+<div class="relative z-10 max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-xl items-center">
+<div class="space-y-md">
+<span class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm rounded-full uppercase tracking-widest">
+                        Admissions Open 2024-25
+                    </span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                        Join the <span class="text-primary italic">Legacy</span> of Excellence.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Step into an environment where academic rigor meets holistic growth. At Onest Gurukul, we nurture the leaders, innovators, and thinkers of tomorrow.
+                    </p>
+<div class="flex flex-wrap gap-md pt-base">
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-lg py-sm rounded-lg hover:shadow-lg transition-all flex items-center gap-2 group">
+                            Start Application
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="border-2 border-on-surface text-on-surface font-label-md px-lg py-sm rounded-lg hover:bg-surface-container transition-all">
+                            View Prospectus
+                        </button>
+</div>
+</div>
+<div class="hidden md:block relative h-[500px]">
+<div class="absolute inset-0 bg-primary-container/20 rounded-[40px] rotate-3 scale-105"></div>
+<div class="relative h-full rounded-[40px] overflow-hidden shadow-2xl border-4 border-surface">
+<img class="w-full h-full object-cover" data-alt="A prestigious, high-end academic campus entrance with modern glass architecture and lush green surroundings. Sunlight filters through ancient trees onto a clean, minimalist stone walkway. The style is bright and airy, using the Warm Vanilla and golden highlights of the brand palette to evoke a sense of heritage and future-readiness. The atmosphere is peaceful and elite." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMYj7lFL_-BNuTjQxWFbB638GEJmiiu9fO40mUlLVlLLy8ZS5JakwRKUtZaGb0Frufk0Pn4BZMYoFt_VuyfPa9NHDpbpUfAiY323UEDJxTKwqfnIyqw912TKKE6KLmALkG4CukO7VCrSluwlHSROZYn5o_calvTIQi12HV6tbF_hCs_kEZ0WXrQnwamL5WGSxWYrgpDGklqLl9oTRl6LSOyo9XpLSHo_sax1atV2s4XghVMwk4Szl242W5jgPXZqLMppDnr2_NdbrL"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Admissions Timeline -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-base">The Admissions Process</h2>
+<div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md relative">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center p-md">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md mb-md shadow-md step-line">
+                        1
+                    </div>
+<h3 class="font-headline-md text-[20px] mb-xs">Online Inquiry</h3>
+<p class="text-on-surface-variant font-body-md">Submit your interest via our online portal or visit campus for a tour.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center p-md">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md mb-md shadow-md step-line">
+                        2
+                    </div>
+<h3 class="font-headline-md text-[20px] mb-xs">Assessment</h3>
+<p class="text-on-surface-variant font-body-md">Students undergo a holistic assessment of academic and creative potential.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center p-md">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md mb-md shadow-md step-line">
+                        3
+                    </div>
+<h3 class="font-headline-md text-[20px] mb-xs">Interaction</h3>
+<p class="text-on-surface-variant font-body-md">A personal conversation with parents and the student to align values.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center p-md">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md mb-md shadow-lg">
+                        4
+                    </div>
+<h3 class="font-headline-md text-[20px] mb-xs">Enrollment</h3>
+<p class="text-on-surface-variant font-body-md">Final documentation and fee payment to secure your seat.</p>
+</div>
+</div>
+</section>
+<!-- Eligibility & Fee Structure Bento Grid -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid lg:grid-cols-3 gap-md">
+<!-- Eligibility Criteria -->
+<div class="lg:col-span-1 luxury-card p-xl rounded-[32px] flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md mb-md">Eligibility Criteria</h2>
+<ul class="space-y-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Nursery: 3+ years as of April 1st</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Primary: Successful completion of previous grade</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Secondary: Merit-based entrance exam score</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Transfer certificate from previous institution</span>
+</li>
+</ul>
+</div>
+<div class="mt-md pt-md border-t border-on-surface/5">
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest">Scholarships available for merit</p>
+</div>
+</div>
+<!-- Fee Structure Table Card -->
+<div class="lg:col-span-2 bg-surface p-xl rounded-[32px] shadow-sm border border-outline-variant">
+<h2 class="font-headline-md text-headline-md mb-lg">Fee Structure (Annual)</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b-2 border-primary/20">
+<tr>
+<th class="py-sm font-label-md">Level</th>
+<th class="py-sm font-label-md">Tuition Fee</th>
+<th class="py-sm font-label-md">Activity Fee</th>
+<th class="py-sm font-label-md text-right">Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md font-body-md">Early Years (Pre-K)</td>
+<td class="py-md text-on-surface-variant">$8,500</td>
+<td class="py-md text-on-surface-variant">$1,200</td>
+<td class="py-md font-bold text-right">$9,700</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md font-body-md">Primary (Grade 1-5)</td>
+<td class="py-md text-on-surface-variant">$10,200</td>
+<td class="py-md text-on-surface-variant">$1,800</td>
+<td class="py-md font-bold text-right">$12,000</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md font-body-md">Secondary (Grade 6-10)</td>
+<td class="py-md text-on-surface-variant">$12,500</td>
+<td class="py-md text-on-surface-variant">$2,500</td>
+<td class="py-md font-bold text-right">$15,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="mt-md text-[13px] text-on-surface-variant italic">
+                            * Note: Uniform, transportation, and specialized laboratory fees are charged separately.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Download Forms & FAQ Section -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="grid md:grid-cols-2 gap-xl">
+<!-- FAQ Accordion -->
+<div>
+<h2 class="font-headline-md text-headline-md mb-lg">Frequently Asked Questions</h2>
+<div class="space-y-base">
+<div class="faq-item group cursor-pointer border-b border-outline-variant py-md" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-lg text-on-surface group-hover:text-primary transition-colors">When is the last date to apply?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content mt-sm text-on-surface-variant font-body-md">
+                                Applications for the upcoming academic session remain open until March 31st, subject to seat availability in each grade.
+                            </div>
+</div>
+<div class="faq-item group cursor-pointer border-b border-outline-variant py-md" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-lg text-on-surface group-hover:text-primary transition-colors">Is there a sibling discount?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content mt-sm text-on-surface-variant font-body-md">
+                                Yes, we offer a 10% waiver on tuition fees for the younger sibling currently enrolled at Onest Gurukul.
+                            </div>
+</div>
+<div class="faq-item group cursor-pointer border-b border-outline-variant py-md" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-lg text-on-surface group-hover:text-primary transition-colors">Do you offer boarding facilities?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content mt-sm text-on-surface-variant font-body-md">
+                                Currently, we are a day-boarding school. However, we offer extended day programs for students involved in specialized extracurricular activities.
+                            </div>
+</div>
+</div>
+</div>
+<!-- Download Section -->
+<div class="bg-surface-container p-md md:p-xl rounded-[32px]">
+<h2 class="font-headline-md text-headline-md mb-md">Quick Resources</h2>
+<p class="text-on-surface-variant mb-lg">Download essential documents to prepare for your application process.</p>
+<div class="grid gap-sm">
+<div class="flex items-center justify-between p-md bg-surface rounded-xl hover:bg-primary-container/10 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-error/10 text-error flex items-center justify-center">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-label-md">School Prospectus 2024</p>
+<p class="text-[12px] text-on-surface-variant">PDF • 4.2 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+</div>
+<div class="flex items-center justify-between p-md bg-surface rounded-xl hover:bg-primary-container/10 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="font-label-md">Admission Form (Offline)</p>
+<p class="text-[12px] text-on-surface-variant">PDF • 1.1 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+</div>
+<div class="flex items-center justify-between p-md bg-surface rounded-xl hover:bg-primary-container/10 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div>
+<p class="font-label-md">Health Record Form</p>
+<p class="text-[12px] text-on-surface-variant">PDF • 850 KB</p>
+</div>
+</div>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="relative overflow-hidden rounded-[48px] bg-on-surface p-xl text-center">
+<div class="absolute inset-0 opacity-20">
+
+</div>
+<div class="relative z-10 space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-primary-container">Ready to begin the journey?</h2>
+<p class="text-on-secondary-fixed text-body-lg max-w-2xl mx-auto opacity-90">
+                            Our admissions counselors are ready to guide you through every step of the process. Start your application today and secure your child's future.
+                        </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md pt-md">
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-xl py-md rounded-xl hover:scale-105 transition-transform">
+                                Apply Online Now
+                            </button>
+<button class="bg-transparent border border-on-secondary-fixed text-on-secondary-fixed font-label-md px-xl py-md rounded-xl hover:bg-white/10 transition-colors">
+                                Book Campus Tour
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+<div class="space-y-md">
+<div class="font-headline-md text-headline-md text-primary">ONEST GURUKUL</div>
+<p class="text-on-secondary-fixed-variant font-body-md pr-md">
+                    Cultivating curiosity and empowering future leaders through modern, value-based education.
+                </p>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-on-surface">Quick Links</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant text-label-sm hover:text-primary transition-colors" href="#">Campus Map</a></li>
+<li><a class="text-on-secondary-fixed-variant text-label-sm hover:text-primary transition-colors" href="#">Alumni</a></li>
+<li><a class="text-on-secondary-fixed-variant text-label-sm hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-on-surface">Legal</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant text-label-sm hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-secondary-fixed-variant text-label-sm hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-on-surface">Connect</h4>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-primary-container">alternate_email</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-primary-container">location_on</span>
+</button>
+</div>
+<p class="text-on-secondary-fixed-variant text-label-sm mt-md">
+                    © 2024 Onest Gurukul. Excellence in Education.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Add some atmospheric micro-interactions
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            document.querySelectorAll('.luxury-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardX = (rect.left + rect.width / 2) / window.innerWidth;
+                const cardY = (rect.top + rect.height / 2) / window.innerHeight;
+                
+                const diffX = mouseX - cardX;
+                const diffY = mouseY - cardY;
+                
+                if (Math.abs(diffX) < 0.2 && Math.abs(diffY) < 0.2) {
+                    card.style.boxShadow = `${diffX * 50}px ${diffY * 50}px 60px rgba(250, 204, 21, 0.1)`;
+                }
+            });
+        });
+    </script>
+</body></html>

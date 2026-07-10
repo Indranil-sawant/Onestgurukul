@@ -1,224 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Campus & Facilities - O'Nest Gurukul</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Campus &amp; Facilities - O'Nest Gurukul</title>
   <meta name="description"
     content="Explore the state-of-the-art campus and facilities at Onest Gurukul. Designed to inspire learning, creativity, and holistic growth.">
   <meta name="keywords" content="Campus, Facilities, Infrastructure, Smart Classrooms, Sports Complex, Library, Labs">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="assets/img/onest.svg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Page Specific CSS -->
-  <link href="assets/css/onest-campus.css" rel="stylesheet">
+  <!-- Global Base Styles & Gradients -->
+  <link href="assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#ffb1c5",
+            "primary": "#735c00",
+            "on-surface": "#1a1b22",
+            "background": "#fbf8ff",
+            "outline": "#7f7660",
+            "on-tertiary-container": "#a52458",
+            "surface-container-low": "#f4f2fd",
+            "on-tertiary-fixed-variant": "#8c0a46",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eeedf7",
+            "primary-container": "#facc15",
+            "on-primary": "#ffffff",
+            "on-background": "#1a1b22",
+            "surface-bright": "#fbf8ff",
+            "primary-fixed": "#ffe083",
+            "on-surface-variant": "#4d4632",
+            "on-secondary-container": "#656464",
+            "inverse-surface": "#2f3038",
+            "surface-tint": "#735c00",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffd9e1",
+            "tertiary-container": "#ffc0cf",
+            "on-primary-fixed-variant": "#574500",
+            "secondary-container": "#e5e2e1",
+            "surface-container-high": "#e8e7f1",
+            "inverse-primary": "#eec200",
+            "primary-fixed-dim": "#eec200",
+            "on-secondary-fixed": "#1c1b1b",
+            "surface-variant": "#e3e1ec",
+            "on-secondary-fixed-variant": "#474646",
+            "on-primary-container": "#6c5700",
+            "outline-variant": "#d1c6ab",
+            "on-tertiary-fixed": "#3f001b",
+            "on-primary-fixed": "#231b00",
+            "secondary-fixed": "#e5e2e1",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e3e1ec",
+            "secondary": "#5f5e5e",
+            "tertiary": "#ac2a5d",
+            "surface": "#fbf8ff",
+            "inverse-on-surface": "#f1effa",
+            "surface-dim": "#dad9e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "24px",
+            "full": "9999px"
+          },
+            "spacing": {
+                "lg": "48px",
+                "gutter": "24px",
+                "base": "8px",
+                "sm": "12px",
+                "xs": "4px",
+                "xl": "80px",
+                "md": "24px",
+                "container-max": "1120px"
+            },
+          "fontFamily": {
+            "label-md": ["Hanken Grotesk"],
+            "display-lg": ["Libre Caslon Text"],
+            "body-md": ["Hanken Grotesk"],
+            "label-sm": ["Hanken Grotesk"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-lg": ["Libre Caslon Text"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(251, 248, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .luxury-shadow {
+      box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+    }
+
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
+    }
+
+    .parallax-bg {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+        #onest-campus-mobile-menu.active {
+            transform: translateX(0);
+        }
+        .glass-nav {
+            background: rgba(251, 248, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .luxury-shadow {
+            box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
+        }
+        .parallax-bg {
+            background-position: center;
+            background-size: cover;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Lightbox modal stylings */
+        .onest-campus-gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(8px);
+        }
+        .onest-campus-gallery-modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .onest-campus-gallery-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .onest-campus-gallery-close:hover {
+            color: #FACC15;
+        }
+        .onest-campus-gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 16px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .onest-campus-gallery-nav:hover {
+            background: #FACC15;
+            color: black;
+        }
+        .onest-campus-gallery-prev {
+            left: 32px;
+        }
+        .onest-campus-gallery-next {
+            right: 32px;
+        }
+    </style>
 </head>
-
-<body>
-
-  <div class="onest-campus-wrapper">
-
-    <!-- Header -->
-    <header class="onest-campus-header">
-      <div class="onest-campus-container onest-campus-header-inner">
-        <a href="index.html" class="onest-campus-logo">
-          <img src="assets/img/onest.svg" alt="O'Nest Gurukul">
-        </a>
-
-        <nav class="onest-campus-nav">
-          <ul class="onest-campus-nav-list">
-            <li><a href="index.html" class="onest-campus-nav-link">Home</a></li>
-            <li><a href="about.html" class="onest-campus-nav-link">About Us</a></li>
-            <li><a href="preprimary.html" class="onest-campus-nav-link" style="color: #FF6B9D; font-weight: 600;">⭐
-                Pre-Primary</a></li>
-            <li><a href="students-life.html" class="onest-campus-nav-link">Curriculum</a></li>
-            <li><a href="campus-facilities.html" class="onest-campus-nav-link active">Campus &amp; Facilities</a></li>
-            <li><a href="contact.html" class="onest-campus-nav-link">Contact</a></li>
-            <li><a href="admissions.html" class="onest-campus-btn onest-campus-btn-primary">Admissions</a></li>
-          </ul>
-        </nav>
-
-        <div style="display: flex; align-items: center;">
-          <button id="onest-campus-theme-toggle" class="onest-campus-theme-toggle" aria-label="Toggle Dark Mode">
-            <i class="bi bi-moon-fill"></i>
-          </button>
-          <button id="onest-campus-mobile-toggle" class="onest-campus-mobile-toggle" aria-label="Open Menu">
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-on-background/10">
+<div class="flex justify-between items-center h-[90px] px-gutter max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center">
+<img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="about.html">About Us</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" style="color: #FF6B9D; font-weight: 600;" href="preprimary.html">⭐ Pre-Primary</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="students-life.html">Curriculum</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="campus-facilities.html">Campus &amp; Facilities</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<!-- Theme Toggle -->
+<button id="onest-campus-theme-toggle" class="p-2.5 rounded-full text-on-surface-variant hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
+<i class="bi bi-moon-fill text-xl"></i>
+</button>
+<a href="admissions.html" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md font-bold hover:scale-95 transition-transform active:scale-90 inline-block text-xs md:text-sm">
+Admissions
+</a>
+<button id="onest-campus-mobile-toggle" class="md:hidden p-2 text-on-surface-variant hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+<i class="bi bi-list text-2xl"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="onest-campus-mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background/95 backdrop-blur-lg border-l border-on-background/10 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="h-16">
+<button id="onest-campus-mobile-close" class="p-2 text-on-surface-variant" aria-label="Close Menu">
+<i class="bi bi-x text-3xl"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-6 text-xl">
+<a href="index.html" class="text-on-surface-variant hover:text-primary font-semibold">Home</a>
+<a href="about.html" class="text-on-surface-variant hover:text-primary font-semibold">About Us</a>
+<a href="preprimary.html" class="hover:text-primary font-semibold" style="color: #FF6B9D;">⭐ Pre-Primary</a>
+<a href="students-life.html" class="text-on-surface-variant hover:text-primary font-semibold">Curriculum</a>
+<a href="campus-facilities.html" class="text-primary font-bold">Campus &amp; Facilities</a>
+<a href="contact.html" class="text-on-surface-variant hover:text-primary font-semibold">Contact</a>
+<a href="admissions.html" class="bg-primary text-on-primary py-3 rounded-lg text-center font-bold">Admissions</a>
+</nav>
+</div>
+</header>
+<main class="pt-[90px]">
+<!-- Hero Section -->
+<section class="relative min-h-[500px] md:h-[650px] flex items-center overflow-hidden py-12 md:py-0">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-background/60 backdrop-blur-[1px] z-10"></div>
+        <div class="w-full h-full bg-cover bg-center parallax-bg" style="background-image: url('assets/img/infra (1).JPG')"></div>
       </div>
-
-      <!-- Mobile Menu -->
-      <div id="onest-campus-mobile-menu" class="onest-campus-mobile-menu">
-        <div id="onest-campus-mobile-close" class="onest-campus-mobile-close">
-          <i class="bi bi-x"></i>
-        </div>
-        <ul class="onest-campus-mobile-list">
-          <li><a href="index.html" class="onest-campus-nav-link">Home</a></li>
-          <li><a href="about.html" class="onest-campus-nav-link">About Us</a></li>
-          <li><a href="preprimary.html" class="onest-campus-nav-link" style="color: #FF6B9D; font-weight: 600;">⭐
-              Pre-Primary</a></li>
-          <li><a href="students-life.html" class="onest-campus-nav-link">Curriculum</a></li>
-          <li><a href="campus-facilities.html" class="onest-campus-nav-link">Campus & Facilities</a></li>
-          <li><a href="contact.html" class="onest-campus-nav-link">Contact</a></li>
-          <li><a href="admissions.html" class="onest-campus-btn onest-campus-btn-primary"
-              style="width: 100%;">Admissions</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="onest-campus-hero">
-      <div class="onest-campus-container">
-        <h1 class="onest-campus-hero-title">Experience Our <span>Vibrant Campus</span></h1>
-        <p class="onest-campus-hero-text">
-          Step into a world designed for learning, creativity, and growth. Our state-of-the-art infrastructure provides
-          the perfect environment for students to explore their potential and thrive.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 16px;">
-          <a href="#facilities" class="onest-campus-btn onest-campus-btn-primary">Explore Facilities</a>
-          <a href="#virtual-tour" class="onest-campus-btn onest-campus-btn-white">Virtual Tour</a>
+      <div class="container mx-auto px-gutter relative z-20">
+        <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+          <span class="inline-block py-1.5 px-4 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs font-bold border border-primary/20">Architectural Excellence</span>
+          <h1 class="font-display-lg text-3xl md:text-5xl lg:text-display-lg text-on-surface mb-6 leading-tight font-bold">Experience Our <span class="text-primary">Vibrant Campus</span></h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto text-center">Step into a world designed for learning, creativity, and growth. Our state-of-the-art infrastructure provides the perfect environment for students to explore their potential and thrive.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold flex items-center justify-center space-x-2 hover:bg-primary/90 transition-all text-sm w-full sm:w-auto" href="#facilities">
+              <span>Explore Facilities</span>
+              <span class="material-symbols-outlined text-sm">arrow_downward</span>
+            </a>
+            <a class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-label-md font-bold hover:bg-primary/5 transition-all text-sm w-full sm:w-auto flex items-center justify-center" href="#virtual-tour">Take a Virtual Tour</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="onest-campus-stats-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-stats-grid">
-          <div class="onest-campus-stat-item">
-            <span class="onest-campus-stat-number">10+</span>
-            <span class="onest-campus-stat-label">Smart Classrooms</span>
+    <section class="py-12 bg-surface border-b border-on-background/5">
+      <div class="container mx-auto px-gutter">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="onest-campus-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">10+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Smart Classrooms</span>
           </div>
-          <div class="onest-campus-stat-item">
-            <span class="onest-campus-stat-number">8+</span>
-            <span class="onest-campus-stat-label">Acres of Campus</span>
+          <div class="onest-campus-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">8+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Acres of Campus</span>
           </div>
-          <div class="onest-campus-stat-item">
-            <span class="onest-campus-stat-number">200+</span>
-            <span class="onest-campus-stat-label">Happy Students</span>
+          <div class="onest-campus-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">200+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Happy Students</span>
           </div>
-          <div class="onest-campus-stat-item">
-            <span class="onest-campus-stat-number">24/7</span>
-            <span class="onest-campus-stat-label">Security & Safety</span>
+          <div class="onest-campus-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">24/7</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Security &amp; Safety</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Facilities Grid -->
-    <section id="facilities" class="onest-campus-facilities-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-section-header">
-          <h2 class="onest-campus-section-title">World-Class Infrastructure</h2>
-          <p style="color: var(--onest-campus-text-muted);">Designed to nurture every aspect of a child's development.
-          </p>
+    <!-- World-Class Infrastructure Grid (Bento Style) -->
+    <section class="py-12 md:py-20 bg-surface-container-low overflow-hidden" id="facilities">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">World-Class Infrastructure</h2>
+          <div class="w-24 h-1.5 bg-primary-container mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[950px]">
+          <!-- Labs -->
+          <div class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" data-facility="labs">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/compressed/atudy (6).jpg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">biotech</span>
+              <h3 class="font-headline-md text-headline-md mb-2">Labs &amp; Innovation</h3>
+              <ul class="space-y-2 opacity-90 max-w-md font-body-md list-disc list-inside">
+                <li>Modern Science Labs (Physics, Chemistry, Biology)</li>
+                <li>Advanced Computer Center</li>
+                <li>Robotics &amp; Maker Space</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Academic / Library -->
+          <div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 100ms;" data-facility="library">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/infra (6).JPG')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">auto_stories</span>
+              <h3 class="font-headline-md text-headline-md mb-2">The Knowledge Hub</h3>
+              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
+                <li>Well-Stocked Main Library</li>
+                <li>Digital e-Library resources</li>
+                <li>Quiet Study &amp; Reading Zones</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Smart Classrooms -->
+          <div class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 200ms;" data-facility="classrooms">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/education/open (2).jpg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">devices</span>
+              <h3 class="font-headline-md text-headline-md mb-2">Smart Classrooms</h3>
+              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
+                <li>Smart Digital Projectors &amp; Screens</li>
+                <li>Open-Air Interactive Learning Zones</li>
+                <li>Ergonomic learning environments</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sports Complex -->
+          <div class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal min-h-[300px] onest-bento-card cursor-pointer" style="transition-delay: 300ms;" data-facility="sports">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/open (25) - Edited.jpg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">fitness_center</span>
+              <h3 class="font-headline-md text-headline-md mb-2">Sports &amp; Wellness</h3>
+              <ul class="space-y-2 opacity-90 font-body-md list-disc list-inside">
+                <li>Expansive Athletic Turf Playgrounds</li>
+                <li>Dedicated Yoga &amp; Meditation Hall</li>
+                <li>Equipped Indoor Games Arena</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="onest-campus-facilities-grid">
-          <!-- Card 1: Academic -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/education/open (2).jpg" alt="Smart Classrooms">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-              <h3 class="onest-campus-facility-title">Academic Spaces</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> Smart Digital Classrooms</li>
-                <li><i class="bi bi-check-circle-fill"></i> Open-Air Learning Zones</li>
-                <li><i class="bi bi-check-circle-fill"></i> Well-Stocked Library</li>
+        <!-- Additional Facilities (Dining & Arts) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-md">
+          <div class="group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal h-[350px] onest-bento-card cursor-pointer" data-facility="dining">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/food-min.jpg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">utensils</span>
+              <h3 class="font-headline-md text-headline-md mb-2">Living &amp; Dining</h3>
+              <ul class="space-y-1 opacity-90 font-body-md list-disc list-inside">
+                <li>Hygienic and spacious Dining Hall</li>
+                <li>Nutritious, organic Sattvic Meals</li>
+                <li>Comfortable child-friendly rest zones</li>
               </ul>
             </div>
           </div>
-
-          <!-- Card 2: Sports -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/open (25) - Edited.jpg" alt="Sports Complex">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-running"></i></div>
-              <h3 class="onest-campus-facility-title">Sports & Wellness</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> Expansive Playgrounds</li>
-                <li><i class="bi bi-check-circle-fill"></i> Yoga & Meditation Hall</li>
-                <li><i class="bi bi-check-circle-fill"></i> Indoor Games Arena</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Card 3: Labs & Innovation -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/compressed/atudy (6).jpg" alt="Innovation Labs">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-flask"></i></div>
-              <h3 class="onest-campus-facility-title">Labs & Innovation</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> Modern Science Labs</li>
-                <li><i class="bi bi-check-circle-fill"></i> Computer Center</li>
-                <li><i class="bi bi-check-circle-fill"></i> Robotics & Maker Space</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Card 4: Living & Dining -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/food-min.jpg" alt="Dining Hall">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-utensils"></i></div>
-              <h3 class="onest-campus-facility-title">Living & Dining</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> Hygienic Dining Hall</li>
-                <li><i class="bi bi-check-circle-fill"></i> Nutritious Sattvic Meals</li>
-                <li><i class="bi bi-check-circle-fill"></i> Comfortable Rest Areas</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Card 5: Arts & Culture -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Cultural Hall">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-music"></i></div>
-              <h3 class="onest-campus-facility-title">Arts & Culture</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> Music & Dance Studio</li>
-                <li><i class="bi bi-check-circle-fill"></i> Art & Craft Rooms</li>
-                <li><i class="bi bi-check-circle-fill"></i> Open Auditorium</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Card 6: Safety -->
-          <div class="onest-campus-facility-card">
-            <div class="onest-campus-facility-img">
-              <img src="assets/img/bully.jpg" alt="Safety">
-            </div>
-            <div class="onest-campus-facility-content">
-              <div class="onest-campus-facility-icon"><i class="fas fa-shield-alt"></i></div>
-              <h3 class="onest-campus-facility-title">Safety & Transport</h3>
-              <ul class="onest-campus-facility-list">
-                <li><i class="bi bi-check-circle-fill"></i> CCTV Surveillance</li>
-                <li><i class="bi bi-check-circle-fill"></i> Secure Transport Fleet</li>
-                <li><i class="bi bi-check-circle-fill"></i> Medical Infirmary</li>
+          <div class="group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal h-[350px] onest-bento-card cursor-pointer" data-facility="arts">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('assets/img/compressed/atudy (7) - Edited.jpg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <span class="material-symbols-outlined text-primary-container text-4xl mb-4">palette</span>
+              <h3 class="font-headline-md text-headline-md mb-2">Arts &amp; Culture</h3>
+              <ul class="space-y-1 opacity-90 font-body-md list-disc list-inside">
+                <li>Fully equipped Music &amp; Dance Studio</li>
+                <li>Art &amp; Craft development rooms</li>
+                <li>Vibrant outdoor Open Auditorium</li>
               </ul>
             </div>
           </div>
@@ -227,165 +445,139 @@
     </section>
 
     <!-- Green Campus Section -->
-    <section class="onest-campus-green-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-green-grid">
-          <div class="onest-campus-green-content">
-            <h2 class="onest-campus-section-title">A Green Gurukul</h2>
-            <p class="onest-campus-text-lg">
-              Nature is our greatest teacher. Our campus is nestled amidst lush greenery, providing a serene and
-              pollution-free environment where students learn to respect and coexist with nature.
-            </p>
-            <ul class="onest-campus-green-list">
-              <li><i class="bi bi-tree-fill"></i> 8+ Acres of Green Cover</li>
-              <li><i class="bi bi-flower1"></i> Organic Gardening Zones</li>
-              <li><i class="bi bi-sun-fill"></i> Solar Powered Campus</li>
+    <section class="py-12 md:py-20 bg-surface border-t border-on-background/5">
+      <div class="container mx-auto px-gutter">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div class="w-full md:w-1/2 reveal">
+            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs font-bold border border-primary/20">Sustainability</span>
+            <h2 class="font-display-lg text-4xl md:text-5xl text-on-surface mb-6 leading-tight font-bold">A Green <span class="text-primary">Gurukul.</span></h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Nature is our greatest teacher. Our campus is nestled amidst lush green hills, providing a serene, healthy, and pollution-free environment where students learn to respect and coexist with nature.</p>
+            
+            <div class="space-y-6">
+              <!-- Item 1 -->
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
+                  <span class="material-symbols-outlined text-2xl">park</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-on-surface text-lg">8+ Acres Ecological Cover</h4>
+                  <p class="text-on-surface-variant text-sm mt-0.5">Explore and learn in a rich, biodiverse ecosystem of indigenous flora and safe outdoor trails.</p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
+                  <span class="material-symbols-outlined text-2xl">potted_plant</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-on-surface text-lg">Organic Gardening &amp; Farming</h4>
+                  <p class="text-on-surface-variant text-sm mt-0.5">Hands-on experience in agriculture, botany, and learning core principles of ecological care.</p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shrink-0 shadow-sm">
+                  <span class="material-symbols-outlined text-2xl">solar_power</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-on-surface text-lg">Solar Powered Smart Grids</h4>
+                  <p class="text-on-surface-variant text-sm mt-0.5">Reducing carbon footprint with modern clean solar grids backing smart classrooms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 relative reveal" style="transition-delay: 200ms;">
+            <div class="relative z-10 rounded-2xl overflow-hidden aspect-[4/3] luxury-shadow border border-primary/10">
+              <div class="absolute top-4 left-4 z-20 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">nature_people</span>
+                <span>8 Acres Campus</span>
+              </div>
+              <img src="assets/img/school.png" alt="Green Campus View" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transportation & Safety -->
+    <section class="py-12 md:py-20 bg-surface-container-low">
+      <div class="container mx-auto px-gutter">
+        <div class="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+          <div class="w-full md:w-1/2 relative reveal" style="transition-delay: 200ms;">
+            <div class="relative z-10 rounded-2xl overflow-hidden aspect-video luxury-shadow">
+              <img src="assets/img/digital_Safety.jpg" alt="Security Monitoring Center" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+          </div>
+          <div class="w-full md:w-1/2 reveal">
+            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs">Peace of Mind</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Uncompromising Safety &amp; Mobility</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">We prioritize the well-being and security of our students through advanced surveillance networks, campus medics, and secure GPS transit.</p>
+            <ul class="space-y-6">
+              <li class="flex items-start space-x-4">
+                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-container text-xl">shield</span>
+                </div>
+                <div>
+                  <h4 class="font-label-md text-on-surface text-lg">24/7 Smart CCTV Surveillance</h4>
+                  <p class="font-body-md text-on-surface-variant">Continuous security monitoring across all gates, pathways, and corridors.</p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-4">
+                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-container text-xl">directions_bus</span>
+                </div>
+                <div>
+                  <h4 class="font-label-md text-on-surface text-lg">GPS-Tracked Safe Transport</h4>
+                  <p class="font-body-md text-on-surface-variant">Secure transport fleet with real-time GPS tracking and transit updates.</p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-4">
+                <div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-container text-xl">medical_services</span>
+                </div>
+                <div>
+                  <h4 class="font-label-md text-on-surface text-lg">Resident Campus Medical Infirmary</h4>
+                  <p class="font-body-md text-on-surface-variant">Dedicated on-campus medical center equipped with paramedics and emergency support.</p>
+                </div>
+              </li>
             </ul>
-          </div>
-          <div class="onest-campus-green-img">
-            <img src="assets/img/school.png" alt="Green Campus">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Library & Knowledge Hub -->1
-
-    <!-- Library & Knowledge Hub -->
-    <section class="onest-campus-library-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-library-grid">
-          <div class="onest-campus-library-img">
-            <img src="assets/img/infra (6).JPG" alt="Library">
-          </div>
-          <div class="onest-campus-library-content">
-            <h2 class="onest-campus-section-title">Library & Knowledge Hub</h2>
-            <p>
-              Our library is a vibrant space designed to ignite a love for reading. With thousands of books, digital
-              resources, and quiet reading corners, it is the heart of intellectual growth at Onest Gurukul.
-            </p>
-            <div class="onest-campus-library-features">
-              <div class="library-item">
-                <i class="bi bi-book-fill"></i>
-                <div>
-                  <strong>5000+ Books</strong>
-                  <p>A vast collection across all genres and subjects.</p>
-                </div>
-              </div>
-              <div class="library-item">
-                <i class="bi bi-laptop-fill"></i>
-                <div>
-                  <strong>Digital e-Library</strong>
-                  <p>Access to global research and learning materials.</p>
-                </div>
-              </div>
-              <div class="library-item">
-                <i class="bi bi-brightness-high-fill"></i>
-                <div>
-                  <strong>Quiet Study Zones</strong>
-                  <p>Peaceful areas dedicated to focused learning.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Safety & Security -->
-    <section class="onest-campus-safety-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-safety-grid">
-          <div class="onest-campus-safety-img">
-            <img src="assets/img/digital_Safety.jpg" alt="Digital Safety">
-          </div>
-          <div class="onest-campus-safety-content">
-            <h2 class="onest-campus-section-title">Uncompromised Safety</h2>
-            <p>
-              Your child's safety is our top priority. We employ advanced security measures and strict protocols to
-              ensure a secure environment, giving parents complete peace of mind.
-            </p>
-            <div class="onest-campus-safety-features">
-              <div class="safety-item">
-                <i class="bi bi-camera-video-fill"></i>
-                <div>
-                  <strong>24/7 Surveillance</strong>
-                  <p>CCTV monitoring across the entire campus.</p>
-                </div>
-              </div>
-              <div class="safety-item">
-                <i class="bi bi-person-badge-fill"></i>
-                <div>
-                  <strong>Trained Security</strong>
-                  <p>Professional guards stationed at all entry points.</p>
-                </div>
-              </div>
-              <div class="safety-item">
-                <i class="bi bi-bus-front-fill"></i>
-                <div>
-                  <strong>GPS Transport</strong>
-                  <p>Real-time tracking for all school buses.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="onest-campus-cta-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-cta-box">
-          <h2>Ready to See It for Yourself?</h2>
-          <p>Schedule a personal tour and experience the Onest Gurukul difference today.</p>
-          <div class="onest-campus-cta-btns">
-            <a href="contact.html" class="onest-campus-btn onest-campus-btn-primary">Book a Campus Visit</a>
-            <a href="admissions.html" class="onest-campus-btn onest-campus-btn-white">Apply Now</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Virtual Tour Section -->
-    <section id="virtual-tour" class="onest-campus-tour-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-tour-grid">
-          <div class="onest-campus-tour-content">
-            <h2>Take a Virtual Campus Tour</h2>
-            <p>
-              Can't visit us in person yet? No problem. Experience the magic of O'Nest Gurukul from the comfort of your
-              home. Walk through our corridors, peek into our classrooms, and feel the energy of our campus.
-            </p>
-            <div class="onest-campus-tour-features">
-              <div class="onest-campus-tour-feature">
-                <i class="bi bi-camera-video"></i>
-                <div>
-                  <strong>Immersive View</strong>
-                  <span style="display:block; font-size:0.9rem; color:var(--onest-campus-text-muted);">High-definition
-                    walkthrough</span>
-                </div>
+    <section id="virtual-tour" class="py-12 md:py-20 bg-surface">
+      <div class="container mx-auto px-gutter">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div class="w-full md:w-1/2 reveal">
+            <span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs">Virtual Walkthrough</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Take a Virtual Campus Tour</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Can't visit us in person yet? No problem. Experience the magic of O'Nest Gurukul from the comfort of your home. Walk through our corridors, peek into our classrooms, and feel the energy of our campus.</p>
+            <div class="flex flex-col space-y-4 mb-8">
+              <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-primary text-xl">videocam</span>
+                <span class="font-body-md text-on-surface-variant"><strong>Immersive View:</strong> High-definition video walkthrough</span>
               </div>
-              <div class="onest-campus-tour-feature">
-                <i class="bi bi-geo-alt"></i>
-                <div>
-                  <strong>Guided Experience</strong>
-                  <span style="display:block; font-size:0.9rem; color:var(--onest-campus-text-muted);">Explore key
-                    landmarks</span>
-                </div>
+              <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-primary text-xl">explore</span>
+                <span class="font-body-md text-on-surface-variant"><strong>Guided Experience:</strong> Explore key academic and sports landmarks</span>
               </div>
             </div>
-            <a href="contact.html" class="onest-campus-btn onest-campus-btn-primary">Schedule a Physical Visit</a>
+            <a href="contact.html" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold inline-block hover:bg-primary/90 transition-all text-sm">Schedule a Physical Visit</a>
           </div>
-
-          <div class="onest-campus-tour-video">
-            <video poster="assets/img/campus3.png" loop muted playsinline>
-              <source src="assets/img/education/video-5.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="onest-campus-play-overlay">
-              <div class="onest-campus-play-btn">
-                <i class="bi bi-play-fill"></i>
+          <div class="w-full md:w-1/2 reveal" style="transition-delay: 200ms;">
+            <div class="onest-campus-tour-video relative rounded-2xl overflow-hidden luxury-shadow group cursor-pointer aspect-video bg-black">
+              <video class="w-full h-full object-cover" poster="assets/img/campus3.png" loop muted playsinline>
+                <source src="assets/img/education/video-5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="onest-campus-play-overlay absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                <div class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                  <i class="bi bi-play-fill text-4xl ml-1"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -394,84 +586,55 @@
     </section>
 
     <!-- Map Section -->
-    <section class="onest-campus-map-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-section-header">
-          <h2 class="onest-campus-section-title">Locate Us</h2>
-          <p style="color: var(--onest-campus-text-muted);">Nestled in the serene surroundings of Ratnagiri.</p>
+    <section class="py-12 md:py-20 bg-surface-container-low">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Locate Us</h2>
+          <p class="font-body-md text-on-surface-variant">Nestled in the serene, hills-side surroundings of Ratnagiri.</p>
         </div>
-        <div class="onest-campus-map-container">
+        <div class="rounded-2xl overflow-hidden luxury-shadow h-[450px]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin"
-            allowfullscreen="" loading="lazy"></iframe>
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-full"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- Infrastructure Gallery Section -->
-    <section class="onest-campus-gallery-section">
-      <div class="onest-campus-container">
-        <div class="onest-campus-section-header">
-          <h2 class="onest-campus-section-title">Infrastructure Gallery</h2>
-          <p style="color: var(--onest-campus-text-muted);">Take a visual tour of our world-class facilities and modern
-            infrastructure.</p>
+    <!-- Infrastructure Gallery -->
+    <section class="py-12 md:py-20 bg-surface border-t border-on-background/5">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">Campus Vignettes</h2>
+          <p class="font-body-md text-on-surface-variant">A visual journey through the corners of Onest Gurukul.</p>
         </div>
-
-        <div class="onest-campus-gallery-grid">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-md reveal" style="transition-delay: 100ms;">
           <!-- Image 1 -->
-          <div class="onest-campus-gallery-item" data-index="0">
-            <img src="assets/img/infra (1).JPG" alt="O'Nest Gurukul Infrastructure">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="0">
+            <img src="assets/img/infra (1).JPG" alt="O'Nest Gurukul Infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 2 -->
-          <div class="onest-campus-gallery-item" data-index="1">
-            <img src="assets/img/infra-(2).jpg" alt="Campus Building">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="1">
+            <img src="assets/img/infra-(2).jpg" alt="Campus Building" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 3 -->
-          <div class="onest-campus-gallery-item" data-index="2">
-            <img src="assets/img/infra (3).JPG" alt="School Facilities">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="2">
+            <img src="assets/img/infra (3).JPG" alt="School Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 4 -->
-          <div class="onest-campus-gallery-item" data-index="3">
-            <img src="assets/img/infra (4).JPG" alt="Modern Classrooms">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="3">
+            <img src="assets/img/infra (4).JPG" alt="Modern Classrooms" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 5 -->
-          <div class="onest-campus-gallery-item" data-index="4">
-            <img src="assets/img/infra (5).JPG" alt="Campus Infrastructure">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="4">
+            <img src="assets/img/infra (5).JPG" alt="Campus Infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 6 -->
-          <div class="onest-campus-gallery-item" data-index="5">
-            <img src="assets/img/infra (6).JPG" alt="Learning Spaces">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="5">
+            <img src="assets/img/infra (6).JPG" alt="Learning Spaces" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Image 7 -->
-          <div class="onest-campus-gallery-item" data-index="6">
-            <img src="assets/img/infra (7).JPG" alt="Campus Facilities">
-            <div class="onest-campus-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-            </div>
+          <div class="onest-campus-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="6">
+            <img src="assets/img/infra (7).JPG" alt="Campus Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
         </div>
       </div>
@@ -480,63 +643,125 @@
     <!-- Gallery Lightbox Modal -->
     <div id="onest-campus-gallery-modal" class="onest-campus-gallery-modal">
       <span class="onest-campus-gallery-close">&times;</span>
-      <button class="onest-campus-gallery-nav onest-campus-gallery-prev">
+      <button class="onest-campus-gallery-nav onest-campus-gallery-prev" aria-label="Previous image">
         <i class="bi bi-chevron-left"></i>
       </button>
-      <img class="onest-campus-gallery-modal-content" id="onest-campus-modal-img">
-      <button class="onest-campus-gallery-nav onest-campus-gallery-next">
+      <img class="onest-campus-gallery-modal-content" id="onest-campus-modal-img" alt="Campus Facility Zoomed Image">
+      <button class="onest-campus-gallery-nav onest-campus-gallery-next" aria-label="Next image">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
 
-    <!-- Footer -->
-    <footer class="onest-campus-footer">
-      <div class="onest-campus-container">
-        <div class="onest-campus-footer-grid">
-          <div class="onest-campus-footer-col">
-            <img src="assets/img/onest.svg" alt="Logo"
-              style="height: 40px; margin-bottom: 24px; filter: brightness(0) invert(1);">
-            <p style="color: #a3a3a3;">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
-            <p style="margin-top: 16px;"><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Email:</strong> info@onestgurukul.in</p>
-          </div>
-          <div class="onest-campus-footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="onest-campus-footer-col">
-            <h4>Academics</h4>
-            <ul>
-              <li><a href="preprimary.html">Pre-Primary</a></li>
-              <li><a href="#">Primary</a></li>
-              <li><a href="#">Middle School</a></li>
-              <li><a href="#">Senior School</a></li>
-            </ul>
-          </div>
-          <div class="onest-campus-footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Parent Portal</a></li>
-              <li><a href="#">News & Updates</a></li>
-              <li><a href="#">School Policies</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="onest-campus-footer-bottom">
-          <p>&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+    <!-- Infrastructure Detail Modal -->
+    <div id="onest-facility-detail-modal" class="fixed inset-0 z-[9999] hidden bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="bg-background max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl border border-on-background/10 transform scale-95 opacity-0 transition-all duration-300 relative p-8">
+        <!-- Close Button -->
+        <button id="onest-facility-modal-close" class="absolute top-4 right-4 p-2 text-on-surface-variant hover:bg-primary/10 rounded-full transition-colors" aria-label="Close modal">
+          <i class="bi bi-x text-2xl"></i>
+        </button>
+        <!-- Modal Content -->
+        <div id="onest-facility-modal-body" class="space-y-6">
+          <!-- Content injected dynamically via JS -->
         </div>
       </div>
-    </footer>
+    </div>
 
-  </div>
+    <!-- CTA Section -->
+    <section class="py-12 md:py-20 px-gutter bg-surface">
+      <div class="max-w-container-max mx-auto bg-primary text-on-primary rounded-2xl p-12 md:p-24 relative overflow-hidden text-center reveal">
+        <div class="relative z-10">
+          <h2 class="font-display-lg text-headline-lg md:text-display-lg mb-8 text-white">Ready to see it in person?</h2>
+          <p class="font-body-lg text-body-lg opacity-80 mb-12 max-w-xl mx-auto text-white">Book a personalized campus tour today and witness the pinnacle of educational infrastructure.</p>
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <a href="contact.html" class="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:scale-105 transition-transform inline-block">Schedule Visit</a>
+            <a href="admissions.html" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:bg-white/20 transition-all inline-block">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Page Specific JS -->
+  <!-- Footer -->
+  <footer class="bg-surface-container-high border-t border-on-background/5">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+      <div class="md:col-span-1">
+        <div class="font-headline-md text-headline-md text-primary mb-6 font-bold">ONEST GURUKUL</div>
+        <p class="font-body-md text-on-secondary-fixed-variant mb-6 text-on-surface-variant">Empowering minds through innovation and excellence. Join our global community of learners.</p>
+        <div class="flex space-x-4">
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 1"><span class="material-symbols-outlined text-sm">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 2"><span class="material-symbols-outlined text-sm">share</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 3"><span class="material-symbols-outlined text-sm">campaign</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Resources</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="campus-facilities.html">Campus Map</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Alumni Network</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Faculty Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Legal</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Newsletter</h4>
+        <p class="font-body-md text-on-surface-variant mb-4">Stay updated with campus news.</p>
+        <form class="flex flex-col space-y-3">
+          <input class="bg-surface p-3 rounded-lg border-0 ring-1 ring-on-background/10 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email Address" type="email" aria-label="Newsletter Email" />
+          <button class="bg-primary text-on-primary py-3 rounded-lg font-label-md font-bold hover:opacity-90 transition-all">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-on-background/10 py-6 text-center">
+      <p class="font-label-sm text-on-surface-variant text-xs font-semibold">© 2024 Onest Gurukul. Excellence in Education.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script src="assets/js/onest-campus.js"></script>
+
+  <script>
+    // Reveal Animations on Scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveal.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Parallax Effect for Hero
+    window.addEventListener('scroll', () => {
+      const parallax = document.querySelector('.parallax-bg');
+      let scrollPosition = window.pageYOffset;
+      if (parallax) {
+        parallax.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+      }
+    });
+
+    // Smooth header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+  </script>
 
   <!-- Tawk.to Script -->
   <script type="text/javascript">

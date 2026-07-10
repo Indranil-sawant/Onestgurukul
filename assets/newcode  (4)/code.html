@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | ONEST GURUKUL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-fixed-dim": "#ffb1c5",
+                "primary": "#735c00",
+                "on-surface": "#1a1b22",
+                "background": "#fbf8ff",
+                "outline": "#7f7660",
+                "on-tertiary-container": "#a52458",
+                "surface-container-low": "#f4f2fd",
+                "on-tertiary-fixed-variant": "#8c0a46",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#eeedf7",
+                "primary-container": "#facc15",
+                "on-primary": "#ffffff",
+                "on-background": "#1a1b22",
+                "surface-bright": "#fbf8ff",
+                "primary-fixed": "#ffe083",
+                "on-surface-variant": "#4d4632",
+                "on-secondary-container": "#656464",
+                "inverse-surface": "#2f3038",
+                "surface-tint": "#735c00",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#ffd9e1",
+                "tertiary-container": "#ffc0cf",
+                "on-primary-fixed-variant": "#574500",
+                "secondary-container": "#e5e2e1",
+                "surface-container-high": "#e8e7f1",
+                "inverse-primary": "#eec200",
+                "primary-fixed-dim": "#eec200",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-variant": "#e3e1ec",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-container": "#6c5700",
+                "outline-variant": "#d1c6ab",
+                "on-tertiary-fixed": "#3f001b",
+                "on-primary-fixed": "#231b00",
+                "secondary-fixed": "#e5e2e1",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e3e1ec",
+                "secondary": "#5f5e5e",
+                "tertiary": "#ac2a5d",
+                "surface": "#fbf8ff",
+                "inverse-on-surface": "#f1effa",
+                "surface-dim": "#dad9e3"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "48px",
+                "gutter": "24px",
+                "base": "8px",
+                "sm": "12px",
+                "xs": "4px",
+                "xl": "80px",
+                "md": "24px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "label-md": ["Hanken Grotesk"],
+                "display-lg-mobile": ["Libre Caslon Text"],
+                "display-lg": ["Libre Caslon Text"],
+                "body-md": ["Hanken Grotesk"],
+                "label-sm": ["Hanken Grotesk"],
+                "headline-md": ["Libre Caslon Text"],
+                "headline-lg": ["Libre Caslon Text"],
+                "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(251, 248, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .luxury-shadow {
+            box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.08);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #735c00 !important;
+        }
+    </style>
+</head>
+<body class="bg-[#FFF9D9] text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 glass-nav border-b border-on-background/10 h-[72px]">
+<div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">
+                ONEST GURUKUL
+            </div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-fixed font-bold px-md py-sm rounded-lg active:scale-95 transition-transform hover:shadow-lg">
+                Apply Now
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-xl px-gutter max-w-container-max mx-auto text-center">
+<span class="font-label-sm text-primary uppercase tracking-widest mb-base block">Connect With Us</span>
+<h1 class="font-display-lg text-display-lg text-on-background mb-md">Get in Touch</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                We're here to answer your questions and guide you through the journey of elite academic excellence. Reach out to our dedicated teams.
+            </p>
+</section>
+<!-- Department Cards - Bento Grid Inspired -->
+<section class="px-gutter max-w-container-max mx-auto mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Admissions Card -->
+<div class="bg-[#FFF3B0] p-lg rounded-xl luxury-shadow card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-md">school</span>
+<h3 class="font-headline-md text-on-background mb-sm">Admissions</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Inquire about enrollment, scholarships, and campus tours for prospective students.</p>
+<div class="space-y-sm">
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="mailto:admissions@onestgurukul.edu">
+<span class="material-symbols-outlined text-sm">mail</span> admissions@onestgurukul.edu
+                        </a>
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="tel:+1234567890">
+<span class="material-symbols-outlined text-sm">call</span> +1 (234) 567-890
+                        </a>
+</div>
+</div>
+<!-- Principal's Office -->
+<div class="bg-[#FFF3B0] p-lg rounded-xl luxury-shadow card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-md">account_balance</span>
+<h3 class="font-headline-md text-on-background mb-sm">Principal's Office</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Direct coordination for administrative matters, partnerships, and board communications.</p>
+<div class="space-y-sm">
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="mailto:principal@onestgurukul.edu">
+<span class="material-symbols-outlined text-sm">mail</span> principal@onestgurukul.edu
+                        </a>
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="tel:+1234567891">
+<span class="material-symbols-outlined text-sm">call</span> +1 (234) 567-891
+                        </a>
+</div>
+</div>
+<!-- General Inquiry -->
+<div class="bg-[#FFF3B0] p-lg rounded-xl luxury-shadow card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-md">info</span>
+<h3 class="font-headline-md text-on-background mb-sm">General Inquiry</h3>
+<p class="font-body-md text-on-surface-variant mb-md">For all other questions regarding campus life, facilities, or general information.</p>
+<div class="space-y-sm">
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="mailto:hello@onestgurukul.edu">
+<span class="material-symbols-outlined text-sm">mail</span> hello@onestgurukul.edu
+                        </a>
+<a class="flex items-center gap-sm text-primary font-semibold hover:underline" href="tel:+1234567892">
+<span class="material-symbols-outlined text-sm">call</span> +1 (234) 567-892
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Form and Office Hours Section -->
+<section class="px-gutter max-w-container-max mx-auto mb-xl">
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-xl items-start">
+<!-- Inquiry Form -->
+<div class="lg:col-span-3 bg-surface-container-lowest p-lg md:p-xl rounded-xl luxury-shadow border border-outline-variant/30">
+<h2 class="font-headline-lg text-on-background mb-md">Send a Message</h2>
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="relative">
+<label class="font-label-sm text-on-surface-variant uppercase mb-xs block">Full Name</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant py-sm font-body-md transition-colors placeholder:text-outline-variant/50" placeholder="John Doe" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-sm text-on-surface-variant uppercase mb-xs block">Email Address</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant py-sm font-body-md transition-colors placeholder:text-outline-variant/50" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-sm text-on-surface-variant uppercase mb-xs block">Subject</label>
+<select class="w-full bg-transparent border-b-2 border-outline-variant py-sm font-body-md appearance-none focus:ring-0">
+<option>Admissions Inquiry</option>
+<option>General Feedback</option>
+<option>Career Opportunity</option>
+<option>Campus Visit Request</option>
+</select>
+</div>
+<div class="relative">
+<label class="font-label-sm text-on-surface-variant uppercase mb-xs block">Your Message</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline-variant py-sm font-body-md transition-colors placeholder:text-outline-variant/50 resize-none" placeholder="How can we help you?" rows="4"></textarea>
+</div>
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-bold hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-sm shadow-md" type="submit">
+                            Submit Inquiry <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</div>
+<!-- Office Hours & Details -->
+<div class="lg:col-span-2 space-y-lg">
+<div class="bg-[#FFF3B0] p-lg rounded-xl luxury-shadow">
+<h3 class="font-headline-md text-on-background mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">schedule</span> Office Hours
+                        </h3>
+<div class="space-y-md">
+<div class="flex justify-between border-b border-on-background/10 pb-sm">
+<span class="font-label-md text-on-background">Monday — Friday</span>
+<span class="font-body-md text-on-surface-variant">8:00 AM - 4:00 PM</span>
+</div>
+<div class="flex justify-between border-b border-on-background/10 pb-sm">
+<span class="font-label-md text-on-background">Saturday</span>
+<span class="font-body-md text-on-surface-variant">9:00 AM - 12:00 PM</span>
+</div>
+<div class="flex justify-between border-b border-on-background/10 pb-sm">
+<span class="font-label-md text-on-background">Sunday</span>
+<span class="font-body-md text-error font-semibold">Closed</span>
+</div>
+</div>
+<p class="mt-lg text-sm text-on-surface-variant italic">
+                            * Note: The campus is closed on national holidays and semester breaks.
+                        </p>
+</div>
+<div class="p-lg border-2 border-primary/20 rounded-xl">
+<h3 class="font-headline-md text-on-background mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">location_on</span> Campus Address
+                        </h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            123 Scholastic Way,<br/>
+                            Education District, Knowledge Park,<br/>
+                            Cambridge, MA 02138
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Width Map Integration -->
+<section class="w-full h-[500px] bg-surface-container relative">
+<div class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 opacity-90" data-location="Cambridge, MA" style="">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+<div class="bg-white/80 backdrop-blur px-md py-sm rounded-full shadow-xl border border-primary/20 flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-on-background">ONEST GURUKUL CAMPUS</span>
+</div>
+</div>
+<!-- Simulating a map embed visual -->
+<div class="w-full h-full bg-cover bg-center" data-alt="A sophisticated, high-contrast aerial map view of an elite educational campus featuring neoclassical architecture and lush green quads. The map is presented in a minimalist, light-mode aesthetic with clean lines and subtle golden accents representing key landmarks. Soft daylight illuminates the scene, evoking a sense of clarity, prestige, and academic excellence within a modern urban context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBydrOuEwHwvym0h1w1Sivp9qH1P5spuuKXCmXLTX_9ppyV38gUlCZsnWTzwwGL5nDPs5lCyXzWtH0jaqZGPAiH9leO7UT6DEfGNAdgqWbPIIT6BFGXTiW1aaAYNPQHPlgABsLpqoecSiUupJfhcat5_TNrV7ax4NAgJetdkDEBQHBWRiLha91i1fop71JBHw0YNOeFDR7dfEJDI0vqX1L4p7V_5v8Qf3pGBHDBq2N85NQh5om97Wl4RyQ0ZlN_0_vdWsDYr6BYVBT7')"></div>
+</div>
+</section>
+</main>
+<!-- Footer Area (JSON Integrated) -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+<div class="space-y-md">
+<div class="font-headline-md text-headline-md text-primary font-bold">ONEST GURUKUL</div>
+<p class="font-body-md text-on-surface-variant">Excellence in education, nurturing tomorrow's leaders with wisdom and integrity.</p>
+<!-- Emergency Numbers Special Request -->
+<div class="bg-primary/5 p-md rounded-lg border-l-4 border-primary">
+<span class="font-label-sm text-primary uppercase block mb-xs">Emergency Support</span>
+<p class="font-bold text-on-background">Campus Security: +1 (234) 911-000</p>
+<p class="text-sm text-on-surface-variant">24/7 Response Team</p>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-on-background uppercase mb-md">Quick Links</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Campus Map</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Alumni</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Careers</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-background uppercase mb-md">Department Contacts</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Academic Affairs</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Student Welfare</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">Athletics Dept</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md" href="#">IT Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-background uppercase mb-md">Connect With Us</h4>
+<div class="flex gap-md mb-md">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+<button class="w-full py-sm border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+                    Virtual Tour
+                </button>
+</div>
+</div>
+<div class="border-t border-on-background/5 py-md">
+<div class="px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-label-sm text-on-secondary-fixed-variant">© 2024 Onest Gurukul. Excellence in Education.</span>
+<div class="flex gap-md text-on-secondary-fixed-variant font-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and effects
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.querySelector('label').style.color = '#735c00';
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.querySelector('label').style.color = '';
+            });
+        });
+
+        // Form submission animation simulation
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Sent Successfully';
+                btn.classList.replace('bg-primary', 'bg-tertiary');
+                form.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-tertiary', 'bg-primary');
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+
+        // Entrance animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ONEST GURUKUL | Excellence in Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1b22",
+                        "surface": "#fbf8ff",
+                        "on-primary-fixed": "#231b00",
+                        "surface-tint": "#735c00",
+                        "surface-container-high": "#e8e7f1",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#6c5700",
+                        "on-tertiary-container": "#a52458",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline-variant": "#d1c6ab",
+                        "on-tertiary-fixed": "#3f001b",
+                        "primary-fixed": "#ffe083",
+                        "surface-variant": "#e3e1ec",
+                        "secondary-container": "#e5e2e1",
+                        "tertiary-container": "#ffc0cf",
+                        "primary": "#735c00",
+                        "surface-bright": "#fbf8ff",
+                        "secondary": "#5f5e5e",
+                        "on-surface-variant": "#4d4632",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#e3e1ec",
+                        "background": "#fbf8ff",
+                        "on-surface": "#1a1b22",
+                        "primary-container": "#facc15",
+                        "surface-container-low": "#f4f2fd",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed-dim": "#eec200",
+                        "on-tertiary-fixed-variant": "#8c0a46",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#ac2a5d",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dad9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f1effa",
+                        "tertiary-fixed": "#ffd9e1",
+                        "outline": "#7f7660",
+                        "surface-container": "#eeedf7",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#656464",
+                        "inverse-surface": "#2f3038",
+                        "tertiary-fixed-dim": "#ffb1c5",
+                        "inverse-primary": "#eec200",
+                        "warm-vanilla": "#FFF9D9",
+                        "card-vanilla": "#FFF3B0",
+                        "charcoal": "#111111"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #FFF9D9; color: #111111; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .lift-glow:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 40px -10px rgba(250, 204, 21, 0.25); }
+        .luxury-gap { padding-top: 80px; padding-bottom: 80px; }
+        .gold-underline { position: relative; }
+        .gold-underline::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 60px; height: 3px; background: #FACC15; }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav bg-surface/70 border-b border-on-background/10">
+<div class="flex justify-between items-center h-[72px] px-gutter max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">ONEST GURUKUL</div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-charcoal font-bold px-md py-xs rounded-lg hover:scale-95 transition-transform font-label-md text-label-md shadow-sm">
+                Apply Now
+            </button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Announcement Bar -->
+<div class="bg-primary-container text-charcoal py-2 px-gutter overflow-hidden whitespace-nowrap">
+<div class="flex items-center justify-center gap-md animate-marquee">
+<span class="font-label-sm uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+                    Admissions for Academic Year 2024-25 are now Open. Limited seats available.
+                </span>
+<span class="hidden md:inline font-label-sm">•</span>
+<span class="hidden md:inline font-label-sm uppercase tracking-widest">Scholarship exams scheduled for next month.</span>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Cinematic high-angle shot of a modern, eco-friendly school campus at sunset. The architecture features clean glass lines and golden-hour lighting hitting warm-toned stone walls. Students in crisp uniforms walk through lush green courtyards. The atmosphere is prestigious, serene, and forward-thinking, captured with professional architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_7dxQAPFi-i0fbMKhye8dK-cgTaaBqy8fpdvYWTV3rM2GDhHkfOiqt5ia_QeCEf8xOdJXs_Z3Mcru-jbCqxa6mvRWA-6ng0EFmaozMR_dks4tKvOPEW6_h6pNg00XsgmdMb7etFd7sT3g1dAETPnYIUypnmMoxO71g_RFwMD8mBsSupgFsVR6Ka0rqo0oSAoFnmNkOkBDU0mUGGOTpWTTZCy3pejQSxmcQ6TZmMGq0TxJujs9j2b5MID8uVRIoI9Q7bXnLhiVyN34"/>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter w-full">
+<div class="max-w-2xl reveal">
+<span class="text-primary-container font-label-md uppercase tracking-[0.2em] mb-xs block">EST. 1998</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-md leading-tight">
+                        Nurturing the <span class="text-primary-container italic">Leaders</span> of Tomorrow
+                    </h1>
+<p class="text-white/80 font-body-lg text-body-lg mb-lg max-w-lg">
+                        Experience a holistic educational journey where ancient wisdom meets modern innovation, shaping minds for a global future.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-primary-container text-charcoal font-bold px-lg py-md rounded-lg shadow-lg hover:scale-105 transition-all text-label-md">
+                            Apply Now
+                        </button>
+<button class="border-2 border-white text-white font-bold px-lg py-md rounded-lg hover:bg-white hover:text-charcoal transition-all text-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                            Virtual Tour
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="luxury-gap bg-warm-vanilla">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<div class="reveal text-center group">
+<div class="w-20 h-20 mx-auto bg-card-vanilla rounded-full flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Trust</h3>
+<p class="text-on-surface-variant">Built on decades of transparency and unwavering commitment to student well-being.</p>
+</div>
+<div class="reveal text-center group" style="transition-delay: 100ms;">
+<div class="w-20 h-20 mx-auto bg-card-vanilla rounded-full flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Innovation</h3>
+<p class="text-on-surface-variant">Integrating cutting-edge technology and adaptive learning methods for the 21st century.</p>
+</div>
+<div class="reveal text-center group" style="transition-delay: 200ms;">
+<div class="w-20 h-20 mx-auto bg-card-vanilla rounded-full flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Excellence</h3>
+<p class="text-on-surface-variant">A relentless pursuit of academic and personal mastery in every student.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us: Bento Grid -->
+<section class="luxury-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg gold-underline mb-md">Why Onest Gurukul?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-md h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-card-vanilla p-lg rounded-xl lift-glow flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+
+</div>
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-md">Holistic Development</h4>
+<p class="text-body-lg text-on-surface-variant mb-md">Beyond textbooks, we focus on emotional intelligence, physical fitness, and ethical leadership.</p>
+<span class="material-symbols-outlined text-primary text-[48px]">diversity_3</span>
+</div>
+</div>
+<div class="md:col-span-2 bg-white p-lg rounded-xl lift-glow flex items-center justify-between">
+<div>
+<h4 class="font-headline-md text-headline-md mb-xs">Digital Classrooms</h4>
+<p class="text-on-surface-variant">Smart labs and tablet-based learning.</p>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[56px]" style="font-variation-settings: 'FILL' 1;">devices</span>
+</div>
+<div class="md:col-span-1 bg-primary text-white p-lg rounded-xl lift-glow flex flex-col justify-between">
+<span class="material-symbols-outlined text-[32px]">workspace_premium</span>
+<h4 class="font-label-md text-[20px]">100% University Placement Rate</h4>
+</div>
+<div class="md:col-span-1 bg-tertiary-container p-lg rounded-xl lift-glow flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary text-[32px]">language</span>
+<h4 class="font-label-md text-[20px] text-on-tertiary-container">Global Exchange Programs</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Excellence -->
+<section class="luxury-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row gap-xl items-start">
+<div class="w-full md:w-1/3 reveal">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-md leading-tight">Academic Pathways</h2>
+<p class="text-body-lg text-on-surface-variant mb-lg">Our curriculum is designed to evolve with the student, providing age-appropriate challenges and nurturing curiosity at every step.</p>
+<div class="space-y-md">
+<div class="flex items-center gap-md p-md bg-white rounded-lg border-l-4 border-primary shadow-sm">
+<span class="font-bold text-primary">01</span>
+<span class="font-label-md">Early Foundations (Pre-K)</span>
+</div>
+<div class="flex items-center gap-md p-md bg-white rounded-lg border-l-4 border-secondary/20 shadow-sm opacity-60">
+<span class="font-bold">02</span>
+<span class="font-label-md">Primary Explorers (Grade 1-5)</span>
+</div>
+<div class="flex items-center gap-md p-md bg-white rounded-lg border-l-4 border-secondary/20 shadow-sm opacity-60">
+<span class="font-bold">03</span>
+<span class="font-label-md">Middle Scholars (Grade 6-8)</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-md reveal" style="transition-delay: 200ms;">
+<div class="bg-card-vanilla p-lg rounded-xl">
+<h3 class="font-headline-md text-headline-md mb-md">CBSE &amp; Global</h3>
+<p class="text-on-surface-variant mb-md">Integrating the rigor of CBSE with the inquiry-based methods of International Baccalaureate (IB) frameworks.</p>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                                Explore Curriculum <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<img class="w-full h-full object-cover rounded-xl min-h-[300px]" data-alt="A focused close-up of a student working in a high-tech science laboratory. The scene features stainless steel equipment, glowing blue indicators on digital microscopes, and a modern classroom in the soft-focus background. The lighting is crisp and clean, emphasizing a serious academic environment with warm vanilla and golden yellow accents in the room's decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1is8WZ7zS2-mjDr4YLX_N2Dr9EM12kiiAobWQ1ZF8pN32OnDvomG19Jh5ylZJ_uja8zZjc6cOlo8clppzFUSsF0AQzT1hGZUt69x9EAyrEWA8zc9hqMGSB9ZDjnSp9_bRGguEEs1sHo9rtBRptj0wGEvcwo2KWIVYU9C1bDfGZge292s2DPuyKPw6WwoV_HdQh34DZ0mZa1G8lm_DU-6dV10_F-zTMmK7Sn4UlZs5PhtNpEGbhfpPv_ydDbapvaXvCoyV03MY5f8"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Facilities Gallery -->
+<section class="luxury-gap bg-surface-container-highest/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg">World-Class Facilities</h2>
+<a class="text-charcoal border-b-2 border-charcoal font-bold hidden md:block" href="#">View Full Gallery</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="col-span-2 row-span-2 relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An expansive, light-filled library with floor-to-ceiling wooden bookshelves and minimalist reading pods. The lighting is warm and inviting, with large windows overlooking a green campus. The aesthetic is modern-academic, professional, and tranquil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8YxEY6UibXS0pEBKVonGwE2C3pqCIrHOtGHWsF1Xle1lsCECWJKBbTbAjv5wfnzN-WxyQTNg2FXNg0i6vnqJBztK-FMeW48H1BjW6_T9z8N7esuBRFvKsuUU1KVmh4DWC-iogdLK_lN8MsbYyxbhaamFEsU2M71ci8iN-WFrLKNYkeBZn5YqOLfOQAZB6zxN4nnugcCS5Ylsv5D5V4vrjp-nv4DWqiLOdAmVqrtluIENhmPqvSfhZKMqFLMjaCEsdYQ_en-9R7W6T"/>
+<div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="text-white font-headline-md">Central Library</span>
+</div>
+</div>
+<div class="aspect-square relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A professional-grade indoor basketball court with polished hardwood floors reflecting soft overhead lighting. Modern architectural lines and premium sports equipment visible. High-end athletic facility aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgclw9g4Hp2aPCIqnmrjYyCCCV0IKe32p8ByD1fR8e8Vyzl8hHRvTbMdBap-9f0UbzdnoqZoSZO4z6cHiuM6_uffVbIsJHGMcOvCHHsanE77PC6Mh9wgGokc8aqIMVbZQ4RQitvDx-B6jTBfq76iabec64XoYqSjwiORPadJ0UZdexEV5eOJgE_ky1du7N1UnnYSiEK5t67fOa7NKNBYAjOaMyRcexTiicMpWbGg6tJNFCUJqDEsXoHN3xDLNtDVGKGPqfkCnt-CrG"/>
+</div>
+<div class="aspect-square relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A bright, airy art studio with students working on canvases. Natural light floods the space through large windows. Colorful art supplies are organized on minimalist wooden tables. Creative and inspiring atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwKJSNP9POBktYc6R-8jee2oj0nZEaqdepQWs9xpglUIHASxjkGpWF-eNxKwTXvaJmT3vRQuoTZk22RJisllD9Cd6oV3V1QT8D46i9-bGoNMlBOek_IeASrFzAjXFKZyfU21sKrSIHMZPAu1dmeU_2HpczJgXr72a5CsRo4I_oH_hGcvxybH8I-g2PdLbPfjrXE36kgLh79CzPSmAykvs2rHvEiuHIVSXHNgyMU5ZZ9AvPpYd0JHA0VZw_lf4325NsqodO99baPZXo"/>
+</div>
+<div class="col-span-2 relative overflow-hidden rounded-xl group h-64">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An Olympic-sized indoor swimming pool with crystal clear blue water and elegant tiling. The space is surrounded by large glass panels, blurring the line between inside and the lush campus greenery. Luxury health and wellness facility style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPw86hIRz5r5iIG0svPP-4LXhR3FgCDNCA27H1vUkMCZPQlHM5gSq41rU26-p2oC7DehXiQLknaChgUvrInfDaXy7Z6ZGWIWxI5aiRxD7Wp6Oe3VkQhBAPFeIhCWHHnnrkJuL3Uiw4tC3J6bW5Qzun0nVwd9JTfdhcgJxn6eddbS1N__b6KkQoyYO2gv9aMTTJn9TUpnvUFO0jX0zsmRK547hQ_7inmfq5H_6PrqTUjU7Prgcij7PdMEr5GaUrUqY9PkpGl494cX7k"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Principal's Message -->
+<section class="luxury-gap bg-warm-vanilla">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-white rounded-3xl p-lg md:p-xl flex flex-col md:flex-row items-center gap-xl shadow-sm border border-outline-variant/30">
+<div class="w-48 h-48 md:w-80 md:h-80 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg transform rotate-3">
+<img class="w-full h-full object-cover" data-alt="A formal yet warm portrait of an experienced female principal in her 50s, wearing elegant professional attire. She is smiling gently at the camera, standing in front of a blurred bookshelf-filled office. The lighting is soft and flattering, emphasizing wisdom and approachability. High-end corporate portraiture style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWsy0H75Wh1nAHYDtaykju4yKES1GXaqZN_e5iSR--wptrmcTvy4b7jP9NAatpMjbqq3NPA2KNVI_kDTWI6d8Bq_M9GgxE9W5u9eYEKmYjwUFbmD6rc4yEZ6Zuj6157FC-vDseVNiIS5-JrBZxfpbFcu-QzC9gBLfkiGPx11n7YeVqUL0bUjG-o9NNPu-HJZNG9O8L6udmAmMpUFoN95xxxVQ_Bp4ZD6a5WXFxQn_TU4wb_UW0_DIZHRIQuZfq0ClhqEmcdvl8_TYM"/>
+</div>
+<div class="flex-grow">
+<span class="material-symbols-outlined text-primary-container text-[64px] mb-md">format_quote</span>
+<h2 class="font-display-lg text-headline-lg mb-md">A Message from our Principal</h2>
+<p class="text-body-lg text-on-surface-variant italic mb-lg leading-relaxed">
+                            "At Onest Gurukul, we don't just teach subjects; we ignite spirits. Our mission is to provide an environment where every child feels seen, heard, and empowered to reach their highest potential. We are building more than a school; we are building a community of lifelong learners."
+                        </p>
+<div class="flex items-center gap-md">
+<div>
+<h4 class="font-bold text-headline-md">Dr. Elena Rodriguez</h4>
+<p class="text-primary font-label-md">Principal &amp; Academic Director</p>
+</div>
+<div class="ml-auto opacity-40 italic font-display-lg text-primary hidden md:block">
+                                E. Rodriguez
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="luxury-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-center mb-xl">Voices of Our Community</h2>
+<div class="flex gap-md overflow-x-auto pb-lg no-scrollbar snap-x">
+<!-- Testimonial 1 -->
+<div class="min-w-[300px] md:min-w-[450px] snap-center bg-card-vanilla p-lg rounded-2xl border border-primary/10">
+<div class="flex gap-1 text-primary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg mb-lg">"The transformation in my daughter's confidence since joining Onest Gurukul is remarkable. The individual attention and focus on soft skills are unparalleled."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary/20"></div>
+<div>
+<h5 class="font-bold">Mrs. Sarah Jenkins</h5>
+<p class="text-label-sm text-on-surface-variant">Parent of Grade 4 Student</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[300px] md:min-w-[450px] snap-center bg-white p-lg rounded-2xl border border-outline-variant/30">
+<div class="flex gap-1 text-primary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-body-lg mb-lg">"As an alumni, I can say the school prepared me not just for university, but for life. The ethical foundation stay with you forever."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary/20"></div>
+<div>
+<h5 class="font-bold">Michael Chen</h5>
+<p class="text-label-sm text-on-surface-variant">Class of 2018</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Events & News -->
+<section class="luxury-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-display-lg text-headline-lg">Events &amp; News</h2>
+<button class="text-primary font-bold">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-white rounded-xl overflow-hidden shadow-sm lift-glow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A group of diverse students laughing and collaborating around a large table filled with STEM projects, robots, and blueprints. The lighting is warm and high-key, highlighting the joy of collaborative learning. Sophisticated campus life photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dZYi6kPJXfKYP_JbtAYpNxYhasm3SMare1aOnRcjCoSmwRxzxVREsflYgp7u2JA1ZkPuOLPli9T9zmwj3ivJKJ9BQZCIFcDck54St-Efoo8MDPPmM90b7PMSJEEjFxoYS-JpYsg2bwndXJ7TTLV9-NFc0hW374M56_cZK4ib4DJ6fIIC8tss8tT5V5ec2kU1lPFEty26yNJt2sTct6-zFKsGzpXhyXyuifR_o-286uY_9WG3tkZmK3QIIIransekWiTtWZqHY2Fy"/>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-sm uppercase mb-xs block">May 15, 2024</span>
+<h4 class="font-bold text-headline-md mb-sm">Annual Science &amp; Innovation Fair</h4>
+<p class="text-on-surface-variant text-body-md">Join us as our students showcase revolutionary projects solving local environmental issues.</p>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm lift-glow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand auditorium filled with students in formal uniforms during a graduation ceremony. Gold confetti in the air, warm stage lighting, and a sense of celebratory achievement. Professional event photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAzoBlxoKNECUJNpE023rCqdyodF4_caEZjxT8nTEXtgH6pi8l6AA7WQ3WrVxrxdCgmsBXTGLaKazh3fPuo8YMBEJFoYlSHujiwATFRy5JsFIR3dTLErsRLwF9HlUIEphKqWYRqvNZpjSdsdiFt2m-ErdQGlm1urM9fAasPmzp49o64_nrNEqqq0uKEP28wWeaBI0Ylm12IqO1Q2ypLuPGcM2pumhV7KWH76wxemrbOtukJkofD1kiTfETSISURjAXrYIMu52_pANu"/>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-sm uppercase mb-xs block">June 02, 2024</span>
+<h4 class="font-bold text-headline-md mb-sm">Class of 2024 Graduation Ceremony</h4>
+<p class="text-on-surface-variant text-body-md">Celebrating the achievements and new beginnings of our senior scholars.</p>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm lift-glow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of colorful world flags hanging in a bright, modern school hallway. In the background, students from various backgrounds are talking and laughing. Soft lighting, celebratory and inclusive mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG7BvE4f49W8gXCkD6p75mv6bUpF2c0qfWPeUMqUDD0OoxNvOo288-gM7WWcgZKZOOfgrfKIF-taYPMxYbf4uAQXk55zH92kgSKnSggkVM_VjPGjllGH1yifYUdQmfhRl8tgXj2a0fq0pDzDsMIJbgT3yfR03Bad31Xzes_Epw8V09sSObmptIpaoL2mAaf7y2WhN2b4oQey6hQJGdmCIN8O3jS1nBiQUyDsHcrhMZpFeUPTda0-2OXYOyJDiJBFKJY8V6UQPUz9av"/>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-sm uppercase mb-xs block">June 10, 2024</span>
+<h4 class="font-bold text-headline-md mb-sm">Global Cultural Exchange Week</h4>
+<p class="text-on-surface-variant text-body-md">Exploring traditions and cuisines from 15 different countries represented in our student body.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Admissions CTA -->
+<section class="luxury-gap px-gutter">
+<div class="max-w-container-max mx-auto bg-charcoal text-white rounded-3xl p-lg md:p-xl relative overflow-hidden text-center md:text-left">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none hidden md:block">
+
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-md">Start Your Journey with Us</h2>
+<p class="text-white/70 text-body-lg mb-lg">Admissions for the upcoming academic session are now open. Give your child the foundation they deserve.</p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-primary-container text-charcoal font-bold px-lg py-md rounded-lg shadow-lg hover:scale-105 transition-all">
+                            Apply for Admission
+                        </button>
+<button class="text-white font-bold flex items-center justify-center gap-2 px-lg py-md group">
+                            Download Prospectus <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest luxury-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+<div class="space-y-md">
+<div class="font-headline-md text-headline-md text-primary">ONEST GURUKUL</div>
+<p class="text-on-secondary-fixed-variant font-body-md">Leading the way in global education with a heart rooted in tradition.</p>
+<div class="flex gap-md">
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">video_library</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-md uppercase tracking-widest text-label-sm">Quick Links</h4>
+<ul class="space-y-sm text-on-secondary-fixed-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Campus Map</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Alumni</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Events Calendar</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-md uppercase tracking-widest text-label-sm">Support</h4>
+<ul class="space-y-sm text-on-secondary-fixed-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Student Handbook</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-md uppercase tracking-widest text-label-sm">Newsletter</h4>
+<p class="text-on-secondary-fixed-variant text-label-sm mb-md">Stay updated with the latest campus news.</p>
+<div class="flex gap-xs">
+<input class="bg-white border-0 rounded-lg px-md py-xs text-sm w-full focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email"/>
+<button class="bg-primary-container p-2 rounded-lg text-charcoal">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter pt-lg border-t border-on-background/5 text-center">
+<p class="text-label-sm text-on-secondary-fixed-variant">© 2024 Onest Gurukul. Excellence in Education.</p>
+</div>
+</footer>
+<script>
+        // Reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'h-[64px]');
+                header.querySelector('.max-w-container-max').classList.remove('h-[72px]');
+                header.querySelector('.max-w-container-max').classList.add('h-[64px]');
+            } else {
+                header.classList.remove('shadow-md', 'h-[64px]');
+                header.querySelector('.max-w-container-max').classList.add('h-[72px]');
+                header.querySelector('.max-w-container-max').classList.remove('h-[64px]');
+            }
+        });
+    </script>
+</body></html>

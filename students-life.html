@@ -1,512 +1,855 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Student Life - O'Nest Gurukul</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Student Life &amp; Curriculum - O'Nest Gurukul</title>
   <meta name="description"
     content="Experience the vibrant student life at Onest Gurukul. From academics to sports and arts, we nurture every aspect of a child's growth.">
   <meta name="keywords" content="Student Life, Gurukul Activities, Holistic Education, Sports, Arts, Clubs">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="assets/img/onest.svg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Page Specific CSS -->
-  <link href="assets/css/onest-student-life.css" rel="stylesheet">
+  <!-- Global Base Styles & Gradients -->
+  <link href="assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#ffb1c5",
+            "primary": "#735c00",
+            "on-surface": "#1a1b22",
+            "background": "#fbf8ff",
+            "outline": "#7f7660",
+            "on-tertiary-container": "#a52458",
+            "surface-container-low": "#f4f2fd",
+            "on-tertiary-fixed-variant": "#8c0a46",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eeedf7",
+            "primary-container": "#facc15",
+            "on-primary": "#ffffff",
+            "on-background": "#1a1b22",
+            "surface-bright": "#fbf8ff",
+            "primary-fixed": "#ffe083",
+            "on-surface-variant": "#4d4632",
+            "on-secondary-container": "#656464",
+            "inverse-surface": "#2f3038",
+            "surface-tint": "#735c00",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffd9e1",
+            "tertiary-container": "#ffc0cf",
+            "on-primary-fixed-variant": "#574500",
+            "secondary-container": "#e5e2e1",
+            "surface-container-high": "#e8e7f1",
+            "inverse-primary": "#eec200",
+            "primary-fixed-dim": "#eec200",
+            "on-secondary-fixed": "#1c1b1b",
+            "surface-variant": "#e3e1ec",
+            "on-secondary-fixed-variant": "#474646",
+            "on-primary-container": "#6c5700",
+            "outline-variant": "#d1c6ab",
+            "on-tertiary-fixed": "#3f001b",
+            "on-primary-fixed": "#231b00",
+            "secondary-fixed": "#e5e2e1",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e3e1ec",
+            "secondary": "#5f5e5e",
+            "tertiary": "#ac2a5d",
+            "surface": "#fbf8ff",
+            "inverse-on-surface": "#f1effa",
+            "surface-dim": "#dad9e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "24px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "48px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xs": "4px",
+            "xl": "80px",
+            "md": "24px",
+            "container-max": "1120px"
+          },
+          "fontFamily": {
+            "label-md": ["Hanken Grotesk"],
+            "display-lg": ["Libre Caslon Text"],
+            "body-md": ["Hanken Grotesk"],
+            "label-sm": ["Hanken Grotesk"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-lg": ["Libre Caslon Text"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(251, 248, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .luxury-shadow {
+      box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+    }
+
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Lightbox modal stylings */
+    .onest-gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(17, 17, 17, 0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    .onest-gallery-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .onest-gallery-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .onest-gallery-close:hover {
+      color: #FACC15;
+    }
+
+    .onest-gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .onest-gallery-nav:hover {
+      background: #FACC15;
+      color: black;
+    }
+
+    .onest-gallery-prev {
+      left: 32px;
+    }
+
+    .onest-gallery-next {
+      right: 32px;
+    }
+
+    #onest-student-life-mobile-menu.active {
+      transform: translateX(0);
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
 
-  <div class="onest-student-life-wrapper">
-
-    <!-- Header -->
-    <header class="onest-student-life-header">
-      <div class="onest-student-life-container onest-student-life-header-inner">
-        <a href="index.html" class="onest-student-life-logo">
-          <img src="assets/img/onest.svg" alt="O'Nest Gurukul">
+  <!-- TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-on-background/10">
+    <div class="flex justify-between items-center h-[90px] px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center">
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="index.html">Home</a>
+        <a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="about.html">About Us</a>
+        <a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" style="color: #FF6B9D; font-weight: 600;" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="students-life.html">Curriculum</a>
+        <a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle -->
+        <button id="onest-student-life-theme-toggle" class="p-2.5 rounded-full text-on-surface-variant hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <a href="admissions.html" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md font-bold hover:scale-95 transition-transform active:scale-90 inline-block text-xs md:text-sm">
+          Admissions
         </a>
-
-        <nav class="onest-student-life-nav">
-          <ul class="onest-student-life-nav-list">
-            <li><a href="index.html" class="onest-student-life-nav-link">Home</a></li>
-            <li><a href="about.html" class="onest-student-life-nav-link">About Us</a></li>
-            <li><a href="preprimary.html" class="onest-student-life-nav-link"
-                style="color: #FF6B9D; font-weight: 600;">⭐ Pre-Primary</a></li>
-            <li><a href="students-life.html" class="onest-student-life-nav-link active">Curriculum</a></li>
-            <li><a href="campus-facilities.html" class="onest-student-life-nav-link">Campus &amp; Facilities</a></li>
-            <li><a href="contact.html" class="onest-student-life-nav-link">Contact</a></li>
-            <li><a href="admissions.html" class="onest-student-life-btn onest-student-life-btn-primary">Admissions</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div style="display: flex; align-items: center;">
-          <button id="onest-student-life-theme-toggle" class="onest-student-life-theme-toggle"
-            aria-label="Toggle Dark Mode">
-            <i class="bi bi-moon-fill"></i>
-          </button>
-          <button id="onest-student-life-mobile-toggle" class="onest-student-life-mobile-toggle" aria-label="Open Menu">
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
+        <button id="onest-student-life-mobile-toggle" class="md:hidden p-2 text-on-surface-variant hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-2xl"></i>
+        </button>
       </div>
+    </div>
 
-      <!-- Mobile Menu -->
-      <div id="onest-student-life-mobile-menu" class="onest-student-life-mobile-menu">
-        <div id="onest-student-life-mobile-close" class="onest-student-life-mobile-close">
-          <i class="bi bi-x"></i>
-        </div>
-        <ul class="onest-student-life-mobile-list">
-          <li><a href="index.html" class="onest-student-life-nav-link">Home</a></li>
-          <li><a href="about.html" class="onest-student-life-nav-link">About Us</a></li>
-          <li><a href="preprimary.html" class="onest-student-life-nav-link" style="color: #FF6B9D; font-weight: 600;">⭐
-              Pre-Primary</a></li>
-          <li><a href="students-life.html" class="onest-student-life-nav-link">Curriculum</a></li>
-          <li><a href="campus-facilities.html" class="onest-student-life-nav-link">Campus & Facilities</a></li>
-          <li><a href="contact.html" class="onest-student-life-nav-link">Contact</a></li>
-          <li><a href="admissions.html" class="onest-student-life-btn onest-student-life-btn-primary"
-              style="width: 100%;">Admissions</a></li>
-        </ul>
+    <!-- Mobile Menu -->
+    <div id="onest-student-life-mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background/95 backdrop-blur-lg border-l border-on-background/10 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col">
+      <div class="flex justify-between items-center mb-8">
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="h-16">
+        <button id="onest-student-life-mobile-close" class="p-2 text-on-surface-variant" aria-label="Close Menu">
+          <i class="bi bi-x text-3xl"></i>
+        </button>
       </div>
-    </header>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="index.html" class="text-on-surface-variant hover:text-primary font-semibold">Home</a>
+        <a href="about.html" class="text-on-surface-variant hover:text-primary font-semibold">About Us</a>
+        <a href="preprimary.html" class="hover:text-primary font-semibold" style="color: #FF6B9D;">⭐ Pre-Primary</a>
+        <a href="students-life.html" class="text-primary font-bold">Curriculum</a>
+        <a href="campus-facilities.html" class="text-on-surface-variant hover:text-primary font-semibold">Campus &amp; Facilities</a>
+        <a href="contact.html" class="text-on-surface-variant hover:text-primary font-semibold">Contact</a>
+        <a href="admissions.html" class="bg-primary text-on-primary py-3 rounded-lg text-center font-bold">Admissions</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="pt-[90px]">
     <!-- Hero Section -->
-    <section class="onest-student-life-hero">
-      <div class="onest-student-life-container">
-        <h1 class="onest-student-life-hero-title">A Day in the Life at <span>O'Nest Gurukul</span></h1>
-        <p class="onest-student-life-hero-text">
-          Where every sunrise brings new opportunities for learning, creativity, and joy. Discover how we blend
-          academics with holistic growth to nurture well-rounded individuals.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 16px;">
-          <a href="#daily-life" class="onest-student-life-btn onest-student-life-btn-primary">Explore Daily Routine</a>
-          <a href="#subjects" class="onest-student-life-btn onest-student-life-btn-white">Our Curriculum</a>
+    <section class="relative min-h-[500px] md:h-[650px] flex items-center overflow-hidden py-12 md:py-0">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-background/60 backdrop-blur-[1px] z-10"></div>
+        <div class="w-full h-full bg-cover bg-center parallax-bg" style="background-image: url('assets/img/compressed/atudy (8).jpg')"></div>
+      </div>
+      <div class="container mx-auto px-gutter relative z-20">
+        <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+          <span class="inline-block py-1.5 px-4 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest text-xs font-bold border border-primary/20">Student Life Experience</span>
+          <h1 class="font-display-lg text-3xl md:text-5xl lg:text-display-lg text-on-surface mb-6 leading-tight font-bold">Where Every Talent <br/><span class="text-primary italic">Finds a Home</span></h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto text-center">Beyond the classroom, our campus is a vibrant tapestry of culture, athletics, and community, designed to nurture the holistic excellence of every modern scholar.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold flex items-center justify-center space-x-2 hover:bg-primary/90 transition-all text-sm w-full sm:w-auto shadow-sm" href="#daily-life">
+              <span>Explore Daily Routine</span>
+              <span class="material-symbols-outlined text-sm">arrow_downward</span>
+            </a>
+            <a class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-label-md font-bold hover:bg-primary/5 transition-all text-sm w-full sm:w-auto flex items-center justify-center bg-white/50 backdrop-blur-sm" href="#subjects">Our Curriculum</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Daily Life Section -->
-    <section id="daily-life" class="onest-student-life-daily-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Our Daily Rhythm</h2>
-          <p style="color: var(--onest-student-life-text-muted);">A balanced approach to education, wellness, and play.
+    <!-- Interactive Statistics -->
+    <section class="py-12 bg-surface border-y border-on-background/5">
+      <div class="container mx-auto px-gutter">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="onest-student-life-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">50+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Active Clubs</span>
+          </div>
+          <div class="onest-student-life-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">100%</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Participation</span>
+          </div>
+          <div class="onest-student-life-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">25+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Sports Disciplines</span>
+          </div>
+          <div class="onest-student-life-stat-item p-4">
+            <span class="block text-4xl font-bold text-primary mb-2">12k+</span>
+            <span class="text-on-surface-variant text-sm font-semibold">Alumni Network</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Rhythm Section -->
+    <section id="daily-life" class="relative py-24 bg-gradient-to-b from-[#fbf8ff] via-[#fdfbf7] to-[#fbf8ff] overflow-hidden">
+      <!-- Background Decorative Blobs -->
+      <div class="absolute top-[10%] left-[-5%] w-[450px] h-[450px] bg-gradient-to-tr from-amber-200/20 to-rose-200/20 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 8s;"></div>
+      <div class="absolute bottom-[20%] right-[-5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200/10 to-purple-200/15 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 10s;"></div>
+      
+      <!-- Top SVG Curve Divider -->
+      <div class="absolute top-0 left-0 w-full overflow-hidden leading-none -z-10">
+        <svg class="relative block w-full h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V0H1200V95.58C1130.34,103.11,1057.29,111.7,985.66,92.83Z" fill="#f4f2fd"></path>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-gutter max-w-container-max relative">
+        <!-- Section Header -->
+        <div class="text-center mb-24 reveal">
+          <span class="text-xs uppercase tracking-[0.2em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 shadow-sm inline-block">
+            ✨ Our Daily Rhythm
+          </span>
+          <h2 class="font-headline-lg text-4xl md:text-6xl text-on-surface mt-6 mb-6 font-bold leading-tight">
+            A Balanced Path <br class="hidden md:inline"/><span class="text-primary bg-gradient-to-r from-primary to-amber-600 bg-clip-text text-transparent">to Excellence</span>
+          </h2>
+          <p class="text-on-surface-variant max-w-xl mx-auto font-body-md text-base md:text-lg mb-4">
+            Step into a day at O'Nest Gurukul, where every hour is thoughtfully designed to spark creativity, nurture mindfulness, and inspire academic joy.
           </p>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-primary to-amber-400 mx-auto rounded-full mt-4"></div>
         </div>
 
-        <div class="onest-student-life-daily-grid">
-          <!-- Item 1 -->
-          <div class="onest-student-life-daily-item">
-            <div class="onest-student-life-daily-content">
-              <h3>Morning Yoga & Mindfulness</h3>
-              <p>
-                What begins as simple stretches soon turns into a journey of balance, focus, and calm. Our students
-                start their mornings with yoga that not only energizes the body but also nurtures a peaceful mindset,
-                helping them carry positivity throughout the day.
-              </p>
-            </div>
-            <div class="onest-student-life-daily-img">
-              <img src="assets/img/open (25) - Edited.jpg" alt="Yoga Session">
-            </div>
+        <!-- Vertical Timeline Container -->
+        <div class="relative md:px-4 lg:px-6">
+          <!-- Central Timeline Line -->
+          <div class="absolute left-4 md:left-1/2 top-8 bottom-8 w-[4px] bg-amber-100/60 -translate-x-[2px] md:-translate-x-1/2 rounded-full -z-10">
+            <!-- Active filling progress line -->
+            <div id="timeline-progress-line" class="absolute top-0 left-0 w-full h-[0%] bg-gradient-to-b from-primary to-amber-400 rounded-full transition-all duration-300 ease-out origin-top"></div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="onest-student-life-daily-item reverse">
-            <div class="onest-student-life-daily-content">
-              <h3>Engaging Study Sessions</h3>
-              <p>
-                Learning here isn’t just about books and exams—it’s about discovery. With interactive teaching methods,
-                real-life examples, and guided exploration, students develop curiosity and confidence while building
-                strong academic foundations.
-              </p>
+          <div class="space-y-24 relative">
+            <!-- Item 1: Morning Ritual -->
+            <div class="timeline-item flex flex-col md:flex-row items-center gap-8 md:gap-16 reveal relative">
+              <!-- Timeline Node Dot -->
+              <div class="absolute left-4 md:left-1/2 top-4 md:top-1/2 w-12 h-12 rounded-full bg-white border-[6px] border-amber-100 flex items-center justify-center -translate-x-[22px] md:-translate-x-6 md:-translate-y-6 shadow-md transition-all duration-500 z-10 timeline-node">
+                <div class="w-3.5 h-3.5 rounded-full bg-primary animate-pulse"></div>
+              </div>
+              
+              <!-- Content Column -->
+              <div class="w-full md:w-5/12 md:pr-8 md:text-right flex flex-col md:items-end">
+                <div class="group/card bg-white/80 backdrop-blur-md p-10 rounded-[32px] border border-on-background/5 shadow-md hover:shadow-xl hover:border-primary-container/40 hover:-translate-y-1.5 transition-all duration-500 w-full text-left relative overflow-hidden">
+                  <div class="absolute -right-4 -bottom-8 font-display-lg text-9xl text-amber-500/5 font-bold select-none">01</div>
+                  <div class="flex items-center gap-4 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary-container to-amber-300 flex items-center justify-center font-bold text-on-primary-container shadow-sm border border-primary/20 shrink-0">
+                      <!-- Yoga Lotus Icon -->
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m10.607 10.607l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs md:text-sm font-extrabold text-primary uppercase tracking-widest block mb-1">01 . Morning Ritual</span>
+                      <h3 class="text-2xl md:text-4xl font-headline-lg font-bold text-on-surface leading-tight">Yoga &amp; Mindfulness</h3>
+                    </div>
+                  </div>
+                  <p class="text-on-surface font-body-lg text-base md:text-lg leading-relaxed mb-6">
+                    What begins as simple stretches soon turns into a journey of balance, focus, and calm. Our students start their mornings with yoga that not only energizes the body but also nurtures a peaceful mindset, helping them carry positivity throughout the day.
+                  </p>
+                  <!-- Key Highlights tags -->
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🧘 Mindfulness</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🌬️ Breathing Cycles</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">☀️ Suryanamaskar</span>
+                  </div>
+                  <p class="italic text-sm md:text-base font-bold text-[#8c0a46] border-t border-on-background/10 pt-4">"Quiet minds lead to bright ideas."</p>
+                </div>
+              </div>
+              
+              <!-- Image Column -->
+              <div class="w-full md:w-7/12 md:pl-8">
+                <div class="group/img relative rounded-[32px] overflow-hidden aspect-[4/3] border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                  <img src="assets/img/open (25) - Edited.jpg" alt="Yoga Session" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  <!-- Floating Caption tag -->
+                  <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm text-sm font-bold text-on-surface flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> Healthy Habits
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="onest-student-life-daily-img">
-              <img src="assets/img/study_session.jpg" alt="Study Session">
-            </div>
-          </div>
 
-          <!-- Item 3 -->
-          <div class="onest-student-life-daily-item">
-            <div class="onest-student-life-daily-content">
-              <h3>Creative Exploration</h3>
-              <p>
-                A paintbrush, a melody, a story, or a dance step—creativity flows in many forms. Through art, music,
-                drama, and hands-on activities, students find their own voice, express emotions, and grow into
-                confident, imaginative thinkers.
-              </p>
+            <!-- Item 2: Academics -->
+            <div class="timeline-item flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 reveal relative">
+              <!-- Timeline Node Dot -->
+              <div class="absolute left-4 md:left-1/2 top-4 md:top-1/2 w-12 h-12 rounded-full bg-white border-[6px] border-amber-100 flex items-center justify-center -translate-x-[22px] md:-translate-x-6 md:-translate-y-6 shadow-md transition-all duration-500 z-10 timeline-node">
+                <div class="w-3.5 h-3.5 rounded-full bg-primary animate-pulse"></div>
+              </div>
+              
+              <!-- Content Column -->
+              <div class="w-full md:w-5/12 md:pl-8 flex flex-col items-start">
+                <div class="group/card bg-white/80 backdrop-blur-md p-10 rounded-[32px] border border-on-background/5 shadow-md hover:shadow-xl hover:border-primary-container/40 hover:-translate-y-1.5 transition-all duration-500 w-full text-left relative overflow-hidden">
+                  <div class="absolute -right-4 -bottom-8 font-display-lg text-9xl text-amber-500/5 font-bold select-none">02</div>
+                  <div class="flex items-center gap-4 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary-container to-amber-300 flex items-center justify-center font-bold text-on-primary-container shadow-sm border border-primary/20 shrink-0">
+                      <!-- Academics Book Icon -->
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs md:text-sm font-extrabold text-primary uppercase tracking-widest block mb-1">02 . Academics</span>
+                      <h3 class="text-2xl md:text-4xl font-headline-lg font-bold text-on-surface leading-tight">Engaging Study Sessions</h3>
+                    </div>
+                  </div>
+                  <p class="text-on-surface font-body-lg text-base md:text-lg leading-relaxed mb-6">
+                    Learning here isn’t just about books and exams—it’s about discovery. With interactive teaching methods, real-life examples, and guided exploration, students develop curiosity and confidence while building strong academic foundations.
+                  </p>
+                  <!-- Key Highlights tags -->
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🔬 Interactive Labs</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">📐 Problem Solving</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">💬 Language Skills</span>
+                  </div>
+                  <p class="italic text-sm md:text-base font-bold text-[#8c0a46] border-t border-on-background/10 pt-4">"Discovery is the heart of every lesson."</p>
+                </div>
+              </div>
+              
+              <!-- Image Column -->
+              <div class="w-full md:w-7/12 md:pr-8">
+                <div class="group/img relative rounded-[32px] overflow-hidden aspect-[4/3] border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                  <img src="assets/img/study_session.jpg" alt="Study Session" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  <!-- Floating Caption tag -->
+                  <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm text-sm font-bold text-on-surface flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> Inquiry Led
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="onest-student-life-daily-img">
-              <img src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Creative Arts">
-            </div>
-          </div>
 
-          <!-- Item 4 -->
-          <div class="onest-student-life-daily-item reverse">
-            <div class="onest-student-life-daily-content">
-              <h3>Sports & Adventure</h3>
-              <p>
-                The thrill of a goal scored, the laughter of outdoor play, and the joy of trying something new—sports
-                and adventures bring students together. From structured games to free-spirited fun, every activity
-                builds resilience and teamwork.
-              </p>
+            <!-- Item 3: Creativity -->
+            <div class="timeline-item flex flex-col md:flex-row items-center gap-8 md:gap-16 reveal relative">
+              <!-- Timeline Node Dot -->
+              <div class="absolute left-4 md:left-1/2 top-4 md:top-1/2 w-12 h-12 rounded-full bg-white border-[6px] border-amber-100 flex items-center justify-center -translate-x-[22px] md:-translate-x-6 md:-translate-y-6 shadow-md transition-all duration-500 z-10 timeline-node">
+                <div class="w-3.5 h-3.5 rounded-full bg-primary animate-pulse"></div>
+              </div>
+              
+              <!-- Content Column -->
+              <div class="w-full md:w-5/12 md:pr-8 md:text-right flex flex-col md:items-end">
+                <div class="group/card bg-white/80 backdrop-blur-md p-10 rounded-[32px] border border-on-background/5 shadow-md hover:shadow-xl hover:border-primary-container/40 hover:-translate-y-1.5 transition-all duration-500 w-full text-left relative overflow-hidden">
+                  <div class="absolute -right-4 -bottom-8 font-display-lg text-9xl text-amber-500/5 font-bold select-none">03</div>
+                  <div class="flex items-center gap-4 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary-container to-amber-300 flex items-center justify-center font-bold text-on-primary-container shadow-sm border border-primary/20 shrink-0">
+                      <!-- Paint Brush Icon -->
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs md:text-sm font-extrabold text-primary uppercase tracking-widest block mb-1">03 . Creativity</span>
+                      <h3 class="text-2xl md:text-4xl font-headline-lg font-bold text-on-surface leading-tight">Creative Exploration</h3>
+                    </div>
+                  </div>
+                  <p class="text-on-surface font-body-lg text-base md:text-lg leading-relaxed mb-6">
+                    A paintbrush, a melody, a story, or a dance step—creativity flows in many forms. Through art, music, drama, and hands-on activities, students find their own voice, express emotions, and grow into confident, imaginative thinkers.
+                  </p>
+                  <!-- Key Highlights tags -->
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🎨 Art &amp; Design</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🎵 Vocal &amp; Rhythms</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🎭 Drama &amp; Plays</span>
+                  </div>
+                  <p class="italic text-sm md:text-base font-bold text-[#8c0a46] border-t border-on-background/10 pt-4">"Every child is an artist in their own way."</p>
+                </div>
+              </div>
+              
+              <!-- Image Column -->
+              <div class="w-full md:w-7/12 md:pl-8">
+                <div class="group/img relative rounded-[32px] overflow-hidden aspect-[4/3] border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                  <img src="assets/img/compressed/atudy (7) - Edited.jpg" alt="Creative Arts" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  <!-- Floating Caption tag -->
+                  <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm text-sm font-bold text-on-surface flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> Dynamic Art
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="onest-student-life-daily-img">
-              <img src="assets/img/education/students-6.jpg" alt="Sports Activities">
+
+            <!-- Item 4: Sports -->
+            <div class="timeline-item flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 reveal relative">
+              <!-- Timeline Node Dot -->
+              <div class="absolute left-4 md:left-1/2 top-4 md:top-1/2 w-12 h-12 rounded-full bg-white border-[6px] border-amber-100 flex items-center justify-center -translate-x-[22px] md:-translate-x-6 md:-translate-y-6 shadow-md transition-all duration-500 z-10 timeline-node">
+                <div class="w-3.5 h-3.5 rounded-full bg-primary animate-pulse"></div>
+              </div>
+              
+              <!-- Content Column -->
+              <div class="w-full md:w-5/12 md:pl-8 flex flex-col items-start">
+                <div class="group/card bg-white/80 backdrop-blur-md p-10 rounded-[32px] border border-on-background/5 shadow-md hover:shadow-xl hover:border-primary-container/40 hover:-translate-y-1.5 transition-all duration-500 w-full text-left relative overflow-hidden">
+                  <div class="absolute -right-4 -bottom-8 font-display-lg text-9xl text-amber-500/5 font-bold select-none">04</div>
+                  <div class="flex items-center gap-4 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary-container to-amber-300 flex items-center justify-center font-bold text-on-primary-container shadow-sm border border-primary/20 shrink-0">
+                      <!-- Sports Ball Icon -->
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 22a10 10 0 100-20 10 10 0 000 20z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs md:text-sm font-extrabold text-primary uppercase tracking-widest block mb-1">04 . Physical Growth</span>
+                      <h3 class="text-2xl md:text-4xl font-headline-lg font-bold text-on-surface leading-tight">Sports &amp; Adventure</h3>
+                    </div>
+                  </div>
+                  <p class="text-on-surface font-body-lg text-base md:text-lg leading-relaxed mb-6">
+                    The thrill of a goal scored, the laughter of outdoor play, and the joy of trying something new—sports and adventures bring students together. From structured games to free-spirited fun, every activity builds resilience and teamwork.
+                  </p>
+                  <!-- Key Highlights tags -->
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">⚽ Grassroots Soccer</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🏃 Athletics Tracks</span>
+                    <span class="text-sm bg-amber-50/80 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🤝 Team Resilience</span>
+                  </div>
+                  <p class="italic text-sm md:text-base font-bold text-[#8c0a46] border-t border-on-background/10 pt-4">"Strong bodies, strong teams, active minds."</p>
+                </div>
+              </div>
+              
+              <!-- Image Column -->
+              <div class="w-full md:w-7/12 md:pr-8">
+                <div class="group/img relative rounded-[32px] overflow-hidden aspect-[4/3] border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                  <img src="assets/img/students-sports.png" alt="Sports Activities" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  <!-- Floating Caption tag -->
+                  <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm text-sm font-bold text-on-surface flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> Active Play
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Bottom SVG Curve Divider -->
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none -z-10">
+        <svg class="relative block w-full h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3v24H0V27.35A600.21,600.21,0,0,1,321.39,56.44Z" fill="#fbf8ff"></path>
+        </svg>
       </div>
     </section>
 
     <!-- Subjects Section -->
-    <section id="subjects" class="onest-student-life-subjects-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Subjects We Teach</h2>
-          <p style="color: var(--onest-student-life-text-muted);">A comprehensive curriculum designed for the modern
-            world.</p>
+    <section id="subjects" class="py-12 md:py-20 bg-surface">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Our Curriculum</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mt-4 mb-4 font-bold">Subjects We Teach</h2>
+          <div class="w-24 h-1.5 bg-primary-container mx-auto rounded-full"></div>
         </div>
 
-        <div class="onest-student-life-subjects-grid">
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-language"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Languages</h4>
-              <p>Building strong communication skills through a multi-language curriculum enhancing fluency and culture.
-              </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Subject 1 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">translate</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Languages</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Building strong communication skills through a multi-language curriculum enhancing fluency and cultural connection.</p>
             </div>
           </div>
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-calculator"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Mathematics</h4>
-              <p>Developing logical thinking and problem-solving with a focus on clarity and real-world application.</p>
+          <!-- Subject 2 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">calculate</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Mathematics</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Developing logical thinking and problem-solving with a focus on analytical clarity and real-world applications.</p>
             </div>
           </div>
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-flask"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Science</h4>
-              <p>Encouraging curiosity and exploration of the natural world, progressing from EVS to core sciences.</p>
+          <!-- Subject 3 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">biotech</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Science</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Encouraging active curiosity and systematic exploration of the natural world, starting from EVS up to core disciplines.</p>
             </div>
           </div>
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-globe"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Social Studies</h4>
-              <p>Helping students understand communities, culture, and society, nurturing responsible citizenship.</p>
+          <!-- Subject 4 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">public</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Social Studies</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Helping students understand societies, history, geography, and global cultures to nurture responsible citizens.</p>
             </div>
           </div>
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-laptop-code"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Computer Science</h4>
-              <p>Introducing digital literacy from Grade 1, preparing students with essential tech skills.</p>
+          <!-- Subject 5 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">computer</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Computer Science</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Introducing core computational literacy and basic coding models early on to prepare students for the digital future.</p>
             </div>
           </div>
-          <div class="onest-student-life-subject-card">
-            <div class="onest-student-life-subject-icon"><i class="fas fa-heart"></i></div>
-            <div class="onest-student-life-subject-info">
-              <h4>Value Education</h4>
-              <p>Instilling empathy, courage, and integrity to ensure children grow into ethical individuals.</p>
+          <!-- Subject 6 -->
+          <div class="p-6 rounded-2xl bg-surface-container-low border border-on-background/5 hover-lift luxury-shadow group flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+              <span class="material-symbols-outlined text-2xl">favorite</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEW: Why Choose Us / Trust Factors -->
-    <section class="onest-student-life-trust-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Why Parents Trust Us</h2>
-          <p style="color: var(--onest-student-life-text-muted);">We go beyond textbooks to shape character and
-            capability.</p>
-        </div>
-
-        <div class="onest-student-life-trust-grid">
-          <div class="onest-student-life-trust-card">
-            <div class="onest-student-life-trust-icon"><i class="bi bi-shield-check"></i></div>
-            <h4 class="onest-student-life-trust-title">Safe Environment</h4>
-            <p style="color: var(--onest-student-life-text-muted);">A secure, nurturing campus where every child feels
-              at home and protected.</p>
-          </div>
-          <div class="onest-student-life-trust-card">
-            <div class="onest-student-life-trust-icon"><i class="bi bi-person-video3"></i></div>
-            <h4 class="onest-student-life-trust-title">Expert Mentors</h4>
-            <p style="color: var(--onest-student-life-text-muted);">Passionate educators dedicated to guiding students
-              with patience and care.</p>
-          </div>
-          <div class="onest-student-life-trust-card">
-            <div class="onest-student-life-trust-icon"><i class="bi bi-graph-up-arrow"></i></div>
-            <h4 class="onest-student-life-trust-title">Holistic Growth</h4>
-            <p style="color: var(--onest-student-life-text-muted);">Focusing on academic, physical, emotional, and
-              social development equally.</p>
-          </div>
-          <div class="onest-student-life-trust-card">
-            <div class="onest-student-life-trust-icon"><i class="bi bi-lightbulb"></i></div>
-            <h4 class="onest-student-life-trust-title">Future Ready</h4>
-            <p style="color: var(--onest-student-life-text-muted);">Equipping students with modern skills like coding,
-              critical thinking, and adaptability.</p>
+            <div>
+              <h4 class="font-bold text-on-surface text-lg">Value Education</h4>
+              <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Instilling deep empathy, courage, and core ethical standards, helping children grow into moral leaders.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NEW: Student Growth / Success Highlights -->
-    <section class="onest-student-life-growth-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-growth-content">
-          <h2 class="onest-student-life-growth-title">Building Confidence, One Step at a Time</h2>
-          <p class="onest-student-life-growth-text">
-            At Onest Gurukul, we celebrate every milestone. From the first time a student raises their hand to ask a
-            question, to leading a project with confidence. Our supportive environment ensures that every child
-            discovers their unique potential and learns to believe in themselves.
-          </p>
-          <a href="admissions.html" class="onest-student-life-btn onest-student-life-btn-primary">Join Our Family</a>
+    <!-- Why Parents Trust Us -->
+    <section class="py-12 md:py-20 bg-surface-container-low">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Trust Parameters</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mt-4 mb-4 font-bold">Why Parents Trust Us</h2>
+          <div class="w-24 h-1.5 bg-primary-container mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-background border border-on-background/5 text-center hover-lift luxury-shadow">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+              <i class="bi bi-shield-check text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-on-surface text-lg">Safe Environment</h4>
+            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">A secure, loving campus where children feel protected and completely at home.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-background border border-on-background/5 text-center hover-lift luxury-shadow">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+              <i class="bi bi-person-video3 text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-on-surface text-lg">Expert Mentors</h4>
+            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Passionate, skilled teachers dedicated to guiding students with care and patience.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-background border border-on-background/5 text-center hover-lift luxury-shadow">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+              <i class="bi bi-graph-up-arrow text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-on-surface text-lg">Holistic Growth</h4>
+            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Balancing mental focus, physical conditioning, and emotional growth equally.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-background border border-on-background/5 text-center hover-lift luxury-shadow">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+              <i class="bi bi-lightbulb text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-on-surface text-lg">Future Ready</h4>
+            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Developing core creative reasoning and computational ideas early on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Growth Section -->
+    <section class="py-12 md:py-20 bg-surface">
+      <div class="container mx-auto px-gutter">
+        <div class="bg-primary text-on-primary rounded-2xl p-12 md:p-20 relative overflow-hidden text-center reveal">
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="font-display-lg text-3xl md:text-5xl text-white mb-6 font-bold">Building Confidence, One Step at a Time</h2>
+            <p class="font-body-lg text-body-lg opacity-85 mb-10 leading-relaxed text-white">At Onest Gurukul, we celebrate every milestone. From the first time a student raises their hand to ask a question, to leading a project with confidence. Our supportive environment ensures that every child discovers their unique potential and learns to believe in themselves.</p>
+            <a href="admissions.html" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-md font-bold hover:scale-105 transition-transform inline-block">Join Our Family</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Clubs & Activities -->
-    <section class="onest-student-life-clubs-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Clubs & Activities</h2>
-          <p style="color: var(--onest-student-life-text-muted);">Where passion meets practice.</p>
+    <section class="py-12 md:py-20 bg-surface-container-low">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Student Groups</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mt-4 mb-4 font-bold">Clubs &amp; Activities</h2>
+          <p class="text-on-surface-variant text-sm font-semibold">Where passion meets practice.</p>
         </div>
 
-        <div class="onest-student-life-clubs-grid">
-          <div class="onest-student-life-club-card">
-            <div class="onest-student-life-club-img">
-              <img src="assets/img/education/students-5.webp" alt="Music Club">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <!-- Club 1 -->
+          <div class="bg-background rounded-2xl overflow-hidden border border-on-background/5 hover-lift luxury-shadow flex flex-col h-full">
+            <div class="aspect-video w-full overflow-hidden">
+              <img src="assets/img/education/students-5.webp" alt="Music Club" class="w-full h-full object-cover">
             </div>
-            <div class="onest-student-life-club-content">
-              <h4 class="onest-student-life-club-title">Music & Performance</h4>
-              <p style="color: var(--onest-student-life-text-muted);">Inspiring creativity through music, dance, and
-                stage performances that bring talent to life.</p>
-              <span class="onest-student-life-club-badge">15+ Groups</span>
-            </div>
-          </div>
-          <div class="onest-student-life-club-card">
-            <div class="onest-student-life-club-img">
-              <img src="assets/img/education/students-2.webp" alt="Cultural Club">
-            </div>
-            <div class="onest-student-life-club-content">
-              <h4 class="onest-student-life-club-title">Cultural Organizations</h4>
-              <p style="color: var(--onest-student-life-text-muted);">Celebrating diversity and unity through vibrant
-                cultural events and traditions.</p>
-              <span class="onest-student-life-club-badge">20+ Groups</span>
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 class="font-bold text-on-surface text-lg mb-2">Music &amp; Performance</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Inspiring creative discovery through instruments, dance steps, and vocal groups that bring talents forward.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-on-background/10 flex items-center justify-between">
+                <span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">15+ Groups</span>
+              </div>
             </div>
           </div>
-          <div class="onest-student-life-club-card">
-            <div class="onest-student-life-club-img">
-              <img src="assets/img/education/students-3.webp" alt="Academic Club">
+          <!-- Club 2 -->
+          <div class="bg-background rounded-2xl overflow-hidden border border-on-background/5 hover-lift luxury-shadow flex flex-col h-full">
+            <div class="aspect-video w-full overflow-hidden">
+              <img src="assets/img/education/students-2.webp" alt="Cultural Club" class="w-full h-full object-cover">
             </div>
-            <div class="onest-student-life-club-content">
-              <h4 class="onest-student-life-club-title">Academic Clubs</h4>
-              <p style="color: var(--onest-student-life-text-muted);">Fostering curiosity and collaboration through
-                engaging academic activities and discussions.</p>
-              <span class="onest-student-life-club-badge">25+ Clubs</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="onest-student-life-gallery-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Student Gallery</h2>
-          <p style="color: var(--onest-student-life-text-muted);">Capturing moments of joy, creativity, and achievement
-            at O'Nest Gurukul.</p>
-        </div>
-
-        <div class="onest-student-life-gallery-grid">
-          <!-- Image 1 - Students studying together -->
-          <div class="onest-student-life-gallery-item" data-index="0">
-            <img src="assets/img/compressed/atudy (1).jpg" alt="Students Studying Together">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Collaborative Learning</p>
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 class="font-bold text-on-surface text-lg mb-2">Cultural Organizations</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Celebrating regional festivals, language days, and national values, building cultural respect.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-on-background/10 flex items-center justify-between">
+                <span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">20+ Groups</span>
+              </div>
             </div>
           </div>
-
-          <!-- Image 2 - Classroom Activity -->
-          <div class="onest-student-life-gallery-item onest-gallery-tall" data-index="1">
-            <img src="assets/img/compressed/atudy (2).jpg" alt="Classroom Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Interactive Classroom</p>
+          <!-- Club 3 -->
+          <div class="bg-background rounded-2xl overflow-hidden border border-on-background/5 hover-lift luxury-shadow flex flex-col h-full">
+            <div class="aspect-video w-full overflow-hidden">
+              <img src="assets/img/education/students-3.webp" alt="Academic Club" class="w-full h-full object-cover">
             </div>
-          </div>
-
-          <!-- Image 3 - Group Study -->
-          <div class="onest-student-life-gallery-item" data-index="2">
-            <img src="assets/img/compressed/atudy (5).jpg" alt="Group Study Session">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Group Activities</p>
-            </div>
-          </div>
-
-          <!-- Image 4 - Outdoor Learning -->
-          <div class="onest-student-life-gallery-item onest-gallery-wide" data-index="3">
-            <img src="assets/img/compressed/atudy (8).jpg" alt="Outdoor Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Outdoor Activities</p>
-            </div>
-          </div>
-
-          <!-- Image 5 - Reading Session -->
-          <div class="onest-student-life-gallery-item" data-index="4">
-            <img src="assets/img/compressed/atudy (10).jpg" alt="Reading Time">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Reading & Learning</p>
-            </div>
-          </div>
-
-          <!-- Image 6 - Creative Activities -->
-          <div class="onest-student-life-gallery-item" data-index="5">
-            <img src="assets/img/compressed/atudy (12).jpg" alt="Creative Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Creative Expression</p>
-            </div>
-          </div>
-
-          <!-- Image 7 - Student Engagement -->
-          <div class="onest-student-life-gallery-item onest-gallery-tall" data-index="6">
-            <img src="assets/img/compressed/atudy (15).jpg" alt="Active Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Active Participation</p>
-            </div>
-          </div>
-
-          <!-- Image 8 - Science Activities -->
-          <div class="onest-student-life-gallery-item" data-index="7">
-            <img src="assets/img/compressed/atudy (17).jpg" alt="Science Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Hands-on Science</p>
-            </div>
-          </div>
-
-          <!-- Image 9 - Arts & Crafts -->
-          <div class="onest-student-life-gallery-item" data-index="8">
-            <img src="assets/img/compressed/atudy (18).jpg" alt="Arts and Crafts">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Arts & Crafts</p>
-            </div>
-          </div>
-
-          <!-- Image 10 - Sports Activities -->
-          <div class="onest-student-life-gallery-item onest-gallery-wide" data-index="9">
-            <img src="assets/img/compressed/atudy (19).jpg" alt="Sports & Fitness">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Sports & Fitness</p>
-            </div>
-          </div>
-
-          <!-- Image 11 - Music & Dance -->
-          <div class="onest-student-life-gallery-item" data-index="10">
-            <img src="assets/img/compressed/atudy (20).jpg" alt="Music and Dance">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Music & Dance</p>
-            </div>
-          </div>
-
-          <!-- Image 12 - Happy Students -->
-          <div class="onest-student-life-gallery-item" data-index="11">
-            <img src="assets/img/compressed/atudy (22).jpg" alt="Happy Learning">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-zoom-in"></i>
-              <p class="onest-gallery-caption">Joyful Learning</p>
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 class="font-bold text-on-surface text-lg mb-2">Academic Clubs</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Nurturing creative problem solving through debate forums, quiz clubs, and robotics explorations.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-on-background/10 flex items-center justify-between">
+                <span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">25+ Clubs</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Student Artwork Gallery Section -->
-    <section class="onest-student-life-artwork-section">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-section-header">
-          <h2 class="onest-student-life-section-title">Creative Expressions</h2>
-          <p style="color: var(--onest-student-life-text-muted);">Showcasing the artistic talents and imagination of our
-            young learners.</p>
+    <!-- Student Gallery -->
+    <section class="py-12 md:py-20 bg-surface">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-12 reveal">
+          <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Moments</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mt-4 mb-4 font-bold">Student Gallery</h2>
+          <p class="text-on-surface-variant text-sm">Capturing moments of joy, creativity, and achievement at O'Nest Gurukul.</p>
         </div>
 
-        <div class="onest-student-life-artwork-grid">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-md reveal">
+          <!-- Item 1 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="0">
+            <img src="assets/img/compressed/atudy (1).jpg" alt="Students Studying Together" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 2 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="1">
+            <img src="assets/img/compressed/atudy (2).jpg" alt="Classroom Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 3 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="2">
+            <img src="assets/img/compressed/atudy (5).jpg" alt="Group Study Session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 4 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="3">
+            <img src="assets/img/compressed/atudy (8).jpg" alt="Outdoor Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 5 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="4">
+            <img src="assets/img/compressed/atudy (10).jpg" alt="Reading Time" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 6 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="5">
+            <img src="assets/img/compressed/atudy (12).jpg" alt="Creative Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 7 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="6">
+            <img src="assets/img/compressed/atudy (15).jpg" alt="Active Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 8 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="7">
+            <img src="assets/img/compressed/atudy (17).jpg" alt="Science Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 9 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="8">
+            <img src="assets/img/compressed/atudy (18).jpg" alt="Arts and Crafts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 10 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="9">
+            <img src="assets/img/compressed/atudy (19).jpg" alt="Sports &amp; Fitness" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 11 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="10">
+            <img src="assets/img/compressed/atudy (20).jpg" alt="Music and Dance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <!-- Item 12 -->
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer hidden md:block" data-index="11">
+            <img src="assets/img/compressed/atudy (22).jpg" alt="Happy Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creative Expressions Section -->
+    <section class="py-12 md:py-20 bg-surface border-t border-on-background/5">
+      <div class="container mx-auto px-gutter">
+        <div class="text-center mb-12 reveal">
+          <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Artworks</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mt-4 mb-4 font-bold">Creative Expressions</h2>
+          <p class="text-on-surface-variant text-sm">Showcasing the artistic talents and imagination of our young learners.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-md reveal">
           <!-- Artwork 1 -->
-          <div class="onest-student-life-gallery-item" data-index="12">
-            <img src="assets/img/person/draw (1).jpg" alt="Student Drawing 1">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Creative Drawing</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="12">
+            <img src="assets/img/person/draw (1).jpg" alt="Student Drawing 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Artwork 2 -->
-          <div class="onest-student-life-gallery-item" data-index="13">
-            <img src="assets/img/person/draw (2).jpg" alt="Student Drawing 2">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Artistic Expression</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="13">
+            <img src="assets/img/person/draw (2).jpg" alt="Student Drawing 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Artwork 3 -->
-          <div class="onest-student-life-gallery-item" data-index="14">
-            <img src="assets/img/person/draw (3).jpg" alt="Student Drawing 3">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Imagination Unleashed</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="14">
+            <img src="assets/img/person/draw (3).jpg" alt="Student Drawing 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Artwork 4 -->
-          <div class="onest-student-life-gallery-item" data-index="15">
-            <img src="assets/img/person/draw (5).jpg" alt="Student Drawing 5">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Colorful Creativity</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="15">
+            <img src="assets/img/person/draw (5).jpg" alt="Student Drawing 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Artwork 5 -->
-          <div class="onest-student-life-gallery-item" data-index="16">
-            <img src="assets/img/person/draw (6).jpg" alt="Student Drawing 6">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Young Artist</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="16">
+            <img src="assets/img/person/draw (6).jpg" alt="Student Drawing 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
-
           <!-- Artwork 6 -->
-          <div class="onest-student-life-gallery-item" data-index="17">
-            <img src="assets/img/person/draw (8).jpg" alt="Student Drawing 8">
-            <div class="onest-student-life-gallery-overlay">
-              <i class="bi bi-palette-fill"></i>
-              <p class="onest-gallery-caption">Art in Progress</p>
-            </div>
+          <div class="onest-student-life-gallery-item rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer" data-index="17">
+            <img src="assets/img/person/draw (8).jpg" alt="Student Drawing 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           </div>
         </div>
       </div>
@@ -515,63 +858,138 @@
     <!-- Gallery Lightbox Modal -->
     <div id="onest-gallery-modal" class="onest-gallery-modal">
       <span class="onest-gallery-close">&times;</span>
-      <button class="onest-gallery-nav onest-gallery-prev">
+      <button class="onest-gallery-nav onest-gallery-prev" aria-label="Previous image">
         <i class="bi bi-chevron-left"></i>
       </button>
-      <img class="onest-gallery-modal-content" id="onest-modal-img">
-      <button class="onest-gallery-nav onest-gallery-next">
+      <img class="onest-gallery-modal-content" id="onest-modal-img" alt="Zoomed View">
+      <button class="onest-gallery-nav onest-gallery-next" aria-label="Next image">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
+  </main>
 
-    <!-- Footer -->
-    <footer class="onest-student-life-footer">
-      <div class="onest-student-life-container">
-        <div class="onest-student-life-footer-grid">
-          <div class="onest-student-life-footer-col">
-            <img src="assets/img/onest.svg" alt="Logo"
-              style="height: 40px; margin-bottom: 24px; filter: brightness(0) invert(1);">
-            <p style="color: #a3a3a3;">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
-            <p style="margin-top: 16px;"><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Email:</strong> info@onestgurukul.in</p>
-          </div>
-          <div class="onest-student-life-footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="onest-student-life-footer-col">
-            <h4>Academics</h4>
-            <ul>
-              <li><a href="preprimary.html">Pre-Primary</a></li>
-              <li><a href="#">Primary</a></li>
-              <li><a href="#">Middle School</a></li>
-              <li><a href="#">Senior School</a></li>
-            </ul>
-          </div>
-          <div class="onest-student-life-footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Parent Portal</a></li>
-              <li><a href="#">News & Updates</a></li>
-              <li><a href="#">School Policies</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="onest-student-life-footer-bottom">
-          <p>&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+  <!-- Footer -->
+  <footer class="bg-surface-container-high border-t border-on-background/5">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+      <div class="md:col-span-1">
+        <div class="font-headline-md text-headline-md text-primary mb-6 font-bold">ONEST GURUKUL</div>
+        <p class="font-body-md text-on-secondary-fixed-variant mb-6 text-on-surface-variant">Empowering minds through innovation and excellence. Join our global community of learners.</p>
+        <div class="flex space-x-4">
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 1"><span class="material-symbols-outlined text-sm">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 2"><span class="material-symbols-outlined text-sm">share</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#" aria-label="Social Link 3"><span class="material-symbols-outlined text-sm">campaign</span></a>
         </div>
       </div>
-    </footer>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Resources</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="campus-facilities.html">Campus Map</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Alumni Network</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Faculty Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Legal</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+          <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-primary mb-6 uppercase tracking-widest font-bold">Newsletter</h4>
+        <p class="font-body-md text-on-surface-variant mb-4">Stay updated with campus news.</p>
+        <form class="flex flex-col space-y-3">
+          <input class="bg-surface p-3 rounded-lg border-0 ring-1 ring-on-background/10 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email Address" type="email" aria-label="Newsletter Email" />
+          <button class="bg-primary text-on-primary py-3 rounded-lg font-label-md font-bold hover:opacity-90 transition-all">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-on-background/10 py-6 text-center">
+      <p class="font-label-sm text-on-surface-variant text-xs font-semibold">© 2024 Onest Gurukul. Excellence in Education.</p>
+    </div>
+  </footer>
 
-  </div>
-
-  <!-- Page Specific JS -->
+  <!-- Scripts -->
   <script src="assets/js/onest-student-life.js"></script>
+
+  <script>
+    // Reveal Animations on Scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveal.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Timeline Scroll Progress Filler
+    const setupTimelineProgress = () => {
+      const dailyLifeSection = document.getElementById('daily-life');
+      const progressLine = document.getElementById('timeline-progress-line');
+      const timelineNodes = document.querySelectorAll('.timeline-node');
+      if (!dailyLifeSection || !progressLine) return;
+
+      const fillTimeline = () => {
+        const sectionRect = dailyLifeSection.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.6; // trigger line filling at 60% viewport height
+        
+        // Calculate the scrolled distance within the timeline section
+        const totalHeight = sectionRect.height;
+        const visibleScrolled = triggerPoint - sectionRect.top;
+        
+        let percent = 0;
+        if (visibleScrolled > 0) {
+          percent = Math.min((visibleScrolled / (totalHeight - 160)) * 100, 100);
+        }
+
+        progressLine.style.height = `${percent}%`;
+
+        // Highlight timeline nodes as they are passed
+        timelineNodes.forEach(node => {
+          const nodeRect = node.getBoundingClientRect();
+          if (nodeRect.top < triggerPoint) {
+            node.classList.add('border-primary', 'bg-primary-container');
+            node.querySelector('div').classList.replace('bg-primary', 'bg-on-primary-container');
+          } else {
+            node.classList.remove('border-primary', 'bg-primary-container');
+            node.querySelector('div').classList.replace('bg-on-primary-container', 'bg-primary');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', fillTimeline);
+      window.addEventListener('resize', fillTimeline);
+      fillTimeline();
+    };
+    setupTimelineProgress();
+
+    // Parallax Effect for Hero
+    window.addEventListener('scroll', () => {
+      const parallax = document.querySelector('.parallax-bg');
+      let scrollPosition = window.pageYOffset;
+      if (parallax) {
+        parallax.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+      }
+    });
+
+    // Smooth header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+  </script>
 
   <!-- Tawk.to Script -->
   <script type="text/javascript">

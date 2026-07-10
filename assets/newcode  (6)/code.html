@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pre-Primary | Onest Gurukul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 243, 176, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(17, 17, 17, 0.08);
+        }
+        .bubble-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(250, 204, 21, 0.15);
+        }
+        .bg-warm-vanilla { background-color: #FFF9D9; }
+        .text-pre-primary-pink { color: #FF6B9D; }
+        .bg-pre-primary-pink { background-color: #FF6B9D; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .premium-shadow {
+            box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb1c5",
+                      "primary": "#735c00",
+                      "on-surface": "#1a1b22",
+                      "background": "#fbf8ff",
+                      "outline": "#7f7660",
+                      "on-tertiary-container": "#a52458",
+                      "surface-container-low": "#f4f2fd",
+                      "on-tertiary-fixed-variant": "#8c0a46",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#eeedf7",
+                      "primary-container": "#facc15",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1a1b22",
+                      "surface-bright": "#fbf8ff",
+                      "primary-fixed": "#ffe083",
+                      "on-surface-variant": "#4d4632",
+                      "on-secondary-container": "#656464",
+                      "inverse-surface": "#2f3038",
+                      "surface-tint": "#735c00",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffd9e1",
+                      "tertiary-container": "#ffc0cf",
+                      "on-primary-fixed-variant": "#574500",
+                      "secondary-container": "#e5e2e1",
+                      "surface-container-high": "#e8e7f1",
+                      "inverse-primary": "#eec200",
+                      "primary-fixed-dim": "#eec200",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-variant": "#e3e1ec",
+                      "on-secondary-fixed-variant": "#474646",
+                      "on-primary-container": "#6c5700",
+                      "outline-variant": "#d1c6ab",
+                      "on-tertiary-fixed": "#3f001b",
+                      "on-primary-fixed": "#231b00",
+                      "secondary-fixed": "#e5e2e1",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e3e1ec",
+                      "secondary": "#5f5e5e",
+                      "tertiary": "#ac2a5d",
+                      "surface": "#fbf8ff",
+                      "inverse-on-surface": "#f1effa",
+                      "surface-dim": "#dad9e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "xl": "80px",
+                      "md": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-md": ["Hanken Grotesk"],
+                      "display-lg-mobile": ["Libre Caslon Text"],
+                      "display-lg": ["Libre Caslon Text"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "headline-md": ["Libre Caslon Text"],
+                      "headline-lg": ["Libre Caslon Text"],
+                      "body-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-warm-vanilla text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-surface/70 backdrop-blur-md border-b border-on-background/10 docked full-width top-0 sticky z-50 shadow-sm h-[72px]">
+<nav class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">ONEST GURUKUL</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Curriculum</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md font-bold hover:scale-105 active:scale-95 transition-transform premium-shadow">
+                Apply Now
+            </button>
+</nav>
+</header>
+<!-- Hero Section: The Magical Years -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden py-xl">
+<!-- Background Decoration -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary-container/20 bubble-shape animate-float opacity-60 blur-2xl"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-pre-primary-pink/10 bubble-shape animate-float opacity-60 blur-3xl" style="animation-delay: 2s;"></div>
+
+</div>
+<div class="container-max mx-auto px-gutter relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-md items-center">
+<div class="space-y-sm">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pre-primary-pink/10 text-pre-primary-pink font-label-md">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                    A Place of Wonder
+                </div>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">
+                    Welcome to the <br/>
+<span class="text-pre-primary-pink">Magical Years</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">
+                    Where every giggle is a breakthrough and every play session is a lesson in discovery. Our pre-primary environment is designed to nurture the innate curiosity of your little wonders.
+                </p>
+<div class="flex flex-wrap gap-md pt-base">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-md font-bold hover-lift">
+                        Explore Our World
+                    </button>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                        Virtual Tour <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative flex justify-center">
+<div class="relative w-full max-w-lg aspect-square">
+<div class="absolute inset-0 bg-primary-container/20 rounded-full blur-3xl animate-pulse"></div>
+<div class="relative z-10 w-full h-full rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] overflow-hidden border-8 border-white/50 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A portrait of a diverse group of joyful pre-primary children wearing colourful school smocks, sitting in a circle on a plush yellow rug in a brightly lit, modern classroom. Soft morning sunlight streams through large arched windows, illuminating floating dust motes and creating a warm, premium academic atmosphere. The setting features light wood furniture and glassmorphic accents, consistent with a high-end educational institution's brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJ1-IoXmS8cIzAgxbc8_XZlbvjXbG3sFMHxYX3D-3gZgPQEb-8so1J4l_eo5HUj2kefHyZesYYYpzqwBsFBtrG_VwRHusLgCcX43GBZMeNinNaf1Jw5ktaKu0a1EMAZC0uXBGDiZ6tBEpJ2fJs8A6EEMdDNq4bD0EnjbyKqXG1YvJ9s8sVmFsDRGV2LdGrNNqHTqTcCRrzg0AYSJnI2bVbWR08VGcsqVsSSi5zcARhoO6T6E5dHsgi0NzKB50CUkPx_-dQ-iA_Tby"/>
+</div>
+<!-- Floating Mascot Illustration (Placeholder as div with icon) -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white rounded-full premium-shadow p-6 animate-float flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-pre-primary-pink text-[48px]" data-weight="fill">child_care</span>
+<span class="text-label-sm mt-2 text-primary">Meet Barnaby!</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curriculum through Play Section -->
+<section class="py-xl bg-surface-container-low relative">
+<div class="container-max mx-auto px-gutter">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Curriculum through Play</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    We believe play is the highest form of research. Our curriculum blends structured learning with imaginative exploration.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Bento Card 1 -->
+<div class="glass-card p-md rounded-[40px] hover-lift group">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-md group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container text-[32px]">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Foundational Logic</h3>
+<p class="text-on-surface-variant">Using block play and pattern recognition to introduce early mathematical concepts in a tactile environment.</p>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-pre-primary-pink text-white p-md rounded-[40px] hover-lift group">
+<div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-md group-hover:-rotate-12 transition-transform">
+<span class="material-symbols-outlined text-white text-[32px]">palette</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Creative Arts</h3>
+<p class="text-white/80">Expressive painting, rhythmic music, and dramatic play that helps children communicate their inner world.</p>
+</div>
+<!-- Bento Card 3 -->
+<div class="glass-card p-md rounded-[40px] hover-lift group">
+<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mb-md group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-container text-[32px]">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Nature Discovery</h3>
+<p class="text-on-surface-variant">Our outdoor classroom encourages hands-on learning about the environment and the wonders of life.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nurturing Environment Section -->
+<section class="py-xl overflow-hidden">
+<div class="container-max mx-auto px-gutter">
+<div class="flex flex-col lg:flex-row items-center gap-xl">
+<div class="flex-1 order-2 lg:order-1 grid grid-cols-2 gap-sm">
+<div class="space-y-sm">
+<div class="rounded-[30px] overflow-hidden aspect-[4/5] hover-lift">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sun-drenched, high-end sensory classroom featuring soft pastel-coloured seating, transparent glass partitions with frosted floral motifs, and a wooden bookshelf filled with premium academic toys. The lighting is soft and ambient, emphasizing a nurturing and calm environment. The overall aesthetic is minimalist, featuring a warm vanilla and gold-accented palette, perfect for a high-tier academic institution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM-KQpJKkiKtmS_O-Fg4TcEXhH-JsBCe9uDK9yyzQa9OEE8bISWSmv9USIjM7K7ktjhxRObKEL89BYvz36UnYFm-K-Bxjve7cYdgrTt4NZfD9H443DozfdVjdDtQQ5hNBCaDRz02HK8ddHreJHRhW4kmdTXFuMcXYTt1ZHvnIurRgyD92fWaxfLQ_KAAXf6-VFycP3VW8SW5eXbjkG-_hAPiyYUYy03BUglQJW__kqyumEW3ttMyj-CtBuV0sjFkf71PDTu1_Pl-3A"/>
+</div>
+<div class="rounded-[30px] overflow-hidden aspect-square hover-lift">
+<img class="w-full h-full object-cover" data-alt="An interior shot of an ultra-modern school library for toddlers, with low-profile light oak shelving and plush, cloud-shaped floor cushions. Large glass windows offer a view of a lush green campus. The scene is bright and airy with high-key lighting, emphasizing a sense of premium education and high breathing room. Soft focus on the background adds depth and a professional design feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgZIjll_yf_Dp1NfQKIbU427uVd_qYHnzxvegvLXhiXJDANOCxBDpXwoo7a0ZZUdjSjp4a8HFjNtQ1jlP8Pb3rQ74lMkEVWfUTtRMbNGbPkQNBHFH0j2uYJDzMOwp7j-ppLb9j-HvvWQyYZeSfdBDEXCrnGA3uAF38amyZ8HExpiTBscDsSIF2BxT2Yi8yqVUdRqlbsw67cSDie11JK0JqDUThCXLkt9qtA_74ApgT3zF1akPReytxRVle9sNv15MKOF23L2MvacPw"/>
+</div>
+</div>
+<div class="space-y-sm pt-xl">
+<div class="rounded-[30px] overflow-hidden aspect-square hover-lift">
+<img class="w-full h-full object-cover" data-alt="A beautifully designed indoor playground with architectural wooden structures and safe, premium-grade soft flooring in a warm yellow hue. The space is filled with natural light, showcasing a sophisticated academic facility for children. The environment is clean, minimalist, and uses the 8pt grid system in its layout, with a focus on glassmorphic textures and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_kigybmevwm8hETxOzPANXw2EFiuaSDL1BRVMY_k6HdYSZ47HeZC1rjLcDOp2viMGC47dn_VRC6QqW97H2AT7lI4cdKaJYZx5eM-Vxq8K7Ml_ZxqlFSZRhSdLko2roKZywKhg5wZLY2K1RE9mVVZMZjMMJ-tj8H5MJTNU3sOIDFmjefKZph8ez-eB9WjqDvYoaOATgxnQElAwE1G5EixGA33YtJ-5xYGY8TxsglQWPk9oFvEYQpn65Qdx9WuwzfolxPO8UsFllZoT"/>
+</div>
+<div class="rounded-[30px] overflow-hidden aspect-[4/5] hover-lift">
+<img class="w-full h-full object-cover" data-alt="A high-angle view of a neat, organized children's art station featuring premium watercolor sets, high-quality paper, and ergonomic brushes on a clean white desk. The background shows a modern, minimalist classroom with warm vanilla walls and sophisticated charcoal accents. The lighting is crisp and clear, illustrating a professional and high-standard educational setting for pre-primary learners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8u_R8N11aKk_TABSRGT_RSn2jK7dL7SRPSAUkHJkRGcxfFiPBNrHb1_EQ8B8el_d69RfbCtXqtJxPEUgTntPhBZGbiBtibJ-2hmNh9E7UPuNdCIk5IJVDEQjejemYqllvqcCl8atQfyMlbNalpQPK0ZFL0BHy0u38KdOP6xe4HICUVhoZZ35qpqU2QF6-DDxwxMP3ULRD0G7_WchKwM7J3NbwvEutg5RVvqGZ0oddG2Q4wmsLqxuOTqJMfSBkTeM3HSK5z-SIYB0F"/>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 lg:order-2 space-y-md">
+<span class="font-label-sm text-pre-primary-pink uppercase tracking-widest">Safety &amp; Care</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">A Nurturing Second Home</h2>
+<p class="text-body-lg text-on-surface-variant">
+                        Our campus is a sanctuary where safety meets stimulation. From air-purified glassmorphic classrooms to our 1:10 teacher-student ratio, every detail is engineered for your child's well-being.
+                    </p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">check</span>
+</div>
+<span class="font-label-md">24/7 Monitored Campus</span>
+</li>
+<li class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">check</span>
+</div>
+<span class="font-label-md">Certified Pediatric Nurses On-site</span>
+</li>
+<li class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">check</span>
+</div>
+<span class="font-label-md">Organic &amp; Nutritious Meal Programs</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Little Wonders Gallery -->
+<section class="py-xl bg-surface-container-high/30">
+<div class="container-max mx-auto px-gutter text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xl">Little Wonders in Action</h2>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-md space-y-md">
+<div class="break-inside-avoid rounded-[40px] overflow-hidden glass-card p-2 hover-lift">
+<img class="w-full rounded-[35px]" data-alt="A candid, high-quality photograph of a young child focused on building a complex structure with wooden blocks in a modern, sunlit classroom. The child's expression is one of deep concentration and joy. The room is designed with high-end, minimalist aesthetic principles, featuring neutral tones and warm vanilla surfaces. Soft bokeh in the background highlights the premium educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsdB4Mi8d2luZAY4eONNahewW5asRQaKN10ptdkxAUX-UgTWr0AruVCJfbzar6Dk6ZC1ckTGgxLaRCb9yKviC3_xqsfJ4W1_mqar6wCeXWeZVovp7WUPPluI-IR_OUMY1LfA8o_ddpM7uBg8IBJsifsr5FFSJjCO8g5BDQ8vm07-Zt_1EBH4yNq0-RDdJUuZzZ7Uevxz57yBXiO0OjBXObtOoEE1Pq-TWHZG4N7Tgtin4AhFLRN1aIiuH9IQqLl6hPnzOMt9y8f6mR"/>
+</div>
+<div class="break-inside-avoid rounded-[40px] overflow-hidden glass-card p-2 hover-lift">
+<img class="w-full rounded-[35px]" data-alt="Two pre-primary students sharing a book together in a cozy reading nook filled with soft pillows and atmospheric lighting. The image captures a heartwarming moment of peer-to-peer interaction and early literacy. The school's premium interior design is evident through the clean lines, glassmorphic accents, and sophisticated color palette of golds and whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqhht93gd8J3KkaDIxwJSqjZHvk3ba2xMODD8sbEgpG-w8LErVCleJAYNLFl5CwiC4q_ImU4_oetfZZnBzxKLTqPKYMizVT97RbEDCsdEaug7WQgDuoJKekNC7v7m1Cjl85Spf55tZYtPv28HPGsCV36U-nWJjh1fuI1y6T1nCKx4wpVZDTOWoIv2LWKMVwRZv9-lgrvj7s6N5E5Odpg6e3eZluQ-XOkZxKPfBCiaRr5IPMsXtXL6X0wEr1rsSPVC3Wzd6RBLMGI2C"/>
+</div>
+<div class="break-inside-avoid rounded-[40px] overflow-hidden glass-card p-2 hover-lift">
+<img class="w-full rounded-[35px]" data-alt="A joyful group of toddlers running through a grassy school yard during a bright afternoon. The school's modern architectural facade is visible in the background, showing large glass panels and clean white structures. The scene is energetic and vibrant, with a high-key lighting style that emphasizes the nurturing and happy atmosphere of the institution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9f1LdIZ4XIklvk7_eir3GoAsh2vLrU3ClWZ0P1YmToYIvpVxd8tOuRJb4P0k8cMestn6LG3ftkYkndKPPBCA2X9HupjZZ0Lzdc448wA57ue8jN3RhkeReAdU68hoBILGggPlWW797s_qU_bQixjbepIo3I2mlEsIwZ_s--Pmm-PcrS1O6o-FiUl_Mgpr4ya6ado4dY2IAcGZ-_YLNMOW3iHR7caknQkyul7cvT6tv9AE51O6nHeIKWxbNsmoa3Qh8LeBV0Y_NSnJ1"/>
+</div>
+<div class="break-inside-avoid rounded-[40px] overflow-hidden glass-card p-2 hover-lift">
+<img class="w-full rounded-[35px]" data-alt="A child excitedly painting with bright primary colors on a large canvas, with paint slightly smudged on their hands and nose, signifying creative freedom. The setting is a professional-grade school art studio with high ceilings and natural lighting. The overall mood is playful yet premium, consistent with a high-tier pre-primary brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqF9aQgkbsJBCqNfANir0JFC7g_XTGEx1Fq1c0bqt7kmHXI3MmFyWj6bD_PnkAeBFDOmZnJHCKSVSWnAms3rAMU-C4-6XhWDb7nqxwJM8XB06bOAcltGhXv-gR_jGQWGKkw8ZF_4jTQQr0eRUuUtQm3VhVLYG2NVASR4O2ZPwdgDCn-xFoc-9C24eHqlGaX2bWkj1dopZSKP4V1eZVQeH6nmxbjvk8Y8GgGiKYXslflea4itCZa8TADVsN79Sv2up5jUzRQeEZHNPN"/>
+</div>
+<div class="break-inside-avoid rounded-[40px] overflow-hidden glass-card p-2 hover-lift">
+<img class="w-full rounded-[35px]" data-alt="A young girl wearing headphones and using a modern tablet device for an educational game, sitting at a custom-designed wooden desk. The shot is a close-up, focusing on her curious eyes and the premium technology available at the school. The lighting is crisp and modern, highlighting the high-tech yet approachable nature of the curriculum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAue15q_QrHW2ldG0qALUZEfXlLaPMrmU5q-ErLXaBdmAfxBa1GyCHf3H5ZJCV2p3D2C1sDRLlPe8Bwnjo3b0bTyZK5qPzHM0v1hLO-jYfbTv7bDOsjLlR35fi-_gtLBbZEooMGu6QyMi-nbLXQ8Mcae-glkca7HDcYFDDZRoyvUBUiYwwX6Ju2_U7UkbD7bCC7-Vs0JgDPQnWl0_fipZTKjfSmdI_kmuXmIg0Ps9EUHQlsQ1SCkXKBzoJdeduhOmC258AYs5rGgd1l"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-xl">
+<div class="container-max mx-auto px-gutter">
+<div class="relative bg-primary rounded-[60px] p-xl text-center overflow-hidden">
+<!-- Abstract Shader for CTA -->
+
+<div class="relative z-10 space-y-md">
+<h2 class="font-display-lg text-display-lg text-white">Start the Journey Today</h2>
+<p class="text-body-lg text-white/80 max-w-xl mx-auto">
+                        Admissions are open for the upcoming session. Schedule a personalized walk-through of our campus and meet our visionary educators.
+                    </p>
+<div class="flex justify-center gap-md">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-md font-bold hover:scale-105 active:scale-95 transition-transform">
+                            Apply Online
+                        </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-label-md font-bold hover:bg-white hover:text-primary transition-all">
+                            Request Prospectus
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest py-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+<div class="space-y-sm">
+<div class="font-headline-md text-headline-md text-primary">ONEST GURUKUL</div>
+<p class="text-on-secondary-fixed-variant text-body-md">
+                    Excellence in pre-primary education. Shaping the minds of tomorrow through the magic of today.
+                </p>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-primary font-bold">Quick Links</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Campus Map</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-primary font-bold">Community</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Alumni</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Parent Portal</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-primary font-bold">Newsletter</h4>
+<p class="text-on-secondary-fixed-variant text-label-sm">Stay updated with our latest magical moments.</p>
+<div class="flex gap-2">
+<input class="bg-white/50 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm flex-1" placeholder="Email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter pt-md border-t border-on-background/5 text-center">
+<p class="text-on-secondary-fixed-variant text-label-sm">© 2024 Onest Gurukul. Excellence in Education.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Interactive Cursor Shadow Effect
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

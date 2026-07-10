@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | ONEST GURUKUL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1effa",
+                        "background": "#fbf8ff",
+                        "inverse-primary": "#eec200",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1b22",
+                        "surface-bright": "#fbf8ff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#facc15",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary-container": "#ffc0cf",
+                        "surface-tint": "#735c00",
+                        "on-tertiary-container": "#a52458",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-primary-container": "#6c5700",
+                        "on-secondary-container": "#656464",
+                        "primary": "#735c00",
+                        "surface-container-highest": "#e3e1ec",
+                        "surface": "#fbf8ff",
+                        "on-surface-variant": "#4d4632",
+                        "on-primary-fixed": "#231b00",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline": "#7f7660",
+                        "surface-container": "#eeedf7",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary": "#ac2a5d",
+                        "on-background": "#1a1b22",
+                        "outline-variant": "#d1c6ab",
+                        "on-tertiary-fixed-variant": "#8c0a46",
+                        "secondary-container": "#e5e2e1",
+                        "surface-dim": "#dad9e3",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-variant": "#e3e1ec",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#3f001b",
+                        "tertiary-fixed-dim": "#ffb1c5",
+                        "secondary": "#5f5e5e",
+                        "primary-fixed": "#ffe083",
+                        "primary-fixed-dim": "#eec200",
+                        "surface-container-low": "#f4f2fd",
+                        "inverse-surface": "#2f3038",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "warm-vanilla": "#FFF9D9",
+                        "soft-cream": "#FFF3B0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FFF9D9;
+            color: #1a1b22;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(251, 248, 255, 0.7);
+        }
+        .luxury-card {
+            background-color: #FFF3B0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .luxury-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.15);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #735c00;
+            opacity: 0.2;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-on-background/10 h-[72px]">
+<div class="max-w-container-max mx-auto px-gutter h-full flex justify-between items-center">
+<div class="text-primary font-headline-md text-headline-md font-bold tracking-tight">
+                ONEST GURUKUL
+            </div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-md py-base rounded-lg font-label-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
+                Apply Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-[120px] pb-xl px-gutter max-w-container-max mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-md" data-aos="fade-up">
+<span class="inline-block px-4 py-1 bg-primary-fixed text-on-primary-fixed font-label-sm rounded-full uppercase tracking-widest">Since 1998</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">Our Legacy of Excellence</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                    For over two decades, Onest Gurukul has been at the forefront of transformative education, blending ancient wisdom with modern academic rigor to shape the leaders of tomorrow.
+                </p>
+<div class="flex gap-md pt-base">
+<button class="bg-primary text-on-primary px-lg py-md rounded-lg font-label-md hover:shadow-lg transition-all">Explore Campus</button>
+<button class="border-2 border-primary text-primary px-lg py-md rounded-lg font-label-md hover:bg-primary-container transition-all">Download Brochure</button>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="A majestic, high-end aerial shot of a prestigious school campus at golden hour. The architecture is a blend of classical brickwork and modern glass facades, surrounded by lush green lawns and ancient oak trees. The lighting is warm and ethereal, casting long shadows and highlighting the serene academic environment. The overall aesthetic is one of elite heritage and forward-thinking education, with a palette of warm yellows and rich forest greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHdusijqr_L904n72svhAT8xp_9fQ6fhLeARgEd2sszT7u2hvAVLYnkWX4xdlKednwppnMgPs-VUktAWwjSKqnkznnlH97CE9mJ4YgoX2SFaxq3MYsQ8Pzv4hTZrvQw826qAfKOX-RWbvKKPEW_lMikz8ITyikWHjLzwIUJkW9rn3oyNlA0ZWRRVg2VO4zJ7ctumKZOlZZQYcrMQJ7r0OoW18yaXMFW3CDR6WA_P8BkUGPqA2LawqnFNG_h4LUy7_BO81ldyZZJAR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Mission, Vision, Values -->
+<section class="bg-soft-cream py-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid md:grid-cols-3 gap-md">
+<div class="luxury-card p-xl rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[48px] mb-md" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Our Vision</h3>
+<p class="font-body-md text-on-surface-variant">To be a global benchmark in holistic education, fostering creative minds and compassionate souls through a rigorous, inclusive, and forward-thinking learning ecosystem.</p>
+</div>
+<div class="luxury-card p-xl rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[48px] mb-md" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Our Mission</h3>
+<p class="font-body-md text-on-surface-variant">To empower students with the critical thinking, cultural intelligence, and ethical grounding required to navigate and lead in an increasingly complex global landscape.</p>
+</div>
+<div class="luxury-card p-xl rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[48px] mb-md" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Our Values</h3>
+<p class="font-body-md text-on-surface-variant">Integrity, Curiosity, Empathy, and Resilience form the pillars of our community, guiding every interaction and academic pursuit within our hallowed halls.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- History & Timeline -->
+<section class="py-xl bg-warm-vanilla">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary">The Journey So Far</h2>
+<p class="text-secondary font-body-lg max-w-2xl mx-auto mt-sm">From a small foundation to a global standard of educational brilliance.</p>
+</div>
+<div class="max-w-4xl mx-auto px-gutter relative timeline-line">
+<!-- Timeline Item 1 -->
+<div class="relative mb-lg flex justify-between items-center w-full">
+<div class="w-5/12 hidden md:block"></div>
+<div class="z-20 flex items-center order-1 bg-primary shadow-xl w-base h-base rounded-full absolute left-1/2 -translate-x-1/2"></div>
+<div class="order-1 luxury-card rounded-xl shadow-sm w-full md:w-5/12 p-md border border-primary/5">
+<span class="text-primary font-headline-md">1998</span>
+<h4 class="font-bold text-lg mb-xs">The Foundation</h4>
+<p class="text-on-surface-variant text-sm">Founded by a group of visionaries with just 50 students and a dream to redefine traditional learning.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative mb-lg flex justify-between items-center w-full">
+<div class="order-1 luxury-card rounded-xl shadow-sm w-full md:w-5/12 p-md border border-primary/5">
+<span class="text-primary font-headline-md">2005</span>
+<h4 class="font-bold text-lg mb-xs">Campus Expansion</h4>
+<p class="text-on-surface-variant text-sm">Inauguration of the secondary wing and the first state-of-the-art laboratory complex.</p>
+</div>
+<div class="z-20 flex items-center order-1 bg-primary shadow-xl w-base h-base rounded-full absolute left-1/2 -translate-x-1/2"></div>
+<div class="w-5/12 hidden md:block"></div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative mb-lg flex justify-between items-center w-full">
+<div class="w-5/12 hidden md:block"></div>
+<div class="z-20 flex items-center order-1 bg-primary shadow-xl w-base h-base rounded-full absolute left-1/2 -translate-x-1/2"></div>
+<div class="order-1 luxury-card rounded-xl shadow-sm w-full md:w-5/12 p-md border border-primary/5">
+<span class="text-primary font-headline-md">2012</span>
+<h4 class="font-bold text-lg mb-xs">International Accreditation</h4>
+<p class="text-on-surface-variant text-sm">Achieved global recognition for our IB and IGCSE programs, ranking in the top 10% nationwide.</p>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="relative mb-lg flex justify-between items-center w-full">
+<div class="order-1 luxury-card rounded-xl shadow-sm w-full md:w-5/12 p-md border border-primary/5">
+<span class="text-primary font-headline-md">Present</span>
+<h4 class="font-bold text-lg mb-xs">Digital Transformation</h4>
+<p class="text-on-surface-variant text-sm">Integrating AI and advanced robotics into our curriculum while maintaining our core cultural roots.</p>
+</div>
+<div class="z-20 flex items-center order-1 bg-primary shadow-xl w-base h-base rounded-full absolute left-1/2 -translate-x-1/2"></div>
+<div class="w-5/12 hidden md:block"></div>
+</div>
+</div>
+</section>
+<!-- Principal's Message -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-surface-container-lowest rounded-[32px] p-md md:p-xl grid lg:grid-cols-12 gap-xl items-center shadow-sm">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden border-8 border-soft-cream shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A professional, elegant portrait of Dr. Elena Rodriguez, a distinguished academic woman in her early 50s. She is wearing a tailored charcoal suit and a warm yellow silk scarf, standing in a sun-drenched library with leather-bound books in the background. Her expression is welcoming and authoritative, reflecting wisdom and compassion. The lighting is soft and flattering, emphasizing a premium educational leadership aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgJjAcRf9FaYBntuaxOtzOJq8dLyrCDNxgi-k9AlVhVtbhN3nGRaOxT3Dd2j1js4jSuy6ThIJq8a7vsQU-p8UIKCQpUNMyWrrRxKfuuxgD0OhNE5IuD2TcR82o_xroT2ttK2euld09JEg8Vp0BxMRhS7NnRPWWdq5_SJR1MJpk6OkAib5BHjLTrxd9-VpFcm8pFQxPgshZiAWYya609RSvOku2TzrVmH4T_1U_t3wX_iORiGycbsuGhE8d_JLrAlCoxhFw2tQD2Dwn"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-primary text-on-primary p-md rounded-xl shadow-lg">
+<p class="font-headline-md text-headline-md">25+</p>
+<p class="font-label-sm">Years in Education</p>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-md">
+<span class="text-tertiary font-label-md tracking-widest uppercase">Principal's Address</span>
+<h2 class="font-headline-lg text-headline-lg text-primary italic">"Our goal is not to fill containers, but to light fires."</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                        Education at Onest Gurukul is more than just grades; it is the cultivation of a student's entire being. We believe in providing an environment where failure is seen as a stepping stone and curiosity is the ultimate driver. Our faculty doesn't just teach; they mentor, inspire, and guide each individual towards their unique potential.
+                    </p>
+<div class="pt-base">
+<p class="font-bold text-lg">Dr. Elena Rodriguez</p>
+<p class="text-secondary font-label-md">PhD in Educational Psychology, Principal</p>
+</div>
+<img class="h-12 w-auto opacity-70" data-alt="A clean, minimalist digital rendering of a professional signature in charcoal ink on a transparent background, conveying authenticity and executive leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrqwfGF8W2DWTDPRY1Xs3Yuls_GzXprAqNIbkjlWdYlFzN6915zYi_x9JGyotVEHjlxQGlw8qWBWA1xghiGFr3Tmt-5OPngB8gDgTUT5EHDaUw3cDFYZrsjn-ihLgQH2yt63lLH0GPxJqJu1-eUQyaSQXcBqthoVYzo5l59Jlwzz14-hRr6Y61-DRjus_iEw-aNvEn0D9ruXQ97uM50lncYlbYD84roMdwKLnq2cfbRCWsVzS5FcNECMVcEjLT4OyJk3hyzIV_j6tu"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership & Faculty -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-xl">
+<div class="space-y-xs">
+<h2 class="font-headline-lg text-headline-lg text-primary">Our Esteemed Faculty</h2>
+<p class="text-secondary font-body-md">Guided by the brightest minds in academia.</p>
+</div>
+<a class="text-primary font-label-md underline underline-offset-8 decoration-primary/30 hover:decoration-primary transition-all" href="#">View All Members</a>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Faculty 1 -->
+<div class="luxury-card p-md rounded-xl text-center group">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-md border-4 border-white shadow-md group-hover:border-primary-container transition-all">
+<img class="w-full h-full object-cover" data-alt="A portrait of a male professor in his 40s, looking professional yet approachable. He is in a modern science laboratory setting. High-quality lighting, soft vanilla tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7Ur4wMvaI6Mo4VggZrZWTZGYY0a4az1s_Bws9L860Ohfur3d3aQYqWXGM1oumgCHMAHngcuyVAsja2ka9ObKb-Y_5oXdhgwvgj_xXz-xlzzF1y22j4one7ucydzcdbLVA7cCRczzRPAd2dRDvc51h_CMc3TjJxaRA9O6adm7ZiDlmzOrp4u22yAaVOGF7kVKQUe-aISukbi_CJniNwi6XUiIYyb0M1CygnVzXtPjq8qs842A3w6BdSn24UNo1Hu4imUK-px_w0jYX"/>
+</div>
+<h4 class="font-bold text-lg">Prof. Marcus Chen</h4>
+<p class="text-primary font-label-sm mb-sm uppercase">Head of Science</p>
+<p class="text-sm text-on-surface-variant italic">"Innovating through research and experiment."</p>
+</div>
+<!-- Faculty 2 -->
+<div class="luxury-card p-md rounded-xl text-center group">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-md border-4 border-white shadow-md group-hover:border-primary-container transition-all">
+<img class="w-full h-full object-cover" data-alt="A portrait of a female academic with glasses, standing in front of a whiteboard with complex mathematical equations. Sophisticated, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKQhVeIM2cAsgHD6jp9K8kQvWN1ok-fVXmAjX1YNEViccJti6gzKz_W2eW1xZUgwHbYYTM7m0_jJP_MVhpsPHF45LpteMuygysUzRW4W9uvhjOpp4D9eubMczaLI0mnohnCZU79vbyQEPZ5fpwnr-sZYmLGvewwcV_LmxKDL2CD1V38V-p_iP09baJB7DiyDwtf8k25PU0Ys06iQU1eh2Y0qnfgP29G_P7EEYdAkSgyKeQhd-lFCuppgKJoq7V6c60RDedqnrJqN1"/>
+</div>
+<h4 class="font-bold text-lg">Sarah Jenkins</h4>
+<p class="text-primary font-label-sm mb-sm uppercase">Dean of Mathematics</p>
+<p class="text-sm text-on-surface-variant italic">"Solving the complexities of the future."</p>
+</div>
+<!-- Faculty 3 -->
+<div class="luxury-card p-md rounded-xl text-center group">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-md border-4 border-white shadow-md group-hover:border-primary-container transition-all">
+<img class="w-full h-full object-cover" data-alt="A portrait of a middle-aged male history professor in a tweed jacket, standing among ancient world maps. Authentic and intellectual feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV26BicQs_NhsXmef2d89Wgc1MACfAnhKIJSUtNHEvXEAPrR4XM4MQncwlDHabS2E-tg8ajo97GieanGzxRZWfGKQm61X8zy_60SGjCzyKKoGgMygUvq8yXbA6jBXAmo2cQj2Ex5xxBAc8mMxPQeAWlLj0PCsDlpAfde11QrEoYsAreSXL0IJSDosM2L0IoRiS2AjQcXCBSg1w5etyROdpG0pXIubkz1YUhxbHZvND4NELooV_hDg9xa5gjtW5PWEoVjIRIiGb_PZZ"/>
+</div>
+<h4 class="font-bold text-lg">Dr. Robert Vance</h4>
+<p class="text-primary font-label-sm mb-sm uppercase">Head of Humanities</p>
+<p class="text-sm text-on-surface-variant italic">"Understanding our past to lead our future."</p>
+</div>
+<!-- Faculty 4 -->
+<div class="luxury-card p-md rounded-xl text-center group">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-md border-4 border-white shadow-md group-hover:border-primary-container transition-all">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young, creative female arts teacher in a vibrant studio filled with canvases and clay sculptures. Artistic and nurturing atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSjxER_cQT7t-zhJA9iX7yUa8hyxitVHpJgdQSBfS1QDQnK6r7a8HA-6LOtY8QE_06OLSZ0Ohpu5WQNukuy7fEuH-yayIeDnoN_WLIjTaQAAubV8OnsqFqaPapUsgLv1W3ViPzEJ-X56UoJSI248FXjlqH47encfuWIAaYyNEeabmXDa5aWZSiVioOtzN8-MCQ1GDWLG1eyFxjNmR72QESS259McxhlBPD2pdiNIXpaWFlG4LC9jcmQ-edeT7zb_pf4YZcjciiiXRP"/>
+</div>
+<h4 class="font-bold text-lg">Anya Petrov</h4>
+<p class="text-primary font-label-sm mb-sm uppercase">Creative Arts Lead</p>
+<p class="text-sm text-on-surface-variant italic">"Unlocking the creative soul within."</p>
+</div>
+</div>
+</section>
+<!-- Awards & Recognition -->
+<section class="py-xl bg-soft-cream">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-lg">
+<h2 class="font-headline-md text-headline-md text-primary">Accreditations &amp; Awards</h2>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-xl grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-[64px] text-primary" style="font-variation-settings: 'FILL' 1;">award_star</span>
+<p class="font-label-sm text-secondary">Best Academic Results 2023</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-[64px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<p class="font-label-sm text-secondary">ISO 9001 Certified</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-[64px] text-primary" style="font-variation-settings: 'FILL' 1;">public</span>
+<p class="font-label-sm text-secondary">Global Green School Award</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-[64px] text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+<p class="font-label-sm text-secondary">UNESCO Partner School</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest mt-xl">
+<div class="max-w-container-max mx-auto px-gutter py-lg grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary">ONEST GURUKUL</h3>
+<p class="text-on-secondary-fixed-variant text-body-md">Excellence in Education since 1998. Nurturing minds, building character, and shaping global citizens.</p>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Quick Links</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Campus Map</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Alumni</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">News &amp; Events</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Policies</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Subscribe</h4>
+<div class="flex border-b-2 border-primary pb-base">
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm" placeholder="Email Address" type="email"/>
+<button class="text-primary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-md">
+<a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">face_nod</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-md border-t border-on-background/10 text-center">
+<p class="text-on-secondary-fixed-variant font-label-sm">© 2024 Onest Gurukul. Excellence in Education.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

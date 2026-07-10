@@ -158,4 +158,142 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* --- Bento Facility Detail Popup Modal --- */
+    const detailModal = document.getElementById('onest-facility-detail-modal');
+    const detailModalBody = document.getElementById('onest-facility-modal-body');
+    const detailModalClose = document.getElementById('onest-facility-modal-close');
+    const bentoCards = document.querySelectorAll('.onest-bento-card');
+
+    const facilityData = {
+        labs: {
+            title: "Labs & Innovation",
+            subtitle: "State-of-the-Art Research Infrastructures",
+            description: "Our laboratory setups encourage hands-on research and logical discovery. We provide advanced experimental workspaces equipped with high-grade testing gear, custom Robotics and Maker setups, and professional computational systems.",
+            bullets: [
+                "Advanced Chemistry, Physics, and Biology laboratory modules.",
+                "Computational innovation rooms for building software and IoT designs.",
+                "Interactive learning tasks that encourage design and engineering ideas."
+            ]
+        },
+        library: {
+            title: "The Knowledge Hub",
+            subtitle: "Vast Educational Resources Center",
+            description: "The intellectual home of O'Nest Gurukul. Our libraries support extensive study, research, and quiet reading sessions with physical volumes, periodicals, and robust e-library catalogs.",
+            bullets: [
+                "Over 5,000 reference catalogs, fiction, non-fiction, and academic guides.",
+                "High-speed study centers with access to global journals and databases.",
+                "Silent study zones designed to nurture focused learning."
+            ]
+        },
+        classrooms: {
+            title: "Smart Classrooms",
+            subtitle: "Modern Immersive Interactive Environments",
+            description: "Our digital smart classrooms are fully equipped to present engaging AR, VR, and multi-media learning flows, converting typical classes into immersive, visually rich explorations.",
+            bullets: [
+                "Interactive smart panels and projection screens.",
+                "Ergonomically designed seating to keep children comfortable.",
+                "Ventilated, open spaces providing comfortable learning hubs."
+            ]
+        },
+        sports: {
+            title: "Sports & Wellness",
+            subtitle: "Olympic-Grade Athletic Facilities",
+            description: "Supporting athletic performance and health. We feature professional-level playgrounds, dedicated mindfulness spaces, and indoor game courts.",
+            bullets: [
+                "High-quality turf courts for football, cricket, and athletic events.",
+                "Quiet yoga and meditation halls to develop peace of mind.",
+                "Indoor games support for table tennis, carrom, chess, and gymnastics."
+            ]
+        },
+        dining: {
+            title: "Living & Dining",
+            subtitle: "Nutritious Sattvic Feeding and Comfort Center",
+            description: "Providing premium organic nourishment to keep kids healthy and energized. Our food spaces prepare freshly sourced organic meals daily.",
+            bullets: [
+                "Spacious, highly hygienic dining areas.",
+                "100% organic, locally sourced Sattvic menus prepared by nutritionists.",
+                "Dedicated comfort zones and rest rooms for younger primary kids."
+            ]
+        },
+        arts: {
+            title: "Arts & Culture",
+            subtitle: "Spacious Multi-Aesthetic Creative Spaces",
+            description: "Encouraging artistic discovery, performative confidence, and cultural design. Our studios cover traditional visual arts, music, dance, and modern media.",
+            bullets: [
+                "Well-stocked painting, pottery, and craft studios.",
+                "Equipped music production and choreography studios.",
+                "Vibrant outdoor auditorium for drama, guest lectures, and festivals."
+            ]
+        }
+    };
+
+    function openDetailModal(key) {
+        const data = facilityData[key];
+        if (!data) return;
+
+        let bulletHtml = '';
+        data.bullets.forEach(bullet => {
+            bulletHtml += `<li class="flex items-start space-x-2 text-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                <span class="text-on-surface-variant">${bullet}</span>
+            </li>`;
+        });
+
+        detailModalBody.innerHTML = `
+            <div>
+              <span class="text-xs uppercase tracking-wider font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">${data.subtitle}</span>
+              <h3 class="font-display-lg text-2xl font-bold text-on-surface mt-3">${data.title}</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">${data.description}</p>
+            <ul class="space-y-2 py-2">
+              ${bulletHtml}
+            </ul>
+            <div class="pt-4 border-t border-on-background/10 flex flex-col sm:flex-row gap-3">
+              <a href="admissions.html" class="flex-1 bg-primary text-on-primary text-center py-3 rounded-lg font-bold hover:bg-primary/90 transition-all text-sm flex items-center justify-center">
+                Apply for Admission
+              </a>
+              <button id="onest-facility-modal-body-close" class="flex-1 border border-on-background/20 text-on-surface-variant hover:bg-primary/5 text-center py-3 rounded-lg font-bold transition-all text-sm">
+                Close Details
+              </button>
+            </div>
+        `;
+
+        // Bind internal close button
+        const bodyCloseBtn = document.getElementById('onest-facility-modal-body-close');
+        if (bodyCloseBtn) bodyCloseBtn.addEventListener('click', closeDetailModal);
+
+        detailModal.classList.remove('hidden');
+        // Trigger reflow for animations
+        setTimeout(() => {
+            const innerDiv = detailModal.querySelector('div');
+            innerDiv.classList.remove('scale-95', 'opacity-0');
+            innerDiv.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDetailModal() {
+        const innerDiv = detailModal.querySelector('div');
+        innerDiv.classList.remove('scale-100', 'opacity-100');
+        innerDiv.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            detailModal.classList.add('hidden');
+        }, 300);
+        document.body.style.overflow = '';
+    }
+
+    bentoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.getAttribute('data-facility');
+            if (key) openDetailModal(key);
+        });
+    });
+
+    if (detailModalClose) detailModalClose.addEventListener('click', closeDetailModal);
+    if (detailModal) {
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) closeDetailModal();
+        });
+    }
+
 });

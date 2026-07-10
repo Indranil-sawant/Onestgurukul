@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campus Facilities | ONEST GURUKUL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-fixed-dim": "#ffb1c5",
+                "primary": "#735c00",
+                "on-surface": "#1a1b22",
+                "background": "#fbf8ff",
+                "outline": "#7f7660",
+                "on-tertiary-container": "#a52458",
+                "surface-container-low": "#f4f2fd",
+                "on-tertiary-fixed-variant": "#8c0a46",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#eeedf7",
+                "primary-container": "#facc15",
+                "on-primary": "#ffffff",
+                "on-background": "#1a1b22",
+                "surface-bright": "#fbf8ff",
+                "primary-fixed": "#ffe083",
+                "on-surface-variant": "#4d4632",
+                "on-secondary-container": "#656464",
+                "inverse-surface": "#2f3038",
+                "surface-tint": "#735c00",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#ffd9e1",
+                "tertiary-container": "#ffc0cf",
+                "on-primary-fixed-variant": "#574500",
+                "secondary-container": "#e5e2e1",
+                "surface-container-high": "#e8e7f1",
+                "inverse-primary": "#eec200",
+                "primary-fixed-dim": "#eec200",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-variant": "#e3e1ec",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-container": "#6c5700",
+                "outline-variant": "#d1c6ab",
+                "on-tertiary-fixed": "#3f001b",
+                "on-primary-fixed": "#231b00",
+                "secondary-fixed": "#e5e2e1",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e3e1ec",
+                "secondary": "#5f5e5e",
+                "tertiary": "#ac2a5d",
+                "surface": "#fbf8ff",
+                "inverse-on-surface": "#f1effa",
+                "surface-dim": "#dad9e3"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "2xl": "24px",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "48px",
+                "gutter": "24px",
+                "base": "8px",
+                "sm": "12px",
+                "xs": "4px",
+                "xl": "80px",
+                "md": "24px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "label-md": ["Hanken Grotesk"],
+                "display-lg": ["Libre Caslon Text"],
+                "body-md": ["Hanken Grotesk"],
+                "label-sm": ["Hanken Grotesk"],
+                "headline-md": ["Libre Caslon Text"],
+                "headline-lg": ["Libre Caslon Text"],
+                "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(251, 248, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .luxury-shadow {
+            box-shadow: 0 10px 30px -10px rgba(115, 92, 0, 0.1);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(250, 204, 21, 0.25);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-on-background/10">
+<div class="flex justify-between items-center h-[72px] px-gutter max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">ONEST GURUKUL</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md font-bold hover:scale-95 transition-transform active:scale-90">
+                Apply Now
+            </button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center parallax-bg" data-alt="An expansive, high-angle panoramic view of a modern, elite academic campus at sunrise. The architecture features clean lines, large glass facades, and warm stone textures reflecting the golden morning light. Lush green courtyards and manicured lawns are integrated into the geometric building layout. The atmosphere is peaceful, scholarly, and prestigious, utilizing a soft vanilla and charcoal color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsKw-PjcrIukNT0FqpVIr7kj7BpTBzOpKiokI55KChi-CnvwiGIJrH0WGXMpLrGZsfvJtYPo5gNJxy_C-eTaHJsXDPgQS4cMJdF8QA6ySTWYFV6ayTL9vrkvAkld62bcJqtAZsZHFUvTeThMvnphBN4tRBUox0IX1Wo8C63ThA_hSpN-cc0SORsCGusXXL4-Ii77hPCGJOzXuA2rfz1Zb_iTnVXNFljKy7mNyq2dMF4nEPeYe1K3_A8kHOODj-2OcP1FZuR8In1NZV')"></div>
+</div>
+<div class="container mx-auto px-gutter relative z-20">
+<div class="max-w-2xl">
+<span class="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full font-label-sm mb-6 uppercase tracking-widest">Architectural Excellence</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Spaces That Inspire <span class="text-primary">Brilliance.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Our 50-acre smart campus is designed to be a catalyst for innovation, blending state-of-the-art technology with serene environments for holistic growth.</p>
+<div class="flex items-center space-x-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md font-bold flex items-center space-x-2 hover:bg-primary/90 transition-all" href="#infrastructure">
+<span>Explore Facilities</span>
+<span class="material-symbols-outlined">arrow_downward</span>
+</a>
+<a class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-label-md font-bold hover:bg-primary/5 transition-all" href="#">Take a Virtual Tour</a>
+</div>
+</div>
+</div>
+</section>
+<!-- World-Class Infrastructure Grid (Bento Style) -->
+<section class="py-xl bg-surface-container-low overflow-hidden" id="infrastructure">
+<div class="container mx-auto px-gutter">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">World-Class Infrastructure</h2>
+<div class="w-24 h-1.5 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[1000px]">
+<!-- Laboratories -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic science laboratory with high-tech equipment, clean white surfaces, and warm yellow accent lighting. Glass-enclosed specialized experiment zones are visible in the background. Students in crisp lab coats are working with precision instruments. The lighting is bright and professional, emphasizing a modern, elite academic environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDexRJmovLKKmBEBHW2929-CMdaiEVlm6L_QdPAsXeh_qteCOHGoBvltKEQCfGDuRpeLU4vIkOqAe6WpLTKSKl7zphvltqVww4xkTe1PAMLuGimgI9yw0p7RzFcRUFbtbSy3EpbkmkxJ9v46t6hhBLihd4YGY0CUx5lMStw44dp2Eekigy5MiQrdHd9dP0SxZFNLaYkLfXxwxcxU1IDgiGXCCOjiX8gDkmtQD2PnpdOqjF2tLIOVEGzZ6w_PP7Deni1Xl3Y5olO5hNS')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">biotech</span>
+<h3 class="font-headline-md text-headline-md mb-2">Advanced Research Labs</h3>
+<p class="font-body-md opacity-90 max-w-md">Equipped with the latest analytical instruments for Physics, Chemistry, and Biology to foster curiosity and precision.</p>
+</div>
+</div>
+<!-- Library -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal" style="transition-delay: 100ms;">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A grand multi-story library featuring towering bookshelves of warm oak and modern glass railings. Soft, ambient golden lighting illuminates study pods and comfortable reading areas. Large windows look out onto a serene garden. The aesthetic is a blend of traditional academia and contemporary design, using a sophisticated warm palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAk20AjNc-afmH0eVFE5KwgrteseTWgx8kZBbbwX0IY34b1_Dcuv0cemfFCBUWCjo3ds55Vb58VbQhJDJzC8olU3RZJInav5rwSgUtxWYWZR16ZOCCgiGnc9yDHDSg6klB37JMnvpHJkPnciCwqEaSRSbXoiT53P-zMNNd-IUCYAqvN-_FcQPjQLKFI5rj6TlOmB1qWihkR-RmlyIiQJNM2Srv9b89XSV_6dw050tJe0V3GktrYYj2oPNEliU1CJBvPKXcwB1Mok_E')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">auto_stories</span>
+<h3 class="font-headline-md text-headline-md mb-2">The Knowledge Hub</h3>
+<p class="font-body-md opacity-90">A digital-first library housing 50,000+ titles and 24/7 access to global research journals.</p>
+</div>
+</div>
+<!-- Digital Classrooms -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal" style="transition-delay: 200ms;">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A modern digital classroom with ergonomic seating and large interactive touchscreens integrated into the walls. Each desk features integrated charging and connectivity. The space is filled with natural light from high windows. The mood is highly technological yet human-centric, featuring soft neutral tones and vibrant yellow accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLIf60vjpKgV-bc-gg0P1ET5hDsk1pfH_BHWTTZh-EqpsClqgVrNkHdgwkuUD12oqxyQfPS8Z65KEtKFmIpLte6Xp9mTJozwfU43KClplu8gFm_ztdOR1ySiSdzBHpyJOXzlZ7qhQFY32gWnUSwks2Zo_jGc16HN2VkXHbJEF6ijokCPU2IV7Uu_mBbvnJIN-5We99OYZNkZbE4u6sZ_3-7YdJDxKfeqVazQsTImGbjrF7-E0ZlKom1RnpM_8D1nOMln283WJi6aUB')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">devices</span>
+<h3 class="font-headline-md text-headline-md mb-2">Smart Classrooms</h3>
+<p class="font-body-md opacity-90">Interactive learning spaces integrated with AR/VR tools for an immersive educational experience.</p>
+</div>
+</div>
+<!-- Sports Complex -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-surface-container-highest luxury-shadow hover-lift reveal" style="transition-delay: 300ms;">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="An expansive indoor sports arena featuring a high-quality hardwood basketball court and an Olympic-sized swimming pool visible through glass dividers. High-energy lighting and vibrant athletic markings create a dynamic atmosphere. The design is sleek and professional, using cool grays and energetic yellow highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXYmn3m-U6CnKC_khpgIGWg5I-kqdAg9AVwP9TX3Bc0HR2rykaMq4A4JZm82M9WdlCsubQwQHfBI2YsGEZrG3uWJ7sglZoatv1Sy1GhvrDIFinykL2f5ANJcLSYCutTDr_jarrMQHG3jBOFsEO1pV0jVbmL203CyQBmPJM_KvrbuM8rxbo5dqRWI4VosUTYOILXVTNrLk-_FEjW01saEjQVQcsjpnDdG9g2X_YmYQ0_8bY9KQK9eGHm_O8QULoUlzpttuerJ67CZHq')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">fitness_center</span>
+<h3 class="font-headline-md text-headline-md mb-2">Olympic-Grade Arena</h3>
+<p class="font-body-md opacity-90">A multi-disciplinary sports complex including an aquatic center, turf fields, and high-performance gyms.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Transportation & Safety -->
+<section class="py-xl bg-surface">
+<div class="container mx-auto px-gutter">
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="w-full md:w-1/2 reveal">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Uncompromising Safety &amp; Mobility</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">We prioritize the well-being and security of our students through advanced surveillance systems and a dedicated eco-friendly transport fleet.</p>
+<ul class="space-y-6">
+<li class="flex items-start space-x-4">
+<div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">shield</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-lg">AI-Powered Security</h4>
+<p class="font-body-md text-on-surface-variant">24/7 smart monitoring with facial recognition at all entry points.</p>
+</div>
+</li>
+<li class="flex items-start space-x-4">
+<div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">directions_bus</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-lg">GPS-Tracked Transport</h4>
+<p class="font-body-md text-on-surface-variant">Air-conditioned, GPS-enabled buses with real-time app tracking for parents.</p>
+</div>
+</li>
+<li class="flex items-start space-x-4">
+<div class="bg-primary-container p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">medical_services</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-lg">On-Campus Medical Center</h4>
+<p class="font-body-md text-on-surface-variant">Fully-equipped 10-bed infirmary with resident paramedics and ambulance.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-1/2 relative reveal" style="transition-delay: 200ms;">
+<div class="relative z-10 rounded-2xl overflow-hidden aspect-video luxury-shadow">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, professional-looking fleet of modern yellow and charcoal school buses parked neatly in front of a contemporary campus gate. Security personnel in tidy uniforms are visible near a high-tech guard booth. The scene is bright and organized, conveying a sense of safety and premium logistical planning." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBscyQRYpT04UhGqmhpNA-Bpm0MwOAql3wmWG6XeeCgjO7K-HG2-Z33gzX5r9KHSkMMAiUMqBSTaa63t9zQJevR-l43UKHTEa8-RIL0IstUS2rJEwc7BH8xxrfBfr61gb9feJTcBflUw3z3IeXyy9cJOp2WX747RJjZunSTFRcsBn2UxjZOptNObE7Oh7uyECBdsfo5DMepCmHWiR7wuWeU0dMpvr_B0V3SYed7Bk-Tyc-tAodlHWs3RhmZWRoin0TttwPmCQp6IhZp')"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-6 -left-6 w-48 h-48 bg-tertiary-container/20 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure Gallery -->
+<section class="py-xl bg-surface-container">
+<div class="container mx-auto px-gutter">
+<div class="flex justify-between items-end mb-12 reveal">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Campus Vignettes</h2>
+<p class="font-body-md text-on-surface-variant">A visual journey through the corners of Onest Gurukul.</p>
+</div>
+<div class="flex space-x-2">
+<button class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md reveal" style="transition-delay: 100ms;">
+<div class="rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A serene, sun-drenched central courtyard with geometric pathways, stone benches, and vibrant flower beds. An abstract bronze sculpture stands as a centerpiece. Students are seen sitting in small study groups on the grass. The lighting is warm and inviting, emphasizing high-end landscape design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8U9dCmGSLlN1-6ce5-Y2RAEraNI51-66LqoFQF67Z-CKhFks9yZDUOGqS1JNyxUNqbHNecZnU_9xv7XAPfGrxuuQqVtMhw6MyKi5yrN88EMQiu_TJlhzDUYbEZoLG5Gr3nWb_cmCnIdE6kV2piPRDBQCkWdzJIqSsLUeuY0LS_0wjjYZBsycDKS1Y6DaY663XCknbLgyS1XOKQf6FK5VFIJa1ZfdIcjpwgKnzsflp8J32CTCuWVivqfRp1jp6ZgyjhFaPrG187F_h')"></div>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="An expansive, modern auditorium with plush charcoal seating and sophisticated acoustic paneling on the walls. A large stage is illuminated by professional theater lighting. The space feels grand yet intimate, designed for elite performances and guest lectures. The color palette is professional and calm." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABwLL1N0xupc0IDDwTbCeSZRXmAGFmIX01cZT1791-pdg6dIB-37ipTCkeRNttFsP30AzV3IW51977-UNxZLx7rKGsTIP8lshfwTdv9QqX4GujNQytcUA9439PI_qIt55WrdN8ruXNh1VfH4REFziLsKawKx2FIB-Inzlycrhqd8iFAZdCz6fUXK45SIFplpMhooKc0IPjzPuV5bpCiGezSrfyp4kQKTnfnQV6YPdO4wVLSgEWswFSYuhccl4RAbuotM8EzhDqmvEg')"></div>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A brightly lit, airy campus cafeteria with contemporary furniture, large floor-to-ceiling windows, and live plant walls. The food service counters are minimalist and clean. Students are enjoying healthy, vibrant meals. The atmosphere is social and refreshing, using light wood and vanilla tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZtOSqCg8gMhOYhEkJ_mYElgUUHs1hjWaeApIiucc-TDTtOwdmPZQqzyHPUKmV-ZzEsaKL_B8noygCWLxUCis0j80FL0xRF8IIyGIf6gPGdxqVofEbBLGpQvPiZKVzjE24YOu8lovjOl388oN0dh3eCJeHJZM_Qe358t4UqGlvU30aspkDeMGVPL8rfwRTtCDhruyvG1k63jbe_T4Kmrw-C5I37ZCI7iZ8eIgqOMAD1S3giWDuIXOi0fVVxU3Jrxt586ZY_cBWJ-N_')"></div>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square luxury-shadow group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A high-tech digital media studio with green screens, professional cameras on dollies, and editing bays featuring large dual monitors. The room has sound-dampening foam and soft studio lighting. It represents the creative and technological side of the campus facilities." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAe5D0oNzv_2MXtDhfkyETdGg5LJgcgA08lu2ea5SlkR15sTDQjpdzaCSnzG-zBCSuhN8IKM2sSGH5K6I7e89fCqis7dLHlvRhD-fLr9mUwVAvOo3dGR-9pDUsJJZ6KUzh4vgoHiOnXk1gprMl159XTq_ePPmauKagAccy1j8liJVjauhTXKUqeRCrBOhezu1iHiRk8zJO4F7cUqoTP2AXUROoa61xJyDDU2SFM0NN8k0f6G4ApZO9TITaDA4CErGENHQJUCOLB_KnU')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl px-gutter">
+<div class="max-w-container-max mx-auto bg-primary text-on-primary rounded-2xl p-12 md:p-24 relative overflow-hidden text-center reveal">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg mb-8">Ready to see it in person?</h2>
+<p class="font-body-lg text-body-lg opacity-80 mb-12 max-w-xl mx-auto">Book a personalized campus tour today and witness the pinnacle of educational infrastructure.</p>
+<div class="flex flex-col md:flex-row justify-center items-center gap-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:scale-105 transition-transform">Schedule Visit</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-lg font-label-md font-bold text-lg hover:bg-white/20 transition-all">Download Brochure</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest border-t border-on-background/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-lg max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-6">ONEST GURUKUL</div>
+<p class="font-body-md text-on-secondary-fixed-variant mb-6">Empowering minds through innovation and excellence. Join our global community of learners.</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">campaign</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6 uppercase tracking-widest">Resources</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Campus Map</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Alumni Network</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Faculty Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6 uppercase tracking-widest">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Accessibility</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6 uppercase tracking-widest">Newsletter</h4>
+<p class="font-body-md text-on-secondary-fixed-variant mb-4">Stay updated with campus news.</p>
+<form class="flex flex-col space-y-3">
+<input class="bg-surface p-3 rounded-lg border-0 ring-1 ring-on-background/10 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary py-3 rounded-lg font-label-md font-bold hover:opacity-90 transition-all">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-on-background/10 py-6 text-center">
+<p class="font-label-sm text-on-secondary-fixed-variant">© 2024 Onest Gurukul. Excellence in Education.</p>
+</div>
+</footer>
+<script>
+        // Reveal Animations on Scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const parallax = document.querySelector('.parallax-bg');
+            let scrollPosition = window.pageYOffset;
+            if (parallax) {
+                parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            }
+        });
+
+        // Smooth header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('border-b-transparent');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

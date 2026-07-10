@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Life | ONEST GURUKUL</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb1c5",
+                      "primary": "#735c00",
+                      "on-surface": "#1a1b22",
+                      "background": "#fbf8ff",
+                      "outline": "#7f7660",
+                      "on-tertiary-container": "#a52458",
+                      "surface-container-low": "#f4f2fd",
+                      "on-tertiary-fixed-variant": "#8c0a46",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#eeedf7",
+                      "primary-container": "#facc15",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1a1b22",
+                      "surface-bright": "#fbf8ff",
+                      "primary-fixed": "#ffe083",
+                      "on-surface-variant": "#4d4632",
+                      "on-secondary-container": "#656464",
+                      "inverse-surface": "#2f3038",
+                      "surface-tint": "#735c00",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffd9e1",
+                      "tertiary-container": "#ffc0cf",
+                      "on-primary-fixed-variant": "#574500",
+                      "secondary-container": "#e5e2e1",
+                      "surface-container-high": "#e8e7f1",
+                      "inverse-primary": "#eec200",
+                      "primary-fixed-dim": "#eec200",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-variant": "#e3e1ec",
+                      "on-secondary-fixed-variant": "#474646",
+                      "on-primary-container": "#6c5700",
+                      "outline-variant": "#d1c6ab",
+                      "on-tertiary-fixed": "#3f001b",
+                      "on-primary-fixed": "#231b00",
+                      "secondary-fixed": "#e5e2e1",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e3e1ec",
+                      "secondary": "#5f5e5e",
+                      "tertiary": "#ac2a5d",
+                      "surface": "#fbf8ff",
+                      "inverse-on-surface": "#f1effa",
+                      "surface-dim": "#dad9e3",
+                      "warm-vanilla": "#FFF9D9",
+                      "premium-card": "#FFF3B0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "xl": "80px",
+                      "md": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-md": ["Hanken Grotesk"],
+                      "display-lg-mobile": ["Libre Caslon Text"],
+                      "display-lg": ["Libre Caslon Text"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "headline-md": ["Libre Caslon Text"],
+                      "headline-lg": ["Libre Caslon Text"],
+                      "body-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 249, 217, 0.7);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+        }
+        .lift-glow:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(250, 204, 21, 0.2);
+            transition: all 0.3s ease-out;
+        }
+        .masonry-item:nth-child(even) { margin-top: 40px; }
+        .stat-reveal { opacity: 0; transform: translateY(20px); }
+        .reveal-active { opacity: 1; transform: translateY(0); transition: all 0.6s ease-out; }
+    </style>
+</head>
+<body class="bg-warm-vanilla text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 glass-effect h-[72px] flex items-center">
+<div class="max-w-container-max mx-auto w-full px-gutter flex justify-between items-center">
+<span class="text-headline-md font-headline-md font-bold text-primary">ONEST GURUKUL</span>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Curriculum</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="#">Campus</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-all duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-md py-sm rounded-lg font-bold lift-glow shadow-sm">
+                Apply Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[819px] flex items-center justify-center py-xl overflow-hidden">
+
+<div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
+<span class="font-label-sm text-primary uppercase tracking-widest mb-md block">Student Life Experience</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-lg max-w-4xl mx-auto leading-tight">
+                Where Every Talent <br/><span class="text-primary italic">Finds a Home</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl">
+                Beyond the classroom, our campus is a vibrant tapestry of culture, athletics, and community, designed to nurture the holistic excellence of every modern scholar.
+            </p>
+<div class="flex flex-col md:flex-row gap-md justify-center">
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-xl py-md rounded-lg font-bold lift-glow">
+                    Explore Campus
+                </button>
+<button class="border-2 border-on-background text-on-background font-label-md px-xl py-md rounded-lg font-bold hover:bg-premium-card transition-colors">
+                    View Gallery
+                </button>
+</div>
+</div>
+</header>
+<!-- Interactive Statistics -->
+<section class="py-xl bg-premium-card border-y border-outline/10">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-xl">
+<div class="text-center stat-reveal">
+<div class="font-display-lg text-headline-lg text-primary mb-xs">50+</div>
+<div class="font-label-md text-on-surface-variant">Active Clubs</div>
+</div>
+<div class="text-center stat-reveal">
+<div class="font-display-lg text-headline-lg text-primary mb-xs">100%</div>
+<div class="font-label-md text-on-surface-variant">Participation</div>
+</div>
+<div class="text-center stat-reveal">
+<div class="font-display-lg text-headline-lg text-primary mb-xs">25+</div>
+<div class="font-label-md text-on-surface-variant">Sports Disciplines</div>
+</div>
+<div class="text-center stat-reveal">
+<div class="font-display-lg text-headline-lg text-primary mb-xs">12k+</div>
+<div class="font-label-md text-on-surface-variant">Alumni Network</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Activities & Clubs Bento -->
+<section class="py-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Engaging Beyond Limits</h2>
+<p class="font-body-md text-on-surface-variant">From robotics to fine arts, discover a space where your passions are transformed into leadership and purpose.</p>
+</div>
+<button class="flex items-center gap-base text-primary font-bold hover:translate-x-2 transition-transform">
+                    View All Activities <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Large Featured Card -->
+<div class="md:col-span-2 relative h-[450px] rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-quality photograph of diverse students engaged in a high-tech robotics workshop. The scene is brightly lit with warm, golden accent lighting, reflecting off metallic parts and glass surfaces. Students are smiling and collaborating in a modern laboratory setting with 'ONEST GURUKUL' branding subtly visible on their lab coats. The aesthetic is clean, academic, and technologically advanced." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmIHOkoukl-6ziBdjT4uMBbMo9doZGP7g6GCluiBIC5mDtFCsTYwFNvrMxzD6GtzRskfAHDSOHv3xeAbYfYE-rQd0-8i0B_4zWSXQvk5qbNFZD4fFl5jRp1sGjKRqR49bL4QiI0PQEDUZJjWlCfyNO1XH-X2xFXire7RY5Ru2mnIJhCAwIuDhiWe2PQYcYx1TWOs7-aFW3NkiZ_cdcRsZGEUzCJUPNqWeto77UF9Z0xBEijVc5cHbbih3-6mSw50FRzq4Wm5F3AUAC')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<span class="bg-primary-container text-on-secondary-fixed text-label-sm px-sm py-xs rounded-full mb-md inline-block uppercase">Innovation Club</span>
+<h3 class="font-headline-md text-white mb-md">Future Technologists League</h3>
+<p class="text-white/80 font-body-md mb-md max-w-lg">Pioneering tomorrow through competitive robotics, AI research, and collaborative hardware engineering.</p>
+</div>
+</div>
+<!-- Vertical Cards -->
+<div class="bg-premium-card p-lg rounded-xl flex flex-col justify-between border border-primary/5 lift-glow">
+<div>
+<span class="material-symbols-outlined text-primary text-[40px] mb-md" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h3 class="font-headline-md text-on-surface mb-sm">Creative Arts</h3>
+<p class="font-body-md text-on-surface-variant">A sanctuary for visual expression, from traditional oil painting to digital sculpting and VR artistry.</p>
+</div>
+<ul class="mt-md space-y-sm">
+<li class="flex items-center gap-sm text-label-md"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Studio Workshops</li>
+<li class="flex items-center gap-sm text-label-md"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Annual Exhibition</li>
+</ul>
+</div>
+<div class="bg-surface-container p-lg rounded-xl flex flex-col justify-between border border-on-background/5 lift-glow">
+<div>
+<span class="material-symbols-outlined text-primary text-[40px] mb-md" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+<h3 class="font-headline-md text-on-surface mb-sm">Athletics Elite</h3>
+<p class="font-body-md text-on-surface-variant">Fostering resilience and teamwork through state-of-the-art facilities and professional coaching.</p>
+</div>
+<ul class="mt-md space-y-sm">
+<li class="flex items-center gap-sm text-label-md"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 15 Varsity Teams</li>
+<li class="flex items-center gap-sm text-label-md"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Olympic-size Arena</li>
+</ul>
+</div>
+<div class="md:col-span-2 bg-primary text-white p-lg rounded-xl flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1">
+<h3 class="font-headline-md mb-sm">Global Leadership Forum</h3>
+<p class="font-body-md opacity-80 mb-md">Participate in Model UN, debate societies, and community impact projects that build world-ready citizens.</p>
+<button class="bg-white text-primary font-bold px-md py-sm rounded-lg text-label-md hover:bg-warm-vanilla transition-colors">Join the Initiative</button>
+</div>
+<div class="w-full md:w-64 h-48 rounded-lg overflow-hidden shrink-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A focused group of diverse students in professional business casual attire participating in a formal debate or leadership seminar. The room is a high-end lecture hall with mahogany wood paneling and warm, ambient lighting. The atmosphere is serious yet energetic, capturing the essence of global citizenship and academic rigor in a modern light-mode setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARl7ZIzXPm_trO1DUS1Xrn07oZy4vt5P4WT9sG5Z_Qriyh4jRDCPwQdEMX6xmC5dJH1YuL6NpQbBPYyO3xiiuHe9cfF2r_DPjvohg-GnJ28nxJFjA_4KRCnYth47p-YAxUz4z5YF2_12n55L42I51NCYmWzTweSGCZ71YGNb2bcDvePyEbGzz96gOe9J7mVZPD2-QX1WuzMUEoCeP7PIqal1kTC_H4j4cWyOFYMrHuiwyWdU6L9L30WHdUgfsr5tArb1f4edCS8p4w')">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Programs Overview -->
+<section class="py-xl bg-warm-vanilla relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-xl border-4 border-premium-card">
+<img class="w-full h-full object-cover" data-alt="A high-angle shot of a serene, ultra-modern campus library featuring floor-to-ceiling glass windows and light wood bookshelves. Students are seen quietly studying at minimalist white tables, illuminated by soft morning sunlight that creates a peaceful, warm vanilla glow throughout the space. The environment feels luxurious, academic, and tranquil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtyGz0bJ1nzWMzsrk9RKDfpupKRD1TfK3L6rvCdPMIa744zc-JWDLbdsnqTo0CB86e6hglWlAbmLxgp81kiKiiL_sM_SLgpgI01rxiRjkaLUHYXlapJwf1R-FIU2yXT9KWLwEJd9rYTtO71MVYk8Add5NYhJkbbnUqb1kd9rWxPZzjUMe1bt6jtUAr2lYp4xlO_PETheK4ADHO1zfUNOWI4o4acfNPsgQnoDF39BEeEjTbMBQxfObqp8EHWTbGejg0uWCD3i-rJb-k"/>
+</div>
+<div class="absolute -bottom-base -right-base bg-white p-lg rounded-xl shadow-lg border border-outline/10 hidden md:block max-w-[280px]">
+<p class="font-headline-md text-primary mb-xs">Accredited Excellence</p>
+<p class="font-body-md text-on-surface-variant">Global curriculum recognized by top ivy-league universities.</p>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-display-lg-mobile text-on-surface mb-lg">Academic Rigor with <br/><span class="italic text-primary">Creative Freedom</span></h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<span class="w-12 h-12 bg-premium-card rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+</span>
+<div>
+<h4 class="font-headline-md text-on-surface mb-xs">IB Diploma Programme</h4>
+<p class="font-body-md text-on-surface-variant">A holistic educational approach that encourages students to think critically and challenge assumptions.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="w-12 h-12 bg-premium-card rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">science</span>
+</span>
+<div>
+<h4 class="font-headline-md text-on-surface mb-xs">STEM &amp; Research</h4>
+<p class="font-body-md text-on-surface-variant">State-of-the-art laboratories and dedicated research mentors for aspiring scientists and engineers.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="w-12 h-12 bg-premium-card rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</span>
+<div>
+<h4 class="font-headline-md text-on-surface mb-xs">Liberal Arts Focus</h4>
+<p class="font-body-md text-on-surface-variant">Deep dives into literature, philosophy, and history to build well-rounded cultural awareness.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="py-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">The Life We Lead</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Moments captured across our campus, from the theater stage to the tournament fields.</p>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-md space-y-md">
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="A candid, vibrant shot of students laughing and sharing a meal in a sun-drenched, high-end campus cafeteria. The decor is modern and minimalist with light wood and golden accents. The image captures the joy and community spirit of ONEST GURUKUL, with soft focus on a lush green campus seen through large windows in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwbrQtQEnjQibtDR04tbozm55qvfao0wKIMAMYu7sR4-BYM5SPwucYqEBUg5e-t1jHnqKZ87XNsFhyh-5WGWRs6b-SjxxUhaBGQFQB3uG-97hvqibaaLdXgW7hjgT2koi0knWvzw2wlgpM2NYySDh6Ds9MAQx0tg-sfZgrZB0sInPdMaygBSlu2BCcv5ODN8FbnAhtYX1tjjG8eAYSgQFD5VF9hOf_BbvzcIWBPMy03IdJz_gklr_wQRNgR11zOwnNYu_a5BwNeQLH"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="A dramatic stage performance by students in a sophisticated theater. The lighting is theatrical with deep blue and warm gold spotlights illuminating the actors. The scene conveys a high-end production value, capturing the artistic passion and talent fostered at the school. Cinematic and elegant style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERi7Wfwfe-h4mKoYqWh_DVnytmSGn3dqJg8i7S1FZyqZ9AXoXex0fBW5i2Pc5KzFDXubxv2PfiWsHDZRuDQvkpSqoE8NIXZf32OgEPb6IfiSQL7u2IRuwRC2MCptPdTImLfHedvo9v9Ni44wh7tuBSZECgmveVBSut3AvnhVqrcvqsge88lVXGrywld9orCvyWhwGWEjl2prgi0bVIdBKBIAVIPo0A6OOI-SqYHeNJ71tuyzLlD1riyaBpo86tbB9khtEI3uWhq4H"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="Action shot of a student crossing the finish line in a track event on a professional-grade athletic field. The sun is setting, casting a warm golden glow over the scene. The energy is high, capturing achievement and physical excellence. The aesthetic is crisp, sporty, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALmFmzNUyamxhPRfwiHOCJvW8FEdBbihQ2FlFS4P9_4Ufz0eKHkOOwsejWZR9x9MyMqa1JRZ-IJPeBxAq2oQJoITxDgj2Y45whL1hM5rm5tI0fcfYzkCemF75IzAQo8njZ7BdcpwCIiQ_yz4f0nj7sJez95klpWUXfo_eZb22Fnhy2nODLJzrREJVXQucGT9sxd4fzKB2L9VutBCK9oG0e67v7h7lhgymLh34OqA6AjU_XEWthRqOkhw2MjgARCfxPP8R33Rp3F0vt"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="Close-up of a student’s hands playing a grand piano in a sun-lit music conservatory. The setting is refined and elegant, with architectural details that reflect the 'ONEST GURUKUL' luxury aesthetic. The lighting is soft and natural, emphasizing a focus on classical arts and discipline." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBKd6NU9n_iDUyZMB0xWYuT9b_ppIx4o-on7fb6H_Uw4BtaPaI7xkB5h_58Ihpy45ZmUACE5h1tOXlxQuosOEG69lK0-Lnxq5rIzhE2AsxSUi8Cy9upD8X7t8J5qnSuORFmOqC9ceMUqUl7JRrz_TZhyEPJ7OZBIkjVM-vs3hx0Ls6U4pWcR20q3YEX8Oa9o6ZzhDhM72q0Oq_g2cFKafQ6tU3OWpjITDITSlveTfk4joDOWHLyZFxtwd8vECdXeUR2UZ3dtZ1JofH"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="Students collaborating on a community service project in a local green space. They are planting saplings and smiling, dressed in school-branded gear. The mood is heartwarming and purposeful, reflecting the institution's commitment to social responsibility. Soft, natural outdoor lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUALOXWujyFC3ouzFqs6vJI27V4navNKUafIizXl0-sdWtoDmYR4BJnZnmeZJvgE9cnRmk2WRx1YIVJkNwE5ntJ4f09e7sO14Rf2pU9Oi2wGDz5A5Y-pgakXmjpby4cDfQ_o3DMnw04pU9WqARFw8d682qI3ZVm84R4lD3UguVzfQOcBZttDJL3igsuJJ81dPuzyrWI2BdD4wI0QMbO_nSsMSrgeuKHiFU2NCasGa1ULUZaZ6fZzLFTY8ukPusQREmP3C3CBD28s28"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full object-cover" data-alt="A group of students observing a starry night sky through a high-powered telescope on a campus rooftop observatory. The scene is illuminated by dim, warm localized lights and the glow of the galaxy above. It captures the curiosity and academic wonder central to the school's mission. Moody and inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TmpvEZEZUtyz40ony1uMLoQkw6YN2Kx-Cr0OdUMNYNLJJfQAXkS726ftErqG956XLQFRLh0CPK3tqLYLzkp4onZjhCurchmrnp6GohIiKesabGJldtPIQXDb_RV6dmUsPYeBoWodud3iFK9VhpD8xaekHh2tRzrUtPI0nRgmUvR-tQWypW0dVmzZd9G6u3TzmsOjfqYodn2nkgvKOdt1YddKT5nzM2in0QGsLaXa08nCoivBYOKIcQDhlJoTsMHuXgIcGgZo5y6x"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-headline-lg">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements & Call to Action -->
+<section class="py-xl relative">
+
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="bg-on-surface p-xl rounded-3xl text-center text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl -mr-32 -mt-32"></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-md">Ready to write your chapter?</h2>
+<p class="font-body-lg opacity-80 max-w-2xl mx-auto mb-xl">Join a legacy of excellence and a community that celebrates your unique journey. Admissions for the 2024 academic year are now open.</p>
+<div class="flex flex-col md:flex-row gap-md justify-center">
+<button class="bg-primary-container text-on-secondary-fixed font-label-md px-xl py-md rounded-lg font-bold lift-glow">Apply for Admission</button>
+<button class="border border-white/30 text-white font-label-md px-xl py-md rounded-lg font-bold hover:bg-white/10 transition-colors">Contact Registrar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest">
+<div class="max-w-container-max mx-auto px-gutter py-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="md:col-span-1">
+<span class="font-headline-md text-headline-md text-primary block mb-md">ONEST GURUKUL</span>
+<p class="text-on-secondary-fixed-variant font-body-md mb-md">Empowering the next generation of global leaders through excellence in education and character.</p>
+</div>
+<div>
+<h5 class="font-label-md text-primary uppercase mb-md">Quick Links</h5>
+<ul class="space-y-sm">
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Campus Map</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Alumni</a></li>
+<li><a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary uppercase mb-md">Contact Us</h5>
+<p class="text-on-secondary-fixed-variant font-label-sm mb-xs">Academic Lane, Knowledge Park</p>
+<p class="text-on-secondary-fixed-variant font-label-sm mb-xs">info@onestgurukul.edu</p>
+<p class="text-on-secondary-fixed-variant font-label-sm">+1 (555) 012-3456</p>
+</div>
+<div>
+<h5 class="font-label-md text-primary uppercase mb-md">Social</h5>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-primary text-sm group-hover:text-white">public</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-primary text-sm group-hover:text-white">school</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-primary text-sm group-hover:text-white">person_add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-xl pt-md border-t border-on-background/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="text-on-secondary-fixed-variant font-label-sm">© 2024 Onest Gurukul. Excellence in Education.</span>
+<div class="flex gap-md">
+<a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-secondary-fixed-variant font-label-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and reveal logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.stat-reveal').forEach(el => observer.observe(el));
+
+            // Smooth parallax effect for hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroText = document.querySelector('header h1');
+                if (heroText) {
+                    heroText.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

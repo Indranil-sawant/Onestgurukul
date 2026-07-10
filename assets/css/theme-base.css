@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* --- Theme Variables --- */
+:root {
+    /* --- Brand Design Tokens --- */
+    --onest-primary: #735c00;          /* Unified Deep Gold */
+    --onest-primary-light: #facc15;    /* Vibrant Accent Yellow */
+    --onest-primary-dark: #574500;     /* Darker Gold for Hover */
+    --onest-secondary: #111111;        /* Charcoal Black */
+    --onest-accent: #FF6B9D;           /* Pre-primary Pink Accent */
+
+    /* --- Backgrounds --- */
+    --onest-bg: #fbf8ff;               /* Cool White/Cream */
+    --onest-bg-alt: #f4f2fd;           /* Soft tint background */
+    --onest-bg-card: #ffffff;
+
+    /* --- Text Colors --- */
+    --onest-text: #1a1b22;             /* Off-black for premium contrast */
+    --onest-text-muted: #4d4632;       /* Slate/Golden muted text */
+    --onest-text-light: #ffffff;       /* Light text overlay */
+
+    /* --- Borders & Shadows --- */
+    --onest-border: #e5e7eb;
+    --onest-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --onest-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --onest-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --onest-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* --- Typography --- */
+    --onest-font-heading: 'Libre Caslon Text', serif;
+    --onest-font: 'Hanken Grotesk', sans-serif;
+    
+    /* --- Layout & Utilities --- */
+    --onest-radius: 16px;
+    --onest-radius-sm: 8px;
+    --onest-radius-lg: 24px;
+    --onest-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   UNIFIED DARK MODE VARIABLES (Golden Theme Mode)
+   ========================================================================== */
+.onest-dark-mode {
+    --onest-bg: #FFF9D9;               /* Golden Vanilla Background */
+    --onest-bg-alt: #FFF3B0;           /* Section BG */
+    --onest-bg-card: #FFF3B0;          /* Card BG */
+
+    --onest-text: #000000;             /* Pure black text for contrast */
+    --onest-text-muted: #333333;       /* Dark Gray */
+    --onest-text-light: #000000;       /* Black text on light backgrounds */
+
+    --onest-border: rgba(232, 185, 35, 0.2);
+    --onest-shadow: 0 4px 12px rgba(232, 185, 35, 0.25);
+    --onest-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
+
+    /* Brand adaptation in dark mode */
+    --onest-primary-dark: #E8B923;
+    --onest-secondary: #FFEBA1;
+}
+
+/* ==========================================================================
+   GLOBAL UTILITIES / PERFORMANCE ENHANCEMENT
+   ========================================================================== */
+.backdrop-blur-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Global headings font override */
+h1, h2, h3, h4, h5, h6, [class*="-title"], [class*="-heading"] {
+    font-family: var(--onest-font-heading) !important;
+}
+
+/* Global Ambient Background Gradients */
+body, 
+.onest-home-wrapper, 
+.onest-student-life-wrapper, 
+.onest-about-wrapper, 
+.onest-admissions-wrapper, 
+.onest-campus-wrapper, 
+.onest-contact-wrapper, 
+.onest-preprimary-wrapper {
+    background: radial-gradient(circle at 10% 15%, rgba(250, 204, 21, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 33, 71, 0.04) 0%, transparent 50%),
+                linear-gradient(135deg, #fdfbf7 0%, #f6f8fc 100%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
+
+/* Dark Mode Gradient Override */
+.onest-dark-mode, 
+.onest-home-dark-mode, 
+.onest-student-life-dark-mode, 
+.onest-about-dark-mode, 
+.onest-admissions-dark-mode, 
+.onest-campus-dark-mode, 
+.onest-contact-dark-mode, 
+.onest-preprimary-dark-mode {
+    background: radial-gradient(circle at 15% 15%, rgba(115, 92, 0, 0.08) 0%, transparent 45%),
+                linear-gradient(135deg, #FFF9D9 0%, #FFF3B0 100%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
