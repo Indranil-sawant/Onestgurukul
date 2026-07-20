@@ -485,6 +485,51 @@
     });
   </script>
 
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DB = window.OnestDB;
+
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const parentName = form.querySelector('[name="Name"]').value;
+          const studentName = form.querySelector('[name="StudentName"]').value;
+          const grade = form.querySelector('[name="Grade"]').value;
+          const phone = form.querySelector('[name="Phone"]').value;
+          const email = form.querySelector('[name="Email"]').value;
+          const purpose = form.querySelector('[name="Purpose"]').value;
+          const contactMode = form.querySelector('[name="ContactMode"]').value;
+          const message = form.querySelector('[name="Message"]').value;
+
+          // Save enquiry into OnestDB
+          DB.addAdmission({
+            studentName: studentName + " (Enquiry: " + purpose + ")",
+            parentName: parentName,
+            grade: grade,
+            gender: "Not specified",
+            dob: new Date().toISOString().split('T')[0],
+            email: email,
+            phone: phone,
+            address: `Contact mode: ${contactMode}. Message: ${message}`,
+            scholarshipApplied: false
+          });
+
+          if (window.trackOnestAnalytics) {
+            window.trackOnestAnalytics('submit_contact_enquiry', { parentName, purpose });
+          }
+
+          alert("✓ Your inquiry has been sent successfully! Our administrative office will contact you via your preferred mode: " + contactMode);
+          form.reset();
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>

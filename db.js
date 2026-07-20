@@ -106,12 +106,12 @@
             { id: "f-7", question: "What is the policy regarding school uniforms?", answer: "Students are required to wear the standard school uniform on Mondays, Tuesdays, Thursdays, and Fridays. The special white house uniform is worn on Wednesdays and Saturdays for assembly and sports.", category: "Uniform" }
         ],
         faculty: [
-            { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "../assets/img/education/parent (1).jpg", department: "Administration" },
-            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "../assets/img/education/open (1).jpg", department: "Secondary" },
-            { id: "fac-3", name: "Mrs. Anjali Sawant", role: "Primary English Coordinator", qualification: "M.A. (English Literature), B.Ed.", experience: "10 Years", photo: "../assets/img/education/open (2).jpg", department: "Primary" },
-            { id: "fac-4", name: "Mr. Sandeep Patil", role: "Physical Education HOD", qualification: "B.P.Ed., M.P.Ed.", experience: "15 Years", photo: "../assets/img/education/open (3).jpg", department: "Sports" },
-            { id: "fac-5", name: "Ms. Neha Ranade", role: "Fine Arts & Clay Work Specialist", qualification: "B.F.A. (Bachelor of Fine Arts)", experience: "8 Years", photo: "../assets/img/education/open (4).jpg", department: "Arts" },
-            { id: "fac-6", name: "Mrs. Pallavi Rane", role: "Primary Mathematics Teacher", qualification: "B.Sc. (Maths), D.Ed.", experience: "7 Years", photo: "../assets/img/education/open (5).jpg", department: "Primary" }
+            { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "assets/img/education/parent (1).jpg", department: "Administration" },
+            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "assets/img/education/open (1).jpg", department: "Secondary" },
+            { id: "fac-3", name: "Mrs. Anjali Sawant", role: "Primary English Coordinator", qualification: "M.A. (English Literature), B.Ed.", experience: "10 Years", photo: "assets/img/education/open (2).jpg", department: "Primary" },
+            { id: "fac-4", name: "Mr. Sandeep Patil", role: "Physical Education HOD", qualification: "B.P.Ed., M.P.Ed.", experience: "15 Years", photo: "assets/img/education/open (3).jpg", department: "Sports" },
+            { id: "fac-5", name: "Ms. Neha Ranade", role: "Fine Arts & Clay Work Specialist", qualification: "B.F.A. (Bachelor of Fine Arts)", experience: "8 Years", photo: "assets/img/education/open (4).jpg", department: "Arts" },
+            { id: "fac-6", name: "Mrs. Pallavi Rane", role: "Primary Mathematics Teacher", qualification: "B.Sc. (Maths), D.Ed.", experience: "7 Years", photo: "assets/img/education/open (5).jpg", department: "Primary" }
         ],
         achievements: [
             { id: "a-1", title: "1st Rank in District Science Exhibition", awardee: "Mast. Aditya Rane & Team", category: "Olympiads", year: "2026", description: "Won the top accolade for their innovative smart irrigation system prototype using soil moisture sensors." },
@@ -120,9 +120,9 @@
             { id: "a-4", title: "Outstanding Educator Award", awardee: "Mr. Prasad Joshi (Senior STEM)", category: "Academics", year: "2025", description: "Honored with the Ratnagiri Rotary Club Award for implementing creative hands-on teaching models." }
         ],
         testimonials: [
-            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "../assets/img/education/parent (2).jpg" },
-            { id: "t-2", name: "Mrs. Meera Gokhale", role: "Parent", text: "We shifted from Pune to Ratnagiri, and O'Nest Gurukul made the transition seamless for our son. The STEM focus and individual attention are highly impressive.", photo: "../assets/img/education/parent (1).jpg" },
-            { id: "t-3", name: "Mast. Rohan Joshi", role: "Alumni (Class of 2024)", text: "The foundation I got at Gurukul in computer coding and mathematics helped me clear my competitive examinations with ease. I will always cherish my time here.", photo: "../assets/img/education/open (1).jpg" }
+            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" },
+            { id: "t-2", name: "Mrs. Meera Gokhale", role: "Parent", text: "We shifted from Pune to Ratnagiri, and O'Nest Gurukul made the transition seamless for our son. The STEM focus and individual attention are highly impressive.", photo: "assets/img/education/parent (1).jpg" },
+            { id: "t-3", name: "Mast. Rohan Joshi", role: "Alumni (Class of 2024)", text: "The foundation I got at Gurukul in computer coding and mathematics helped me clear my competitive examinations with ease. I will always cherish my time here.", photo: "assets/img/education/open (1).jpg" }
         ],
         admissions: [],
         bookings: [],

@@ -455,6 +455,124 @@
       </div>
     </section>
 
+    <!-- ACHIEVEMENT SHOWCASE SECTION -->
+    <section id="achievements" class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Trophies &amp; Awards
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Achievement Showcase</h2>
+          <p class="text-on-surface/85 mt-4 leading-relaxed">Year-on-year distinction in national academic competitions, Olympiads, and athletic meets.</p>
+        </div>
+
+        <!-- Achievements timeline grid -->
+        <div id="achievements-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+          <!-- Dynamic cards injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE EVENT CALENDAR SECTION -->
+    <section id="calendar" class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+            School Schedule
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Interactive Event Calendar</h2>
+          <p class="text-on-surface/85 mt-4 leading-relaxed">Filter and browse upcoming exams, parent-teacher meetings, sports, annual events, and school holidays.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+          <!-- Calendar Filter Control & Google sync -->
+          <div class="lg:col-span-4 bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+            <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2">Filter Events</h4>
+            <div class="flex flex-col gap-2">
+              <button class="cal-filter-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white" data-cat="all">All Events</button>
+              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Exam">Examinations</button>
+              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Holiday">Holidays</button>
+              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="PTM">PTM Schedules</button>
+              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Activity">Activities & Sports</button>
+            </div>
+            
+            <div class="pt-4 border-t border-primary/10">
+              <a href="https://calendar.google.com" target="_blank" rel="noopener" class="w-full bg-[#facc15] hover:bg-secondary hover:text-white text-secondary font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-all">
+                <i class="bi bi-google"></i> Sync to Google Calendar
+              </a>
+            </div>
+          </div>
+
+          <!-- Monthly grid & Agenda list (Right) -->
+          <div class="lg:col-span-8 bg-white dark:bg-amber-50/50 p-6 md:p-8 rounded-[32px] border border-primary/10 shadow-lg space-y-6">
+            <div class="flex justify-between items-center border-b border-primary/5 pb-3">
+              <h4 id="calendar-month-year" class="font-display font-bold text-lg text-secondary">School Calendar Agenda</h4>
+              <div class="flex gap-2">
+                <button class="view-mode-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-secondary text-white" data-mode="agenda">Agenda View</button>
+                <button class="view-mode-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 text-secondary" data-mode="grid">Grid View</button>
+              </div>
+            </div>
+
+            <!-- Dynamic Views -->
+            <div id="calendar-dynamic-view" class="min-h-[300px]">
+              <!-- Loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACULTY SHOWCASE & DIRECTORY SECTION -->
+    <section id="faculty" class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Mentors &amp; Educators
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Faculty Directory</h2>
+          <p class="text-on-surface/85 mt-4 leading-relaxed">Dedicated academic leaders specializing in modern learning strategies, sciences, and child parenting.</p>
+        </div>
+
+        <div class="space-y-8 reveal">
+          <!-- Search & Dropdown Filters -->
+          <div class="bg-white dark:bg-amber-50 rounded-2xl border border-primary/10 p-4 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div class="relative w-full md:max-w-md flex items-center gap-3 bg-gray-50 border border-primary/10 rounded-xl px-4 py-2.5">
+              <i class="bi bi-search text-secondary"></i>
+              <input type="text" id="faculty-search" placeholder="Search teacher by name or role..." 
+                     class="flex-1 bg-transparent border-0 focus:ring-0 text-secondary text-xs font-semibold outline-none w-full">
+            </div>
+            
+            <div class="flex gap-2 w-full md:w-auto">
+              <label class="text-xs font-bold text-secondary uppercase tracking-wider pt-2 hidden md:inline-block">Filter Dept:</label>
+              <select id="faculty-dept-filter" class="w-full md:w-48 border border-primary/10 rounded-xl px-3 py-2 bg-gray-50 text-xs font-semibold focus:ring-1 focus:ring-primary focus:border-primary">
+                <option value="all">All Departments</option>
+                <option value="Administration">Administration</option>
+                <option value="Primary">Primary Stage</option>
+                <option value="Secondary">Secondary Stage</option>
+                <option value="Sports">Physical Education</option>
+                <option value="Arts">Fine Arts</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Faculty grid -->
+          <div id="faculty-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic faculty cards -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Detailed profile Modal -->
+    <div id="fac-profile-modal" style="position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px;">
+      <div style="background: #fff; width: 100%; max-w: 450px; padding: 32px; border-radius: 24px; border: 1px solid rgba(115,92,0,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; text-align: center;">
+        <button onclick="closeFacModal()" style="position: absolute; top: 16px; right: 16px; border: 0; background: transparent; font-size: 24px; color: #9ca3af; cursor: pointer;">&times;</button>
+        <div id="fac-modal-content">
+          <!-- Dynamic details -->
+        </div>
+      </div>
+    </div>
+
     <!-- FINAL CTA (Emotional Closing) -->
     <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
       <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('assets/img/school2.jpg');"></div>
@@ -577,6 +695,280 @@
       });
     });
   </script>
+
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DB = window.OnestDB;
+
+      // --- 1. ACHIEVEMENTS SHOWCASE LOADER ---
+      function renderAchievements() {
+        const list = DB.getAchievements();
+        const container = document.getElementById('achievements-list');
+        if (!container) return;
+
+        container.innerHTML = '';
+        list.forEach(a => {
+          const card = document.createElement('div');
+          card.className = 'bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm text-left hover-lift';
+          
+          let icon = "bi-award";
+          let color = "text-primary bg-amber-50 border-amber-100";
+          if (a.category === 'Sports') {
+            icon = "bi-trophy";
+            color = "text-accent bg-emerald-50 border-emerald-100";
+          } else if (a.category === 'Olympiads') {
+            icon = "bi-cpu";
+            color = "text-secondary bg-blue-50 border-blue-100";
+          }
+
+          card.innerHTML = `
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg mb-4 shadow-sm ${color}">
+              <i class="bi ${icon}"></i>
+            </div>
+            <span class="text-[9px] bg-secondary text-primary-light font-black px-2 py-0.5 rounded-full uppercase tracking-wider">${a.category} • ${a.year}</span>
+            <h4 class="font-bold text-secondary text-base mt-3 mb-1.5">${a.title}</h4>
+            <p class="text-[10px] text-primary font-bold mb-2">Awardee: ${a.awardee}</p>
+            <p class="text-xs text-on-surface-variant/90 leading-relaxed font-semibold">${a.description}</p>
+          `;
+          container.appendChild(card);
+        });
+      }
+      renderAchievements();
+
+
+      // --- 2. INTERACTIVE EVENT CALENDAR ---
+      let calFilter = 'all';
+      let viewMode = 'agenda'; // agenda or grid
+
+      function renderCalendar() {
+        const events = DB.getEvents();
+        const container = document.getElementById('calendar-dynamic-view');
+        if (!container) return;
+
+        // Filter
+        let filtered = events.filter(e => {
+          return calFilter === 'all' || e.category === calFilter;
+        });
+
+        if (viewMode === 'agenda') {
+          // Render Agenda list
+          if (filtered.length === 0) {
+            container.innerHTML = '<p class="text-center text-xs text-on-surface-variant/80 py-8">No scheduled events found for this filter.</p>';
+            return;
+          }
+
+          container.innerHTML = `<div class="space-y-4"></div>`;
+          const listDiv = container.querySelector('.space-y-4');
+          
+          filtered.forEach(e => {
+            const dateObj = new Date(e.date);
+            const day = dateObj.getDate();
+            const month = dateObj.toLocaleString('en-US', { month: 'short' });
+            
+            let color = 'border-l-primary';
+            if (e.category === 'Holiday') color = 'border-l-red-500';
+            if (e.category === 'Exam') color = 'border-l-accent';
+            if (e.category === 'PTM') color = 'border-l-secondary';
+
+            const card = document.createElement('div');
+            card.className = `flex gap-4 p-4 bg-gray-50 dark:bg-amber-100/30 rounded-2xl border-l-4 ${color} items-center text-left`;
+            card.innerHTML = `
+              <div class="text-center w-12 shrink-0 bg-white dark:bg-amber-50 p-2 rounded-xl border border-primary/10 shadow-sm">
+                <span class="block text-lg font-black text-secondary leading-none">${day}</span>
+                <span class="block text-[9px] uppercase tracking-wider text-primary font-black mt-0.5">${month}</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[9px] bg-secondary text-white font-black px-2 py-0.5 rounded-full uppercase tracking-wider">${e.category}</span>
+                </div>
+                <h5 class="text-sm font-bold text-secondary">${e.title}</h5>
+                <p class="text-xs text-on-surface-variant/80 leading-relaxed font-semibold mt-0.5">${e.description || '-'}</p>
+              </div>
+            `;
+            listDiv.appendChild(card);
+          });
+
+        } else {
+          // Render simulated Monthly Grid View (August 2026 as reference)
+          const year = 2026;
+          const monthIndex = 7; // August
+          const firstDay = new Date(year, monthIndex, 1).getDay();
+          const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+          let gridHTML = `
+            <div class="text-center mb-3">
+              <span class="text-xs font-bold text-primary uppercase tracking-widest">August 2026</span>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-center font-bold text-[10px] text-secondary uppercase border-b border-primary/10 pb-2">
+              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+            </div>
+            <div class="grid grid-cols-7 gap-1 mt-2 text-xs">
+          `;
+
+          // Empty spaces for padding
+          for (let i = 0; i < firstDay; i++) {
+            gridHTML += `<div class="p-3 text-transparent">0</div>`;
+          }
+
+          // Render cells
+          for (let day = 1; day <= daysInMonth; day++) {
+            const dateStr = `${year}-0${monthIndex + 1}-${day < 10 ? '0' + day : day}`;
+            
+            // check if there is an event
+            const dayEvents = events.filter(e => e.date === dateStr);
+            const hasEvent = dayEvents.length > 0;
+            
+            let cellClass = "p-3 rounded-xl border border-primary/5 bg-gray-50/50 hover:bg-primary/10 cursor-pointer relative flex items-center justify-center font-semibold text-secondary";
+            let dot = '';
+
+            if (hasEvent) {
+              cellClass += " border-primary/40 font-bold bg-[#FFF9D9]";
+              dot = `<span class="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary"></span>`;
+            }
+
+            gridHTML += `
+              <div class="${cellClass}" onclick="showDayEvents('${dateStr}')">
+                <span>${day}</span>
+                ${dot}
+              </div>
+            `;
+          }
+
+          gridHTML += `</div>`;
+          container.innerHTML = gridHTML;
+        }
+      }
+
+      window.showDayEvents = function(dateStr) {
+        const events = DB.getEvents().filter(e => e.date === dateStr);
+        if (events.length === 0) {
+          alert(`No events scheduled for ${dateStr}.`);
+          return;
+        }
+
+        let msg = `Events on ${dateStr}:\n`;
+        events.forEach(e => {
+          msg += `• [${e.category}] ${e.title}: ${e.description}\n`;
+        });
+        alert(msg);
+      };
+
+      // Calendar Filter listeners
+      document.querySelectorAll('.cal-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cal-filter-btn').forEach(b => b.className = "cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10");
+          btn.className = "cal-filter-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white";
+          calFilter = btn.getAttribute('data-cat');
+          renderCalendar();
+        });
+      });
+
+      document.querySelectorAll('.view-mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.view-mode-btn').forEach(b => b.className = "view-mode-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 text-secondary");
+          btn.className = "view-mode-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-secondary text-white";
+          viewMode = btn.getAttribute('data-mode');
+          renderCalendar();
+        });
+      });
+
+      renderCalendar();
+
+
+      // --- 3. FACULTY SHOWCASE & DIRECTORY ---
+      let facSearch = '';
+      let facDept = 'all';
+
+      window.openFacModal = function(id) {
+        const list = DB.getFaculty();
+        const f = list.find(item => item.id === id);
+        if (!f) return;
+
+        const content = document.getElementById('fac-modal-content');
+        content.innerHTML = `
+          <div class="w-24 h-24 rounded-full overflow-hidden mx-auto shadow border border-primary/20 mb-4">
+            <img src="${f.photo}" alt="${f.name}" class="w-full h-full object-cover">
+          </div>
+          <span class="text-[9px] bg-secondary text-primary-light font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${f.department} Department</span>
+          <h3 class="font-display text-xl font-bold text-secondary mt-3 mb-1">${f.name}</h3>
+          <p class="text-xs uppercase tracking-wider text-primary font-bold mb-2">${f.role}</p>
+          <div class="text-left text-xs font-semibold text-on-surface-variant space-y-2 mt-4 p-4 bg-gray-50 border border-primary/5 rounded-2xl">
+            <p>🎓 <strong>Qualification:</strong> ${f.qualification}</p>
+            <p>⏱️ <strong>Experience:</strong> ${f.experience}</p>
+            <p>📧 <strong>Email Address:</strong> ${f.name.toLowerCase().replace(' ', '.').replace('mrs.', '').replace('mr.', '').replace('ms.', '')}@onestgurukul.in</p>
+          </div>
+        `;
+        document.getElementById('fac-profile-modal').style.display = 'flex';
+      };
+
+      window.closeFacModal = function() {
+        document.getElementById('fac-profile-modal').style.display = 'none';
+      };
+
+      function renderFaculty() {
+        const list = DB.getFaculty();
+        const grid = document.getElementById('faculty-grid');
+        if (!grid) return;
+
+        let filtered = list.filter(f => {
+          const matchSearch = f.name.toLowerCase().includes(facSearch) || f.role.toLowerCase().includes(facSearch);
+          const matchDept = facDept === 'all' || f.department === facDept;
+          return matchSearch && matchDept;
+        });
+
+        if (filtered.length === 0) {
+          grid.innerHTML = '<p class="col-span-full text-center text-xs text-on-surface-variant/80 py-8">No educators match your filter search.</p>';
+          return;
+        }
+
+        grid.innerHTML = '';
+        filtered.forEach(f => {
+          const card = document.createElement('div');
+          card.className = 'bg-white/70 backdrop-blur-md rounded-[32px] border border-primary/10 p-8 shadow-sm flex flex-col items-center hover-lift text-center cursor-pointer';
+          card.innerHTML = `
+            <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden shadow-md mb-6">
+              <img src="${f.photo}" alt="${f.name}" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-lg font-bold text-secondary">${f.name}</h3>
+            <p class="text-[10px] uppercase tracking-wider text-primary font-bold mt-1">${f.role}</p>
+            <p class="text-[10px] text-on-surface-variant font-bold mt-1.5">${f.qualification}</p>
+            <p class="text-xs text-on-surface-variant font-bold mt-1 text-[#059669]">${f.experience} Exp.</p>
+            <button class="bg-gray-100 hover:bg-primary hover:text-white text-secondary text-[10px] font-bold px-3 py-1.5 rounded-full mt-4 transition-colors">
+              View Profile
+            </button>
+          `;
+          card.addEventListener('click', () => openFacModal(f.id));
+          grid.appendChild(card);
+        });
+      }
+
+      // Bind search/filter
+      const fSearchInput = document.getElementById('faculty-search');
+      if (fSearchInput) {
+        fSearchInput.addEventListener('input', (e) => {
+          facSearch = e.target.value.toLowerCase().trim();
+          renderFaculty();
+        });
+      }
+
+      const fDeptSelect = document.getElementById('faculty-dept-filter');
+      if (fDeptSelect) {
+        fDeptSelect.addEventListener('change', (e) => {
+          facDept = e.target.value;
+          renderFaculty();
+        });
+      }
+
+      renderFaculty();
+
+    });
+  </script>
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
 
 </body>
 

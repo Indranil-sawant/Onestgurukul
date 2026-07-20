@@ -1159,6 +1159,147 @@
     </div>
   </section>
 
+  <!-- VIRTUAL CAMPUS TOUR & 360 PANORAMA -->
+  <section id="virtual-tour" class="py-24 bg-white relative overflow-hidden border-t border-primary/10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max text-center">
+      <div class="text-center mb-12 reveal">
+         <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+           Virtual Experience
+         </span>
+         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Virtual Campus Tour</h2>
+         <p class="text-sm text-secondary/70 max-w-xl mx-auto font-semibold">Take an immersive digital tour of our sports fields, smart classrooms, and laboratory setups.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+        <!-- 360 Panorama Preview -->
+        <div class="lg:col-span-8 space-y-4 text-left">
+          <h4 class="font-bold text-secondary text-base"><i class="bi bi-compass text-primary"></i> 360-Degree Panorama Preview (Drag to scroll)</h4>
+          <div class="relative overflow-x-auto rounded-[2rem] border-4 border-white shadow-xl cursor-grab active:cursor-grabbing" style="height: 350px;">
+            <img src="assets/img/infra-(2).jpg" style="height: 100%; max-width: none; width: 1200px;" alt="360 Panorama View" class="select-none">
+            <div class="absolute inset-0 bg-black/20 pointer-events-none flex items-center justify-center">
+              <span class="bg-black/50 text-white font-bold text-xs px-4 py-2 rounded-full backdrop-blur-sm"><i class="bi bi-hand-index-thumb"></i> Drag Left/Right to explore campus landscape</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Tours List -->
+        <div class="lg:col-span-4 bg-gray-50 dark:bg-amber-100/50 p-6 rounded-3xl border border-primary/10 shadow-lg text-left space-y-4">
+          <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2">Tour Video Playlist</h4>
+          <div class="space-y-3">
+            <a href="#" onclick="alert('Playing campus overview video tour...'); return false;" class="flex gap-3 p-3 bg-white hover:bg-primary/10 rounded-xl border border-primary/5 transition-all">
+              <div class="w-16 h-12 bg-slate-200 rounded-lg flex items-center justify-center text-red-600 text-xl"><i class="bi bi-play-circle-fill"></i></div>
+              <div>
+                <h5 class="text-xs font-bold text-secondary leading-snug">O'Nest Gurukul - Main Campus Video</h5>
+                <span class="text-[9px] text-secondary/60">Duration: 3:45 mins</span>
+              </div>
+            </a>
+            <a href="#" onclick="alert('Playing Smart Classrooms tour video...'); return false;" class="flex gap-3 p-3 bg-white hover:bg-primary/10 rounded-xl border border-primary/5 transition-all">
+              <div class="w-16 h-12 bg-slate-200 rounded-lg flex items-center justify-center text-red-600 text-xl"><i class="bi bi-play-circle-fill"></i></div>
+              <div>
+                <h5 class="text-xs font-bold text-secondary leading-snug">Smart Classrooms &amp; Laboratories Walkthrough</h5>
+                <span class="text-[9px] text-secondary/60">Duration: 2:15 mins</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENT DOWNLOAD HUB -->
+  <section id="download-hub" class="py-24 bg-surface-container-low/40 relative border-t border-primary/10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="text-center mb-16 reveal">
+         <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+           Downloads
+         </span>
+         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Document Download Hub</h2>
+         <p class="text-sm text-secondary/70 max-w-xl mx-auto font-semibold">Search and download Mandatory CBSE Disclosures, Recognition Certificates, Affiliation Letters, book lists, and the prospectus.</p>
+      </div>
+
+      <div class="space-y-6 reveal">
+        <!-- Search & Filter Category tabs -->
+        <div class="bg-white dark:bg-amber-50 rounded-2xl border border-primary/10 p-4 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div class="relative w-full md:max-w-md flex items-center gap-3 bg-gray-50 border border-primary/10 rounded-xl px-4 py-2.5">
+            <i class="bi bi-search text-secondary"></i>
+            <input type="text" id="doc-search" placeholder="Search documents by filename or category..." 
+                   class="flex-1 bg-transparent border-0 focus:ring-0 text-secondary text-xs font-semibold outline-none w-full">
+          </div>
+          <div class="flex gap-2 w-full md:w-auto overflow-x-auto justify-end">
+            <button class="doc-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white" data-cat="all">All Files</button>
+            <button class="doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="CBSE">CBSE Disclosures</button>
+            <button class="doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="NOC">NOC &amp; Approvals</button>
+            <button class="doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="Academic">Calendars &amp; Lists</button>
+          </div>
+        </div>
+
+        <!-- Documents grid list -->
+        <div id="docs-list-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamic documents cards -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPORT INFORMATION -->
+  <section id="transport-info" class="py-24 bg-white relative overflow-hidden border-t border-primary/10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="text-center mb-16 reveal">
+         <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+           School Buses
+         </span>
+         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Transport Information</h2>
+         <p class="text-sm text-secondary/70 max-w-xl mx-auto font-semibold">Safe, speed-regulated, GPS-tracked bus fleet covering key routes in Ratnagiri.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+        <!-- Routes and Buses -->
+        <div class="lg:col-span-6 space-y-4 text-left">
+          <h4 class="font-bold text-secondary text-base"><i class="bi bi-bus-front-fill text-primary"></i> Main Bus Routes &amp; Drivers</h4>
+          <div class="space-y-3">
+            <div class="p-4 bg-gray-50 border border-primary/10 rounded-2xl">
+              <h5 class="text-xs font-bold text-secondary uppercase tracking-wide">Route 1: Ratnagiri City Inner Ring</h5>
+              <p class="text-xs text-on-surface-variant/80 mt-1"><strong>Stops:</strong> Wadekar Wadi, Shivaji Nagar, Maruti Mandir, Abhyudhya Nagar, School</p>
+              <div class="flex justify-between items-center mt-3 pt-2 border-t border-primary/5 text-[10px] text-secondary font-bold">
+                <span>Bus No: MH-08-A-4455</span>
+                <span>Driver: Ramesh Sawant (+91 9988776655)</span>
+              </div>
+            </div>
+            <div class="p-4 bg-gray-50 border border-primary/10 rounded-2xl">
+              <h5 class="text-xs font-bold text-secondary uppercase tracking-wide">Route 2: Chinchkhari Outer</h5>
+              <p class="text-xs text-on-surface-variant/80 mt-1"><strong>Stops:</strong> Chinchkhari Bus Stand, Ambeshet Rd, Abhyudhya Nagar, School</p>
+              <div class="flex justify-between items-center mt-3 pt-2 border-t border-primary/5 text-[10px] text-secondary font-bold">
+                <span>Bus No: MH-08-A-4466</span>
+                <span>Driver: Suresh Patil (+91 9988776644)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GPS tracking Simulation -->
+        <div class="lg:col-span-6 bg-gray-50 dark:bg-amber-100/50 p-6 rounded-3xl border border-primary/10 shadow-lg text-left space-y-4">
+          <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2">GPS Tracking Simulation</h4>
+          <p class="text-xs text-on-surface-variant font-semibold">Track your child's bus location dynamically (Simulated maps overlay).</p>
+          <div class="rounded-2xl border border-primary/10 bg-slate-200 overflow-hidden relative" style="height: 220px;">
+            <img src="assets/img/infra (1).JPG" class="w-full h-full object-cover opacity-50 blur-[2px]" alt="Map blur background">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="bg-white p-3 rounded-2xl shadow-lg border border-primary/10 flex items-center gap-3 animate-bounce">
+                <i class="bi bi-bus-front-fill text-2xl text-primary"></i>
+                <div class="text-[10px] text-secondary font-bold">
+                  <span>Route 1 Bus</span><br/>
+                  <span class="text-green-600 font-extrabold flex items-center gap-0.5"><span class="h-1.5 w-1.5 rounded-full bg-green-500 inline-block animate-ping"></span> Moving near Maruti Mandir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="alert('Live GPS API connection will load here in production.');" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded-xl text-xs shadow-md transition-colors text-center block">
+            Open Live GPS Tracking Map
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Gallery Lightbox Modal -->
   <div id="onest-campus-gallery-modal" class="onest-campus-gallery-modal">
     <span class="onest-campus-gallery-close">&times;</span>
@@ -1436,6 +1577,114 @@
     });
   </script>
 
-  <script src="assets/js/onest-home.js"></script>\n</body>
+  <script src="assets/js/onest-home.js"></script>
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DB = window.OnestDB;
+
+      // --- 1. PANORAMA DRAG TO SCROLL HELPER ---
+      const panorama = document.querySelector('#virtual-tour img');
+      if (panorama) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        panorama.parentElement.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - panorama.parentElement.offsetLeft;
+          scrollLeft = panorama.parentElement.scrollLeft;
+        });
+
+        panorama.parentElement.addEventListener('mouseleave', () => {
+          isDown = false;
+        });
+
+        panorama.parentElement.addEventListener('mouseup', () => {
+          isDown = false;
+        });
+
+        panorama.parentElement.addEventListener('mousemove', (e) => {
+          if(!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - panorama.parentElement.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          panorama.parentElement.scrollLeft = scrollLeft - walk;
+        });
+      }
+
+
+      // --- 2. DOCUMENT DOWNLOAD HUB LOGIC ---
+      let docFilter = 'all';
+      let docSearchQuery = '';
+
+      function renderDocuments() {
+        const docs = DB.getDocuments();
+        const grid = document.getElementById('docs-list-grid');
+        if (!grid) return;
+
+        let filtered = docs.filter(d => {
+          const matchCat = docFilter === 'all' || d.category === docFilter;
+          const matchSearch = d.title.toLowerCase().includes(docSearchQuery) || 
+                              d.category.toLowerCase().includes(docSearchQuery);
+          return matchCat && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          grid.innerHTML = '<p class="col-span-full text-center text-xs text-on-surface-variant/85 py-8">No documents found matching the filter.</p>';
+          return;
+        }
+
+        grid.innerHTML = '';
+        filtered.forEach(d => {
+          const card = document.createElement('div');
+          card.className = 'bg-white p-5 rounded-3xl border border-primary/10 shadow-sm text-left flex flex-col justify-between hover-lift';
+          card.innerHTML = `
+            <div>
+              <span class="text-[9px] bg-secondary text-primary-light font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${d.category}</span>
+              <h4 class="font-bold text-secondary text-sm mt-3 mb-1.5 leading-snug">${d.title}</h4>
+              <p class="text-[10px] text-on-surface-variant/80">Updated: ${d.updatedAt || 'July 2026'}</p>
+            </div>
+            <a href="${d.fileUrl || '#'}" onclick="trackDownload('${d.title}')" class="w-full bg-[#FFF9D9] hover:bg-primary hover:text-white text-secondary text-xs font-bold py-2.5 rounded-xl mt-4 flex items-center justify-center gap-1.5 transition-colors">
+              <i class="bi bi-file-earmark-arrow-down-fill"></i> Download File
+            </a>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      window.trackDownload = function(title) {
+        if (window.trackOnestAnalytics) {
+          window.trackOnestAnalytics('download_document', { title });
+        }
+        alert(`✓ Download starting for: ${title}`);
+      };
+
+      // Bind search/filter
+      const dSearch = document.getElementById('doc-search');
+      if (dSearch) {
+        dSearch.addEventListener('input', (e) => {
+          docSearchQuery = e.target.value.toLowerCase().trim();
+          renderDocuments();
+        });
+      }
+
+      document.querySelectorAll('.doc-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.doc-filter-btn').forEach(b => b.className = "doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary");
+          btn.className = "doc-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white";
+          docFilter = btn.getAttribute('data-cat');
+          renderDocuments();
+        });
+      });
+
+      renderDocuments();
+
+    });
+  </script>
+
+</body>
 
 </html>
