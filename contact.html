@@ -523,6 +523,19 @@
             window.trackOnestAnalytics('submit_contact_enquiry', { parentName, purpose });
           }
 
+          if (window.postToOnestWebhook) {
+            window.postToOnestWebhook('Contact Enquiry', {
+              ParentName: parentName,
+              StudentName: studentName,
+              Grade: grade,
+              Phone: phone,
+              Email: email,
+              Purpose: purpose,
+              ContactMode: contactMode,
+              Message: message
+            });
+          }
+
           alert("✓ Your inquiry has been sent successfully! Our administrative office will contact you via your preferred mode: " + contactMode);
           form.reset();
         });

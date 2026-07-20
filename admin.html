@@ -407,6 +407,16 @@
             </div>
           </div>
 
+          <!-- Google Sheets Automation Config -->
+          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-google text-primary"></i> Google Sheets Webhook Configuration</h3>
+            <p class="text-xs text-on-surface-variant font-medium">Configure the URL of the Google Apps Script Webhook. Submissions from all admissions, campus visit tours, prospectus downloads, career vacancies, and contact sheets are instantly posted here.</p>
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Google Sheets script URL</label>
+              <input type="url" id="setting-sheets-url" placeholder="https://script.google.com/macros/s/.../exec" class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold">
+            </div>
+          </div>
+
           <!-- Backup & Recovery -->
           <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
             <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-cloud-arrow-down text-primary"></i> Database Backup &amp; Sync</h3>
@@ -928,11 +938,15 @@
             document.getElementById('setting-banner-active').checked = settings.emergencyBannerActive;
             document.getElementById('setting-banner-text').value = settings.emergencyBannerText || '';
             document.getElementById('setting-banner-priority').value = settings.emergencyBannerPriority || 'info';
+            document.getElementById('setting-sheets-url').value = settings.googleSheetsWebhookUrl || '';
 
             // Auto save on any input change
-            const elements = ['setting-banner-active', 'setting-banner-text', 'setting-banner-priority'];
+            const elements = ['setting-banner-active', 'setting-banner-text', 'setting-banner-priority', 'setting-sheets-url'];
             elements.forEach(id => {
                 document.getElementById(id).addEventListener('change', saveSettingsFromForm);
+                if (id === 'setting-sheets-url' || id === 'setting-banner-text') {
+                    document.getElementById(id).addEventListener('input', saveSettingsFromForm);
+                }
             });
         }
 
@@ -940,11 +954,13 @@
             const active = document.getElementById('setting-banner-active').checked;
             const text = document.getElementById('setting-banner-text').value;
             const priority = document.getElementById('setting-banner-priority').value;
+            const sheetsUrl = document.getElementById('setting-sheets-url').value;
 
             DB.saveSettings({
                 emergencyBannerActive: active,
                 emergencyBannerText: text,
-                emergencyBannerPriority: priority
+                emergencyBannerPriority: priority,
+                googleSheetsWebhookUrl: sheetsUrl
             });
             console.log("Settings Auto-Saved successfully.");
         }

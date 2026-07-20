@@ -667,6 +667,16 @@
           window.trackOnestAnalytics('download_prospectus', { name, email });
         }
 
+        if (window.postToOnestWebhook) {
+          window.postToOnestWebhook('Prospectus Lead', {
+            VisitorName: name,
+            Email: email,
+            Phone: phone,
+            Date: new Date().toISOString().split('T')[0],
+            TimeSlot: "Prospectus Downloaded"
+          });
+        }
+
         alert("✓ Lead registered! Your download of the O'Nest Gurukul Prospectus will begin shortly.");
         closeProspectusModal();
 
@@ -716,6 +726,16 @@
 
         if (window.trackOnestAnalytics) {
           window.trackOnestAnalytics('book_campus_visit', { name, date, time: selectedTimeSlot });
+        }
+
+        if (window.postToOnestWebhook) {
+          window.postToOnestWebhook('Campus Tour Booking', {
+            VisitorName: name,
+            Date: date,
+            Email: email,
+            Phone: phone,
+            TimeSlot: selectedTimeSlot
+          });
         }
 
         const msg = document.getElementById('booking-msg');
@@ -955,6 +975,21 @@
 
         if (window.trackOnestAnalytics) {
           window.trackOnestAnalytics('submit_admission_form', { studentName, grade, parentName });
+        }
+
+        if (window.postToOnestWebhook) {
+          window.postToOnestWebhook('Admission Application', {
+            StudentName: studentName,
+            DOB: dob,
+            Grade: grade,
+            Gender: gender,
+            ParentName: parentName,
+            Relation: relation,
+            Email: email,
+            Phone: phone,
+            Address: address,
+            ScholarshipApplied: scholarshipApplied ? "Yes" : "No"
+          });
         }
 
         // Clear Session storage draft

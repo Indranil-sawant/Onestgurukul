@@ -137,7 +137,8 @@
             emergencyBannerText: "ADMISSION NOTICE: The last date for online application submission for Term 1 has been extended to August 15th, 2026.",
             emergencyBannerPriority: "warning", // info, warning, critical
             analyticsEnabled: true,
-            language: "en"
+            language: "en",
+            googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbynZy1XEuGqf_XLBKlaZGBkprUDvmVEGSrdaEPUwPwE4j3kGoJD5-5Pn2ICf4irgYau/exec"
         }
     };
 

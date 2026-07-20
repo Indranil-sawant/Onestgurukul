@@ -447,6 +447,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     injectGlobalSearch();
 
+    // --- 6.5. Google Sheets Webhook Dispatcher ---
+    window.postToOnestWebhook = function(formType, data) {
+        const settings = DB.getSettings();
+        const url = settings.googleSheetsWebhookUrl;
+        
+        if (!url) {
+            console.warn("[Webhook] No Google Sheets webhook URL configured in Settings.");
+            return Promise.resolve();
+        }
+
+        const payload = {
+            FormType: formType,
+            Timestamp: new Date().toLocaleString(),
+            ...data
+        };
+
+        const bodyParams = new URLSearchParams();
+        for (const key in payload) {
+            bodyParams.append(key, payload[key]);
+        }
+
+        console.log(`[Webhook] Posting "${formType}" to Google Sheet:`, payload);
+
+        return fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: bodyParams.toString()
+        }).then(() => {
+            console.log(`[Webhook] POST request dispatched successfully!`);
+        }).catch(err => {
+            console.error(`[Webhook] Post failed:`, err);
+        });
+    };
+
 
     // --- 7. Simulated Analytics Dispatcher ---
     function trackAnalytics(eventName, params = {}) {

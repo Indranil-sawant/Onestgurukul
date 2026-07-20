@@ -733,6 +733,18 @@
           window.trackOnestAnalytics('submit_job_application', { name, jobId });
         }
 
+        if (window.postToOnestWebhook) {
+          window.postToOnestWebhook('Career Application', {
+            JobId: jobId,
+            ApplicantName: name,
+            Email: email,
+            Phone: phone,
+            Experience: exp + " years",
+            ResumeUrl: resume,
+            Pitch: pitch
+          });
+        }
+
         alert("✓ Application submitted successfully! Our HR team will contact you after review.");
         closeJobModal();
       });
