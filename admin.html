@@ -593,7 +593,7 @@
 
             // Secure SHA-256 hash comparison
             // Default password is 'admin123' -> hash is '240be518ab62cd8f43c968cf22600976531d481454ab5a60e0a5c43d875323a0'
-            const secureHash = '240be518ab62cd8f43c968cf22600976531d481454ab5a60e0a5c43d875323a0';
+            const secureHash = 'f484754639396a12ceaf5f5efeb7231aa7e20332301f7c76b42a8f6313f60b24';
             const inputHash = await getSHA256Hash(p);
 
             if (u === 'admin' && inputHash === secureHash) {
