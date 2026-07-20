@@ -11,6 +11,10 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Prevent double execution guard
+    if (window.OnestGlobalLoaded) return;
+    window.OnestGlobalLoaded = true;
+
     // Ensure OnestDB is loaded
     if (!window.OnestDB) {
         console.error("OnestDB database script is missing! Please load db.js before loading this script.");
@@ -429,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Also inject a search trigger to the header menu bar if not there
         const menuNav = document.querySelector('header nav');
-        if (menuNav) {
+        if (menuNav && !menuNav.querySelector('.onest-search-trigger')) {
             const searchIcon = document.createElement('a');
             searchIcon.href = '#';
             searchIcon.className = 'text-secondary/80 font-bold hover:text-primary transition-colors text-sm flex items-center gap-1.5 onest-search-trigger';
