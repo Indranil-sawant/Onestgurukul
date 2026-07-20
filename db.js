@@ -126,11 +126,7 @@
         ],
         admissions: [],
         bookings: [],
-        careers: [
-            { id: "job-1", title: "Primary English Teacher", department: "Primary School", type: "Full Time", experience: "2-4 years required. B.Ed essential.", salary: "Competitive", open: true },
-            { id: "job-2", title: "Senior Computer Instructor", department: "Computer & Robotics Lab", type: "Full Time", experience: "MCA/B.Tech with coding knowledge.", salary: "Commensurate with experience", open: true },
-            { id: "job-3", title: "Front Desk Executive & Admin Assistant", department: "Administration", type: "Full Time", experience: "Good communication skills, MS Office efficiency.", salary: "Standard scale", open: true }
-        ],
+        careers: [],
         career_applications: [],
         settings: {
             emergencyBannerActive: false,
@@ -144,6 +140,10 @@
 
     // Database Initialization
     function initDatabase() {
+        // Enforce cleanup of careers to prevent cached items showing up
+        localStorage.removeItem('onest_db_careers');
+        localStorage.removeItem('onest_db_career_applications');
+
         Object.keys(SEED_DATA).forEach(table => {
             if (readTable(table) === null) {
                 writeTable(table, SEED_DATA[table]);

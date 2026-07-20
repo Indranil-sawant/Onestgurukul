@@ -158,9 +158,7 @@
         <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="bookings">
           <i class="bi bi-calendar-check"></i> Tour Bookings
         </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="careers">
-          <i class="bi bi-briefcase"></i> Job Applications
-        </button>
+
         <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="settings">
           <i class="bi bi-sliders"></i> Global Settings
         </button>
@@ -175,7 +173,7 @@
         <!-- 1. DASHBOARD TAB -->
         <div id="tab-dashboard" class="tab-panel space-y-6">
           <h2 class="font-display text-3xl font-bold text-secondary">Dashboard Summary</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex items-center gap-4">
               <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-2xl shrink-0"><i class="bi bi-mortarboard"></i></div>
               <div>
@@ -197,13 +195,7 @@
                 <h4 id="dash-notice-count" class="text-2xl font-bold text-secondary">0</h4>
               </div>
             </div>
-            <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex items-center gap-4">
-              <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl shrink-0"><i class="bi bi-briefcase"></i></div>
-              <div>
-                <p class="text-xs text-on-surface-variant/80 font-bold uppercase tracking-wider">Job Candidates</p>
-                <h4 id="dash-career-count" class="text-2xl font-bold text-secondary">0</h4>
-              </div>
-            </div>
+
           </div>
 
           <!-- Quick System overview -->
@@ -353,29 +345,7 @@
           </div>
         </div>
 
-        <!-- 7. CAREERS TAB -->
-        <div id="tab-careers" class="tab-panel space-y-6 hidden">
-          <h2 class="font-display text-3xl font-bold text-secondary">Job Applications</h2>
 
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Date</th>
-                    <th class="p-4">Candidate Details</th>
-                    <th class="p-4">Position</th>
-                    <th class="p-4">Cover Letter</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="careers-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
         <!-- 8. SETTINGS TAB -->
         <div id="tab-settings" class="tab-panel space-y-6 hidden">
@@ -608,7 +578,6 @@
             renderDocsTable();
             renderAdmissionsTable();
             renderBookingsTable();
-            renderCareersTable();
             loadSettings();
         }
 
@@ -638,7 +607,6 @@
             document.getElementById('dash-adm-count').textContent = DB.getAdmissions().length;
             document.getElementById('dash-book-count').textContent = DB.getBookings().length;
             document.getElementById('dash-notice-count').textContent = DB.getNotices().length;
-            document.getElementById('dash-career-count').textContent = DB.getCareerApplications().length;
 
             const pendingAdmissions = DB.getAdmissions().filter(a => a.status === 'Submitted').length;
             const admBadge = document.getElementById('badge-adm-count');
@@ -893,40 +861,6 @@
             if (confirm("Cancel this booking?")) {
                 DB.deleteBooking(id);
                 renderBookingsTable();
-                renderDashboard();
-            }
-        };
-
-
-        // --- CAREERS MANAGER ---
-        function renderCareersTable() {
-            const list = DB.getCareerApplications();
-            const tbody = document.getElementById('careers-table-body');
-            tbody.innerHTML = '';
-
-            list.forEach(c => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4">${c.createdAt}</td>
-                    <td class="p-4 text-[10px] leading-snug">
-                        <strong>Candidate:</strong> ${c.candidateName}<br/>
-                        <strong>Contact:</strong> ${c.phone} | ${c.email}
-                    </td>
-                    <td class="p-4 font-bold text-secondary">${c.position}</td>
-                    <td class="p-4 text-xs italic max-w-[200px] truncate">${c.coverLetter || '-'}</td>
-                    <td class="p-4 text-right space-x-2">
-                        <a href="#" class="text-primary hover:underline text-xs"><i class="bi bi-download"></i> CV (${c.resumeName || 'resume.pdf'})</a>
-                        <button onclick="deleteCareerApp('${c.id}')" class="text-red-500 hover:text-red-700 text-sm"><i class="bi bi-trash"></i></button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.deleteCareerApp = function(id) {
-            if (confirm("Delete this job application?")) {
-                DB.deleteCareerApplication(id);
-                renderCareersTable();
                 renderDashboard();
             }
         };
