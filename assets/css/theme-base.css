@@ -71,7 +71,23 @@ h1, h2, h3, h4, h5, h6, [class*="-title"], [class*="-heading"] {
     font-family: var(--onest-font-heading) !important;
 }
 
-/* Global Ambient Background Gradients */
+/* Global Ambient Background Gradients (Optimized for Scroll Performance via GPU Composition) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    background: radial-gradient(circle at 10% 15%, rgba(250, 204, 21, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 33, 71, 0.04) 0%, transparent 50%),
+                linear-gradient(135deg, #fdfbf7 0%, #f6f8fc 100%) !important;
+    background-size: cover !important;
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
 body, 
 .onest-home-wrapper, 
 .onest-student-life-wrapper, 
@@ -80,14 +96,22 @@ body,
 .onest-campus-wrapper, 
 .onest-contact-wrapper, 
 .onest-preprimary-wrapper {
-    background: radial-gradient(circle at 10% 15%, rgba(250, 204, 21, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(0, 33, 71, 0.04) 0%, transparent 50%),
-                linear-gradient(135deg, #fdfbf7 0%, #f6f8fc 100%) !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
+    background: transparent !important;
 }
 
 /* Dark Mode Gradient Override */
+.onest-dark-mode::before, 
+.onest-home-dark-mode::before, 
+.onest-student-life-dark-mode::before, 
+.onest-about-dark-mode::before, 
+.onest-admissions-dark-mode::before, 
+.onest-campus-dark-mode::before, 
+.onest-contact-dark-mode::before, 
+.onest-preprimary-dark-mode::before {
+    background: radial-gradient(circle at 15% 15%, rgba(115, 92, 0, 0.08) 0%, transparent 45%),
+                linear-gradient(135deg, #FFF9D9 0%, #FFF3B0 100%) !important;
+}
+
 .onest-dark-mode, 
 .onest-home-dark-mode, 
 .onest-student-life-dark-mode, 
@@ -96,8 +120,5 @@ body,
 .onest-campus-dark-mode, 
 .onest-contact-dark-mode, 
 .onest-preprimary-dark-mode {
-    background: radial-gradient(circle at 15% 15%, rgba(115, 92, 0, 0.08) 0%, transparent 45%),
-                linear-gradient(135deg, #FFF9D9 0%, #FFF3B0 100%) !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
+    background: transparent !important;
 }

@@ -6,13 +6,13 @@
 /* --- Theme Variables --- */
 :root {
     /* Brand Colors */
-    --onest-admissions-primary: #FACC15;
-    --onest-admissions-primary-dark: #EAB308;
-    --onest-admissions-secondary: #111111;
+    --onest-admissions-primary: #735c00;
+    --onest-admissions-primary-dark: #574600;
+    --onest-admissions-secondary: #002147;
 
     /* Backgrounds */
-    --onest-admissions-bg: #ffffff;
-    --onest-admissions-bg-alt: #f9fafb;
+    --onest-admissions-bg: #fdfbf7;
+    --onest-admissions-bg-alt: #fcf9f2;
     --onest-admissions-bg-card: #ffffff;
 
     /* Text */
@@ -27,7 +27,8 @@
     --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
     /* Typography */
-    --onest-admissions-font: 'Poppins', sans-serif;
+    --onest-admissions-font: 'Hanken Grotesk', sans-serif;
+    --onest-admissions-font-display: 'Libre Caslon Text', serif;
 
     /* Misc */
     --onest-admissions-radius: 16px;
@@ -51,9 +52,9 @@
     --onest-admissions-shadow-lg: 0 10px 15px -3px rgba(232, 185, 35, 0.3);
 
     /* Brand Colors Adaptation */
-    --onest-admissions-primary: #FACC15;
-    --onest-admissions-primary-dark: #E8B923;
-    --onest-admissions-secondary: #FFEBA1;
+    --onest-admissions-primary: #735c00;
+    --onest-admissions-primary-dark: #574600;
+    --onest-admissions-secondary: #002147;
 }
 
 /* --- Global Reset & Wrapper --- */
@@ -65,6 +66,15 @@
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
+}
+
+.onest-admissions-wrapper h1,
+.onest-admissions-wrapper h2,
+.onest-admissions-wrapper h3,
+.onest-admissions-wrapper h4,
+.onest-admissions-wrapper h5,
+.onest-admissions-wrapper h6 {
+    font-family: var(--onest-admissions-font-display);
 }
 
 .onest-admissions-wrapper * {
@@ -114,14 +124,14 @@
 
 .onest-admissions-btn-primary {
     background-color: var(--onest-admissions-primary);
-    color: #000;
-    box-shadow: 0 4px 14px 0 rgba(250, 204, 21, 0.39);
+    color: #fff;
+    box-shadow: 0 4px 14px 0 rgba(115, 92, 0, 0.2);
 }
 
 .onest-admissions-btn-primary:hover {
     background-color: var(--onest-admissions-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.23);
+    box-shadow: 0 6px 20px rgba(115, 92, 0, 0.25);
 }
 
 .onest-admissions-btn-white {
