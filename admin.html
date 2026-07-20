@@ -387,6 +387,35 @@
             </div>
           </div>
 
+          <!-- Security Hashing Tool -->
+          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-shield-lock text-primary"></i> Security &amp; Password Hashing Tool</h3>
+            <p class="text-xs text-on-surface-variant font-medium">To change your admin portal password securely, type your new password below, click "Generate Hash", copy the output, and paste it into the code of `admin.html` (under `secureHash` around line 562).</p>
+            
+            <div class="space-y-3">
+              <div class="space-y-1">
+                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">New Password Text</label>
+                <div class="flex gap-2">
+                  <input type="text" id="new-password-text" placeholder="Type new password here..." class="flex-1 border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold">
+                  <button type="button" onclick="generatePasswordHash()" class="bg-primary hover:bg-secondary text-white font-bold px-4 py-3 rounded-xl text-xs shadow-sm transition-colors shrink-0">
+                    Generate Hash
+                  </button>
+                </div>
+              </div>
+              
+              <div id="password-hash-result-container" class="hidden space-y-1">
+                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Generated SHA-256 Hash</label>
+                <div class="flex gap-2">
+                  <input type="text" id="new-password-hash" readonly class="flex-1 border border-primary/10 rounded-xl px-4 py-3 bg-gray-100 font-mono text-[10px] font-bold text-secondary select-all">
+                  <button type="button" onclick="copyPasswordHash()" class="bg-white hover:bg-gray-50 border border-primary/20 text-secondary font-bold px-4 py-3 rounded-xl text-xs flex items-center gap-1.5 shadow-sm transition-colors shrink-0">
+                    <i class="bi bi-clipboard"></i> Copy
+                  </button>
+                </div>
+                <p class="text-[10px] text-green-700 font-bold" id="hash-copy-confirm" style="display:none;">✓ Copied to clipboard!</p>
+              </div>
+            </div>
+          </div>
+
           <!-- Backup & Recovery -->
           <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
             <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-cloud-arrow-down text-primary"></i> Database Backup &amp; Sync</h3>
@@ -943,6 +972,32 @@
                 }
             };
             reader.readAsText(file);
+        };
+
+        // --- PASSWORD HASHING UTILITY ---
+        window.generatePasswordHash = async function() {
+            const pwdInput = document.getElementById('new-password-text');
+            const pwd = pwdInput.value.trim();
+            if (!pwd) {
+                alert("Please enter password text first!");
+                return;
+            }
+            const hash = await getSHA256Hash(pwd);
+            document.getElementById('new-password-hash').value = hash;
+            document.getElementById('password-hash-result-container').classList.remove('hidden');
+        };
+
+        window.copyPasswordHash = function() {
+            const hashEl = document.getElementById('new-password-hash');
+            hashEl.select();
+            hashEl.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(hashEl.value);
+            
+            const confirmMsg = document.getElementById('hash-copy-confirm');
+            confirmMsg.style.display = 'block';
+            setTimeout(() => {
+                confirmMsg.style.display = 'none';
+            }, 3000);
         };
 
     });
