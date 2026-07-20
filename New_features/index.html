@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>O'Nest Gurukul - Where Learning Feels Like Home</title>
+  <meta name="description"
+    content="Onest Gurukul - A premium educational institution offering holistic learning, values, and modern education. Redesigned for excellence.">
+  <meta name="keywords" content="Gurukul, Education, School, Ratnagiri, CBSE, Holistic Learning, admissions">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link href="../assets/img/onest.svg" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Global Base Styles & Gradients -->
+  <link href="../assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
+            "primary-light": "#facc15",     /* Bright Golden Accent */
+            "secondary": "#002147",         /* Deep Royal Blue */
+            "accent": "#059669",            /* Emerald Green Accent */
+            "on-surface": "#1f2937",        /* Dark Charcoal */
+            "background": "#fdfbf7",        /* Warm White Base */
+            "surface-card": "#ffffff",      /* Pure White Card */
+            "outline-variant": "#e5e7eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "12px",
+            "xl": "16px",
+            "2xl": "24px",
+            "3xl": "32px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "48px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xs": "4px",
+            "xl": "80px",
+            "md": "24px",
+            "container-max": "1400px"
+          },
+          "fontFamily": {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #1f2937;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Libre Caslon Text', serif;
+    }
+    .glass-nav {
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .luxury-shadow {
+      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
+    }
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -20px rgba(115, 92, 0, 0.12);
+      border-color: rgba(250, 204, 21, 0.4);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Infinite Ticker Animation */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-wrap {
+      display: flex;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    /* Floating Animations */
+    @keyframes float-badge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .floating-badge {
+      animation: float-badge 6s ease-in-out infinite;
+    }
+    .floating-badge-delay-1 {
+      animation: float-badge 6s ease-in-out infinite;
+      animation-delay: 1.5s;
+    }
+    .floating-badge-delay-2 {
+      animation: float-badge 6s ease-in-out infinite;
+      animation-delay: 3s;
+    }
+    /* Carousel styles */
+    .hero-slide {
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-slide.active {
+      opacity: 1;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #735c00;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+
+  <!-- Sticky TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="../assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+        <span class="font-display font-bold text-xl tracking-tight text-secondary hidden sm:inline-block">O'Nest <span class="text-primary block text-xs tracking-[0.2em] uppercase -mt-1">Gurukul</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm tracking-wide" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-sm tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
+        </a>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold">
+      <li><a href="index.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+\n  <main class="pt-[90px]">
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[85vh] min-h-[600px] overflow-hidden bg-black text-white">
+      <!-- Carousel Slides -->
+      <div class="hero-slides-container absolute inset-0">
+        <!-- Slide 1 -->
+        <div class="hero-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/img/1.webp');">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/img/2.webp');">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/img/3.webp');">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="container mx-auto px-gutter max-w-container-max h-full flex items-center relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+          <!-- Text Elements -->
+          <div class="lg:col-span-7 text-left space-y-5 lg:space-y-6 mt-8 lg:mt-0">
+            <span class="text-white/90 font-bold uppercase tracking-widest text-[10px] sm:text-xs bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 inline-block mb-2">
+              Co-Educational School (Grades 1–10)
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-[1.15]">
+              Inspiring Young Minds. <br/><span class="text-[#facc15] drop-shadow-md">Building Future Leaders.</span>
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-xl leading-relaxed font-medium">
+              A nurturing environment where academic excellence, creativity, confidence, and character come together to cultivate the pioneers of tomorrow.
+            </p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4">
+              <a href="admissions.html" class="bg-[#facc15] text-secondary px-6 py-3.5 rounded-xl font-bold hover:bg-white transition-colors shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+                Apply for Admission <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-6 py-3.5 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+                Book Campus Visit
+              </a>
+              <a href="campus-facilities.html" class="bg-transparent text-white/90 hover:text-white px-2 py-3.5 font-bold transition-colors text-sm flex items-center justify-center gap-2 w-full sm:w-auto">
+                <i class="bi bi-play-circle-fill text-lg text-[#facc15]"></i> Watch Campus Tour
+              </a>
+            </div>
+          </div>
+
+          <!-- Floating Badges Column -->
+          <div class="hidden lg:col-span-5 lg:flex flex-col gap-4 items-end relative">
+            <!-- Badge 1 -->
+            <div class="floating-badge bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0"><i class="bi bi-award-fill"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">15+ Years</p><p class="text-xs opacity-75 mt-1">of Educational Excellence</p></div>
+            </div>
+            <!-- Badge 2 -->
+            <div class="floating-badge-delay-1 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl shrink-0"><i class="bi bi-shield-fill-check"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">Safe Campus</p><p class="text-xs opacity-75 mt-1">24/7 Security Protocols</p></div>
+            </div>
+            <!-- Badge 3 -->
+            <div class="floating-badge-delay-2 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-xl shrink-0"><i class="bi bi-laptop"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">Smart Classrooms</p><p class="text-xs opacity-75 mt-1">Digital Board Enabled</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide controls -->
+      <div class="absolute bottom-8 right-8 z-20 flex gap-3">
+        <button id="hero-prev" class="w-12 h-12 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center border border-white/20 text-white transition-all">
+          <i class="bi bi-chevron-left text-lg"></i>
+        </button>
+        <button id="hero-next" class="w-12 h-12 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center border border-white/20 text-white transition-all">
+          <i class="bi bi-chevron-right text-lg"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- QUICK TRUST BAR -->
+    <section class="bg-secondary text-white py-12 relative z-10 shadow-lg overflow-hidden">
+      <div class="absolute inset-0 bg-[url('../assets/img/noise.png')] opacity-5 mix-blend-overlay"></div>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-bank"></i>
+            </div>
+            <p class="font-display font-bold text-lg md:text-xl text-white mb-1">State / CBSE</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Affiliation</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-people"></i>
+            </div>
+            <p class="font-display font-bold text-2xl text-white mb-1"><span class="onest-home-stat-number" data-target="1000">0</span>+</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Students</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-person-badge"></i>
+            </div>
+            <p class="font-display font-bold text-2xl text-white mb-1"><span class="onest-home-stat-number" data-target="50">0</span>+</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Teachers</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-building"></i>
+            </div>
+            <p class="font-display font-bold text-lg md:text-xl text-white mb-1">Modern 3 Acres</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Campus</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-bus-front"></i>
+            </div>
+            <p class="font-display font-bold text-lg md:text-xl text-white mb-1">GPS Bus Fleet</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Transport</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-dribbble"></i>
+            </div>
+            <p class="font-display font-bold text-lg md:text-xl text-white mb-1">Indoor/Outdoor</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Sports Area</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-laptop"></i>
+            </div>
+            <p class="font-display font-bold text-lg md:text-xl text-white mb-1">Smart &amp; Digital</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Classrooms</h4>
+          </div>
+          
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-center group">
+            <div class="w-12 h-12 rounded-full bg-[#facc15]/10 text-[#facc15] flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+               <i class="bi bi-award"></i>
+            </div>
+            <p class="font-display font-bold text-2xl text-white mb-1"><span class="onest-home-stat-number" data-target="100">0</span>%</p>
+            <h4 class="text-[10px] uppercase tracking-widest text-white/50 font-bold">Passing Results</h4>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL ERP PORTALS -->
+    <section class="py-16 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-10 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+            Digital Campus
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl text-secondary font-bold">Official School ERP Portals</h2>
+          <p class="text-on-surface/85 mt-2 text-sm leading-relaxed">Secure quick-access to administrative, academic, and learning modules for the school community.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+          <!-- Student Portal -->
+          <a href="#" onclick="alert('Student Portal login will be integrated here.'); return false;" class="group bg-white p-6 rounded-3xl border border-primary/10 shadow-sm hover-lift flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-primary group-hover:text-white transition-all"><i class="bi bi-mortarboard-fill"></i></div>
+            <h4 class="font-bold text-secondary text-base">Student Portal</h4>
+            <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">Access attendance, class schedules, assignments, and digital grade cards.</p>
+          </a>
+          <!-- Parent Portal -->
+          <a href="#" onclick="alert('Parent Portal login will be integrated here.'); return false;" class="group bg-white p-6 rounded-3xl border border-primary/10 shadow-sm hover-lift flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-accent/10 text-accent rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-accent group-hover:text-white transition-all"><i class="bi bi-people-fill"></i></div>
+            <h4 class="font-bold text-secondary text-base">Parent Portal</h4>
+            <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">View fee updates, child progress reports, report cards, and schedule PTMs.</p>
+          </a>
+          <!-- Teacher Portal -->
+          <a href="#" onclick="alert('Teacher Portal login will be integrated here.'); return false;" class="group bg-white p-6 rounded-3xl border border-primary/10 shadow-sm hover-lift flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-secondary group-hover:text-white transition-all"><i class="bi bi-person-badge-fill"></i></div>
+            <h4 class="font-bold text-secondary text-base">Teacher Portal</h4>
+            <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">Manage classrooms, upload syllabus marks, track student attendance, and assign homework.</p>
+          </a>
+          <!-- Admin Portal -->
+          <a href="admin.html" class="group bg-white p-6 rounded-3xl border border-primary/10 shadow-sm hover-lift flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:bg-red-600 group-hover:text-white transition-all"><i class="bi bi-shield-lock-fill"></i></div>
+            <h4 class="font-bold text-secondary text-base">Admin Portal</h4>
+            <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">Access database backups, approve admissions, manage career entries, and notices.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC NOTICE BOARD -->
+    <section id="notices-board" class="py-16 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Notice Info -->
+          <div class="lg:col-span-4 space-y-4 text-left reveal">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+              Live Announcements
+            </span>
+            <h2 class="font-display text-3xl md:text-4xl text-secondary font-bold">Official Notice Board</h2>
+            <p class="text-on-surface/80 text-sm leading-relaxed">
+              Stay updated with real-time school declarations, schedules, exam changes, and administrative policies updated by the school management.
+            </p>
+            <div class="pt-2 text-xs font-semibold text-on-surface-variant flex items-center gap-2">
+              <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span> Syncs with School CMS
+            </div>
+          </div>
+
+          <!-- Active Notices list container -->
+          <div class="lg:col-span-8 bg-white dark:bg-amber-50/50 p-6 md:p-8 rounded-[32px] border border-primary/10 shadow-lg reveal">
+            <!-- Search & filter -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-between items-center mb-6">
+              <input type="text" id="notice-search" placeholder="Search notices..." 
+                     class="w-full sm:max-w-xs border border-primary/15 rounded-xl px-4 py-2 text-xs font-semibold outline-none bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary">
+              <div class="flex gap-2 w-full sm:w-auto overflow-x-auto justify-end">
+                <button class="notice-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white" data-cat="all">All</button>
+                <button class="notice-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="Academic">Academic</button>
+                <button class="notice-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="Sports">Sports</button>
+                <button class="notice-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary" data-cat="Admission">Admissions</button>
+              </div>
+            </div>
+
+            <!-- List box -->
+            <div id="notice-list-container" class="space-y-4 max-h-[400px] overflow-y-auto pr-2">
+              <!-- notices will load here -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE OUR SCHOOL -->
+    <section class="py-24 bg-gradient-to-b from-background via-white to-background relative overflow-hidden">
+      <!-- Ambient blobs -->
+      <div class="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10 floating-blob"></div>
+      <div class="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none -z-10 floating-blob"></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Core Values &amp; Features
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Why Choose O'Nest Gurukul?</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">We combine traditional values, smart learning environments, and individual care to nurture students into global leaders.</p>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-primary to-primary-light mx-auto rounded-full mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+          <!-- Card 1 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <i class="bi bi-award"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Academic Excellence</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">A rigorous, conceptual academic approach geared toward developing cognitive skills and analytical foundations.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-accent group-hover:text-white transition-all duration-300">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Individual Attention</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Nurturing small classroom sizes with a 15:1 student-to-teacher ratio ensuring personalized mentorship paths.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Experienced Teachers</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Dedicated educators trained in holistic parenting and advanced pedagogical models to guide student paths.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Technology Enabled</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Interactive smartboards, active educational apps, coding labs, and digital platforms incorporated daily.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-accent group-hover:text-white transition-all duration-300">
+              <i class="bi bi-signpost-split"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Leadership &amp; STEM</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Developing public speaking, problem-solving mindset, collaborative tasks, and robust STEM lab modules.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="group bg-white/70 backdrop-blur-md p-8 rounded-[32px] border border-primary/10 hover-lift flex flex-col items-start text-left relative overflow-hidden shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+              <i class="bi bi-heart-pulse"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Life Skills &amp; Sports</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Fostering active physical resilience, arts, crafts, music, dance, and mindfulness in standard curriculum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPUS EXPERIENCE -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+            Interactive Tour
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Experience Our World-Class Campus</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed max-w-xl mx-auto">Explore facilities customized to inspire curiosity, physical health, and emotional comfort.</p>
+        </div>
+
+        <div class="space-y-20">
+          <!-- Alternate Block 1 -->
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 reveal">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-[32px] border-4 border-white shadow-lg aspect-[16/10] group">
+              <img src="../assets/img/education/open (6).jpg" alt="Modern Classroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="w-full lg:w-1/2 space-y-6 text-left">
+              <h3 class="text-2xl md:text-4xl font-bold text-secondary">Modern Smart Classrooms</h3>
+              <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                Our classrooms are wide, well-ventilated, and equipped with smart technology and interactive audio-visual learning setups. They provide a safe space where students collaborate, discuss, and interact directly with digital tools.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="text-sm bg-amber-50 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">✨ Interactive Display Boards</span>
+                <span class="text-sm bg-amber-50 text-primary border border-amber-100 px-4 py-1.5 rounded-full font-bold">🛡️ Ergonomic Furniture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alternate Block 2 -->
+          <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16 reveal">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-[32px] border-4 border-white shadow-lg aspect-[16/10] group">
+              <img src="../assets/img/evs.jpeg" alt="Science Labs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="w-full lg:w-1/2 space-y-6 text-left">
+              <h3 class="text-2xl md:text-4xl font-bold text-secondary">Innovative Science &amp; Computer Labs</h3>
+              <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                Guided experimentation sparks discovery. Our labs are loaded with experimental kits and systems that help students understand complex concepts in physics, chemistry, biology, and computational logic.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="text-sm bg-emerald-50 text-accent border border-emerald-100 px-4 py-1.5 rounded-full font-bold">🔬 Conceptual Science Kits</span>
+                <span class="text-sm bg-emerald-50 text-accent border border-emerald-100 px-4 py-1.5 rounded-full font-bold">💻 Coding &amp; Logic Kits</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alternate Block 3 -->
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 reveal">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-[32px] border-4 border-white shadow-lg aspect-[16/10] group">
+              <img src="../assets/img/study_session.jpg" alt="Library" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="w-full lg:w-1/2 space-y-6 text-left">
+              <h3 class="text-2xl md:text-4xl font-bold text-secondary">Vast Library &amp; Quiet Zones</h3>
+              <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                Reading forms the cornerstone of focus and knowledge. Our library houses hundreds of educational texts, encyclopedias, novels, and journals, along with calm corners for focused reading.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="text-sm bg-blue-50 text-secondary border border-blue-100 px-4 py-1.5 rounded-full font-bold">📚 Diverse Collection</span>
+                <span class="text-sm bg-blue-50 text-secondary border border-blue-100 px-4 py-1.5 rounded-full font-bold">🧘 Silent Study Desks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING JOURNEY (TIMELINE) -->
+    <section class="py-24 bg-gradient-to-b from-background to-white relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Curriculum Map
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">The Academic Learning Journey</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">An age-appropriate learning curriculum that transitions students smoothly from basic foundation to future readiness.</p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto reveal">
+          <!-- Vertical center line (desktop) -->
+          <div class="absolute left-4 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-primary via-accent to-secondary rounded-full -translate-x-[2px] md:-translate-x-0.5"></div>
+
+          <div class="space-y-16 relative">
+            <!-- Grade 1-2 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 relative">
+              <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary -translate-x-[14px] md:-translate-x-4 shadow-md z-10"></div>
+              <div class="w-full md:w-1/2 text-left md:text-right pl-12 md:pl-0 md:pr-12">
+                <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+                  <span class="text-primary font-bold text-sm uppercase tracking-wider block mb-1">Grades 1–2</span>
+                  <h3 class="text-xl font-bold text-secondary mb-3">Foundation Stage</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Developing early communication skills, phonics, basic arithmetic values, and hands-on sensorimotor play classes.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 hidden md:block"></div>
+            </div>
+
+            <!-- Grade 3-5 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 relative">
+              <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-accent -translate-x-[14px] md:-translate-x-4 shadow-md z-10"></div>
+              <div class="w-full md:w-1/2 text-left pl-12 md:pl-12">
+                <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+                  <span class="text-accent font-bold text-sm uppercase tracking-wider block mb-1">Grades 3–5</span>
+                  <h3 class="text-xl font-bold text-secondary mb-3">Exploration Stage</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Introduction to scientific concepts, social environments, grammar, complex mathematics, and active art workshops.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 hidden md:block"></div>
+            </div>
+
+            <!-- Grade 6-8 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 relative">
+              <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-secondary -translate-x-[14px] md:-translate-x-4 shadow-md z-10"></div>
+              <div class="w-full md:w-1/2 text-left md:text-right pl-12 md:pl-0 md:pr-12">
+                <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+                  <span class="text-secondary font-bold text-sm uppercase tracking-wider block mb-1">Grades 6–8</span>
+                  <h3 class="text-xl font-bold text-secondary mb-3">Skill Development Stages</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Empowering coding labs, advanced experimental sciences, critical essay writing, team sports, and public speaking forums.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 hidden md:block"></div>
+            </div>
+
+            <!-- Grade 9-10 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 relative">
+              <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary-light -translate-x-[14px] md:-translate-x-4 shadow-md z-10"></div>
+              <div class="w-full md:w-1/2 text-left pl-12 md:pl-12">
+                <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+                  <span class="text-primary font-bold text-sm uppercase tracking-wider block mb-1">Grades 9–10</span>
+                  <h3 class="text-xl font-bold text-secondary mb-3">Future Preparation</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Robust board curriculum preparation, personality development modules, career counselling guidance, and advanced competitive Olympiad preparations.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 hidden md:block"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT LIFE GALLERY -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+            Gallery Showcase
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Vibrant Student Life</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">A visual glimpse of co-curricular programs, sports, excursions, art exhibitions, and achievements.</p>
+        </div>
+
+        <!-- Lightbox Gallery Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+          <!-- Item 1 -->
+          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden" onclick="openLightbox('../assets/img/students-sports.png', 'Grassroots Athletics & Sports')">
+            <img src="../assets/img/students-sports.png" alt="Sports Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/95 px-4 py-1.5 rounded-xl text-xs font-bold text-secondary shadow-sm">⚽ Sports &amp; Play</div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden" onclick="openLightbox('../assets/img/compressed/atudy (7) - Edited.jpg', 'Creative Arts and Crafts')">
+            <img src="../assets/img/compressed/atudy (7) - Edited.jpg" alt="Art Session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/95 px-4 py-1.5 rounded-xl text-xs font-bold text-secondary shadow-sm">🎨 Art &amp; Craft</div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden" onclick="openLightbox('../assets/img/education/open (6).webp', 'Academic Workshops')">
+            <img src="../assets/img/education/open (6).webp" alt="Academic Enrichment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/95 px-4 py-1.5 rounded-xl text-xs font-bold text-secondary shadow-sm">📚 Science &amp; STEM</div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden" onclick="openLightbox('../assets/img/school2.jpg', 'Campus Architecture & Gathering')">
+            <img src="../assets/img/school2.jpg" alt="Annual Gathering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/95 px-4 py-1.5 rounded-xl text-xs font-bold text-secondary shadow-sm">🏫 Annual Day</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACULTY SHOWCASE -->
+    <section class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Mentors &amp; Educators
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Our Professional Faculty</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Dedicated academic leaders specializing in modern learning strategies and child psychology.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+          <!-- Faculty Card 1 -->
+          <div class="bg-white/70 backdrop-blur-md rounded-[32px] border border-primary/10 p-8 shadow-sm flex flex-col items-center hover-lift text-center">
+            <div class="w-28 h-28 rounded-full border-4 border-white overflow-hidden shadow-md mb-6">
+              <img src="../assets/img/staff0.jpg" alt="Mrs. Anjali Sawant" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-secondary">Mrs. Anjali Sawant</h3>
+            <p class="text-xs uppercase tracking-wider text-primary font-bold mt-1">Principal / Founder</p>
+            <p class="text-xs text-on-surface-variant font-semibold mt-2">M.Ed, Child Psychology • 18 Yrs Exp</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-4 italic">"True learning happens when a student feels safe, supported, and challenged to explore."</p>
+          </div>
+
+          <!-- Faculty Card 2 -->
+          <div class="bg-white/70 backdrop-blur-md rounded-[32px] border border-primary/10 p-8 shadow-sm flex flex-col items-center hover-lift text-center">
+            <div class="w-28 h-28 rounded-full border-4 border-white overflow-hidden shadow-md mb-6 bg-slate-200 flex items-center justify-center">
+              <i class="bi bi-person-fill text-6xl text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary">Mr. Rajesh Kulkarni</h3>
+            <p class="text-xs uppercase tracking-wider text-accent font-bold mt-1">Head of STEM Studies</p>
+            <p class="text-xs text-on-surface-variant font-semibold mt-2">M.Sc (Physics), B.Ed • 12 Yrs Exp</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-4 italic">"Physics is not in books; it is in observation. My labs empower students to build models."</p>
+          </div>
+
+          <!-- Faculty Card 3 -->
+          <div class="bg-white/70 backdrop-blur-md rounded-[32px] border border-primary/10 p-8 shadow-sm flex flex-col items-center hover-lift text-center">
+            <div class="w-28 h-28 rounded-full border-4 border-white overflow-hidden shadow-md mb-6 bg-slate-200 flex items-center justify-center">
+              <i class="bi bi-person-fill text-6xl text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-secondary">Mrs. Meera Deshmukh</h3>
+            <p class="text-xs uppercase tracking-wider text-secondary font-bold mt-1">Language &amp; Arts Mentor</p>
+            <p class="text-xs text-on-surface-variant font-semibold mt-2">M.A (English), B.Ed • 10 Yrs Exp</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-4 italic">"Languages connect cultures. I help students articulate their thoughts with confidence."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-24 bg-gradient-to-r from-secondary to-slate-900 text-white relative">
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-center">
+        <h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-4">Voices of Trust</h2>
+        <p class="text-white/80 max-w-xl mx-auto font-body text-base md:text-lg mb-16">See how parents evaluate our core values and student transformations.</p>
+
+        <!-- Dynamic Testimonial Carousel -->
+        <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-md p-8 md:p-12 rounded-[32px] border border-white/10 shadow-2xl relative">
+          <!-- Stars -->
+          <div class="flex justify-center gap-1 mb-6 text-primary-light">
+            <i class="bi bi-star-fill text-xl"></i>
+            <i class="bi bi-star-fill text-xl"></i>
+            <i class="bi bi-star-fill text-xl"></i>
+            <i class="bi bi-star-fill text-xl"></i>
+            <i class="bi bi-star-fill text-xl"></i>
+          </div>
+
+          <div class="testimonial-slides-container overflow-hidden h-[180px] relative">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active absolute inset-0 transition-opacity duration-700 opacity-100 flex flex-col justify-center">
+              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
+                "I am extremely happy with the individual support. The teachers are dedicated and guide my child not just in maths, but also in building strong habits."
+              </p>
+              <h4 class="font-bold text-primary-light text-lg">Suresh Patil</h4>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Parent of Class 8 Student</p>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex flex-col justify-center">
+              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
+                "The sports and activity framework is excellent. The safety guidelines and bus tracking app keep us stress-free every day."
+              </p>
+              <h4 class="font-bold text-primary-light text-lg">Pooja Deshpande</h4>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Parent of Class 5 Student</p>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex justify-center gap-4 mt-8">
+            <button id="testi-prev" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Previous Slide">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="testi-next" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Next Slide">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS & ACHIEVEMENTS -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20 inline-block mb-4 shadow-sm">
+            Board Records &amp; Awards
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Results &amp; Achievements</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Year-on-year academic distinction and trophies earned by our school community.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto reveal">
+          <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm text-center">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-xl mb-4 mx-auto"><i class="bi bi-award-fill"></i></div>
+            <h4 class="text-4xl font-extrabold text-secondary"><span class="onest-home-stat-number font-bold text-4xl text-primary" data-target="100">0</span>%</h4>
+            <p class="text-sm font-semibold text-on-surface-variant mt-2">Board Passing Grade</p>
+          </div>
+          <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm text-center">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-xl mb-4 mx-auto"><i class="bi bi-trophy-fill"></i></div>
+            <h4 class="text-4xl font-extrabold text-secondary"><span class="onest-home-stat-number font-bold text-4xl text-accent" data-target="25">0</span>+</h4>
+            <p class="text-sm font-semibold text-on-surface-variant mt-2">Olympiad Winners</p>
+          </div>
+          <div class="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm text-center">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-xl mb-4 mx-auto"><i class="bi bi-activity"></i></div>
+            <h4 class="text-4xl font-extrabold text-secondary"><span class="onest-home-stat-number font-bold text-4xl text-secondary" data-target="15">0</span>+</h4>
+            <p class="text-sm font-semibold text-on-surface-variant mt-2">Sports Medals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS & EVENTS -->
+    <section class="py-24 bg-gradient-to-b from-background to-white relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 reveal">
+          <div>
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+              Press Release &amp; Dates
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">News &amp; Events</h2>
+            <p class="text-on-surface/80 mt-2 leading-relaxed">Stay updated with our recent programs, holidays, and announcements.</p>
+          </div>
+          <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-primary-light border border-primary/20 text-secondary px-6 py-2.5 rounded-xl font-bold hover:scale-95 transition-all flex items-center gap-2 text-sm shadow-sm shrink-0">
+            <i class="bi bi-instagram"></i> Instagram Feed
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+          <!-- News Card 1 -->
+          <div class="bg-white rounded-3xl border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col">
+            <div class="h-48 overflow-hidden bg-slate-200">
+              <img src="../assets/img/education/open (6).webp" alt="Admissions" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">📢 Announcement</span>
+                <h3 class="text-lg font-bold text-secondary mt-3 mb-2">Admissions Open 2025-26</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Secure your child's educational seat for grades 1–10. Reach out to admission desk.</p>
+              </div>
+              <a href="admissions.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:underline">Apply Today <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- News Card 2 -->
+          <div class="bg-white rounded-3xl border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col">
+            <div class="h-48 overflow-hidden bg-slate-200">
+              <img src="../assets/img/students-sports.png" alt="Sports Day" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <span class="text-xs bg-emerald-50 text-accent border border-emerald-100 px-3 py-1 rounded-full font-bold">🏆 Sports</span>
+                <h3 class="text-lg font-bold text-secondary mt-3 mb-2">Annual Sports Day Meet</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Outdoor athletic completions and inter-school trophy awards organized this semester.</p>
+              </div>
+              <a href="students-life.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:underline">View Gallery <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- News Card 3 -->
+          <div class="bg-white rounded-3xl border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col">
+            <div class="h-48 overflow-hidden bg-slate-200">
+              <img src="../assets/img/compressed/atudy (7) - Edited.jpg" alt="Exhibitions" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <span class="text-xs bg-blue-50 text-secondary border border-blue-100 px-3 py-1 rounded-full font-bold">🎨 Arts</span>
+                <h3 class="text-lg font-bold text-secondary mt-3 mb-2">Art &amp; Science Exhibition</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Showcasing creative models and drawings created by our talented students.</p>
+              </div>
+              <a href="students-life.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:underline">Explore <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC FAQ ACCORDION -->
+    <section id="faq" class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Questions &amp; Answers
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Frequently Asked Questions</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Find quick answers about admissions, fees, school uniforms, sports, bus facilities, and co-curricular programs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Categories Filter (Left) -->
+          <div class="lg:col-span-3 bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex flex-col gap-2 shrink-0 reveal">
+            <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2 mb-2">FAQ Categories</h4>
+            <button class="faq-cat-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white transition-colors" data-cat="all">All Questions</button>
+            <button class="faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors" data-cat="Admission">Admissions</button>
+            <button class="faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors" data-cat="Fees">Fee Structure</button>
+            <button class="faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors" data-cat="Transport">Transport / Bus</button>
+            <button class="faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors" data-cat="Curriculum">Curriculum</button>
+            <button class="faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors" data-cat="Activities">Activities</button>
+          </div>
+
+          <!-- Search & Accordions (Right) -->
+          <div class="lg:col-span-9 space-y-6 reveal">
+            <!-- Search bar -->
+            <div class="relative bg-white dark:bg-amber-50 rounded-2xl border border-primary/10 p-3 shadow-sm flex items-center gap-3">
+              <i class="bi bi-search text-secondary pl-2"></i>
+              <input type="text" id="faq-search" placeholder="Search FAQs by keywords..." 
+                     class="flex-1 bg-transparent border-0 focus:ring-0 text-secondary text-sm font-semibold outline-none w-full">
+            </div>
+
+            <!-- Accordion container -->
+            <div id="faq-accordion-container" class="space-y-4">
+              <!-- FAQs load here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVERSION CTA (ADMISSION OPEN) -->
+    <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
+      <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('../assets/img/school2.jpg');"></div>
+      <div class="absolute top-[10%] right-[10%] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] pointer-events-none floating-blob"></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
+        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
+          📣 Admissions Open 2025–2026
+        </span>
+        <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Secure Your Child's Future Today</h2>
+        <p class="text-white/80 max-w-2xl mx-auto font-body text-base md:text-lg">
+          Nurture academic excellence, character foundation, and active leadership skills in a warm co-educational school. Limited seats are available.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+            Apply Now <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
+            Schedule a Visit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION & INQUIRY FORM -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left: Info & Map -->
+          <div class="lg:col-span-7 space-y-8 reveal">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+                Location Details
+              </span>
+              <h2 class="font-display text-3xl md:text-5xl text-secondary font-bold">Contact Our Desk</h2>
+              <p class="text-on-surface/80 mt-2 leading-relaxed">Reach out directly via phone, email, or visit our campus in Ratnagiri.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white/85 p-6 rounded-2xl border border-primary/10 shadow-sm text-left flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-lg shrink-0"><i class="bi bi-geo-alt"></i></div>
+                <div>
+                  <h4 class="font-bold text-secondary text-base">Location</h4>
+                  <p class="text-on-surface-variant text-xs mt-1">Wadekar Wadi, Ambeshet Rd, Ratnagiri</p>
+                </div>
+              </div>
+              <div class="bg-white/85 p-6 rounded-2xl border border-primary/10 shadow-sm text-left flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg shrink-0"><i class="bi bi-telephone"></i></div>
+                <div>
+                  <h4 class="font-bold text-secondary text-base">Call</h4>
+                  <p class="text-on-surface-variant text-xs mt-1">+91 78880 56699</p>
+                </div>
+              </div>
+              <div class="bg-white/85 p-6 rounded-2xl border border-primary/10 shadow-sm text-left flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-lg shrink-0"><i class="bi bi-clock"></i></div>
+                <div>
+                  <h4 class="font-bold text-secondary text-base">Working Hours</h4>
+                  <p class="text-on-surface-variant text-xs mt-1">Mon—Sat: 8AM-4PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border-4 border-white shadow-lg overflow-hidden h-[350px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- Right: Message Form -->
+          <div class="lg:col-span-5 bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
+            <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
+            <form action="https://script.google.com/macros/s/AKfycbynZy1XEuGqf_XLBKlaZGBkprUDvmVEGSrdaEPUwPwE4j3kGoJD5-5Pn2ICf4irgYau/exec" method="POST" target="hidden_iframe" class="space-y-5 text-left">
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Name</label>
+                <input type="text" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Full Name" required>
+              </div>
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Email</label>
+                <input type="email" name="Email" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Email Address" required>
+              </div>
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Desired Intake Date</label>
+                <input type="date" name="Date" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" required>
+              </div>
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Inquiry Message</label>
+                <textarea name="Message" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none resize-none" rows="4" placeholder="How can we assist you today?" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:scale-[0.98] active:scale-95 transition-all shadow-md mt-2">
+                Send Message
+              </button>
+            </form>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footers -->
+  <footer class="bg-secondary text-white/90 border-t border-primary/15 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter max-w-container-max mx-auto text-left">
+      <div class="space-y-6">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="../assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
+          <span class="font-display font-bold text-lg text-white">O'Nest Gurukul</span>
+        </a>
+        <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
+        <div class="space-y-2 text-sm text-white/90">
+          <p><strong>Phone:</strong> +91 78880 56699</p>
+          <p><strong>Email:</strong> info@onestgurukul.in</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Quick Links</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="index.html" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="admissions.html" class="text-white/70 hover:text-white transition-colors">Admissions</a></li>
+          <li><a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Academics</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="preprimary.html" class="text-white/70 hover:text-white transition-colors">Pre-Primary</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Primary Stage</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Middle School</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Senior School</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-16 pt-6 text-center">
+      <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Gallery Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 hidden">
+    <button class="absolute top-8 right-8 text-white text-4xl hover:scale-110 transition-transform" onclick="closeLightbox()">&times;</button>
+    <div class="max-w-4xl w-full text-center space-y-4">
+      <img id="lightbox-img" src="" alt="Lightbox image" class="max-h-[75vh] mx-auto rounded-2xl border-4 border-white shadow-2xl object-contain">
+      <p id="lightbox-caption" class="text-white/90 font-bold text-lg font-display"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/onest-home.js"></script>
+  <script>
+    // Lightbox triggers
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Secondary slider for Parent Testimonials
+    let currentTestiSlide = 0;
+    const testiSlides = document.querySelectorAll('.testimonial-slide');
+    function showTestiSlide(index) {
+      testiSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0');
+          slide.classList.add('opacity-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0');
+        }
+      });
+    }
+    document.getElementById('testi-prev')?.addEventListener('click', () => {
+      currentTestiSlide = (currentTestiSlide - 1 + testiSlides.length) % testiSlides.length;
+      showTestiSlide(currentTestiSlide);
+    });
+    document.getElementById('testi-next')?.addEventListener('click', () => {
+      currentTestiSlide = (currentTestiSlide + 1) % testiSlides.length;
+      showTestiSlide(currentTestiSlide);
+    });
+
+    // Auto-scroll parent testimonials
+    setInterval(() => {
+      currentTestiSlide = (currentTestiSlide + 1) % testiSlides.length;
+      showTestiSlide(currentTestiSlide);
+    }, 7000);
+
+    // Scroll reveal observe script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DB = window.OnestDB;
+
+      // --- Notices Board Logic ---
+      let noticeFilter = 'all';
+      let noticeSearchQuery = '';
+
+      function renderHomepageNotices() {
+        const list = DB.getNotices();
+        const container = document.getElementById('notice-list-container');
+        if (!container) return;
+
+        // Filter
+        let filtered = list.filter(n => {
+          const matchCat = noticeFilter === 'all' || n.category === noticeFilter;
+          const matchSearch = n.title.toLowerCase().includes(noticeSearchQuery) || 
+                              n.content.toLowerCase().includes(noticeSearchQuery);
+          return matchCat && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="text-center py-12 text-on-surface-variant/60">
+              <i class="bi bi-megaphone text-3xl"></i>
+              <p class="text-sm mt-2">No notices found at the moment.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = '';
+        filtered.forEach(n => {
+          const card = document.createElement('div');
+          card.className = `p-5 bg-gray-50 dark:bg-amber-100/30 rounded-2xl border border-primary/10 text-left relative overflow-hidden transition-all duration-300 ${n.pinned ? 'border-l-4 border-l-primary' : ''}`;
+          card.innerHTML = `
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <div class="flex flex-wrap gap-2 items-center">
+                <span class="text-[9px] bg-primary text-white font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${n.category}</span>
+                ${n.pinned ? '<span class="text-[9px] bg-secondary text-primary-light font-black px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1"><i class="bi bi-pin-angle-fill"></i> Pinned</span>' : ''}
+              </div>
+              <span class="text-[10px] text-on-surface-variant font-bold">${n.createdAt}</span>
+            </div>
+            <h4 class="text-sm font-bold text-secondary">${n.title}</h4>
+            <p class="text-xs text-on-surface-variant/80 mt-1.5 leading-relaxed">${n.content}</p>
+            ${n.pdfUrl && n.pdfUrl !== '#' ? `<a href="${n.pdfUrl}" class="inline-flex items-center gap-1 text-primary hover:underline text-xs font-bold mt-3"><i class="bi bi-file-earmark-pdf"></i> Download PDF Reference</a>` : ''}
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // Notices Event Listeners
+      const nSearch = document.getElementById('notice-search');
+      if (nSearch) {
+        nSearch.addEventListener('input', (e) => {
+          noticeSearchQuery = e.target.value.toLowerCase().trim();
+          renderHomepageNotices();
+        });
+      }
+
+      document.querySelectorAll('.notice-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.notice-filter-btn').forEach(b => b.className = "notice-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary");
+          btn.className = "notice-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white";
+          noticeFilter = btn.getAttribute('data-cat');
+          renderHomepageNotices();
+        });
+      });
+
+
+      // --- FAQ Accordion Logic & SEO Schema ---
+      let faqFilter = 'all';
+      let faqSearchQuery = '';
+
+      function renderHomepageFAQs() {
+        const list = DB.getFaqs();
+        const container = document.getElementById('faq-accordion-container');
+        if (!container) return;
+
+        let filtered = list.filter(f => {
+          const matchCat = faqFilter === 'all' || f.category === faqFilter;
+          const matchSearch = f.question.toLowerCase().includes(faqSearchQuery) || 
+                              f.answer.toLowerCase().includes(faqSearchQuery);
+          return matchCat && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<p class="text-center text-xs text-on-surface-variant/85 py-8">No matching FAQs found.</p>';
+          return;
+        }
+
+        container.innerHTML = '';
+        filtered.forEach((f, idx) => {
+          const panel = document.createElement('div');
+          panel.className = 'faq-panel bg-white dark:bg-amber-50 rounded-2xl border border-primary/10 shadow-sm overflow-hidden transition-all duration-300';
+          panel.innerHTML = `
+            <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-bold text-secondary text-sm md:text-base cursor-pointer focus:outline-none select-none">
+              <span>${f.question}</span>
+              <i class="bi bi-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50">
+              <div class="p-5 text-xs md:text-sm text-on-surface-variant/95 leading-relaxed font-semibold">
+                ${f.answer}
+              </div>
+            </div>
+          `;
+
+          // Accordion toggle behavior
+          const toggle = panel.querySelector('.faq-toggle');
+          const body = panel.querySelector('.faq-body');
+          const icon = panel.querySelector('.bi-chevron-down');
+
+          toggle.addEventListener('click', () => {
+            const isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+            
+            // Close other FAQ items
+            document.querySelectorAll('.faq-body').forEach(b => {
+              b.style.maxHeight = '0px';
+              b.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+            });
+
+            if (isOpen) {
+              body.style.maxHeight = '0px';
+              icon.classList.remove('rotate-180');
+            } else {
+              body.style.maxHeight = body.scrollHeight + 'px';
+              icon.classList.add('rotate-180');
+            }
+          });
+
+          container.appendChild(panel);
+        });
+
+        // Dynamic FAQ schema generator
+        generateFAQSchema(filtered);
+      }
+
+      function generateFAQSchema(faqsList) {
+        // Remove existing FAQ Schema script if present
+        const oldScript = document.getElementById('onest-faq-schema');
+        if (oldScript) oldScript.remove();
+
+        const schema = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqsList.map(f => ({
+            "@type": "Question",
+            "name": f.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.answer
+            }
+          }))
+        };
+
+        const script = document.createElement('script');
+        script.id = 'onest-faq-schema';
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(schema);
+        document.head.appendChild(script);
+      }
+
+      // FAQ Event Listeners
+      const fSearch = document.getElementById('faq-search');
+      if (fSearch) {
+        fSearch.addEventListener('input', (e) => {
+          faqSearchQuery = e.target.value.toLowerCase().trim();
+          renderHomepageFAQs();
+        });
+      }
+
+      document.querySelectorAll('.faq-cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.faq-cat-btn').forEach(b => b.className = "faq-cat-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10 transition-colors");
+          btn.className = "faq-cat-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white transition-colors";
+          faqFilter = btn.getAttribute('data-cat');
+          renderHomepageFAQs();
+        });
+      });
+
+
+      // --- Initial Page Seed Loads ---
+      renderHomepageNotices();
+      renderHomepageFAQs();
+
+      // Dynamic testimonial hooks
+      const testiContainer = document.querySelector('.testimonial-slides-container');
+      if (testiContainer) {
+        const testimonials = DB.getTestimonials();
+        if (testimonials.length > 0) {
+          testiContainer.innerHTML = '';
+          testimonials.forEach((t, i) => {
+            const slide = document.createElement('div');
+            slide.className = `testimonial-slide absolute inset-0 transition-opacity duration-700 ${i === 0 ? 'active opacity-100 z-10' : 'opacity-0'} flex flex-col justify-center items-center text-center px-4`;
+            slide.innerHTML = `
+              <p class="text-base md:text-lg font-semibold italic text-white/95 leading-relaxed mb-6 max-w-2xl mx-auto">
+                "${t.text}"
+              </p>
+              <div class="flex items-center gap-3 justify-center">
+                <img src="${t.photo}" alt="${t.name}" class="w-10 h-10 rounded-full object-cover border border-white/20">
+                <div class="text-left">
+                  <h4 class="font-bold text-primary-light text-sm">${t.name}</h4>
+                  <p class="text-[10px] uppercase tracking-widest text-white/70 font-semibold">${t.role}</p>
+                </div>
+              </div>
+            `;
+            testiContainer.appendChild(slide);
+          });
+        }
+      }
+
+    });
+  </script>
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+
+</body>
+
+</html>

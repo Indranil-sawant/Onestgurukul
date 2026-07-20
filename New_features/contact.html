@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact Us - O'Nest Gurukul</title>
+  <meta name="description"
+    content="Get in touch with Onest Gurukul. Visit our campus, call us, or send an email for admissions and inquiries.">
+  <meta name="keywords" content="Contact Onest Gurukul, School Address, Phone Number, Email, Admissions Inquiry">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link href="../assets/img/onest.svg" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Global Base Styles & Gradients -->
+  <link href="../assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
+            "primary-light": "#facc15",     /* Bright Golden Accent */
+            "secondary": "#002147",         /* Deep Royal Blue */
+            "accent": "#059669",            /* Emerald Green Accent */
+            "on-surface": "#1f2937",        /* Dark Charcoal */
+            "background": "#fdfbf7",        /* Warm White Base */
+            "surface-card": "#ffffff",      /* Pure White Card */
+            "outline-variant": "#e5e7eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "12px",
+            "xl": "16px",
+            "2xl": "24px",
+            "3xl": "32px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "48px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xs": "4px",
+            "xl": "80px",
+            "md": "24px",
+            "container-max": "1400px"
+          },
+          "fontFamily": {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #1f2937;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Libre Caslon Text', serif;
+    }
+    .glass-nav {
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .luxury-shadow {
+      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
+    }
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -20px rgba(115, 92, 0, 0.12);
+      border-color: rgba(250, 204, 21, 0.4);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Gradient blob animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.05); }
+    }
+    .floating-blob {
+      animation: float 8s ease-in-out infinite;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #735c00;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+
+  <!-- Sticky TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="../assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+        <span class="font-display font-bold text-xl tracking-tight text-secondary hidden sm:inline-block">O'Nest <span class="text-primary block text-xs tracking-[0.2em] uppercase -mt-1">Gurukul</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-sm tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm tracking-wide" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
+        </a>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold">
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+\n  <main class="pt-[90px]">
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[50vh] min-h-[400px] overflow-hidden bg-black text-white flex items-center">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/img/school2.jpg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
+        <div class="max-w-3xl space-y-4">
+          <nav class="text-sm font-semibold tracking-wider text-primary-light flex items-center gap-2 mb-2">
+            <a href="index.html" class="hover:underline">Home</a>
+            <i class="bi bi-chevron-right text-xs"></i>
+            <span>Contact Us</span>
+          </nav>
+          <h1 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">
+            We're Here to Help You<br/><span class="text-primary-light">Every Step of the Way.</span>
+          </h1>
+          <p class="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
+            Whether you're planning your child's admission, booking a campus visit, or simply have a question, we'd love to hear from you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK CONTACT CARDS -->
+    <section class="py-24 bg-gradient-to-b from-[#fbf8ff] via-[#fdfbf7] to-[#fbf8ff] relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
+          <!-- Card 1 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-geo-alt-fill"></i></div>
+              <h4 class="font-bold text-secondary text-base">Campus Address</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">Wadekar Wadi, Ambeshet Rd, Ratnagiri – 415639</p>
+            </div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Get Directions →</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-telephone-fill"></i></div>
+              <h4 class="font-bold text-secondary text-base">Admission Desk</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">+91 78880 56699</p>
+            </div>
+            <a href="tel:+917888056699" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Call Desk →</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-envelope-fill"></i></div>
+              <h4 class="font-bold text-secondary text-base">General Email</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">info@onestgurukul.in</p>
+            </div>
+            <a href="mailto:info@onestgurukul.in" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Send Email →</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-primary border border-amber-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-clock-fill"></i></div>
+              <h4 class="font-bold text-secondary text-base">Office Hours</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">Mon—Sat: 8:00 AM to 4:00 PM</p>
+            </div>
+            <span class="text-on-surface-variant text-xs font-bold mt-4 block">Closed Sundays</span>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-bus-front-fill"></i></div>
+              <h4 class="font-bold text-secondary text-base">Transport Desk</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">GPS tracking and alert coordination desk.</p>
+            </div>
+            <a href="tel:+917888056699" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Contact Transport →</a>
+          </div>
+          <!-- Card 6 -->
+          <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary border border-blue-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-whatsapp"></i></div>
+              <h4 class="font-bold text-secondary text-base">WhatsApp Desk</h4>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">Instant answers for admissions on WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/917888056699" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Chat Online →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM & MAP SPLIT -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Google Map Column -->
+          <div class="lg:col-span-6 space-y-8 reveal">
+            <div class="rounded-3xl border-4 border-white shadow-lg overflow-hidden h-[450px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6175.089772787605!2d73.32363183841682!3d16.980466307273957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bea0d00598f98cb%3A0xbabf8ab0872ee594!2sO'NEST%20Gurukul!5e0!3m2!1sen!2sin!4v1759591801399!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="flex justify-between items-center bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
+              <div class="text-left">
+                <h4 class="font-bold text-secondary">Find Us on Google Maps</h4>
+                <p class="text-xs text-on-surface-variant mt-1">Get navigations, reviews, and 360 virtual tours.</p>
+              </div>
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-sm hover:scale-95 transition-all">Open Maps</a>
+            </div>
+          </div>
+
+          <!-- Contact Inquiry Form -->
+          <div class="lg:col-span-6 bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
+            <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
+            <form action="https://script.google.com/macros/s/AKfycbynZy1XEuGqf_XLBKlaZGBkprUDvmVEGSrdaEPUwPwE4j3kGoJD5-5Pn2ICf4irgYau/exec" method="POST" target="hidden_iframe" class="space-y-4 text-left">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Parent's Name</label>
+                  <input type="text" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Your Full Name" required>
+                </div>
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Student's Name</label>
+                  <input type="text" name="StudentName" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Student Name" required>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Grade Seeking (Dropdown)</label>
+                  <select name="Grade" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none">
+                    <option>Pre-Primary (Nursery/KG)</option>
+                    <option>Primary (Grades 1-5)</option>
+                    <option>Middle School (Grades 6-8)</option>
+                    <option>Senior School (Grades 9-10)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Mobile Number</label>
+                  <input type="tel" name="Phone" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="10 Digit Mobile Number" required>
+                </div>
+              </div>
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Email Address</label>
+                <input type="email" name="Email" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Email Address" required>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Purpose of Inquiry</label>
+                  <select name="Purpose" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none">
+                    <option>Admission Details</option>
+                    <option>Book a Campus Visit</option>
+                    <option>General Inquiry</option>
+                    <option>Careers</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Preferred Contact Mode</label>
+                  <select name="ContactMode" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none">
+                    <option>Phone Call</option>
+                    <option>WhatsApp Message</option>
+                    <option>Email Response</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Inquiry Message</label>
+                <textarea name="Message" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none resize-none" rows="4" placeholder="How can we assist you?" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:scale-[0.98] active:scale-95 transition-all shadow-md mt-2">
+                Send Inquiry
+              </button>
+            </form>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (ACCORDION LAYOUT) -->
+    <section class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="max-w-2xl mx-auto mb-16 text-center reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Common Inquiries
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4 reveal text-left">
+          <!-- Accordion 1 -->
+          <details class="group bg-white rounded-2xl border border-primary/10 p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm" open>
+            <summary class="flex justify-between items-center cursor-pointer select-none">
+              <h4 class="font-bold text-secondary text-base md:text-lg">What are the school timings for Grades 1–10?</h4>
+              <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-open:rotate-180 transition-transform"><i class="bi bi-chevron-down"></i></span>
+            </summary>
+            <p class="text-on-surface-variant text-sm mt-4 leading-relaxed">
+              School runs from 08:30 AM to 03:30 PM for Grades 1–10. Office desks are accessible from 08:00 AM to 04:00 PM for admissions inquiries.
+            </p>
+          </details>
+
+          <!-- Accordion 2 -->
+          <details class="group bg-white rounded-2xl border border-primary/10 p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+            <summary class="flex justify-between items-center cursor-pointer select-none">
+              <h4 class="font-bold text-secondary text-base md:text-lg">How can I book a physical campus tour?</h4>
+              <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-open:rotate-180 transition-transform"><i class="bi bi-chevron-down"></i></span>
+            </summary>
+            <p class="text-on-surface-variant text-sm mt-4 leading-relaxed">
+              You can book a visit directly by selecting "Book a Campus Visit" in the inquiry form, or call our admissions counsellor at +91 78880 56699.
+            </p>
+          </details>
+
+          <!-- Accordion 3 -->
+          <details class="group bg-white rounded-2xl border border-primary/10 p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+            <summary class="flex justify-between items-center cursor-pointer select-none">
+              <h4 class="font-bold text-secondary text-base md:text-lg">What documents are required during registration?</h4>
+              <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-open:rotate-180 transition-transform"><i class="bi bi-chevron-down"></i></span>
+            </summary>
+            <p class="text-on-surface-variant text-sm mt-4 leading-relaxed">
+              We require the child's birth certificate, school leaving certificate (from previous school), past progress reports, Aadhaar card copy, and passport-size photographs.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
+      <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('../assets/img/school2.jpg');"></div>
+      <div class="absolute top-[10%] right-[10%] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] pointer-events-none floating-blob"></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
+        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
+          Let's Build Your Child's Future Together
+        </span>
+        <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Join Our Learning Community</h2>
+        <p class="text-white/85 max-w-2xl mx-auto font-body text-base md:text-lg">
+          Our admissions desk is ready to answer your questions and coordinate a campus tour with our principal.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+            Apply Now <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
+            Book a Visit
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-white/90 border-t border-primary/15 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter max-w-container-max mx-auto text-left">
+      <div class="space-y-6">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="../assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
+          <span class="font-display font-bold text-lg text-white">O'Nest Gurukul</span>
+        </a>
+        <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
+        <div class="space-y-2 text-sm text-white/90">
+          <p><strong>Phone:</strong> +91 78880 56699</p>
+          <p><strong>Email:</strong> info@onestgurukul.in</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Quick Links</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="index.html" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="admissions.html" class="text-white/70 hover:text-white transition-colors">Admissions</a></li>
+          <li><a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Academics</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="preprimary.html" class="text-white/70 hover:text-white transition-colors">Pre-Primary</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Primary Stage</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Middle School</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Senior School</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-16 pt-6 text-center">
+      <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/onest-home.js"></script>
+  <script>
+    // Scroll reveal observe script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DB = window.OnestDB;
+
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const parentName = form.querySelector('[name="Name"]').value;
+          const studentName = form.querySelector('[name="StudentName"]').value;
+          const grade = form.querySelector('[name="Grade"]').value;
+          const phone = form.querySelector('[name="Phone"]').value;
+          const email = form.querySelector('[name="Email"]').value;
+          const purpose = form.querySelector('[name="Purpose"]').value;
+          const contactMode = form.querySelector('[name="ContactMode"]').value;
+          const message = form.querySelector('[name="Message"]').value;
+
+          // Save enquiry into OnestDB
+          DB.addAdmission({
+            studentName: studentName + " (Enquiry: " + purpose + ")",
+            parentName: parentName,
+            grade: grade,
+            gender: "Not specified",
+            dob: new Date().toISOString().split('T')[0],
+            email: email,
+            phone: phone,
+            address: `Contact mode: ${contactMode}. Message: ${message}`,
+            scholarshipApplied: false
+          });
+
+          if (window.trackOnestAnalytics) {
+            window.trackOnestAnalytics('submit_contact_enquiry', { parentName, purpose });
+          }
+
+          alert("✓ Your inquiry has been sent successfully! Our administrative office will contact you via your preferred mode: " + contactMode);
+          form.reset();
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

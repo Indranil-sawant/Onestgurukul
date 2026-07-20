@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Pre-Primary | O'Nest Gurukul - Where Little Learners Begin Big Dreams</title>
+  <meta name="description"
+    content="Experience a magical, play-based early learning world at O'Nest Gurukul. Nursery, Jr. KG, and Sr. KG built on trust, safety, and joy.">
+  <meta name="keywords" content="Montessori, Pre-Primary, Preschool, Nursery, Kindergarten, Ratnagiri, Play-school">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link href="../assets/img/onest.svg" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Global Base Styles & Gradients -->
+  <link href="../assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
+            "primary-light": "#facc15",     /* Bright Golden Accent */
+            "secondary": "#002147",         /* Deep Royal Blue */
+            "accent": "#059669",            /* Emerald Green Accent */
+            "on-surface": "#1f2937",        /* Dark Charcoal */
+            "background": "#fdfbf7",        /* Warm White Base */
+            "surface-card": "#ffffff",      /* Pure White Card */
+            "outline-variant": "#e5e7eb",
+            /* Playful Accents */
+            "sky-blue": "#38bdf8",
+            "mint-green": "#34d399",
+            "coral": "#f87171",
+            "lavender": "#a78bfa",
+            "soft-orange": "#fb923c",
+            "peach": "#ffedd5",
+            "pastel-pink": "#fbcfe8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "12px",
+            "xl": "16px",
+            "2xl": "24px",
+            "3xl": "32px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "48px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xs": "4px",
+            "xl": "80px",
+            "md": "24px",
+            "container-max": "1400px"
+          },
+          "fontFamily": {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #1f2937;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Libre Caslon Text', serif;
+    }
+    .glass-nav {
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .luxury-shadow {
+      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Magical Animations */
+    @keyframes float-balloon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+    }
+    .float-balloon {
+      animation: float-balloon 6s ease-in-out infinite;
+    }
+    .float-balloon-delay-1 {
+      animation: float-balloon 7s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    .float-balloon-delay-2 {
+      animation: float-balloon 5s ease-in-out infinite;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes cloud-move {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(12px); }
+    }
+    .cloud-move {
+      animation: cloud-move 12s ease-in-out infinite;
+    }
+
+    @keyframes leaf-drift {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(8px) rotate(15deg); }
+    }
+    .leaf-drift {
+      animation: leaf-drift 4s ease-in-out infinite;
+    }
+
+    @keyframes bubble-rise {
+      0% { transform: translateY(100px) scale(0.8); opacity: 0; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-100px) scale(1.1); opacity: 0; }
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      pointer-events: none;
+      animation: bubble-rise 8s infinite linear;
+    }
+
+    /* Polaroid Styles */
+    .polaroid {
+      background: white;
+      padding: 12px 12px 28px 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .polaroid:hover {
+      transform: scale(1.03) rotate(1deg);
+      box-shadow: 0 20px 35px -5px rgba(115, 92, 0, 0.15);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #735c00;
+      border-radius: 5px;
+    }
+
+    /* Curved organic paths */
+    .curved-border-bottom {
+      border-bottom-left-radius: 50% 20px;
+      border-bottom-right-radius: 50% 20px;
+    }
+    .curved-border-top {
+      border-top-left-radius: 50% 20px;
+      border-top-right-radius: 50% 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+
+  <!-- Sticky TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="../assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
+        <span class="font-display font-bold text-xl tracking-tight text-secondary hidden sm:inline-block">O'Nest <span class="text-primary block text-xs tracking-[0.2em] uppercase -mt-1">Gurukul</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="about.html">About Us</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-sm tracking-wide" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i>
+        </button>
+        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
+        </a>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold onest-home-mobile-list">
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <!-- Mobile Theme Toggle -->
+      <li class="mt-2 flex justify-center">
+        <button id="onest-mobile-theme-toggle" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors flex items-center gap-2 text-sm font-semibold" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-fill text-xl"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+  <main class="pt-[90px]">
+
+    <!-- HERO SECTION (Cinematic Illustration + Parallax Clouds) -->
+    <section class="relative h-[85vh] min-h-[550px] overflow-hidden bg-gradient-to-br from-sky-200 via-white to-amber-100/50 flex items-center">
+      <!-- Animated Floating Elements -->
+      <div class="absolute top-[15%] left-[5%] text-6xl opacity-35 float-balloon"><i class="bi bi-balloon-heart text-coral"></i></div>
+      <div class="absolute bottom-[25%] left-[8%] text-5xl opacity-30 float-balloon-delay-1"><i class="bi bi-butterfly text-lavender"></i></div>
+      <div class="absolute top-[20%] right-[10%] text-5xl md:text-7xl opacity-25 float-balloon-delay-2"><i class="bi bi-clouds-fill text-sky-blue"></i></div>
+      <div class="absolute bottom-[15%] right-[15%] text-5xl opacity-40 float-balloon"><i class="bi bi-balloon text-soft-orange"></i></div>
+
+      <!-- Bubble effects -->
+      <div class="bubble w-8 h-8 left-[12%] bottom-[20%]" style="animation-delay: 0s; animation-duration: 9s;"></div>
+      <div class="bubble w-12 h-12 left-[45%] bottom-[10%]" style="animation-delay: 2s; animation-duration: 11s;"></div>
+      <div class="bubble w-10 h-10 right-[25%] bottom-[30%]" style="animation-delay: 4s; animation-duration: 7s;"></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+          <!-- Text column -->
+          <div class="lg:col-span-7 text-left space-y-6">
+            <span class="text-secondary font-extrabold uppercase tracking-[0.25em] text-xs bg-white/70 backdrop-blur px-5 py-2.5 rounded-full border border-sky-blue/30 inline-block shadow-sm float-balloon">
+              🎈 Welcome to a Magical Learning Journey
+            </span>
+            <h1 class="font-display text-4xl md:text-6xl text-secondary font-bold leading-tight">
+              Every Big Dream<br/><span class="text-[#8c0a46]">Begins With a Small Step.</span>
+            </h1>
+            <p class="text-base md:text-lg text-secondary/80 max-w-xl leading-relaxed">
+              A joyful place where curiosity grows, imagination blossoms, friendships begin, and every child feels loved, safe, and inspired.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="contact.html" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+                🌈 Book a School Tour <i class="bi bi-chevron-right"></i>
+              </a>
+              <a href="admissions.html" class="bg-white/80 hover:bg-white text-secondary border border-secondary/20 px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-md">
+                🎨 Apply Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Magical Graphic Frame (Polaroid + Stickers) -->
+          <div class="hidden lg:col-span-5 lg:flex justify-center relative">
+            <div class="polaroid rotate-[-2deg] relative">
+              <!-- Floating stickers -->
+              <div class="absolute -top-6 -right-6 text-4xl text-soft-orange float-balloon"><i class="bi bi-star-fill"></i></div>
+              <div class="absolute -bottom-6 -left-6 text-4xl text-mint-green float-balloon-delay-1"><i class="bi bi-heart-fill"></i></div>
+
+              <div class="w-[320px] aspect-square rounded-2xl overflow-hidden shadow-inner">
+                <img src="../assets/img/1.webp" alt="Kids playing blocks" class="w-full h-full object-cover">
+              </div>
+              <p class="text-center font-display font-bold text-secondary text-lg mt-4">Nurturing Big Dreams ✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHILDREN LOVE OUR SCHOOL (CURVED CARDS WITH GRADIENTS) -->
+    <section class="py-24 bg-gradient-to-b from-white to-background relative overflow-hidden">
+      <!-- Background cloud shapes -->
+      <div class="absolute top-[10%] right-[5%] text-9xl text-sky-200/20 cloud-move"><i class="bi bi-cloud-fill"></i></div>
+      <div class="absolute bottom-[10%] left-[5%] text-9xl text-amber-200/20 cloud-move" style="animation-delay: 3s;"><i class="bi bi-cloud-fill"></i></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max text-center relative z-10">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Preschool Adventures
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Why Children Love Our School</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">We design spaces and modules specifically for early childhood wonders.</p>
+          <div class="w-24 h-1 bg-gradient-to-r from-primary to-[#8c0a46] mx-auto rounded-full mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+          <!-- Card 1 -->
+          <div class="group bg-white rounded-[32px] border-4 border-amber-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-soft-orange flex items-center justify-center text-2xl mb-6"><i class="bi bi-controller"></i></div>
+            <h3 class="font-bold text-secondary text-lg mb-2">Learning Through Play</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Developing early skills via blocks, educational toys, and group puzzle sessions.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="group bg-white rounded-[32px] border-4 border-sky-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-blue flex items-center justify-center text-2xl mb-6"><i class="bi bi-music-note-beamed"></i></div>
+            <h3 class="font-bold text-secondary text-lg mb-2">Music &amp; Dance</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Singing groups, rhythm patterns, and motor coordination plays.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="group bg-white rounded-[32px] border-4 border-emerald-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-mint-green flex items-center justify-center text-xl mb-6"><i class="bi bi-book"></i></div>
+            <h3 class="font-bold text-secondary text-lg mb-2">Storytelling</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Imaginative story castle sessions with large colourful books and toys.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="group bg-white rounded-[32px] border-4 border-purple-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-lavender flex items-center justify-center text-2xl mb-6"><i class="bi bi-palette"></i></div>
+            <h3 class="font-bold text-secondary text-lg mb-2">Creative Art</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Finger painting, clay models, and sensory crafts that build creativity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A DAY FULL OF ADVENTURE (ILLUSTRATED TIMELINE) -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+            Adventure Map
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">A Day Full of Adventure</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Our day is structured as a playful journey across developmental milestones.</p>
+        </div>
+
+        <!-- Illustrated Path Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto relative reveal text-left">
+          <!-- Step 1 -->
+          <div class="bg-white p-8 rounded-[32px] border border-amber-100/50 shadow-sm relative group hover:border-amber-300 transition-colors">
+            <span class="absolute top-4 right-4 text-xs font-bold bg-amber-50 text-soft-orange px-3 py-1 rounded-full">Step 01</span>
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-soft-orange flex items-center justify-center text-xl mb-6"><i class="bi bi-sun"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Sunrise Welcome</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">A warm hug from teachers, soft music, and settling into activity blocks.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="bg-white p-8 rounded-[32px] border border-sky-100/50 shadow-sm relative group hover:border-sky-300 transition-colors">
+            <span class="absolute top-4 right-4 text-xs font-bold bg-sky-50 text-sky-blue px-3 py-1 rounded-full">Step 02</span>
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-blue flex items-center justify-center text-xl mb-6"><i class="bi bi-people"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Circle Time</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">Interactive greetings, morning stories, and rhythmic rhymes in groups.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="bg-white p-8 rounded-[32px] border border-emerald-100/50 shadow-sm relative group hover:border-emerald-300 transition-colors">
+            <span class="absolute top-4 right-4 text-xs font-bold bg-emerald-50 text-mint-green px-3 py-1 rounded-full">Step 03</span>
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-mint-green flex items-center justify-center text-xl mb-6"><i class="bi bi-egg-fried"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Snack Time</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">Eating healthy food alongside friends while learning table manners.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="bg-white p-8 rounded-[32px] border border-purple-100/50 shadow-sm relative group hover:border-purple-300 transition-colors">
+            <span class="absolute top-4 right-4 text-xs font-bold bg-purple-50 text-lavender px-3 py-1 rounded-full">Step 04</span>
+            <div class="w-12 h-12 rounded-xl bg-purple-50 text-lavender flex items-center justify-center text-xl mb-6"><i class="bi bi-tree"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Outdoor Jungle</h4>
+            <p class="text-on-surface-variant text-xs leading-relaxed">Sandpit exploration, swings, balancing walks, and sensory nature games.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSROOM EXPERIENCE (CURVED NON-RIGID LAYOUT) -->
+    <section class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative reveal order-2 lg:order-1">
+            <div class="overflow-hidden rounded-[40px] border-4 border-white shadow-xl aspect-[16/11] group">
+              <img src="../assets/img/education/open (6).jpg" alt="Our Classroom Playroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <!-- Floating sticker -->
+            <div class="absolute -bottom-6 -right-6 polaroid rotate-6 w-32 hidden md:block">
+              <img src="../assets/img/education/kids3.jpg" class="w-full h-20 object-cover rounded-lg">
+              <p class="text-[10px] text-center font-bold text-secondary mt-2">Music Corner 🎵</p>
+            </div>
+          </div>
+          
+          <div class="space-y-6 reveal text-left order-1 lg:order-2">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#8c0a46] bg-rose-50 border border-rose-200 px-4 py-2 rounded-full inline-block mb-2 shadow-sm">
+              Cozy Learning Nooks
+            </span>
+            <h2 class="font-display text-3xl md:text-5xl text-secondary font-bold leading-tight">Our Happy Classrooms</h2>
+            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+              We design our rooms with soft colors and organic curves. Spaces are divided into thematic zones: a quiet book castle, building block zones, pretend kitchen tables, and sensory sand basins.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-bold text-sm text-secondary">
+              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Sensory Art Wall</div>
+              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Cozy Reading Corner</div>
+              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Childproof Layouts</div>
+              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Interactive Smartboards</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAFETY & CARE (PREMIUM & FRIENDLY TRUST BUILDER) -->
+    <section class="py-24 bg-gradient-to-b from-[#fbf8ff] via-[#fdfbf7] to-[#fbf8ff] relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20 inline-block mb-4 shadow-sm">
+            Child Safe Zone
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Safety &amp; Loving Care</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">A completely childproof and sanitised school campus with constant security measures.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal text-left">
+          <!-- Safety Block 1 -->
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-soft-orange flex items-center justify-center text-lg mb-6"><i class="bi bi-shield-fill-check"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Child-Safe Spaces</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Anti-slip play pads, rounded wall edges, socket guards, and child-safe toys sanitized twice daily.</p>
+          </div>
+          <!-- Safety Block 2 -->
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-accent flex items-center justify-center text-lg mb-6"><i class="bi bi-camera-video-fill"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Live CCTV Monitoring</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Active monitoring across learning playroom modules, corridors, playgrounds, and transport drop-offs.</p>
+          </div>
+          <!-- Safety Block 3 -->
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-secondary flex items-center justify-center text-lg mb-6"><i class="bi bi-heart-pulse-fill"></i></div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Verified Helpers</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">All nannies, assistants, and drivers undergo police records checks and specific child safety classes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMMERSIVE PHOTO GALLERY (LIGHTBOX ENABLED + POLAROIDS) -->
+    <section class="py-24 bg-surface-container-low/40 relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+            Little Explorers
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Moments of Joy</h2>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Candid snapshots of early learning, creative crafts, and active outdoor playgrounds.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+          <!-- Gallery Item 1 -->
+          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('../assets/img/1.webp', 'Building Blocks & Logic Task')">
+            <div class="aspect-square overflow-hidden rounded-xl">
+              <img src="../assets/img/1.webp" alt="Kids playing blocks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="font-bold text-secondary text-xs mt-3">Block Play 🧱</p>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="polaroid rotate-[1deg] cursor-pointer" onclick="openLightbox('../assets/img/education/kids2.jpg', 'Sandpit and Outdoor Activities')">
+            <div class="aspect-square overflow-hidden rounded-xl">
+              <img src="../assets/img/education/kids2.jpg" alt="Children outdoors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="font-bold text-secondary text-xs mt-3">Playground Fun ☀️</p>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="polaroid rotate-[-1deg] cursor-pointer" onclick="openLightbox('../assets/img/education/kids3.jpg', 'Group Music and Rhythm class')">
+            <div class="aspect-square overflow-hidden rounded-xl">
+              <img src="../assets/img/education/kids3.jpg" alt="Classroom music" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="font-bold text-secondary text-xs mt-3">Rhythm Circle 🎵</p>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="polaroid rotate-[2deg] cursor-pointer" onclick="openLightbox('../assets/img/compressed/atudy (7) - Edited.jpg', 'Fine Art and Clay Painting')">
+            <div class="aspect-square overflow-hidden rounded-xl">
+              <img src="../assets/img/compressed/atudy (7) - Edited.jpg" alt="Art session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="font-bold text-secondary text-xs mt-3">Sensory Crafts 🎨</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARENT TESTIMONIALS (SPEECH BUBBLES CAROUSEL) -->
+    <section class="py-24 bg-gradient-to-r from-secondary to-slate-900 text-white relative">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-4">Happy Parents</h2>
+        <p class="text-white/80 max-w-xl mx-auto font-body text-base md:text-lg mb-16">See what our parent community says about children's emotional and physical development.</p>
+
+        <div class="max-w-3xl mx-auto relative reveal">
+          <div class="testimonial-slides-container overflow-hidden h-[185px] relative bg-white/10 backdrop-blur p-8 md:p-10 rounded-[32px] border border-white/15">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active absolute inset-0 transition-opacity duration-700 opacity-100 flex flex-col justify-center text-center">
+              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
+                "Our daughter looks forward to circle time and art projects every morning. The nannies are incredibly warm and the daily GPS updates keep us stress-free."
+              </p>
+              <h4 class="font-bold text-primary-light text-base">Pooja Deshpande</h4>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Mother of Nursery Student</p>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex flex-col justify-center text-center">
+              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
+                "The play-based sensory blocks developed my son's motor logic and spatial coordination wonderfully. It is indeed a home away from home."
+              </p>
+              <h4 class="font-bold text-primary-light text-base">Suresh Patil</h4>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Father of Jr. KG Student</p>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex justify-center gap-4 mt-8">
+            <button id="testi-prev" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Previous Slide">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="testi-next" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Next Slide">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAGICAL ADMISSION CTA -->
+    <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
+      <!-- Background images and overlays -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('../assets/img/school2.jpg');"></div>
+      <!-- Animated floating badges inside CTA -->
+      <div class="absolute top-[15%] right-[10%] text-5xl md:text-7xl opacity-20 float-balloon"><i class="bi bi-balloon text-primary-light"></i></div>
+      <div class="absolute bottom-[10%] left-[10%] text-6xl opacity-15 float-balloon-delay-1"><i class="bi bi-star-fill text-primary-light"></i></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
+        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
+          🌈 Lets Begin Your Child's Beautiful Journey Together!
+        </span>
+        <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Admissions Open 2025–26</h2>
+        <p class="text-white/85 max-w-2xl mx-auto font-body text-base md:text-lg">
+          Give your child an outstanding foundation built on joy, play, safety, and experiential learning. Schedule a preschool tour today.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+            Apply Now <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
+            Schedule a Visit
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-white/90 border-t border-primary/15 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter max-w-container-max mx-auto text-left">
+      <div class="space-y-6">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="../assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
+          <span class="font-display font-bold text-lg text-white">O'Nest Gurukul</span>
+        </a>
+        <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
+        <div class="space-y-2 text-sm text-white/90">
+          <p><strong>Phone:</strong> +91 78880 56699</p>
+          <p><strong>Email:</strong> info@onestgurukul.in</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Quick Links</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="index.html" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="admissions.html" class="text-white/70 hover:text-white transition-colors">Admissions</a></li>
+          <li><a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Academics</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="preprimary.html" class="text-white/70 hover:text-white transition-colors">Pre-Primary</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Primary Stage</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Middle School</a></li>
+          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Senior School</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
+        <ul class="space-y-4 text-sm font-semibold">
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-16 pt-6 text-center">
+      <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Gallery Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 hidden">
+    <button class="absolute top-8 right-8 text-white text-4xl hover:scale-110 transition-transform" onclick="closeLightbox()">&times;</button>
+    <div class="max-w-4xl w-full text-center space-y-4">
+      <img id="lightbox-img" src="" alt="Lightbox image" class="max-h-[75vh] mx-auto rounded-2xl border-4 border-white shadow-2xl object-contain">
+      <p id="lightbox-caption" class="text-white/90 font-bold text-lg font-display"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/onest-home.js"></script>
+  <script>
+    // Lightbox triggers
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Secondary slider for Parent Testimonials
+    let currentTestiSlide = 0;
+    const testiSlides = document.querySelectorAll('.testimonial-slide');
+    function showTestiSlide(index) {
+      testiSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0');
+          slide.classList.add('opacity-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0');
+        }
+      });
+    }
+    document.getElementById('testi-prev')?.addEventListener('click', () => {
+      currentTestiSlide = (currentTestiSlide - 1 + testiSlides.length) % testiSlides.length;
+      showTestiSlide(currentTestiSlide);
+    });
+    document.getElementById('testi-next')?.addEventListener('click', () => {
+      currentTestiSlide = (currentTestiSlide + 1) % testiSlides.length;
+      showTestiSlide(currentTestiSlide);
+    });
+
+    // Scroll reveal observe script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  <!-- DB & Global Script Integrations -->
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
+
+</body>
+
+</html>
