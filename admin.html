@@ -564,6 +564,25 @@
   </footer>
 
   <!-- DB Script load -->
+  
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyB3gvpt7DtmXDvQGlkvG1A8r4yHVcgnfpQ",
+      authDomain: "onest-gurukul-9df5b.firebaseapp.com",
+      projectId: "onest-gurukul-9df5b",
+      storageBucket: "onest-gurukul-9df5b.firebasestorage.app",
+      messagingSenderId: "509493151600",
+      appId: "1:509493151600:web:3ddf6f5213457e8083b1b5"
+    };
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    const dbFirestore = firebase.firestore();
+  </script>
+
   <script src="db.js"></script>
   <!-- Admin Script Logic -->
   <script>
@@ -661,9 +680,26 @@
         }
 
         // --- NOTICES MANAGER ---
-        function renderNoticesTable() {
-            const list = DB.getNotices();
+        
+        async function renderNoticesTable() {
+            let list = [];
+            try {
+                const snapshot = await dbFirestore.collection('notices').get();
+                snapshot.forEach(doc => {
+                    let data = doc.data();
+                    data.id = doc.id;
+                    list.push(data);
+                });
+                list.sort((a, b) => {
+                    if (a.pinned && !b.pinned) return -1;
+                    if (!a.pinned && b.pinned) return 1;
+                    return new Date(b.createdAt) - new Date(a.createdAt);
+                });
+            } catch (e) {
+                list = DB.getNotices();
+            }
             const tbody = document.getElementById('notices-table-body');
+
             tbody.innerHTML = '';
 
             list.forEach(n => {
@@ -686,15 +722,23 @@
         }
 
         window.toggleNoticePin = function(id) {
-            DB.togglePinNotice(id);
-            renderNoticesTable();
+            dbFirestore.collection('notices').doc(id).get().then(doc => {
+                if(doc.exists) {
+                    dbFirestore.collection('notices').doc(id).update({pinned: !doc.data().pinned})
+                        .then(renderNoticesTable)
+                        .catch(err => alert("Error updating pin status: " + err.message));
+                }
+            }).catch(err => alert("Error fetching notice: " + err.message));
         };
 
         window.deleteNotice = function(id) {
             if (confirm("Are you sure you want to delete this notice?")) {
-                DB.deleteNotice(id);
-                renderNoticesTable();
-                renderDashboard();
+                dbFirestore.collection('notices').doc(id).delete()
+                    .then(() => {
+                        renderNoticesTable();
+                        renderDashboard();
+                    })
+                    .catch(err => alert("Error deleting notice: " + err.message));
             }
         };
 
@@ -706,11 +750,15 @@
             const content = document.getElementById('n-content').value;
             const pinned = document.getElementById('n-pinned').checked;
 
-            DB.addNotice({ title, category: cat, content, pinned });
-            closeNoticeModal();
-            renderNoticesTable();
-            renderDashboard();
-            document.getElementById('notice-form').reset();
+            const noticeData = { title, category: cat, content, pinned, createdAt: new Date().toISOString().split('T')[0] };
+            dbFirestore.collection('notices').add(noticeData)
+                .then(() => {
+                    closeNoticeModal();
+                    renderNoticesTable();
+                    renderDashboard();
+                    document.getElementById('notice-form').reset();
+                })
+                .catch(err => alert("Error adding notice: " + err.message));
         });
 
 

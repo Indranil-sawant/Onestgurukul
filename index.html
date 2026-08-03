@@ -1127,6 +1127,25 @@
   </script>
 
   <!-- DB & Global Script Integrations -->
+  
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyB3gvpt7DtmXDvQGlkvG1A8r4yHVcgnfpQ",
+      authDomain: "onest-gurukul-9df5b.firebaseapp.com",
+      projectId: "onest-gurukul-9df5b",
+      storageBucket: "onest-gurukul-9df5b.firebasestorage.app",
+      messagingSenderId: "509493151600",
+      appId: "1:509493151600:web:3ddf6f5213457e8083b1b5"
+    };
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    const dbFirestore = firebase.firestore();
+  </script>
+
   <script src="db.js"></script>
   <script src="onest-global.js"></script>
   <script>
@@ -1137,10 +1156,29 @@
       let noticeFilter = 'all';
       let noticeSearchQuery = '';
 
-      function renderHomepageNotices() {
-        const list = DB.getNotices();
+      
+      async function renderHomepageNotices() {
         const container = document.getElementById('notice-list-container');
         if (!container) return;
+        
+        let list = [];
+        try {
+            const snapshot = await dbFirestore.collection('notices').get();
+            snapshot.forEach(doc => {
+                let data = doc.data();
+                data.id = doc.id;
+                list.push(data);
+            });
+            list.sort((a, b) => {
+                if (a.pinned && !b.pinned) return -1;
+                if (!a.pinned && b.pinned) return 1;
+                return new Date(b.createdAt) - new Date(a.createdAt);
+            });
+        } catch (e) {
+            console.error('Failed to load notices from Firebase', e);
+            list = DB.getNotices(); // fallback
+        }
+
 
         // Filter
         let filtered = list.filter(n => {
