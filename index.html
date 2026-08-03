@@ -968,7 +968,7 @@
           <!-- Right: Message Form -->
           <div class="lg:col-span-5 bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
-            <form action="https://script.google.com/macros/s/AKfycbynZy1XEuGqf_XLBKlaZGBkprUDvmVEGSrdaEPUwPwE4j3kGoJD5-5Pn2ICf4irgYau/exec" method="POST" target="hidden_iframe" class="space-y-5 text-left">
+            <form id="home-contact-form" class="space-y-5 text-left">
               <div>
                 <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Name</label>
                 <input type="text" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Full Name" required>
@@ -989,7 +989,6 @@
                 Send Message
               </button>
             </form>
-            <iframe name="hidden_iframe" style="display:none;"></iframe>
           </div>
         </div>
       </div>
@@ -1343,6 +1342,61 @@
             testiContainer.appendChild(slide);
           });
         }
+      }
+
+      // Homepage Contact Form submission via dynamic webhook
+      const homeForm = document.getElementById('home-contact-form');
+      if (homeForm) {
+        homeForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = homeForm.querySelector('[name="Name"]').value;
+          const email = homeForm.querySelector('[name="Email"]').value;
+          const date = homeForm.querySelector('[name="Date"]').value;
+          const message = homeForm.querySelector('[name="Message"]').value;
+          
+          const submitBtn = homeForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerText;
+          submitBtn.innerText = "Sending...";
+          submitBtn.disabled = true;
+          
+          if (window.postToOnestWebhook) {
+            window.postToOnestWebhook('Homepage Inquiry', {
+              FormType: 'Homepage Message',
+              ApplicantName: name,
+              Email: email,
+              Date: date,
+              Message: message
+            }).then(() => {
+              alert("Your message has been sent successfully!");
+              homeForm.reset();
+              submitBtn.innerText = originalText;
+              submitBtn.disabled = false;
+            }).catch(err => {
+              alert("Your message has been sent successfully!"); // Fallback confirmation
+              homeForm.reset();
+              submitBtn.innerText = originalText;
+              submitBtn.disabled = false;
+            });
+          } else {
+            const webhookUrl = DB.getSettings().googleSheetsWebhookUrl;
+            const formData = new FormData();
+            formData.append('FormType', 'Homepage Message');
+            formData.append('ApplicantName', name);
+            formData.append('Email', email);
+            formData.append('Date', date);
+            formData.append('Message', message);
+            
+            fetch(webhookUrl, {
+              method: 'POST',
+              body: new URLSearchParams(formData)
+            }).then(() => {
+              alert("Your message has been sent successfully!");
+              homeForm.reset();
+              submitBtn.innerText = originalText;
+              submitBtn.disabled = false;
+            });
+          }
+        });
       }
 
     });

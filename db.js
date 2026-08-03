@@ -134,7 +134,7 @@
             emergencyBannerPriority: "warning", // info, warning, critical
             analyticsEnabled: true,
             language: "en",
-            googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbynZy1XEuGqf_XLBKlaZGBkprUDvmVEGSrdaEPUwPwE4j3kGoJD5-5Pn2ICf4irgYau/exec"
+            googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbxEIc5yKXycUBSDk6gU3loFR2qZ2UzF4XU_DY03rC1xhZnIBkcIvaxBDAMKurcGwUacWw/exec"
         }
     };
 
