@@ -634,6 +634,23 @@
   </script>
 
   <script src="assets/js/onest-home.js"></script>\n  <!-- DB & Global Script Integrations -->
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyB3gvpt7DtmXDvQGlkvG1A8r4yHVcgnfpQ",
+      authDomain: "onest-gurukul-9df5b.firebaseapp.com",
+      projectId: "onest-gurukul-9df5b",
+      storageBucket: "onest-gurukul-9df5b.firebasestorage.app",
+      messagingSenderId: "509493151600",
+      appId: "1:509493151600:web:3ddf6f5213457e8083b1b5"
+    };
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    const dbFirestore = firebase.firestore();
+  </script>
   <script src="db.js"></script>
   <script src="onest-global.js"></script>
   <script>
@@ -960,7 +977,7 @@
                         document.getElementById('adm-pincode').value;
         const scholarshipApplied = document.getElementById('adm-scholarship').checked;
 
-        DB.addAdmission({
+        const admissionData = {
           studentName,
           dob,
           grade,
@@ -970,8 +987,18 @@
           email,
           phone,
           address,
-          scholarshipApplied
-        });
+          scholarshipApplied,
+          status: "Submitted",
+          createdAt: new Date().toISOString().split('T')[0]
+        };
+
+        dbFirestore.collection('admissions').add(admissionData)
+          .then(() => {
+            console.log("Admission submitted to Firebase successfully.");
+          })
+          .catch(err => {
+            console.error("Error submitting admission to Firebase: ", err);
+          });
 
         if (window.trackOnestAnalytics) {
           window.trackOnestAnalytics('submit_admission_form', { studentName, grade, parentName });

@@ -665,18 +665,7 @@
 
         // --- DASHBOARD RENDER ---
         function renderDashboard() {
-            document.getElementById('dash-adm-count').textContent = DB.getAdmissions().length;
             document.getElementById('dash-book-count').textContent = DB.getBookings().length;
-            document.getElementById('dash-notice-count').textContent = DB.getNotices().length;
-
-            const pendingAdmissions = DB.getAdmissions().filter(a => a.status === 'Submitted').length;
-            const admBadge = document.getElementById('badge-adm-count');
-            if (pendingAdmissions > 0) {
-                admBadge.textContent = pendingAdmissions;
-                admBadge.classList.remove('hidden');
-            } else {
-                admBadge.classList.add('hidden');
-            }
         }
 
         // --- NOTICES MANAGER ---
@@ -697,6 +686,10 @@
                 });
             } catch (e) {
                 list = DB.getNotices();
+            }
+            const dashNoticeCount = document.getElementById('dash-notice-count');
+            if (dashNoticeCount) {
+                dashNoticeCount.textContent = list.length;
             }
             const tbody = document.getElementById('notices-table-body');
 
@@ -844,12 +837,40 @@
 
 
         // --- ADMISSIONS MANAGER ---
-        function renderAdmissionsTable() {
-            const list = DB.getAdmissions();
+        let admissionsList = [];
+        async function renderAdmissionsTable() {
+            admissionsList = [];
+            try {
+                const snapshot = await dbFirestore.collection('admissions').get();
+                snapshot.forEach(doc => {
+                    let data = doc.data();
+                    data.id = doc.id;
+                    admissionsList.push(data);
+                });
+                admissionsList.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            } catch (e) {
+                admissionsList = DB.getAdmissions();
+            }
+
+            const dashAdmCount = document.getElementById('dash-adm-count');
+            if (dashAdmCount) {
+                dashAdmCount.textContent = admissionsList.length;
+            }
+            const pendingAdmissions = admissionsList.filter(a => a.status === 'Submitted').length;
+            const admBadge = document.getElementById('badge-adm-count');
+            if (admBadge) {
+                if (pendingAdmissions > 0) {
+                    admBadge.textContent = pendingAdmissions;
+                    admBadge.classList.remove('hidden');
+                } else {
+                    admBadge.classList.add('hidden');
+                }
+            }
+
             const tbody = document.getElementById('admissions-table-body');
             tbody.innerHTML = '';
 
-            list.forEach(a => {
+            admissionsList.forEach(a => {
                 let badgeColor = "bg-gray-100 text-gray-700";
                 if (a.status === 'Approved') badgeColor = "bg-green-100 text-green-700";
                 if (a.status === 'Rejected') badgeColor = "bg-red-100 text-red-700";
@@ -882,22 +903,21 @@
 
         window.updateAdmStatus = function(id, val) {
             if (!val) return;
-            DB.updateAdmissionStatus(id, val);
-            renderAdmissionsTable();
-            renderDashboard();
+            dbFirestore.collection('admissions').doc(id).update({ status: val })
+                .then(renderAdmissionsTable)
+                .catch(err => alert("Error updating status: " + err.message));
         };
 
         window.deleteAdmission = function(id) {
             if (confirm("Are you sure you want to delete this application?")) {
-                DB.deleteAdmission(id);
-                renderAdmissionsTable();
-                renderDashboard();
+                dbFirestore.collection('admissions').doc(id).delete()
+                    .then(renderAdmissionsTable)
+                    .catch(err => alert("Error deleting application: " + err.message));
             }
         };
 
         window.viewAdmissionDetails = function(id) {
-            const list = DB.getAdmissions();
-            const a = list.find(app => app.id === id);
+            const a = admissionsList.find(app => app.id === id);
             if (!a) return;
 
             const modalContent = document.getElementById('adm-detail-content');
