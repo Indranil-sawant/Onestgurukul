@@ -114,10 +114,11 @@
             { id: "fac-6", name: "Mrs. Pallavi Rane", role: "Primary Mathematics Teacher", qualification: "B.Sc. (Maths), D.Ed.", experience: "7 Years", photo: "assets/img/education/open (5).jpg", department: "Primary" }
         ],
         achievements: [
-            { id: "a-1", title: "1st Rank in District Science Exhibition", awardee: "Mast. Aditya Rane & Team", category: "Olympiads", year: "2026", description: "Won the top accolade for their innovative smart irrigation system prototype using soil moisture sensors." },
-            { id: "a-2", title: "Gold Medal in State Inter-School Badminton", awardee: "Miss Shreya Shirke", category: "Sports", year: "2025", description: "Successfully clinched the single's gold medal at the state levels held in Pune." },
-            { id: "a-3", title: "State Merit Scholar in National Cyber Olympiad", awardee: "Mast. Amit Gokhale", category: "Olympiads", year: "2026", description: "Scored 99.8th percentile in the Cyber Olympiad, achieving District Rank 2." },
-            { id: "a-4", title: "Outstanding Educator Award", awardee: "Mr. Prasad Joshi (Senior STEM)", category: "Academics", year: "2025", description: "Honored with the Ratnagiri Rotary Club Award for implementing creative hands-on teaching models." }
+            { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg" },
+            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg" },
+            { id: "a-3", title: "Inter-School Championship Trophy", awardee: "O'Nest Gurukul Student Team", category: "Academics", year: "2026", description: "Awarded top trophy in inter-school academic, cultural, and quiz competitions.", image: "assets/ONEST/IMG-20260808-WA0384.jpg.jpeg" },
+            { id: "a-4", title: "Science Olympiad Foundation (SOF) Merits", awardee: "Primary & Middle School Scholars", category: "Olympiads", year: "2026", description: "Outstanding performance and gold merit certificates in SOF National Olympiads.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg" },
+            { id: "a-5", title: "State Martial Arts & Karate Champions", awardee: "O'Nest Karate Squad", category: "Sports", year: "2026", description: "Won gold and silver medals in state-level Karate & self-defense championships.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg" }
         ],
         testimonials: [
             { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" },
@@ -140,9 +141,10 @@
 
     // Database Initialization
     function initDatabase() {
-        // Enforce cleanup of careers to prevent cached items showing up
+        // Enforce cleanup to load latest authentic school data
         localStorage.removeItem('onest_db_careers');
         localStorage.removeItem('onest_db_career_applications');
+        localStorage.removeItem('onest_db_achievements');
 
         Object.keys(SEED_DATA).forEach(table => {
             if (readTable(table) === null) {
