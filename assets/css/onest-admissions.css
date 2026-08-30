@@ -123,15 +123,16 @@
 }
 
 .onest-admissions-btn-primary {
-    background-color: var(--onest-admissions-primary);
-    color: #fff;
-    box-shadow: 0 4px 14px 0 rgba(115, 92, 0, 0.2);
+    background-color: #facc15;
+    color: #002147;
+    box-shadow: 0 4px 14px 0 rgba(250, 204, 21, 0.3);
 }
 
 .onest-admissions-btn-primary:hover {
-    background-color: var(--onest-admissions-primary-dark);
+    background-color: #e2b60d;
+    color: #002147;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(115, 92, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.45);
 }
 
 .onest-admissions-btn-white {
@@ -313,7 +314,7 @@
 }
 
 .onest-admissions-hero-title span {
-    color: var(--onest-admissions-primary);
+    color: #facc15;
 }
 
 .onest-admissions-hero-text {
@@ -409,8 +410,8 @@
 .onest-admissions-step-number {
     min-width: 56px;
     height: 56px;
-    background: var(--onest-admissions-primary);
-    color: #000;
+    background: #facc15;
+    color: #002147;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -468,8 +469,8 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background: var(--onest-admissions-primary);
-    color: #000;
+    background: #facc15;
+    color: #002147;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.85rem;

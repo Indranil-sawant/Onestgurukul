@@ -21,6 +21,7 @@
 
   <!-- Global Base Styles & Gradients -->
   <link href="assets/css/theme-base.css" rel="stylesheet">
+  <link href="assets/css/onest-home.css" rel="stylesheet">
 
   <!-- Tailwind Configuration -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -179,7 +180,7 @@
     <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
       <i class="bi bi-x text-4xl"></i>
     </div>
-    <ul class="flex flex-col gap-6 text-center text-xl font-bold">
+    <ul class="onest-home-mobile-list flex flex-col gap-6 text-center text-xl font-bold">
       <li><a href="index.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Home</a></li>
       <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
       <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
@@ -615,48 +616,25 @@
           <p class="text-on-surface/80 mt-4 leading-relaxed">Dedicated academic leaders specializing in modern learning strategies, Gurukul ethics, and holistic child development.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto reveal">
-          <!-- Faculty Team 1 -->
-          <div class="bg-white rounded-[32px] border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col text-left group">
-            <div class="h-64 overflow-hidden relative">
-              <img src="assets/ONEST/faculty_team_new.jpg" alt="O'Nest Gurukul Staff and Leadership Team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-6 right-6">
-                <span class="text-[10px] bg-primary text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Leadership &amp; Faculty</span>
-                <h3 class="text-xl font-bold text-white mt-1">School Faculty &amp; Administrative Team</h3>
+        <div class="max-w-4xl mx-auto reveal">
+          <!-- Featured Faculty Team -->
+          <div class="bg-white rounded-[32px] border border-primary/10 overflow-hidden shadow-lg hover-lift flex flex-col text-left group">
+            <div class="h-64 md:h-[400px] overflow-hidden relative">
+              <img src="assets/ONEST/faculty_team_new.jpg" alt="O'Nest Gurukul Staff and Leadership Team" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div class="absolute bottom-6 left-8 right-8">
+                <span class="text-xs bg-primary text-white font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">Leadership &amp; Faculty</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-white mt-3 drop-shadow-md">School Faculty &amp; Administrative Team</h3>
               </div>
             </div>
-            <div class="p-6 md:p-8 space-y-3">
-              <p class="text-xs text-primary font-bold uppercase tracking-wider">Gopalrao Soundalgekar Education Foundation</p>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                Our highly qualified educators bring decades of combined teaching experience, CBSE/State board expertise, and compassionate student mentoring to every classroom.
+            <div class="p-8 md:p-10 space-y-4">
+              <p class="text-sm text-primary font-bold uppercase tracking-widest">Gopalrao Soundalgekar Education Foundation</p>
+              <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                Our highly qualified educators bring decades of combined teaching experience, CBSE/State board expertise, and compassionate student mentoring to every classroom. We are committed to fostering a supportive, innovative, and holistic learning environment for every child.
               </p>
-              <div class="pt-2">
-                <a href="about.html#leadership" class="text-secondary font-bold text-xs inline-flex items-center gap-1.5 hover:text-primary transition-colors">
+              <div class="pt-4">
+                <a href="about.html#leadership" class="bg-primary/10 text-primary font-bold text-sm px-6 py-3 rounded-xl inline-flex items-center gap-2 hover:bg-primary hover:text-white transition-colors shadow-sm">
                   Meet Our Full Educator Council <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Team 2 -->
-          <div class="bg-white rounded-[32px] border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col text-left group">
-            <div class="h-64 overflow-hidden relative">
-              <img src="assets/ONEST/IMG_6175.JPG.jpeg" alt="Futuristic Education Faculty Mentors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-6 right-6">
-                <span class="text-[10px] bg-accent text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Academic Mentors</span>
-                <h3 class="text-xl font-bold text-white mt-1">Futuristic Education Mentors</h3>
-              </div>
-            </div>
-            <div class="p-6 md:p-8 space-y-3">
-              <p class="text-xs text-accent font-bold uppercase tracking-wider">STEM, Languages &amp; Arts Specialists</p>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                Specialized in hands-on STEM project guidance, Olympiad coaching, communicative languages, and cultural performing arts training.
-              </p>
-              <div class="pt-2">
-                <a href="about.html" class="text-secondary font-bold text-xs inline-flex items-center gap-1.5 hover:text-primary transition-colors">
-                  Explore Academic Programs <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -694,7 +672,7 @@
             <!-- Slide 2 -->
             <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex flex-col justify-center">
               <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
-                "The sports and activity framework is excellent. The safety guidelines and bus tracking app keep us stress-free every day."
+                "The sports and activity framework is excellent. The safety guidelines and caring teachers keep us stress-free every day."
               </p>
               <h4 class="font-bold text-primary-light text-lg">Pooja Deshpande</h4>
               <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Parent of Class 5 Student</p>
@@ -823,7 +801,7 @@
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
                 <span class="text-xs bg-amber-50 text-primary border border-amber-100 px-3 py-1 rounded-full font-bold">📢 Announcement</span>
-                <h3 class="text-lg font-bold text-secondary mt-3 mb-2">Admissions Open 2025-26</h3>
+                <h3 class="text-lg font-bold text-secondary mt-3 mb-2">Admissions Open 2026-27</h3>
                 <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Secure your child's educational seat for grades 1–10. Reach out to admission desk for campus tours.</p>
               </div>
               <a href="admissions.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:underline">Apply Today <i class="bi bi-arrow-right"></i></a>
@@ -911,7 +889,7 @@
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
         <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
-          📣 Admissions Open 2025–2026
+          📣 Admissions Open 2026-27
         </span>
         <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Secure Your Child's Future Today</h2>
         <p class="text-white/80 max-w-2xl mx-auto font-body text-base md:text-lg">
@@ -954,7 +932,7 @@
                 <div class="w-12 h-12 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg shrink-0"><i class="bi bi-telephone"></i></div>
                 <div>
                   <h4 class="font-bold text-secondary text-base">Call</h4>
-                  <p class="text-on-surface-variant text-xs mt-1">+91 78880 56699</p>
+                  <p class="text-on-surface-variant text-xs mt-1">+91 8767672478</p>
                 </div>
               </div>
               <div class="bg-white/85 p-6 rounded-2xl border border-primary/10 shadow-sm text-left flex items-start gap-4">
@@ -976,7 +954,7 @@
           <!-- Right: Message Form -->
           <div class="lg:col-span-5 bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
-            <form id="home-contact-form" class="space-y-5 text-left">
+            <form id="home-contact-form" action="https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec" method="POST" target="hidden_iframe" class="space-y-5 text-left">
               <div>
                 <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Name</label>
                 <input type="text" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Full Name" required>
@@ -997,6 +975,7 @@
                 Send Message
               </button>
             </form>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
           </div>
         </div>
       </div>
@@ -1013,8 +992,8 @@
         </a>
         <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
         <div class="space-y-2 text-sm text-white/90">
-          <p><strong>Phone:</strong> +91 78880 56699</p>
-          <p><strong>Email:</strong> info@onestgurukul.in</p>
+          <p><strong>Phone:</strong> +91 8767672478</p>
+          <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
         </div>
       </div>
       <div>
@@ -1395,6 +1374,7 @@
       if (homeForm) {
         homeForm.addEventListener('submit', function(e) {
           e.preventDefault();
+
           const name = homeForm.querySelector('[name="Name"]').value;
           const email = homeForm.querySelector('[name="Email"]').value;
           const date = homeForm.querySelector('[name="Date"]').value;
@@ -1405,43 +1385,34 @@
           submitBtn.innerText = "Sending...";
           submitBtn.disabled = true;
           
+          // Prepare parameters for both destinations
+          const formData = new FormData(homeForm);
+          formData.append('FormType', 'Homepage Message');
+
+          // Send to Main Apps Script URL via fetch
+          const mainPost = fetch(homeForm.action, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: new URLSearchParams(formData)
+          });
+
+          let webhookPromise = Promise.resolve();
           if (window.postToOnestWebhook) {
-            window.postToOnestWebhook('Homepage Inquiry', {
+            webhookPromise = window.postToOnestWebhook('Homepage Inquiry', {
               FormType: 'Homepage Message',
               ApplicantName: name,
               Email: email,
               Date: date,
               Message: message
-            }).then(() => {
-              alert("Your message has been sent successfully!");
-              homeForm.reset();
-              submitBtn.innerText = originalText;
-              submitBtn.disabled = false;
-            }).catch(err => {
-              alert("Your message has been sent successfully!"); // Fallback confirmation
-              homeForm.reset();
-              submitBtn.innerText = originalText;
-              submitBtn.disabled = false;
-            });
-          } else {
-            const webhookUrl = DB.getSettings().googleSheetsWebhookUrl;
-            const formData = new FormData();
-            formData.append('FormType', 'Homepage Message');
-            formData.append('ApplicantName', name);
-            formData.append('Email', email);
-            formData.append('Date', date);
-            formData.append('Message', message);
-            
-            fetch(webhookUrl, {
-              method: 'POST',
-              body: new URLSearchParams(formData)
-            }).then(() => {
-              alert("Your message has been sent successfully!");
-              homeForm.reset();
-              submitBtn.innerText = originalText;
-              submitBtn.disabled = false;
             });
           }
+
+          Promise.allSettled([mainPost, webhookPromise]).finally(() => {
+            alert("✓ Your message has been sent successfully!");
+            homeForm.reset();
+            submitBtn.innerText = originalText;
+            submitBtn.disabled = false;
+          });
         });
       }
 
