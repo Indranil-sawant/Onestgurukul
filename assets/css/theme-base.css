@@ -129,3 +129,15 @@ body,
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
+
+/* Global Mobile Navbar Height & Logo Scaling Safe-Guards */
+@media (max-width: 768px) {
+    header.glass-nav {
+        height: 72px !important;
+    }
+    header.glass-nav img[src*="onest.svg"] {
+        height: 54px !important;
+        min-width: 42px !important;
+        object-fit: contain;
+    }
+}

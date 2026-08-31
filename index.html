@@ -149,8 +149,8 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
-</a>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] min-w-[58px] w-auto">
+      </a>
       <nav class="hidden lg:flex items-center space-x-8">
         <a class="text-primary font-bold border-b-2 border-primary pb-1 text-base tracking-wide" href="index.html">Home</a>
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="about.html">About Us</a>
@@ -218,6 +218,8 @@
 
       <!-- Hero Content -->
       <div class="container mx-auto px-gutter max-w-container-max h-full flex items-center relative z-10">
+        <!-- Ambient yellow gradient glow behind text for enhanced readability and aesthetics -->
+        <div class="absolute top-[15%] left-[-5%] w-[500px] h-[500px] bg-[#facc15]/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
           <!-- Text Elements -->
           <div class="lg:col-span-7 text-left space-y-5 lg:space-y-6 mt-8 lg:mt-0">
@@ -248,19 +250,19 @@
           <!-- Floating Badges Column -->
           <div class="hidden lg:col-span-5 lg:flex flex-col gap-4 items-end relative">
             <!-- Badge 1 -->
-            <div class="floating-badge bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0"><i class="bi bi-award-fill"></i></div>
-              <div class="text-left"><p class="font-bold text-sm leading-none">15+ Years</p><p class="text-xs opacity-75 mt-1">of Educational Excellence</p></div>
+            <div class="floating-badge bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary w-72">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0"><i class="bi bi-journal-bookmark-fill"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">CBSE Curriculum</p><p class="text-xs opacity-75 mt-1">Proposed CBSE &amp; NEP 2020</p></div>
             </div>
             <!-- Badge 2 -->
-            <div class="floating-badge-delay-1 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl shrink-0"><i class="bi bi-shield-fill-check"></i></div>
-              <div class="text-left"><p class="font-bold text-sm leading-none">Safe Campus</p><p class="text-xs opacity-75 mt-1">24/7 Security Protocols</p></div>
+            <div class="floating-badge-delay-1 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary w-72">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl shrink-0"><i class="bi bi-mortarboard-fill"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">Gurukul Values</p><p class="text-xs opacity-75 mt-1">Character &amp; Leadership Focus</p></div>
             </div>
             <!-- Badge 3 -->
-            <div class="floating-badge-delay-2 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary max-w-[280px]">
-              <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-xl shrink-0"><i class="bi bi-laptop"></i></div>
-              <div class="text-left"><p class="font-bold text-sm leading-none">Smart Classrooms</p><p class="text-xs opacity-75 mt-1">Digital Board Enabled</p></div>
+            <div class="floating-badge-delay-2 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border border-primary-light/30 flex items-center gap-4 text-secondary w-72">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-xl shrink-0"><i class="bi bi-lightbulb-fill"></i></div>
+              <div class="text-left"><p class="font-bold text-sm leading-none">Active Learning</p><p class="text-xs opacity-75 mt-1">Experiential Lab Experiments</p></div>
             </div>
           </div>
         </div>
@@ -594,8 +596,8 @@
           </div>
 
           <!-- Item 6: Tree Plantation -->
-          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0460.jpg.jpeg', 'Eco Club Tree Plantation Drive')">
-            <img src="assets/ONEST/IMG-20260810-WA0460.jpg.jpeg" alt="Tree Plantation Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="group relative rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0460.png', 'Eco Club Tree Plantation Drive')">
+            <img src="assets/ONEST/IMG-20260810-WA0460.png" alt="Tree Plantation Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
               <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
             </div>
@@ -1100,39 +1102,8 @@
     });
   </script>
 
-  <!-- Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/68c812faebe9761929d3e8de/1j56ok9fv';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
 
-  <!-- DB & Global Script Integrations -->
-  
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyB3gvpt7DtmXDvQGlkvG1A8r4yHVcgnfpQ",
-      authDomain: "onest-gurukul-9df5b.firebaseapp.com",
-      projectId: "onest-gurukul-9df5b",
-      storageBucket: "onest-gurukul-9df5b.firebasestorage.app",
-      messagingSenderId: "509493151600",
-      appId: "1:509493151600:web:3ddf6f5213457e8083b1b5"
-    };
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-    const dbFirestore = firebase.firestore();
-  </script>
-
+  <!-- Static content + global widgets (GitHub Pages) -->
   <script src="db.js"></script>
   <script src="onest-global.js"></script>
   <script>
@@ -1148,23 +1119,7 @@
         const container = document.getElementById('notice-list-container');
         if (!container) return;
         
-        let list = [];
-        try {
-            const snapshot = await dbFirestore.collection('notices').get();
-            snapshot.forEach(doc => {
-                let data = doc.data();
-                data.id = doc.id;
-                list.push(data);
-            });
-            list.sort((a, b) => {
-                if (a.pinned && !b.pinned) return -1;
-                if (!a.pinned && b.pinned) return 1;
-                return new Date(b.createdAt) - new Date(a.createdAt);
-            });
-        } catch (e) {
-            console.error('Failed to load notices from Firebase', e);
-            list = DB.getNotices(); // fallback
-        }
+        const list = DB.getNotices();
 
 
         // Filter

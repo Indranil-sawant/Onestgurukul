@@ -1,60 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Admin Dashboard - O'Nest Gurukul</title>
-
-  <!-- Icons & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'Nest Gurukul - Admin Portal</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Favicons -->
-  <link href="assets/img/onest.svg" rel="icon">
-
-  <!-- Global Base Styles & Gradients -->
-  <link href="assets/css/theme-base.css" rel="stylesheet">
-
-  <!-- Tailwind Configuration -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
+  
+  <script>
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
-            "primary-light": "#facc15",     /* Bright Golden Accent */
-            "secondary": "#002147",         /* Deep Royal Blue */
-            "accent": "#059669",            /* Emerald Green Accent */
-            "on-surface": "#1f2937",        /* Dark Charcoal */
-            "background": "#fdfbf7",        /* Warm White Base */
-            "surface-card": "#ffffff",      /* Pure White Card */
-            "outline-variant": "#e5e7eb"
+          colors: {
+            primary: '#735c00',
+            secondary: '#1e293b',
+            accent: '#facc15',
           },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "12px",
-            "xl": "16px",
-            "2xl": "24px",
-            "3xl": "32px",
-            "full": "9999px"
-          },
-          "spacing": {
-            "lg": "48px",
-            "gutter": "24px",
-            "base": "8px",
-            "sm": "12px",
-            "xs": "4px",
-            "xl": "80px",
-            "md": "24px",
-            "container-max": "1400px"
-          },
-          "fontFamily": {
-            "display": ["Libre Caslon Text", "serif"],
-            "body": ["Hanken Grotesk", "sans-serif"]
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
           }
         }
       }
@@ -63,1024 +34,927 @@
 
   <style>
     body {
-      font-family: 'Hanken Grotesk', sans-serif;
-      color: #1f2937;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background-color: #f8fafc;
     }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Libre Caslon Text', serif;
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
     }
-    .glass-nav {
-      background: rgba(253, 251, 247, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
     }
-    .luxury-shadow {
-      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
     }
   </style>
 </head>
+<body class="text-secondary antialiased min-h-screen flex flex-col">
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden min-h-screen flex flex-col">
-
-  <!-- Sticky TopNavBar -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
-    <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
-</a>
-      <div class="flex items-center space-x-4">
-        <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors" aria-label="Toggle Dark Mode">
-          <i class="bi bi-moon-fill text-xl"></i>
-        </button>
-        <a href="index.html" class="bg-secondary hover:bg-primary text-white px-5 py-2.5 rounded-xl font-bold transition-all text-sm shadow-md">
-          <i class="bi bi-arrow-left"></i> Public Site
+  <!-- Header -->
+  <header class="bg-secondary text-white border-b border-primary/20 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+          <i class="bi bi-key-fill text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight">O'Nest Gurukul</h1>
+          <p class="text-[10px] uppercase tracking-widest text-accent font-semibold">Content Management System</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-xs font-bold transition-all flex items-center gap-2">
+          <i class="bi bi-house-door-fill"></i> View Website
         </a>
+        <button onclick="downloadDbJs()" class="bg-primary hover:bg-accent hover:text-secondary text-white px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2">
+          <i class="bi bi-download"></i> Save &amp; Download db.js
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Login Gate Container -->
-  <main id="login-gate" class="pt-[140px] pb-16 flex-1 flex items-center justify-center px-4">
-    <div class="w-full max-w-md bg-white dark:bg-amber-50 p-8 rounded-[32px] border border-primary/10 shadow-2xl space-y-6">
-      <div class="text-center space-y-2">
-        <div class="w-16 h-16 rounded-3xl bg-primary/10 text-primary flex items-center justify-center text-3xl mx-auto border border-primary/20"><i class="bi bi-lock-fill"></i></div>
-        <h2 class="text-2xl font-bold text-secondary font-display">Staff Portal Access</h2>
-        <p class="text-xs text-on-surface-variant/80">Enter your credentials to manage O'Nest Gurukul content.</p>
+  <!-- Main Portal -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 flex flex-col lg:flex-row gap-8">
+    
+    <!-- Sidebar Navigation -->
+    <div class="w-full lg:w-64 shrink-0 flex flex-col gap-2">
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm space-y-1">
+        <p class="text-[10px] font-bold text-slate-400 uppercase px-3 mb-2 tracking-wider">Content Tables</p>
+        
+        <button onclick="switchTab('notices')" id="btn-notices" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all bg-primary/10 text-primary">
+          <i class="bi bi-megaphone-fill text-base"></i> Announcements &amp; Notices
+        </button>
+        
+        <button onclick="switchTab('events')" id="btn-events" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-calendar-event-fill text-base"></i> Calendar Events
+        </button>
+        
+        <button onclick="switchTab('documents')" id="btn-documents" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-file-earmark-pdf-fill text-base"></i> Document Downloads
+        </button>
+        
+        <button onclick="switchTab('faqs')" id="btn-faqs" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-question-circle-fill text-base"></i> Frequently Asked Questions
+        </button>
+        
+        <button onclick="switchTab('testimonials')" id="btn-testimonials" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-chat-quote-fill text-base"></i> Parent Testimonials
+        </button>
+        
+        <button onclick="switchTab('faculty')" id="btn-faculty" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-people-fill text-base"></i> Faculty Directory
+        </button>
+        
+        <button onclick="switchTab('achievements')" id="btn-achievements" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-trophy-fill text-base"></i> Student Achievements
+        </button>
+
+        <button onclick="switchTab('settings')" id="btn-settings" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
+          <i class="bi bi-gear-fill text-base"></i> Banner &amp; Webhooks
+        </button>
       </div>
 
-      <form id="admin-login-form" class="space-y-4">
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Username</label>
-          <input type="text" id="admin-username" placeholder="admin" required
-                 class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-sm font-semibold">
+      <!-- Quick How-To -->
+      <div class="bg-amber-50/70 border border-amber-200/50 rounded-2xl p-5 shadow-sm text-xs leading-relaxed text-slate-600">
+        <h4 class="font-bold text-secondary mb-2 flex items-center gap-1.5"><i class="bi bi-info-circle-fill text-primary"></i> CMS Deployment Guide</h4>
+        <ol class="list-decimal pl-4 space-y-1.5 font-medium">
+          <li>Add, edit, or delete items in the list.</li>
+          <li>Click <strong class="text-secondary">Save &amp; Download db.js</strong>.</li>
+          <li>Replace the <code class="bg-white px-1 py-0.5 rounded border">db.js</code> in your folder with the downloaded file.</li>
+          <li>Commit/upload to update the website!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Edit Workspace Panel -->
+    <div class="flex-1 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+        <div>
+          <h2 id="workspace-title" class="text-lg font-bold text-secondary">Announcements &amp; Notices</h2>
+          <p id="workspace-desc" class="text-xs text-slate-500">Manage admission updates, holiday notices, and parents alerts displayed on the homepage.</p>
         </div>
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Password</label>
-          <input type="password" id="admin-password" placeholder="••••••••" required
-                 class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-sm font-semibold">
-        </div>
-        <div id="login-error" class="hidden text-red-600 text-xs font-bold text-center bg-red-50 py-2.5 rounded-xl border border-red-100 animate-pulse">
-          ❌ Invalid username or password.
-        </div>
-        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg text-sm tracking-wide">
-          Login Securely
+        <button onclick="openAddModal()" id="btn-add-item" class="bg-primary hover:bg-primary/95 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5">
+          <i class="bi bi-plus-lg"></i> Add New Item
         </button>
-      </form>
+      </div>
+
+      <!-- Content Table Container -->
+      <div class="flex-1 overflow-x-auto custom-scrollbar p-6">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr id="table-headers" class="border-b border-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              <!-- Dynamic -->
+            </tr>
+          </thead>
+          <tbody id="table-body" class="divide-y divide-slate-100">
+            <!-- Dynamic -->
+          </tbody>
+        </table>
+        <div id="empty-state" class="hidden text-center py-16 text-slate-400">
+          <i class="bi bi-folder-x text-5xl mb-3 block"></i>
+          <p class="font-bold text-sm">No items found</p>
+          <p class="text-xs mt-1">Get started by creating a new entry above.</p>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- Admin Panel Container -->
-  <main id="admin-panel" class="pt-[110px] pb-16 flex-1 hidden px-gutter max-w-container-max mx-auto w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- Sidebar / Tab list -->
-      <aside class="lg:col-span-3 bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex flex-col gap-2 shrink-0">
-        <div class="mb-4">
-          <h4 class="font-bold text-secondary text-base uppercase tracking-wider border-b border-primary/10 pb-2">Administrative Menu</h4>
-        </div>
-        <button class="menu-tab-btn active text-left px-4 py-3.5 rounded-xl text-sm font-bold bg-primary text-white flex items-center gap-3 transition-colors" data-tab="dashboard">
-          <i class="bi bi-speedometer2"></i> Dashboard Summary
+  <!-- Edit/Add Modal -->
+  <div id="edit-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[200] hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden transform scale-95 transition-all duration-300" id="modal-container">
+      <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+        <h3 id="modal-title" class="font-bold text-secondary text-sm uppercase tracking-wide">Edit Item</h3>
+        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors">
+          <i class="bi bi-x text-xl"></i>
         </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="notices">
-          <i class="bi bi-megaphone"></i> Notice Board
-        </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="events">
-          <i class="bi bi-calendar-event"></i> Event Calendar
-        </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="documents">
-          <i class="bi bi-file-earmark-pdf"></i> Document Hub
-        </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors relative" data-tab="admissions">
-          <i class="bi bi-mortarboard"></i> Admission Forms
-          <span id="badge-adm-count" class="hidden absolute right-3 bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full">0</span>
-        </button>
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="bookings">
-          <i class="bi bi-calendar-check"></i> Tour Bookings
-        </button>
-
-        <button class="menu-tab-btn text-left px-4 py-3.5 rounded-xl text-sm font-bold text-secondary/80 hover:bg-primary/10 flex items-center gap-3 transition-colors" data-tab="settings">
-          <i class="bi bi-sliders"></i> Global Settings
-        </button>
-        <button id="admin-logout" class="text-left px-4 py-3.5 rounded-xl text-sm font-bold text-red-600 hover:bg-red-50 flex items-center gap-3 mt-4 transition-colors">
-          <i class="bi bi-box-arrow-left"></i> Log Out
-        </button>
-      </aside>
-
-      <!-- Panel Sections -->
-      <section class="lg:col-span-9 space-y-6">
-
-        <!-- 1. DASHBOARD TAB -->
-        <div id="tab-dashboard" class="tab-panel space-y-6">
-          <h2 class="font-display text-3xl font-bold text-secondary">Dashboard Summary</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex items-center gap-4">
-              <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-2xl shrink-0"><i class="bi bi-mortarboard"></i></div>
-              <div>
-                <p class="text-xs text-on-surface-variant/80 font-bold uppercase tracking-wider">Admissions</p>
-                <h4 id="dash-adm-count" class="text-2xl font-bold text-secondary">0</h4>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex items-center gap-4">
-              <div class="w-12 h-12 bg-accent/10 text-accent rounded-2xl flex items-center justify-center text-2xl shrink-0"><i class="bi bi-calendar-check"></i></div>
-              <div>
-                <p class="text-xs text-on-surface-variant/80 font-bold uppercase tracking-wider">Tours Booked</p>
-                <h4 id="dash-book-count" class="text-2xl font-bold text-secondary">0</h4>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm flex items-center gap-4">
-              <div class="w-12 h-12 bg-secondary/10 text-[#002147] rounded-2xl flex items-center justify-center text-2xl shrink-0"><i class="bi bi-megaphone"></i></div>
-              <div>
-                <p class="text-xs text-on-surface-variant/80 font-bold uppercase tracking-wider">Active Notices</p>
-                <h4 id="dash-notice-count" class="text-2xl font-bold text-secondary">0</h4>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Quick System overview -->
-          <div class="bg-white dark:bg-amber-50 p-6 rounded-[32px] border border-primary/10 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-lightning-fill text-primary"></i> System Settings &amp; Info</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-semibold text-on-surface-variant">
-              <p>📍 Database Status: <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold">Local Active (Seeded)</span></p>
-              <p>⚙️ Admin Level: <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-bold">Principal / Academic Administrator</span></p>
-              <p>🗄️ Host Domain: <span class="text-secondary select-all font-mono">Simulated Local/GitHub Pages</span></p>
-              <p>🔒 Session security: <span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">Active</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. NOTICES TAB -->
-        <div id="tab-notices" class="tab-panel space-y-6 hidden">
-          <div class="flex justify-between items-center">
-            <h2 class="font-display text-3xl font-bold text-secondary">Manage Notice Board</h2>
-            <button onclick="openNoticeModal()" class="bg-primary hover:bg-secondary text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow transition-colors">
-              <i class="bi bi-plus-lg"></i> Add Notice
-            </button>
-          </div>
-
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Notice Title</th>
-                    <th class="p-4">Category</th>
-                    <th class="p-4">Date</th>
-                    <th class="p-4">Pinned</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="notices-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. EVENTS TAB -->
-        <div id="tab-events" class="tab-panel space-y-6 hidden">
-          <div class="flex justify-between items-center">
-            <h2 class="font-display text-3xl font-bold text-secondary">Manage Event Calendar</h2>
-            <button onclick="openEventModal()" class="bg-primary hover:bg-secondary text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow transition-colors">
-              <i class="bi bi-plus-lg"></i> Add Event
-            </button>
-          </div>
-
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Event Date</th>
-                    <th class="p-4">Title</th>
-                    <th class="p-4">Category</th>
-                    <th class="p-4">Description</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="events-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. DOCUMENTS TAB -->
-        <div id="tab-documents" class="tab-panel space-y-6 hidden">
-          <div class="flex justify-between items-center">
-            <h2 class="font-display text-3xl font-bold text-secondary">Manage Document Hub</h2>
-            <button onclick="openDocModal()" class="bg-primary hover:bg-secondary text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow transition-colors">
-              <i class="bi bi-plus-lg"></i> Add Document
-            </button>
-          </div>
-
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Document Title</th>
-                    <th class="p-4">Category</th>
-                    <th class="p-4">Last Updated</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="docs-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. ADMISSIONS TAB -->
-        <div id="tab-admissions" class="tab-panel space-y-6 hidden">
-          <h2 class="font-display text-3xl font-bold text-secondary">Admission Submissions</h2>
-
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Date</th>
-                    <th class="p-4">Student Name</th>
-                    <th class="p-4">Grade</th>
-                    <th class="p-4">Parent Details</th>
-                    <th class="p-4">Status</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="admissions-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. BOOKINGS TAB -->
-        <div id="tab-bookings" class="tab-panel space-y-6 hidden">
-          <h2 class="font-display text-3xl font-bold text-secondary">Campus Tour Bookings</h2>
-
-          <div class="bg-white dark:bg-amber-50 rounded-3xl border border-primary/10 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="bg-secondary text-white uppercase font-bold tracking-wider text-[10px]">
-                    <th class="p-4">Booking Date</th>
-                    <th class="p-4">Time Slot</th>
-                    <th class="p-4">Visitor Details</th>
-                    <th class="p-4">Status</th>
-                    <th class="p-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="bookings-table-body" class="divide-y divide-primary/5 font-semibold text-on-surface-variant">
-                  <!-- Dynamic rows -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- 8. SETTINGS TAB -->
-        <div id="tab-settings" class="tab-panel space-y-6 hidden">
-          <h2 class="font-display text-3xl font-bold text-secondary">Global Settings</h2>
-
-          <!-- Emergency Announcement Config -->
-          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-exclamation-triangle text-primary"></i> Emergency Announcement Banner</h3>
-            
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <input type="checkbox" id="setting-banner-active" class="h-5 w-5 rounded border-primary/20 text-primary focus:ring-primary">
-                <label for="setting-banner-active" class="text-xs font-bold text-secondary uppercase tracking-wider">Enable Banner on all pages</label>
-              </div>
-
-              <div class="space-y-1">
-                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Announcement Text</label>
-                <textarea id="setting-banner-text" rows="3" class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold"></textarea>
-              </div>
-
-              <div class="space-y-1">
-                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Banner Priority Level</label>
-                <select id="setting-banner-priority" class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold">
-                  <option value="info">Info (Primary Yellow)</option>
-                  <option value="warning">Warning (Orange)</option>
-                  <option value="critical">Critical (Red)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Google Sheets Automation Config -->
-          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-google text-primary"></i> Google Sheets Webhook Configuration</h3>
-            <p class="text-xs text-on-surface-variant font-medium">Configure the URL of the Google Apps Script Webhook. Submissions from all admissions, campus visit tours, prospectus downloads, career vacancies, and contact sheets are instantly posted here.</p>
-            <div class="space-y-1">
-              <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Google Sheets script URL</label>
-              <input type="url" id="setting-sheets-url" placeholder="https://script.google.com/macros/s/.../exec" class="w-full border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold">
-            </div>
-          </div>
-
-          <!-- Security Hashing Tool -->
-          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-shield-lock text-primary"></i> Security &amp; Password Hashing Tool</h3>
-            <p class="text-xs text-on-surface-variant font-medium">To change your admin portal password securely, type your new password below, click "Generate Hash", copy the output, and paste it into the code of `admin.html` (under `secureHash` around line 562).</p>
-            
-            <div class="space-y-3">
-              <div class="space-y-1">
-                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">New Password Text</label>
-                <div class="flex gap-2">
-                  <input type="text" id="new-password-text" placeholder="Type new password here..." class="flex-1 border border-primary/10 rounded-xl px-4 py-3 bg-gray-50 focus:ring-2 focus:ring-primary focus:border-primary text-xs font-semibold">
-                  <button type="button" onclick="generatePasswordHash()" class="bg-primary hover:bg-secondary text-white font-bold px-4 py-3 rounded-xl text-xs shadow-sm transition-colors shrink-0">
-                    Generate Hash
-                  </button>
-                </div>
-              </div>
-              
-              <div id="password-hash-result-container" class="hidden space-y-1">
-                <label class="text-xs font-bold text-secondary uppercase tracking-wider block">Generated SHA-256 Hash</label>
-                <div class="flex gap-2">
-                  <input type="text" id="new-password-hash" readonly class="flex-1 border border-primary/10 rounded-xl px-4 py-3 bg-gray-100 font-mono text-[10px] font-bold text-secondary select-all">
-                  <button type="button" onclick="copyPasswordHash()" class="bg-white hover:bg-gray-50 border border-primary/20 text-secondary font-bold px-4 py-3 rounded-xl text-xs flex items-center gap-1.5 shadow-sm transition-colors shrink-0">
-                    <i class="bi bi-clipboard"></i> Copy
-                  </button>
-                </div>
-                <p class="text-[10px] text-green-700 font-bold" id="hash-copy-confirm" style="display:none;">✓ Copied to clipboard!</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Backup & Recovery -->
-          <div class="bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-3"><i class="bi bi-cloud-arrow-down text-primary"></i> Database Backup &amp; Sync</h3>
-            <p class="text-xs text-on-surface-variant font-medium">To sync your administrative changes to GitHub Pages, click "Export Database JSON", and commit the file contents to your repository.</p>
-            <div class="flex flex-wrap gap-4 pt-2">
-              <button onclick="exportDB()" class="bg-primary hover:bg-secondary text-white font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2 shadow-md transition-colors">
-                <i class="bi bi-download"></i> Export Database JSON
-              </button>
-              <div class="relative">
-                <input type="file" id="db-import-file" class="hidden" accept=".json" onchange="importDB(event)">
-                <button onclick="document.getElementById('db-import-file').click()" class="bg-white hover:bg-gray-50 border border-primary/20 text-secondary font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2 shadow-sm transition-colors">
-                  <i class="bi bi-upload"></i> Import Database JSON
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-    </div>
-  </main>
-
-  <!-- --- MODALS --- -->
-  <!-- 1. Notice Modal -->
-  <div id="notice-modal" class="fixed inset-0 z-[300] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-amber-50 w-full max-w-md p-6 rounded-3xl border border-primary/20 shadow-2xl space-y-4">
-      <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-2">Add New Notice</h3>
-      <form id="notice-form" class="space-y-4">
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Notice Title</label>
-          <input type="text" id="n-title" required class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Category</label>
-          <select id="n-category" class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-            <option value="Academic">Academic</option>
-            <option value="General">General</option>
-            <option value="Sports">Sports</option>
-            <option value="Admission">Admission</option>
-          </select>
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Notice Details</label>
-          <textarea id="n-content" rows="3" required class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold"></textarea>
-        </div>
-        <div class="flex items-center gap-2">
-          <input type="checkbox" id="n-pinned" class="rounded border-primary/20 text-primary focus:ring-primary">
-          <label for="n-pinned" class="text-[10px] font-bold text-secondary uppercase tracking-wider">Pin this notice</label>
-        </div>
-        <div class="flex gap-3 justify-end pt-2">
-          <button type="button" onclick="closeNoticeModal()" class="border border-primary/20 text-secondary px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-50">Cancel</button>
-          <button type="submit" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-xl text-xs font-bold shadow">Save Notice</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 2. Event Modal -->
-  <div id="event-modal" class="fixed inset-0 z-[300] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-amber-50 w-full max-w-md p-6 rounded-3xl border border-primary/20 shadow-2xl space-y-4">
-      <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-2">Add New Calendar Event</h3>
-      <form id="event-form" class="space-y-4">
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Event Date</label>
-          <input type="date" id="e-date" required class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Event Title</label>
-          <input type="text" id="e-title" required class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Category</label>
-          <select id="e-category" class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-            <option value="Academic">Academic</option>
-            <option value="Holiday">Holiday</option>
-            <option value="Exam">Exam</option>
-            <option value="PTM">PTM</option>
-            <option value="Sports">Sports</option>
-            <option value="Activity">Activity</option>
-          </select>
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Description</label>
-          <textarea id="e-desc" rows="2" class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold"></textarea>
-        </div>
-        <div class="flex gap-3 justify-end pt-2">
-          <button type="button" onclick="closeEventModal()" class="border border-primary/20 text-secondary px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-50">Cancel</button>
-          <button type="submit" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-xl text-xs font-bold shadow">Save Event</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 3. Document Modal -->
-  <div id="doc-modal" class="fixed inset-0 z-[300] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-amber-50 w-full max-w-md p-6 rounded-3xl border border-primary/20 shadow-2xl space-y-4">
-      <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-2">Add Public Document</h3>
-      <form id="doc-form" class="space-y-4">
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Document Title</label>
-          <input type="text" id="d-title" required class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-        </div>
-        <div class="space-y-1">
-          <label class="text-[10px] font-bold text-secondary uppercase tracking-wider block">Category</label>
-          <select id="d-category" class="w-full border border-primary/10 rounded-xl px-4 py-2.5 bg-gray-50 focus:ring-1 focus:ring-primary focus:border-primary text-xs font-semibold">
-            <option value="CBSE">CBSE Disclosure</option>
-            <option value="Recognition Certificate">Recognition Certificate</option>
-            <option value="NOC">No Objection Certificate (NOC)</option>
-            <option value="Affiliation Letter">Affiliation Letter</option>
-            <option value="RTE Documents">RTE Documents</option>
-            <option value="School Prospectus">School Prospectus</option>
-            <option value="Academic Calendar">Academic Calendar</option>
-            <option value="Book List">Book List</option>
-            <option value="Holiday List">Holiday List</option>
-          </select>
-        </div>
-        <div class="flex gap-3 justify-end pt-2">
-          <button type="button" onclick="closeDocModal()" class="border border-primary/20 text-secondary px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-50">Cancel</button>
-          <button type="submit" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-xl text-xs font-bold shadow">Save Document</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 4. Admission Detail Modal -->
-  <div id="adm-detail-modal" class="fixed inset-0 z-[300] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-amber-50 w-full max-w-lg p-6 rounded-3xl border border-primary/20 shadow-2xl space-y-4 max-h-[85vh] overflow-y-auto">
-      <h3 class="text-lg font-bold text-secondary border-b border-primary/10 pb-2">Admission Application Details</h3>
-      <div id="adm-detail-content" class="text-xs font-semibold text-on-surface-variant space-y-3">
-        <!-- Dyn Content -->
       </div>
-      <div class="flex gap-3 justify-end pt-4 border-t border-primary/10">
-        <button onclick="closeAdmDetailModal()" class="border border-primary/20 text-secondary px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-50">Close</button>
-      </div>
+      <form id="modal-form" onsubmit="saveItem(event)">
+        <div id="modal-fields" class="p-6 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar text-xs">
+          <!-- Dynamic Form Inputs -->
+        </div>
+        <div class="px-6 py-4 border-t border-slate-100 flex justify-end gap-2 bg-slate-50">
+          <button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-primary hover:bg-accent hover:text-secondary text-white text-xs font-bold transition-all">Apply Changes</button>
+        </div>
+      </form>
     </div>
   </div>
 
-
-  <!-- --- FOOTER --- -->
-  <footer class="bg-secondary text-white/90 border-t border-primary/15 py-8 mt-auto shrink-0">
-    <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold">
-      <p>&copy; Copyright <strong>Onest Gurukul Admin</strong>. All Rights Reserved</p>
-      <p class="text-white/60">Secure Local Database Mode</p>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <p>&copy; 2026 O'Nest Gurukul. Secured Offline CMS Sandbox.</p>
   </footer>
 
-  <!-- DB Script load -->
-  
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyB3gvpt7DtmXDvQGlkvG1A8r4yHVcgnfpQ",
-      authDomain: "onest-gurukul-9df5b.firebaseapp.com",
-      projectId: "onest-gurukul-9df5b",
-      storageBucket: "onest-gurukul-9df5b.firebasestorage.app",
-      messagingSenderId: "509493151600",
-      appId: "1:509493151600:web:3ddf6f5213457e8083b1b5"
-    };
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-    const dbFirestore = firebase.firestore();
-  </script>
-
+  <!-- DB Integrations -->
   <script src="db.js"></script>
-  <!-- Admin Script Logic -->
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const DB = window.OnestDB;
+    let currentTab = 'notices';
+    let localDB = {};
+    let editingId = null;
 
-        // Login Session Checks
-        const sessionActive = sessionStorage.getItem('onest_admin_logged') === 'true';
-        if (sessionActive) {
-            showPanel();
-        }
+    // Schema definitions for each data structure
+    const SCHEMAS = {
+      notices: {
+        fields: [
+          { name: 'title', label: 'Notice Title', type: 'text', required: true },
+          { name: 'content', label: 'Brief Description', type: 'textarea', required: true },
+          { name: 'category', label: 'Category Tag', type: 'select', options: ['Admission', 'Academic', 'Sports', 'General'], required: true },
+          { name: 'pinned', label: 'Pin to Top Banner', type: 'boolean' },
+          { name: 'pdfUrl', label: 'Attachment Document URL (Optional)', type: 'text' }
+        ],
+        headers: ['Title', 'Category', 'Status', 'Date', 'Actions']
+      },
+      events: {
+        fields: [
+          { name: 'title', label: 'Event Title', type: 'text', required: true },
+          { name: 'date', label: 'Event Date (YYYY-MM-DD)', type: 'date', required: true },
+          { name: 'category', label: 'Category', type: 'select', options: ['Academic', 'Activity', 'Exam', 'Holiday', 'PTM'], required: true },
+          { name: 'description', label: 'Short Description', type: 'textarea' }
+        ],
+        headers: ['Title', 'Date', 'Category', 'Description', 'Actions']
+      },
+      documents: {
+        fields: [
+          { name: 'title', label: 'Document Name', type: 'text', required: true },
+          { name: 'category', label: 'Document Type / Category', type: 'select', options: ['CBSE', 'Recognition Certificate', 'NOC', 'Affiliation Letter', 'RTE Documents', 'School Prospectus', 'Academic Calendar', 'Book List', 'Holiday List'], required: true },
+          { name: 'downloadUrl', label: 'File URL / Path', type: 'text', required: true }
+        ],
+        headers: ['Document Name', 'Category', 'Updated Date', 'File URL', 'Actions']
+      },
+      faqs: {
+        fields: [
+          { name: 'question', label: 'Question Description', type: 'text', required: true },
+          { name: 'answer', label: 'Detailed Answer Description', type: 'textarea', required: true },
+          { name: 'category', label: 'Grouping Category', type: 'select', options: ['Admission', 'Curriculum', 'Fees', 'Transport', 'Activities', 'Hostel', 'Uniform'], required: true }
+        ],
+        headers: ['Question', 'Category', 'Answer Summary', 'Actions']
+      },
+      testimonials: {
+        fields: [
+          { name: 'name', label: 'Parent / Reviewer Name', type: 'text', required: true },
+          { name: 'role', label: 'Designation / Relationship', type: 'text', required: true, default: 'Parent' },
+          { name: 'text', label: 'Detailed Review Text', type: 'textarea', required: true },
+          { name: 'photo', label: 'Profile Photo Path', type: 'text', default: 'assets/img/education/parent (1).jpg' }
+        ],
+        headers: ['Name', 'Role', 'Testimonial Extract', 'Actions']
+      },
+      faculty: {
+        fields: [
+          { name: 'name', label: 'Teacher / Staff Name', type: 'text', required: true },
+          { name: 'role', label: 'Designation / Title', type: 'text', required: true },
+          { name: 'qualification', label: 'Educational Qualifications', type: 'text', required: true },
+          { name: 'experience', label: 'Years of Experience', type: 'text', required: true },
+          { name: 'department', label: 'Academic Department', type: 'select', options: ['Administration', 'Secondary', 'Primary', 'Pre-Primary', 'Sports', 'Arts'], required: true },
+          { name: 'photo', label: 'Staff Portrait Photo URL', type: 'text', default: 'assets/img/education/open (1).jpg' }
+        ],
+        headers: ['Name', 'Role', 'Department', 'Experience', 'Actions']
+      },
+      achievements: {
+        fields: [
+          { name: 'title', label: 'Award Title', type: 'text', required: true },
+          { name: 'awardee', label: 'Winner / Recipient Name', type: 'text', required: true },
+          { name: 'category', label: 'Category', type: 'select', options: ['Academics', 'Arts', 'Olympiads', 'Sports', 'State Honors'], required: true },
+          { name: 'year', label: 'Academic Year', type: 'text', required: true },
+          { name: 'description', label: 'Felicitation Summary', type: 'textarea', required: true },
+          { name: 'image', label: 'Achievement Photograph Path', type: 'text', required: true }
+        ],
+        headers: ['Award Title', 'Recipient', 'Category', 'Year', 'Actions']
+      },
+      settings: {
+        fields: [
+          { name: 'emergencyBannerActive', label: 'Show Emergency Header Alert Banner', type: 'boolean' },
+          { name: 'emergencyBannerText', label: 'Banner Text Content', type: 'text' },
+          { name: 'emergencyBannerPriority', label: 'Alert Color Accent', type: 'select', options: ['warning', 'danger', 'info'] },
+          { name: 'googleSheetsWebhookUrl', label: 'Admissions Form Webhook (Google Sheets Script)', type: 'text' }
+        ],
+        headers: []
+      }
+    };
 
-        // SHA-256 hashing helper
-        async function getSHA256Hash(str) {
-            const utf8 = new TextEncoder().encode(str);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(bytes => bytes.toString(16).padStart(2, '0')).join('');
-            return hashHex;
-        }
-
-        // Handle Login Submission
-        document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const u = document.getElementById('admin-username').value;
-            const p = document.getElementById('admin-password').value;
-
-            // Secure SHA-256 hash comparison
-            // Default password is 'admin123' -> hash is '240be518ab62cd8f43c968cf22600976531d481454ab5a60e0a5c43d875323a0'
-            const secureHash = 'f484754639396a12ceaf5f5efeb7231aa7e20332301f7c76b42a8f6313f60b24';
-            const inputHash = await getSHA256Hash(p);
-
-            if (u === 'admin' && inputHash === secureHash) {
-                sessionStorage.setItem('onest_admin_logged', 'true');
-                document.getElementById('login-error').classList.add('hidden');
-                showPanel();
-            } else {
-                document.getElementById('login-error').classList.remove('hidden');
-            }
+    // Load static DB into edit memory
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.OnestDB) {
+        // Fetch all tables into local edit copy
+        Object.keys(SCHEMAS).forEach(table => {
+          localDB[table] = window.OnestDB.getTable(table);
         });
-
-        // Handle Logout
-        document.getElementById('admin-logout').addEventListener('click', () => {
-            sessionStorage.removeItem('onest_admin_logged');
-            location.reload();
-        });
-
-        function showPanel() {
-            document.getElementById('login-gate').classList.add('hidden');
-            document.getElementById('admin-panel').classList.remove('hidden');
-            renderDashboard();
-            renderNoticesTable();
-            renderEventsTable();
-            renderDocsTable();
-            renderAdmissionsTable();
-            renderBookingsTable();
-            loadSettings();
-        }
-
-        // --- Tab Switching Logic ---
-        document.querySelectorAll('.menu-tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                // remove active class
-                document.querySelectorAll('.menu-tab-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-primary', 'text-white');
-                    b.classList.add('text-secondary/80', 'hover:bg-primary/10');
-                });
-                // add to current
-                btn.classList.add('active', 'bg-primary', 'text-white');
-                btn.classList.remove('text-secondary/80', 'hover:bg-primary/10');
-
-                // hide all panels
-                document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
-
-                // show targeted panel
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById('tab-' + tabId).classList.remove('hidden');
-            });
-        });
-
-        // --- DASHBOARD RENDER ---
-        function renderDashboard() {
-            document.getElementById('dash-book-count').textContent = DB.getBookings().length;
-        }
-
-        // --- NOTICES MANAGER ---
         
-        async function renderNoticesTable() {
-            let list = [];
-            try {
-                const snapshot = await dbFirestore.collection('notices').get();
-                snapshot.forEach(doc => {
-                    let data = doc.data();
-                    data.id = doc.id;
-                    list.push(data);
-                });
-                list.sort((a, b) => {
-                    if (a.pinned && !b.pinned) return -1;
-                    if (!a.pinned && b.pinned) return 1;
-                    return new Date(b.createdAt) - new Date(a.createdAt);
-                });
-            } catch (e) {
-                list = DB.getNotices();
-            }
-            const dashNoticeCount = document.getElementById('dash-notice-count');
-            if (dashNoticeCount) {
-                dashNoticeCount.textContent = list.length;
-            }
-            const tbody = document.getElementById('notices-table-body');
-
-            tbody.innerHTML = '';
-
-            list.forEach(n => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4 font-bold text-secondary max-w-[300px] truncate">${n.title}</td>
-                    <td class="p-4"><span class="px-2.5 py-1 bg-primary/10 text-primary rounded-full uppercase tracking-wider text-[9px]">${n.category}</span></td>
-                    <td class="p-4">${n.createdAt}</td>
-                    <td class="p-4">
-                        <button onclick="toggleNoticePin('${n.id}')" class="text-base cursor-pointer focus:outline-none">
-                            <i class="bi ${n.pinned ? 'bi-pin-angle-fill text-primary' : 'bi-pin-angle text-on-surface-variant/40'}"></i>
-                        </button>
-                    </td>
-                    <td class="p-4 text-right space-x-2">
-                        <button onclick="deleteNotice('${n.id}')" class="text-red-600 hover:text-red-800 text-sm"><i class="bi bi-trash"></i> Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.toggleNoticePin = function(id) {
-            dbFirestore.collection('notices').doc(id).get().then(doc => {
-                if(doc.exists) {
-                    dbFirestore.collection('notices').doc(id).update({pinned: !doc.data().pinned})
-                        .then(renderNoticesTable)
-                        .catch(err => alert("Error updating pin status: " + err.message));
-                }
-            }).catch(err => alert("Error fetching notice: " + err.message));
-        };
-
-        window.deleteNotice = function(id) {
-            if (confirm("Are you sure you want to delete this notice?")) {
-                dbFirestore.collection('notices').doc(id).delete()
-                    .then(() => {
-                        renderNoticesTable();
-                        renderDashboard();
-                    })
-                    .catch(err => alert("Error deleting notice: " + err.message));
-            }
-        };
-
-        // Notice Form Submission
-        document.getElementById('notice-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const title = document.getElementById('n-title').value;
-            const cat = document.getElementById('n-category').value;
-            const content = document.getElementById('n-content').value;
-            const pinned = document.getElementById('n-pinned').checked;
-
-            const noticeData = { title, category: cat, content, pinned, createdAt: new Date().toISOString().split('T')[0] };
-            dbFirestore.collection('notices').add(noticeData)
-                .then(() => {
-                    closeNoticeModal();
-                    renderNoticesTable();
-                    renderDashboard();
-                    document.getElementById('notice-form').reset();
-                })
-                .catch(err => alert("Error adding notice: " + err.message));
-        });
-
-
-        // --- EVENTS MANAGER ---
-        function renderEventsTable() {
-            const list = DB.getEvents();
-            const tbody = document.getElementById('events-table-body');
-            tbody.innerHTML = '';
-
-            list.forEach(e => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4 font-bold text-secondary">${e.date}</td>
-                    <td class="p-4">${e.title}</td>
-                    <td class="p-4"><span class="px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-[9px] uppercase tracking-wider">${e.category}</span></td>
-                    <td class="p-4 truncate max-w-[200px]">${e.description || '-'}</td>
-                    <td class="p-4 text-right">
-                        <button onclick="deleteEvent('${e.id}')" class="text-red-600 hover:text-red-800 text-sm"><i class="bi bi-trash"></i> Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.deleteEvent = function(id) {
-            if (confirm("Are you sure you want to delete this event?")) {
-                DB.deleteEvent(id);
-                renderEventsTable();
-            }
-        };
-
-        document.getElementById('event-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const date = document.getElementById('e-date').value;
-            const title = document.getElementById('e-title').value;
-            const category = document.getElementById('e-category').value;
-            const description = document.getElementById('e-desc').value;
-
-            DB.addEvent({ date, title, category, description });
-            closeEventModal();
-            renderEventsTable();
-            document.getElementById('event-form').reset();
-        });
-
-
-        // --- DOCUMENT MANAGER ---
-        function renderDocsTable() {
-            const list = DB.getDocuments();
-            const tbody = document.getElementById('docs-table-body');
-            tbody.innerHTML = '';
-
-            list.forEach(d => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4 font-bold text-secondary">${d.title}</td>
-                    <td class="p-4"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full text-[9px] uppercase tracking-wider">${d.category}</span></td>
-                    <td class="p-4">${d.updatedDate}</td>
-                    <td class="p-4 text-right">
-                        <button onclick="deleteDoc('${d.id}')" class="text-red-600 hover:text-red-800 text-sm"><i class="bi bi-trash"></i> Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.deleteDoc = function(id) {
-            if (confirm("Are you sure you want to delete this document?")) {
-                DB.deleteDocument(id);
-                renderDocsTable();
-            }
-        };
-
-        document.getElementById('doc-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const title = document.getElementById('d-title').value;
-            const category = document.getElementById('d-category').value;
-
-            DB.addDocument({ title, category, downloadUrl: "#" });
-            closeDocModal();
-            renderDocsTable();
-            document.getElementById('doc-form').reset();
-        });
-
-
-        // --- ADMISSIONS MANAGER ---
-        let admissionsList = [];
-        async function renderAdmissionsTable() {
-            admissionsList = [];
-            try {
-                const snapshot = await dbFirestore.collection('admissions').get();
-                snapshot.forEach(doc => {
-                    let data = doc.data();
-                    data.id = doc.id;
-                    admissionsList.push(data);
-                });
-                admissionsList.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-            } catch (e) {
-                admissionsList = DB.getAdmissions();
-            }
-
-            const dashAdmCount = document.getElementById('dash-adm-count');
-            if (dashAdmCount) {
-                dashAdmCount.textContent = admissionsList.length;
-            }
-            const pendingAdmissions = admissionsList.filter(a => a.status === 'Submitted').length;
-            const admBadge = document.getElementById('badge-adm-count');
-            if (admBadge) {
-                if (pendingAdmissions > 0) {
-                    admBadge.textContent = pendingAdmissions;
-                    admBadge.classList.remove('hidden');
-                } else {
-                    admBadge.classList.add('hidden');
-                }
-            }
-
-            const tbody = document.getElementById('admissions-table-body');
-            tbody.innerHTML = '';
-
-            admissionsList.forEach(a => {
-                let badgeColor = "bg-gray-100 text-gray-700";
-                if (a.status === 'Approved') badgeColor = "bg-green-100 text-green-700";
-                if (a.status === 'Rejected') badgeColor = "bg-red-100 text-red-700";
-                if (a.status === 'Under Review') badgeColor = "bg-amber-100 text-amber-700";
-
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4">${a.createdAt}</td>
-                    <td class="p-4 font-bold text-secondary">${a.studentName}</td>
-                    <td class="p-4 font-bold text-primary">${a.grade}</td>
-                    <td class="p-4 text-[10px] leading-snug">
-                        <strong>Parent:</strong> ${a.parentName}<br/>
-                        <strong>Phone:</strong> ${a.phone}
-                    </td>
-                    <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${badgeColor}">${a.status}</span></td>
-                    <td class="p-4 text-right space-x-2">
-                        <button onclick="viewAdmissionDetails('${a.id}')" class="text-secondary hover:underline"><i class="bi bi-eye"></i> View</button>
-                        <select onchange="updateAdmStatus('${a.id}', this.value)" class="border border-primary/10 rounded px-2 py-1 text-[10px] bg-white focus:ring-0">
-                            <option value="">Status</option>
-                            <option value="Under Review" ${a.status==='Under Review'?'selected':''}>Review</option>
-                            <option value="Approved" ${a.status==='Approved'?'selected':''}>Approve</option>
-                            <option value="Rejected" ${a.status==='Rejected'?'selected':''}>Reject</option>
-                        </select>
-                        <button onclick="deleteAdmission('${a.id}')" class="text-red-500 hover:text-red-700"><i class="bi bi-trash"></i></button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.updateAdmStatus = function(id, val) {
-            if (!val) return;
-            dbFirestore.collection('admissions').doc(id).update({ status: val })
-                .then(renderAdmissionsTable)
-                .catch(err => alert("Error updating status: " + err.message));
-        };
-
-        window.deleteAdmission = function(id) {
-            if (confirm("Are you sure you want to delete this application?")) {
-                dbFirestore.collection('admissions').doc(id).delete()
-                    .then(renderAdmissionsTable)
-                    .catch(err => alert("Error deleting application: " + err.message));
-            }
-        };
-
-        window.viewAdmissionDetails = function(id) {
-            const a = admissionsList.find(app => app.id === id);
-            if (!a) return;
-
-            const modalContent = document.getElementById('adm-detail-content');
-            modalContent.innerHTML = `
-                <p><strong>Student Full Name:</strong> <span class="text-secondary">${a.studentName}</span></p>
-                <p><strong>Date of Birth:</strong> ${a.dob}</p>
-                <p><strong>Parent/Guardian Name:</strong> ${a.parentName}</p>
-                <p><strong>Email Address:</strong> ${a.email}</p>
-                <p><strong>Phone Number:</strong> ${a.phone}</p>
-                <p><strong>Grade Applying For:</strong> <span class="text-primary font-bold">${a.grade}</span></p>
-                <p><strong>Residential Address:</strong> ${a.address || '-'}</p>
-                <p><strong>Scholarship Checklist:</strong> ${a.scholarshipApplied ? '<span class="text-green-700">Applied</span>' : 'None'}</p>
-                <div class="mt-4 p-3 bg-gray-50 border border-primary/10 rounded-xl">
-                    <p class="font-bold mb-1"><i class="bi bi-file-earmark-check"></i> Attached Documents (Simulated):</p>
-                    <ul class="list-disc list-inside pl-2 space-y-1">
-                        <li><a href="#" class="text-primary hover:underline">birth_certificate.pdf</a></li>
-                        <li><a href="#" class="text-primary hover:underline">previous_marksheet.pdf</a></li>
-                        <li><a href="#" class="text-primary hover:underline">passport_photo.jpg</a></li>
-                    </ul>
-                </div>
-            `;
-            document.getElementById('adm-detail-modal').classList.remove('hidden');
-        };
-
-
-        // --- CAMPUS BOOKINGS ---
-        function renderBookingsTable() {
-            const list = DB.getBookings();
-            const tbody = document.getElementById('bookings-table-body');
-            tbody.innerHTML = '';
-
-            list.forEach(b => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-4 font-bold text-secondary">${b.date}</td>
-                    <td class="p-4">${b.timeSlot}</td>
-                    <td class="p-4 text-[10px] leading-snug">
-                        <strong>Visitor:</strong> ${b.visitorName}<br/>
-                        <strong>Contact:</strong> ${b.email} | ${b.phone}
-                    </td>
-                    <td class="p-4"><span class="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-[9px] uppercase tracking-wider">${b.status}</span></td>
-                    <td class="p-4 text-right">
-                        <button onclick="deleteBooking('${b.id}')" class="text-red-600 hover:text-red-800 text-sm"><i class="bi bi-trash"></i> Cancel</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        window.deleteBooking = function(id) {
-            if (confirm("Cancel this booking?")) {
-                DB.deleteBooking(id);
-                renderBookingsTable();
-                renderDashboard();
-            }
-        };
-
-
-        // --- SETTINGS CONTROLS ---
-        function loadSettings() {
-            const settings = DB.getSettings();
-            document.getElementById('setting-banner-active').checked = settings.emergencyBannerActive;
-            document.getElementById('setting-banner-text').value = settings.emergencyBannerText || '';
-            document.getElementById('setting-banner-priority').value = settings.emergencyBannerPriority || 'info';
-            document.getElementById('setting-sheets-url').value = settings.googleSheetsWebhookUrl || '';
-
-            // Auto save on any input change
-            const elements = ['setting-banner-active', 'setting-banner-text', 'setting-banner-priority', 'setting-sheets-url'];
-            elements.forEach(id => {
-                document.getElementById(id).addEventListener('change', saveSettingsFromForm);
-                if (id === 'setting-sheets-url' || id === 'setting-banner-text') {
-                    document.getElementById(id).addEventListener('input', saveSettingsFromForm);
-                }
-            });
-        }
-
-        function saveSettingsFromForm() {
-            const active = document.getElementById('setting-banner-active').checked;
-            const text = document.getElementById('setting-banner-text').value;
-            const priority = document.getElementById('setting-banner-priority').value;
-            const sheetsUrl = document.getElementById('setting-sheets-url').value;
-
-            DB.saveSettings({
-                emergencyBannerActive: active,
-                emergencyBannerText: text,
-                emergencyBannerPriority: priority,
-                googleSheetsWebhookUrl: sheetsUrl
-            });
-            console.log("Settings Auto-Saved successfully.");
-        }
-
-
-        // --- BACKUP EXPORT / IMPORT ---
-        window.exportDB = function() {
-            const json = DB.exportDatabase();
-            const blob = new Blob([json], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "onest-db-seed.json";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        };
-
-        window.importDB = function(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const content = e.target.result;
-                const ok = DB.importDatabase(content);
-                if (ok) {
-                    alert("Database imported successfully! Refreshing dashboard...");
-                    location.reload();
-                } else {
-                    alert("Error: Failed to parse or import database JSON file.");
-                }
-            };
-            reader.readAsText(file);
-        };
-
-        // --- PASSWORD HASHING UTILITY ---
-        window.generatePasswordHash = async function() {
-            const pwdInput = document.getElementById('new-password-text');
-            const pwd = pwdInput.value.trim();
-            if (!pwd) {
-                alert("Please enter password text first!");
-                return;
-            }
-            const hash = await getSHA256Hash(pwd);
-            document.getElementById('new-password-hash').value = hash;
-            document.getElementById('password-hash-result-container').classList.remove('hidden');
-        };
-
-        window.copyPasswordHash = function() {
-            const hashEl = document.getElementById('new-password-hash');
-            hashEl.select();
-            hashEl.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(hashEl.value);
-            
-            const confirmMsg = document.getElementById('hash-copy-confirm');
-            confirmMsg.style.display = 'block';
-            setTimeout(() => {
-                confirmMsg.style.display = 'none';
-            }, 3000);
-        };
-
+        // Also fetch admissions/bookings to prevent stripping them from DB export
+        localDB['admissions'] = window.OnestDB.getTable('admissions') || [];
+        localDB['bookings'] = window.OnestDB.getTable('bookings') || [];
+        localDB['career_applications'] = window.OnestDB.getTable('career_applications') || [];
+        
+        switchTab('notices');
+      } else {
+        alert('Err: db.js not found in directory. Pls check files.');
+      }
     });
 
-    // Modal opens & closures
-    function openNoticeModal() { document.getElementById('notice-modal').classList.remove('hidden'); }
-    function closeNoticeModal() { document.getElementById('notice-modal').classList.add('hidden'); }
+    // Switch Tabs
+    function switchTab(tabName) {
+      currentTab = tabName;
+      
+      // Toggle nav indicators
+      document.querySelectorAll('aside button, div button').forEach(btn => {
+        if (btn.id) {
+          btn.classList.remove('bg-primary/10', 'text-primary');
+          btn.classList.add('text-slate-600', 'hover:bg-slate-50');
+        }
+      });
+      const activeBtn = document.getElementById('btn-' + tabName);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-50');
+        activeBtn.classList.add('bg-primary/10', 'text-primary');
+      }
 
-    function openEventModal() { document.getElementById('event-modal').classList.remove('hidden'); }
-    function closeEventModal() { document.getElementById('event-modal').classList.add('hidden'); }
+      // Configure descriptors
+      const workspaceTitle = document.getElementById('workspace-title');
+      const workspaceDesc = document.getElementById('workspace-desc');
+      const btnAdd = document.getElementById('btn-add-item');
 
-    function openDocModal() { document.getElementById('doc-modal').classList.remove('hidden'); }
-    function closeDocModal() { document.getElementById('doc-modal').classList.add('hidden'); }
+      if (tabName === 'settings') {
+        workspaceTitle.innerText = "General Settings &amp; Webhooks";
+        workspaceDesc.innerText = "Configure notice banners and Google sheets automation endpoints.";
+        btnAdd.classList.add('hidden');
+        renderSettingsForm();
+      } else {
+        btnAdd.classList.remove('hidden');
+        if (tabName === 'notices') {
+          workspaceTitle.innerText = "Announcements & Notices";
+          workspaceDesc.innerText = "Manage admission updates, holiday notices, and parents alerts displayed on the homepage.";
+        } else if (tabName === 'events') {
+          workspaceTitle.innerText = "School Event Calendar";
+          workspaceDesc.innerText = "Configure upcoming academic dates, parent meetings, examinations, and school holidays.";
+        } else if (tabName === 'documents') {
+          workspaceTitle.innerText = "Document Download Hub";
+          workspaceDesc.innerText = "Manage Mandatory CBSE Public Disclosures, Fee Schedules, Textbooks, and calendar files.";
+        } else if (tabName === 'faqs') {
+          workspaceTitle.innerText = "Frequently Asked Questions (FAQ)";
+          workspaceDesc.innerText = "Add/edit school FAQs displayed to parents concerning admissions, uniform, and transport.";
+        } else if (tabName === 'testimonials') {
+          workspaceTitle.innerText = "Parent Testimonials";
+          workspaceDesc.innerText = "Manage parent reviews, feedback, and success stories shown on the homepage carousel.";
+        } else if (tabName === 'faculty') {
+          workspaceTitle.innerText = "Faculty Directory";
+          workspaceDesc.innerText = "Configure teachers list, qualifications, experience, and department groupings.";
+        } else if (tabName === 'achievements') {
+          workspaceTitle.innerText = "Student Achievements";
+          workspaceDesc.innerText = "Manage laurels, trophies, Olympiads, and athletic awards showcased in the timeline.";
+        }
+        renderTable();
+      }
+    }
 
-    function closeAdmDetailModal() { document.getElementById('adm-detail-modal').classList.add('hidden'); }
+    // Render Table Content
+    function renderTable() {
+      const headersRow = document.getElementById('table-headers');
+      const tbody = document.getElementById('table-body');
+      const emptyState = document.getElementById('empty-state');
+      
+      headersRow.innerHTML = '';
+      tbody.innerHTML = '';
+
+      const schema = SCHEMAS[currentTab];
+      const dataList = localDB[currentTab] || [];
+
+      if (dataList.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      // 1. Headers
+      schema.headers.forEach(h => {
+        const th = document.createElement('th');
+        th.className = 'pb-3 font-bold';
+        th.innerText = h;
+        headersRow.appendChild(th);
+      });
+
+      // 2. Body
+      dataList.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50/50 transition-colors';
+
+        let rowCells = '';
+        if (currentTab === 'notices') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.category}</span></td>
+            <td class="py-4">${item.pinned ? '<span class="text-amber-600 font-bold flex items-center gap-1"><i class="bi bi-pin-angle-fill"></i> Pinned</span>' : '<span class="text-slate-400">Regular</span>'}</td>
+            <td class="py-4 text-slate-500">${item.createdAt || 'N/A'}</td>
+          `;
+        } else if (currentTab === 'events') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
+            <td class="py-4 text-primary font-bold">${item.date}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-primary/10 rounded-full font-bold text-[10px] text-primary">${item.category}</span></td>
+            <td class="py-4 text-slate-500 max-w-[200px] truncate">${item.description || ''}</td>
+          `;
+        } else if (currentTab === 'documents') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-[#FFF9D9] border border-primary/10 rounded-full font-bold text-[10px] text-secondary">${item.category}</span></td>
+            <td class="py-4 text-slate-500">${item.updatedDate || 'July 2026'}</td>
+            <td class="py-4 text-slate-400 font-mono">${item.downloadUrl}</td>
+          `;
+        } else if (currentTab === 'faqs') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800 max-w-xs truncate">${item.question}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.category}</span></td>
+            <td class="py-4 text-slate-500 max-w-xs truncate">${item.answer}</td>
+          `;
+        } else if (currentTab === 'testimonials') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.name}</td>
+            <td class="py-4 text-slate-500 font-bold">${item.role}</td>
+            <td class="py-4 text-slate-500 max-w-[250px] truncate">"${item.text}"</td>
+          `;
+        } else if (currentTab === 'faculty') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.name}</td>
+            <td class="py-4 text-slate-500 font-bold">${item.role}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.department}</span></td>
+            <td class="py-4 text-slate-500">${item.experience}</td>
+          `;
+        } else if (currentTab === 'achievements') {
+          rowCells = `
+            <td class="py-4 pr-4 font-semibold text-slate-800 max-w-xs truncate">${item.title}</td>
+            <td class="py-4 text-slate-500 font-bold">${item.awardee}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full font-bold text-[10px]">${item.category}</span></td>
+            <td class="py-4 text-slate-500">${item.year}</td>
+          `;
+        }
+
+        tr.innerHTML = `
+          ${rowCells}
+          <td class="py-4">
+            <div class="flex gap-2">
+              <button onclick="openEditModal('${item.id}')" class="p-2 bg-slate-100 hover:bg-primary hover:text-white rounded-lg text-slate-600 transition-colors" title="Edit Item"><i class="bi bi-pencil-square"></i></button>
+              <button onclick="deleteItem('${item.id}')" class="p-2 bg-rose-50 hover:bg-rose-500 hover:text-white rounded-lg text-rose-500 transition-colors" title="Delete Item"><i class="bi bi-trash-fill"></i></button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Render Settings Form (Special Case)
+    function renderSettingsForm() {
+      const headersRow = document.getElementById('table-headers');
+      const tbody = document.getElementById('table-body');
+      const emptyState = document.getElementById('empty-state');
+      
+      headersRow.innerHTML = '';
+      emptyState.classList.add('hidden');
+
+      const settings = localDB.settings || {
+        emergencyBannerActive: false,
+        emergencyBannerText: '',
+        emergencyBannerPriority: 'warning',
+        analyticsEnabled: true,
+        language: 'en',
+        googleSheetsWebhookUrl: ''
+      };
+
+      tbody.innerHTML = `
+        <tr>
+          <td class="p-6">
+            <form onsubmit="saveGeneralSettings(event)" class="space-y-5 max-w-xl">
+              <div>
+                <label class="block text-slate-700 font-bold mb-1.5">Emergency Alert Banner Visibility</label>
+                <select id="setting-banner-active" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
+                  <option value="true" ${settings.emergencyBannerActive ? 'selected' : ''}>Enabled (Display alert header across all pages)</option>
+                  <option value="false" ${!settings.emergencyBannerActive ? 'selected' : ''}>Disabled (Hidden)</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-slate-700 font-bold mb-1.5">Banner Text Content</label>
+                <input type="text" id="setting-banner-text" value="${settings.emergencyBannerText || ''}" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
+              </div>
+
+              <div>
+                <label class="block text-slate-700 font-bold mb-1.5">Banner Level / Alert Accent</label>
+                <select id="setting-banner-priority" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
+                  <option value="warning" ${settings.emergencyBannerPriority === 'warning' ? 'selected' : ''}>Amber (Warning)</option>
+                  <option value="danger" ${settings.emergencyBannerPriority === 'danger' ? 'selected' : ''}>Rose (Danger)</option>
+                  <option value="info" ${settings.emergencyBannerPriority === 'info' ? 'selected' : ''}>Teal (Info)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-slate-700 font-bold mb-1.5">Admissions Google Sheets Endpoint Webhook URL</label>
+                <input type="text" id="setting-webhook-url" value="${settings.googleSheetsWebhookUrl || ''}" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none font-mono text-slate-600 focus:ring-2 focus:ring-primary">
+                <span class="text-[10px] text-slate-400 mt-1 block">Google Apps Script webhook triggering admissions, bookings, and career notifications to spreadsheets.</span>
+              </div>
+
+              <div class="pt-4 border-t border-slate-100">
+                <button type="submit" class="bg-primary hover:bg-accent hover:text-secondary text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md">
+                  Update Settings
+                </button>
+              </div>
+            </form>
+          </td>
+        </tr>
+      `;
+    }
+
+    // Save general settings
+    function saveGeneralSettings(e) {
+      e.preventDefault();
+      localDB.settings = {
+        emergencyBannerActive: document.getElementById('setting-banner-active').value === 'true',
+        emergencyBannerText: document.getElementById('setting-banner-text').value.trim(),
+        emergencyBannerPriority: document.getElementById('setting-banner-priority').value,
+        analyticsEnabled: true,
+        language: 'en',
+        googleSheetsWebhookUrl: document.getElementById('setting-webhook-url').value.trim()
+      };
+      alert('✓ General settings applied in memory! Remember to export db.js to publish.');
+    }
+
+    // Open Modal for adding items
+    function openAddModal() {
+      editingId = null;
+      document.getElementById('modal-title').innerText = "Add New " + currentTab.slice(0, -1);
+      renderModalFields({});
+      toggleModal(true);
+    }
+
+    // Open Modal for editing items
+    function openEditModal(id) {
+      editingId = id;
+      document.getElementById('modal-title').innerText = "Edit " + currentTab.slice(0, -1);
+      const item = localDB[currentTab].find(i => i.id === id);
+      renderModalFields(item || {});
+      toggleModal(true);
+    }
+
+    // Modal view helper
+    function toggleModal(show) {
+      const modal = document.getElementById('edit-modal');
+      const container = document.getElementById('modal-container');
+      if (show) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+          modal.classList.add('opacity-100');
+          container.classList.remove('scale-95');
+        }, 50);
+      } else {
+        modal.classList.remove('opacity-100');
+        container.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+    }
+
+    function closeModal() {
+      toggleModal(false);
+    }
+
+    // Render Modal inputs based on Tab schema
+    function renderModalFields(data) {
+      const container = document.getElementById('modal-fields');
+      container.innerHTML = '';
+      const schema = SCHEMAS[currentTab];
+
+      schema.fields.forEach(field => {
+        const block = document.createElement('div');
+        block.className = 'space-y-1';
+
+        const label = document.createElement('label');
+        label.className = 'block font-bold text-slate-700';
+        label.innerText = field.label + (field.required ? ' *' : '');
+        block.appendChild(label);
+
+        const val = data[field.name] !== undefined ? data[field.name] : (field.default || '');
+
+        if (field.type === 'textarea') {
+          const textarea = document.createElement('textarea');
+          textarea.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary min-h-[80px]';
+          textarea.name = field.name;
+          textarea.value = val;
+          if (field.required) textarea.required = true;
+          block.appendChild(textarea);
+        } else if (field.type === 'select') {
+          const select = document.createElement('select');
+          select.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary';
+          select.name = field.name;
+          
+          field.options.forEach(opt => {
+            const o = document.createElement('option');
+            o.value = opt;
+            o.innerText = opt;
+            if (opt === val) o.selected = true;
+            select.appendChild(o);
+          });
+          block.appendChild(select);
+        } else if (field.type === 'boolean') {
+          const toggleLabel = document.createElement('label');
+          toggleLabel.className = 'inline-flex items-center gap-2 mt-1 cursor-pointer font-semibold text-slate-600';
+          toggleLabel.innerHTML = `
+            <input type="checkbox" name="${field.name}" ${val ? 'checked' : ''} class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300">
+            <span>Yes, apply setting</span>
+          `;
+          block.appendChild(toggleLabel);
+        } else {
+          const input = document.createElement('input');
+          input.type = field.type;
+          input.name = field.name;
+          input.value = val;
+          input.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary';
+          if (field.required) input.required = true;
+          block.appendChild(input);
+        }
+
+        container.appendChild(block);
+      });
+    }
+
+    // Save / Apply item
+    function saveItem(e) {
+      e.preventDefault();
+      const form = document.getElementById('modal-form');
+      const formData = new FormData(form);
+      const schema = SCHEMAS[currentTab];
+      const newItem = {};
+
+      if (editingId) {
+        newItem.id = editingId;
+        const oldItem = localDB[currentTab].find(i => i.id === editingId);
+        newItem.createdAt = oldItem ? oldItem.createdAt : new Date().toISOString().split('T')[0];
+        newItem.updatedDate = new Date().toISOString().split('T')[0];
+      } else {
+        newItem.id = currentTab.slice(0, -3) + '_' + Date.now();
+        newItem.createdAt = new Date().toISOString().split('T')[0];
+        newItem.updatedDate = new Date().toISOString().split('T')[0];
+      }
+
+      schema.fields.forEach(field => {
+        if (field.type === 'boolean') {
+          newItem[field.name] = form.elements[field.name].checked;
+        } else {
+          const val = form.elements[field.name].value;
+          newItem[field.name] = field.type === 'number' ? Number(val) : val.trim();
+        }
+      });
+
+      if (editingId) {
+        // Edit
+        const index = localDB[currentTab].findIndex(i => i.id === editingId);
+        if (index > -1) {
+          localDB[currentTab][index] = newItem;
+        }
+      } else {
+        // Add
+        localDB[currentTab].push(newItem);
+      }
+
+      closeModal();
+      renderTable();
+    }
+
+    // Delete item
+    function deleteItem(id) {
+      if (confirm('Are you sure you want to delete this item? This action is local until you export.')) {
+        localDB[currentTab] = localDB[currentTab].filter(i => i.id !== id);
+        renderTable();
+      }
+    }
+
+    // Generate and Download db.js
+    function downloadDbJs() {
+      // Build CONTENT structure
+      const finalContent = {
+        notices: localDB.notices || [],
+        events: localDB.events || [],
+        documents: localDB.documents || [],
+        faqs: localDB.faqs || [],
+        faculty: localDB.faculty || [],
+        achievements: localDB.achievements || [],
+        testimonials: localDB.testimonials || [],
+        admissions: localDB.admissions || [],
+        bookings: localDB.bookings || [],
+        career_applications: localDB.career_applications || [],
+        settings: localDB.settings || {}
+      };
+
+      const fileTemplate = `/* ==========================================================================
+   ONEST GURUKUL - STATIC SITE CONTENT (db.js)
+   Edit this file and commit to GitHub to update notices, FAQs, events, etc.
+   No server, Firebase, or localStorage CMS — GitHub Pages only.
+   ========================================================================== */
+
+(function (global) {
+    'use strict';
+
+    const CONTENT = ${JSON.stringify(finalContent, null, 4)};
+
+    const OnestDB = {
+        getTable: function (table) {
+            const data = CONTENT[table];
+            if (data === undefined) return [];
+            if (Array.isArray(data)) return data.slice();
+            return Object.assign({}, data);
+        },
+        saveTable: function () {
+            return false;
+        },
+
+        // --- Specific getters & operations ---
+        getNotices: function () {
+            return this.getTable('notices').sort((a, b) => {
+                if (a.pinned && !b.pinned) return -1;
+                if (!a.pinned && b.pinned) return 1;
+                return new Date(b.createdAt) - new Date(a.createdAt);
+            });
+        },
+        addNotice: function (notice) {
+            const table = this.getTable('notices');
+            notice.id = 'notice_' + Date.now();
+            notice.createdAt = new Date().toISOString().split('T')[0];
+            table.push(notice);
+            this.saveTable('notices', table);
+            return notice;
+        },
+        deleteNotice: function (id) {
+            let table = this.getTable('notices');
+            table = table.filter(n => n.id !== id);
+            return this.saveTable('notices', table);
+        },
+        togglePinNotice: function (id) {
+            const table = this.getTable('notices');
+            const notice = table.find(n => n.id === id);
+            if (notice) {
+                notice.pinned = !notice.pinned;
+                this.saveTable('notices', table);
+            }
+            return notice;
+        },
+
+        getEvents: function () {
+            return this.getTable('events').sort((a, b) => new Date(a.date) - new Date(b.date));
+        },
+        addEvent: function (event) {
+            const table = this.getTable('events');
+            event.id = 'event_' + Date.now();
+            table.push(event);
+            this.saveTable('events', table);
+            return event;
+        },
+        deleteEvent: function (id) {
+            let table = this.getTable('events');
+            table = table.filter(e => e.id !== id);
+            return this.saveTable('events', table);
+        },
+
+        getDocuments: function () {
+            return this.getTable('documents');
+        },
+        addDocument: function (doc) {
+            const table = this.getTable('documents');
+            doc.id = 'doc_' + Date.now();
+            doc.updatedDate = new Date().toISOString().split('T')[0];
+            table.push(doc);
+            this.saveTable('documents', table);
+            return doc;
+        },
+        deleteDocument: function (id) {
+            let table = this.getTable('documents');
+            table = table.filter(d => d.id !== id);
+            return this.saveTable('documents', table);
+        },
+
+        getFaqs: function () {
+            return this.getTable('faqs');
+        },
+        getFaculty: function () {
+            return this.getTable('faculty');
+        },
+        getAchievements: function () {
+            return this.getTable('achievements');
+        },
+        getTestimonials: function () {
+            return this.getTable('testimonials');
+        },
+
+        // --- Submissions ---
+        getAdmissions: function () {
+            return this.getTable('admissions').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        },
+        addAdmission: function (application) {
+            const table = this.getTable('admissions');
+            application.id = 'adm_' + Date.now();
+            application.status = 'Submitted';
+            application.createdAt = new Date().toISOString().split('T')[0];
+            table.push(application);
+            this.saveTable('admissions', table);
+            return application;
+        },
+        updateAdmissionStatus: function (id, status) {
+            const table = this.getTable('admissions');
+            const app = table.find(a => a.id === id);
+            if (app) {
+                app.status = status;
+                app.updatedAt = new Date().toISOString().split('T')[0];
+                this.saveTable('admissions', table);
+            }
+            return app;
+        },
+        deleteAdmission: function (id) {
+            let table = this.getTable('admissions');
+            table = table.filter(a => a.id !== id);
+            return this.saveTable('admissions', table);
+        },
+
+        getBookings: function () {
+            return this.getTable('bookings').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        },
+        addBooking: function (booking) {
+            const table = this.getTable('bookings');
+            booking.id = 'book_' + Date.now();
+            booking.status = 'Confirmed';
+            booking.createdAt = new Date().toISOString().split('T')[0];
+            table.push(booking);
+            this.saveTable('bookings', table);
+            return booking;
+        },
+        deleteBooking: function (id) {
+            let table = this.getTable('bookings');
+            table = table.filter(b => b.id !== id);
+            return this.saveTable('bookings', table);
+        },
+
+        getCareers: function () {
+            return this.getTable('careers');
+        },
+        getCareerApplications: function () {
+            return this.getTable('career_applications').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        },
+        addCareerApplication: function (app) {
+            const table = this.getTable('career_applications');
+            app.id = 'capp_' + Date.now();
+            app.createdAt = new Date().toISOString().split('T')[0];
+            table.push(app);
+            this.saveTable('career_applications', table);
+            return app;
+        },
+        deleteCareerApplication: function (id) {
+            let table = this.getTable('career_applications');
+            table = table.filter(c => c.id !== id);
+            return this.saveTable('career_applications', table);
+        },
+
+        // --- Settings ---
+        getSettings: function () {
+            return this.getTable('settings');
+        },
+        saveSettings: function (newSettings) {
+            const settings = this.getSettings();
+            const merged = Object.assign({}, settings, newSettings);
+            return this.saveTable('settings', merged);
+        },
+
+        // --- Search Utility ---
+        globalSearch: function (query) {
+            if (!query || query.trim() === '') return [];
+            const q = query.toLowerCase().trim();
+            const results = [];
+
+            // 1. Search Notices
+            this.getNotices().forEach(n => {
+                if (n.title.toLowerCase().includes(q) || n.content.toLowerCase().includes(q)) {
+                    results.push({ type: 'Notice', title: n.title, desc: n.content, link: 'index.html#notices-board' });
+                }
+            });
+
+            // 2. Search Events
+            this.getEvents().forEach(e => {
+                if (e.title.toLowerCase().includes(q) || e.description.toLowerCase().includes(q)) {
+                    results.push({ type: 'Event', title: e.date + ' - ' + e.title, desc: e.description, link: 'students-life.html#calendar' });
+                }
+            });
+
+            // 3. Search FAQs
+            this.getFaqs().forEach(f => {
+                if (f.question.toLowerCase().includes(q) || f.answer.toLowerCase().includes(q)) {
+                    results.push({ type: 'FAQ', title: f.question, desc: f.answer, link: 'index.html#faq' });
+                }
+            });
+
+            // 4. Search Faculty
+            this.getFaculty().forEach(fac => {
+                if (fac.name.toLowerCase().includes(q) || fac.role.toLowerCase().includes(q) || fac.department.toLowerCase().includes(q)) {
+                    results.push({ type: 'Faculty', title: fac.name, desc: fac.role + ' (' + fac.qualification + ') - ' + fac.experience + ' Exp.', link: 'students-life.html#faculty' });
+                }
+            });
+
+            // 5. Search Documents
+            this.getDocuments().forEach(d => {
+                if (d.title.toLowerCase().includes(q) || d.category.toLowerCase().includes(q)) {
+                    results.push({ type: 'Document', title: d.title, desc: 'Category: ' + d.category + ' - Updated: ' + d.updatedDate, link: 'campus-facilities.html#download-hub' });
+                }
+            });
+
+            // 6. Search Achievements
+            this.getAchievements().forEach(a => {
+                if (a.title.toLowerCase().includes(q) || a.awardee.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)) {
+                    results.push({ type: 'Achievement', title: a.title, desc: a.awardee + ' (' + a.year + ') - ' + a.description, link: 'students-life.html#achievements' });
+                }
+            });
+
+            // 7. Core Pages
+            const pages = [
+                { title: 'Home Page', desc: 'Welcome to O\\\'Nest Gurukul. Academic Excellence and Holistic Care.', link: 'index.html' },
+                { title: 'About Us', desc: 'Our history, vision, mission, and leadership.', link: 'about.html' },
+                { title: '⭐ Pre-Primary', desc: 'Nursery, LKG, UKG early childhood programs.', link: 'preprimary.html' },
+                { title: 'Curriculum & Student Life', desc: 'Detailed academic stages, extra-curricular clubs, and events.', link: 'students-life.html' },
+                { title: 'Campus & Facilities', desc: 'Smart classrooms, labs, sports complex, and school transport details.', link: 'campus-facilities.html' },
+                { title: 'Online Admission Portal', desc: 'Apply online, check criteria, schedule campus visits, and view scholarships.', link: 'admissions.html' },
+                { title: 'Contact Us', desc: 'Get in touch, view Google Maps, phone, email, and office address.', link: 'contact.html' }
+            ];
+            pages.forEach(p => {
+                if (p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)) {
+                    results.push({ type: 'Page', title: p.title, desc: p.desc, link: p.link });
+                }
+            });
+
+            return results;
+        },
+
+        // --- Config Export/Import ---
+        exportDatabase: function () {
+            return JSON.stringify(CONTENT, null, 2);
+        },
+        importDatabase: function () {
+            return false;
+        }
+    };
+
+    // Expose DB globally
+    global.OnestDB = OnestDB;
+
+})(window);
+`;
+
+      const blob = new Blob([fileTemplate], { type: 'text/javascript;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'db.js';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      
+      alert('✓ db.js generated successfully! To go live, replace your local db.js file with this downloaded one and commit your changes.');
+    }
   </script>
 </body>
-
 </html>

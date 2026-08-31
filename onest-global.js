@@ -1,13 +1,6 @@
 /* ==========================================================================
-   ONEST GURUKUL - GLOBAL INJECTOR & DYNAMIC UTILITIES (onest-global.js)
-   File: New_features/onest-global.js
-   Automatically injects:
-   1. Emergency Announcement Banner (at top)
-   2. Sticky Floating Apply Now Button
-   3. WhatsApp Support Floating Icon
-   4. AI Admission Assistant Chatbot Drawer (Simulated)
-   5. Global Search Modal (Ctrl + K / Search Button)
-   6. Core Web Vitals Analytics Loggers
+   ONEST GURUKUL - GLOBAL WIDGETS (onest-global.js)
+   Static-only helpers for GitHub Pages: theme, Apply Now, WhatsApp, FAQ bot, search.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {

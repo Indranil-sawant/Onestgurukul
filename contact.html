@@ -126,8 +126,8 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] w-auto">
-</a>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] min-w-[58px] w-auto">
+      </a>
       <nav class="hidden lg:flex items-center space-x-8">
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="index.html">Home</a>
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="about.html">About Us</a>
@@ -176,7 +176,7 @@
 \n  <main>
 
     <!-- HERO SECTION -->
-    <section class="relative h-[50vh] min-h-[400px] overflow-hidden bg-black text-white flex items-center pt-[90px]">
+    <section class="relative h-[80vh] min-h-[550px] overflow-hidden bg-black text-white flex items-center pt-[90px]">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/school2.jpg');"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
@@ -241,7 +241,7 @@
             <div>
               <div class="w-10 h-10 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-bus-front-fill"></i></div>
               <h4 class="font-bold text-secondary text-base">Transport Desk</h4>
-              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">GPS tracking and alert coordination desk.</p>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">Dedicated transport coordination and helpline desk.</p>
             </div>
             <a href="tel:+918767672478" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Contact Transport →</a>
           </div>
@@ -488,8 +488,6 @@
   <script src="onest-global.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const DB = window.OnestDB;
-
       const form = document.getElementById('onest-contact-form');
       if (form) {
         form.addEventListener('submit', (e) => {
@@ -509,19 +507,6 @@
           const purpose = form.querySelector('[name="Purpose"]').value;
           const contactMode = form.querySelector('[name="ContactMode"]').value;
           const message = form.querySelector('[name="Message"]').value;
-
-          // Save enquiry into OnestDB
-          DB.addAdmission({
-            studentName: studentName + " (Enquiry: " + purpose + ")",
-            parentName: parentName,
-            grade: grade,
-            gender: "Not specified",
-            dob: new Date().toISOString().split('T')[0],
-            email: email,
-            phone: phone,
-            address: `Contact mode: ${contactMode}. Message: ${message}`,
-            scholarshipApplied: false
-          });
 
           if (window.trackOnestAnalytics) {
             window.trackOnestAnalytics('submit_contact_enquiry', { parentName, purpose });

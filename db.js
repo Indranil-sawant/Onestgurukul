@@ -1,39 +1,13 @@
 /* ==========================================================================
-   ONEST GURUKUL - LOCAL DATABASE SYSTEM (db.js)
-   File: New_features/db.js
-   A local-first simulated database persisting to localStorage, loaded with
-   realistic default school data.
+   ONEST GURUKUL - STATIC SITE CONTENT (db.js)
+   Edit this file and commit to GitHub to update notices, FAQs, events, etc.
+   No server, Firebase, or localStorage CMS — GitHub Pages only.
    ========================================================================== */
 
 (function (global) {
     'use strict';
 
-    const DB_PREFIX = 'onest_db_';
-
-    // Helper to read from LocalStorage
-    function readTable(tableName) {
-        try {
-            const data = localStorage.getItem(DB_PREFIX + tableName);
-            return data ? JSON.parse(data) : null;
-        } catch (e) {
-            console.error(`Error reading database table: ${tableName}`, e);
-            return null;
-        }
-    }
-
-    // Helper to write to LocalStorage
-    function writeTable(tableName, data) {
-        try {
-            localStorage.setItem(DB_PREFIX + tableName, JSON.stringify(data));
-            return true;
-        } catch (e) {
-            console.error(`Error writing database table: ${tableName}`, e);
-            return false;
-        }
-    }
-
-    // Seed Data Definitions
-    const SEED_DATA = {
+    const CONTENT = {
         notices: [
             {
                 id: "n-1",
@@ -125,45 +99,25 @@
             { id: "t-2", name: "Mrs. Meera Gokhale", role: "Parent", text: "We shifted from Pune to Ratnagiri, and O'Nest Gurukul made the transition seamless for our son. The STEM focus and individual attention are highly impressive.", photo: "assets/img/education/parent (1).jpg" },
             { id: "t-3", name: "Mast. Rohan Joshi", role: "Alumni (Class of 2024)", text: "The foundation I got at Gurukul in computer coding and mathematics helped me clear my competitive examinations with ease. I will always cherish my time here.", photo: "assets/img/education/open (1).jpg" }
         ],
-        admissions: [],
-        bookings: [],
-        careers: [],
-        career_applications: [],
         settings: {
             emergencyBannerActive: false,
             emergencyBannerText: "ADMISSION NOTICE: The last date for online application submission for Term 1 has been extended to August 15th, 2026.",
-            emergencyBannerPriority: "warning", // info, warning, critical
+            emergencyBannerPriority: "warning",
             analyticsEnabled: true,
             language: "en",
             googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec"
         }
     };
 
-    // Database Initialization
-    function initDatabase() {
-        // Enforce cleanup to load latest authentic school data
-        localStorage.removeItem('onest_db_careers');
-        localStorage.removeItem('onest_db_career_applications');
-        localStorage.removeItem('onest_db_achievements');
-
-        Object.keys(SEED_DATA).forEach(table => {
-            if (readTable(table) === null) {
-                writeTable(table, SEED_DATA[table]);
-            }
-        });
-    }
-
-    // Run Initialization
-    initDatabase();
-
-    // Database Interface Object
     const OnestDB = {
-        // --- Generic CRUD helpers ---
         getTable: function (table) {
-            return readTable(table) || [];
+            const data = CONTENT[table];
+            if (data === undefined) return [];
+            if (Array.isArray(data)) return data.slice();
+            return Object.assign({}, data);
         },
-        saveTable: function (table, data) {
-            return writeTable(table, data);
+        saveTable: function () {
+            return false;
         },
 
         // --- Specific getters & operations ---
@@ -390,23 +344,10 @@
 
         // --- Config Export/Import ---
         exportDatabase: function () {
-            const dump = {};
-            Object.keys(SEED_DATA).forEach(table => {
-                dump[table] = this.getTable(table);
-            });
-            return JSON.stringify(dump, null, 2);
+            return JSON.stringify(CONTENT, null, 2);
         },
-        importDatabase: function (jsonString) {
-            try {
-                const dump = JSON.parse(jsonString);
-                Object.keys(dump).forEach(table => {
-                    this.saveTable(table, dump[table]);
-                });
-                return true;
-            } catch (e) {
-                console.error("Failed to import database JSON", e);
-                return false;
-            }
+        importDatabase: function () {
+            return false;
         }
     };
 
