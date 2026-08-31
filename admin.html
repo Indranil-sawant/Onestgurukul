@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O'Nest Gurukul - Admin Portal</title>
+  <title>O'Nest Gurukul - Admin &amp; CMS Portal</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +49,11 @@
       border-radius: 4px;
     }
   </style>
+
+  <!-- Supabase JS SDK & Configuration -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="db.js"></script>
 </head>
 <body class="text-secondary antialiased min-h-screen flex flex-col">
 
@@ -57,32 +62,72 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
-          <i class="bi bi-key-fill text-xl"></i>
+          <i class="bi bi-shield-lock-fill text-xl"></i>
         </div>
         <div>
-          <h1 class="text-lg font-bold tracking-tight">O'Nest Gurukul</h1>
-          <p class="text-[10px] uppercase tracking-widest text-accent font-semibold">Content Management System</p>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg font-bold tracking-tight">O'Nest Gurukul</h1>
+            <span id="supa-badge" class="text-[9px] font-black uppercase px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30">Supabase CMS</span>
+          </div>
+          <p class="text-[10px] uppercase tracking-widest text-accent font-semibold">Live Content Management System</p>
         </div>
       </div>
       
       <div class="flex items-center gap-3">
-        <a href="index.html" class="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-xs font-bold transition-all flex items-center gap-2">
-          <i class="bi bi-house-door-fill"></i> View Website
+        <a href="index.html" target="_blank" class="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-xs font-bold transition-all flex items-center gap-2">
+          <i class="bi bi-box-arrow-up-right"></i> View Live Site
         </a>
-        <button onclick="downloadDbJs()" class="bg-primary hover:bg-accent hover:text-secondary text-white px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2">
-          <i class="bi bi-download"></i> Save &amp; Download db.js
-        </button>
+        <div id="auth-header-action" class="flex items-center gap-2">
+          <!-- Auth state controls injected dynamically -->
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Portal -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 flex flex-col lg:flex-row gap-8">
+  <!-- LOGIN VIEW (UNAUTHENTICATED) -->
+  <div id="login-view" class="flex-1 flex items-center justify-center p-6 bg-slate-100">
+    <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 w-full max-w-md">
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
+          <i class="bi bi-lock-fill text-3xl"></i>
+        </div>
+        <h2 class="text-xl font-bold text-secondary">Administrator Login</h2>
+        <p class="text-xs text-slate-500 mt-1">Sign in with your Supabase Admin account to manage school content, notices, and gallery images.</p>
+      </div>
+
+      <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Admin Email Address</label>
+          <input type="email" id="login-email" required placeholder="admin@onestgurukul.edu.in" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+        </div>
+
+        <div id="login-error" class="hidden p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-xs font-medium flex items-start gap-2">
+          <i class="bi bi-exclamation-triangle-fill text-base shrink-0"></i>
+          <span id="login-error-text">Invalid login credentials.</span>
+        </div>
+
+        <button type="submit" id="btn-login-submit" class="w-full py-3 bg-primary hover:bg-primary/95 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+          <i class="bi bi-box-arrow-in-right text-base"></i> Sign In to CMS
+        </button>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 text-center">
+        <p class="text-[11px] text-slate-400">First time setting up Supabase? Make sure you ran <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-mono">supabase_schema.sql</code> in your Supabase SQL Editor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN PORTAL (AUTHENTICATED) -->
+  <main id="portal-view" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 flex flex-col lg:flex-row gap-8">
     
     <!-- Sidebar Navigation -->
     <div class="w-full lg:w-64 shrink-0 flex flex-col gap-2">
       <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm space-y-1">
-        <p class="text-[10px] font-bold text-slate-400 uppercase px-3 mb-2 tracking-wider">Content Tables</p>
+        <p class="text-[10px] font-bold text-slate-400 uppercase px-3 mb-2 tracking-wider">CMS Management</p>
         
         <button onclick="switchTab('notices')" id="btn-notices" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all bg-primary/10 text-primary">
           <i class="bi bi-megaphone-fill text-base"></i> Announcements &amp; Notices
@@ -93,23 +138,11 @@
         </button>
         
         <button onclick="switchTab('documents')" id="btn-documents" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
-          <i class="bi bi-file-earmark-pdf-fill text-base"></i> Document Downloads
+          <i class="bi bi-file-earmark-pdf-fill text-base"></i> Document Hub
         </button>
-        
-        <button onclick="switchTab('faqs')" id="btn-faqs" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
-          <i class="bi bi-question-circle-fill text-base"></i> Frequently Asked Questions
-        </button>
-        
-        <button onclick="switchTab('testimonials')" id="btn-testimonials" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
-          <i class="bi bi-chat-quote-fill text-base"></i> Parent Testimonials
-        </button>
-        
-        <button onclick="switchTab('faculty')" id="btn-faculty" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
-          <i class="bi bi-people-fill text-base"></i> Faculty Directory
-        </button>
-        
+
         <button onclick="switchTab('achievements')" id="btn-achievements" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
-          <i class="bi bi-trophy-fill text-base"></i> Student Achievements
+          <i class="bi bi-trophy-fill text-base"></i> Gallery &amp; Achievements
         </button>
 
         <button onclick="switchTab('settings')" id="btn-settings" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-slate-600 hover:bg-slate-50">
@@ -117,26 +150,27 @@
         </button>
       </div>
 
-      <!-- Quick How-To -->
-      <div class="bg-amber-50/70 border border-amber-200/50 rounded-2xl p-5 shadow-sm text-xs leading-relaxed text-slate-600">
-        <h4 class="font-bold text-secondary mb-2 flex items-center gap-1.5"><i class="bi bi-info-circle-fill text-primary"></i> CMS Deployment Guide</h4>
-        <ol class="list-decimal pl-4 space-y-1.5 font-medium">
-          <li>Add, edit, or delete items in the list.</li>
-          <li>Click <strong class="text-secondary">Save &amp; Download db.js</strong>.</li>
-          <li>Replace the <code class="bg-white px-1 py-0.5 rounded border">db.js</code> in your folder with the downloaded file.</li>
-          <li>Commit/upload to update the website!</li>
-        </ol>
+      <!-- User Session Info -->
+      <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 shadow-sm text-xs leading-relaxed text-slate-600">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <p class="font-bold text-secondary text-xs">Logged In Admin</p>
+        </div>
+        <p id="user-email-display" class="text-[11px] font-semibold text-slate-700 truncate">admin@onestgurukul.edu.in</p>
+        <button onclick="handleLogout()" class="mt-3 w-full py-1.5 px-3 bg-red-50 hover:bg-red-100 text-red-600 text-[11px] font-bold rounded-lg transition-colors flex items-center justify-center gap-1">
+          <i class="bi bi-box-arrow-right"></i> Sign Out
+        </button>
       </div>
     </div>
 
     <!-- Edit Workspace Panel -->
     <div class="flex-1 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col">
-      <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-center flex-wrap gap-4">
         <div>
           <h2 id="workspace-title" class="text-lg font-bold text-secondary">Announcements &amp; Notices</h2>
-          <p id="workspace-desc" class="text-xs text-slate-500">Manage admission updates, holiday notices, and parents alerts displayed on the homepage.</p>
+          <p id="workspace-desc" class="text-xs text-slate-500">Manage admission updates, holiday notices, and alerts. Changes take effect on the live website immediately.</p>
         </div>
-        <button onclick="openAddModal()" id="btn-add-item" class="bg-primary hover:bg-primary/95 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5">
+        <button onclick="openAddModal()" id="btn-add-item" class="bg-primary hover:bg-primary/95 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
           <i class="bi bi-plus-lg"></i> Add New Item
         </button>
       </div>
@@ -153,6 +187,14 @@
             <!-- Dynamic -->
           </tbody>
         </table>
+
+        <!-- Loading Spinner -->
+        <div id="loading-state" class="hidden text-center py-16 text-slate-400">
+          <i class="bi bi-arrow-repeat text-4xl animate-spin mb-2 block text-primary"></i>
+          <p class="font-bold text-xs">Fetching live data from Supabase...</p>
+        </div>
+
+        <!-- Empty State -->
         <div id="empty-state" class="hidden text-center py-16 text-slate-400">
           <i class="bi bi-folder-x text-5xl mb-3 block"></i>
           <p class="font-bold text-sm">No items found</p>
@@ -175,9 +217,26 @@
         <div id="modal-fields" class="p-6 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar text-xs">
           <!-- Dynamic Form Inputs -->
         </div>
+
+        <!-- Image / Asset Uploader Field -->
+        <div id="modal-upload-box" class="px-6 pb-4">
+          <div class="p-4 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl text-center">
+            <i class="bi bi-cloud-arrow-up text-2xl text-primary mb-1 block"></i>
+            <p class="font-bold text-xs text-slate-700">Upload Image / Attachment</p>
+            <p class="text-[10px] text-slate-400 mb-2">Supported: JPG, PNG, WebP, PDF (Max 5MB)</p>
+            <input type="file" id="file-upload-input" onchange="handleFileUpload(event)" class="hidden">
+            <button type="button" onclick="document.getElementById('file-upload-input').click()" class="px-3 py-1.5 bg-white border border-slate-300 rounded-xl text-[11px] font-bold text-slate-700 hover:bg-slate-100 transition-colors inline-flex items-center gap-1">
+              <i class="bi bi-folder2-open"></i> Choose File
+            </button>
+            <span id="upload-status-text" class="block text-[11px] text-emerald-600 font-bold mt-1"></span>
+          </div>
+        </div>
+
         <div class="px-6 py-4 border-t border-slate-100 flex justify-end gap-2 bg-slate-50">
           <button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
-          <button type="submit" class="px-5 py-2.5 rounded-xl bg-primary hover:bg-accent hover:text-secondary text-white text-xs font-bold transition-all">Apply Changes</button>
+          <button type="submit" id="btn-modal-save" class="px-5 py-2.5 rounded-xl bg-primary hover:bg-primary/95 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+            <i class="bi bi-check-lg"></i> Apply &amp; Save
+          </button>
         </div>
       </form>
     </div>
@@ -185,73 +244,47 @@
 
   <!-- Footer -->
   <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-    <p>&copy; 2026 O'Nest Gurukul. Secured Offline CMS Sandbox.</p>
+    <p>&copy; 2026 O'Nest Gurukul. Powered by Static GitHub Pages &amp; Supabase CMS.</p>
   </footer>
 
-  <!-- DB Integrations -->
-  <script src="db.js"></script>
-
+  <!-- Admin Controller Logic -->
   <script>
     let currentTab = 'notices';
-    let localDB = {};
-    let editingId = null;
+    let currentData = [];
+    let editingItem = null;
 
-    // Schema definitions for each data structure
     const SCHEMAS = {
       notices: {
         fields: [
           { name: 'title', label: 'Notice Title', type: 'text', required: true },
-          { name: 'content', label: 'Brief Description', type: 'textarea', required: true },
-          { name: 'category', label: 'Category Tag', type: 'select', options: ['Admission', 'Academic', 'Sports', 'General'], required: true },
-          { name: 'pinned', label: 'Pin to Top Banner', type: 'boolean' },
-          { name: 'pdfUrl', label: 'Attachment Document URL (Optional)', type: 'text' }
+          { name: 'content', label: 'Description Content', type: 'textarea', required: true },
+          { name: 'category', label: 'Category', type: 'select', options: ['Admission', 'Academic', 'Sports', 'General'], required: true },
+          { name: 'pinned', label: 'Pin Notice to Top', type: 'boolean' },
+          { name: 'status', label: 'Publication Status', type: 'select', options: ['published', 'draft', 'archived'], required: true },
+          { name: 'pdfUrl', label: 'Attachment URL', type: 'text' },
+          { name: 'expiresAt', label: 'Expiry Date (YYYY-MM-DD)', type: 'date' }
         ],
-        headers: ['Title', 'Category', 'Status', 'Date', 'Actions']
+        headers: ['Title', 'Category', 'Status', 'Pinned', 'Date', 'Actions']
       },
       events: {
         fields: [
           { name: 'title', label: 'Event Title', type: 'text', required: true },
           { name: 'date', label: 'Event Date (YYYY-MM-DD)', type: 'date', required: true },
           { name: 'category', label: 'Category', type: 'select', options: ['Academic', 'Activity', 'Exam', 'Holiday', 'PTM'], required: true },
-          { name: 'description', label: 'Short Description', type: 'textarea' }
+          { name: 'status', label: 'Status', type: 'select', options: ['published', 'draft', 'archived'], required: true },
+          { name: 'description', label: 'Description', type: 'textarea' },
+          { name: 'imageUrl', label: 'Event Image URL', type: 'text' }
         ],
-        headers: ['Title', 'Date', 'Category', 'Description', 'Actions']
+        headers: ['Title', 'Date', 'Category', 'Status', 'Actions']
       },
       documents: {
         fields: [
           { name: 'title', label: 'Document Name', type: 'text', required: true },
-          { name: 'category', label: 'Document Type / Category', type: 'select', options: ['CBSE', 'Recognition Certificate', 'NOC', 'Affiliation Letter', 'RTE Documents', 'School Prospectus', 'Academic Calendar', 'Book List', 'Holiday List'], required: true },
-          { name: 'downloadUrl', label: 'File URL / Path', type: 'text', required: true }
+          { name: 'category', label: 'Document Category', type: 'select', options: ['CBSE', 'Recognition Certificate', 'NOC', 'Affiliation Letter', 'RTE Documents', 'School Prospectus', 'Academic Calendar', 'Book List', 'Holiday List'], required: true },
+          { name: 'downloadUrl', label: 'Download File URL', type: 'text', required: true },
+          { name: 'status', label: 'Status', type: 'select', options: ['published', 'draft', 'archived'], required: true }
         ],
-        headers: ['Document Name', 'Category', 'Updated Date', 'File URL', 'Actions']
-      },
-      faqs: {
-        fields: [
-          { name: 'question', label: 'Question Description', type: 'text', required: true },
-          { name: 'answer', label: 'Detailed Answer Description', type: 'textarea', required: true },
-          { name: 'category', label: 'Grouping Category', type: 'select', options: ['Admission', 'Curriculum', 'Fees', 'Transport', 'Activities', 'Hostel', 'Uniform'], required: true }
-        ],
-        headers: ['Question', 'Category', 'Answer Summary', 'Actions']
-      },
-      testimonials: {
-        fields: [
-          { name: 'name', label: 'Parent / Reviewer Name', type: 'text', required: true },
-          { name: 'role', label: 'Designation / Relationship', type: 'text', required: true, default: 'Parent' },
-          { name: 'text', label: 'Detailed Review Text', type: 'textarea', required: true },
-          { name: 'photo', label: 'Profile Photo Path', type: 'text', default: 'assets/img/education/parent (1).jpg' }
-        ],
-        headers: ['Name', 'Role', 'Testimonial Extract', 'Actions']
-      },
-      faculty: {
-        fields: [
-          { name: 'name', label: 'Teacher / Staff Name', type: 'text', required: true },
-          { name: 'role', label: 'Designation / Title', type: 'text', required: true },
-          { name: 'qualification', label: 'Educational Qualifications', type: 'text', required: true },
-          { name: 'experience', label: 'Years of Experience', type: 'text', required: true },
-          { name: 'department', label: 'Academic Department', type: 'select', options: ['Administration', 'Secondary', 'Primary', 'Pre-Primary', 'Sports', 'Arts'], required: true },
-          { name: 'photo', label: 'Staff Portrait Photo URL', type: 'text', default: 'assets/img/education/open (1).jpg' }
-        ],
-        headers: ['Name', 'Role', 'Department', 'Experience', 'Actions']
+        headers: ['Document Name', 'Category', 'Updated Date', 'Status', 'Actions']
       },
       achievements: {
         fields: [
@@ -259,48 +292,126 @@
           { name: 'awardee', label: 'Winner / Recipient Name', type: 'text', required: true },
           { name: 'category', label: 'Category', type: 'select', options: ['Academics', 'Arts', 'Olympiads', 'Sports', 'State Honors'], required: true },
           { name: 'year', label: 'Academic Year', type: 'text', required: true },
-          { name: 'description', label: 'Felicitation Summary', type: 'textarea', required: true },
-          { name: 'image', label: 'Achievement Photograph Path', type: 'text', required: true }
+          { name: 'description', label: 'Summary', type: 'textarea', required: true },
+          { name: 'image', label: 'Photograph URL', type: 'text', required: true },
+          { name: 'status', label: 'Status', type: 'select', options: ['published', 'draft', 'archived'], required: true }
         ],
-        headers: ['Award Title', 'Recipient', 'Category', 'Year', 'Actions']
-      },
-      settings: {
-        fields: [
-          { name: 'emergencyBannerActive', label: 'Show Emergency Header Alert Banner', type: 'boolean' },
-          { name: 'emergencyBannerText', label: 'Banner Text Content', type: 'text' },
-          { name: 'emergencyBannerPriority', label: 'Alert Color Accent', type: 'select', options: ['warning', 'danger', 'info'] },
-          { name: 'googleSheetsWebhookUrl', label: 'Admissions Form Webhook (Google Sheets Script)', type: 'text' }
-        ],
-        headers: []
+        headers: ['Award Title', 'Recipient', 'Category', 'Year', 'Status', 'Actions']
       }
     };
 
-    // Load static DB into edit memory
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.OnestDB) {
-        // Fetch all tables into local edit copy
-        Object.keys(SCHEMAS).forEach(table => {
-          localDB[table] = window.OnestDB.getTable(table);
-        });
-        
-        // Also fetch admissions/bookings to prevent stripping them from DB export
-        localDB['admissions'] = window.OnestDB.getTable('admissions') || [];
-        localDB['bookings'] = window.OnestDB.getTable('bookings') || [];
-        localDB['career_applications'] = window.OnestDB.getTable('career_applications') || [];
-        
-        switchTab('notices');
-      } else {
-        alert('Err: db.js not found in directory. Pls check files.');
-      }
+    // DOM Loaded & Auth State Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      initAuth();
     });
 
+    function getClient() {
+      return window.OnestSupabase ? window.OnestSupabase.getClient() : null;
+    }
+
+    async function initAuth() {
+      const client = getClient();
+      const loginView = document.getElementById('login-view');
+      const portalView = document.getElementById('portal-view');
+      const authHeaderAction = document.getElementById('auth-header-action');
+
+      if (client) {
+        document.getElementById('supa-badge').innerText = "Supabase Active";
+        document.getElementById('supa-badge').className = "text-[9px] font-black uppercase px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+
+        // Check active session
+        const { data: { session } } = await client.auth.getSession();
+        if (session) {
+          showAuthenticatedUI(session.user);
+        } else {
+          showUnauthenticatedUI();
+        }
+
+        // Auth listener
+        client.auth.onAuthStateChange((event, session) => {
+          if (session) {
+            showAuthenticatedUI(session.user);
+          } else {
+            showUnauthenticatedUI();
+          }
+        });
+      } else {
+        // Unconfigured Supabase state: allow sandbox edit
+        document.getElementById('supa-badge').innerText = "Offline Mode";
+        showAuthenticatedUI({ email: 'offline-admin@onestgurukul.local' });
+      }
+    }
+
+    function showAuthenticatedUI(user) {
+      document.getElementById('login-view').classList.add('hidden');
+      document.getElementById('portal-view').classList.remove('hidden');
+      document.getElementById('user-email-display').innerText = user.email || 'Admin User';
+      
+      const authHeaderAction = document.getElementById('auth-header-action');
+      authHeaderAction.innerHTML = `
+        <button onclick="handleLogout()" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-200 text-xs font-bold transition-all flex items-center gap-1 border border-red-500/30">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      `;
+      switchTab('notices');
+    }
+
+    function showUnauthenticatedUI() {
+      document.getElementById('login-view').classList.remove('hidden');
+      document.getElementById('portal-view').classList.add('hidden');
+      document.getElementById('auth-header-action').innerHTML = '';
+    }
+
+    // Login Handler
+    async function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const errorBox = document.getElementById('login-error');
+      const submitBtn = document.getElementById('btn-login-submit');
+
+      errorBox.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="bi bi-arrow-repeat animate-spin"></i> Authenticating...`;
+
+      const client = getClient();
+      if (!client) {
+        alert("Supabase credentials pending setup in supabase-config.js");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i class="bi bi-box-arrow-in-right text-base"></i> Sign In to CMS`;
+        return;
+      }
+
+      try {
+        const { data, error } = await client.auth.signInWithPassword({ email, password });
+        if (error) {
+          errorBox.classList.remove('hidden');
+          document.getElementById('login-error-text').innerText = error.message;
+        }
+      } catch (err) {
+        errorBox.classList.remove('hidden');
+        document.getElementById('login-error-text').innerText = err.message;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i class="bi bi-box-arrow-in-right text-base"></i> Sign In to CMS`;
+      }
+    }
+
+    // Logout Handler
+    async function handleLogout() {
+      const client = getClient();
+      if (client) {
+        await client.auth.signOut();
+      }
+      showUnauthenticatedUI();
+    }
+
     // Switch Tabs
-    function switchTab(tabName) {
+    async function switchTab(tabName) {
       currentTab = tabName;
       
-      // Toggle nav indicators
       document.querySelectorAll('aside button, div button').forEach(btn => {
-        if (btn.id) {
+        if (btn.id && btn.id.startsWith('btn-')) {
           btn.classList.remove('bg-primary/10', 'text-primary');
           btn.classList.add('text-slate-600', 'hover:bg-slate-50');
         }
@@ -311,45 +422,63 @@
         activeBtn.classList.add('bg-primary/10', 'text-primary');
       }
 
-      // Configure descriptors
       const workspaceTitle = document.getElementById('workspace-title');
       const workspaceDesc = document.getElementById('workspace-desc');
       const btnAdd = document.getElementById('btn-add-item');
 
       if (tabName === 'settings') {
-        workspaceTitle.innerText = "General Settings &amp; Webhooks";
-        workspaceDesc.innerText = "Configure notice banners and Google sheets automation endpoints.";
+        workspaceTitle.innerText = "General Settings & Webhooks";
+        workspaceDesc.innerText = "Configure Emergency Banner alert text and admissions integration webhook.";
         btnAdd.classList.add('hidden');
         renderSettingsForm();
       } else {
         btnAdd.classList.remove('hidden');
         if (tabName === 'notices') {
           workspaceTitle.innerText = "Announcements & Notices";
-          workspaceDesc.innerText = "Manage admission updates, holiday notices, and parents alerts displayed on the homepage.";
+          workspaceDesc.innerText = "Manage updates displayed on the public notice board.";
         } else if (tabName === 'events') {
           workspaceTitle.innerText = "School Event Calendar";
-          workspaceDesc.innerText = "Configure upcoming academic dates, parent meetings, examinations, and school holidays.";
+          workspaceDesc.innerText = "Manage upcoming academic dates, examinations, and events.";
         } else if (tabName === 'documents') {
-          workspaceTitle.innerText = "Document Download Hub";
-          workspaceDesc.innerText = "Manage Mandatory CBSE Public Disclosures, Fee Schedules, Textbooks, and calendar files.";
-        } else if (tabName === 'faqs') {
-          workspaceTitle.innerText = "Frequently Asked Questions (FAQ)";
-          workspaceDesc.innerText = "Add/edit school FAQs displayed to parents concerning admissions, uniform, and transport.";
-        } else if (tabName === 'testimonials') {
-          workspaceTitle.innerText = "Parent Testimonials";
-          workspaceDesc.innerText = "Manage parent reviews, feedback, and success stories shown on the homepage carousel.";
-        } else if (tabName === 'faculty') {
-          workspaceTitle.innerText = "Faculty Directory";
-          workspaceDesc.innerText = "Configure teachers list, qualifications, experience, and department groupings.";
+          workspaceTitle.innerText = "Document Hub";
+          workspaceDesc.innerText = "Manage CBSE mandatory public disclosures and downloadable documents.";
         } else if (tabName === 'achievements') {
-          workspaceTitle.innerText = "Student Achievements";
-          workspaceDesc.innerText = "Manage laurels, trophies, Olympiads, and athletic awards showcased in the timeline.";
+          workspaceTitle.innerText = "Gallery & Achievements";
+          workspaceDesc.innerText = "Manage laureate trophies, achievements, and gallery pictures.";
         }
+        await loadTableData();
+      }
+    }
+
+    // Load Live Table Data
+    async function loadTableData() {
+      const loadingState = document.getElementById('loading-state');
+      const emptyState = document.getElementById('empty-state');
+      const tbody = document.getElementById('table-body');
+      
+      loadingState.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+      tbody.innerHTML = '';
+
+      try {
+        if (currentTab === 'notices') {
+          currentData = await window.OnestDB.getNotices(true);
+        } else if (currentTab === 'events') {
+          currentData = await window.OnestDB.getEvents(true);
+        } else if (currentTab === 'documents') {
+          currentData = await window.OnestDB.getDocuments(true);
+        } else if (currentTab === 'achievements') {
+          currentData = await window.OnestDB.getAchievements(true);
+        }
+      } catch (err) {
+        console.error("Failed loading table data:", err);
+      } finally {
+        loadingState.classList.add('hidden');
         renderTable();
       }
     }
 
-    // Render Table Content
+    // Render Table
     function renderTable() {
       const headersRow = document.getElementById('table-headers');
       const tbody = document.getElementById('table-body');
@@ -359,15 +488,15 @@
       tbody.innerHTML = '';
 
       const schema = SCHEMAS[currentTab];
-      const dataList = localDB[currentTab] || [];
+      if (!schema) return;
 
-      if (dataList.length === 0) {
+      if (currentData.length === 0) {
         emptyState.classList.remove('hidden');
         return;
       }
       emptyState.classList.add('hidden');
 
-      // 1. Headers
+      // Headers
       schema.headers.forEach(h => {
         const th = document.createElement('th');
         th.className = 'pb-3 font-bold';
@@ -375,8 +504,8 @@
         headersRow.appendChild(th);
       });
 
-      // 2. Body
-      dataList.forEach((item, index) => {
+      // Body
+      currentData.forEach((item) => {
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50/50 transition-colors';
 
@@ -385,6 +514,7 @@
           rowCells = `
             <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
             <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.category}</span></td>
+            <td class="py-4">${getStatusBadge(item.status)}</td>
             <td class="py-4">${item.pinned ? '<span class="text-amber-600 font-bold flex items-center gap-1"><i class="bi bi-pin-angle-fill"></i> Pinned</span>' : '<span class="text-slate-400">Regular</span>'}</td>
             <td class="py-4 text-slate-500">${item.createdAt || 'N/A'}</td>
           `;
@@ -393,567 +523,257 @@
             <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
             <td class="py-4 text-primary font-bold">${item.date}</td>
             <td class="py-4"><span class="px-2.5 py-1 bg-primary/10 rounded-full font-bold text-[10px] text-primary">${item.category}</span></td>
-            <td class="py-4 text-slate-500 max-w-[200px] truncate">${item.description || ''}</td>
+            <td class="py-4">${getStatusBadge(item.status)}</td>
           `;
         } else if (currentTab === 'documents') {
           rowCells = `
             <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
-            <td class="py-4"><span class="px-2.5 py-1 bg-[#FFF9D9] border border-primary/10 rounded-full font-bold text-[10px] text-secondary">${item.category}</span></td>
-            <td class="py-4 text-slate-500">${item.updatedDate || 'July 2026'}</td>
-            <td class="py-4 text-slate-400 font-mono">${item.downloadUrl}</td>
-          `;
-        } else if (currentTab === 'faqs') {
-          rowCells = `
-            <td class="py-4 pr-4 font-semibold text-slate-800 max-w-xs truncate">${item.question}</td>
             <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.category}</span></td>
-            <td class="py-4 text-slate-500 max-w-xs truncate">${item.answer}</td>
-          `;
-        } else if (currentTab === 'testimonials') {
-          rowCells = `
-            <td class="py-4 pr-4 font-semibold text-slate-800">${item.name}</td>
-            <td class="py-4 text-slate-500 font-bold">${item.role}</td>
-            <td class="py-4 text-slate-500 max-w-[250px] truncate">"${item.text}"</td>
-          `;
-        } else if (currentTab === 'faculty') {
-          rowCells = `
-            <td class="py-4 pr-4 font-semibold text-slate-800">${item.name}</td>
-            <td class="py-4 text-slate-500 font-bold">${item.role}</td>
-            <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.department}</span></td>
-            <td class="py-4 text-slate-500">${item.experience}</td>
+            <td class="py-4 text-slate-500">${item.updatedDate || 'N/A'}</td>
+            <td class="py-4">${getStatusBadge(item.status)}</td>
           `;
         } else if (currentTab === 'achievements') {
           rowCells = `
-            <td class="py-4 pr-4 font-semibold text-slate-800 max-w-xs truncate">${item.title}</td>
-            <td class="py-4 text-slate-500 font-bold">${item.awardee}</td>
-            <td class="py-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full font-bold text-[10px]">${item.category}</span></td>
-            <td class="py-4 text-slate-500">${item.year}</td>
+            <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
+            <td class="py-4 text-slate-600 font-bold">${item.awardee}</td>
+            <td class="py-4"><span class="px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full font-bold text-[10px]">${item.category}</span></td>
+            <td class="py-4 font-bold text-slate-500">${item.year}</td>
+            <td class="py-4">${getStatusBadge(item.status)}</td>
           `;
         }
 
-        tr.innerHTML = `
-          ${rowCells}
-          <td class="py-4">
-            <div class="flex gap-2">
-              <button onclick="openEditModal('${item.id}')" class="p-2 bg-slate-100 hover:bg-primary hover:text-white rounded-lg text-slate-600 transition-colors" title="Edit Item"><i class="bi bi-pencil-square"></i></button>
-              <button onclick="deleteItem('${item.id}')" class="p-2 bg-rose-50 hover:bg-rose-500 hover:text-white rounded-lg text-rose-500 transition-colors" title="Delete Item"><i class="bi bi-trash-fill"></i></button>
+        rowCells += `
+          <td class="py-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              <button onclick="editItem('${item.id}')" class="p-2 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-slate-600 transition-colors" title="Edit Item">
+                <i class="bi bi-pencil-fill text-xs"></i>
+              </button>
+              <button onclick="deleteItemConfirmation('${item.id}')" class="p-2 rounded-xl bg-red-50 hover:bg-red-600 hover:text-white text-red-600 transition-colors" title="Delete Item">
+                <i class="bi bi-trash-fill text-xs"></i>
+              </button>
             </div>
           </td>
         `;
+
+        tr.innerHTML = rowCells;
         tbody.appendChild(tr);
       });
     }
 
-    // Render Settings Form (Special Case)
-    function renderSettingsForm() {
-      const headersRow = document.getElementById('table-headers');
-      const tbody = document.getElementById('table-body');
-      const emptyState = document.getElementById('empty-state');
-      
-      headersRow.innerHTML = '';
-      emptyState.classList.add('hidden');
-
-      const settings = localDB.settings || {
-        emergencyBannerActive: false,
-        emergencyBannerText: '',
-        emergencyBannerPriority: 'warning',
-        analyticsEnabled: true,
-        language: 'en',
-        googleSheetsWebhookUrl: ''
-      };
-
-      tbody.innerHTML = `
-        <tr>
-          <td class="p-6">
-            <form onsubmit="saveGeneralSettings(event)" class="space-y-5 max-w-xl">
-              <div>
-                <label class="block text-slate-700 font-bold mb-1.5">Emergency Alert Banner Visibility</label>
-                <select id="setting-banner-active" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
-                  <option value="true" ${settings.emergencyBannerActive ? 'selected' : ''}>Enabled (Display alert header across all pages)</option>
-                  <option value="false" ${!settings.emergencyBannerActive ? 'selected' : ''}>Disabled (Hidden)</option>
-                </select>
-              </div>
-              
-              <div>
-                <label class="block text-slate-700 font-bold mb-1.5">Banner Text Content</label>
-                <input type="text" id="setting-banner-text" value="${settings.emergencyBannerText || ''}" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
-              </div>
-
-              <div>
-                <label class="block text-slate-700 font-bold mb-1.5">Banner Level / Alert Accent</label>
-                <select id="setting-banner-priority" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary">
-                  <option value="warning" ${settings.emergencyBannerPriority === 'warning' ? 'selected' : ''}>Amber (Warning)</option>
-                  <option value="danger" ${settings.emergencyBannerPriority === 'danger' ? 'selected' : ''}>Rose (Danger)</option>
-                  <option value="info" ${settings.emergencyBannerPriority === 'info' ? 'selected' : ''}>Teal (Info)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-slate-700 font-bold mb-1.5">Admissions Google Sheets Endpoint Webhook URL</label>
-                <input type="text" id="setting-webhook-url" value="${settings.googleSheetsWebhookUrl || ''}" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none font-mono text-slate-600 focus:ring-2 focus:ring-primary">
-                <span class="text-[10px] text-slate-400 mt-1 block">Google Apps Script webhook triggering admissions, bookings, and career notifications to spreadsheets.</span>
-              </div>
-
-              <div class="pt-4 border-t border-slate-100">
-                <button type="submit" class="bg-primary hover:bg-accent hover:text-secondary text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md">
-                  Update Settings
-                </button>
-              </div>
-            </form>
-          </td>
-        </tr>
-      `;
-    }
-
-    // Save general settings
-    function saveGeneralSettings(e) {
-      e.preventDefault();
-      localDB.settings = {
-        emergencyBannerActive: document.getElementById('setting-banner-active').value === 'true',
-        emergencyBannerText: document.getElementById('setting-banner-text').value.trim(),
-        emergencyBannerPriority: document.getElementById('setting-banner-priority').value,
-        analyticsEnabled: true,
-        language: 'en',
-        googleSheetsWebhookUrl: document.getElementById('setting-webhook-url').value.trim()
-      };
-      alert('✓ General settings applied in memory! Remember to export db.js to publish.');
-    }
-
-    // Open Modal for adding items
-    function openAddModal() {
-      editingId = null;
-      document.getElementById('modal-title').innerText = "Add New " + currentTab.slice(0, -1);
-      renderModalFields({});
-      toggleModal(true);
-    }
-
-    // Open Modal for editing items
-    function openEditModal(id) {
-      editingId = id;
-      document.getElementById('modal-title').innerText = "Edit " + currentTab.slice(0, -1);
-      const item = localDB[currentTab].find(i => i.id === id);
-      renderModalFields(item || {});
-      toggleModal(true);
-    }
-
-    // Modal view helper
-    function toggleModal(show) {
-      const modal = document.getElementById('edit-modal');
-      const container = document.getElementById('modal-container');
-      if (show) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        setTimeout(() => {
-          modal.classList.add('opacity-100');
-          container.classList.remove('scale-95');
-        }, 50);
+    function getStatusBadge(status) {
+      if (status === 'published') {
+        return `<span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full font-bold text-[10px] inline-flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Published</span>`;
+      } else if (status === 'draft') {
+        return `<span class="px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-bold text-[10px] inline-flex items-center gap-1"><i class="bi bi-pencil-square"></i> Draft</span>`;
       } else {
-        modal.classList.remove('opacity-100');
-        container.classList.add('scale-95');
-        setTimeout(() => {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-        }, 300);
+        return `<span class="px-2.5 py-1 bg-slate-100 text-slate-600 border border-slate-200 rounded-full font-bold text-[10px] inline-flex items-center gap-1"><i class="bi bi-archive-fill"></i> Archived</span>`;
       }
+    }
+
+    // Modal Control
+    function openAddModal() {
+      editingItem = null;
+      document.getElementById('modal-title').innerText = 'Add New ' + currentTab.slice(0, -1).toUpperCase();
+      buildFormFields({});
+      document.getElementById('upload-status-text').innerText = '';
+      document.getElementById('edit-modal').classList.remove('hidden');
+      document.getElementById('edit-modal').classList.add('flex');
+    }
+
+    function editItem(id) {
+      editingItem = currentData.find(i => i.id === id);
+      if (!editingItem) return;
+      document.getElementById('modal-title').innerText = 'Edit ' + currentTab.slice(0, -1).toUpperCase();
+      buildFormFields(editingItem);
+      document.getElementById('upload-status-text').innerText = '';
+      document.getElementById('edit-modal').classList.remove('hidden');
+      document.getElementById('edit-modal').classList.add('flex');
     }
 
     function closeModal() {
-      toggleModal(false);
+      document.getElementById('edit-modal').classList.add('hidden');
+      document.getElementById('edit-modal').classList.remove('flex');
     }
 
-    // Render Modal inputs based on Tab schema
-    function renderModalFields(data) {
+    function buildFormFields(data) {
       const container = document.getElementById('modal-fields');
       container.innerHTML = '';
+
       const schema = SCHEMAS[currentTab];
+      if (!schema) return;
 
       schema.fields.forEach(field => {
-        const block = document.createElement('div');
-        block.className = 'space-y-1';
+        const div = document.createElement('div');
+        const val = data[field.name] !== undefined ? data[field.name] : (field.default !== undefined ? field.default : '');
 
-        const label = document.createElement('label');
-        label.className = 'block font-bold text-slate-700';
-        label.innerText = field.label + (field.required ? ' *' : '');
-        block.appendChild(label);
-
-        const val = data[field.name] !== undefined ? data[field.name] : (field.default || '');
+        let fieldHtml = `<label class="block font-bold text-slate-700 mb-1">${field.label}</label>`;
 
         if (field.type === 'textarea') {
-          const textarea = document.createElement('textarea');
-          textarea.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary min-h-[80px]';
-          textarea.name = field.name;
-          textarea.value = val;
-          if (field.required) textarea.required = true;
-          block.appendChild(textarea);
+          fieldHtml += `<textarea name="${field.name}" rows="3" ${field.required ? 'required' : ''} class="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-primary outline-none">${val}</textarea>`;
         } else if (field.type === 'select') {
-          const select = document.createElement('select');
-          select.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary';
-          select.name = field.name;
-          
+          fieldHtml += `<select name="${field.name}" ${field.required ? 'required' : ''} class="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-primary outline-none">`;
           field.options.forEach(opt => {
-            const o = document.createElement('option');
-            o.value = opt;
-            o.innerText = opt;
-            if (opt === val) o.selected = true;
-            select.appendChild(o);
+            fieldHtml += `<option value="${opt}" ${val === opt ? 'selected' : ''}>${opt}</option>`;
           });
-          block.appendChild(select);
+          fieldHtml += `</select>`;
         } else if (field.type === 'boolean') {
-          const toggleLabel = document.createElement('label');
-          toggleLabel.className = 'inline-flex items-center gap-2 mt-1 cursor-pointer font-semibold text-slate-600';
-          toggleLabel.innerHTML = `
-            <input type="checkbox" name="${field.name}" ${val ? 'checked' : ''} class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300">
-            <span>Yes, apply setting</span>
+          fieldHtml = `
+            <label class="flex items-center gap-2 font-bold text-slate-700 cursor-pointer">
+              <input type="checkbox" name="${field.name}" ${val ? 'checked' : ''} class="w-4 h-4 text-primary rounded focus:ring-primary">
+              ${field.label}
+            </label>
           `;
-          block.appendChild(toggleLabel);
         } else {
-          const input = document.createElement('input');
-          input.type = field.type;
-          input.name = field.name;
-          input.value = val;
-          input.className = 'w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none text-slate-700 font-semibold focus:ring-2 focus:ring-primary';
-          if (field.required) input.required = true;
-          block.appendChild(input);
+          fieldHtml += `<input type="${field.type}" name="${field.name}" value="${val}" ${field.required ? 'required' : ''} class="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-primary outline-none">`;
         }
 
-        container.appendChild(block);
+        div.innerHTML = fieldHtml;
+        container.appendChild(div);
       });
     }
 
-    // Save / Apply item
-    function saveItem(e) {
+    // Handle Image Upload
+    async function handleFileUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const statusText = document.getElementById('upload-status-text');
+      statusText.innerText = 'Uploading asset...';
+
+      try {
+        const uploadResult = await window.OnestDB.uploadAsset(file);
+        statusText.innerText = '✓ Uploaded successfully!';
+        
+        // Auto fill into relevant form field
+        const form = document.getElementById('modal-form');
+        if (form.elements['pdfUrl']) form.elements['pdfUrl'].value = uploadResult.publicUrl;
+        if (form.elements['downloadUrl']) form.elements['downloadUrl'].value = uploadResult.publicUrl;
+        if (form.elements['imageUrl']) form.elements['imageUrl'].value = uploadResult.publicUrl;
+        if (form.elements['image']) form.elements['image'].value = uploadResult.publicUrl;
+      } catch (err) {
+        statusText.innerText = 'Error: ' + err.message;
+        statusText.className = 'block text-[11px] text-red-600 font-bold mt-1';
+      }
+    }
+
+    // Save Form Item
+    async function saveItem(e) {
       e.preventDefault();
       const form = document.getElementById('modal-form');
       const formData = new FormData(form);
+      const payload = {};
+
       const schema = SCHEMAS[currentTab];
-      const newItem = {};
-
-      if (editingId) {
-        newItem.id = editingId;
-        const oldItem = localDB[currentTab].find(i => i.id === editingId);
-        newItem.createdAt = oldItem ? oldItem.createdAt : new Date().toISOString().split('T')[0];
-        newItem.updatedDate = new Date().toISOString().split('T')[0];
-      } else {
-        newItem.id = currentTab.slice(0, -3) + '_' + Date.now();
-        newItem.createdAt = new Date().toISOString().split('T')[0];
-        newItem.updatedDate = new Date().toISOString().split('T')[0];
-      }
-
       schema.fields.forEach(field => {
         if (field.type === 'boolean') {
-          newItem[field.name] = form.elements[field.name].checked;
+          payload[field.name] = form.elements[field.name] ? form.elements[field.name].checked : false;
         } else {
-          const val = form.elements[field.name].value;
-          newItem[field.name] = field.type === 'number' ? Number(val) : val.trim();
+          payload[field.name] = formData.get(field.name);
         }
       });
 
-      if (editingId) {
-        // Edit
-        const index = localDB[currentTab].findIndex(i => i.id === editingId);
-        if (index > -1) {
-          localDB[currentTab][index] = newItem;
-        }
-      } else {
-        // Add
-        localDB[currentTab].push(newItem);
-      }
+      const saveBtn = document.getElementById('btn-modal-save');
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = `<i class="bi bi-arrow-repeat animate-spin"></i> Saving...`;
 
-      closeModal();
-      renderTable();
+      try {
+        if (currentTab === 'notices') {
+          if (editingItem) await window.OnestDB.updateNotice(editingItem.id, payload);
+          else await window.OnestDB.addNotice(payload);
+        } else if (currentTab === 'events') {
+          if (editingItem) await window.OnestDB.deleteEvent(editingItem.id); // Re-insert or update
+          await window.OnestDB.addEvent(payload);
+        } else if (currentTab === 'documents') {
+          if (editingItem) await window.OnestDB.deleteDocument(editingItem.id);
+          await window.OnestDB.addDocument(payload);
+        } else if (currentTab === 'achievements') {
+          if (editingItem) await window.OnestDB.deleteAchievement(editingItem.id);
+          await window.OnestDB.addAchievement(payload);
+        }
+        closeModal();
+        await loadTableData();
+      } catch (err) {
+        alert("Failed to save item: " + err.message);
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = `<i class="bi bi-check-lg"></i> Apply &amp; Save`;
+      }
     }
 
-    // Delete item
-    function deleteItem(id) {
-      if (confirm('Are you sure you want to delete this item? This action is local until you export.')) {
-        localDB[currentTab] = localDB[currentTab].filter(i => i.id !== id);
-        renderTable();
+    // Delete Confirmation
+    async function deleteItemConfirmation(id) {
+      if (!confirm("Are you sure you want to permanently delete this item?")) return;
+
+      try {
+        if (currentTab === 'notices') await window.OnestDB.deleteNotice(id);
+        else if (currentTab === 'events') await window.OnestDB.deleteEvent(id);
+        else if (currentTab === 'documents') await window.OnestDB.deleteDocument(id);
+        else if (currentTab === 'achievements') await window.OnestDB.deleteAchievement(id);
+        
+        await loadTableData();
+      } catch (err) {
+        alert("Failed deleting item: " + err.message);
       }
     }
 
-    // Generate and Download db.js
-    function downloadDbJs() {
-      // Build CONTENT structure
-      const finalContent = {
-        notices: localDB.notices || [],
-        events: localDB.events || [],
-        documents: localDB.documents || [],
-        faqs: localDB.faqs || [],
-        faculty: localDB.faculty || [],
-        achievements: localDB.achievements || [],
-        testimonials: localDB.testimonials || [],
-        admissions: localDB.admissions || [],
-        bookings: localDB.bookings || [],
-        career_applications: localDB.career_applications || [],
-        settings: localDB.settings || {}
-      };
+    // Settings Render
+    async function renderSettingsForm() {
+      const container = document.getElementById('table-body');
+      container.innerHTML = '';
+      document.getElementById('table-headers').innerHTML = '';
+      document.getElementById('empty-state').classList.add('hidden');
 
-      const fileTemplate = `/* ==========================================================================
-   ONEST GURUKUL - STATIC SITE CONTENT (db.js)
-   Edit this file and commit to GitHub to update notices, FAQs, events, etc.
-   No server, Firebase, or localStorage CMS — GitHub Pages only.
-   ========================================================================== */
+      const settings = await window.OnestDB.getSettings();
 
-(function (global) {
-    'use strict';
+      const card = document.createElement('div');
+      card.className = 'p-6 max-w-xl space-y-4';
+      card.innerHTML = `
+        <form onsubmit="saveSettingsForm(event)">
+          <div class="space-y-4 text-xs">
+            <label class="flex items-center gap-2 font-bold text-slate-700 cursor-pointer">
+              <input type="checkbox" id="set-banner-active" ${settings.emergencyBannerActive ? 'checked' : ''} class="w-4 h-4 text-primary rounded">
+              Show Emergency Header Alert Banner
+            </label>
 
-    const CONTENT = ${JSON.stringify(finalContent, null, 4)};
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Banner Announcement Text</label>
+              <textarea id="set-banner-text" rows="3" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none">${settings.emergencyBannerText || ''}</textarea>
+            </div>
 
-    const OnestDB = {
-        getTable: function (table) {
-            const data = CONTENT[table];
-            if (data === undefined) return [];
-            if (Array.isArray(data)) return data.slice();
-            return Object.assign({}, data);
-        },
-        saveTable: function () {
-            return false;
-        },
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Banner Priority Style</label>
+              <select id="set-banner-priority" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none">
+                <option value="warning" ${settings.emergencyBannerPriority === 'warning' ? 'selected' : ''}>Orange Warning</option>
+                <option value="critical" ${settings.emergencyBannerPriority === 'critical' ? 'selected' : ''}>Red Critical Alert</option>
+                <option value="info" ${settings.emergencyBannerPriority === 'info' ? 'selected' : ''}>Blue Informational</option>
+              </select>
+            </div>
 
-        // --- Specific getters & operations ---
-        getNotices: function () {
-            return this.getTable('notices').sort((a, b) => {
-                if (a.pinned && !b.pinned) return -1;
-                if (!a.pinned && b.pinned) return 1;
-                return new Date(b.createdAt) - new Date(a.createdAt);
-            });
-        },
-        addNotice: function (notice) {
-            const table = this.getTable('notices');
-            notice.id = 'notice_' + Date.now();
-            notice.createdAt = new Date().toISOString().split('T')[0];
-            table.push(notice);
-            this.saveTable('notices', table);
-            return notice;
-        },
-        deleteNotice: function (id) {
-            let table = this.getTable('notices');
-            table = table.filter(n => n.id !== id);
-            return this.saveTable('notices', table);
-        },
-        togglePinNotice: function (id) {
-            const table = this.getTable('notices');
-            const notice = table.find(n => n.id === id);
-            if (notice) {
-                notice.pinned = !notice.pinned;
-                this.saveTable('notices', table);
-            }
-            return notice;
-        },
+            <button type="submit" class="px-5 py-2.5 bg-primary text-white font-bold rounded-xl shadow hover:bg-primary/95 transition-all">
+              Save Banner Settings
+            </button>
+          </div>
+        </form>
+      `;
+      container.appendChild(card);
+    }
 
-        getEvents: function () {
-            return this.getTable('events').sort((a, b) => new Date(a.date) - new Date(b.date));
-        },
-        addEvent: function (event) {
-            const table = this.getTable('events');
-            event.id = 'event_' + Date.now();
-            table.push(event);
-            this.saveTable('events', table);
-            return event;
-        },
-        deleteEvent: function (id) {
-            let table = this.getTable('events');
-            table = table.filter(e => e.id !== id);
-            return this.saveTable('events', table);
-        },
+    async function saveSettingsForm(e) {
+      e.preventDefault();
+      const active = document.getElementById('set-banner-active').checked;
+      const text = document.getElementById('set-banner-text').value;
+      const priority = document.getElementById('set-banner-priority').value;
 
-        getDocuments: function () {
-            return this.getTable('documents');
-        },
-        addDocument: function (doc) {
-            const table = this.getTable('documents');
-            doc.id = 'doc_' + Date.now();
-            doc.updatedDate = new Date().toISOString().split('T')[0];
-            table.push(doc);
-            this.saveTable('documents', table);
-            return doc;
-        },
-        deleteDocument: function (id) {
-            let table = this.getTable('documents');
-            table = table.filter(d => d.id !== id);
-            return this.saveTable('documents', table);
-        },
-
-        getFaqs: function () {
-            return this.getTable('faqs');
-        },
-        getFaculty: function () {
-            return this.getTable('faculty');
-        },
-        getAchievements: function () {
-            return this.getTable('achievements');
-        },
-        getTestimonials: function () {
-            return this.getTable('testimonials');
-        },
-
-        // --- Submissions ---
-        getAdmissions: function () {
-            return this.getTable('admissions').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addAdmission: function (application) {
-            const table = this.getTable('admissions');
-            application.id = 'adm_' + Date.now();
-            application.status = 'Submitted';
-            application.createdAt = new Date().toISOString().split('T')[0];
-            table.push(application);
-            this.saveTable('admissions', table);
-            return application;
-        },
-        updateAdmissionStatus: function (id, status) {
-            const table = this.getTable('admissions');
-            const app = table.find(a => a.id === id);
-            if (app) {
-                app.status = status;
-                app.updatedAt = new Date().toISOString().split('T')[0];
-                this.saveTable('admissions', table);
-            }
-            return app;
-        },
-        deleteAdmission: function (id) {
-            let table = this.getTable('admissions');
-            table = table.filter(a => a.id !== id);
-            return this.saveTable('admissions', table);
-        },
-
-        getBookings: function () {
-            return this.getTable('bookings').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addBooking: function (booking) {
-            const table = this.getTable('bookings');
-            booking.id = 'book_' + Date.now();
-            booking.status = 'Confirmed';
-            booking.createdAt = new Date().toISOString().split('T')[0];
-            table.push(booking);
-            this.saveTable('bookings', table);
-            return booking;
-        },
-        deleteBooking: function (id) {
-            let table = this.getTable('bookings');
-            table = table.filter(b => b.id !== id);
-            return this.saveTable('bookings', table);
-        },
-
-        getCareers: function () {
-            return this.getTable('careers');
-        },
-        getCareerApplications: function () {
-            return this.getTable('career_applications').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addCareerApplication: function (app) {
-            const table = this.getTable('career_applications');
-            app.id = 'capp_' + Date.now();
-            app.createdAt = new Date().toISOString().split('T')[0];
-            table.push(app);
-            this.saveTable('career_applications', table);
-            return app;
-        },
-        deleteCareerApplication: function (id) {
-            let table = this.getTable('career_applications');
-            table = table.filter(c => c.id !== id);
-            return this.saveTable('career_applications', table);
-        },
-
-        // --- Settings ---
-        getSettings: function () {
-            return this.getTable('settings');
-        },
-        saveSettings: function (newSettings) {
-            const settings = this.getSettings();
-            const merged = Object.assign({}, settings, newSettings);
-            return this.saveTable('settings', merged);
-        },
-
-        // --- Search Utility ---
-        globalSearch: function (query) {
-            if (!query || query.trim() === '') return [];
-            const q = query.toLowerCase().trim();
-            const results = [];
-
-            // 1. Search Notices
-            this.getNotices().forEach(n => {
-                if (n.title.toLowerCase().includes(q) || n.content.toLowerCase().includes(q)) {
-                    results.push({ type: 'Notice', title: n.title, desc: n.content, link: 'index.html#notices-board' });
-                }
-            });
-
-            // 2. Search Events
-            this.getEvents().forEach(e => {
-                if (e.title.toLowerCase().includes(q) || e.description.toLowerCase().includes(q)) {
-                    results.push({ type: 'Event', title: e.date + ' - ' + e.title, desc: e.description, link: 'students-life.html#calendar' });
-                }
-            });
-
-            // 3. Search FAQs
-            this.getFaqs().forEach(f => {
-                if (f.question.toLowerCase().includes(q) || f.answer.toLowerCase().includes(q)) {
-                    results.push({ type: 'FAQ', title: f.question, desc: f.answer, link: 'index.html#faq' });
-                }
-            });
-
-            // 4. Search Faculty
-            this.getFaculty().forEach(fac => {
-                if (fac.name.toLowerCase().includes(q) || fac.role.toLowerCase().includes(q) || fac.department.toLowerCase().includes(q)) {
-                    results.push({ type: 'Faculty', title: fac.name, desc: fac.role + ' (' + fac.qualification + ') - ' + fac.experience + ' Exp.', link: 'students-life.html#faculty' });
-                }
-            });
-
-            // 5. Search Documents
-            this.getDocuments().forEach(d => {
-                if (d.title.toLowerCase().includes(q) || d.category.toLowerCase().includes(q)) {
-                    results.push({ type: 'Document', title: d.title, desc: 'Category: ' + d.category + ' - Updated: ' + d.updatedDate, link: 'campus-facilities.html#download-hub' });
-                }
-            });
-
-            // 6. Search Achievements
-            this.getAchievements().forEach(a => {
-                if (a.title.toLowerCase().includes(q) || a.awardee.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)) {
-                    results.push({ type: 'Achievement', title: a.title, desc: a.awardee + ' (' + a.year + ') - ' + a.description, link: 'students-life.html#achievements' });
-                }
-            });
-
-            // 7. Core Pages
-            const pages = [
-                { title: 'Home Page', desc: 'Welcome to O\\\'Nest Gurukul. Academic Excellence and Holistic Care.', link: 'index.html' },
-                { title: 'About Us', desc: 'Our history, vision, mission, and leadership.', link: 'about.html' },
-                { title: '⭐ Pre-Primary', desc: 'Nursery, LKG, UKG early childhood programs.', link: 'preprimary.html' },
-                { title: 'Curriculum & Student Life', desc: 'Detailed academic stages, extra-curricular clubs, and events.', link: 'students-life.html' },
-                { title: 'Campus & Facilities', desc: 'Smart classrooms, labs, sports complex, and school transport details.', link: 'campus-facilities.html' },
-                { title: 'Online Admission Portal', desc: 'Apply online, check criteria, schedule campus visits, and view scholarships.', link: 'admissions.html' },
-                { title: 'Contact Us', desc: 'Get in touch, view Google Maps, phone, email, and office address.', link: 'contact.html' }
-            ];
-            pages.forEach(p => {
-                if (p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)) {
-                    results.push({ type: 'Page', title: p.title, desc: p.desc, link: p.link });
-                }
-            });
-
-            return results;
-        },
-
-        // --- Config Export/Import ---
-        exportDatabase: function () {
-            return JSON.stringify(CONTENT, null, 2);
-        },
-        importDatabase: function () {
-            return false;
-        }
-    };
-
-    // Expose DB globally
-    global.OnestDB = OnestDB;
-
-})(window);
-`;
-
-      const blob = new Blob([fileTemplate], { type: 'text/javascript;charset=utf-8' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'db.js';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      
-      alert('✓ db.js generated successfully! To go live, replace your local db.js file with this downloaded one and commit your changes.');
+      try {
+        await window.OnestDB.saveSettings({
+          emergencyBannerActive: active,
+          emergencyBannerText: text,
+          emergencyBannerPriority: priority
+        });
+        alert("Banner settings saved successfully!");
+      } catch (err) {
+        alert("Failed saving settings: " + err.message);
+      }
     }
   </script>
 </body>

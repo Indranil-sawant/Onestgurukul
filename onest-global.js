@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 2. Emergency Announcement Banner ---
-    function injectEmergencyBanner() {
-        const settings = DB.getSettings();
-        if (!settings.emergencyBannerActive || !settings.emergencyBannerText) return;
+    async function injectEmergencyBanner() {
+        const settings = await DB.getSettings();
+        if (!settings || !settings.emergencyBannerActive || !settings.emergencyBannerText) return;
 
         // Check if dismissed in this session
         if (sessionStorage.getItem('onest_emergency_dismissed') === 'true') return;

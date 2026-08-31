@@ -8,6 +8,12 @@
   <meta name="description"
     content="Onest Gurukul - A premium educational institution offering holistic learning, values, and modern education. Redesigned for excellence.">
   <meta name="keywords" content="Gurukul, Education, School, Ratnagiri, CBSE, Holistic Learning, admissions">
+  <link rel="canonical" href="https://onestgurukul.in/index.html">
+  <meta property="og:title" content="O'Nest Gurukul - Where Learning Feels Like Home">
+  <meta property="og:description" content="Onest Gurukul - A premium educational institution offering holistic learning, values, and modern education. Redesigned for excellence.">
+  <meta property="og:image" content="https://onestgurukul.in/assets/img/onest.svg">
+  <meta property="og:url" content="https://onestgurukul.in/index.html">
+  <meta property="og:type" content="website">
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -957,21 +963,26 @@
           <div class="lg:col-span-5 bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
             <form id="home-contact-form" action="https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec" method="POST" target="hidden_iframe" class="space-y-5 text-left">
-              <div>
-                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Name</label>
-                <input type="text" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Full Name" required>
+              <!-- Honeypot Spam Trap -->
+              <div style="display:none;">
+                <label for="home-honeypot">Leave this field blank</label>
+                <input type="text" name="honeypot" id="home-honeypot" tabindex="-1" autocomplete="off">
               </div>
               <div>
-                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Email</label>
-                <input type="email" name="Email" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Email Address" required>
+                <label for="home-name" class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Name</label>
+                <input type="text" id="home-name" name="Name" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Full Name" required>
               </div>
               <div>
-                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Desired Intake Date</label>
-                <input type="date" name="Date" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" required>
+                <label for="home-email" class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Your Email</label>
+                <input type="email" id="home-email" name="Email" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" placeholder="Enter Email Address" required>
               </div>
               <div>
-                <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Inquiry Message</label>
-                <textarea name="Message" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none resize-none" rows="4" placeholder="How can we assist you today?" required></textarea>
+                <label for="home-date" class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Desired Intake Date</label>
+                <input type="date" id="home-date" name="Date" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none" required>
+              </div>
+              <div>
+                <label for="home-message" class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Inquiry Message</label>
+                <textarea id="home-message" name="Message" class="w-full bg-surface-container-low/40 rounded-xl px-4 py-3 border border-primary/10 text-secondary placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all font-semibold outline-none resize-none" rows="4" placeholder="How can we assist you today?" required></textarea>
               </div>
               <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:scale-[0.98] active:scale-95 transition-all shadow-md mt-2">
                 Send Message
@@ -1019,14 +1030,21 @@
       <div>
         <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
         <ul class="space-y-4 text-sm font-semibold">
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+          <li><a href="admin.html" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
+          <li><a href="index.html#notices-board" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="campus-facilities.html#download-hub" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-white/10 mt-16 pt-6 text-center">
       <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
+        <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
+        <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
+        <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
+      </div>
     </div>
   </footer>
 
@@ -1103,7 +1121,9 @@
   </script>
 
 
-  <!-- Static content + global widgets (GitHub Pages) -->
+  <!-- Static content + global widgets (GitHub Pages + Supabase CMS) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="db.js"></script>
   <script src="onest-global.js"></script>
   <script>
@@ -1119,7 +1139,7 @@
         const container = document.getElementById('notice-list-container');
         if (!container) return;
         
-        const list = DB.getNotices();
+        const list = await DB.getNotices();
 
 
         // Filter
@@ -1330,10 +1350,21 @@
         homeForm.addEventListener('submit', function(e) {
           e.preventDefault();
 
-          const name = homeForm.querySelector('[name="Name"]').value;
-          const email = homeForm.querySelector('[name="Email"]').value;
-          const date = homeForm.querySelector('[name="Date"]').value;
-          const message = homeForm.querySelector('[name="Message"]').value;
+          // Honeypot spam trap check
+          const honeypot = homeForm.querySelector('[name="honeypot"]').value;
+          if (honeypot) {
+            console.warn("Spam submission blocked via honeypot.");
+            alert("✓ Your message has been sent successfully!");
+            homeForm.reset();
+            return;
+          }
+
+          // Input sanitization (escape HTML tags)
+          const sanitize = (val) => val.replace(/</g, "&lt;").replace(/>/g, "&gt;").trim();
+          const name = sanitize(homeForm.querySelector('[name="Name"]').value);
+          const email = sanitize(homeForm.querySelector('[name="Email"]').value);
+          const date = sanitize(homeForm.querySelector('[name="Date"]').value);
+          const message = sanitize(homeForm.querySelector('[name="Message"]').value);
           
           const submitBtn = homeForm.querySelector('button[type="submit"]');
           const originalText = submitBtn.innerText;

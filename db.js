@@ -1,13 +1,13 @@
 /* ==========================================================================
-   ONEST GURUKUL - STATIC SITE CONTENT (db.js)
-   Edit this file and commit to GitHub to update notices, FAQs, events, etc.
-   No server, Firebase, or localStorage CMS — GitHub Pages only.
+   ONEST GURUKUL - CONTENT DATABASE & SUPABASE ADAPTER (db.js)
+   Integrates Supabase dynamic database & storage with static fallback defaults.
    ========================================================================== */
 
 (function (global) {
     'use strict';
 
-    const CONTENT = {
+    // Static default content fallback
+    const DEFAULT_CONTENT = {
         notices: [
             {
                 id: "n-1",
@@ -17,7 +17,8 @@
                 pinned: true,
                 createdAt: "2026-07-15",
                 expiresAt: "2026-10-31",
-                pdfUrl: "#"
+                pdfUrl: "#",
+                status: "published"
             },
             {
                 id: "n-2",
@@ -27,7 +28,8 @@
                 pinned: true,
                 createdAt: "2026-07-20",
                 expiresAt: "2026-08-02",
-                pdfUrl: "#"
+                pdfUrl: "#",
+                status: "published"
             },
             {
                 id: "n-3",
@@ -37,7 +39,8 @@
                 pinned: false,
                 createdAt: "2026-07-18",
                 expiresAt: "2026-08-15",
-                pdfUrl: "#"
+                pdfUrl: "#",
+                status: "published"
             },
             {
                 id: "n-4",
@@ -47,311 +50,419 @@
                 pinned: false,
                 createdAt: "2026-07-10",
                 expiresAt: "",
-                pdfUrl: "#"
+                pdfUrl: "#",
+                status: "published"
             }
         ],
         events: [
-            { id: "e-1", title: "School Reopens - Term I", date: "2026-06-15", category: "Academic", description: "Classes begin for all students." },
-            { id: "e-2", title: "Independence Day Celebration", date: "2026-08-15", category: "Activity", description: "Flag hoisting ceremony, cultural parade, and music performances by students." },
-            { id: "e-3", title: "First Mid-Term Examinations", date: "2026-09-07", category: "Exam", description: "Syllabus details have been distributed in class." },
-            { id: "e-4", title: "Ganesh Chaturthi Holiday", date: "2026-09-14", category: "Holiday", description: "School closed for Ganesh festival celebrations." },
-            { id: "e-5", title: "Parent Teacher Meeting (PTM)", date: "2026-08-01", category: "PTM", description: "Timing: 9:00 AM to 1:00 PM." },
-            { id: "e-6", title: "Science & Art Exhibition", date: "2026-10-10", category: "Activity", description: "Annual display of science experiments, robotics, and fine arts created by students." },
-            { id: "e-7", title: "Diwali Vacation Commences", date: "2026-11-05", category: "Holiday", description: "Vacation from November 5th to November 20th." }
+            { id: "e-1", title: "School Reopens - Term I", date: "2026-06-15", category: "Academic", description: "Classes begin for all students.", status: "published" },
+            { id: "e-2", title: "Independence Day Celebration", date: "2026-08-15", category: "Activity", description: "Flag hoisting ceremony, cultural parade, and music performances by students.", status: "published" },
+            { id: "e-3", title: "First Mid-Term Examinations", date: "2026-09-07", category: "Exam", description: "Syllabus details have been distributed in class.", status: "published" },
+            { id: "e-4", title: "Ganesh Chaturthi Holiday", date: "2026-09-14", category: "Holiday", description: "School closed for Ganesh festival celebrations.", status: "published" },
+            { id: "e-5", title: "Parent Teacher Meeting (PTM)", date: "2026-08-01", category: "PTM", description: "Timing: 9:00 AM to 1:00 PM.", status: "published" }
         ],
         documents: [
-            { id: "d-1", title: "CBSE Mandatory Public Disclosure", category: "CBSE", updatedDate: "2026-06-30", downloadUrl: "#" },
-            { id: "d-2", title: "School Recognition Certificate (Form II)", category: "Recognition Certificate", updatedDate: "2026-04-15", downloadUrl: "#" },
-            { id: "d-3", title: "No Objection Certificate (NOC)", category: "NOC", updatedDate: "2025-05-12", downloadUrl: "#" },
-            { id: "d-4", title: "CBSE Affiliation Extension Letter", category: "Affiliation Letter", updatedDate: "2026-01-20", downloadUrl: "#" },
-            { id: "d-5", title: "RTE Admission Guidelines & Approvals", category: "RTE Documents", updatedDate: "2026-03-01", downloadUrl: "#" },
-            { id: "d-6", title: "School Prospectus (Academic Year 2026-27)", category: "School Prospectus", updatedDate: "2026-07-01", downloadUrl: "#" },
-            { id: "d-7", title: "Academic Calendar 2026-27", category: "Academic Calendar", updatedDate: "2026-06-01", downloadUrl: "#" },
-            { id: "d-8", title: "Official Textbooks & Stationery List", category: "Book List", updatedDate: "2026-05-20", downloadUrl: "#" },
-            { id: "d-9", title: "Annual Holiday List 2026-27", category: "Holiday List", updatedDate: "2026-06-01", downloadUrl: "#" }
+            { id: "d-1", title: "CBSE Mandatory Public Disclosure", category: "CBSE", updatedDate: "2026-06-30", downloadUrl: "#", status: "published" },
+            { id: "d-2", title: "School Recognition Certificate (Form II)", category: "Recognition Certificate", updatedDate: "2026-04-15", downloadUrl: "#", status: "published" },
+            { id: "d-3", title: "No Objection Certificate (NOC)", category: "NOC", updatedDate: "2025-05-12", downloadUrl: "#", status: "published" },
+            { id: "d-4", title: "CBSE Affiliation Extension Letter", category: "Affiliation Letter", updatedDate: "2026-01-20", downloadUrl: "#", status: "published" }
         ],
         faqs: [
             { id: "f-1", question: "What is the admission procedure at O'Nest Gurukul?", answer: "The admission process involves submitting the online application form, attending a friendly interaction/assessment with our panel, verifying documents, and completing the registration fee payment.", category: "Admission" },
-            { id: "f-2", question: "Is O'Nest Gurukul affiliated with CBSE?", answer: "Yes, O'Nest Gurukul is a co-educational school proposed for CBSE curriculum implementation, delivering high-concept, value-based modern education.", category: "Curriculum" },
-            { id: "f-3", question: "What is the school fee structure?", answer: "Our fees are structured transparently and are payable in installments. For detailed class-wise fee schedules, please visit the admission office or download our Fee Details PDF in the portal.", category: "Fees" },
-            { id: "f-4", question: "Does the school provide transport facilities?", answer: "Yes, the school runs a fleet of safe GPS-equipped buses covering Ratnagiri and surrounding pickup points. Speed governors and experienced drivers are on duty.", category: "Transport" },
-            { id: "f-5", question: "What co-curricular activities are offered?", answer: "We offer sports (football, cricket, badminton, table tennis), creative arts (fine arts, clay modeling), performing arts (music, dance), and digital clubs (coding, STEM experiments).", category: "Activities" },
-            { id: "f-6", question: "Do you offer hostel or residential boarding facilities?", answer: "O'Nest Gurukul is currently a day school. We do not provide hostel or residential boarding facilities on campus.", category: "Hostel" },
-            { id: "f-7", question: "What is the policy regarding school uniforms?", answer: "Students are required to wear the standard school uniform on Mondays, Tuesdays, Thursdays, and Fridays. The special white house uniform is worn on Wednesdays and Saturdays for assembly and sports.", category: "Uniform" }
+            { id: "f-2", question: "Is O'Nest Gurukul affiliated with CBSE?", answer: "Yes, O'Nest Gurukul is a co-educational school proposed for CBSE curriculum implementation, delivering high-concept, value-based modern education.", category: "Curriculum" }
         ],
         faculty: [
             { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "assets/img/education/parent (1).jpg", department: "Administration" },
-            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "assets/img/education/open (1).jpg", department: "Secondary" },
-            { id: "fac-3", name: "Mrs. Anjali Sawant", role: "Primary English Coordinator", qualification: "M.A. (English Literature), B.Ed.", experience: "10 Years", photo: "assets/img/education/open (2).jpg", department: "Primary" },
-            { id: "fac-4", name: "Mr. Sandeep Patil", role: "Physical Education HOD", qualification: "B.P.Ed., M.P.Ed.", experience: "15 Years", photo: "assets/img/education/open (3).jpg", department: "Sports" },
-            { id: "fac-5", name: "Ms. Neha Ranade", role: "Fine Arts & Clay Work Specialist", qualification: "B.F.A. (Bachelor of Fine Arts)", experience: "8 Years", photo: "assets/img/education/open (4).jpg", department: "Arts" },
-            { id: "fac-6", name: "Mrs. Pallavi Rane", role: "Primary Mathematics Teacher", qualification: "B.Sc. (Maths), D.Ed.", experience: "7 Years", photo: "assets/img/education/open (5).jpg", department: "Primary" }
+            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "assets/img/education/open (1).jpg", department: "Secondary" }
         ],
         achievements: [
-            { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg" },
-            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg" },
-            { id: "a-3", title: "Inter-School Championship Trophy", awardee: "O'Nest Gurukul Student Team", category: "Academics", year: "2026", description: "Awarded top trophy in inter-school academic, cultural, and quiz competitions.", image: "assets/ONEST/IMG-20260808-WA0384.jpg.jpeg" },
-            { id: "a-4", title: "Science Olympiad Foundation (SOF) Merits", awardee: "Primary & Middle School Scholars", category: "Olympiads", year: "2026", description: "Outstanding performance and gold merit certificates in SOF National Olympiads.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg" },
-            { id: "a-5", title: "State Martial Arts & Karate Champions", awardee: "O'Nest Karate Squad", category: "Sports", year: "2026", description: "Won gold and silver medals in state-level Karate & self-defense championships.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg" }
+            { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg", status: "published" },
+            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg", status: "published" }
         ],
         testimonials: [
-            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" },
-            { id: "t-2", name: "Mrs. Meera Gokhale", role: "Parent", text: "We shifted from Pune to Ratnagiri, and O'Nest Gurukul made the transition seamless for our son. The STEM focus and individual attention are highly impressive.", photo: "assets/img/education/parent (1).jpg" },
-            { id: "t-3", name: "Mast. Rohan Joshi", role: "Alumni (Class of 2024)", text: "The foundation I got at Gurukul in computer coding and mathematics helped me clear my competitive examinations with ease. I will always cherish my time here.", photo: "assets/img/education/open (1).jpg" }
+            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" }
         ],
         settings: {
             emergencyBannerActive: false,
-            emergencyBannerText: "ADMISSION NOTICE: The last date for online application submission for Term 1 has been extended to August 15th, 2026.",
+            emergencyBannerText: "ADMISSION NOTICE: Registrations for Academic Year 2026-27 are now open.",
             emergencyBannerPriority: "warning",
             analyticsEnabled: true,
-            language: "en",
-            googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec"
+            language: "en"
         }
     };
+
+    // Helper to get active Supabase client
+    function getSupaClient() {
+        if (global.OnestSupabase && typeof global.OnestSupabase.getClient === 'function') {
+            return global.OnestSupabase.getClient();
+        }
+        return null;
+    }
 
     const OnestDB = {
-        getTable: function (table) {
-            const data = CONTENT[table];
-            if (data === undefined) return [];
-            if (Array.isArray(data)) return data.slice();
-            return Object.assign({}, data);
-        },
-        saveTable: function () {
-            return false;
+        // --- 1. NOTICES API ---
+        getNotices: async function (includeAllStatus = false) {
+            const client = getSupaClient();
+            if (client) {
+                try {
+                    let query = client.from('notices').select('*');
+                    if (!includeAllStatus) {
+                        query = query.eq('status', 'published');
+                    }
+                    query = query.order('pinned', { ascending: false }).order('created_at', { ascending: false });
+
+                    const { data, error } = await query;
+                    if (!error && data) {
+                        return data.map(item => ({
+                            id: item.id,
+                            title: item.title,
+                            content: item.content,
+                            category: item.category,
+                            pinned: item.pinned,
+                            createdAt: item.created_at ? item.created_at.split('T')[0] : '',
+                            expiresAt: item.expires_at || '',
+                            pdfUrl: item.pdf_url || '#',
+                            status: item.status
+                        }));
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch notices failed, fallback to static defaults:", err);
+                }
+            }
+            // Fallback
+            return DEFAULT_CONTENT.notices.filter(n => includeAllStatus || n.status === 'published');
         },
 
-        // --- Specific getters & operations ---
-        getNotices: function () {
-            // Sort: Pinned first, then by date descending
-            return this.getTable('notices').sort((a, b) => {
-                if (a.pinned && !b.pinned) return -1;
-                if (!a.pinned && b.pinned) return 1;
-                return new Date(b.createdAt) - new Date(a.createdAt);
-            });
-        },
-        addNotice: function (notice) {
-            const table = this.getTable('notices');
-            notice.id = 'notice_' + Date.now();
-            notice.createdAt = new Date().toISOString().split('T')[0];
-            table.push(notice);
-            this.saveTable('notices', table);
+        addNotice: async function (notice) {
+            const client = getSupaClient();
+            if (client) {
+                const payload = {
+                    title: notice.title,
+                    content: notice.content,
+                    category: notice.category || 'General',
+                    pinned: !!notice.pinned,
+                    pdf_url: notice.pdfUrl || '#',
+                    status: notice.status || 'published',
+                    expires_at: notice.expiresAt || null
+                };
+                const { data, error } = await client.from('notices').insert([payload]).select();
+                if (error) throw new Error(error.message);
+                return data[0];
+            }
+            // Offline local fallback
+            notice.id = 'n_' + Date.now();
+            DEFAULT_CONTENT.notices.unshift(notice);
             return notice;
         },
-        deleteNotice: function (id) {
-            let table = this.getTable('notices');
-            table = table.filter(n => n.id !== id);
-            return this.saveTable('notices', table);
-        },
-        togglePinNotice: function (id) {
-            const table = this.getTable('notices');
-            const notice = table.find(n => n.id === id);
-            if (notice) {
-                notice.pinned = !notice.pinned;
-                this.saveTable('notices', table);
+
+        updateNotice: async function (id, notice) {
+            const client = getSupaClient();
+            if (client) {
+                const payload = {
+                    title: notice.title,
+                    content: notice.content,
+                    category: notice.category,
+                    pinned: !!notice.pinned,
+                    pdf_url: notice.pdfUrl,
+                    status: notice.status,
+                    expires_at: notice.expiresAt || null,
+                    updated_at: new Date().toISOString()
+                };
+                const { data, error } = await client.from('notices').update(payload).eq('id', id).select();
+                if (error) throw new Error(error.message);
+                return data[0];
+            }
+            const idx = DEFAULT_CONTENT.notices.findIndex(n => n.id === id);
+            if (idx !== -1) {
+                DEFAULT_CONTENT.notices[idx] = Object.assign(DEFAULT_CONTENT.notices[idx], notice);
             }
             return notice;
         },
 
-        getEvents: function () {
-            return this.getTable('events').sort((a, b) => new Date(a.date) - new Date(b.date));
+        archiveNotice: async function (id) {
+            return this.updateNotice(id, { status: 'archived' });
         },
-        addEvent: function (event) {
-            const table = this.getTable('events');
-            event.id = 'event_' + Date.now();
-            table.push(event);
-            this.saveTable('events', table);
+
+        deleteNotice: async function (id) {
+            const client = getSupaClient();
+            if (client) {
+                const { error } = await client.from('notices').delete().eq('id', id);
+                if (error) throw new Error(error.message);
+                return true;
+            }
+            DEFAULT_CONTENT.notices = DEFAULT_CONTENT.notices.filter(n => n.id !== id);
+            return true;
+        },
+
+        // --- 2. EVENTS API ---
+        getEvents: async function (includeAllStatus = false) {
+            const client = getSupaClient();
+            if (client) {
+                try {
+                    let query = client.from('events').select('*');
+                    if (!includeAllStatus) {
+                        query = query.eq('status', 'published');
+                    }
+                    query = query.order('date', { ascending: true });
+
+                    const { data, error } = await query;
+                    if (!error && data) {
+                        return data.map(e => ({
+                            id: e.id,
+                            title: e.title,
+                            description: e.description,
+                            date: e.date,
+                            category: e.category,
+                            imageUrl: e.image_url,
+                            status: e.status
+                        }));
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch events failed:", err);
+                }
+            }
+            return DEFAULT_CONTENT.events.filter(e => includeAllStatus || e.status === 'published');
+        },
+
+        addEvent: async function (event) {
+            const client = getSupaClient();
+            if (client) {
+                const payload = {
+                    title: event.title,
+                    description: event.description,
+                    date: event.date,
+                    category: event.category || 'Activity',
+                    image_url: event.imageUrl || null,
+                    status: event.status || 'published'
+                };
+                const { data, error } = await client.from('events').insert([payload]).select();
+                if (error) throw new Error(error.message);
+                return data[0];
+            }
+            event.id = 'e_' + Date.now();
+            DEFAULT_CONTENT.events.push(event);
             return event;
         },
-        deleteEvent: function (id) {
-            let table = this.getTable('events');
-            table = table.filter(e => e.id !== id);
-            return this.saveTable('events', table);
+
+        deleteEvent: async function (id) {
+            const client = getSupaClient();
+            if (client) {
+                const { error } = await client.from('events').delete().eq('id', id);
+                if (error) throw new Error(error.message);
+                return true;
+            }
+            DEFAULT_CONTENT.events = DEFAULT_CONTENT.events.filter(e => e.id !== id);
+            return true;
         },
 
-        getDocuments: function () {
-            return this.getTable('documents');
+        // --- 3. DOCUMENTS API ---
+        getDocuments: async function (includeAllStatus = false) {
+            const client = getSupaClient();
+            if (client) {
+                try {
+                    let query = client.from('documents').select('*');
+                    if (!includeAllStatus) {
+                        query = query.eq('status', 'published');
+                    }
+                    query = query.order('created_at', { ascending: false });
+
+                    const { data, error } = await query;
+                    if (!error && data) {
+                        return data.map(d => ({
+                            id: d.id,
+                            title: d.title,
+                            category: d.category,
+                            downloadUrl: d.download_url,
+                            updatedDate: d.updated_date,
+                            status: d.status
+                        }));
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch documents failed:", err);
+                }
+            }
+            return DEFAULT_CONTENT.documents.filter(d => includeAllStatus || d.status === 'published');
         },
-        addDocument: function (doc) {
-            const table = this.getTable('documents');
-            doc.id = 'doc_' + Date.now();
-            doc.updatedDate = new Date().toISOString().split('T')[0];
-            table.push(doc);
-            this.saveTable('documents', table);
+
+        addDocument: async function (doc) {
+            const client = getSupaClient();
+            if (client) {
+                const payload = {
+                    title: doc.title,
+                    category: doc.category,
+                    download_url: doc.downloadUrl,
+                    updated_date: doc.updatedDate || new Date().toISOString().split('T')[0],
+                    status: doc.status || 'published'
+                };
+                const { data, error } = await client.from('documents').insert([payload]).select();
+                if (error) throw new Error(error.message);
+                return data[0];
+            }
+            doc.id = 'd_' + Date.now();
+            DEFAULT_CONTENT.documents.push(doc);
             return doc;
         },
-        deleteDocument: function (id) {
-            let table = this.getTable('documents');
-            table = table.filter(d => d.id !== id);
-            return this.saveTable('documents', table);
+
+        deleteDocument: async function (id) {
+            const client = getSupaClient();
+            if (client) {
+                const { error } = await client.from('documents').delete().eq('id', id);
+                if (error) throw new Error(error.message);
+                return true;
+            }
+            DEFAULT_CONTENT.documents = DEFAULT_CONTENT.documents.filter(d => d.id !== id);
+            return true;
         },
 
+        // --- 4. ACHIEVEMENTS & GALLERY API ---
+        getAchievements: async function (includeAllStatus = false) {
+            const client = getSupaClient();
+            if (client) {
+                try {
+                    let query = client.from('gallery_items').select('*');
+                    if (!includeAllStatus) {
+                        query = query.eq('status', 'published');
+                    }
+                    query = query.order('sort_order', { ascending: true }).order('created_at', { ascending: false });
+
+                    const { data, error } = await query;
+                    if (!error && data) {
+                        return data.map(g => ({
+                            id: g.id,
+                            title: g.title,
+                            awardee: g.awardee,
+                            category: g.category,
+                            year: g.year,
+                            image: g.image_url,
+                            storagePath: g.storage_path,
+                            description: g.description,
+                            status: g.status
+                        }));
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch gallery failed:", err);
+                }
+            }
+            return DEFAULT_CONTENT.achievements.filter(a => includeAllStatus || a.status === 'published');
+        },
+
+        addAchievement: async function (item) {
+            const client = getSupaClient();
+            if (client) {
+                const payload = {
+                    title: item.title,
+                    awardee: item.awardee,
+                    category: item.category,
+                    year: item.year,
+                    image_url: item.image,
+                    storage_path: item.storagePath || null,
+                    description: item.description,
+                    status: item.status || 'published'
+                };
+                const { data, error } = await client.from('gallery_items').insert([payload]).select();
+                if (error) throw new Error(error.message);
+                return data[0];
+            }
+            item.id = 'a_' + Date.now();
+            DEFAULT_CONTENT.achievements.push(item);
+            return item;
+        },
+
+        deleteAchievement: async function (id) {
+            const client = getSupaClient();
+            if (client) {
+                const { error } = await client.from('gallery_items').delete().eq('id', id);
+                if (error) throw new Error(error.message);
+                return true;
+            }
+            DEFAULT_CONTENT.achievements = DEFAULT_CONTENT.achievements.filter(a => a.id !== id);
+            return true;
+        },
+
+        // --- 5. FAQS & FACULTY (STATIC / SYNC READS) ---
         getFaqs: function () {
-            return this.getTable('faqs');
+            return DEFAULT_CONTENT.faqs;
         },
         getFaculty: function () {
-            return this.getTable('faculty');
-        },
-        getAchievements: function () {
-            return this.getTable('achievements');
+            return DEFAULT_CONTENT.faculty;
         },
         getTestimonials: function () {
-            return this.getTable('testimonials');
+            return DEFAULT_CONTENT.testimonials;
         },
 
-        // --- Submissions ---
-        getAdmissions: function () {
-            return this.getTable('admissions').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addAdmission: function (application) {
-            const table = this.getTable('admissions');
-            application.id = 'adm_' + Date.now();
-            application.status = 'Submitted';
-            application.createdAt = new Date().toISOString().split('T')[0];
-            table.push(application);
-            this.saveTable('admissions', table);
-            return application;
-        },
-        updateAdmissionStatus: function (id, status) {
-            const table = this.getTable('admissions');
-            const app = table.find(a => a.id === id);
-            if (app) {
-                app.status = status;
-                app.updatedAt = new Date().toISOString().split('T')[0];
-                this.saveTable('admissions', table);
+        // --- 6. SETTINGS & SITE CONTENT API ---
+        getSettings: async function () {
+            const client = getSupaClient();
+            if (client) {
+                try {
+                    const { data, error } = await client.from('site_content').select('content').eq('key', 'settings').single();
+                    if (!error && data && data.content) {
+                        return data.content;
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch settings failed:", err);
+                }
             }
-            return app;
-        },
-        deleteAdmission: function (id) {
-            let table = this.getTable('admissions');
-            table = table.filter(a => a.id !== id);
-            return this.saveTable('admissions', table);
+            return DEFAULT_CONTENT.settings;
         },
 
-        getBookings: function () {
-            return this.getTable('bookings').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addBooking: function (booking) {
-            const table = this.getTable('bookings');
-            booking.id = 'book_' + Date.now();
-            booking.status = 'Confirmed';
-            booking.createdAt = new Date().toISOString().split('T')[0];
-            table.push(booking);
-            this.saveTable('bookings', table);
-            return booking;
-        },
-        deleteBooking: function (id) {
-            let table = this.getTable('bookings');
-            table = table.filter(b => b.id !== id);
-            return this.saveTable('bookings', table);
+        saveSettings: async function (newSettings) {
+            const client = getSupaClient();
+            const current = await this.getSettings();
+            const merged = Object.assign({}, current, newSettings);
+
+            if (client) {
+                const { error } = await client.from('site_content').upsert({
+                    key: 'settings',
+                    content: merged,
+                    updated_at: new Date().toISOString()
+                });
+                if (error) throw new Error(error.message);
+                return merged;
+            }
+            DEFAULT_CONTENT.settings = merged;
+            return merged;
         },
 
-        getCareers: function () {
-            return this.getTable('careers');
-        },
-        getCareerApplications: function () {
-            return this.getTable('career_applications').sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        },
-        addCareerApplication: function (app) {
-            const table = this.getTable('career_applications');
-            app.id = 'capp_' + Date.now();
-            app.createdAt = new Date().toISOString().split('T')[0];
-            table.push(app);
-            this.saveTable('career_applications', table);
-            return app;
-        },
-        deleteCareerApplication: function (id) {
-            let table = this.getTable('career_applications');
-            table = table.filter(c => c.id !== id);
-            return this.saveTable('career_applications', table);
-        },
+        // --- 7. STORAGE IMAGE & FILE UPLOADER ---
+        uploadAsset: async function (file, bucket = 'site-assets') {
+            const client = getSupaClient();
+            if (!client) {
+                throw new Error("Supabase client is not initialized. Please configure Supabase credentials.");
+            }
 
-        // --- Settings ---
-        getSettings: function () {
-            return this.getTable('settings');
-        },
-        saveSettings: function (newSettings) {
-            const settings = this.getSettings();
-            const merged = Object.assign({}, settings, newSettings);
-            return this.saveTable('settings', merged);
-        },
+            // Validate file size (<5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                throw new Error("File size exceeds the 5MB maximum limit.");
+            }
 
-        // --- Search Utility ---
-        globalSearch: function (query) {
-            if (!query || query.trim() === '') return [];
-            const q = query.toLowerCase().trim();
-            const results = [];
+            const cleanFileName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+            const filePath = `${Date.now()}_${cleanFileName}`;
 
-            // 1. Search Notices
-            this.getNotices().forEach(n => {
-                if (n.title.toLowerCase().includes(q) || n.content.toLowerCase().includes(q)) {
-                    results.push({ type: 'Notice', title: n.title, desc: n.content, link: 'index.html#notices-board' });
-                }
+            const { data, error } = await client.storage.from(bucket).upload(filePath, file, {
+                cacheControl: '3600',
+                upsert: false
             });
 
-            // 2. Search Events
-            this.getEvents().forEach(e => {
-                if (e.title.toLowerCase().includes(q) || e.description.toLowerCase().includes(q)) {
-                    results.push({ type: 'Event', title: `${e.date} - ${e.title}`, desc: e.description, link: 'students-life.html#calendar' });
-                }
-            });
+            if (error) {
+                throw new Error("Upload failed: " + error.message);
+            }
 
-            // 3. Search FAQs
-            this.getFaqs().forEach(f => {
-                if (f.question.toLowerCase().includes(q) || f.answer.toLowerCase().includes(q)) {
-                    results.push({ type: 'FAQ', title: f.question, desc: f.answer, link: 'index.html#faq' });
-                }
-            });
-
-            // 4. Search Faculty
-            this.getFaculty().forEach(fac => {
-                if (fac.name.toLowerCase().includes(q) || fac.role.toLowerCase().includes(q) || fac.department.toLowerCase().includes(q)) {
-                    results.push({ type: 'Faculty', title: fac.name, desc: `${fac.role} (${fac.qualification}) - ${fac.experience} Exp.`, link: 'students-life.html#faculty' });
-                }
-            });
-
-            // 5. Search Documents
-            this.getDocuments().forEach(d => {
-                if (d.title.toLowerCase().includes(q) || d.category.toLowerCase().includes(q)) {
-                    results.push({ type: 'Document', title: d.title, desc: `Category: ${d.category} - Updated: ${d.updatedDate}`, link: 'campus-facilities.html#download-hub' });
-                }
-            });
-
-            // 6. Search Achievements
-            this.getAchievements().forEach(a => {
-                if (a.title.toLowerCase().includes(q) || a.awardee.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)) {
-                    results.push({ type: 'Achievement', title: a.title, desc: `${a.awardee} (${a.year}) - ${a.description}`, link: 'students-life.html#achievements' });
-                }
-            });
-
-            // 7. Core Pages
-            const pages = [
-                { title: 'Home Page', desc: 'Welcome to O\'Nest Gurukul. Academic Excellence and Holistic Care.', link: 'index.html' },
-                { title: 'About Us', desc: 'Our history, vision, mission, and leadership.', link: 'about.html' },
-                { title: '⭐ Pre-Primary', desc: 'Nursery, LKG, UKG early childhood programs.', link: 'preprimary.html' },
-                { title: 'Curriculum & Student Life', desc: 'Detailed academic stages, extra-curricular clubs, and events.', link: 'students-life.html' },
-                { title: 'Campus & Facilities', desc: 'Smart classrooms, labs, sports complex, and school transport details.', link: 'campus-facilities.html' },
-                { title: 'Online Admission Portal', desc: 'Apply online, check criteria, schedule campus visits, and view scholarships.', link: 'admissions.html' },
-                { title: 'Contact Us', desc: 'Get in touch, view Google Maps, phone, email, and office address.', link: 'contact.html' }
-            ];
-            pages.forEach(p => {
-                if (p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)) {
-                    results.push({ type: 'Page', title: p.title, desc: p.desc, link: p.link });
-                }
-            });
-
-            return results;
+            // Get Public URL
+            const { data: urlData } = client.storage.from(bucket).getPublicUrl(filePath);
+            return {
+                publicUrl: urlData.publicUrl,
+                path: filePath
+            };
         },
 
-        // --- Config Export/Import ---
+        // Export data helper
         exportDatabase: function () {
-            return JSON.stringify(CONTENT, null, 2);
-        },
-        importDatabase: function () {
-            return false;
+            return JSON.stringify(DEFAULT_CONTENT, null, 2);
         }
     };
 
-    // Expose DB globally
+    // Expose global object
     global.OnestDB = OnestDB;
 
 })(window);

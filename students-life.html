@@ -679,6 +679,8 @@
   </script>
 
   <!-- DB & Global Script Integrations -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="db.js"></script>
   <script src="onest-global.js"></script>
   <script>
@@ -686,8 +688,8 @@
       const DB = window.OnestDB;
 
       // --- 1. ACHIEVEMENTS SHOWCASE LOADER ---
-      function renderAchievements() {
-        const list = DB.getAchievements();
+      async function renderAchievements() {
+        const list = await DB.getAchievements();
         const container = document.getElementById('achievements-list');
         if (!container) return;
 
@@ -726,8 +728,8 @@
       let calFilter = 'all';
       let viewMode = 'agenda'; // agenda or grid
 
-      function renderCalendar() {
-        const events = DB.getEvents();
+      async function renderCalendar() {
+        const events = await DB.getEvents();
         const container = document.getElementById('calendar-dynamic-view');
         if (!container) return;
 

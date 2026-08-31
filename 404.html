@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Page Not Found - O'Nest Gurukul</title>
+  
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global Base Styles & Gradients -->
+  <link href="assets/css/theme-base.css" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#735c00",
+            "primary-light": "#facc15",
+            "secondary": "#002147",
+            "background": "#fdfbf7",
+            "on-surface": "#1f2937",
+          },
+          fontFamily: {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #1f2937;
+      background-color: #fdfbf7;
+    }
+    h1, h2, h3 {
+      font-family: 'Libre Caslon Text', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-primary-light selection:text-secondary">
+
+  <!-- Sticky TopNavBar (Static style) -->
+  <header class="bg-white border-b border-primary/10 h-[90px] w-full flex items-center shrink-0">
+    <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-12 w-auto">
+        <span class="text-secondary font-display font-bold text-lg hidden sm:inline-block">O'Nest Gurukul</span>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-base" href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="contact.html">Contact</a>
+      </nav>
+      <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+        Apply Now
+      </a>
+    </div>
+  </header>
+
+  <!-- Error Panel -->
+  <main class="flex-grow flex items-center justify-center py-16 px-gutter">
+    <div class="max-w-xl w-full text-center space-y-6 bg-white p-8 md:p-12 rounded-[2rem] border border-primary/10 shadow-lg">
+      <div class="text-primary text-6xl md:text-7xl font-bold font-display animate-bounce">
+        404
+      </div>
+      <h1 class="text-2xl md:text-3xl font-bold text-secondary">Oops! Page Not Found</h1>
+      <p class="text-sm md:text-base text-secondary/70 leading-relaxed font-semibold">
+        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index.html" class="bg-primary hover:bg-secondary text-white font-bold px-8 py-3.5 rounded-xl transition-all text-sm shadow-md flex items-center justify-center gap-2">
+          <i class="bi bi-house-door-fill"></i> Go Home
+        </a>
+        <a href="admissions.html" class="bg-white border border-primary/20 text-primary hover:bg-primary/5 font-bold px-8 py-3.5 rounded-xl transition-all text-sm shadow-sm flex items-center justify-center gap-2">
+          <i class="bi bi-file-earmark-text-fill"></i> Apply Now
+        </a>
+        <a href="contact.html" class="bg-white border border-primary/20 text-primary hover:bg-primary/5 font-bold px-8 py-3.5 rounded-xl transition-all text-sm shadow-sm flex items-center justify-center gap-2">
+          <i class="bi bi-telephone-fill"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="bg-secondary text-white/60 py-8 border-t border-white/10 text-center text-xs w-full shrink-0">
+    <div class="max-w-container-max mx-auto px-6 space-y-3 font-semibold">
+      <p>&copy; 2026 O'Nest Gurukul. All Rights Reserved.</p>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/40">
+        <a href="legal/privacy-policy.html" class="hover:text-white hover:underline">Privacy Policy</a>
+        <a href="legal/terms-and-conditions.html" class="hover:text-white hover:underline">Terms &amp; Conditions</a>
+        <a href="legal/disclaimer.html" class="hover:text-white hover:underline">Developer Disclaimer</a>
+        <a href="legal/accessibility.html" class="hover:text-white hover:underline">Accessibility Statement</a>
+        <a href="legal/copyright.html" class="hover:text-white hover:underline">Copyright Notice</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

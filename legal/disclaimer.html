@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Disclaimer - O'Nest Gurukul</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#735c00",
+            "secondary": "#002147",
+            "background": "#fdfbf7",
+            "on-surface": "#1f2937",
+          },
+          fontFamily: {
+            "display": ["Libre Caslon Text", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background-color: #fdfbf7;
+      color: #1f2937;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Libre Caslon Text', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Simple Clean Header -->
+  <header class="bg-white border-b border-primary/10 py-6 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+      <a href="../index.html" class="flex items-center gap-3">
+        <img src="../assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-12 w-auto">
+        <span class="text-secondary font-display font-bold text-lg hidden sm:inline-block">O'Nest Gurukul</span>
+      </a>
+      <a href="../index.html" class="text-primary font-bold hover:underline text-sm">← Back to Website</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-12">
+    <div class="bg-white rounded-3xl p-8 md:p-12 border border-primary/10 shadow-sm space-y-8">
+      
+      <div class="border-b border-primary/10 pb-6">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-primary bg-primary/10 px-3 py-1.5 rounded-full">Legal Notice</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-secondary mt-4">Developer Disclaimer</h1>
+        <p class="text-xs text-on-surface/60 mt-2 font-medium">Last Updated: August 31, 2026 | Prepared for Review and Confirmation by the School Administration</p>
+      </div>
+
+      <!-- Responsibility matrix -->
+      <div class="space-y-6 text-sm leading-relaxed text-on-surface/90 font-medium">
+        
+        <section class="space-y-3">
+          <h2 class="text-xl font-bold text-secondary">1. Purpose of this Disclaimer</h2>
+          <p>
+            This website disclaimer is created to clarify the division of responsibility between <strong>O'Nest Gurukul</strong> (the Website Owner/Operator) and its technical service provider (the Website Developer). By accessing the school portal, users acknowledge this division of roles.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl font-bold text-secondary">2. Division of Responsibility</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            
+            <!-- School Column -->
+            <div class="bg-blue-50/50 p-6 rounded-2xl border border-secondary/10">
+              <h3 class="font-bold text-secondary text-base mb-3"><i class="bi bi-bank2 text-primary"></i> Website Owner / School</h3>
+              <p class="text-xs text-secondary/80 mb-4 font-semibold">O'Nest Gurukul holds complete ownership and authority over all operational claims and educational material:</p>
+              <ul class="list-disc pl-4 space-y-2 text-xs">
+                <li><strong>Academic & Official Content:</strong> Accuracy of school descriptions, curriculum information, fee structures, notices, and calendar dates.</li>
+                <li><strong>Admissions Decisions:</strong> Criteria, approvals, interaction schedules, and student registration selections.</li>
+                <li><strong>Media Permissions:</strong> Obtaining parent releases and legal permissions for staff, student, and event photographs.</li>
+                <li><strong>Trademarks & Documents:</strong> Integrity of affiliation certificates and CBSE Mandatory Public Disclosure files.</li>
+                <li><strong>Regulatory Compliance:</strong> Compliance of school operations with the state board, CBSE, and local educational regulations.</li>
+              </ul>
+            </div>
+
+            <!-- Developer Column -->
+            <div class="bg-amber-50/30 p-6 rounded-2xl border border-primary/10">
+              <h3 class="font-bold text-secondary text-base mb-3"><i class="bi bi-code-slash text-primary"></i> Website Developer</h3>
+              <p class="text-xs text-secondary/80 mb-4 font-semibold">The developer operates strictly as a technical contractor under a professional service agreement:</p>
+              <ul class="list-disc pl-4 space-y-2 text-xs">
+                <li><strong>Technical Development:</strong> Initial site assembly, styling integrations, layout structures, and mobile responsiveness.</li>
+                <li><strong>Agreed Maintenance:</strong> Code optimizations and performance tweaks as detailed in the active contract.</li>
+                <li><strong>Technical Bug Fixes:</strong> Debugging browser support anomalies, link breakdowns, or script errors.</li>
+                <li><strong>No Fact Verification:</strong> The developer does not verify the factual correctness of text copy, lists, or photographs supplied by the school administration.</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl font-bold text-secondary">3. Intellectual Property Division</h2>
+          <p>
+            Trademarks, academic logos, brand guidelines, and student/campus media files provided by the school remain the exclusive property of O'Nest Gurukul. Custom scripts, CSS refactoring structures, and technical file organization created by the developer are owned or licensed under standard web agreements, enabling the school's continuous use.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl font-bold text-secondary">4. Factual and Media Indemnity</h2>
+          <p>
+            The developer is not responsible for any copyright violations, trademark disputes, or privacy complaints resulting from materials (such as student photographs, recognition documents, or curriculum claims) provided by the school for publishing. The school confirms it has obtained all required consents prior to transmission.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl font-bold text-secondary">5. Legal Review Recommended</h2>
+          <p>
+            This document is a standard administrative disclaimer template prepared for deployment. The O'Nest Gurukul school administration is advised to submit this documentation to their official legal counsel for final confirmation.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Clean Legal Footer -->
+  <footer class="bg-secondary text-white/60 py-8 border-t border-white/10 text-center text-xs">
+    <div class="max-w-4xl mx-auto px-6 space-y-3 font-semibold">
+      <p>&copy; 2026 O'Nest Gurukul. All Rights Reserved.</p>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/40">
+        <a href="privacy-policy.html" class="hover:text-white hover:underline">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="hover:text-white hover:underline">Terms &amp; Conditions</a>
+        <a href="disclaimer.html" class="hover:text-white underline">Developer Disclaimer</a>
+        <a href="accessibility.html" class="hover:text-white hover:underline">Accessibility Statement</a>
+        <a href="copyright.html" class="hover:text-white hover:underline">Copyright Notice</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
