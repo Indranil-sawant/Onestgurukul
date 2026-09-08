@@ -185,23 +185,455 @@
               </div>
             </div>
           </div>
-          <div class="w-full lg:w-1/2 relative h-[320px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg border border-white/60 reveal">
-            <img src="assets/ONEST/infra-school-library.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="O'Nest Gurukul School Library & Reading Hub">
-            <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-2xl text-white border border-white/20">
-              <span class="text-xs font-bold flex items-center gap-2"><i class="bi bi-book-half text-primary-light"></i> The Reading Tree &amp; Study Commons</span>
+          <div class="w-full lg:w-1/2 flex flex-col gap-4 reveal">
+            <!-- Main Featured Image Container -->
+            <div class="relative h-[280px] sm:h-[360px] md:h-[400px] rounded-3xl overflow-hidden shadow-xl border border-white/60 group bg-slate-900">
+              <img id="library-showcase-main-img" src="assets/ONEST/infra-library-group.jpg" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" alt="O'Nest Gurukul School Library & Reading Hub">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+                <span id="library-showcase-caption" class="text-xs sm:text-sm font-bold text-white backdrop-blur-md bg-black/60 px-3.5 py-1.5 rounded-xl border border-white/20 flex items-center gap-2">
+                  <i class="bi bi-book-half text-primary-light"></i> <span>Joyful Group Reading &amp; Story Circles</span>
+                </span>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest bg-primary text-white px-2.5 py-1 rounded-lg shadow-sm">Real Campus View</span>
+              </div>
+            </div>
+            <!-- Interactive Thumbnail Switchers -->
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" onclick="switchLibraryImage('assets/ONEST/infra-library-group.jpg', 'Joyful Group Reading &amp; Story Circles', this)" class="library-thumb-btn ring-2 ring-primary border-2 border-primary group relative rounded-2xl overflow-hidden shadow-sm aspect-[16/10] transition-all hover:scale-[1.03] text-left">
+                <img src="assets/ONEST/infra-library-group.jpg" class="w-full h-full object-cover" alt="Reading Group">
+                <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-colors flex items-end p-2">
+                  <span class="text-[10px] font-bold text-white line-clamp-1 drop-shadow">Reading Circle</span>
+                </div>
+              </button>
+              <button type="button" onclick="switchLibraryImage('assets/ONEST/infra-library-attentive.jpg', 'Interactive Guided Reading &amp; Story Sessions', this)" class="library-thumb-btn border-2 border-transparent group relative rounded-2xl overflow-hidden shadow-sm aspect-[16/10] transition-all hover:scale-[1.03] text-left">
+                <img src="assets/ONEST/infra-library-attentive.jpg" class="w-full h-full object-cover" alt="Attentive Study">
+                <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-colors flex items-end p-2">
+                  <span class="text-[10px] font-bold text-white line-clamp-1 drop-shadow">Story Session</span>
+                </div>
+              </button>
+              <button type="button" onclick="switchLibraryImage('assets/ONEST/infra-library-study.jpg', 'Focused Study &amp; Literary Immersion', this)" class="library-thumb-btn border-2 border-transparent group relative rounded-2xl overflow-hidden shadow-sm aspect-[16/10] transition-all hover:scale-[1.03] text-left">
+                <img src="assets/ONEST/infra-library-study.jpg" class="w-full h-full object-cover" alt="Focused Study">
+                <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-colors flex items-end p-2">
+                  <span class="text-[10px] font-bold text-white line-clamp-1 drop-shadow">Quiet Focus</span>
+                </div>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Sports & Wellness -->  <section class="py-24 relative z-10">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">      <div class="flex flex-col lg:flex-row justify-between items-end mb-12 reveal">        <div class="max-w-2xl">          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Champions in the Making.</h2>          <p class="text-lg text-secondary/80">Physical education at O'Nest combines structured sports coaching, karate martial arts, yoga mindfulness, and competitive athletics.</p>        </div>      </div>      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto">        <!-- Football & Athletics -->        <div class="reveal">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0432.jpg.jpeg" alt="Sports Stadium & Athletics Ground" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">ΓÜ╜ Sports Complex</span>              <h3 class="onest-facility-card-title">Sports Complex &amp; Stadium</h3>              <p class="onest-facility-card-description">Grandstand seating, professional athletics training, and coaching for track &amp; field competitions.</p>              <div class="onest-facility-card-cta">                Learn More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>                <!-- Yoga & Meditation -->        <div class="reveal" style="transition-delay: 100ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0405.jpg.jpeg" alt="International Yoga Day & Mindfulness" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🏅 Mindfulness &amp; Yoga</span>              <h3 class="onest-facility-card-title">Yoga &amp; Wellness Hall</h3>              <p class="onest-facility-card-description">Spacious hall dedicated to daily Surya Namaskar, Yogic asanas, pranayama, and mental clarity.</p>              <div class="onest-facility-card-cta">                Learn More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>        <!-- Indoor Sports -->        <div class="reveal" style="transition-delay: 200ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg" alt="Karate & Martial Arts Champions" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🥋 Martial Arts &amp; Indoor</span>              <h3 class="onest-facility-card-title">Karate &amp; Indoor Sports</h3>              <p class="onest-facility-card-description">Dedicated training in self-defence karate, table tennis, chess, and multi-game tournaments.</p>              <div class="onest-facility-card-cta">                Learn More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>      </div>    </div>  </section>  <!-- Green Campus (Story Cards) -->  <section class="relative py-24 overflow-hidden z-10">    <div class="absolute inset-0 z-0">      <img src="assets/ONEST/IMG_6200.JPG.jpeg" class="w-full h-full object-cover" alt="Aerial Campus View">      <div class="absolute inset-0 bg-white/80 backdrop-blur-md"></div>    </div>        <div class="container mx-auto px-3 md:px-gutter max-w-container-max relative z-10">      <div class="text-center mb-16 reveal">         <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Sustainability</span>         <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 font-bold">A Breath of Fresh Air.</h2>         <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Nestled in 3+ acres of lush greenery, our campus is a living laboratory for environmental stewardship.</p>      </div>      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">        <!-- Nature Trails -->        <div class="reveal">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0460.png" alt="Tree Plantation & Nature Trails" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🌿 Eco Trails &amp; Plantation</span>              <h3 class="onest-facility-card-title">Tree Plantation Drives</h3>              <p class="onest-facility-card-description">Students actively plant and adopt indigenous saplings on campus grounds, developing a real bond with the soil.</p>              <div class="onest-facility-card-cta">                Read More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>        <!-- Organic Farming -->        <div class="reveal" style="transition-delay: 100ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0375.jpg.jpeg" alt="Organic Farming Field Visit" loading="lazy" style="object-position: 50% 15%;">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🚌 Hands-on Farming</span>              <h3 class="onest-facility-card-title">Experiential Farming</h3>              <p class="onest-facility-card-description">Understanding the importance of agriculture, soil conservation, and seasonal crops through active field visits.</p>              <div class="onest-facility-card-cta">                Read More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>        <!-- Solar Energy -->        <div class="reveal" style="transition-delay: 200ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260422-WA0552.jpg.jpeg" alt="Earth Day & Eco Projects" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🌄 Eco Stewardship</span>              <h3 class="onest-facility-card-title">Our Earth, Our Duty</h3>              <p class="onest-facility-card-description">Active Eco-Club programs promoting Reduce, Reuse, Recycle, and hands-on environmental artwork.</p>              <div class="onest-facility-card-cta">                Read More <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>      </div>    </div>  </section>  <!-- Safety & Security -->  <section class="py-24 relative z-10">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">      <div class="text-center mb-16 reveal">        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Uncompromising Security &amp; Safety.</h2>        <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Your childΓÇÖs safety, wellness, and fire preparedness are our highest priorities.</p>      </div>      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">        <!-- Safe Campus -->        <div class="reveal">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260202-WA1115.jpg.jpeg" alt="Campus Safety & Fire Drill" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">⚡️ Safety Drills &amp; NEP 2020</span>              <h3 class="onest-facility-card-title">Safety &amp; Fire Drills</h3>              <p class="onest-facility-card-description">Regular live fire safety drills, emergency evacuation training, and NEP 2020 safety protocols.</p>              <div class="flex flex-wrap gap-2 mb-6">                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Fire Safety Drills</span>                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">120+ CCTV Cameras</span>              </div>              <div class="onest-facility-card-cta">                Verify Safety Protocols <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>                <!-- Secure Transport -->        <div class="reveal" style="transition-delay: 100ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg" alt="Student Community & Transport" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🚀 Community &amp; Transport</span>              <h3 class="onest-facility-card-title">Secure Transport</h3>              <p class="onest-facility-card-description">Fleet of modern buses equipped with GPS, female attendants, and real-time parent alerts across Ratnagiri.</p>              <div class="flex flex-wrap gap-2 mb-6">                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Live GPS Tracking</span>                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Trained Attendants</span>              </div>              <div class="onest-facility-card-cta">                Verify Safety Protocols <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>        <!-- Medical Centre -->        <div class="reveal" style="transition-delay: 200ms;">          <div class="onest-facility-card">            <div class="onest-facility-card-image-wrapper">              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg" alt="Health & Infirmary Care" loading="lazy">            </div>            <div class="onest-facility-card-content">              <span class="onest-facility-card-badge">🔩 Healthcare &amp; Infirmary</span>              <h3 class="onest-facility-card-title">Wellness &amp; Infirmary</h3>              <p class="onest-facility-card-description">Equipped infirmary with trained attendants, regular health checkups, and tie-ups with leading Ratnagiri hospitals.</p>              <div class="flex flex-wrap gap-2 mb-6">                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">First Aid Certified</span>                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Health Checkups</span>              </div>              <div class="onest-facility-card-cta">                Verify Safety Protocols <i class="bi bi-arrow-right"></i>              </div>            </div>          </div>        </div>      </div>    </div>  </section>  <!-- Campus Experience (Image Timeline) -->  <section class="py-24 relative z-10">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">       <div class="mb-16 reveal">          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">A Day at O'Nest.</h2>          <p class="text-lg text-secondary/80 max-w-2xl">Experience the rhythm of student life, from morning inspiration to afternoon creation.</p>       </div>       <!-- Horizontal scrolling timeline container -->       <div class="relative w-full overflow-x-auto pb-12 hide-scrollbar timeline-container cursor-grab active:cursor-grabbing">          <div class="flex gap-6 min-w-max">                          <!-- Timeline Item 1 -->             <div class="w-72 group flex flex-col">                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">                   <img src="assets/img/open (25) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">                </div>                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">08:00 AM</span>                   <h4 class="text-lg text-secondary font-bold mb-1">Morning Assembly</h4>                   <p class="text-xs text-secondary/80 leading-relaxed">Starting the day with mindfulness and community spirit.</p>                </div>             </div>             <!-- Timeline Item 2 -->             <div class="w-72 group flex flex-col">                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">                   <img src="assets/img/education/open (2).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">                </div>                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">09:00 AM</span>                   <h4 class="text-lg text-secondary font-bold mb-1">Smart Learning</h4>                   <p class="text-xs text-secondary/80 leading-relaxed">Interactive academic sessions in tech-enabled spaces.</p>                </div>             </div>             <!-- Timeline Item 3 -->             <div class="w-72 group flex flex-col">                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">                   <img src="assets/img/food-min.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">                </div>                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">12:30 PM</span>                   <h4 class="text-lg text-secondary font-bold mb-1">Nutritious Lunch</h4>                   <p class="text-xs text-secondary/80 leading-relaxed">Organic, sattvic meals in the spacious dining hall.</p>                </div>             </div>             <!-- Timeline Item 4 -->             <div class="w-72 group flex flex-col">                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">                   <img src="assets/img/compressed/atudy (6).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">                </div>                <div class="relative pl-5 border-l-2 border-primary/30 pb-6">                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">01:30 PM</span>                   <h4 class="text-lg text-secondary font-bold mb-1">Hands-on Labs</h4>                   <p class="text-xs text-secondary/80 leading-relaxed">Practical experiments and coding in the innovation hubs.</p>                </div>             </div>             <!-- Timeline Item 5 -->             <div class="w-72 group flex flex-col">                <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">                   <img src="assets/img/compressed/atudy (7) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">                </div>                <div class="relative pl-5 border-l-2 border-transparent pb-6">                   <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>                   <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">03:00 PM</span>                   <h4 class="text-lg text-secondary font-bold mb-1">Arts &amp; Sports</h4>                   <p class="text-xs text-secondary/80 leading-relaxed">Cultivating talents on the field and in the studios.</p>                </div>             </div>                       </div>       </div>    </div>  </section>  <!-- Virtual Tour (Laptop Mockup) -->  <section class="py-24 relative z-10" id="virtual-tour">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">      <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-16">                <!-- Mockup -->        <div class="w-full lg:w-[60%] reveal">           <div class="relative w-full max-w-3xl mx-auto">              <!-- Laptop Frame -->              <div class="bg-gray-800 rounded-t-2xl p-2.5 pb-0 shadow-2xl relative z-10 border-t border-l border-r border-gray-700">                 <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 rounded-full"></div>                 <div class="bg-black rounded-lg overflow-hidden aspect-video relative group">                    <video class="w-full h-full object-cover" poster="assets/img/campus3.png" loop muted playsinline>                      <source src="assets/img/education/video-5.mp4" type="video/mp4">                    </video>                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/50 transition-all cursor-pointer">                       <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 hover:scale-110 transition-transform shadow-lg">                          <i class="bi bi-play-fill text-white text-3xl ml-1"></i>                       </div>                    </div>                    <!-- 360 Badge -->                    <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20">                      360° Preview                    </div>                 </div>              </div>              <!-- Laptop Base -->              <div class="h-3 bg-gray-300 rounded-b-xl shadow-xl relative z-20">                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gray-400 rounded-b-sm"></div>              </div>           </div>        </div>        <!-- Content -->        <div class="w-full lg:w-[40%] reveal" style="transition-delay: 200ms;">           <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Immersive Experience</span>           <h2 class="text-4xl md:text-5xl text-secondary mb-6 font-bold">Explore From Anywhere.</h2>                      <div class="space-y-4 mb-8">              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">                    <span class="material-symbols-outlined text-lg">school</span>                 </div>                 <div>                    <h4 class="text-base font-bold text-secondary mb-1">Explore Classrooms</h4>                    <p class="text-xs text-secondary/70">Step inside our smart learning environments.</p>                 </div>              </div>              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">                    <span class="material-symbols-outlined text-lg">science</span>                 </div>                 <div>                    <h4 class="text-base font-bold text-secondary mb-1">Visit Laboratories</h4>                    <p class="text-xs text-secondary/70">See the cutting-edge tools in our science hub.</p>                 </div>              </div>              <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">                    <span class="material-symbols-outlined text-lg">sports_basketball</span>                 </div>                 <div>                    <h4 class="text-base font-bold text-secondary mb-1">Walk Through Sports Complex</h4>                    <p class="text-xs text-secondary/70">Experience the scale of our athletic facilities.</p>                 </div>              </div>           </div>           <a href="contact.html" class="inline-block bg-secondary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors shadow-md text-sm">Start Full Tour</a>        </div>      </div>    </div>  </section>  <!-- Interactive Campus Map -->  <section class="py-24 relative z-10">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">      <div class="text-center mb-12 reveal">         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Campus Masterplan.</h2>         <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Hover over the zones to discover how our 3+ acre campus is meticulously zoned for academics, sports, and nature.</p>      </div>      <!-- Stylized Map Container -->      <div class="relative w-full aspect-[16/9] md:aspect-[21/9] bg-white/50 rounded-3xl overflow-hidden border border-primary/20 shadow-xl reveal">         <!-- Abstract Map Graphics -->         <img src="assets/img/school.png" class="w-full h-full object-cover opacity-70 mix-blend-multiply" alt="Map Illustration">                  <!-- Map Hotspots -->         <div class="absolute top-[30%] left-[20%] group">            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">               <h4 class="font-bold text-sm text-secondary mb-1">Academic Block</h4>               <p class="text-[10px] text-secondary/70">Smart Classrooms &amp; Admin</p>            </div>         </div>         <div class="absolute top-[45%] left-[50%] group">            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">               <h4 class="font-bold text-sm text-secondary mb-1">Sports Complex</h4>               <p class="text-[10px] text-secondary/70">Turf, Tracks &amp; Courts</p>            </div>         </div>         <div class="absolute top-[60%] left-[75%] group">            <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">               <h4 class="font-bold text-sm text-secondary mb-1">The Knowledge Hub</h4>               <p class="text-[10px] text-secondary/70">Library &amp; E-Resources</p>            </div>         </div>      </div>    </div>  </section>  <!-- Campus Gallery (Pinterest Masonry) -->  <section class="py-24 relative z-10 border-t border-primary/10">    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">      <div class="text-center mb-12 reveal">         <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Moments Captured.</h2>      </div>      <div class="masonry-grid reveal">
-         <!-- Image: School Library & Reading Haven -->
-         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50" data-src="assets/ONEST/infra-school-library.jpg" data-caption="Knowledge Hub &amp; Children's Library">
-            <img src="assets/ONEST/infra-school-library.jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Knowledge Hub &amp; Children's Library" loading="lazy">
+
+  <!-- Sports & Wellness -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="flex flex-col lg:flex-row justify-between items-end mb-12 reveal">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Champions in the Making.</h2>
+          <p class="text-lg text-secondary/80">Physical education at O'Nest combines structured sports coaching, karate martial arts, yoga mindfulness, and competitive athletics.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto">
+        <!-- Football & Athletics -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0432.jpg.jpeg" alt="Sports Stadium &amp; Athletics Ground" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">⚽ Sports Complex</span>
+              <h3 class="onest-facility-card-title">Sports Complex &amp; Stadium</h3>
+              <p class="onest-facility-card-description">Grandstand seating, professional athletics training, and coaching for track &amp; field competitions.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Yoga & Meditation -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0405.jpg.jpeg" alt="International Yoga Day &amp; Mindfulness" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🧘 Mindfulness &amp; Yoga</span>
+              <h3 class="onest-facility-card-title">Yoga &amp; Wellness Hall</h3>
+              <p class="onest-facility-card-description">Spacious hall dedicated to daily Surya Namaskar, Yogic asanas, pranayama, and mental clarity.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Indoor Sports -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg" alt="Karate &amp; Martial Arts Champions" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🥋 Martial Arts &amp; Indoor</span>
+              <h3 class="onest-facility-card-title">Karate &amp; Indoor Sports</h3>
+              <p class="onest-facility-card-description">Dedicated training in self-defence karate, table tennis, chess, and multi-game tournaments.</p>
+              <div class="onest-facility-card-cta">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Green Campus (Story Cards) -->
+  <section class="relative py-24 overflow-hidden z-10">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/ONEST/IMG_6200.JPG.jpeg" class="w-full h-full object-cover" alt="Aerial Campus View">
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
+    </div>
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max relative z-10">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Sustainability</span>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 font-bold">A Breath of Fresh Air.</h2>
+        <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Nestled in 3+ acres of lush greenery, our campus is a living laboratory for environmental stewardship.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Nature Trails -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0460.png" alt="Tree Plantation &amp; Nature Trails" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🌿 Eco Trails &amp; Plantation</span>
+              <h3 class="onest-facility-card-title">Tree Plantation Drives</h3>
+              <p class="onest-facility-card-description">Students actively plant and adopt indigenous saplings on campus grounds, developing a real bond with the soil.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Organic Farming -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0375.jpg.jpeg" alt="Organic Farming Field Visit" loading="lazy" style="object-position: 50% 15%;">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🚌 Hands-on Farming</span>
+              <h3 class="onest-facility-card-title">Experiential Farming</h3>
+              <p class="onest-facility-card-description">Understanding the importance of agriculture, soil conservation, and seasonal crops through active field visits.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Solar Energy -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260422-WA0552.jpg.jpeg" alt="Earth Day &amp; Eco Projects" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🌄 Eco Stewardship</span>
+              <h3 class="onest-facility-card-title">Our Earth, Our Duty</h3>
+              <p class="onest-facility-card-description">Active Eco-Club programs promoting Reduce, Reuse, Recycle, and hands-on environmental artwork.</p>
+              <div class="onest-facility-card-cta">
+                Read More <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Security -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Uncompromising Security &amp; Safety.</h2>
+        <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Your child’s safety, wellness, and fire preparedness are our highest priorities.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Safe Campus -->
+        <div class="reveal">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260202-WA1115.jpg.jpeg" alt="Campus Safety &amp; Fire Drill" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">⚡️ Safety Drills &amp; NEP 2020</span>
+              <h3 class="onest-facility-card-title">Safety &amp; Fire Drills</h3>
+              <p class="onest-facility-card-description">Regular live fire safety drills, emergency evacuation training, and NEP 2020 safety protocols.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Fire Safety Drills</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">120+ CCTV Cameras</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Secure Transport -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg" alt="Student Community &amp; Transport" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🚀 Community &amp; Transport</span>
+              <h3 class="onest-facility-card-title">Secure Transport</h3>
+              <p class="onest-facility-card-description">Fleet of modern buses equipped with GPS, female attendants, and real-time parent alerts across Ratnagiri.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Live GPS Tracking</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Trained Attendants</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Medical Centre -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="onest-facility-card">
+            <div class="onest-facility-card-image-wrapper">
+              <img class="onest-facility-card-image" src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg" alt="Health &amp; Infirmary Care" loading="lazy">
+            </div>
+            <div class="onest-facility-card-content">
+              <span class="onest-facility-card-badge">🏥 Healthcare &amp; Infirmary</span>
+              <h3 class="onest-facility-card-title">Wellness &amp; Infirmary</h3>
+              <p class="onest-facility-card-description">Equipped infirmary with trained attendants, regular health checkups, and tie-ups with leading Ratnagiri hospitals.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">First Aid Certified</span>
+                <span class="px-3 py-1 bg-primary/5 rounded-lg text-secondary text-xs font-bold border border-primary/10">Health Checkups</span>
+              </div>
+              <div class="onest-facility-card-cta">
+                Verify Safety Protocols <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Experience (Image Timeline) -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">A Day at O'Nest.</h2>
+        <p class="text-lg text-secondary/80 max-w-2xl">Experience the rhythm of student life, from morning inspiration to afternoon creation.</p>
+      </div>
+      <!-- Horizontal scrolling timeline container -->
+      <div class="relative w-full overflow-x-auto pb-12 hide-scrollbar timeline-container cursor-grab active:cursor-grabbing">
+        <div class="flex gap-6 min-w-max">
+          <!-- Timeline Item 1 -->
+          <div class="w-72 group flex flex-col">
+            <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+              <img src="assets/img/open (25) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Morning Assembly">
+            </div>
+            <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+              <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">08:00 AM</span>
+              <h4 class="text-lg text-secondary font-bold mb-1">Morning Assembly</h4>
+              <p class="text-xs text-secondary/80 leading-relaxed">Starting the day with mindfulness and community spirit.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 2 -->
+          <div class="w-72 group flex flex-col">
+            <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+              <img src="assets/img/education/open (2).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Smart Learning">
+            </div>
+            <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+              <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">09:00 AM</span>
+              <h4 class="text-lg text-secondary font-bold mb-1">Smart Learning</h4>
+              <p class="text-xs text-secondary/80 leading-relaxed">Interactive academic sessions in tech-enabled spaces.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 3 -->
+          <div class="w-72 group flex flex-col">
+            <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+              <img src="assets/img/food-min.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Nutritious Lunch">
+            </div>
+            <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+              <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">12:30 PM</span>
+              <h4 class="text-lg text-secondary font-bold mb-1">Nutritious Lunch</h4>
+              <p class="text-xs text-secondary/80 leading-relaxed">Organic, sattvic meals in the spacious dining hall.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 4 -->
+          <div class="w-72 group flex flex-col">
+            <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+              <img src="assets/img/compressed/atudy (6).jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Hands-on Labs">
+            </div>
+            <div class="relative pl-5 border-l-2 border-primary/30 pb-6">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+              <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">01:30 PM</span>
+              <h4 class="text-lg text-secondary font-bold mb-1">Hands-on Labs</h4>
+              <p class="text-xs text-secondary/80 leading-relaxed">Practical experiments and coding in the innovation hubs.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 5 -->
+          <div class="w-72 group flex flex-col">
+            <div class="h-44 rounded-2xl overflow-hidden mb-5 shadow-lg relative border border-primary/10">
+              <img src="assets/img/compressed/atudy (7) - Edited.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Arts and Sports">
+            </div>
+            <div class="relative pl-5 border-l-2 border-transparent pb-6">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-[3px] border-white shadow-sm group-hover:scale-125 transition-transform"></div>
+              <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-1 block">03:00 PM</span>
+              <h4 class="text-lg text-secondary font-bold mb-1">Arts &amp; Sports</h4>
+              <p class="text-xs text-secondary/80 leading-relaxed">Cultivating talents on the field and in the studios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Tour (Laptop Mockup) -->
+  <section class="py-24 relative z-10" id="virtual-tour">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-16">
+        <!-- Mockup -->
+        <div class="w-full lg:w-[60%] reveal">
+          <div class="relative w-full max-w-3xl mx-auto">
+            <!-- Laptop Frame -->
+            <div class="bg-gray-800 rounded-t-2xl p-2.5 pb-0 shadow-2xl relative z-10 border-t border-l border-r border-gray-700">
+              <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+              <div class="bg-black rounded-lg overflow-hidden aspect-video relative group">
+                <video class="w-full h-full object-cover" poster="assets/img/campus3.png" loop muted playsinline>
+                  <source src="assets/img/education/video-5.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/50 transition-all cursor-pointer">
+                  <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 hover:scale-110 transition-transform shadow-lg">
+                    <i class="bi bi-play-fill text-white text-3xl ml-1"></i>
+                  </div>
+                </div>
+                <!-- 360 Badge -->
+                <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20">
+                  360° Preview
+                </div>
+              </div>
+            </div>
+            <!-- Laptop Base -->
+            <div class="h-3 bg-gray-300 rounded-b-xl shadow-xl relative z-20">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gray-400 rounded-b-sm"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="w-full lg:w-[40%] reveal" style="transition-delay: 200ms;">
+          <span class="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 border border-primary/20">Immersive Experience</span>
+          <h2 class="text-4xl md:text-5xl text-secondary mb-6 font-bold">Explore From Anywhere.</h2>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-lg">school</span>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-secondary mb-1">Explore Classrooms</h4>
+                <p class="text-xs text-secondary/70">Step inside our smart learning environments.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-lg">science</span>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-secondary mb-1">Visit Laboratories</h4>
+                <p class="text-xs text-secondary/70">See the cutting-edge tools in our science hub.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors cursor-pointer border border-transparent hover:border-primary/10 hover:shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-lg">sports_basketball</span>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-secondary mb-1">Walk Through Sports Complex</h4>
+                <p class="text-xs text-secondary/70">Experience the scale of our athletic facilities.</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="inline-block bg-secondary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors shadow-md text-sm">Start Full Tour</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Campus Map -->
+  <section class="py-24 relative z-10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Campus Masterplan.</h2>
+        <p class="text-lg text-secondary/80 max-w-2xl mx-auto">Hover over the zones to discover how our 3+ acre campus is meticulously zoned for academics, sports, and nature.</p>
+      </div>
+      <!-- Stylized Map Container -->
+      <div class="relative w-full aspect-[16/9] md:aspect-[21/9] bg-white/50 rounded-3xl overflow-hidden border border-primary/20 shadow-xl reveal">
+        <!-- Abstract Map Graphics -->
+        <img src="assets/img/school.png" class="w-full h-full object-cover opacity-70 mix-blend-multiply" alt="Map Illustration">
+        <!-- Map Hotspots -->
+        <div class="absolute top-[30%] left-[20%] group">
+          <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+            <h4 class="font-bold text-sm text-secondary mb-1">Academic Block</h4>
+            <p class="text-[10px] text-secondary/70">Smart Classrooms &amp; Admin</p>
+          </div>
+        </div>
+        <div class="absolute top-[45%] left-[50%] group">
+          <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+            <h4 class="font-bold text-sm text-secondary mb-1">Sports Complex</h4>
+            <p class="text-[10px] text-secondary/70">Turf, Tracks &amp; Courts</p>
+          </div>
+        </div>
+        <div class="absolute top-[60%] left-[75%] group">
+          <div class="w-5 h-5 bg-primary rounded-full border-[3px] border-white shadow-lg animate-pulse cursor-pointer"></div>
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-40 bg-white p-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none transform translate-y-2 group-hover:translate-y-0 border border-primary/10">
+            <h4 class="font-bold text-sm text-secondary mb-1">The Knowledge Hub</h4>
+            <p class="text-[10px] text-secondary/70">Library &amp; E-Resources</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Gallery (Pinterest Masonry) -->
+  <section class="py-24 relative z-10 border-t border-primary/10">
+    <div class="container mx-auto px-3 md:px-gutter max-w-container-max">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl md:text-5xl text-secondary mb-4 font-bold">Moments Captured.</h2>
+      </div>
+      <div class="masonry-grid reveal">
+         <!-- Image 1: School Library - Joyful Reading Circle -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50" data-src="assets/ONEST/infra-library-group.jpg" data-caption="Knowledge Hub &amp; Collaborative Reading Circle">
+            <img src="assets/ONEST/infra-library-group.jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Knowledge Hub &amp; Collaborative Reading Circle" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-5">
                <span class="text-[10px] font-bold uppercase tracking-wider text-primary-light mb-1">Library &amp; Academics</span>
-               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Knowledge Hub &amp; Children's Library</span>
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Children's Reading Room &amp; Story Circle</span>
+            </div>
+         </div>
+         <!-- Image 2: School Library - Guided Reading & Story Sessions -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50" data-src="assets/ONEST/infra-library-attentive.jpg" data-caption="Guided Reading &amp; Literature Discovery">
+            <img src="assets/ONEST/infra-library-attentive.jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Guided Reading &amp; Literature Discovery" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-5">
+               <span class="text-[10px] font-bold uppercase tracking-wider text-primary-light mb-1">Early Literacy</span>
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Guided Reading &amp; Literature Discovery</span>
+            </div>
+         </div>
+         <!-- Image 3: School Library - Focused Self-Study -->
+         <div class="masonry-item rounded-2xl overflow-hidden mb-4 shadow-lg relative group cursor-pointer onest-campus-gallery-item border border-white/50" data-src="assets/ONEST/infra-library-study.jpg" data-caption="Focused Study &amp; Literary Immersion">
+            <img src="assets/ONEST/infra-library-study.jpg" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Focused Study &amp; Literary Immersion" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-5">
+               <span class="text-[10px] font-bold uppercase tracking-wider text-primary-light mb-1">Academic Focus</span>
+               <span class="text-white text-sm font-bold drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform">Focused Study &amp; Literary Immersion</span>
             </div>
          </div>
          <!-- Image: Sunlit Biophilic Glass Stairwell -->
@@ -371,7 +803,7 @@
   </footer>  <!-- Scripts -->  <script src="assets/js/onest-campus.js"></script>  <script>    // Reveal Animations on Scroll    const reveals = document.querySelectorAll('.reveal');    const revealOnScroll = () => {      reveals.forEach(reveal => {        const windowHeight = window.innerHeight;        const elementTop = reveal.getBoundingClientRect().top;        const elementVisible = 150;        if (elementTop < windowHeight - elementVisible) {          reveal.classList.add('active');        }      });    };    window.addEventListener('scroll', revealOnScroll);    revealOnScroll();    // Parallax Effect for Hero    window.addEventListener('scroll', () => {      const parallax = document.querySelector('.parallax-bg');      let scrollPosition = window.pageYOffset;      if (parallax) {        parallax.style.transform = `translateY(${scrollPosition * 0.3}px)`;      }    });    // Smooth header shadow on scroll    window.addEventListener('scroll', () => {      const header = document.querySelector('header');      if (window.scrollY > 20) {        header.classList.add('shadow-md');      } else {        header.classList.remove('shadow-md');      }    });  </script>  <!-- Facility Detail Modal -->  <div id="facility-modal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 relative" id="facility-modal-content">      <button onclick="closeFacilityModal()" class="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center z-10 transition-colors">        <i class="bi bi-x text-2xl"></i>      </button>      <div class="h-64 sm:h-80 relative">        <img id="facility-modal-img" src="" class="w-full h-full object-cover" alt="Facility Image">        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>        <div class="absolute bottom-6 left-6 right-6">          <h3 id="facility-modal-title" class="text-3xl font-bold text-white mb-2" style="font-family: 'Libre Caslon Text', serif;"></h3>          <div id="facility-modal-tags" class="flex flex-wrap gap-2"></div>        </div>      </div>      <div class="p-6 md:p-8">        <p id="facility-modal-desc" class="text-gray-700 text-base md:text-lg leading-relaxed mb-8"></p>        <div class="flex justify-end border-t border-gray-100 pt-6">          <a id="facility-modal-cta" href="admissions.html" class="bg-[#735c00] text-white px-8 py-3.5 rounded-xl font-bold hover:bg-black transition-colors shadow-md">Apply for Admission</a>        </div>      </div>    </div>  </div>  <script>    const facilityData = {      'science': {        title: 'Science & Discovery Centre',        image: 'assets/ONEST/IMG-20260810-WA0453.jpg.jpeg',        tags: ['Physics', 'Chemistry', 'Space Science', 'Biology'],        description: 'Our state-of-the-art Science & Space Discovery Centre offers hands-on experimental learning. Students explore planetary models, celestial mechanics, biology dioramas, and chemical reactions with faculty guidance.',        ctaLink: 'admissions.html'      },      'innovation': {        title: 'STEM & Robotics Innovation Hub',        image: 'assets/ONEST/IMG-20260810-WA0445.jpg.jpeg',        tags: ['Robotics', 'Model Making', '3D Dioramas', 'Coding'],        description: 'Equipped with materials for architectural modeling, electronics, and robotics, the Innovation Hub is where future creators prototype solutions. Students turn concepts into tactile working structures.',        ctaLink: 'admissions.html'      },      'art': {        title: 'Art, Music & Classical Dance Studio',        image: 'assets/ONEST/IMG-20260810-WA0407.jpg.jpeg',        tags: ['Visual Arts', 'Classical Dance', 'Vocal Music', 'Exhibitions'],        description: 'Dedicated spaces designed to nurture traditional and contemporary artistic expression. Our students regularly stage art exhibitions and win national classical dance awards.',        ctaLink: 'admissions.html'      },      'smart-classrooms': {        title: 'Gurukul Outdoor Learning Spaces',        image: 'assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg',        tags: ['Tree Classroom', 'Interactive Panels', 'Gurukul Pedagogy'],        description: 'Harmonious learning environments combining ancient Gurukul open-air amphitheater teaching under lush tree canopy with cutting-edge interactive digital panels and climate-controlled indoor spaces.',        ctaLink: 'admissions.html'      },
       'library': {        title: "Children's Reading Room & Library",        image: 'assets/ONEST/infra-school-library.jpg',        tags: ['Illustrated Storybooks', 'Reading Tree', 'Child-Friendly Ergonomics', 'Guided Story Sessions'],        description: 'A welcoming, cheerful reading space designed for young learners. Features colorful pastel walls, child-sized ergonomic study desks, guided storytelling circles, and our signature Reading Tree to instill a joyful, lifelong reading habit.',        ctaLink: 'contact.html'      },
       'architecture': {        title: 'Biophilic Architecture & Sunlit Corridors',        image: 'assets/ONEST/infra-glass-staircase.jpg',        tags: ['100% Natural Daylight', 'Forest & Valley Views', 'Passive Eco-Cooling', 'Fresh Mountain Breezes'],        description: 'Our campus is crafted with biophilic architectural principles. Tall glass stairwells and cross-ventilated breezeways connect learners directly with nature, providing abundant natural illumination and healthy open learning pathways.',        ctaLink: 'contact.html'      },
-      'terrace': {        title: 'Panoramic Hilltop Observation Terraces',        image: 'assets/ONEST/infra-panoramic-terrace.jpg',        tags: ['180° Valley Panoramas', 'Outdoor Yoga & Astronomy', 'Misty Western Ghats', 'Courtyard Overlook'],        description: 'Commanding breathtaking vistas of the Ratnagiri hills and 3+ acres of forested grounds, our observation terraces provide a scenic setting for morning meditation, astronomy observations, and refreshing breaks between classes.',        ctaLink: 'contact.html'      }    };    function openFacilityModal(id) {      const modal = document.getElementById('facility-modal');      const content = document.getElementById('facility-modal-content');      const data = facilityData[id];            if(!data) return;      document.getElementById('facility-modal-img').src = data.image;      document.getElementById('facility-modal-title').innerText = data.title;      document.getElementById('facility-modal-desc').innerText = data.description;      document.getElementById('facility-modal-cta').href = data.ctaLink;            const tagsHtml = data.tags.map(tag => `<span class="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ ${tag}</span>`).join('');      document.getElementById('facility-modal-tags').innerHTML = tagsHtml;      modal.classList.remove('hidden');      void modal.offsetWidth;      modal.classList.remove('opacity-0');      content.classList.remove('scale-95');    }    function closeFacilityModal() {      const modal = document.getElementById('facility-modal');      const content = document.getElementById('facility-modal-content');            modal.classList.add('opacity-0');      content.classList.add('scale-95');            setTimeout(() => {        modal.classList.add('hidden');      }, 300);    }    document.getElementById('facility-modal').addEventListener('click', function(e) {      if (e.target === this) {        closeFacilityModal();      }    });  </script>  <script src="assets/js/onest-home.js"></script>  <!-- DB & Global Script Integrations -->  <script src="db.js"></script>  <script src="onest-global.js"></script>  <script>    // 360 Initialized below      const DB = window.OnestDB;      // --- 2. DOCUMENT DOWNLOAD HUB LOGIC ---      let docFilter = 'all';      let docSearchQuery = '';      function renderDocuments() {        const docs = DB.getDocuments();        const grid = document.getElementById('docs-list-grid');        if (!grid) return;        let filtered = docs.filter(d => {          const matchCat = docFilter === 'all' || d.category === docFilter;          const matchSearch = d.title.toLowerCase().includes(docSearchQuery) ||                               d.category.toLowerCase().includes(docSearchQuery);          return matchCat && matchSearch;        });        if (filtered.length === 0) {          grid.innerHTML = '<p class="col-span-full text-center text-xs text-on-surface-variant/85 py-8">No documents found matching the filter.</p>';          return;        }        grid.innerHTML = '';        filtered.forEach(d => {          const card = document.createElement('div');          card.className = 'bg-white p-5 rounded-3xl border border-primary/10 shadow-sm text-left flex flex-col justify-between hover-lift';          card.innerHTML = `            <div>              <span class="text-[9px] bg-secondary text-primary-light font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${d.category}</span>              <h4 class="font-bold text-secondary text-sm mt-3 mb-1.5 leading-snug">${d.title}</h4>              <p class="text-[10px] text-on-surface-variant/80">Updated: ${d.updatedAt || 'July 2026'}</p>            </div>            <a href="${d.fileUrl || '#'}" onclick="trackDownload('${d.title}')" class="w-full bg-[#FFF9D9] hover:bg-primary hover:text-white text-secondary text-xs font-bold py-2.5 rounded-xl mt-4 flex items-center justify-center gap-1.5 transition-colors">              <i class="bi bi-file-earmark-arrow-down-fill"></i> Download File            </a>          `;          grid.appendChild(card);        });      }      window.trackDownload = function(title) {        if (window.trackOnestAnalytics) {          window.trackOnestAnalytics('download_document', { title });        }        alert(`✓ Download starting for: ${title}`);      };      // Bind search/filter      const dSearch = document.getElementById('doc-search');      if (dSearch) {        dSearch.addEventListener('input', (e) => {          docSearchQuery = e.target.value.toLowerCase().trim();          renderDocuments();        });      }      document.querySelectorAll('.doc-filter-btn').forEach(btn => {        btn.addEventListener('click', () => {          document.querySelectorAll('.doc-filter-btn').forEach(b => b.className = "doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary");          btn.className = "doc-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white";          docFilter = btn.getAttribute('data-cat');          renderDocuments();        });      });      renderDocuments();    });  </script>
+      'terrace': {        title: 'Panoramic Hilltop Observation Terraces',        image: 'assets/ONEST/infra-panoramic-terrace.jpg',        tags: ['180° Valley Panoramas', 'Outdoor Yoga & Astronomy', 'Misty Western Ghats', 'Courtyard Overlook'],        description: 'Commanding breathtaking vistas of the Ratnagiri hills and 3+ acres of forested grounds, our observation terraces provide a scenic setting for morning meditation, astronomy observations, and refreshing breaks between classes.',        ctaLink: 'contact.html'      }    };    function openFacilityModal(id) {      const modal = document.getElementById('facility-modal');      const content = document.getElementById('facility-modal-content');      const data = facilityData[id];            if(!data) return;      document.getElementById('facility-modal-img').src = data.image;      document.getElementById('facility-modal-title').innerText = data.title;      document.getElementById('facility-modal-desc').innerText = data.description;      document.getElementById('facility-modal-cta').href = data.ctaLink;            const tagsHtml = data.tags.map(tag => `<span class="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">✓ ${tag}</span>`).join('');      document.getElementById('facility-modal-tags').innerHTML = tagsHtml;      modal.classList.remove('hidden');      void modal.offsetWidth;      modal.classList.remove('opacity-0');      content.classList.remove('scale-95');    }    function closeFacilityModal() {      const modal = document.getElementById('facility-modal');      const content = document.getElementById('facility-modal-content');            modal.classList.add('opacity-0');      content.classList.add('scale-95');            setTimeout(() => {        modal.classList.add('hidden');      }, 300);    }    document.getElementById('facility-modal').addEventListener('click', function(e) {      if (e.target === this) {        closeFacilityModal();      }    });    function switchLibraryImage(src, caption, btn) {      const mainImg = document.getElementById('library-showcase-main-img');      const captionSpan = document.querySelector('#library-showcase-caption span');      if (mainImg) {        mainImg.style.opacity = '0.3';        setTimeout(() => {          mainImg.src = src;          mainImg.style.opacity = '1';        }, 150);      }      if (captionSpan) {        captionSpan.innerText = caption;      }      document.querySelectorAll('.library-thumb-btn').forEach(b => {        b.classList.remove('border-primary', 'ring-2', 'ring-primary');        b.classList.add('border-transparent');      });      if (btn) {        btn.classList.remove('border-transparent');        btn.classList.add('border-primary', 'ring-2', 'ring-primary');      }    }  </script>  <script src="assets/js/onest-home.js"></script>  <!-- DB & Global Script Integrations -->  <script src="db.js"></script>  <script src="onest-global.js"></script>  <script>    // 360 Initialized below      const DB = window.OnestDB;      // --- 2. DOCUMENT DOWNLOAD HUB LOGIC ---      let docFilter = 'all';      let docSearchQuery = '';      function renderDocuments() {        const docs = DB.getDocuments();        const grid = document.getElementById('docs-list-grid');        if (!grid) return;        let filtered = docs.filter(d => {          const matchCat = docFilter === 'all' || d.category === docFilter;          const matchSearch = d.title.toLowerCase().includes(docSearchQuery) ||                               d.category.toLowerCase().includes(docSearchQuery);          return matchCat && matchSearch;        });        if (filtered.length === 0) {          grid.innerHTML = '<p class="col-span-full text-center text-xs text-on-surface-variant/85 py-8">No documents found matching the filter.</p>';          return;        }        grid.innerHTML = '';        filtered.forEach(d => {          const card = document.createElement('div');          card.className = 'bg-white p-5 rounded-3xl border border-primary/10 shadow-sm text-left flex flex-col justify-between hover-lift';          card.innerHTML = `            <div>              <span class="text-[9px] bg-secondary text-primary-light font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${d.category}</span>              <h4 class="font-bold text-secondary text-sm mt-3 mb-1.5 leading-snug">${d.title}</h4>              <p class="text-[10px] text-on-surface-variant/80">Updated: ${d.updatedAt || 'July 2026'}</p>            </div>            <a href="${d.fileUrl || '#'}" onclick="trackDownload('${d.title}')" class="w-full bg-[#FFF9D9] hover:bg-primary hover:text-white text-secondary text-xs font-bold py-2.5 rounded-xl mt-4 flex items-center justify-center gap-1.5 transition-colors">              <i class="bi bi-file-earmark-arrow-down-fill"></i> Download File            </a>          `;          grid.appendChild(card);        });      }      window.trackDownload = function(title) {        if (window.trackOnestAnalytics) {          window.trackOnestAnalytics('download_document', { title });        }        alert(`✓ Download starting for: ${title}`);      };      // Bind search/filter      const dSearch = document.getElementById('doc-search');      if (dSearch) {        dSearch.addEventListener('input', (e) => {          docSearchQuery = e.target.value.toLowerCase().trim();          renderDocuments();        });      }      document.querySelectorAll('.doc-filter-btn').forEach(btn => {        btn.addEventListener('click', () => {          document.querySelectorAll('.doc-filter-btn').forEach(b => b.className = "doc-filter-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-secondary");          btn.className = "doc-filter-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-primary text-white";          docFilter = btn.getAttribute('data-cat');          renderDocuments();        });      });      renderDocuments();    });  </script>
   <script>
     // Lightbox for Campus Gallery
     document.addEventListener('DOMContentLoaded', () => {

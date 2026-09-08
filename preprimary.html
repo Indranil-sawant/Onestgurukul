@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pre-Primary | O'Nest Gurukul - Where Little Learners Begin Big Dreams</title>
   <meta name="description"
-    content="Experience a magical, play-based early learning world at O'Nest Gurukul. Nursery, Jr. KG, and Sr. KG built on trust, safety, and joy.">
-  <meta name="keywords" content="Montessori, Pre-Primary, Preschool, Nursery, Kindergarten, Ratnagiri, Play-school">
+    content="Experience a magical, play-based early learning world at O'Nest Gurukul. Playgroup, Nursery, Jr. KG, and Sr. KG built on trust, safety, and joy.">
+  <meta name="keywords" content="Montessori, Pre-Primary, Preschool, Nursery, Kindergarten, Playgroup, Ratnagiri, Play-school">
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
       theme: {
         extend: {
           "colors": {
-            "primary": "#735c00",           /* Golden Yellow/Gold Brand Color */
+            "primary": "#735c00",           /* Golden Brand Color */
             "primary-light": "#facc15",     /* Bright Golden Accent */
             "secondary": "#002147",         /* Deep Royal Blue */
             "accent": "#059669",            /* Emerald Green Accent */
@@ -82,12 +82,12 @@
       font-family: 'Libre Caslon Text', serif;
     }
     .glass-nav {
-      background: rgba(253, 251, 247, 0.85);
+      background: rgba(253, 251, 247, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
     .luxury-shadow {
-      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
+      box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.08);
     }
     .reveal {
       opacity: 0;
@@ -102,34 +102,26 @@
     /* Magical Animations */
     @keyframes float-balloon {
       0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(3deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
     }
     .float-balloon {
       animation: float-balloon 6s ease-in-out infinite;
     }
     .float-balloon-delay-1 {
       animation: float-balloon 7s ease-in-out infinite;
-      animation-delay: 1s;
+      animation-delay: 1.2s;
     }
     .float-balloon-delay-2 {
-      animation: float-balloon 5s ease-in-out infinite;
-      animation-delay: 2.5s;
+      animation: float-balloon 5.5s ease-in-out infinite;
+      animation-delay: 2.4s;
     }
 
     @keyframes cloud-move {
       0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(12px); }
+      50% { transform: translateX(14px); }
     }
     .cloud-move {
       animation: cloud-move 12s ease-in-out infinite;
-    }
-
-    @keyframes leaf-drift {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(8px) rotate(15deg); }
-    }
-    .leaf-drift {
-      animation: leaf-drift 4s ease-in-out infinite;
     }
 
     @keyframes bubble-rise {
@@ -141,7 +133,7 @@
       position: absolute;
       border-radius: 50%;
       background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       pointer-events: none;
       animation: bubble-rise 8s infinite linear;
     }
@@ -149,14 +141,14 @@
     /* Polaroid Styles */
     .polaroid {
       background: white;
-      padding: 12px 12px 28px 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 10px 10px 22px 10px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.04);
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .polaroid:hover {
-      transform: scale(1.03) rotate(1deg);
-      box-shadow: 0 20px 35px -5px rgba(115, 92, 0, 0.15);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 35px -5px rgba(115, 92, 0, 0.16);
     }
 
     /* Custom scrollbar */
@@ -169,16 +161,6 @@
     ::-webkit-scrollbar-thumb {
       background: #735c00;
       border-radius: 5px;
-    }
-
-    /* Curved organic paths */
-    .curved-border-bottom {
-      border-bottom-left-radius: 50% 20px;
-      border-bottom-right-radius: 50% 20px;
-    }
-    .curved-border-top {
-      border-top-left-radius: 50% 20px;
-      border-top-right-radius: 50% 20px;
     }
   </style>
 </head>
@@ -200,11 +182,11 @@
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="contact.html">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <!-- Theme Toggle -->
         <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
           <i class="bi bi-moon-fill text-xl"></i>
         </button>
-        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <!-- Apply Now -->
         <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
           Apply Now
         </a>
@@ -236,15 +218,16 @@
       </li>
     </ul>
   </div>
+
   <main>
 
-    <!-- HERO SECTION (Cinematic Illustration + Parallax Clouds) -->
-    <section class="relative h-[85vh] min-h-[550px] overflow-hidden bg-gradient-to-br from-sky-200 via-white to-amber-100/50 flex items-center pt-[90px]">
+    <!-- HERO SECTION (Cinematic Illustration + Dynamic Child Photomontage) -->
+    <section class="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-sky-100/70 via-white to-amber-100/40 flex items-center pt-[110px] pb-16">
       <!-- Animated Floating Elements -->
-      <div class="absolute top-[15%] left-[5%] text-6xl opacity-35 float-balloon"><i class="bi bi-balloon-heart text-coral"></i></div>
-      <div class="absolute bottom-[25%] left-[8%] text-5xl opacity-30 float-balloon-delay-1"><i class="bi bi-butterfly text-lavender"></i></div>
-      <div class="absolute top-[20%] right-[10%] text-5xl md:text-7xl opacity-25 float-balloon-delay-2"><i class="bi bi-clouds-fill text-sky-blue"></i></div>
-      <div class="absolute bottom-[15%] right-[15%] text-5xl opacity-40 float-balloon"><i class="bi bi-balloon text-soft-orange"></i></div>
+      <div class="absolute top-[15%] left-[4%] text-6xl opacity-30 float-balloon"><i class="bi bi-balloon-heart text-coral"></i></div>
+      <div class="absolute bottom-[20%] left-[6%] text-5xl opacity-25 float-balloon-delay-1"><i class="bi bi-butterfly text-lavender"></i></div>
+      <div class="absolute top-[18%] right-[8%] text-5xl md:text-7xl opacity-20 float-balloon-delay-2"><i class="bi bi-clouds-fill text-sky-blue"></i></div>
+      <div class="absolute bottom-[12%] right-[12%] text-5xl opacity-35 float-balloon"><i class="bi bi-balloon text-soft-orange"></i></div>
 
       <!-- Bubble effects -->
       <div class="bubble w-8 h-8 left-[12%] bottom-[20%]" style="animation-delay: 0s; animation-duration: 9s;"></div>
@@ -254,44 +237,281 @@
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
           <!-- Text column -->
-          <div class="lg:col-span-7 text-left space-y-6">
-            <span class="text-secondary font-extrabold uppercase tracking-[0.25em] text-xs bg-white/70 backdrop-blur px-5 py-2.5 rounded-full border border-sky-blue/30 inline-block shadow-sm float-balloon">
-              🎈 Welcome to a Magical Learning Journey
-            </span>
-            <h1 class="font-display text-4xl md:text-6xl text-secondary font-bold leading-tight">
-              Every Big Dream<br/><span class="text-[#8c0a46]">Begins With a Small Step.</span>
+          <div class="lg:col-span-6 text-left space-y-6 reveal">
+            <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-primary/20 shadow-sm">
+              <span class="text-xs uppercase tracking-[0.2em] font-extrabold text-primary">🎈 Early Childhood Education (ECCE)</span>
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-secondary font-bold leading-tight">
+              Where Little Learners<br/><span class="text-[#8c0a46]">Begin Big Dreams.</span>
             </h1>
-            <p class="text-base md:text-lg text-secondary/80 max-w-xl leading-relaxed">
-              A joyful place where curiosity grows, imagination blossoms, friendships begin, and every child feels loved, safe, and inspired.
+            <p class="text-base sm:text-lg text-secondary/80 max-w-xl leading-relaxed">
+              A joyful, experiential foundation where play sparks curiosity, loving guidance builds confidence, and friendships blossom in child-safe, sunlit spaces.
             </p>
-            <div class="flex flex-wrap gap-4 pt-2">
+
+            <!-- Quick Trust Pillars -->
+            <div class="flex flex-wrap gap-3 pt-1 text-xs font-bold text-secondary">
+              <span class="px-3.5 py-1.5 rounded-full bg-white/90 border border-primary/20 shadow-sm flex items-center gap-1.5">
+                <i class="bi bi-shield-check text-accent text-sm"></i> 100% Childproof
+              </span>
+              <span class="px-3.5 py-1.5 rounded-full bg-white/90 border border-primary/20 shadow-sm flex items-center gap-1.5">
+                <i class="bi bi-people-fill text-primary text-sm"></i> 1:10 Teacher Ratio
+              </span>
+              <span class="px-3.5 py-1.5 rounded-full bg-white/90 border border-primary/20 shadow-sm flex items-center gap-1.5">
+                <i class="bi bi-puzzle-fill text-soft-orange text-sm"></i> Montessori Sensory Play
+              </span>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-3">
               <a href="contact.html" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-lg flex items-center gap-2">
                 🌈 Book a School Tour <i class="bi bi-chevron-right"></i>
               </a>
-              <a href="admissions.html" class="bg-white/80 hover:bg-white text-secondary border border-secondary/20 px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-md">
-                🎨 Apply Now
+              <a href="admissions.html" class="bg-white hover:bg-secondary hover:text-white text-secondary border border-secondary/20 px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-md">
+                🎨 Apply for 2026-27
               </a>
             </div>
           </div>
 
-          <!-- Magical Graphic Frame (Polaroid + Stickers) -->
-          <div class="hidden lg:col-span-5 lg:flex justify-center relative">
-            <div class="polaroid rotate-[-2deg] relative">
-              <!-- Floating stickers -->
-              <div class="absolute -top-6 -right-6 text-4xl text-soft-orange float-balloon"><i class="bi bi-star-fill"></i></div>
-              <div class="absolute -bottom-6 -left-6 text-4xl text-mint-green float-balloon-delay-1"><i class="bi bi-heart-fill"></i></div>
-
-              <div class="w-[320px] aspect-square rounded-2xl overflow-hidden shadow-inner">
-                <img src="assets/ONEST/IMG-20260810-WA0761.jpg.jpeg" alt="Kids Fancy Dress" class="w-full h-full object-cover">
+          <!-- Hero Right: Layered Photomontage with Real Students -->
+          <div class="lg:col-span-6 relative reveal" style="transition-delay: 150ms;">
+            <div class="relative max-w-[540px] mx-auto">
+              <!-- Main Focal Photo Card (Cognitive Puzzle Solving) -->
+              <div class="bg-white p-3 md:p-4 rounded-[32px] shadow-2xl border-2 border-white/80 relative z-20 group">
+                <div class="aspect-[16/10] overflow-hidden rounded-[24px] relative">
+                  <img src="assets/ONEST/preprimary-cognitive-puzzle.jpg" alt="Children collaborating on cognitive shapes puzzle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+                    <div>
+                      <span class="text-[11px] font-bold text-primary-light uppercase tracking-wider block">Hands-on Problem Solving</span>
+                      <span class="text-white font-display font-bold text-base md:text-lg">Cognitive Shapes &amp; Number Discovery</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="text-center font-display font-bold text-secondary text-lg mt-4">Fancy Dress Adventures ✨</p>
+
+              <!-- Overlapping Floating Card (Blocks Play - Little Explorer) -->
+              <div class="absolute -bottom-8 -left-4 sm:-left-8 z-30 w-44 sm:w-52 bg-white p-2.5 rounded-2xl shadow-xl border border-primary/10 rotate-[-4deg] hover:rotate-0 transition-transform duration-300">
+                <div class="aspect-[3/4] overflow-hidden rounded-xl">
+                  <img src="assets/ONEST/preprimary-blocks-play.jpg" alt="Toddler girl stacking colorful blocks" class="w-full h-full object-cover">
+                </div>
+                <div class="p-1.5 text-center">
+                  <span class="text-[10px] font-bold text-secondary flex items-center justify-center gap-1">
+                    <i class="bi bi-stars text-primary"></i> Sensory Blocks Play
+                  </span>
+                </div>
+              </div>
+
+              <!-- Floating Trust Badge (Top Right) -->
+              <div class="absolute -top-5 -right-3 sm:-right-6 z-30 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-primary/20 flex items-center gap-3 float-balloon">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 text-primary flex items-center justify-center text-xl">
+                  <i class="bi bi-heart-pulse-fill"></i>
+                </div>
+                <div class="text-left">
+                  <span class="text-[10px] text-secondary/70 uppercase tracking-widest font-extrabold block">Holistic Care</span>
+                  <span class="text-xs font-bold text-secondary">Nurturing &amp; Safe</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY CHILDREN LOVE OUR SCHOOL (CURVED CARDS WITH GRADIENTS) -->
+    <!-- THE 4 FOUNDATIONAL STAGES (EARLY LEARNING PATHWAY) -->
+    <section class="py-24 bg-white relative overflow-hidden border-b border-primary/10">
+      <div class="container mx-auto px-gutter max-w-container-max text-center relative z-10">
+        <div class="max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Curriculum Pathway
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">The 4 Foundational Stages</h2>
+          <p class="text-on-surface/80 mt-4 text-base md:text-lg leading-relaxed">
+            Our curriculum adapts to each child’s developmental milestones, transitioning seamlessly from joyful sensory play to confident academic readiness.
+          </p>
+          <div class="w-24 h-1 bg-gradient-to-r from-primary to-[#8c0a46] mx-auto rounded-full mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+          <!-- Stage 1: Playgroup -->
+          <div class="bg-background rounded-[28px] border border-amber-200/60 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-left flex flex-col justify-between group">
+            <div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-primary/10">
+                <img src="assets/ONEST/preprimary-blocks-play.jpg" alt="Playgroup sensory play" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-soft-orange shadow-sm">
+                  Age 1.5 – 2.5 Yrs
+                </span>
+              </div>
+              <h3 class="font-bold text-secondary text-xl mb-2 font-display">Playgroup</h3>
+              <p class="text-on-surface/80 text-xs leading-relaxed mb-4">
+                Gentle separation, sensory block exploration, tactile basin sorting, and social comfort in a warm, loving playroom.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-primary/10 flex flex-wrap gap-1.5">
+              <span class="text-[10px] bg-amber-50 text-soft-orange px-2.5 py-1 rounded-md font-bold">Sensory Logic</span>
+              <span class="text-[10px] bg-amber-50 text-soft-orange px-2.5 py-1 rounded-md font-bold">Social Bonds</span>
+            </div>
+          </div>
+
+          <!-- Stage 2: Nursery -->
+          <div class="bg-background rounded-[28px] border border-sky-200/60 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-left flex flex-col justify-between group">
+            <div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-primary/10">
+                <img src="assets/ONEST/preprimary-craft-activity.jpg" alt="Nursery fine motor crafts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-sky-blue shadow-sm">
+                  Age 2.5 – 3.5 Yrs
+                </span>
+              </div>
+              <h3 class="font-bold text-secondary text-xl mb-2 font-display">Nursery</h3>
+              <p class="text-on-surface/80 text-xs leading-relaxed mb-4">
+                Speech enrichment, Vedic shlokas, sand &amp; rangoli craft activities, music rhythm circles, and color recognition.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-primary/10 flex flex-wrap gap-1.5">
+              <span class="text-[10px] bg-sky-50 text-sky-blue px-2.5 py-1 rounded-md font-bold">Fine Motor</span>
+              <span class="text-[10px] bg-sky-50 text-sky-blue px-2.5 py-1 rounded-md font-bold">Speech &amp; Rhymes</span>
+            </div>
+          </div>
+
+          <!-- Stage 3: Junior KG -->
+          <div class="bg-background rounded-[28px] border border-emerald-200/60 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-left flex flex-col justify-between group">
+            <div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-primary/10">
+                <img src="assets/ONEST/preprimary-cognitive-puzzle.jpg" alt="Junior KG cognitive puzzles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-accent shadow-sm">
+                  Age 3.5 – 4.5 Yrs
+                </span>
+              </div>
+              <h3 class="font-bold text-secondary text-xl mb-2 font-display">Junior KG</h3>
+              <p class="text-on-surface/80 text-xs leading-relaxed mb-4">
+                Montessori shape-peg boards, early phonics &amp; pre-writing grip, number identification, and collaborative play.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-primary/10 flex flex-wrap gap-1.5">
+              <span class="text-[10px] bg-emerald-50 text-accent px-2.5 py-1 rounded-md font-bold">Phonics Basis</span>
+              <span class="text-[10px] bg-emerald-50 text-accent px-2.5 py-1 rounded-md font-bold">Number Sense</span>
+            </div>
+          </div>
+
+          <!-- Stage 4: Senior KG -->
+          <div class="bg-background rounded-[28px] border border-purple-200/60 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-left flex flex-col justify-between group">
+            <div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-primary/10">
+                <img src="assets/ONEST/preprimary-classroom-wide.jpg" alt="Senior KG learning environment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-lavender shadow-sm">
+                  Age 4.5 – 5.5 Yrs
+                </span>
+              </div>
+              <h3 class="font-bold text-secondary text-xl mb-2 font-display">Senior KG</h3>
+              <p class="text-on-surface/80 text-xs leading-relaxed mb-4">
+                Early reading fluency, experiential math, environmental exploration, stage confidence, and primary grade readiness.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-primary/10 flex flex-wrap gap-1.5">
+              <span class="text-[10px] bg-purple-50 text-lavender px-2.5 py-1 rounded-md font-bold">Reading Fluency</span>
+              <span class="text-[10px] bg-purple-50 text-lavender px-2.5 py-1 rounded-md font-bold">Primary Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL CLASSROOM SPACES (INTERACTIVE SHOWCASE & INFRASTRUCTURE) -->
+    <section class="py-24 bg-gradient-to-b from-background via-white to-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left: Interactive Classroom Viewer -->
+          <div class="lg:col-span-7 space-y-4 reveal">
+            <div class="relative bg-white p-3 md:p-4 rounded-[36px] shadow-2xl border-2 border-primary/15 overflow-hidden group">
+              <!-- Main Image Display -->
+              <div class="aspect-[16/10] overflow-hidden rounded-[26px] relative cursor-pointer" onclick="openLightbox(document.getElementById('classroom-main-img').src, document.getElementById('classroom-main-caption').textContent)">
+                <img id="classroom-main-img" src="assets/ONEST/preprimary-classroom-wide.jpg" alt="Playgroup Classroom with Acoustic Cloud Ceiling & Slide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                  <div>
+                    <span class="text-primary-light text-xs font-bold uppercase tracking-wider block">Real Campus Environment</span>
+                    <h3 id="classroom-main-caption" class="text-white font-display text-lg md:text-2xl font-bold">Playgroup Activity Hub with Acoustic Cloud Ceiling &amp; Slide</h3>
+                  </div>
+                </div>
+                <!-- Zoom button overlay -->
+                <div class="absolute top-4 right-4 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full backdrop-blur transition-all">
+                  <i class="bi bi-arrows-fullscreen text-sm"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Switcher Tabs -->
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button onclick="switchClassroomImage('assets/ONEST/preprimary-classroom-wide.jpg', 'Playgroup Activity Hub with Acoustic Cloud Ceiling & Slide', this)" class="classroom-tab-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-secondary text-white shadow-md transition-all flex items-center gap-2 border border-secondary">
+                <i class="bi bi-cloud-sun"></i> Cloud Ceiling &amp; Slide View
+              </button>
+              <button onclick="switchClassroomImage('assets/ONEST/preprimary-classroom-shelf.jpg', 'Montessori Tactile Storage & Low-Reach Learning Materials', this)" class="classroom-tab-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-secondary hover:bg-primary/10 shadow-sm transition-all flex items-center gap-2 border border-primary/20">
+                <i class="bi bi-boxes"></i> Montessori Toy Rack &amp; Materials
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Detailed Space Features -->
+          <div class="lg:col-span-5 space-y-6 reveal text-left">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#8c0a46] bg-rose-50 border border-rose-200 px-4 py-2 rounded-full inline-block shadow-sm">
+              Thoughtfully Designed Spaces
+            </span>
+            <h2 class="font-display text-3xl md:text-5xl text-secondary font-bold leading-tight">
+              Sunlit, Acoustic &amp; Sensory Classrooms.
+            </h2>
+            <p class="text-on-surface/80 text-base md:text-lg leading-relaxed">
+              Every room is designed to reduce sensory overload while encouraging joyful physical activity, balance, and fine motor dexterity.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <!-- Feature 1 -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-primary/10 shadow-sm hover:border-primary/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-primary flex items-center justify-center shrink-0 text-xl font-bold">
+                  ☁️
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary text-sm">Acoustic Cloud Ceiling</h4>
+                  <p class="text-xs text-on-surface/75 mt-0.5 leading-relaxed">Acoustic cloud baffles absorb ambient sound, creating a calm, echo-free atmosphere for toddlers.</p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-primary/10 shadow-sm hover:border-primary/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-blue flex items-center justify-center shrink-0 text-xl font-bold">
+                  🛝
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary text-sm">Indoor Gross Motor Slide</h4>
+                  <p class="text-xs text-on-surface/75 mt-0.5 leading-relaxed">Soft-landing indoor physical play equipment supporting balance and body coordination.</p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-primary/10 shadow-sm hover:border-primary/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-accent flex items-center justify-center shrink-0 text-xl font-bold">
+                  🧩
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary text-sm">Low-Reach Montessori Organizers</h4>
+                  <p class="text-xs text-on-surface/75 mt-0.5 leading-relaxed">Children access tactile blocks, rings, and puzzles independently, cultivating self-discipline.</p>
+                </div>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-primary/10 shadow-sm hover:border-primary/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-lavender flex items-center justify-center shrink-0 text-xl font-bold">
+                  📋
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary text-sm">Daily Milestone Activity Board</h4>
+                  <p class="text-xs text-on-surface/75 mt-0.5 leading-relaxed">Structured learning outcomes including 'Ball Rolling on Path', eye-tracking, and grip development.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHILDREN LOVE OUR SCHOOL (4 PILLARS OF JOY) -->
     <section class="py-24 bg-gradient-to-b from-white to-background relative overflow-hidden">
       <!-- Background cloud shapes -->
       <div class="absolute top-[10%] right-[5%] text-9xl text-sky-200/20 cloud-move"><i class="bi bi-cloud-fill"></i></div>
@@ -309,28 +529,28 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
           <!-- Card 1 -->
-          <div class="group bg-white rounded-[32px] border-4 border-amber-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+          <div class="group bg-white rounded-[32px] border-4 border-amber-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 text-left transition-all duration-300 relative overflow-hidden">
             <div class="w-12 h-12 rounded-2xl bg-amber-50 text-soft-orange flex items-center justify-center text-2xl mb-6"><i class="bi bi-controller"></i></div>
             <h3 class="font-bold text-secondary text-lg mb-2">Learning Through Play</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Developing sensory logic via grains sorting, number balloons, and group puzzle sessions.</p>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Developing sensory logic via tactile grains sorting, number balloons, and group puzzle sessions.</p>
           </div>
           <!-- Card 2 -->
-          <div class="group bg-white rounded-[32px] border-4 border-sky-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+          <div class="group bg-white rounded-[32px] border-4 border-sky-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 text-left transition-all duration-300 relative overflow-hidden">
             <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-blue flex items-center justify-center text-2xl mb-6"><i class="bi bi-music-note-beamed"></i></div>
-            <h3 class="font-bold text-secondary text-lg mb-2">Music &amp; Rhymes</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Singing groups, morning shlokas, and joyful coordination dances.</p>
+            <h3 class="font-bold text-secondary text-lg mb-2">Music &amp; Shlokas</h3>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Morning prayer shlokas, singing circles, rhythmic nursery rhymes, and joyful coordination dances.</p>
           </div>
           <!-- Card 3 -->
-          <div class="group bg-white rounded-[32px] border-4 border-emerald-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+          <div class="group bg-white rounded-[32px] border-4 border-emerald-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 text-left transition-all duration-300 relative overflow-hidden">
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-mint-green flex items-center justify-center text-xl mb-6"><i class="bi bi-book"></i></div>
             <h3 class="font-bold text-secondary text-lg mb-2">Storytelling &amp; Plays</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Fancy dress character days and story castle sessions with large colourful props.</p>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Fancy dress character days, little Shivaji Maharaj pageants, and story castle sessions with large props.</p>
           </div>
           <!-- Card 4 -->
-          <div class="group bg-white rounded-[32px] border-4 border-purple-100 p-8 shadow-sm hover-lift text-left transition-all duration-300 relative overflow-hidden">
+          <div class="group bg-white rounded-[32px] border-4 border-purple-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 text-left transition-all duration-300 relative overflow-hidden">
             <div class="w-12 h-12 rounded-2xl bg-purple-50 text-lavender flex items-center justify-center text-2xl mb-6"><i class="bi bi-palette"></i></div>
-            <h3 class="font-bold text-secondary text-lg mb-2">Creative Art</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Diya painting with parents, finger art, and sensory crafts that build fine motor skills.</p>
+            <h3 class="font-bold text-secondary text-lg mb-2">Creative Art &amp; Craft</h3>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Diya painting with parents, finger art, sand rangoli craft, and sensory textures that refine motor grip.</p>
           </div>
         </div>
       </div>
@@ -354,62 +574,28 @@
             <span class="absolute top-4 right-4 text-xs font-bold bg-amber-50 text-soft-orange px-3 py-1 rounded-full">Step 01</span>
             <div class="w-12 h-12 rounded-xl bg-amber-50 text-soft-orange flex items-center justify-center text-xl mb-6"><i class="bi bi-sun"></i></div>
             <h4 class="font-bold text-secondary text-lg mb-2">Sunrise Welcome</h4>
-            <p class="text-on-surface-variant text-xs leading-relaxed">A warm hug from teachers, soft music, and settling into activity blocks.</p>
+            <p class="text-on-surface/75 text-xs leading-relaxed">A warm hug from teachers, soft music, and settling into individual activity blocks.</p>
           </div>
           <!-- Step 2 -->
           <div class="bg-white p-8 rounded-[32px] border border-sky-100/50 shadow-sm relative group hover:border-sky-300 transition-colors">
             <span class="absolute top-4 right-4 text-xs font-bold bg-sky-50 text-sky-blue px-3 py-1 rounded-full">Step 02</span>
             <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-blue flex items-center justify-center text-xl mb-6"><i class="bi bi-people"></i></div>
             <h4 class="font-bold text-secondary text-lg mb-2">Circle Time &amp; Shlokas</h4>
-            <p class="text-on-surface-variant text-xs leading-relaxed">Interactive greetings, morning prayer shlokas, and rhythmic rhymes in groups.</p>
+            <p class="text-on-surface/75 text-xs leading-relaxed">Interactive greetings, morning Vedic shlokas, and rhythmic rhymes in loving circles.</p>
           </div>
           <!-- Step 3 -->
           <div class="bg-white p-8 rounded-[32px] border border-emerald-100/50 shadow-sm relative group hover:border-emerald-300 transition-colors">
             <span class="absolute top-4 right-4 text-xs font-bold bg-emerald-50 text-mint-green px-3 py-1 rounded-full">Step 03</span>
             <div class="w-12 h-12 rounded-xl bg-emerald-50 text-mint-green flex items-center justify-center text-xl mb-6"><i class="bi bi-egg-fried"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Snack Time</h4>
-            <p class="text-on-surface-variant text-xs leading-relaxed">Eating healthy food alongside friends while learning table manners.</p>
+            <h4 class="font-bold text-secondary text-lg mb-2">Snack Time &amp; Manners</h4>
+            <p class="text-on-surface/75 text-xs leading-relaxed">Eating healthy food alongside friends while learning polite sharing and dining etiquette.</p>
           </div>
           <!-- Step 4 -->
           <div class="bg-white p-8 rounded-[32px] border border-purple-100/50 shadow-sm relative group hover:border-purple-300 transition-colors">
             <span class="absolute top-4 right-4 text-xs font-bold bg-purple-50 text-lavender px-3 py-1 rounded-full">Step 04</span>
             <div class="w-12 h-12 rounded-xl bg-purple-50 text-lavender flex items-center justify-center text-xl mb-6"><i class="bi bi-tree"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Outdoor Jungle</h4>
-            <p class="text-on-surface-variant text-xs leading-relaxed">Sandpit exploration, swings, balancing walks, and sensory nature games.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLASSROOM EXPERIENCE (CURVED NON-RIGID LAYOUT) -->
-    <section class="py-24 bg-background relative overflow-hidden">
-      <div class="container mx-auto px-gutter max-w-container-max">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div class="relative reveal order-2 lg:order-1">
-            <div class="overflow-hidden rounded-[40px] border-4 border-white shadow-xl aspect-[16/11] group">
-              <img src="assets/ONEST/sensory-grains-activity.jpg" alt="Sensory Grains Sorting Playroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-            <!-- Floating sticker -->
-            <div class="absolute -bottom-6 -right-6 polaroid rotate-6 w-32 hidden md:block">
-              <img src="assets/ONEST/IMG-20260810-WA0756.jpg.jpeg" class="w-full h-20 object-cover rounded-lg">
-              <p class="text-[10px] text-center font-bold text-secondary mt-2">Circle Prayer 🙏</p>
-            </div>
-          </div>
-          
-          <div class="space-y-6 reveal text-left order-1 lg:order-2">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#8c0a46] bg-rose-50 border border-rose-200 px-4 py-2 rounded-full inline-block mb-2 shadow-sm">
-              Cozy Learning Nooks
-            </span>
-            <h2 class="font-display text-3xl md:text-5xl text-secondary font-bold leading-tight">Our Happy Classrooms</h2>
-            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
-              We design our rooms with soft colors and organic curves. Spaces are divided into thematic zones: a quiet book castle, building block zones, sensory grains basins, and creative art tables.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-bold text-sm text-secondary">
-              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Sensory Grain Sorting</div>
-              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Number Names &amp; Balloons</div>
-              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Childproof Layouts</div>
-              <div class="flex items-center gap-2"><i class="bi bi-stars text-primary"></i> Parent-Child Workshops</div>
-            </div>
+            <h4 class="font-bold text-secondary text-lg mb-2">Outdoor Jungle Play</h4>
+            <p class="text-on-surface/75 text-xs leading-relaxed">Sandpit exploration, swings, balancing walks, and sensory nature games.</p>
           </div>
         </div>
       </div>
@@ -428,101 +614,149 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal text-left">
           <!-- Safety Block 1 -->
-          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm hover:shadow-lg transition-shadow">
             <div class="w-12 h-12 rounded-2xl bg-amber-50 text-soft-orange flex items-center justify-center text-lg mb-6"><i class="bi bi-shield-fill-check"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Child-Safe Spaces</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Anti-slip play pads, rounded wall edges, socket guards, and child-safe toys sanitized twice daily.</p>
+            <h4 class="font-bold text-secondary text-lg mb-2">Childproof Spaces</h4>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Anti-slip play flooring, rounded wall corners, socket protectors, and non-toxic sanitized toys cleaned twice daily.</p>
           </div>
           <!-- Safety Block 2 -->
-          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm hover:shadow-lg transition-shadow">
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-accent flex items-center justify-center text-lg mb-6"><i class="bi bi-camera-video-fill"></i></div>
             <h4 class="font-bold text-secondary text-lg mb-2">Live CCTV Monitoring</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Active monitoring across learning playroom modules, corridors, playgrounds, and transport drop-offs.</p>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Continuous CCTV coverage across all learning playrooms, corridors, sandpits, dining spaces, and transport drop-offs.</p>
           </div>
           <!-- Safety Block 3 -->
-          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm">
+          <div class="bg-white p-8 rounded-[32px] border border-primary/10 shadow-sm hover:shadow-lg transition-shadow">
             <div class="w-12 h-12 rounded-2xl bg-blue-50 text-secondary flex items-center justify-center text-lg mb-6"><i class="bi bi-heart-pulse-fill"></i></div>
-            <h4 class="font-bold text-secondary text-lg mb-2">Verified Helpers</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">All nannies, assistants, and drivers undergo police records checks and specific child safety classes.</p>
+            <h4 class="font-bold text-secondary text-lg mb-2">Dedicated Attendants</h4>
+            <p class="text-on-surface/75 text-sm leading-relaxed">Loving female attendants and trained nannies assist with bathroom routines, handwashing, meals, and comfort.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- IMMERSIVE PHOTO GALLERY (LIGHTBOX ENABLED + POLAROIDS) -->
-    <section class="py-24 bg-surface-container-low/40 relative">
+    <!-- IMMERSIVE PHOTO GALLERY (LIGHTBOX ENABLED + CURATED MOMENTS) -->
+    <section class="py-24 bg-surface-container-low/40 relative border-t border-primary/10">
       <div class="container mx-auto px-gutter max-w-container-max text-center">
         <div class="max-w-2xl mx-auto mb-16 reveal">
           <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
             Little Explorers
           </span>
           <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Moments of Joy</h2>
-          <p class="text-on-surface/80 mt-4 leading-relaxed">Authentic snapshots of early learning, fancy dress, sensory games, and parent workshops.</p>
+          <p class="text-on-surface/80 mt-4 leading-relaxed">Authentic snapshots of early learning, creative crafts, sensory play, and joyful celebrations at O'Nest Gurukul.</p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-          <!-- Gallery Item 1 -->
-          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0761.jpg.jpeg', 'Fancy Dress: Community Helpers Doctor & Police')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0761.jpg.jpeg" alt="Fancy Dress Doctors & Police" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+          <!-- Gallery Item 1: Cognitive Shapes & Numbers Puzzle -->
+          <div class="polaroid rotate-[-1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/preprimary-cognitive-puzzle.jpg', 'Collaborative Problem Solving: Cognitive Shapes & Number Logic')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/preprimary-cognitive-puzzle.jpg" alt="Children solving shapes puzzle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Community Helpers 👮</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Jr. &amp; Sr. KG</span>
+              <p class="font-bold text-secondary text-xs truncate">Cognitive Shapes Puzzle 🧩</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 2 -->
-          <div class="polaroid rotate-[1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0762.jpg.jpeg', 'Fancy Dress: Shivaji Maharaj & Little Angels')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0762.jpg.jpeg" alt="Shivaji Maharaj & Angels" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 2: Sand & Tactile Craft Activity -->
+          <div class="polaroid rotate-[1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/preprimary-craft-activity.jpg', 'Fine Motor Development: Tactile Sand & Flower Rangoli Craft')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/preprimary-craft-activity.jpg" alt="Boy doing tactile craft" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Little Legends 👑</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Creative Art</span>
+              <p class="font-bold text-secondary text-xs truncate">Tactile Sand Craft 🎨</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 3 -->
-          <div class="polaroid rotate-[-1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0757.jpg.jpeg', 'Number Names & Color Balloons Activity')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0757.jpg.jpeg" alt="Number Names & Balloons" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 3: Sensory Blocks Building -->
+          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/preprimary-blocks-play.jpg', 'Sensory Motor Coordination: Stacking & Building Blocks')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/preprimary-blocks-play.jpg" alt="Toddler stacking blocks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Number Balloons 🎈</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Playgroup &amp; Nursery</span>
+              <p class="font-bold text-secondary text-xs truncate">Sensory Blocks Building 🧸</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 4 -->
-          <div class="polaroid rotate-[2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0759.jpg.jpeg', 'Hawaiian Theme Fruit Party & Creative Costumes')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0759.jpg.jpeg" alt="Hawaiian Fruit Party" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 4: Cloud Playroom & Indoor Slide -->
+          <div class="polaroid rotate-[2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/preprimary-classroom-wide.jpg', 'Campus Infrastructure: Acoustic Cloud Playroom & Indoor Gross Motor Slide')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/preprimary-classroom-wide.jpg" alt="Cloud Playroom with Slide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Aloha Fruit Party 🍍</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Classroom Infrastructure</span>
+              <p class="font-bold text-secondary text-xs truncate">Cloud Playroom &amp; Slide ☁️</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 5 -->
-          <div class="polaroid rotate-[-1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0755.jpg.jpeg', 'Grains & Pulses Sensory Sorting Activity')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0755.jpg.jpeg" alt="Grains Sorting Activity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 5: Montessori Learning Aids & Open Storage -->
+          <div class="polaroid rotate-[-1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/preprimary-classroom-shelf.jpg', 'Montessori Learning Aids & Open Low-Reach Storage Shelves')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/preprimary-classroom-shelf.jpg" alt="Montessori shelf and toys" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Sensory Grains 🌾</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Montessori Hub</span>
+              <p class="font-bold text-secondary text-xs truncate">Tactile Learning Aids 📚</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 6 -->
-          <div class="polaroid rotate-[2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0756.jpg.jpeg', 'Morning Prayer & Shloka Recitation')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0756.jpg.jpeg" alt="Morning Prayer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 6: Fancy Dress Community Helpers -->
+          <div class="polaroid rotate-[2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0761.jpg.jpeg', 'Fancy Dress Celebration: Community Helpers (Doctors & Police)')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/IMG-20260810-WA0761.jpg.jpeg" alt="Fancy Dress Doctors & Police" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Morning Prayer 🙏</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Character Days</span>
+              <p class="font-bold text-secondary text-xs truncate">Community Helpers 👮</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 7 -->
-          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0456.jpg.jpeg', 'Parent Diya Painting & Craft Workshop')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260810-WA0456.jpg.jpeg" alt="Diya Craft Workshop" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 7: Cultural Pageantry & Little Legends -->
+          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0762.jpg.jpeg', 'Cultural Pageantry: Chhatrapati Shivaji Maharaj & Little Angels')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/IMG-20260810-WA0762.jpg.jpeg" alt="Shivaji Maharaj & Angels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Diya Painting 🪔</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Celebrations</span>
+              <p class="font-bold text-secondary text-xs truncate">Little Legends 👑</p>
+            </div>
           </div>
 
-          <!-- Gallery Item 8 -->
-          <div class="polaroid rotate-[1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260422-WA0614.jpg.jpeg', 'Earth Day Little Saplings Distribution')">
-            <div class="aspect-square overflow-hidden rounded-xl">
-              <img src="assets/ONEST/IMG-20260422-WA0614.jpg.jpeg" alt="Earth Day Sapling" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Gallery Item 8: Number Names & Balloons -->
+          <div class="polaroid rotate-[1deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0757.jpg.jpeg', 'Interactive Learning: Number Names & Color Balloons Activity')">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
+              <img src="assets/ONEST/IMG-20260810-WA0757.jpg.jpeg" alt="Number Names & Balloons" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="bi bi-arrows-fullscreen text-2xl"></i>
+              </div>
             </div>
-            <p class="font-bold text-secondary text-xs mt-3">Earth Day Saplings 🌱</p>
+            <div class="mt-3 text-left">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Early Numeracy</span>
+              <p class="font-bold text-secondary text-xs truncate">Number Balloons 🎈</p>
+            </div>
           </div>
         </div>
       </div>
@@ -535,22 +769,22 @@
         <p class="text-white/80 max-w-xl mx-auto font-body text-base md:text-lg mb-16">See what our parent community says about children's emotional and physical development.</p>
 
         <div class="max-w-3xl mx-auto relative reveal">
-          <div class="testimonial-slides-container overflow-hidden h-[185px] relative bg-white/10 backdrop-blur p-8 md:p-10 rounded-[32px] border border-white/15">
+          <div class="testimonial-slides-container overflow-hidden h-[195px] relative bg-white/10 backdrop-blur p-8 md:p-10 rounded-[32px] border border-white/15 flex items-center justify-center">
             <!-- Slide 1 -->
-            <div class="testimonial-slide active absolute inset-0 transition-opacity duration-700 opacity-100 flex flex-col justify-center text-center">
-              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
-                "Our daughter looks forward to circle time and art projects every morning. The nannies are incredibly warm and the quick daily updates from the school keep us stress-free."
+            <div class="testimonial-slide active absolute inset-0 transition-opacity duration-700 opacity-100 flex flex-col justify-center text-center p-8">
+              <p class="text-base md:text-xl font-medium italic text-white/95 leading-relaxed mb-4">
+                "Our daughter looks forward to circle time and art projects every morning. The nannies are incredibly warm and the daily updates keep us stress-free."
               </p>
               <h4 class="font-bold text-primary-light text-base">Pooja Deshpande</h4>
-              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Mother of Nursery Student</p>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-0.5 font-semibold">Mother of Nursery Student</p>
             </div>
             <!-- Slide 2 -->
-            <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex flex-col justify-center text-center">
-              <p class="text-lg md:text-xl font-medium italic text-white/95 leading-relaxed mb-6">
+            <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex flex-col justify-center text-center p-8">
+              <p class="text-base md:text-xl font-medium italic text-white/95 leading-relaxed mb-4">
                 "The play-based sensory blocks developed my son's motor logic and spatial coordination wonderfully. It is indeed a home away from home."
               </p>
               <h4 class="font-bold text-primary-light text-base">Suresh Patil</h4>
-              <p class="text-xs uppercase tracking-widest text-white/70 mt-1 font-semibold">Father of Jr. KG Student</p>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-0.5 font-semibold">Father of Jr. KG Student</p>
             </div>
           </div>
 
@@ -576,8 +810,8 @@
       <div class="absolute bottom-[10%] left-[10%] text-6xl opacity-15 float-balloon-delay-1"><i class="bi bi-star-fill text-primary-light"></i></div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
-        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
-          🌈 Lets Begin Your Child's Beautiful Journey Together!
+        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block">
+          🌈 Let's Begin Your Child's Beautiful Journey Together!
         </span>
         <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Admissions Open 2026-27</h2>
         <p class="text-white/85 max-w-2xl mx-auto font-body text-base md:text-lg">
@@ -653,6 +887,28 @@
   <!-- Scripts -->
   <script src="assets/js/onest-home.js"></script>
   <script>
+    // Classroom Viewer Image Switcher
+    function switchClassroomImage(src, caption, btn) {
+      const img = document.getElementById('classroom-main-img');
+      const cap = document.getElementById('classroom-main-caption');
+      if (!img || !cap) return;
+      
+      img.style.opacity = '0.3';
+      setTimeout(() => {
+        img.src = src;
+        cap.textContent = caption;
+        img.style.opacity = '1';
+      }, 150);
+
+      // Update active tab buttons
+      document.querySelectorAll('.classroom-tab-btn').forEach(b => {
+        b.classList.remove('bg-secondary', 'text-white', 'border-secondary');
+        b.classList.add('bg-white', 'text-secondary', 'border-primary/20');
+      });
+      btn.classList.remove('bg-white', 'text-secondary', 'border-primary/20');
+      btn.classList.add('bg-secondary', 'text-white', 'border-secondary');
+    }
+
     // Lightbox triggers
     function openLightbox(src, caption) {
       document.getElementById('lightbox-img').src = src;
@@ -666,6 +922,16 @@
       modal.classList.add('hidden');
       document.body.style.overflow = '';
     }
+
+    // Close lightbox on backdrop click or ESC key
+    document.getElementById('lightbox-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox-modal') {
+        closeLightbox();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
 
     // Secondary slider for Parent Testimonials
     let currentTestiSlide = 0;
