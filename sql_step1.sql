@@ -10,13 +10,15 @@ CREATE TABLE IF NOT EXISTS public.profiles (
 CREATE TABLE IF NOT EXISTS public.notices (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title TEXT NOT NULL,
+    type TEXT DEFAULT 'Announcement',
     content TEXT NOT NULL,
     category TEXT DEFAULT 'General',
     pinned BOOLEAN DEFAULT FALSE,
     pdf_url TEXT DEFAULT '#',
     expires_at DATE,
     status TEXT DEFAULT 'published',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS public.events (
@@ -27,5 +29,6 @@ CREATE TABLE IF NOT EXISTS public.events (
     category TEXT DEFAULT 'Activity',
     image_url TEXT,
     status TEXT DEFAULT 'published',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );

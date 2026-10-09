@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileMenu) {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+        }
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-expanded', 'true');
         }
         document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
@@ -61,17 +65,41 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileMenu) {
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+        }
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-expanded', 'false');
         }
         document.body.style.overflow = '';
     }
 
-    if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+    if (mobileToggle) {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.addEventListener('click', openMenu);
+    }
     if (mobileClose) mobileClose.addEventListener('click', closeMenu);
 
-    // Close menu when clicking a link
+    // Close menu when clicking any mobile link
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('translate-x-0')) {
+            closeMenu();
+        }
+    });
+
+    // Close on backdrop tap (click outside the navigation list)
+    if (mobileMenu) {
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+    }
 
     /* --- Hero Carousel --- */
     const slides = document.querySelectorAll('.onest-home-hero-slide');

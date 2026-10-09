@@ -4,16 +4,60 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About Us - O'Nest Gurukul</title>
+  <title>About Us | O'Nest Gurukul School Ratnagiri | Vision &amp; Leadership</title>
   <meta name="description"
-    content="Learn about O'Nest Gurukul's vision, philosophy, and history. Redesigned to reflect our core educational values and leadership.">
-  <meta name="keywords" content="About Onest Gurukul, Mission, Vision, Values, Education Ratnagiri">
+    content="Discover O'Nest Gurukul's educational vision blending timeless Gurukul ethics with modern progressive CBSE academics in Ratnagiri, Maharashtra. Meet our founders and mentors.">
+  <meta name="keywords" content="About O'Nest Gurukul, Ratnagiri school philosophy, Gurukul education values, school founders Ratnagiri, CBSE school leadership Konkan">
   <link rel="canonical" href="https://onestgurukul.in/about.html">
-  <meta property="og:title" content="About Us - O'Nest Gurukul">
-  <meta property="og:description" content="Learn about O'Nest Gurukul's vision, philosophy, and history. Redesigned to reflect our core educational values and leadership.">
-  <meta property="og:image" content="https://onestgurukul.in/assets/img/onest.svg">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="O'Nest Gurukul">
+
+  <!-- GEO & Local Targeting Tags -->
+  <meta name="geo.region" content="IN-MH">
+  <meta name="geo.placename" content="Ratnagiri">
+  <meta name="geo.position" content="16.980466;73.323632">
+  <meta name="ICBM" content="16.980466, 73.323632">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="O'Nest Gurukul">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="About Us | O'Nest Gurukul School Ratnagiri | Vision &amp; Leadership">
+  <meta property="og:description" content="Discover O'Nest Gurukul's educational vision blending timeless Gurukul ethics with modern CBSE academics in Ratnagiri, Maharashtra.">
+  <meta property="og:image" content="https://onestgurukul.in/assets/img/school2.jpg">
   <meta property="og:url" content="https://onestgurukul.in/about.html">
-  <meta property="og:type" content="website">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | O'Nest Gurukul School Ratnagiri">
+  <meta name="twitter:description" content="Timeless Gurukul ethics blended with modern STEM education in Ratnagiri, Maharashtra.">
+  <meta name="twitter:image" content="https://onestgurukul.in/assets/img/school2.jpg">
+
+  <!-- BreadcrumbList & AboutPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://onestgurukul.in/about.html#webpage",
+        "url": "https://onestgurukul.in/about.html",
+        "name": "About O'Nest Gurukul",
+        "description": "Educational vision, history, and leadership of O'Nest Gurukul in Ratnagiri, Maharashtra.",
+        "isPartOf": { "@type": "WebSite", "url": "https://onestgurukul.in/" },
+        "breadcrumb": { "@id": "https://onestgurukul.in/about.html#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://onestgurukul.in/about.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onestgurukul.in/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://onestgurukul.in/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -136,6 +180,33 @@
 
 <body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
+  <!-- Branded Preloader -->
+  <div id="onest-preloader" aria-hidden="true">
+    <div class="onest-preloader-inner">
+      <div class="onest-preloader-logo-wrap">
+        <div class="onest-preloader-ring"></div>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="onest-preloader-logo" width="72" height="72">
+      </div>
+      <div class="onest-preloader-brand">O'NEST GURUKUL</div>
+      <div class="onest-preloader-bar">
+        <div class="onest-preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      function hidePreloader() {
+        var p = document.getElementById('onest-preloader');
+        if (p && !p.classList.contains('onest-preloader-hidden')) {
+          p.classList.add('onest-preloader-hidden');
+          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+        }
+      }
+      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
+      setTimeout(hidePreloader, 1200);
+    })();
+  </script>
+
   <!-- Sticky TopNavBar -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
@@ -190,7 +261,7 @@
   <main>
 
     <!-- HERO SECTION -->
-    <section class="relative h-[80vh] min-h-[550px] overflow-hidden bg-black text-white flex items-center pt-[90px]">
+    <section class="relative min-h-[500px] lg:h-[80vh] lg:min-h-[550px] overflow-hidden bg-black text-white flex items-center pt-[90px] pb-12 lg:pb-0">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/school2.jpg');"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
@@ -251,22 +322,22 @@
 
           <div class="relative reveal">
             <div class="overflow-hidden rounded-[32px] border-4 border-white shadow-xl aspect-[16/11] group">
-              <img src="assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg" alt="O'Nest Gurukul Campus & Students Learning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg" alt="O'Nest Gurukul Campus & Students Learning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRINCIPAL'S MESSAGE -->
-    <section class="py-24 bg-surface-container-low/40 relative">
+    <!-- PRINCIPAL & FACULTY -->
+    <section id="faculty" class="py-24 bg-surface-container-low/40 relative">
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="bg-white rounded-[40px] border border-primary/10 p-8 md:p-16 shadow-xl relative overflow-hidden">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Image Column -->
             <div class="lg:col-span-5 flex justify-center reveal">
-              <div class="w-full max-w-lg mx-auto rounded-[32px] border-4 border-white overflow-hidden shadow-lg aspect-[4/3] md:aspect-[3/2]">
-                <img src="assets/ONEST/faculty_team_new.jpg" alt="Principal & Faculty" class="w-full h-full object-cover">
+              <div class="w-full max-w-lg mx-auto rounded-[32px] border-4 border-white overflow-hidden shadow-lg aspect-[16/10]">
+                <img loading="lazy" decoding="async" src="assets/ONEST/faculty_team_new.jpg" alt="Principal & Faculty" class="w-full h-full object-cover object-center">
               </div>
             </div>
             <!-- Message Column -->
@@ -443,19 +514,19 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6 reveal">
           <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/school2.jpg', 'Neoclassical Campus Infrastructure')">
-            <img src="assets/img/school2.jpg" alt="Campus View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img loading="lazy" decoding="async" src="assets/img/school2.jpg" alt="Campus View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
               <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
             </div>
           </div>
           <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets/img/study_session.jpg', 'Collaborative Group Study Session')">
-            <img src="assets/img/study_session.jpg" alt="Study Session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img loading="lazy" decoding="async" src="assets/img/study_session.jpg" alt="Study Session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
               <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
             </div>
           </div>
           <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openLightbox('assets\img\onest (17)L.jpg', 'Fine Art and Clay Workshops')">
-            <img src="assets\img\onest (17)L.jpg" alt="Art room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img loading="lazy" decoding="async" src="assets\img\onest (17)L.jpg" alt="Art room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
               <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
             </div>
@@ -496,13 +567,19 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter max-w-container-max mx-auto text-left">
       <div class="space-y-6">
         <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
+          <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
           <span class="font-display font-bold text-lg text-white">O'Nest Gurukul</span>
         </a>
         <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
         <div class="space-y-2 text-sm text-white/90">
           <p><strong>Phone:</strong> +91 8767672478</p>
           <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
+        </div>
+        <div class="flex items-center gap-3 pt-2">
+          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
         </div>
       </div>
       <div>
@@ -526,7 +603,7 @@
       <div>
         <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
         <ul class="space-y-4 text-sm font-semibold">
-          <li><a href="admin.html" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
+          <li><a href="admin.html" class="text-[#facc15] hover:text-white transition-colors font-bold flex items-center gap-1.5"><i class="bi bi-shield-lock-fill"></i> Admin CMS Portal</a></li>
           <li><a href="index.html#notices-board" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
           <li><a href="campus-facilities.html#download-hub" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
         </ul>
@@ -548,7 +625,7 @@
   <div id="lightbox-modal" class="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 hidden">
     <button class="absolute top-8 right-8 text-white text-4xl hover:scale-110 transition-transform" onclick="closeLightbox()">&times;</button>
     <div class="max-w-4xl w-full text-center space-y-4">
-      <img id="lightbox-img" src="" alt="Lightbox image" class="max-h-[75vh] mx-auto rounded-2xl border-4 border-white shadow-2xl object-contain">
+      <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Lightbox image" class="max-h-[75vh] mx-auto rounded-2xl border-4 border-white shadow-2xl object-contain">
       <p id="lightbox-caption" class="text-white/90 font-bold text-lg font-display"></p>
     </div>
   </div>

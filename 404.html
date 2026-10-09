@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Page Not Found - O'Nest Gurukul</title>
+  <meta name="robots" content="noindex, follow">
   
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,6 +49,33 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-primary-light selection:text-secondary">
 
+  <!-- Branded Preloader -->
+  <div id="onest-preloader" aria-hidden="true">
+    <div class="onest-preloader-inner">
+      <div class="onest-preloader-logo-wrap">
+        <div class="onest-preloader-ring"></div>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="onest-preloader-logo" width="72" height="72">
+      </div>
+      <div class="onest-preloader-brand">O'NEST GURUKUL</div>
+      <div class="onest-preloader-bar">
+        <div class="onest-preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      function hidePreloader() {
+        var p = document.getElementById('onest-preloader');
+        if (p && !p.classList.contains('onest-preloader-hidden')) {
+          p.classList.add('onest-preloader-hidden');
+          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+        }
+      }
+      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
+      setTimeout(hidePreloader, 1200);
+    })();
+  </script>
+
   <!-- Sticky TopNavBar (Static style) -->
   <header class="bg-white border-b border-primary/10 h-[90px] w-full flex items-center shrink-0">
     <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto">
@@ -63,11 +91,32 @@
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="campus-facilities.html">Campus &amp; Facilities</a>
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base" href="contact.html">Contact</a>
       </nav>
-      <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
-        Apply Now
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+          Apply Now
+        </a>
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+      <i class="bi bi-x text-4xl"></i>
+    </div>
+    <ul class="flex flex-col gap-6 text-center text-xl font-bold onest-home-mobile-list">
+      <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
+      <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
+      <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
+      <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+    </ul>
+  </div>
 
   <!-- Error Panel -->
   <main class="flex-grow flex items-center justify-center py-16 px-gutter">
@@ -107,5 +156,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/onest-home.js"></script>
+  <script src="onest-global.js"></script>
 </body>
 </html>

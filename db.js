@@ -12,6 +12,7 @@
             {
                 id: "n-1",
                 title: "Admissions Open for Academic Year 2026-27",
+                type: "Announcement",
                 content: "Registrations for grades Nursery to Class 10 are now open. Parents can submit the online application form or visit the school office.",
                 category: "Admission",
                 pinned: true,
@@ -23,6 +24,7 @@
             {
                 id: "n-2",
                 title: "Parent-Teacher Meeting (PTM) - Term 1",
+                type: "Notice",
                 content: "The first PTM of the academic year is scheduled for next Saturday, August 1st. Report cards will be shared and student progress discussed.",
                 category: "Academic",
                 pinned: true,
@@ -34,6 +36,7 @@
             {
                 id: "n-3",
                 title: "Annual Sports Meet 2026 Schedule",
+                type: "Notice",
                 content: "Our Annual Sports Meet selections will begin on August 5th. All students interested in track, football, and badminton events should register with the sports coordinator.",
                 category: "Sports",
                 pinned: false,
@@ -45,6 +48,7 @@
             {
                 id: "n-4",
                 title: "CBSE Mandatory Disclosure Updated",
+                type: "Notice",
                 content: "The official CBSE mandatory disclosure docs for the year 2026 have been updated in the document hub as per guidelines.",
                 category: "General",
                 pinned: false,
@@ -77,15 +81,18 @@
         ],
         achievements: [
             { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg", status: "published" },
-            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg", status: "published" }
+            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg", status: "published" },
+            { id: "a-3", title: "National Olympiad Merit Awards", awardee: "Science & Maths Olympians", category: "Academics", year: "2025-26", description: "High percentiles, medals, and certificates achieved in Science Olympiad Foundation (SOF) national assessments.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg", status: "published" },
+            { id: "a-4", title: "State Karate & Martial Arts Honors", awardee: "Gurukul Martial Arts Team", category: "Sports", year: "2025-26", description: "Gold & silver medals in state-level Karate kata and kumite demonstrations under black-belt mentors.", image: "assets/img/recent/VEER 1.JPG.webp", status: "published" }
         ],
         testimonials: [
             { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" }
         ],
         settings: {
-            emergencyBannerActive: false,
-            emergencyBannerText: "ADMISSION NOTICE: Registrations for Academic Year 2026-27 are now open.",
-            emergencyBannerPriority: "warning",
+            emergencyBannerActive: true,
+            emergencyBannerText: "Admissions Open for Academic Year 2026-27 | Playgroup to Standard 6 | Call +91 7888056699 | O'NEST Gurukul Ratnagiri",
+            emergencyBannerPriority: "gold",
+            marqueeDirection: "ltr",
             analyticsEnabled: true,
             language: "en"
         }
@@ -116,6 +123,7 @@
                         return data.map(item => ({
                             id: item.id,
                             title: item.title,
+                            type: item.type || (item.category === 'Admission' ? 'Announcement' : 'Notice'),
                             content: item.content,
                             category: item.category,
                             pinned: item.pinned,
@@ -135,6 +143,7 @@
 
         addNotice: async function (notice) {
             const client = getSupaClient();
+            const itemType = notice.type || 'Announcement';
             if (client) {
                 const payload = {
                     title: notice.title,
@@ -145,18 +154,31 @@
                     status: notice.status || 'published',
                     expires_at: notice.expiresAt || null
                 };
-                const { data, error } = await client.from('notices').insert([payload]).select();
-                if (error) throw new Error(error.message);
-                return data[0];
+                let res;
+                try {
+                    res = await client.from('notices').insert([Object.assign({ type: itemType }, payload)]).select();
+                } catch (e) {
+                    res = { error: e };
+                }
+                if (res.error) {
+                    const fallbackRes = await client.from('notices').insert([payload]).select();
+                    if (fallbackRes.error) throw new Error(fallbackRes.error.message);
+                    res = fallbackRes;
+                }
+                const saved = res.data && res.data[0] ? res.data[0] : notice;
+                saved.type = itemType;
+                return saved;
             }
             // Offline local fallback
             notice.id = 'n_' + Date.now();
+            notice.type = itemType;
             DEFAULT_CONTENT.notices.unshift(notice);
             return notice;
         },
 
         updateNotice: async function (id, notice) {
             const client = getSupaClient();
+            const itemType = notice.type || 'Announcement';
             if (client) {
                 const payload = {
                     title: notice.title,
@@ -165,16 +187,26 @@
                     pinned: !!notice.pinned,
                     pdf_url: notice.pdfUrl,
                     status: notice.status,
-                    expires_at: notice.expiresAt || null,
-                    updated_at: new Date().toISOString()
+                    expires_at: notice.expiresAt || null
                 };
-                const { data, error } = await client.from('notices').update(payload).eq('id', id).select();
-                if (error) throw new Error(error.message);
-                return data[0];
+                let res;
+                try {
+                    res = await client.from('notices').update(Object.assign({ type: itemType }, payload)).eq('id', id).select();
+                } catch (e) {
+                    res = { error: e };
+                }
+                if (res.error) {
+                    const fallbackRes = await client.from('notices').update(payload).eq('id', id).select();
+                    if (fallbackRes.error) throw new Error(fallbackRes.error.message);
+                    res = fallbackRes;
+                }
+                const updated = res.data && res.data[0] ? res.data[0] : notice;
+                updated.type = itemType;
+                return updated;
             }
             const idx = DEFAULT_CONTENT.notices.findIndex(n => n.id === id);
             if (idx !== -1) {
-                DEFAULT_CONTENT.notices[idx] = Object.assign(DEFAULT_CONTENT.notices[idx], notice);
+                DEFAULT_CONTENT.notices[idx] = Object.assign(DEFAULT_CONTENT.notices[idx], notice, { type: itemType });
             }
             return notice;
         },
@@ -412,11 +444,11 @@
             const merged = Object.assign({}, current, newSettings);
 
             if (client) {
-                const { error } = await client.from('site_content').upsert({
+                const payload = {
                     key: 'settings',
-                    content: merged,
-                    updated_at: new Date().toISOString()
-                });
+                    content: merged
+                };
+                const { error } = await client.from('site_content').upsert(payload);
                 if (error) throw new Error(error.message);
                 return merged;
             }

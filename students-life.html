@@ -4,10 +4,60 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>A Day at O'Nest Gurukul - A Cinematic Storytelling Journey</title>
+  <title>Curriculum &amp; Student Life | CBSE Academic Excellence | O'Nest Gurukul</title>
   <meta name="description"
-    content="Experience a day in the life of an O'Nest Gurukul student. A cinematic interactive journey of learning, creativity, sports, and happiness.">
-  <meta name="keywords" content="Student Life, Curriculum, Onest Gurukul, Ratnagiri, CBSE School">
+    content="Comprehensive CBSE-aligned curriculum at O'Nest Gurukul, Ratnagiri (Playgroup to Class 6+). Experiential STEM, bilingual fluency, conceptual mathematics, sports arena, karate, and holistic values.">
+  <meta name="keywords" content="Curriculum O'Nest Gurukul, CBSE curriculum Ratnagiri, experiential learning Konkan, STEM school Ratnagiri, sports karate school Chiplun, values education Maharashtra, holistic schooling Ratnagiri">
+  <link rel="canonical" href="https://onestgurukul.in/students-life.html">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="O'Nest Gurukul">
+
+  <!-- GEO & Local Targeting Tags -->
+  <meta name="geo.region" content="IN-MH">
+  <meta name="geo.placename" content="Ratnagiri">
+  <meta name="geo.position" content="16.980466;73.323632">
+  <meta name="ICBM" content="16.980466, 73.323632">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="O'Nest Gurukul">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Curriculum &amp; Student Life | CBSE Academic Excellence | O'Nest Gurukul">
+  <meta property="og:description" content="Experiential STEM, sports ground, karate, bilingual fluency, and character building in Ratnagiri, Maharashtra.">
+  <meta property="og:image" content="https://onestgurukul.in/assets/img/school2.jpg">
+  <meta property="og:url" content="https://onestgurukul.in/students-life.html">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Curriculum &amp; Student Life | O'Nest Gurukul Ratnagiri">
+  <meta name="twitter:description" content="Nurturing future leaders through experiential academics, sports, and holistic character building.">
+  <meta name="twitter:image" content="https://onestgurukul.in/assets/img/school2.jpg">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://onestgurukul.in/students-life.html#webpage",
+        "url": "https://onestgurukul.in/students-life.html",
+        "name": "Curriculum & Student Life - O'Nest Gurukul",
+        "description": "CBSE curriculum, academic methodology, sports, and co-curricular life at O'Nest Gurukul, Ratnagiri.",
+        "isPartOf": { "@type": "WebSite", "url": "https://onestgurukul.in/" },
+        "breadcrumb": { "@id": "https://onestgurukul.in/students-life.html#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://onestgurukul.in/students-life.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onestgurukul.in/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Curriculum", "item": "https://onestgurukul.in/students-life.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -106,7 +156,7 @@
     .floating-blob {
       animation: float 8s ease-in-out infinite;
     }
-    /* Animated footprints */
+    /* Animated footprints vertical tracker */
     .footprint-track {
       position: absolute;
       width: 4px;
@@ -132,6 +182,21 @@
       left: -6px;
       transition: all 0.4s ease;
     }
+    /* Lightbox Modal */
+    #curriculum-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    #curriculum-lightbox.active {
+      display: flex;
+    }
     /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
@@ -148,7 +213,34 @@
 
 <body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
-  <!-- Sticky TopNavBar -->
+  <!-- Branded Preloader -->
+  <div id="onest-preloader" aria-hidden="true">
+    <div class="onest-preloader-inner">
+      <div class="onest-preloader-logo-wrap">
+        <div class="onest-preloader-ring"></div>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="onest-preloader-logo" width="72" height="72">
+      </div>
+      <div class="onest-preloader-brand">O'NEST GURUKUL</div>
+      <div class="onest-preloader-bar">
+        <div class="onest-preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      function hidePreloader() {
+        var p = document.getElementById('onest-preloader');
+        if (p && !p.classList.contains('onest-preloader-hidden')) {
+          p.classList.add('onest-preloader-hidden');
+          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+        }
+      }
+      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
+      setTimeout(hidePreloader, 1200);
+    })();
+  </script>
+
+  <!-- Sticky TopNavBar (Exact 1:1 copy from index.html) -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
       <a href="index.html" class="flex items-center gap-3">
@@ -163,11 +255,11 @@
         <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="contact.html">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <!-- Theme Toggle (Hidden on mobile for professional uncluttered top bar) -->
+        <!-- Theme Toggle -->
         <button id="onest-home-theme-toggle" class="p-2.5 rounded-full text-secondary hover:bg-primary/10 transition-colors hidden md:inline-flex" aria-label="Toggle Dark Mode">
           <i class="bi bi-moon-fill text-xl"></i>
         </button>
-        <!-- Apply Now (Hidden on mobile to prevent squishing text into two lines) -->
+        <!-- Apply Now -->
         <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
           Apply Now
         </a>
@@ -178,12 +270,12 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
+  <!-- Mobile Drawer Menu (Exact 1:1 copy from index.html) -->
   <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
     <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
       <i class="bi bi-x text-4xl"></i>
     </div>
-    <ul class="flex flex-col gap-6 text-center text-xl font-bold onest-home-mobile-list">
+    <ul class="onest-home-mobile-list flex flex-col gap-6 text-center text-xl font-bold">
       <li><a href="index.html" class="text-white/80 hover:text-[#facc15] transition-colors">Home</a></li>
       <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
       <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
@@ -199,31 +291,223 @@
       </li>
     </ul>
   </div>
-  <main>
 
+  <main>
     <!-- HERO SECTION (Cinematic Story Opening) -->
-    <section class="relative h-[85vh] min-h-[550px] overflow-hidden bg-black text-white flex items-center pt-[90px]">
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/compressed/atudy (8).jpg');"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+    <section class="relative min-h-[500px] lg:h-[85vh] lg:min-h-[560px] overflow-hidden bg-black text-white flex items-center pt-[90px] pb-12 lg:pb-0">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/ONEST/IMG-20260810-WA0355.jpg.jpeg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent"></div>
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
-        <div class="max-w-3xl space-y-6">
-          <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block">
+        <div class="max-w-3xl space-y-5 lg:space-y-6">
+          <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-[10px] sm:text-xs bg-white/10 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/20 inline-block">
             🎬 A Day in the Life of an O'Nest Student
           </span>
-          <h1 class="font-display text-4xl md:text-7xl text-white font-bold leading-tight">
+          <h1 class="font-display text-3xl sm:text-5xl md:text-7xl text-white font-bold leading-tight">
             Every Big Dream<br/><span class="text-primary-light">Begins With a Smile.</span>
           </h1>
           <p class="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             Follow the journey of our students through an ordinary day filled with extraordinary discoveries, music, sports, nature, and deep friendships.
           </p>
-          <a href="#story-start" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm shadow-md">
-            Explore Today's Journey
-          </a>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#how-learning-happens" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm shadow-md">
+              Explore Our Pedagogy <i class="bi bi-arrow-down-short text-lg"></i>
+            </a>
+            <a href="admissions.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm backdrop-blur-sm">
+              Admissions 2026-27
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CORE STORY SCROLL PIPELINE -->
+    <!-- ======================================================== -->
+    <!-- NEW SECTION 1: HOW LEARNING HAPPENS                      -->
+    <!-- ======================================================== -->
+    <section id="how-learning-happens" class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6 text-left reveal">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+              Teaching Methodology
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
+              Learning That Goes Beyond Textbooks
+            </h2>
+            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
+              At O'NEST Gurukul, true education begins when curiosity is unlocked. Rather than passive rote memorization, children are encouraged to ask <em>why</em>, debate in circles, test hypotheses, and build real-life understanding.
+            </p>
+            <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed font-normal">
+              Our teachers act as attentive mentors, ensuring every child participates actively in discussions, explores creative ideas without fear of mistakes, and applies scientific logic to the world around them.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/70 text-left hover-lift">
+                <i class="bi bi-lightbulb-fill text-2xl text-primary mb-2 block"></i>
+                <h4 class="font-bold text-secondary text-base">Inquiry &amp; Logic</h4>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Understanding mathematical patterns and scientific principles through concrete observation.</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/70 text-left hover-lift">
+                <i class="bi bi-chat-heart-fill text-2xl text-accent mb-2 block"></i>
+                <h4 class="font-bold text-secondary text-base">Participatory Circles</h4>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Every student speaks, questions, and builds confidence in small supportive groups.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 reveal">
+            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/img/recent/1P3A9255.JPG.webp', 'Students collaboratively solving logic and mathematics puzzles')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9255.JPG.webp" alt="Students solving logic puzzles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- NEW SECTION 2: LEARNING THROUGH PRACTICAL EXPERIENCES     -->
+    <!-- ======================================================== -->
+    <section id="practical-learning" class="py-24 bg-surface-container-low/40 relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max text-center">
+        <div class="max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+            Applied Pedagogy
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
+            From Ideas to Real Experiences
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg mt-4 font-normal">
+            Concepts become unforgettable when children touch, build, and exhibit them. Our students create scaled architectural fort models, ancient civilization dioramas, and environmental herbarium collections.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <!-- Diorama Project -->
+          <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A9118.JPG.webp', 'Indus Valley Harappan Civilization Scale Diorama')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9118.JPG.webp" alt="Harappan civilization diorama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+                History &amp; Civilizations
+              </div>
+            </div>
+            <div class="p-6 pt-0 space-y-2">
+              <h3 class="font-display text-2xl font-bold text-secondary">Historical Dioramas &amp; Social Studies</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Students construct tactile clay layouts of ancient Harappan drainage systems, granaries, and town planning, linking historical facts with hands-on architectural creation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fort Architecture Project -->
+          <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A9143.JPG.webp', 'Maharashtra Fort (Killa) Topographical Models')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9143.JPG.webp" alt="Fort architecture model" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+                Heritage &amp; Geography
+              </div>
+            </div>
+            <div class="p-6 pt-0 space-y-2">
+              <h3 class="font-display text-2xl font-bold text-secondary">Sahyadri Fort Models &amp; Topography</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                By sculpting the rugged bastions and rainwater ponds of Chhatrapati Shivaji Maharaj's forts, children study strategic hill geography, heritage defense, and civil engineering.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- NEW SECTION 3: DEVELOPING LIFE SKILLS AND VALUES         -->
+    <!-- ======================================================== -->
+    <section id="life-skills-values" class="py-24 bg-background relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 reveal">
+            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260422-WA0552.jpg.jpeg', 'Students creating environmental Earth Day awareness artwork')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260422-WA0552.jpg.jpeg" alt="Students environmental awareness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-6 text-left reveal">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+              Values &amp; Character
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
+              Growing in Knowledge and Character
+            </h2>
+            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
+              Education without character is incomplete. Every classroom interaction and outdoor activity at O'NEST Gurukul reinforces practical life skills: honest communication, team cooperation, responsibility for the environment, and genuine empathy.
+            </p>
+            
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+                <i class="bi bi-people-fill text-xl text-primary"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-secondary">Teamwork &amp; Mutual Respect</h4>
+                  <p class="text-xs text-on-surface-variant">Working in pairs to build models and celebrating each other's milestone achievements.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+                <i class="bi bi-tree-fill text-xl text-accent"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-secondary">Environmental Responsibility (Parisar Prem)</h4>
+                  <p class="text-xs text-on-surface-variant">Active care for campus greenery, zero food wastage, and tree adoption.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+                <i class="bi bi-shield-check text-xl text-secondary"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-secondary">Courage &amp; Resilience (Dhairya)</h4>
+                  <p class="text-xs text-on-surface-variant">Embracing challenges in public speaking, sports meets, and experimental problem-solving.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- NEW SECTION 4: DIGITAL LEARNING AND FUTURE SKILLS        -->
+    <!-- ======================================================== -->
+    <section id="digital-future-skills" class="py-24 bg-surface-container-low/50 relative overflow-hidden">
+      <div class="container mx-auto px-gutter max-w-container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6 text-left reveal">
+            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+              Modern Literacy
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
+              Exploring New Ideas Through Technology
+            </h2>
+            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
+              We leverage digital tools to enhance conceptual understanding without excessive screen dependence. Audio-visual smart rooms bring abstract solar systems and cell biology to life, while logic puzzles build computational thinking.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-5 rounded-2xl bg-surface-card border border-outline-variant text-left hover-lift">
+                <i class="bi bi-laptop text-2xl text-secondary mb-2 block"></i>
+                <h4 class="font-bold text-secondary text-base">Smart Audio-Visual Learning</h4>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Interactive geometry projections, geographical documentaries, and multimedia storytelling.</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-surface-card border border-outline-variant text-left hover-lift">
+                <i class="bi bi-cpu text-2xl text-accent mb-2 block"></i>
+                <h4 class="font-bold text-secondary text-base">Introductory Algorithmic Logic</h4>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Step-by-step logic puzzles, flowcharts, and tangible hands-on problem breakdown.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 reveal">
+            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0445.jpg.jpeg', 'Hands-on STEM and technology learning')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0445.jpg.jpeg" alt="Hands on technology learning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- PRESERVED: 11 CHAPTER STORYTELLING TIMELINE              -->
+    <!-- ======================================================== -->
     <section id="story-start" class="relative py-24 bg-gradient-to-b from-[#fdfbf7] via-white to-[#fdfbf7]">
       <!-- Footprints tracking line -->
       <div class="footprint-track">
@@ -255,8 +539,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets\img\1.png"" alt="Morning prayer and assembly yoga" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg', 'Welcoming green campus entrance at morning arrival')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg" alt="Morning arrival at school campus" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -274,8 +558,8 @@
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg" alt="Morning yoga demonstration" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0406.jpg.jpeg', 'Morning yoga session - Tadasana and posture alignment')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg" alt="Morning yoga demonstration" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -293,8 +577,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0355.jpg.jpeg" alt="Gurukul tree classroom session" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0336.jpg.jpeg', 'Gurukul amphitheater open-air classroom under the trees')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0336.jpg.jpeg" alt="Gurukul tree classroom session" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -312,8 +596,8 @@
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0453.jpg.jpeg" alt="Discovery science & space model lab" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0453.jpg.jpeg', 'Hands-on 3D planetary space and science model project')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0453.jpg.jpeg" alt="Discovery science & space model lab" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -331,8 +615,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0441.jpg.jpeg" alt="Classical Bharatanatyam arts" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0441.jpg.jpeg', 'Classical Bharatanatyam performing arts and stage expression')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0441.jpg.jpeg" alt="Classical Bharatanatyam arts" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -340,7 +624,7 @@
         <!-- CHAPTER 6: PARENT-CHILD WORKSHOPS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 06 : 🪔 Collaborative Workshops</span>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 06 : 🏮 Creative Pottery &amp; Diya Craft</span>
             <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Parents &amp; Children Creating Together</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
               A heartwarming collaborative workshop where parents and students paint festive diyas, craft models, and celebrate family bonds in a supportive classroom community.
@@ -350,8 +634,8 @@
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0454.jpg.jpeg" alt="Parent child diya painting workshop" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0454.jpg.jpeg', 'Parent-child festive diya painting and craft workshop')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0454.jpg.jpeg" alt="Parent child diya painting workshop" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -369,8 +653,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.38.52 PM.jpeg" alt="Annual Sports Day award and house flags" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/WhatsApp Image 2026-08-04 at 12.38.52 PM.jpeg', 'Annual Sports Day celebrations and martial arts demonstrations')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.38.52 PM.jpeg" alt="Annual Sports Day award and house flags" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -388,8 +672,8 @@
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0460.png" alt="Eco Club tree plantation" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0460.png', 'Eco Club native tree plantation and adoption drive')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0460.png" alt="Eco Club tree plantation" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -407,8 +691,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0374_rotated2.jpg" alt="Rakhis for Soldiers initiative" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0374_rotated2.jpg', 'Handmade Rakhis for Indian soldiers national gratitude initiative')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0374_rotated2.jpg" alt="Rakhis for Soldiers initiative" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -426,8 +710,8 @@
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260808-WA0384.jpg.jpeg" alt="Inter-school championship trophy felicitation" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260808-WA0384.jpg.jpeg', 'Inter-School championship trophy and student felicitation')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260808-WA0384.jpg.jpeg" alt="Inter-school championship trophy felicitation" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -445,8 +729,8 @@
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500">
-              <img src="assets/ONEST/IMG-20260810-WA0431.jpg.jpeg" alt="Patriotic celebration and evening assembly" class="w-full h-full object-cover">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0431.jpg.jpeg', 'Patriotic celebration and evening school dismissal')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0431.jpg.jpeg" alt="Patriotic celebration and evening assembly" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -456,18 +740,82 @@
 
     <!-- ACHIEVEMENT SHOWCASE SECTION -->
     <section id="achievements" class="py-24 bg-background relative overflow-hidden">
-      <div class="container mx-auto px-gutter max-w-container-max text-center">
-        <div class="max-w-2xl mx-auto mb-16 reveal">
+      <!-- Background Texture with Opacity -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none" style="background-image: url('assets/ONEST/IMG-20251029-WA0472.jpg.jpeg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none"></div>
+
+      <div class="container mx-auto px-gutter max-w-container-max text-center relative z-10">
+        <div class="max-w-3xl mx-auto mb-14 reveal">
           <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
-            Trophies &amp; Awards
+            Trophies &amp; Accolades
           </span>
           <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Achievement Showcase</h2>
-          <p class="text-on-surface/85 mt-4 leading-relaxed">Year-on-year distinction in national academic competitions, Olympiads, and athletic meets.</p>
+          <p class="text-on-surface/85 mt-4 leading-relaxed text-sm md:text-base">
+            Year-on-year distinction in state environmental leadership, national classical arts, Olympiad assessments, and athletic competitions.
+          </p>
         </div>
 
-        <!-- Achievements timeline grid -->
+        <!-- 4 Complete Achievement Cards (Eliminating Empty Columns) -->
         <div id="achievements-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
-          <!-- Dynamic cards injected here -->
+          <!-- Award 1 -->
+          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20251029-WA0472.jpg.jpeg', 'State Environmental Excellence Award - O\'Nest Gurukul Eco Club')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20251029-WA0472.jpg.jpeg" alt="State Environmental Excellence Award" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Academics • 2025-26</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-secondary text-base mb-1">State Environmental Excellence Award</h4>
+                <p class="text-[11px] text-primary font-bold mb-2">Awardee: O'Nest Gurukul Eco Club</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Conferred by TV9 Marathi &amp; Maharashtra Pollution Control Board for campus green initiatives.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 2 -->
+          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0439.jpg.jpeg', '1st Rank All India Classical Dance - Vidmayee Jayant Mane')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0439.jpg.jpeg" alt="1st Rank All India Classical Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Arts • 2026</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-secondary text-base mb-1">1st Rank All India Classical Dance</h4>
+                <p class="text-[11px] text-primary font-bold mb-2">Awardee: Vidmayee Jayant Mane</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 3 -->
+          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg', 'National Olympiad Merit Awards - Science & Maths Olympians')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg" alt="National Olympiad Merit Awards" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Academics • 2025-26</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-secondary text-base mb-1">National Olympiad Merit Awards</h4>
+                <p class="text-[11px] text-primary font-bold mb-2">Awardee: Science &amp; Maths Olympians</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">High percentiles, medals, and certificates achieved in Science Olympiad Foundation (SOF) national assessments.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 4 -->
+          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/VEER 1.JPG.webp', 'State Karate & Martial Arts Honors - Gurukul Martial Arts Team')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/VEER 1.JPG.webp" alt="State Karate & Martial Arts Honors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Sports • 2025-26</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-secondary text-base mb-1">State Karate &amp; Martial Arts Honors</h4>
+                <p class="text-[11px] text-primary font-bold mb-2">Awardee: Gurukul Martial Arts Team</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Gold &amp; silver medals in state-level Karate kata and kumite demonstrations under black-belt mentors.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -514,7 +862,7 @@
 
             <!-- Dynamic Views -->
             <div id="calendar-dynamic-view" class="min-h-[300px]">
-              <!-- Loaded here -->
+              <!-- Loaded dynamically via db.js -->
             </div>
           </div>
         </div>
@@ -534,7 +882,7 @@
 
         <div class="space-y-8 reveal">
           <div class="w-full max-w-5xl mx-auto rounded-[32px] border-4 border-white overflow-hidden shadow-2xl relative">
-            <img src="assets/ONEST/faculty_team_new.jpg" alt="Our Faculty Team" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000">
+            <img loading="lazy" decoding="async" src="assets/ONEST/faculty_team_new.jpg" alt="Our Faculty Team" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-8 right-8 text-center text-white pointer-events-none">
               <h3 class="text-2xl font-display font-bold">O'Nest Gurukul Mentors</h3>
@@ -544,16 +892,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Faculty Detailed profile Modal -->
-    <div id="fac-profile-modal" style="position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px;">
-      <div style="background: #fff; width: 100%; max-w: 450px; padding: 32px; border-radius: 24px; border: 1px solid rgba(115,92,0,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; text-align: center;">
-        <button onclick="closeFacModal()" style="position: absolute; top: 16px; right: 16px; border: 0; background: transparent; font-size: 24px; color: #9ca3af; cursor: pointer;">&times;</button>
-        <div id="fac-modal-content">
-          <!-- Dynamic details -->
-        </div>
-      </div>
-    </div>
 
     <!-- FINAL CTA (Emotional Closing) -->
     <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
@@ -569,7 +907,7 @@
           Give your child an education filled with curiosity, confidence, friendships, and happy learning memories.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+          <a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
             Apply for Admission <i class="bi bi-arrow-right"></i>
           </a>
           <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
@@ -580,71 +918,125 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-secondary text-white/90 border-t border-primary/15 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter max-w-container-max mx-auto text-left">
-      <div class="space-y-6">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/img/onest.svg" alt="Logo" class="h-12 w-auto filter-none">
-          <span class="font-display font-bold text-lg text-white">O'Nest Gurukul</span>
-        </a>
-        <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
-        <div class="space-y-2 text-sm text-white/90">
-          <p><strong>Phone:</strong> +91 8767672478</p>
-          <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
+  <!-- Global Footer -->
+  <footer class="bg-secondary text-white py-16 border-t border-primary/20">
+    <div class="container mx-auto px-gutter max-w-container-max">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-10 w-auto">
+            <div>
+              <h4 class="font-display font-bold text-lg text-white">O'NEST GURUKUL</h4>
+              <p class="text-xs text-primary-light font-semibold">School of Excellence</p>
+            </div>
+          </div>
+          <p class="text-white/70 text-xs leading-relaxed">
+            Cultivating inquisitive minds, grounded values, and holistic human development in Karwanchiwadi, Ratnagiri.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs text-white/70">
+            <li><a href="index.html" class="hover:text-primary-light transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-primary-light transition-colors">About O'Nest Gurukul</a></li>
+            <li><a href="preprimary.html" class="hover:text-primary-light transition-colors">Pre-Primary Section</a></li>
+            <li><a href="students-life.html" class="text-primary-light font-semibold">Curriculum &amp; Academics</a></li>
+            <li><a href="campus-facilities.html" class="hover:text-primary-light transition-colors">Campus Facilities</a></li>
+            <li><a href="admissions.html" class="hover:text-primary-light transition-colors">Admission Process</a></li>
+            <li><a href="contact.html" class="hover:text-primary-light transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Academic Pillars</h4>
+          <ul class="space-y-2 text-xs text-white/70">
+            <li>Playgroup &amp; Nursery</li>
+            <li>Kindergarten (LKG &amp; UKG)</li>
+            <li>Primary Grades 1 to 4</li>
+            <li>Upper Primary Grades 5 &amp; 6</li>
+            <li>STEM &amp; Prototyping Labs</li>
+            <li>Paras Bagh Kitchen Gardening</li>
+            <li>Karate &amp; Surya Namaskar</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Contact &amp; Location</h4>
+          <p class="text-xs text-white/70 leading-relaxed">
+            <i class="bi bi-geo-alt-fill text-primary-light mr-1.5"></i> Karwanchiwadi, Ratnagiri, Maharashtra 415612
+          </p>
+          <p class="text-xs text-white/70 mt-2">
+            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> +91 94220 78900
+          </p>
+          <p class="text-xs text-white/70 mt-2">
+            <i class="bi bi-envelope-fill text-primary-light mr-1.5"></i> info@onestgurukul.org
+          </p>
+          <div class="mt-4 p-3 bg-white/5 rounded-xl border border-white/10 text-[11px] text-white/60">
+            Visiting Hours: Mon - Sat: 9:00 AM - 4:00 PM
+          </div>
         </div>
       </div>
-      <div>
-        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Quick Links</h4>
-        <ul class="space-y-4 text-sm font-semibold">
-          <li><a href="index.html" class="text-white/70 hover:text-white transition-colors">Home</a></li>
-          <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
-          <li><a href="admissions.html" class="text-white/70 hover:text-white transition-colors">Admissions</a></li>
-          <li><a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
-        </ul>
+
+      <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50">
+        <p>&copy; 2026 O'Nest Gurukul, Ratnagiri. All Rights Reserved.</p>
+        <p class="mt-2 sm:mt-0">Designed for Holistic Educational Growth.</p>
       </div>
-      <div>
-        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Academics</h4>
-        <ul class="space-y-4 text-sm font-semibold">
-          <li><a href="preprimary.html" class="text-white/70 hover:text-white transition-colors">Pre-Primary</a></li>
-          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Primary Stage</a></li>
-          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Middle School</a></li>
-          <li><a href="students-life.html" class="text-white/70 hover:text-white transition-colors">Senior School</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
-        <ul class="space-y-4 text-sm font-semibold">
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">Parent Portal</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t border-white/10 mt-16 pt-6 text-center">
-      <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
     </div>
   </footer>
 
+  <!-- Lightbox Modal Container -->
+  <div id="curriculum-lightbox" onclick="closeCurriculumLightbox()">
+    <div class="relative max-w-4xl w-full mx-auto" onclick="event.stopPropagation()">
+      <button class="absolute -top-12 right-0 text-white text-3xl hover:text-[#facc15]" onclick="closeCurriculumLightbox()" aria-label="Close Lightbox">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Enlarged view" class="w-full max-h-[80vh] object-contain rounded-2xl border-2 border-white/30 shadow-2xl">
+      <p id="lightbox-caption" class="text-center text-white text-sm font-semibold mt-3"></p>
+    </div>
+  </div>
+
+
   <!-- Scripts -->
   <script src="assets/js/onest-home.js"></script>
+  <script src="db.js"></script>
+  <script src="onest-global.js"></script>
   <script>
-    // Scroll reveal observe script
+    // Lightbox helper
+    function openCurriculumLightbox(src, caption) {
+      const modal = document.getElementById('curriculum-lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      if (modal && img) {
+        img.src = src;
+        if (cap) cap.textContent = caption || '';
+        modal.classList.add('active');
+      }
+    }
+    function closeCurriculumLightbox() {
+      const modal = document.getElementById('curriculum-lightbox');
+      if (modal) modal.classList.remove('active');
+    }
+
+    // Scroll reveal observer & footprint dots
     document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
+      reveals.forEach(el => observer.observe(el));
 
-      document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Highlight footprint dots based on scrolling progress
+      // Footprints progress highlight
       const dots = [
         { id: 'dot-c1', targetIndex: 0 },
         { id: 'dot-c2', targetIndex: 1 },
@@ -659,7 +1051,7 @@
         { id: 'dot-c11', targetIndex: 10 }
       ];
 
-      const revealsList = document.querySelectorAll('.reveal');
+      const revealsList = document.querySelectorAll('#story-start .reveal');
       window.addEventListener('scroll', () => {
         revealsList.forEach((el, index) => {
           const rect = el.getBoundingClientRect();
@@ -676,34 +1068,26 @@
         });
       });
     });
-  </script>
 
-  <!-- DB & Global Script Integrations -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
-  <script src="db.js"></script>
-  <script src="onest-global.js"></script>
-  <script>
+    // Calendar & Achievements integration
     document.addEventListener('DOMContentLoaded', () => {
       const DB = window.OnestDB;
+      if (!DB) return;
 
-      // --- 1. ACHIEVEMENTS SHOWCASE LOADER ---
+      // 1. Achievements loader
       async function renderAchievements() {
         const list = await DB.getAchievements();
         const container = document.getElementById('achievements-list');
-        if (!container) return;
+        if (!container || !list) return;
 
         container.innerHTML = '';
-        list.forEach(a => {
+        list.slice(0, 4).forEach(a => {
           const card = document.createElement('div');
           card.className = 'bg-white rounded-3xl border border-primary/10 shadow-sm text-left hover-lift overflow-hidden flex flex-col group';
           
           const imgHtml = a.image ? `
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openLightbox('${a.image}', '${a.title} - ${a.awardee}')">
-              <img src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-2xl drop-shadow">zoom_in</span>
-              </div>
+            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('${a.image}', '${a.title} - ${a.awardee}')">
+              <img loading="lazy" decoding="async" src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">${a.category} • ${a.year}</span>
             </div>
           ` : '';
@@ -723,86 +1107,70 @@
       }
       renderAchievements();
 
-
-      // --- 2. INTERACTIVE EVENT CALENDAR ---
+      // 2. Interactive Event Calendar
       let calFilter = 'all';
-      let viewMode = 'agenda'; // agenda or grid
+      let viewMode = 'agenda';
 
       async function renderCalendar() {
         const events = await DB.getEvents();
         const container = document.getElementById('calendar-dynamic-view');
-        if (!container) return;
+        if (!container || !events) return;
 
-        // Filter
-        let filtered = events.filter(e => {
-          return calFilter === 'all' || e.category === calFilter;
-        });
+        let filtered = events.filter(e => calFilter === 'all' || e.category === calFilter);
 
         if (viewMode === 'agenda') {
-          // Render Agenda list
           if (filtered.length === 0) {
             container.innerHTML = '<p class="text-center text-xs text-on-surface-variant/80 py-8">No scheduled events found for this filter.</p>';
             return;
           }
 
-          container.innerHTML = `<div class="space-y-4"></div>`;
+          container.innerHTML = '<div class="space-y-4"></div>';
           const listDiv = container.querySelector('.space-y-4');
           
           filtered.forEach(e => {
             const dateObj = new Date(e.date);
-            const day = dateObj.getDate();
-            const month = dateObj.toLocaleString('en-US', { month: 'short' });
+            const day = dateObj.getDate() || '15';
+            const month = dateObj.toLocaleString('en-US', { month: 'short' }) || 'Oct';
             
             let color = 'border-l-primary';
             if (e.category === 'Holiday') color = 'border-l-red-500';
-            if (e.category === 'Exam') color = 'border-l-accent';
-            if (e.category === 'PTM') color = 'border-l-secondary';
+            if (e.category === 'Exam') color = 'border-l-purple-500';
+            if (e.category === 'Activity') color = 'border-l-accent';
 
-            const card = document.createElement('div');
-            card.className = `flex gap-4 p-4 bg-gray-50 dark:bg-amber-100/30 rounded-2xl border-l-4 ${color} items-center text-left`;
-            card.innerHTML = `
-              <div class="text-center w-12 shrink-0 bg-white dark:bg-amber-50 p-2 rounded-xl border border-primary/10 shadow-sm">
-                <span class="block text-lg font-black text-secondary leading-none">${day}</span>
-                <span class="block text-[9px] uppercase tracking-wider text-primary font-black mt-0.5">${month}</span>
-              </div>
-              <div class="flex-1">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-[9px] bg-secondary text-white font-black px-2 py-0.5 rounded-full uppercase tracking-wider">${e.category}</span>
+            const item = document.createElement('div');
+            item.className = `p-4 rounded-2xl bg-white border border-gray-100 shadow-sm border-l-4 ${color} flex items-center justify-between gap-4 hover:shadow-md transition-shadow`;
+            item.innerHTML = `
+              <div class="flex items-center gap-4">
+                <div class="text-center bg-gray-50 p-2.5 rounded-xl min-w-[55px]">
+                  <span class="block text-lg font-black text-secondary leading-none">${day}</span>
+                  <span class="block text-[10px] font-bold text-primary uppercase">${month}</span>
                 </div>
-                <h5 class="text-sm font-bold text-secondary">${e.title}</h5>
-                <p class="text-xs text-on-surface-variant/80 leading-relaxed font-semibold mt-0.5">${e.description || '-'}</p>
+                <div>
+                  <h5 class="font-bold text-secondary text-sm">${e.title}</h5>
+                  <p class="text-xs text-on-surface-variant">${e.description || ''}</p>
+                </div>
               </div>
+              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-gray-100 text-secondary">${e.category}</span>
             `;
-            listDiv.appendChild(card);
+            listDiv.appendChild(item);
           });
-
         } else {
-          // Render simulated Monthly Grid View (August 2026 as reference)
-          const year = 2026;
-          const monthIndex = 7; // August
+          // Render Grid
+          const now = new Date();
+          const year = now.getFullYear();
+          const monthIndex = now.getMonth();
           const firstDay = new Date(year, monthIndex, 1).getDay();
           const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
-
-          let gridHTML = `
-            <div class="text-center mb-3">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest">August 2026</span>
-            </div>
-            <div class="grid grid-cols-7 gap-1 text-center font-bold text-[10px] text-secondary uppercase border-b border-primary/10 pb-2">
-              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-            </div>
-            <div class="grid grid-cols-7 gap-1 mt-2 text-xs">
-          `;
-
-          // Empty spaces for padding
+          
+          let gridHTML = '<div class="grid grid-cols-7 gap-2 text-center text-xs">';
+          const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          dayNames.forEach(d => gridHTML += `<div class="font-bold text-primary p-2">${d}</div>`);
           for (let i = 0; i < firstDay; i++) {
-            gridHTML += `<div class="p-3 text-transparent">0</div>`;
+            gridHTML += '<div class="p-3"></div>';
           }
 
-          // Render cells
           for (let day = 1; day <= daysInMonth; day++) {
             const dateStr = `${year}-0${monthIndex + 1}-${day < 10 ? '0' + day : day}`;
-            
-            // check if there is an event
             const dayEvents = events.filter(e => e.date === dateStr);
             const hasEvent = dayEvents.length > 0;
             
@@ -811,147 +1179,50 @@
 
             if (hasEvent) {
               cellClass += " border-primary/40 font-bold bg-[#FFF9D9]";
-              dot = `<span class="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary"></span>`;
+              dot = '<span class="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary"></span>';
             }
 
             gridHTML += `
-              <div class="${cellClass}" onclick="showDayEvents('${dateStr}')">
+              <div class="${cellClass}">
                 <span>${day}</span>
                 ${dot}
               </div>
             `;
           }
-
-          gridHTML += `</div>`;
+          gridHTML += '</div>';
           container.innerHTML = gridHTML;
         }
       }
-
-      window.showDayEvents = function(dateStr) {
-        const events = DB.getEvents().filter(e => e.date === dateStr);
-        if (events.length === 0) {
-          alert(`No events scheduled for ${dateStr}.`);
-          return;
-        }
-
-        let msg = `Events on ${dateStr}:\n`;
-        events.forEach(e => {
-          msg += `• [${e.category}] ${e.title}: ${e.description}\n`;
-        });
-        alert(msg);
-      };
-
-      // Calendar Filter listeners
-      document.querySelectorAll('.cal-filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.cal-filter-btn').forEach(b => b.className = "cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10");
-          btn.className = "cal-filter-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white";
-          calFilter = btn.getAttribute('data-cat');
-          renderCalendar();
-        });
-      });
-
-      document.querySelectorAll('.view-mode-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.view-mode-btn').forEach(b => b.className = "view-mode-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 text-secondary");
-          btn.className = "view-mode-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-secondary text-white";
-          viewMode = btn.getAttribute('data-mode');
-          renderCalendar();
-        });
-      });
-
       renderCalendar();
 
-
-      // --- 3. FACULTY SHOWCASE & DIRECTORY ---
-      let facSearch = '';
-      let facDept = 'all';
-
-      window.openFacModal = function(id) {
-        const list = DB.getFaculty();
-        const f = list.find(item => item.id === id);
-        if (!f) return;
-
-        const content = document.getElementById('fac-modal-content');
-        content.innerHTML = `
-          <div class="w-24 h-24 rounded-full overflow-hidden mx-auto shadow border border-primary/20 mb-4">
-            <img src="${f.photo}" alt="${f.name}" class="w-full h-full object-cover">
-          </div>
-          <span class="text-[9px] bg-secondary text-primary-light font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">${f.department} Department</span>
-          <h3 class="font-display text-xl font-bold text-secondary mt-3 mb-1">${f.name}</h3>
-          <p class="text-xs uppercase tracking-wider text-primary font-bold mb-2">${f.role}</p>
-          <div class="text-left text-xs font-semibold text-on-surface-variant space-y-2 mt-4 p-4 bg-gray-50 border border-primary/5 rounded-2xl">
-            <p>🎓 <strong>Qualification:</strong> ${f.qualification}</p>
-            <p>⏱️ <strong>Experience:</strong> ${f.experience}</p>
-            <p>📧 <strong>Email Address:</strong> ${f.name.toLowerCase().replace(' ', '.').replace('mrs.', '').replace('mr.', '').replace('ms.', '')}@onestgurukul.in</p>
-          </div>
-        `;
-        document.getElementById('fac-profile-modal').style.display = 'flex';
-      };
-
-      window.closeFacModal = function() {
-        document.getElementById('fac-profile-modal').style.display = 'none';
-      };
-
-      function renderFaculty() {
-        const list = DB.getFaculty();
-        const grid = document.getElementById('faculty-grid');
-        if (!grid) return;
-
-        let filtered = list.filter(f => {
-          const matchSearch = f.name.toLowerCase().includes(facSearch) || f.role.toLowerCase().includes(facSearch);
-          const matchDept = facDept === 'all' || f.department === facDept;
-          return matchSearch && matchDept;
+      // Filter click listeners
+      document.querySelectorAll('.cal-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cal-filter-btn').forEach(b => {
+            b.classList.remove('active', 'bg-primary', 'text-white');
+            b.classList.add('text-secondary/80');
+          });
+          btn.classList.add('active', 'bg-primary', 'text-white');
+          btn.classList.remove('text-secondary/80');
+          calFilter = btn.dataset.cat;
+          renderCalendar();
         });
+      });
 
-        if (filtered.length === 0) {
-          grid.innerHTML = '<p class="col-span-full text-center text-xs text-on-surface-variant/80 py-8">No educators match your filter search.</p>';
-          return;
-        }
-
-        grid.innerHTML = '';
-        filtered.forEach(f => {
-          const card = document.createElement('div');
-          card.className = 'bg-white/70 backdrop-blur-md rounded-[32px] border border-primary/10 p-8 shadow-sm flex flex-col items-center hover-lift text-center cursor-pointer';
-          card.innerHTML = `
-            <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden shadow-md mb-6">
-              <img src="${f.photo}" alt="${f.name}" class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-lg font-bold text-secondary">${f.name}</h3>
-            <p class="text-[10px] uppercase tracking-wider text-primary font-bold mt-1">${f.role}</p>
-            <p class="text-[10px] text-on-surface-variant font-bold mt-1.5">${f.qualification}</p>
-            <p class="text-xs text-on-surface-variant font-bold mt-1 text-[#059669]">${f.experience} Exp.</p>
-            <button class="bg-gray-100 hover:bg-primary hover:text-white text-secondary text-[10px] font-bold px-3 py-1.5 rounded-full mt-4 transition-colors">
-              View Profile
-            </button>
-          `;
-          card.addEventListener('click', () => openFacModal(f.id));
-          grid.appendChild(card);
+      // View mode switcher
+      document.querySelectorAll('.view-mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.view-mode-btn').forEach(b => {
+            b.classList.remove('active', 'bg-secondary', 'text-white');
+            b.classList.add('bg-gray-100', 'text-secondary');
+          });
+          btn.classList.add('active', 'bg-secondary', 'text-white');
+          btn.classList.remove('bg-gray-100', 'text-secondary');
+          viewMode = btn.dataset.mode;
+          renderCalendar();
         });
-      }
-
-      // Bind search/filter
-      const fSearchInput = document.getElementById('faculty-search');
-      if (fSearchInput) {
-        fSearchInput.addEventListener('input', (e) => {
-          facSearch = e.target.value.toLowerCase().trim();
-          renderFaculty();
-        });
-      }
-
-      const fDeptSelect = document.getElementById('faculty-dept-filter');
-      if (fDeptSelect) {
-        fDeptSelect.addEventListener('change', (e) => {
-          facDept = e.target.value;
-          renderFaculty();
-        });
-      }
-
-      renderFaculty();
-
+      });
     });
   </script>
-
 </body>
-
 </html>

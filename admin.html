@@ -50,12 +50,42 @@
     }
   </style>
 
+  <!-- Theme Base CSS -->
+  <link href="assets/css/theme-base.css" rel="stylesheet">
+
   <!-- Supabase JS SDK & Configuration -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="db.js"></script>
 </head>
 <body class="text-secondary antialiased min-h-screen flex flex-col">
+
+  <!-- Branded Preloader -->
+  <div id="onest-preloader" aria-hidden="true">
+    <div class="onest-preloader-inner">
+      <div class="onest-preloader-logo-wrap">
+        <div class="onest-preloader-ring"></div>
+        <img src="assets/img/onest.svg" alt="O'Nest Gurukul" class="onest-preloader-logo" width="72" height="72">
+      </div>
+      <div class="onest-preloader-brand">O'NEST GURUKUL</div>
+      <div class="onest-preloader-bar">
+        <div class="onest-preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      function hidePreloader() {
+        var p = document.getElementById('onest-preloader');
+        if (p && !p.classList.contains('onest-preloader-hidden')) {
+          p.classList.add('onest-preloader-hidden');
+          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+        }
+      }
+      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
+      setTimeout(hidePreloader, 1200);
+    })();
+  </script>
 
   <!-- Header -->
   <header class="bg-secondary text-white border-b border-primary/20 sticky top-0 z-50 shadow-md">
@@ -256,15 +286,16 @@
     const SCHEMAS = {
       notices: {
         fields: [
-          { name: 'title', label: 'Notice Title', type: 'text', required: true },
+          { name: 'title', label: 'Title', type: 'text', required: true },
+          { name: 'type', label: 'Item Type (Notice or Announcement)', type: 'select', options: ['Announcement', 'Notice'], default: 'Announcement', required: true },
+          { name: 'category', label: 'Category', type: 'select', options: ['Admission', 'Academic', 'Sports', 'Events', 'General'], required: true },
           { name: 'content', label: 'Description Content', type: 'textarea', required: true },
-          { name: 'category', label: 'Category', type: 'select', options: ['Admission', 'Academic', 'Sports', 'General'], required: true },
-          { name: 'pinned', label: 'Pin Notice to Top', type: 'boolean' },
+          { name: 'pinned', label: 'Pin to Top (Featured on Hero)', type: 'boolean' },
           { name: 'status', label: 'Publication Status', type: 'select', options: ['published', 'draft', 'archived'], required: true },
           { name: 'pdfUrl', label: 'Attachment URL', type: 'text' },
           { name: 'expiresAt', label: 'Expiry Date (YYYY-MM-DD)', type: 'date' }
         ],
-        headers: ['Title', 'Category', 'Status', 'Pinned', 'Date', 'Actions']
+        headers: ['Title', 'Type', 'Category', 'Status', 'Pinned', 'Date', 'Actions']
       },
       events: {
         fields: [
@@ -427,8 +458,8 @@
       const btnAdd = document.getElementById('btn-add-item');
 
       if (tabName === 'settings') {
-        workspaceTitle.innerText = "General Settings & Webhooks";
-        workspaceDesc.innerText = "Configure Emergency Banner alert text and admissions integration webhook.";
+        workspaceTitle.innerText = "Header Marquee & Announcement Settings";
+        workspaceDesc.innerText = "Configure the top scrolling marquee announcement text, direction (left-to-right), and brand theme.";
         btnAdd.classList.add('hidden');
         renderSettingsForm();
       } else {
@@ -511,8 +542,11 @@
 
         let rowCells = '';
         if (currentTab === 'notices') {
+          const isAnnounce = (item.type === 'Announcement') || (!item.type && item.category === 'Admission');
+          const typeLabel = item.type || (isAnnounce ? 'Announcement' : 'Notice');
           rowCells = `
             <td class="py-4 pr-4 font-semibold text-slate-800">${item.title}</td>
+            <td class="py-4"><span class="px-2.5 py-1 rounded-full font-bold text-[10px] ${isAnnounce ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-blue-50 text-blue-700 border border-blue-200'}">${typeLabel}</span></td>
             <td class="py-4"><span class="px-2.5 py-1 bg-slate-100 rounded-full font-bold text-[10px] text-slate-700">${item.category}</span></td>
             <td class="py-4">${getStatusBadge(item.status)}</td>
             <td class="py-4">${item.pinned ? '<span class="text-amber-600 font-bold flex items-center gap-1"><i class="bi bi-pin-angle-fill"></i> Pinned</span>' : '<span class="text-slate-400">Regular</span>'}</td>
@@ -726,32 +760,52 @@
       const settings = await window.OnestDB.getSettings();
 
       const card = document.createElement('div');
-      card.className = 'p-6 max-w-xl space-y-4';
+      card.className = 'p-6 max-w-2xl space-y-6';
       card.innerHTML = `
-        <form onsubmit="saveSettingsForm(event)">
+        <form onsubmit="saveSettingsForm(event)" class="space-y-6">
           <div class="space-y-4 text-xs">
-            <label class="flex items-center gap-2 font-bold text-slate-700 cursor-pointer">
-              <input type="checkbox" id="set-banner-active" ${settings.emergencyBannerActive ? 'checked' : ''} class="w-4 h-4 text-primary rounded">
-              Show Emergency Header Alert Banner
-            </label>
-
-            <div>
-              <label class="block font-bold text-slate-700 mb-1">Banner Announcement Text</label>
-              <textarea id="set-banner-text" rows="3" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none">${settings.emergencyBannerText || ''}</textarea>
+            <div class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 flex items-center justify-between gap-4">
+              <div>
+                <label for="set-banner-active" class="font-bold text-slate-800 text-sm cursor-pointer block">Show Top Announcement Marquee</label>
+                <p class="text-slate-500 text-[11px] mt-0.5">Displays a continuous scrolling announcement bar above the website navigation.</p>
+              </div>
+              <input type="checkbox" id="set-banner-active" ${settings.emergencyBannerActive ? 'checked' : ''} class="w-5 h-5 text-primary rounded cursor-pointer">
             </div>
 
             <div>
-              <label class="block font-bold text-slate-700 mb-1">Banner Priority Style</label>
-              <select id="set-banner-priority" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none">
-                <option value="warning" ${settings.emergencyBannerPriority === 'warning' ? 'selected' : ''}>Orange Warning</option>
-                <option value="critical" ${settings.emergencyBannerPriority === 'critical' ? 'selected' : ''}>Red Critical Alert</option>
-                <option value="info" ${settings.emergencyBannerPriority === 'info' ? 'selected' : ''}>Blue Informational</option>
-              </select>
+              <label class="block font-bold text-slate-700 text-xs mb-1">Marquee Announcement Text</label>
+              <textarea id="set-banner-text" rows="3" placeholder="e.g. Admissions Open for Academic Year 2026-27 | Playgroup to Standard 6 | Call +91 7888056699" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none font-medium text-slate-700 text-xs">${settings.emergencyBannerText || ''}</textarea>
+              <p class="text-[11px] text-slate-400 mt-1">This text continuously repeats and scrolls across the screen on all website pages.</p>
             </div>
 
-            <button type="submit" class="px-5 py-2.5 bg-primary text-white font-bold rounded-xl shadow hover:bg-primary/95 transition-all">
-              Save Banner Settings
-            </button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Scroll Direction</label>
+                <select id="set-marquee-direction" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none font-medium text-xs">
+                  <option value="ltr" ${settings.marqueeDirection === 'ltr' || !settings.marqueeDirection ? 'selected' : ''}>Left to Right (Requested)</option>
+                  <option value="rtl" ${settings.marqueeDirection === 'rtl' ? 'selected' : ''}>Right to Left</option>
+                </select>
+                <p class="text-[10px] text-slate-400 mt-1">Controls horizontal movement direction.</p>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Color Theme Style</label>
+                <select id="set-banner-priority" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none font-medium text-xs">
+                  <option value="gold" ${settings.emergencyBannerPriority === 'gold' || !settings.emergencyBannerPriority ? 'selected' : ''}>Royal Gold Brand (Default)</option>
+                  <option value="warning" ${settings.emergencyBannerPriority === 'warning' ? 'selected' : ''}>Orange Warning</option>
+                  <option value="critical" ${settings.emergencyBannerPriority === 'critical' ? 'selected' : ''}>Red Critical Alert</option>
+                  <option value="navy" ${settings.emergencyBannerPriority === 'navy' ? 'selected' : ''}>Royal Blue</option>
+                  <option value="green" ${settings.emergencyBannerPriority === 'green' ? 'selected' : ''}>Emerald Green</option>
+                </select>
+                <p class="text-[10px] text-slate-400 mt-1">Background gradient theme.</p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" id="btn-save-settings" class="px-6 py-3 bg-primary hover:bg-primary/95 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 text-xs">
+                <i class="bi bi-check2-circle text-base"></i> Save Marquee Settings
+              </button>
+            </div>
           </div>
         </form>
       `;
@@ -761,18 +815,27 @@
     async function saveSettingsForm(e) {
       e.preventDefault();
       const active = document.getElementById('set-banner-active').checked;
-      const text = document.getElementById('set-banner-text').value;
+      const text = document.getElementById('set-banner-text').value.trim();
       const priority = document.getElementById('set-banner-priority').value;
+      const direction = document.getElementById('set-marquee-direction').value;
+      const btn = document.getElementById('btn-save-settings');
+
+      btn.disabled = true;
+      btn.innerHTML = `<i class="bi bi-arrow-repeat animate-spin"></i> Saving...`;
 
       try {
         await window.OnestDB.saveSettings({
           emergencyBannerActive: active,
           emergencyBannerText: text,
-          emergencyBannerPriority: priority
+          emergencyBannerPriority: priority,
+          marqueeDirection: direction
         });
-        alert("Banner settings saved successfully!");
+        alert("Marquee settings saved successfully! Refresh any page to see the live scrolling marquee.");
       } catch (err) {
         alert("Failed saving settings: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<i class="bi bi-check2-circle text-base"></i> Save Marquee Settings`;
       }
     }
   </script>

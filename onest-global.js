@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     syncTheme(); // Sync on load
 
 
-    // --- 2. Emergency Announcement Banner ---
+    // --- 2. Scrolling Marquee Announcement Banner ---
     async function injectEmergencyBanner() {
         const settings = await DB.getSettings();
         if (!settings || !settings.emergencyBannerActive || !settings.emergencyBannerText) return;
@@ -60,53 +60,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const banner = document.createElement('div');
         banner.id = 'onest-emergency-banner';
-        banner.className = 'w-full z-[100] relative text-white py-3 px-gutter font-semibold flex justify-between items-center text-sm md:text-base transition-all duration-300';
         
-        // Priority colors
-        if (settings.emergencyBannerPriority === 'critical') {
-            banner.classList.add('bg-red-600', 'border-b', 'border-red-700');
-        } else if (settings.emergencyBannerPriority === 'warning') {
-            banner.classList.add('bg-orange-500', 'border-b', 'border-orange-600');
-        } else {
-            banner.classList.add('bg-primary', 'border-b', 'border-primary-dark'); // Info
-        }
+        const priority = settings.emergencyBannerPriority || 'gold';
+        banner.className = `theme-${priority}`;
+
+        // Direction: defaults to 'ltr' (Left-to-Right) as requested
+        const direction = settings.marqueeDirection === 'rtl' ? 'rtl' : 'ltr';
+        
+        const text = settings.emergencyBannerText.trim();
+        const itemHtml = `
+            <span class="onest-marquee-item">
+                <i class="bi bi-stars text-[#facc15] mr-2"></i>
+                <span>${text}</span>
+                <span class="mx-5 opacity-40 text-xs">◆</span>
+            </span>
+        `;
+
+        // Repeat 6 times for seamless continuous infinite loop
+        const repeatedContent = itemHtml.repeat(6);
 
         banner.innerHTML = `
-            <div class="flex items-center gap-3 max-w-[90%] mx-auto text-center justify-center">
-                <i class="bi ${settings.emergencyBannerPriority === 'critical' ? 'bi-exclamation-triangle-fill' : 'bi-info-circle-fill'} animate-pulse text-lg"></i>
-                <span class="tracking-wide">${settings.emergencyBannerText}</span>
+            <div class="px-3 shrink-0 flex items-center gap-1.5 z-10">
+                <span class="bg-black/25 text-white font-black text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+                    <i class="bi bi-megaphone-fill text-[#facc15] animate-pulse"></i> Announcement
+                </span>
             </div>
-            <button id="onest-emergency-dismiss" class="text-white hover:text-white/80 text-xl font-bold cursor-pointer pr-4" aria-label="Dismiss Banner">&times;</button>
+            <div class="onest-marquee-viewport" title="Hover to pause">
+                <div class="onest-marquee-track direction-${direction}">
+                    ${repeatedContent}
+                </div>
+            </div>
+            <button id="onest-emergency-dismiss" class="shrink-0 px-3.5 hover:opacity-75 text-white text-xl font-bold cursor-pointer transition-opacity leading-none" aria-label="Dismiss Announcement" title="Dismiss announcement">&times;</button>
         `;
 
         document.body.prepend(banner);
 
-        document.getElementById('onest-emergency-dismiss').addEventListener('click', () => {
-            banner.style.maxHeight = banner.scrollHeight + 'px';
-            setTimeout(() => {
-                banner.style.maxHeight = '0';
-                banner.style.paddingTop = '0';
-                banner.style.paddingBottom = '0';
-                banner.style.overflow = 'hidden';
-            }, 10);
-            sessionStorage.setItem('onest_emergency_dismissed', 'true');
-        });
+        const bannerHeight = 38;
+        const fixedHeader = document.querySelector('header.fixed') || document.querySelector('header');
+        if (fixedHeader && window.getComputedStyle(fixedHeader).position === 'fixed') {
+            fixedHeader.style.top = bannerHeight + 'px';
+            document.body.style.paddingTop = bannerHeight + 'px';
+        }
+
+        const dismissBtn = document.getElementById('onest-emergency-dismiss');
+        if (dismissBtn) {
+            dismissBtn.addEventListener('click', () => {
+                banner.style.transform = 'translateY(-100%)';
+                banner.style.opacity = '0';
+                setTimeout(() => {
+                    if (banner.parentNode) banner.parentNode.removeChild(banner);
+                    if (fixedHeader) fixedHeader.style.top = '0px';
+                    document.body.style.paddingTop = '0px';
+                }, 300);
+                sessionStorage.setItem('onest_emergency_dismissed', 'true');
+            });
+        }
     }
     injectEmergencyBanner();
 
 
-    // --- 3. Sticky Floating Apply Button ---
+    // --- 3. Sticky Floating Apply Button (Present across all pages) ---
     function injectFloatingApply() {
-        // Only inject if not already on the admissions page
-        if (window.location.pathname.includes('admissions.html')) return;
+        if (document.getElementById('onest-floating-apply')) return;
+
+        const isAdmissionsPage = window.location.pathname.toLowerCase().includes('admissions.html');
+        const targetHref = isAdmissionsPage ? '#application' : 'admissions.html';
+        const scrollBehavior = isAdmissionsPage ? `onclick="const target = document.getElementById('application'); if(target){ target.scrollIntoView({behavior:'smooth'}); return false; }"` : '';
 
         const applyBtn = document.createElement('div');
         applyBtn.id = 'onest-floating-apply';
-        applyBtn.className = 'fixed right-6 bottom-24 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
+        applyBtn.className = 'fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
         applyBtn.innerHTML = `
-            <a href="admissions.html" class="flex items-center gap-2 bg-primary hover:bg-secondary text-white font-bold px-6 py-4 rounded-full shadow-2xl border border-primary/20 hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
-                <span class="text-xs uppercase tracking-widest font-black">Apply Now</span>
-                <i class="bi bi-arrow-right-short text-xl group-hover:translate-x-1 transition-transform"></i>
+            <a href="${targetHref}" ${scrollBehavior} class="flex items-center gap-2 sm:gap-2.5 bg-[#735c00] hover:bg-[#002147] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-full shadow-2xl border border-white/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 group" aria-label="Apply Now for Admission">
+                <i class="bi bi-pencil-square text-sm sm:text-base text-[#facc15]"></i>
+                <span class="text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-black">Apply Now</span>
+                <i class="bi bi-arrow-right-short text-lg sm:text-xl group-hover:translate-x-1 transition-transform"></i>
             </a>
         `;
         document.body.appendChild(applyBtn);
@@ -114,77 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Slide in animation
         setTimeout(() => {
             applyBtn.classList.remove('translate-y-20', 'opacity-0');
-        }, 1000);
-
-        // Auto hide/show near footer
-        window.addEventListener('scroll', () => {
-            const footer = document.querySelector('footer');
-            if (footer) {
-                const footerRect = footer.getBoundingClientRect();
-                if (footerRect.top < window.innerHeight) {
-                    applyBtn.classList.add('scale-0', 'opacity-0');
-                } else {
-                    applyBtn.classList.remove('scale-0', 'opacity-0');
-                }
-            }
-        });
+        }, 800);
     }
     injectFloatingApply();
-
-
-    // --- 4. WhatsApp Support Button ---
-    function injectWhatsAppButton() {
-        const waBtn = document.createElement('div');
-        waBtn.id = 'onest-floating-whatsapp';
-        waBtn.className = 'fixed right-6 bottom-6 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
-        waBtn.innerHTML = `
-            <a href="https://wa.me/917888056699?text=Hello%21%20I%20am%20interested%20in%20school%20admissions%20at%20O%27Nest%20Gurukul.%20Please%20provide%20more%20details." 
-               target="_blank" rel="noopener"
-               class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl border border-white/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300 relative group"
-               aria-label="Contact via WhatsApp">
-                <i class="bi bi-whatsapp text-3xl"></i>
-                <span class="absolute right-16 bg-white text-secondary text-xs font-bold px-3 py-1.5 rounded-lg shadow-md border border-gray-100 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    Admission Enquiry
-                </span>
-            </a>
-        `;
-        document.body.appendChild(waBtn);
-
-        // Slide in
-        setTimeout(() => {
-            waBtn.classList.remove('translate-y-20', 'opacity-0');
-        }, 1200);
-
-        // Move up when apply button disappears or down depending on overlap
-        window.addEventListener('scroll', () => {
-            const footer = document.querySelector('footer');
-            if (footer) {
-                const footerRect = footer.getBoundingClientRect();
-                const applyBtn = document.getElementById('onest-floating-apply');
-                if (footerRect.top < window.innerHeight && applyBtn) {
-                    waBtn.classList.add('bottom-6');
-                }
-            }
-        });
-    }
-    injectWhatsAppButton();
 
 
     // --- 5. AI Admission Assistant (Chatbot Drawer) ---
     function injectChatbot() {
         const botBubble = document.createElement('div');
         botBubble.id = 'onest-chatbot-bubble';
-        botBubble.className = 'fixed left-6 bottom-6 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
+        botBubble.className = 'fixed left-4 sm:left-6 bottom-4 sm:bottom-6 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
         botBubble.innerHTML = `
-            <button class="w-14 h-14 bg-secondary hover:bg-primary text-white rounded-full flex items-center justify-center shadow-2xl border border-white/10 hover:scale-110 transition-all duration-300 relative group"
+            <button class="w-12 h-12 sm:w-14 sm:h-14 bg-secondary hover:bg-primary text-white rounded-full flex items-center justify-center shadow-2xl border border-white/10 hover:scale-110 transition-all duration-300 relative group"
                aria-label="Open Admission Chat Assistant">
-                <i class="bi bi-chat-left-dots-fill text-2xl text-primary-light"></i>
-                <span class="absolute left-16 bg-white text-secondary text-xs font-bold px-3 py-1.5 rounded-lg shadow-md border border-gray-100 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <i class="bi bi-chat-left-dots-fill text-xl sm:text-2xl text-primary-light"></i>
+                <span class="absolute left-16 bg-white text-secondary text-xs font-bold px-3 py-1.5 rounded-lg shadow-md border border-gray-100 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:inline-block">
                     AI Admission Assistant
                 </span>
-                <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5 sm:h-4 sm:w-4">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-4 w-4 bg-[#facc15]"></span>
+                    <span class="relative inline-flex rounded-full h-3.5 w-3.5 sm:h-4 sm:w-4 bg-[#facc15]"></span>
                 </span>
             </button>
         `;
@@ -198,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create Chat Drawer in DOM
         const chatDrawer = document.createElement('div');
         chatDrawer.id = 'onest-chat-drawer';
-        chatDrawer.className = 'fixed bottom-24 left-6 z-50 w-[350px] max-w-[90vw] h-[450px] bg-white dark:bg-amber-50 rounded-3xl shadow-2xl border border-primary/20 overflow-hidden transform scale-90 opacity-0 pointer-events-none origin-bottom-left transition-all duration-300 flex flex-col';
+        chatDrawer.className = 'fixed bottom-20 sm:bottom-24 left-3 sm:left-6 z-50 w-[350px] max-w-[calc(100vw-24px)] h-[440px] max-h-[75vh] bg-white dark:bg-amber-50 rounded-3xl shadow-2xl border border-primary/20 overflow-hidden transform scale-90 opacity-0 pointer-events-none origin-bottom-left transition-all duration-300 flex flex-col';
         chatDrawer.innerHTML = `
             <!-- Chat Header -->
             <div class="bg-secondary text-white p-4 flex items-center justify-between border-b border-primary/10">
