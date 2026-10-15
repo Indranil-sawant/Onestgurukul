@@ -341,16 +341,8 @@ body {
     }
 
     /* Floating action buttons spacing for mobile */
-    #onest-floating-apply,
     #onest-chatbot-bubble {
         bottom: max(16px, env(safe-area-inset-bottom)) !important;
-    }
-
-    #onest-floating-apply {
-        right: 16px !important;
-    }
-
-    #onest-chatbot-bubble {
         left: 16px !important;
     }
 }

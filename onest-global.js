@@ -119,32 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     injectEmergencyBanner();
 
 
-    // --- 3. Sticky Floating Apply Button (Present across all pages) ---
-    function injectFloatingApply() {
-        if (document.getElementById('onest-floating-apply')) return;
-
-        const isAdmissionsPage = window.location.pathname.toLowerCase().includes('admissions.html');
-        const targetHref = isAdmissionsPage ? '#application' : 'admissions.html';
-        const scrollBehavior = isAdmissionsPage ? `onclick="const target = document.getElementById('application'); if(target){ target.scrollIntoView({behavior:'smooth'}); return false; }"` : '';
-
-        const applyBtn = document.createElement('div');
-        applyBtn.id = 'onest-floating-apply';
-        applyBtn.className = 'fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-40 transition-all duration-500 transform translate-y-20 opacity-0';
-        applyBtn.innerHTML = `
-            <a href="${targetHref}" ${scrollBehavior} class="flex items-center gap-2 sm:gap-2.5 bg-[#735c00] hover:bg-[#002147] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-full shadow-2xl border border-white/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 group" aria-label="Apply Now for Admission">
-                <i class="bi bi-pencil-square text-sm sm:text-base text-[#facc15]"></i>
-                <span class="text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-black">Apply Now</span>
-                <i class="bi bi-arrow-right-short text-lg sm:text-xl group-hover:translate-x-1 transition-transform"></i>
-            </a>
-        `;
-        document.body.appendChild(applyBtn);
-
-        // Slide in animation
-        setTimeout(() => {
-            applyBtn.classList.remove('translate-y-20', 'opacity-0');
-        }, 800);
-    }
-    injectFloatingApply();
+    // --- 3. Sticky Floating Apply Button (Removed as requested) ---
+    // Floating Apply Now button removed across the overall website.
 
 
     // --- 5. AI Admission Assistant (Chatbot Drawer) ---
