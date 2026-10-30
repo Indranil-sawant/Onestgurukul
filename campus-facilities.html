@@ -944,17 +944,14 @@
             The Life &amp; Spirit of O'NEST Gurukul
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-3 font-normal leading-relaxed">
-            An authentic photographic and video journey across our 2.5+ acre campus, academic discoveries, science exhibitions, cultural performances, and sports championships.
+            An authentic photographic journey across our 2.5+ acre campus, academic discoveries, science exhibitions, cultural performances, and sports championships.
           </p>
         </div>
 
         <!-- Interactive Filter Bar -->
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 reveal">
           <button type="button" class="gallery-filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-secondary text-white border border-secondary" onclick="filterGallery('all', this)">
-            All Moments <span class="ml-1 px-2 py-0.5 text-[11px] rounded-full bg-white/20">17</span>
-          </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('video', this)">
-            🎬 Video Spotlight
+            All Moments <span class="ml-1 px-2 py-0.5 text-[11px] rounded-full bg-white/20">16</span>
           </button>
           <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('campus', this)">
             🌿 Campus &amp; Nature
@@ -976,28 +973,6 @@
         <!-- Curated Gallery Grid (1 Video + 16 Authentic Unique Photos) -->
         <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-left">
           
-          <!-- ITEM 0: FEATURED LIVE CAMPUS VIDEO (Spans 2 columns) -->
-          <div class="gallery-item col-span-1 sm:col-span-2 lg:col-span-2 rounded-3xl overflow-hidden border-2 border-primary/20 shadow-xl bg-slate-950 group relative flex flex-col justify-between transition-all duration-300 reveal" data-category="video">
-            <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-black overflow-hidden flex items-center justify-center">
-              <video controls preload="metadata" playsinline poster="assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.44 PM.jpeg" class="w-full h-full object-cover">
-                <source src="assets/img/recent/WhatsApp Video 2026-10-14 at 12.34.08 PM.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-              </video>
-              <div class="absolute top-3 left-3 pointer-events-none z-10">
-                <span class="text-xs bg-primary text-white font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md backdrop-blur-sm flex items-center gap-1.5">
-                  <i class="bi bi-play-circle-fill text-amber-300"></i> Live Campus Video &bull; 2m 10s
-                </span>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6 bg-surface-card border-t border-outline-variant text-left">
-              <span class="text-xs font-bold text-accent uppercase tracking-wider">🌿 Outdoor Gurukul Amphitheater</span>
-              <h3 class="text-lg sm:text-xl font-bold text-secondary mt-1">Open-Air Learning Under the Replanted Banyan Tree</h3>
-              <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
-                Watch students participate in an authentic interactive discussion with their teacher amidst the lush green hills of Karwanchiwadi, experiencing traditional Gurukul values in pure fresh air.
-              </p>
-            </div>
-          </div>
-
           <!-- ITEM 1: ACADEMIC RESEARCH - MARITIME & HERITAGE EXHIBIT -->
           <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/img/recent/1P3A9220.JPG.webp', 'Konkan Maritime &amp; Fort Heritage Project Exhibition: Student research displays exploring regional geography, maritime history of Ratnagiri, aquaculture, and fort architecture.', 'Academic Research')">
             <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9220.JPG.webp" alt="Konkan Marine &amp; Fort Heritage Exhibition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -1089,8 +1064,8 @@
           </div>
 
           <!-- ITEM 10: CULTURAL - FOLK DANCE PERFORMANCE -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.28 PM (1).jpeg', 'Folk Dance Performance: Students performing in vibrant traditional Maharashtrian attire with saffron phetas under dynamic stage illumination.', 'Annual Day Celebration')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.28 PM (1).jpeg" alt="Annual Day Folk Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg', 'Folk Dance Performance: Students performing in vibrant traditional Maharashtrian attire with saffron phetas under dynamic stage illumination.', 'Annual Day Celebration')">
+            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg" alt="Annual Day Folk Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Annual Day</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Folk Dance Celebration</h4>
@@ -1099,8 +1074,8 @@
           </div>
 
           <!-- ITEM 11: CULTURAL - SAVE TREES DRAMA -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.', 'Theatrical Arts')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg" alt="'Save Trees' Theatrical Drama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.', 'Theatrical Arts')">
+            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg" alt="'Save Trees' Theatrical Drama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Annual Day Drama</span>
               <h4 class="text-base font-bold mt-0.5 text-white">'Save Trees' Stage Play</h4>
