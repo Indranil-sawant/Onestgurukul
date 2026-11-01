@@ -122,8 +122,8 @@
             }
         ],
         faculty: [
-            { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "assets/img/education/parent (1).jpg", department: "Administration" },
-            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "assets/img/education/open (1).jpg", department: "Secondary" }
+            { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "assets/img/person/draw (1).jpg", department: "Administration" },
+            { id: "fac-2", name: "Mr. Prasad Joshi", role: "Senior STEM Instructor", qualification: "M.Sc. (Physics), B.Ed.", experience: "12 Years", photo: "assets/img/person/draw (2).jpg", department: "Secondary" }
         ],
         achievements: [
             { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg", status: "published" },
@@ -132,7 +132,7 @@
             { id: "a-4", title: "State Karate & Martial Arts Honors", awardee: "Gurukul Martial Arts Team", category: "Sports", year: "2025-26", description: "Gold & silver medals in state-level Karate kata and kumite demonstrations under black-belt mentors.", image: "assets/img/recent/VEER 1.JPG.webp", status: "published" }
         ],
         testimonials: [
-            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/education/parent (2).jpg" }
+            { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/person/draw (3).jpg" }
         ],
         settings: {
             emergencyBannerActive: true,

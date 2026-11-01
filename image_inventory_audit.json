@@ -1,0 +1,2484 @@
+{
+  "totalImages": 240,
+  "totalBytes": 221439392,
+  "usedImages": 127,
+  "usedBytes": 68527674,
+  "unusedImages": 113,
+  "unusedBytes": 152911718,
+  "externalImages": [
+    "https://onestgurukul.in/assets/img/school2.jpg",
+    "https://onestgurukul.in/assets/img/onest.svg"
+  ],
+  "inventory": [
+    {
+      "path": "assets/preprimary/DSC01382 (1).JPG.jpg",
+      "size": 14282403,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 3480,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC_3956.JPG.jpeg",
+      "size": 12443863,
+      "format": "jpeg",
+      "width": 6048,
+      "height": 4024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/1P3A9754.JPG.jpeg",
+      "size": 9604809,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/1P3A9758.JPG.jpeg",
+      "size": 9113577,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/exhibition/1P3A9756.JPG.jpeg",
+      "size": 8263268,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/1P3A9776.JPG.jpeg",
+      "size": 7566140,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/1P3A9628.JPG.jpeg",
+      "size": 6796066,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/preprimary/1P3A9778.JPG.jpeg",
+      "size": 6719116,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/1P3A9806.JPG.jpeg",
+      "size": 6259478,
+      "format": "jpeg",
+      "width": 6000,
+      "height": 4000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/2.png",
+      "size": 5695507,
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/1.png",
+      "size": 5016363,
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/study_session.jpg",
+      "size": 4150952,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 5712,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/newcode  (6)/screen.png",
+      "size": 4042258,
+      "format": "png",
+      "width": 1600,
+      "height": 5722,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/parents.jpg",
+      "size": 3872586,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 5712,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01656.JPG.jpg",
+      "size": 3865241,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 4128,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01756.JPG.jpg",
+      "size": 3706204,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 4128,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/newcode  (7)/screen.png",
+      "size": 3477825,
+      "format": "png",
+      "width": 1600,
+      "height": 6505,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01669.JPG.jpg",
+      "size": 3475985,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 4128,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/banner1.png",
+      "size": 3114503,
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/3.png",
+      "size": 2775573,
+      "format": "png",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "testscreen.png",
+      "size": 2756262,
+      "format": "png",
+      "width": 1076,
+      "height": 24844,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01707.JPG.jpg",
+      "size": 2718997,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 4128,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/banner2.png",
+      "size": 2474519,
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01388 (1).JPG.jpg",
+      "size": 2448598,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 3480,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/banner3.png",
+      "size": 2409216,
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0374_rotated.jpg",
+      "size": 2305193,
+      "format": "png",
+      "width": 1600,
+      "height": 1066,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0374_rotated2.jpg",
+      "size": 2304284,
+      "format": "png",
+      "width": 1600,
+      "height": 1066,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/owners/file_00000000e7a882119b712adb7f1b79da.png",
+      "size": 2234643,
+      "format": "png",
+      "width": 1086,
+      "height": 1448,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/school.png",
+      "size": 2106090,
+      "format": "png",
+      "width": 1920,
+      "height": 1063,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/preprimary/DSC01655.JPG.jpg",
+      "size": 2070779,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 4128,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/IMG_1889-min.webp",
+      "size": 2034878,
+      "format": "webp",
+      "width": 4032,
+      "height": 3024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (8).jpg",
+      "size": 2030032,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 5712,
+      "usedIn": [
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/preprimary/DSC01380.JPG.jpg",
+      "size": 1973614,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 3480,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/IMG_1886-min.webp",
+      "size": 1942372,
+      "format": "webp",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (25) - Edited.jpg",
+      "size": 1840140,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 3024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/staff0.jpg",
+      "size": 1823337,
+      "format": "jpeg",
+      "width": 2791,
+      "height": 2347,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/IMG_1888-min.webp",
+      "size": 1603476,
+      "format": "webp",
+      "width": 4032,
+      "height": 3024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/onest (17)L.jpg",
+      "size": 1515771,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 2409,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/digital_Safety.jpg",
+      "size": 1502904,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (7) - Edited.jpg",
+      "size": 1207157,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 3024,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260422-WA0552.jpg.jpeg",
+      "size": 1156485,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG_6199.JPG.jpeg",
+      "size": 1081895,
+      "format": "jpeg",
+      "width": 4096,
+      "height": 1361,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG_6175.JPG.jpeg",
+      "size": 1059702,
+      "format": "jpeg",
+      "width": 4096,
+      "height": 2730,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/preprimary/DSC01049.JPG.jpg",
+      "size": 1029500,
+      "format": "jpeg",
+      "width": 6192,
+      "height": 3480,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0355.jpg.jpeg",
+      "size": 1007809,
+      "format": "jpeg",
+      "width": 4000,
+      "height": 3000,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0355.jpg.jpeg",
+      "size": 1007809,
+      "format": "jpeg",
+      "width": 4000,
+      "height": 3000,
+      "usedIn": [
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/preprimary/DSC01010.JPG.jpg",
+      "size": 892932,
+      "format": "jpeg",
+      "width": 3480,
+      "height": 6192,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (6).jpg",
+      "size": 887972,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 5712,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/DSC01036.JPG.jpg",
+      "size": 847647,
+      "format": "jpeg",
+      "width": 3480,
+      "height": 6192,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/infra (5).JPG",
+      "size": 795496,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/students-sports.png",
+      "size": 794594,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 1024,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG_6200.JPG.jpeg",
+      "size": 761766,
+      "format": "jpeg",
+      "width": 4096,
+      "height": 1108,
+      "usedIn": [
+        "contact.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/infra (3).JPG",
+      "size": 727896,
+      "format": "jpeg",
+      "width": 4032,
+      "height": 2268,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/infra (4).JPG",
+      "size": 726468,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/compressed/atudy (15).jpg",
+      "size": 702084,
+      "format": "jpeg",
+      "width": 4284,
+      "height": 5712,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/campus-pano-1.jpg",
+      "size": 687975,
+      "format": "jpeg",
+      "width": 3000,
+      "height": 1500,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG_6145.JPG.jpeg",
+      "size": 667577,
+      "format": "jpeg",
+      "width": 4096,
+      "height": 2730,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/campus3.png",
+      "size": 662644,
+      "format": "png",
+      "width": 800,
+      "height": 791,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg",
+      "size": 637324,
+      "format": "jpeg",
+      "width": 4000,
+      "height": 3000,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/infra-(2).jpg",
+      "size": 619723,
+      "format": "jpeg",
+      "width": 4032,
+      "height": 3024,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/school2.jpg",
+      "size": 617496,
+      "format": "jpeg",
+      "width": 5568,
+      "height": 3828,
+      "usedIn": [
+        "about.html",
+        "admissions.html",
+        "audit_output.json",
+        "campus-facilities.html",
+        "contact.html",
+        "index.html",
+        "preprimary.html",
+        "scratch/dumped.txt",
+        "students-life.html",
+        "assets/css/onest-about.css"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/campus-pano-2.jpg",
+      "size": 609527,
+      "format": "jpeg",
+      "width": 3000,
+      "height": 1500,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/newcode  (3)/screen.png",
+      "size": 560564,
+      "format": "png",
+      "width": 461,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/preprimary-classroom-shelf.jpg",
+      "size": 557688,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1280,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/infra (7).JPG",
+      "size": 530673,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/food-min.jpg",
+      "size": 529183,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/education/open (2).jpg",
+      "size": 491759,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (10).jpg",
+      "size": 475294,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/infra (1).JPG",
+      "size": 445387,
+      "format": "jpeg",
+      "width": 4032,
+      "height": 3024,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/compressed/atudy (20).jpg",
+      "size": 439127,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (19).jpg",
+      "size": 438436,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/admission.webp",
+      "size": 414902,
+      "format": "webp",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "admissions.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/infra-library-study.jpg",
+      "size": 408946,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1079,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/preprimary-classroom-wide.jpg",
+      "size": 395314,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1280,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/draw (5).jpg",
+      "size": 386173,
+      "format": "jpeg",
+      "width": 1219,
+      "height": 892,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (22).jpg",
+      "size": 381321,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/newcode  (4)/screen.png",
+      "size": 378940,
+      "format": "png",
+      "width": 766,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/2.webp",
+      "size": 372300,
+      "format": "webp",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (18).jpg",
+      "size": 368034,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/infra (6).JPG",
+      "size": 364868,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/compressed/atudy (2).jpg",
+      "size": 360378,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (1).jpg",
+      "size": 357492,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (5).jpg",
+      "size": 348051,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/founder.jpg",
+      "size": 345368,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/infra-library-group.jpg",
+      "size": 344031,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1079,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/infra-school-library.jpg",
+      "size": 344031,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1079,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/newcode .0/screen.png",
+      "size": 332541,
+      "format": "png",
+      "width": 294,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/compressed/atudy (12).jpg",
+      "size": 324294,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260718-WA0082.jpg.jpeg",
+      "size": 323437,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1600,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/compressed/atudy (17).jpg",
+      "size": 322713,
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/evs.jpeg",
+      "size": 307930,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/1.webp",
+      "size": 292808,
+      "format": "webp",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/faculty_team_new.jpg",
+      "size": 290866,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 626,
+      "usedIn": [
+        "index.html",
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0431.jpg.jpeg",
+      "size": 290618,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.43 PM (1).jpeg",
+      "size": 288950,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A8939.JPG.webp",
+      "size": 283114,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.42 PM.jpeg",
+      "size": 282631,
+      "format": "jpeg",
+      "width": 899,
+      "height": 1599,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.43 PM.jpeg",
+      "size": 282456,
+      "format": "jpeg",
+      "width": 899,
+      "height": 1599,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/sensory-grains-activity.jpg",
+      "size": 281045,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 768,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/preprimary/cultural-folk-pageant.jpg",
+      "size": 280602,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 682,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.42 PM (1).jpeg",
+      "size": 279892,
+      "format": "jpeg",
+      "width": 899,
+      "height": 1599,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/saved-banyan-tree.jpg",
+      "size": 277234,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260808-WA0384.jpg.jpeg",
+      "size": 273739,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1177,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260808-WA0384.jpg.jpeg",
+      "size": 273739,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1177,
+      "usedIn": [
+        "index.html",
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/infra-library-attentive.jpg",
+      "size": 273711,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1079,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9207.JPG.webp",
+      "size": 269200,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0336.jpg.jpeg",
+      "size": 267243,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0336.jpg.jpeg",
+      "size": 267243,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0759.jpg.jpeg",
+      "size": 264852,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1204,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/newcode/screen.png",
+      "size": 263355,
+      "format": "png",
+      "width": 440,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/newcode  (2)/screen.png",
+      "size": 262434,
+      "format": "png",
+      "width": 548,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg",
+      "size": 260106,
+      "format": "jpeg",
+      "width": 899,
+      "height": 1599,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9220.JPG.webp",
+      "size": 258784,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/draw (6).jpg",
+      "size": 256130,
+      "format": "jpeg",
+      "width": 862,
+      "height": 631,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0755.jpg.jpeg",
+      "size": 254722,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0755.jpg.jpeg",
+      "size": 254722,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9282.JPG.webp",
+      "size": 252174,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9208.JPG.webp",
+      "size": 250208,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/VEER 1.JPG.webp",
+      "size": 248148,
+      "format": "webp",
+      "width": 1200,
+      "height": 798,
+      "usedIn": [
+        "campus-facilities.html",
+        "db.js"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.26 PM.jpeg",
+      "size": 244333,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/education/open (6).jpg",
+      "size": 243363,
+      "format": "jpeg",
+      "width": 1333,
+      "height": 2000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.30 PM.jpeg",
+      "size": 241704,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260422-WA0614.jpg.jpeg",
+      "size": 240634,
+      "format": "jpeg",
+      "width": 960,
+      "height": 1280,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A8936.JPG.webp",
+      "size": 239422,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A8973 (1).JPG.webp",
+      "size": 235714,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9167.JPG.webp",
+      "size": 229612,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-14 at 12.31.44 PM.jpeg",
+      "size": 228062,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0460.jpg.jpeg",
+      "size": 225320,
+      "format": "jpeg",
+      "width": 720,
+      "height": 1280,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0375.jpg.jpeg",
+      "size": 224135,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 718,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0460.png",
+      "size": 224073,
+      "format": "png",
+      "width": 365,
+      "height": 225,
+      "usedIn": [
+        "index.html",
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/infra-students-stairwell.jpg",
+      "size": 220558,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "campus-facilities.html",
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A8978.JPG.webp",
+      "size": 216210,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0374.jpg.jpeg",
+      "size": 216076,
+      "format": "jpeg",
+      "width": 1066,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/draw (1).jpg",
+      "size": 215361,
+      "format": "jpeg",
+      "width": 877,
+      "height": 639,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9118.JPG.webp",
+      "size": 214646,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/learnings/WhatsApp Image 2026-10-16 at 12.12.50 PM.jpeg",
+      "size": 213444,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9219.JPG.webp",
+      "size": 212420,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0432.jpg.jpeg",
+      "size": 210233,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0756.jpg.jpeg",
+      "size": 209244,
+      "format": "jpeg",
+      "width": 1428,
+      "height": 804,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0756.jpg.jpeg",
+      "size": 209244,
+      "format": "jpeg",
+      "width": 1428,
+      "height": 804,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/draw (8).jpg",
+      "size": 208142,
+      "format": "jpeg",
+      "width": 846,
+      "height": 617,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/infra-glass-staircase.jpg",
+      "size": 207690,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.27 PM.jpeg",
+      "size": 207654,
+      "format": "jpeg",
+      "width": 960,
+      "height": 1280,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/NANDI 1.JPG.webp",
+      "size": 205598,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9216.JPG.webp",
+      "size": 202910,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/WhatsApp Image 2026-08-04 at 12.40.30 PM.jpeg",
+      "size": 202176,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 720,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/NANDI 2.JPG.webp",
+      "size": 200970,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/preprimary-cognitive-puzzle.jpg",
+      "size": 200317,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1079,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9131 (1).JPG.webp",
+      "size": 199758,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9255.JPG.webp",
+      "size": 199700,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0463.jpg.jpeg",
+      "size": 199029,
+      "format": "jpeg",
+      "width": 720,
+      "height": 1280,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0427.jpg.jpeg",
+      "size": 195336,
+      "format": "jpeg",
+      "width": 1200,
+      "height": 1600,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/education/kids2.jpg",
+      "size": 194598,
+      "format": "jpeg",
+      "width": 1422,
+      "height": 640,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9123.JPG.webp",
+      "size": 194066,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/hero_bg_1.jpg",
+      "size": 193851,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 576,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/creative-art-drawing.jpg",
+      "size": 191508,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/preprimary-craft-activity.jpg",
+      "size": 190690,
+      "format": "jpeg",
+      "width": 1079,
+      "height": 1920,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0409.jpg.jpeg",
+      "size": 190104,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0409.jpg.jpeg",
+      "size": 190104,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0757.jpg.jpeg",
+      "size": 189257,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 1200,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0757.jpg.jpeg",
+      "size": 189257,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 1200,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9166.JPG.webp",
+      "size": 188204,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/draw (3).jpg",
+      "size": 186818,
+      "format": "jpeg",
+      "width": 847,
+      "height": 623,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/hero_bg_2.jpg",
+      "size": 185866,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 509,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A0109.JPG.webp",
+      "size": 184822,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0457.jpg.jpeg",
+      "size": 182214,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0457.jpg.jpeg",
+      "size": 182214,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/student-reading-session.jpg",
+      "size": 182057,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/interactive-smart-class.jpg",
+      "size": 180104,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "about.html",
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/preprimary-blocks-play.jpg",
+      "size": 178835,
+      "format": "jpeg",
+      "width": 1079,
+      "height": 1920,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0454.jpg.jpeg",
+      "size": 178004,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0454.jpg.jpeg",
+      "size": 178004,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg",
+      "size": 177524,
+      "format": "jpeg",
+      "width": 960,
+      "height": 1280,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0461.jpg.jpeg",
+      "size": 175712,
+      "format": "jpeg",
+      "width": 720,
+      "height": 1280,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0461.jpg.jpeg",
+      "size": 175712,
+      "format": "jpeg",
+      "width": 720,
+      "height": 1280,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A0102.JPG.webp",
+      "size": 174226,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0407.jpg.jpeg",
+      "size": 173939,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A9143.JPG.webp",
+      "size": 172560,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/collaborative-classroom.jpg",
+      "size": 170906,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "about.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/hero_new_bg.jpg",
+      "size": 169935,
+      "format": "jpeg",
+      "width": 1024,
+      "height": 340,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9233.JPG.webp",
+      "size": 167502,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A9170.JPG.webp",
+      "size": 167140,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg",
+      "size": 163983,
+      "format": "jpeg",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg",
+      "size": 148211,
+      "format": "jpeg",
+      "width": 1459,
+      "height": 1078,
+      "usedIn": [
+        "db.js",
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/1P3A8914.JPG.webp",
+      "size": 147226,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/WhatsApp Image 2026-08-04 at 12.38.52 PM.jpeg",
+      "size": 146094,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "index.html",
+        "scratch/dumped.txt"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/education/kids3.jpg",
+      "size": 145530,
+      "format": "jpeg",
+      "width": 1080,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0441.jpg.jpeg",
+      "size": 144923,
+      "format": "jpeg",
+      "width": 715,
+      "height": 1600,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0456.jpg.jpeg",
+      "size": 144524,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0456.jpg.jpeg",
+      "size": 144524,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/infra-panoramic-terrace.jpg",
+      "size": 138243,
+      "format": "jpeg",
+      "width": 768,
+      "height": 1024,
+      "usedIn": [
+        "contact.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/draw (2).jpg",
+      "size": 138205,
+      "format": "jpeg",
+      "width": 855,
+      "height": 619,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0762.jpg.jpeg",
+      "size": 137025,
+      "format": "jpeg",
+      "width": 963,
+      "height": 1280,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM.jpeg",
+      "size": 134991,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 853,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg",
+      "size": 134831,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [
+        "db.js",
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.31 PM.jpeg",
+      "size": 132683,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.19 PM.jpeg",
+      "size": 132016,
+      "format": "jpeg",
+      "width": 960,
+      "height": 1280,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0406.jpg.jpeg",
+      "size": 131430,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0405.jpg.jpeg",
+      "size": 131066,
+      "format": "jpeg",
+      "width": 1599,
+      "height": 899,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg",
+      "size": 127751,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 853,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0761.jpg.jpeg",
+      "size": 125693,
+      "format": "jpeg",
+      "width": 1040,
+      "height": 780,
+      "usedIn": [
+        "preprimary.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/learnings/WhatsApp Image 2026-10-16 at 12.50.35 PM.jpeg",
+      "size": 124403,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [
+        "index.html",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg",
+      "size": 118676,
+      "format": "jpeg",
+      "width": 715,
+      "height": 1600,
+      "usedIn": [
+        "db.js",
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260202-WA1115.jpg.jpeg",
+      "size": 118359,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/education/open (21).jpg",
+      "size": 117730,
+      "format": "jpeg",
+      "width": 1920,
+      "height": 1063,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg",
+      "size": 116183,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [
+        "campus-facilities.html",
+        "index.html",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg",
+      "size": 116183,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0447.jpg.jpeg",
+      "size": 115039,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0447.jpg.jpeg",
+      "size": 115039,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/3.webp",
+      "size": 114174,
+      "format": "webp",
+      "width": 1920,
+      "height": 1080,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/learnings/financial learnigs.jpeg",
+      "size": 110269,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 960,
+      "usedIn": [
+        "index.html",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/person/IMG-20260810-WA0450.jpg.jpeg",
+      "size": 110117,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0450.jpg.jpeg",
+      "size": 110117,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0445.jpg.jpeg",
+      "size": 106919,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [
+        "index.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM (1).jpeg",
+      "size": 105648,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 853,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/learnings/WhatsApp Image 2026-10-15 at 3.20.35 PM.jpeg",
+      "size": 105648,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 853,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.27 PM.jpeg",
+      "size": 105619,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg",
+      "size": 105618,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [
+        "campus-facilities.html",
+        "index.html",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.28 PM (1).jpeg",
+      "size": 105618,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg",
+      "size": 104492,
+      "format": "jpeg",
+      "width": 1132,
+      "height": 754,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0444.jpg.jpeg",
+      "size": 101621,
+      "format": "jpeg",
+      "width": 648,
+      "height": 1152,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0448.jpg.jpeg",
+      "size": 100517,
+      "format": "jpeg",
+      "width": 1152,
+      "height": 648,
+      "usedIn": [
+        "campus-facilities.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.26 PM.jpeg",
+      "size": 95516,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 853,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/open (11).jpg",
+      "size": 93444,
+      "format": "jpeg",
+      "width": 1500,
+      "height": 1000,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/1P3A0180.JPG.webp",
+      "size": 87696,
+      "format": "webp",
+      "width": 1200,
+      "height": 800,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/education/open (8).webp",
+      "size": 87428,
+      "format": "webp",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/education/open (2).webp",
+      "size": 84992,
+      "format": "webp",
+      "width": 1200,
+      "height": 1600,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg",
+      "size": 75949,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 576,
+      "usedIn": [
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/education/open (6).webp",
+      "size": 75014,
+      "format": "webp",
+      "width": 1600,
+      "height": 1200,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (12).jpg",
+      "size": 72089,
+      "format": "jpeg",
+      "width": 960,
+      "height": 720,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (15).jpg",
+      "size": 64373,
+      "format": "jpeg",
+      "width": 720,
+      "height": 960,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.32 PM.jpeg",
+      "size": 60869,
+      "format": "jpeg",
+      "width": 1280,
+      "height": 576,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/ONEST/IMG-20260810-WA0453.jpg.jpeg",
+      "size": 60774,
+      "format": "jpeg",
+      "width": 648,
+      "height": 1152,
+      "usedIn": [
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/open (10).jpg",
+      "size": 58003,
+      "format": "jpeg",
+      "width": 1296,
+      "height": 728,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (13).jpg",
+      "size": 56974,
+      "format": "jpeg",
+      "width": 960,
+      "height": 720,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (14).jpg",
+      "size": 56468,
+      "format": "jpeg",
+      "width": 960,
+      "height": 540,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/open (9).jpg",
+      "size": 56307,
+      "format": "jpeg",
+      "width": 1296,
+      "height": 728,
+      "usedIn": [],
+      "isUsed": false
+    },
+    {
+      "path": "assets/img/onest.svg",
+      "size": 19224,
+      "format": "svg",
+      "width": null,
+      "height": null,
+      "usedIn": [
+        "404.html",
+        "about.html",
+        "admin.html",
+        "admissions.html",
+        "audit_output.json",
+        "campus-facilities.html",
+        "components/footer.html",
+        "components/header.html",
+        "contact.html",
+        "index.html",
+        "preprimary.html",
+        "scratch/dumped.txt",
+        "students-life.html",
+        "assets/css/theme-base.css",
+        "legal/accessibility.html",
+        "legal/copyright.html",
+        "legal/disclaimer.html",
+        "legal/privacy-policy.html",
+        "legal/terms-and-conditions.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/apple-touch-icon.png",
+      "size": 1156,
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "usedIn": [
+        "about.html",
+        "admissions.html",
+        "campus-facilities.html",
+        "contact.html",
+        "index.html",
+        "preprimary.html",
+        "scratch/dumped.txt",
+        "students-life.html"
+      ],
+      "isUsed": true
+    },
+    {
+      "path": "assets/img/favicon.png",
+      "size": 1156,
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "usedIn": [],
+      "isUsed": false
+    }
+  ]
+}
