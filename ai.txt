@@ -3,7 +3,8 @@ Contact: onestgurukulprimary@gmail.com
 Sitemap: https://onestgurukul.in/sitemap.xml
 LLM-Data: https://onestgurukul.in/llms.txt
 School: O'Nest Gurukul
-Curriculum: CBSE
-Location: Ratnagiri, Maharashtra, India (Postal Code: 415639)
+Curriculum: CBSE Curriculum Framework
+Location: Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Ratnagiri, Maharashtra 415639, India
 Geo-Coordinates: 16.980466, 73.323632
 Admissions-Year: 2026-2027
+Official-Website: https://onestgurukul.in/

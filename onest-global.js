@@ -16,38 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const DB = window.OnestDB;
 
-    // --- 1. Theme State Manager & Syncer ---
-    function syncTheme() {
-        const body = document.body;
-        const currentTheme = localStorage.getItem('onest-theme');
-        const themeToggles = document.querySelectorAll('#onest-home-theme-toggle, #onest-mobile-theme-toggle');
-
-        if (currentTheme === 'dark') {
-            body.classList.add('onest-dark-mode');
-            body.classList.add('onest-home-dark-mode');
-            themeToggles.forEach(btn => {
-                const icon = btn.querySelector('i');
-                if (icon) icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-            });
-        } else {
-            body.classList.remove('onest-dark-mode');
-            body.classList.remove('onest-home-dark-mode');
-            themeToggles.forEach(btn => {
-                const icon = btn.querySelector('i');
-                if (icon) icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-            });
-        }
-    }
-
-    // Bind event listeners to existing theme toggles
-    document.querySelectorAll('#onest-home-theme-toggle, #onest-mobile-theme-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const isDark = document.body.classList.contains('onest-dark-mode') || document.body.classList.contains('onest-home-dark-mode');
-            localStorage.setItem('onest-theme', isDark ? 'light' : 'dark');
-            syncTheme();
-        });
-    });
-    syncTheme(); // Sync on load
+    // --- 1. Permanent Light Mode Enforcer ---
+    try {
+        localStorage.setItem('onest-theme', 'light');
+    } catch (e) {}
+    document.documentElement.classList.remove('dark', 'onest-dark-mode');
+    document.body.classList.remove('onest-dark-mode', 'onest-home-dark-mode', 'dark');
 
 
     // --- 2. Scrolling Marquee Announcement Banner ---

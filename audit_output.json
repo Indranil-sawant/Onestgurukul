@@ -1,0 +1,545 @@
+{
+  "index.html": {
+    "title": "O'Nest Gurukul | Best CBSE School in Ratnagiri &amp; Chiplun, Maharashtra",
+    "titleLength": 73,
+    "metaDesc": "O",
+    "metaDescLength": 1,
+    "canonical": "https://onestgurukul.in/index.html",
+    "h1s": [
+      "Inspiring Young Minds. Building Future Leaders."
+    ],
+    "h2Count": 18,
+    "h3Count": 59,
+    "totalImages": 32,
+    "imgsWithoutAlt": 1,
+    "imgsWithLazy": 30,
+    "ogTitle": "O",
+    "ogDesc": "Nurturing academic excellence, modern STEM education, and timeless values from Pre-Primary to Class 6+ in Ratnagiri, Maharashtra. Admissions open for 2026-27.",
+    "ogUrl": "https://onestgurukul.in/index.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "EducationalOrganization",
+              "School",
+              "LocalBusiness"
+            ],
+            "@id": "https://onestgurukul.in/#organization",
+            "name": "O'Nest Gurukul",
+            "alternateName": [
+              "Onest Gurukul",
+              "O'Nest Gurukul School",
+              "O'Nest Gurukul Ratnagiri"
+            ],
+            "url": "https://onestgurukul.in/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://onestgurukul.in/assets/img/onest.svg",
+              "caption": "O'Nest Gurukul Logo"
+            },
+            "image": "https://onestgurukul.in/assets/img/school2.jpg",
+            "description": "O'Nest Gurukul is a premier CBSE educational institution in Ratnagiri & Chiplun, Maharashtra offering holistic education from Pre-Primary to Grade 6+ with modern facilities, experiential STEM, sports, and timeless Gurukul values.",
+            "telephone": "+91-8767672478",
+            "email": "onestgurukulprimary@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane",
+              "addressLocality": "Ratnagiri",
+              "addressRegion": "Maharashtra",
+              "postalCode": "415639",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 16.9804663,
+              "longitude": 73.3236318
+            },
+            "hasMap": "https://maps.google.com/?cid=0xbabf8ab0872ee594",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Ratnagiri"
+              },
+              {
+                "@type": "City",
+                "name": "Chiplun"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Ratnagiri District"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Konkan"
+              },
+              {
+                "@type": "State",
+                "name": "Maharashtra"
+              }
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "08:00",
+                "closes": "16:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/",
+              "https://www.instagram.com/",
+              "https://www.youtube.com/"
+            ],
+            "priceRange": "$$",
+            "currenciesAccepted": "INR",
+            "paymentAccepted": "Cash, Cheque, Online Transfer, UPI",
+            "educationalCredentialAwarded": "CBSE Curriculum Framework",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Academic Programs",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Course",
+                    "name": "Pre-Primary Foundation (Playgroup, Nursery, Jr. KG, Sr. KG)",
+                    "description": "Play-based sensory education with experiential learning, storytelling, phonics, and motor skill development."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Course",
+                    "name": "Primary & Middle School (Standard 1 to 6+)",
+                    "description": "CBSE-aligned comprehensive schooling with experiential STEM labs, bilingual fluency, sports, athletics, and cultural arts."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://onestgurukul.in/#website",
+            "url": "https://onestgurukul.in/",
+            "name": "O'Nest Gurukul",
+            "description": "Official website of O'Nest Gurukul School, Ratnagiri & Chiplun, Maharashtra",
+            "publisher": {
+              "@id": "https://onestgurukul.in/#organization"
+            },
+            "inLanguage": "en-IN"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://onestgurukul.in/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the admission procedure at O'Nest Gurukul for 2026-27?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The admission process involves submitting the online inquiry form at onestgurukul.in/admissions.html, attending a friendly interaction/assessment with our panel, verifying documents, and completing registration."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which curriculum does O'Nest Gurukul follow?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O'Nest Gurukul follows a comprehensive CBSE curriculum framework, delivering experiential STEM education, bilingual fluency, sports, martial arts, and core Gurukul values."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What grades and age groups does O'Nest Gurukul cater to?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O'Nest Gurukul offers schooling from Pre-Primary (Playgroup, Nursery, Junior KG, Senior KG) up to Standard 6+ (primary and middle school)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is O'Nest Gurukul located and what transport facilities are available?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O'Nest Gurukul is located at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639. The school operates a dedicated fleet of GPS-tracked school buses with CCTV and trained attendants covering major routes across Ratnagiri, Chiplun, and surrounding areas."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "about.html": {
+    "title": "About Us | O'Nest Gurukul School Ratnagiri | Vision &amp; Leadership",
+    "titleLength": 68,
+    "metaDesc": "Discover O",
+    "metaDescLength": 10,
+    "canonical": "https://onestgurukul.in/about.html",
+    "h1s": [
+      "Where Young MindsDiscover Their Potential"
+    ],
+    "h2Count": 5,
+    "h3Count": 2,
+    "totalImages": 13,
+    "imgsWithoutAlt": 0,
+    "imgsWithLazy": 11,
+    "ogTitle": "About Us | O",
+    "ogDesc": "Discover O",
+    "ogUrl": "https://onestgurukul.in/about.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "AboutPage",
+            "@id": "https://onestgurukul.in/about.html#webpage",
+            "url": "https://onestgurukul.in/about.html",
+            "name": "About O'Nest Gurukul",
+            "description": "Educational vision, history, and leadership of O'Nest Gurukul in Ratnagiri, Maharashtra.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/about.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/about.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://onestgurukul.in/about.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "admissions.html": {
+    "title": "Admissions 2026-27 | O'Nest Gurukul CBSE School Ratnagiri | Apply Now",
+    "titleLength": 69,
+    "metaDesc": "Admissions open for academic year 2026-27 at O",
+    "metaDescLength": 46,
+    "canonical": "https://onestgurukul.in/admissions.html",
+    "h1s": [
+      "Begin Your Child's Extraordinary Journey"
+    ],
+    "h2Count": 5,
+    "h3Count": 5,
+    "totalImages": 4,
+    "imgsWithoutAlt": 0,
+    "imgsWithLazy": 2,
+    "ogTitle": "Admissions 2026-27 | O",
+    "ogDesc": "Enroll your child for 2026-27 at O",
+    "ogUrl": "https://onestgurukul.in/admissions.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://onestgurukul.in/admissions.html#webpage",
+            "url": "https://onestgurukul.in/admissions.html",
+            "name": "Admissions 2026-27 - O'Nest Gurukul",
+            "description": "Information on admission eligibility, fee structure, and online application at O'Nest Gurukul, Ratnagiri.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/admissions.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/admissions.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Admissions",
+                "item": "https://onestgurukul.in/admissions.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "campus-facilities.html": {
+    "title": "Campus Facilities &amp; 360° Virtual Tour | O'Nest Gurukul Ratnagiri",
+    "titleLength": 68,
+    "metaDesc": "Tour O",
+    "metaDescLength": 6,
+    "canonical": "https://onestgurukul.in/campus-facilities.html",
+    "h1s": [
+      "Where Learning Breathes in Nature's Lap"
+    ],
+    "h2Count": 11,
+    "h3Count": 5,
+    "totalImages": 40,
+    "imgsWithoutAlt": 1,
+    "imgsWithLazy": 37,
+    "ogTitle": "Campus Facilities &amp; 360° Virtual Tour | O",
+    "ogDesc": "Explore our lush green eco-campus, STEM laboratories, library, and sports infrastructure in Ratnagiri, Maharashtra.",
+    "ogUrl": "https://onestgurukul.in/campus-facilities.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://onestgurukul.in/campus-facilities.html#webpage",
+            "url": "https://onestgurukul.in/campus-facilities.html",
+            "name": "Campus Facilities & 360 Virtual Tour - O'Nest Gurukul",
+            "description": "Virtual tour and infrastructure overview of O'Nest Gurukul campus at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/campus-facilities.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/campus-facilities.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Campus & Facilities",
+                "item": "https://onestgurukul.in/campus-facilities.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "contact.html": {
+    "title": "Contact O'Nest Gurukul | Ratnagiri Campus Address, Phone &amp; Map",
+    "titleLength": 66,
+    "metaDesc": "Contact O",
+    "metaDescLength": 9,
+    "canonical": "https://onestgurukul.in/contact.html",
+    "h1s": [
+      "We're Here to Help YouEvery Step of the Way."
+    ],
+    "h2Count": 2,
+    "h3Count": 1,
+    "totalImages": 3,
+    "imgsWithoutAlt": 0,
+    "imgsWithLazy": 1,
+    "ogTitle": "Contact O",
+    "ogDesc": "Reach our Admissions Desk, Campus Tour coordinators, or Administration in Ratnagiri, Maharashtra.",
+    "ogUrl": "https://onestgurukul.in/contact.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://onestgurukul.in/contact.html#webpage",
+            "url": "https://onestgurukul.in/contact.html",
+            "name": "Contact O'Nest Gurukul",
+            "description": "Campus location, phone, email, and contact inquiry form for O'Nest Gurukul, Ratnagiri.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/contact.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/contact.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact Us",
+                "item": "https://onestgurukul.in/contact.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "preprimary.html": {
+    "title": "Pre-Primary School in Ratnagiri | Playgroup, Nursery, KG | O'Nest Gurukul",
+    "titleLength": 73,
+    "metaDesc": "Nurturing early childhood education in Ratnagiri at O",
+    "metaDescLength": 53,
+    "canonical": "https://onestgurukul.in/preprimary.html",
+    "h1s": [
+      "Where Little LearnersBegin Big Dreams."
+    ],
+    "h2Count": 8,
+    "h3Count": 9,
+    "totalImages": 19,
+    "imgsWithoutAlt": 0,
+    "imgsWithLazy": 17,
+    "ogTitle": "Pre-Primary School in Ratnagiri | Playgroup, Nursery, KG | O",
+    "ogDesc": "Where little learners begin big dreams. Safe, sensory play-based foundational learning in Ratnagiri, Maharashtra.",
+    "ogUrl": "https://onestgurukul.in/preprimary.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://onestgurukul.in/preprimary.html#webpage",
+            "url": "https://onestgurukul.in/preprimary.html",
+            "name": "Pre-Primary Foundation - O'Nest Gurukul",
+            "description": "Playgroup, Nursery, Jr. KG, and Sr. KG early learning programs at O'Nest Gurukul in Ratnagiri.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/preprimary.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/preprimary.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Pre-Primary",
+                "item": "https://onestgurukul.in/preprimary.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "students-life.html": {
+    "title": "Curriculum &amp; Student Life | CBSE Academic Excellence | O'Nest Gurukul",
+    "titleLength": 73,
+    "metaDesc": "Comprehensive CBSE-aligned curriculum at O",
+    "metaDescLength": 42,
+    "canonical": "https://onestgurukul.in/students-life.html",
+    "h1s": [
+      "Every Big DreamBegins With a Smile."
+    ],
+    "h2Count": 12,
+    "h3Count": 17,
+    "totalImages": 38,
+    "imgsWithoutAlt": 1,
+    "imgsWithLazy": 35,
+    "ogTitle": "Curriculum &amp; Student Life | CBSE Academic Excellence | O",
+    "ogDesc": "Experiential STEM, sports ground, karate, bilingual fluency, and character building in Ratnagiri, Maharashtra.",
+    "ogUrl": "https://onestgurukul.in/students-life.html",
+    "ogImage": "https://onestgurukul.in/assets/img/school2.jpg",
+    "twCard": "summary_large_image",
+    "jsonLdCount": 1,
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://onestgurukul.in/students-life.html#webpage",
+            "url": "https://onestgurukul.in/students-life.html",
+            "name": "Curriculum & Student Life - O'Nest Gurukul",
+            "description": "CBSE curriculum, academic methodology, sports, and co-curricular life at O'Nest Gurukul, Ratnagiri.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://onestgurukul.in/"
+            },
+            "breadcrumb": {
+              "@id": "https://onestgurukul.in/students-life.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://onestgurukul.in/students-life.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://onestgurukul.in/index.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Curriculum",
+                "item": "https://onestgurukul.in/students-life.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

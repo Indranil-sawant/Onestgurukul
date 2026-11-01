@@ -72,8 +72,54 @@
             { id: "d-4", title: "CBSE Affiliation Extension Letter", category: "Affiliation Letter", updatedDate: "2026-01-20", downloadUrl: "#", status: "published" }
         ],
         faqs: [
-            { id: "f-1", question: "What is the admission procedure at O'Nest Gurukul?", answer: "The admission process involves submitting the online application form, attending a friendly interaction/assessment with our panel, verifying documents, and completing the registration fee payment.", category: "Admission" },
-            { id: "f-2", question: "Is O'Nest Gurukul affiliated with CBSE?", answer: "Yes, O'Nest Gurukul is a co-educational school proposed for CBSE curriculum implementation, delivering high-concept, value-based modern education.", category: "Curriculum" }
+            {
+                id: "f-1",
+                question: "Where is O'Nest Gurukul located in Ratnagiri?",
+                answer: "O'Nest Gurukul is located at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Ratnagiri, Maharashtra 415639. The campus is set in a calm, green, pollution-free environment easily accessible from Ratnagiri city.",
+                category: "Admission"
+            },
+            {
+                id: "f-2",
+                question: "Which classes and grades are offered at O'Nest Gurukul?",
+                answer: "O'Nest Gurukul provides schooling from Pre-Primary through Class 6+. The Pre-Primary section includes Playgroup (1.5-2.5 yrs), Nursery (2.5-3.5 yrs), Junior KG (3.5-4.5 yrs), and Senior KG (4.5-5.5 yrs). The Primary and Middle school sections cover Standard 1 to Standard 6+.",
+                category: "Curriculum"
+            },
+            {
+                id: "f-3",
+                question: "Which curriculum and educational framework does the school follow?",
+                answer: "O'Nest Gurukul follows a comprehensive CBSE-aligned curriculum framework, combining experiential STEM education, bilingual language development (English, Marathi, Hindi), conceptual mathematics, and traditional Gurukul values.",
+                category: "Curriculum"
+            },
+            {
+                id: "f-4",
+                question: "What is the admission procedure for the 2026-27 academic year?",
+                answer: "The admission process involves submitting the online inquiry form, attending a friendly student-parent interaction with our educators, verifying required documents, and completing formal admission registration.",
+                category: "Admission"
+            },
+            {
+                id: "f-5",
+                question: "Which documents are required during the admission process?",
+                answer: "Standard required documents include the child's original Birth Certificate, past school progress reports/report cards, Transfer Certificate (TC) from the previous school (for Class 1 onwards), copies of student and parent Aadhaar cards, and passport-size photographs.",
+                category: "Admission"
+            },
+            {
+                id: "f-6",
+                question: "What school transport facilities are available?",
+                answer: "O'Nest Gurukul operates a dedicated fleet of GPS-tracked school buses equipped with CCTV cameras, speed governors, and trained female attendants, providing safe daily pick-up and drop-off coverage across Ratnagiri and surrounding suburban routes.",
+                category: "Transport"
+            },
+            {
+                id: "f-7",
+                question: "What extracurricular, life skills, and co-curricular programs are offered?",
+                answer: "Our co-curricular curriculum includes hands-on STEM science inquiry, early financial literacy and Bal Bazaar commerce roleplay, sports and athletic training, yoga and Surya Namaskar, kitchen gardening (Paras Bagh), environmental eco-club, and cultural arts.",
+                category: "Activities"
+            },
+            {
+                id: "f-8",
+                question: "What is the school fee policy and payment schedule?",
+                answer: "O'Nest Gurukul maintains a transparent, moderate fee structure with zero hidden charges. Detailed class-wise fee schedules, payment terms, and installment options are shared openly during the campus consultation and document verification stage.",
+                category: "Fees"
+            }
         ],
         faculty: [
             { id: "fac-1", name: "Mrs. Savita Wadekar", role: "Principal & Academic Director", qualification: "M.A., M.Ed., Ph.D. (Edu)", experience: "20 Years", photo: "assets/img/education/parent (1).jpg", department: "Administration" },
