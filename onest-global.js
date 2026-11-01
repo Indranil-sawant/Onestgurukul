@@ -368,24 +368,38 @@ document.addEventListener('DOMContentLoaded', () => {
     injectGlobalSearch();
 
     // --- 6.5. Google Sheets Webhook Dispatcher ---
-    window.postToOnestWebhook = function(formType, data) {
-        const settings = DB.getSettings();
-        const url = settings.googleSheetsWebhookUrl;
+    window.ONEST_WEBHOOK_URL = window.ONEST_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec";
+
+    window.postToOnestWebhook = async function(formType, data) {
+        let url = window.ONEST_WEBHOOK_URL;
         
+        try {
+            if (window.DB && typeof window.DB.getSettings === 'function') {
+                const settings = await window.DB.getSettings();
+                if (settings && settings.googleSheetsWebhookUrl) {
+                    url = settings.googleSheetsWebhookUrl;
+                }
+            }
+        } catch (e) {
+            console.warn("[Webhook] Failed reading settings, using fallback webhook URL:", e);
+        }
+
         if (!url) {
-            console.warn("[Webhook] No Google Sheets webhook URL configured in Settings.");
+            console.warn("[Webhook] No Google Sheets webhook URL configured.");
             return Promise.resolve();
         }
 
         const payload = {
             FormType: formType,
-            Timestamp: new Date().toLocaleString(),
+            Timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
             ...data
         };
 
         const bodyParams = new URLSearchParams();
         for (const key in payload) {
-            bodyParams.append(key, payload[key]);
+            if (payload[key] !== undefined && payload[key] !== null) {
+                bodyParams.append(key, payload[key]);
+            }
         }
 
         console.log(`[Webhook] Posting "${formType}" to Google Sheet:`, payload);
@@ -398,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: bodyParams.toString()
         }).then(() => {
-            console.log(`[Webhook] POST request dispatched successfully!`);
+            console.log(`[Webhook] Form "${formType}" POST request dispatched successfully!`);
         }).catch(err => {
             console.error(`[Webhook] Post failed:`, err);
         });

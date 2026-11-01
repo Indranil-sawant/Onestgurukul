@@ -140,6 +140,7 @@
             emergencyBannerPriority: "gold",
             marqueeDirection: "ltr",
             analyticsEnabled: true,
+            googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec",
             language: "en"
         }
     };

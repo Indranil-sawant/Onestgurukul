@@ -35,7 +35,7 @@ The CMS is powered by a serverless Supabase PostgreSQL backend. Use these direct
 ### 2.1 Google Apps Script Form Webhook
 Form submissions from [`contact.html`](file:///C:/Users/indranil%20sawant/OneDrive/Desktop/Onestgurukul/contact.html) and [`index.html`](file:///C:/Users/indranil%20sawant/OneDrive/Desktop/Onestgurukul/index.html) route to a serverless Google Apps Script:
 * **Active Webhook Endpoint:**  
-  `https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec`
+  `https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec`
 * **Destination:** The linked Google Sheet captures parent names, phone numbers, student grades, and messages in real time.
 * **To Update the Destination Sheet:** Open your Google Apps Script project &rarr; Update script &rarr; Deploy as Web App &rarr; Replace URL in [`contact.html`](file:///C:/Users/indranil%20sawant/OneDrive/Desktop/Onestgurukul/contact.html).
 

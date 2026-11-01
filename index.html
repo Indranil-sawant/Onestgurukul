@@ -2903,7 +2903,7 @@
             class="lg:col-span-5 bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
             <form id="home-contact-form"
-              action="https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec"
+              action="https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec"
               method="POST" target="hidden_iframe" class="space-y-5 text-left">
               <!-- Honeypot Spam Trap -->
               <div style="display:none;">
@@ -3369,29 +3369,21 @@
           submitBtn.innerText = "Sending...";
           submitBtn.disabled = true;
 
-          // Prepare parameters for both destinations
-          const formData = new FormData(homeForm);
-          formData.append('FormType', 'Homepage Message');
+          // Dispatch single submission via centralized webhook (or homeForm.action fallback)
+          const sendPromise = (window.postToOnestWebhook)
+            ? window.postToOnestWebhook('Homepage Message', {
+                Name: name,
+                Email: email,
+                Date: date,
+                Message: message
+              })
+            : fetch(homeForm.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: new URLSearchParams(new FormData(homeForm))
+              });
 
-          // Send to Main Apps Script URL via fetch
-          const mainPost = fetch(homeForm.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: new URLSearchParams(formData)
-          });
-
-          let webhookPromise = Promise.resolve();
-          if (window.postToOnestWebhook) {
-            webhookPromise = window.postToOnestWebhook('Homepage Inquiry', {
-              FormType: 'Homepage Message',
-              ApplicantName: name,
-              Email: email,
-              Date: date,
-              Message: message
-            });
-          }
-
-          Promise.allSettled([mainPost, webhookPromise]).finally(() => {
+          sendPromise.finally(() => {
             alert("✓ Your message has been sent successfully!");
             homeForm.reset();
             submitBtn.innerText = originalText;

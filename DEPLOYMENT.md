@@ -89,7 +89,7 @@ Ensure that the official school emails (`info@onestgurukul.in`) are active:
 The website utilizes a Google Apps Script Webhook to capture enquiries and admissions registrations:
 - **Webhook Location**: Declared inside `db.js` under the `settings` object:
   ```javascript
-  googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec"
+  googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec"
   ```
 - **Customization**: If you need to update the Google Sheet receiving submissions, replace this URL with the new script deployment endpoint. The site's forms will automatically pickup the new webhook.
 

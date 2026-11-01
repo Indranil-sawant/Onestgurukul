@@ -1,0 +1,25 @@
+# Operating System files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+*Zone.Identifier*
+
+# IDE and Editor Cache
+.vscode/
+.history/
+.lh/
+*.swp
+*.swo
+
+# Node / Dependency Cache
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Backup & Temporary Test Files
+_backup*/
+*.tmp
+*.bak
+wget-log
+testscreen.png
+

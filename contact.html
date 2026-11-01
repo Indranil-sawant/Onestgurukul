@@ -344,7 +344,7 @@
           <!-- Contact Inquiry Form -->
           <div class="lg:col-span-6 bg-white/95 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
-            <form id="onest-contact-form" action="https://script.google.com/macros/s/AKfycbzy_XYVQhZevOoWxX4p5l0OnnHImOgBR-obzac23We2-5Zx4VIyyjgW25Xgie3fPG-v/exec" method="POST" target="hidden_iframe" class="space-y-4 text-left">
+            <form id="onest-contact-form" action="https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec" method="POST" target="hidden_iframe" class="space-y-4 text-left">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Parent's Name</label>
@@ -583,32 +583,25 @@
             window.trackOnestAnalytics('submit_contact_enquiry', { parentName, purpose });
           }
 
-          // Prepare payload
-          const formData = new FormData(form);
-          formData.append('FormType', 'Contact Enquiry');
+          // Dispatch single submission via centralized webhook (or form.action fallback)
+          const sendPromise = (window.postToOnestWebhook)
+            ? window.postToOnestWebhook('Contact Enquiry', {
+                ParentName: parentName,
+                StudentName: studentName,
+                Grade: grade,
+                Phone: phone,
+                Email: email,
+                Purpose: purpose,
+                ContactMode: contactMode,
+                Message: message
+              })
+            : fetch(form.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: new URLSearchParams(new FormData(form))
+              });
 
-          // Send to Main Apps Script URL via fetch
-          const mainPost = fetch(form.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: new URLSearchParams(formData)
-          });
-
-          let webhookPromise = Promise.resolve();
-          if (window.postToOnestWebhook) {
-            webhookPromise = window.postToOnestWebhook('Contact Enquiry', {
-              ParentName: parentName,
-              StudentName: studentName,
-              Grade: grade,
-              Phone: phone,
-              Email: email,
-              Purpose: purpose,
-              ContactMode: contactMode,
-              Message: message
-            });
-          }
-
-          Promise.allSettled([mainPost, webhookPromise]).finally(() => {
+          sendPromise.finally(() => {
             alert("✓ Your inquiry has been sent successfully! Our administrative office will contact you via your preferred mode: " + contactMode);
             form.reset();
             if (submitBtn) {
