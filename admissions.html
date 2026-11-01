@@ -490,28 +490,19 @@
               <!-- Document Upload Simulations -->
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <label style="font-size: 12px; font-weight: bold; color: #002147;">Upload Birth Certificate <span style="color: red;">*</span></label>
-                  <input type="file" id="adm-file-birth" class="onest-admissions-input" accept=".pdf,.jpg,.png" required onchange="simulateUploadProgress('birth-progress')">
+                  <label style="font-size: 12px; font-weight: bold; color: #002147;">Upload Birth Certificate <span style="font-size: 11px; font-weight: normal; color: #6b7280;">(Optional)</span></label>
+                  <input type="file" id="adm-file-birth" class="onest-admissions-input" accept=".pdf,.jpg,.png" onchange="simulateUploadProgress('birth-progress')">
                   <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; display: none;" id="birth-progress-container">
                     <div id="birth-progress" style="width: 0%; height: 100%; background: #059669; transition: width 0.4s;"></div>
                   </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <label style="font-size: 12px; font-weight: bold; color: #002147;">Upload Passport Size Photograph <span style="color: red;">*</span></label>
-                  <input type="file" id="adm-file-photo" class="onest-admissions-input" accept="image/*" required onchange="simulateUploadProgress('photo-progress')">
+                  <label style="font-size: 12px; font-weight: bold; color: #002147;">Upload Passport Size Photograph <span style="font-size: 11px; font-weight: normal; color: #6b7280;">(Optional)</span></label>
+                  <input type="file" id="adm-file-photo" class="onest-admissions-input" accept="image/*" onchange="simulateUploadProgress('photo-progress')">
                   <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; display: none;" id="photo-progress-container">
                     <div id="photo-progress" style="width: 0%; height: 100%; background: #059669; transition: width 0.4s;"></div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Scholarship Opt In -->
-              <div style="display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; background: rgba(115,92,0,0.05); padding: 12px; border-radius: 12px; border: 1px solid rgba(115,92,0,0.1);">
-                <input type="checkbox" id="adm-scholarship" style="margin-top: 3px; border-radius: 4px; border-color: rgba(115,92,0,0.3); color: #735c00; focus:ring-0;">
-                <label for="adm-scholarship" style="font-size: 12px; font-weight: bold; color: #002147; line-height: 1.4;">
-                  Apply for Admission Scholarship assistance.<br/>
-                  <span style="font-size: 10px; color: #4b5563; font-weight: normal;">Tick this box if you believe the student qualifies for Academic Merit or talent benefits.</span>
-                </label>
               </div>
 
               <!-- CAPTCHA Verification -->
@@ -870,7 +861,7 @@
       const formFields = [
         'adm-name', 'adm-dob', 'adm-grade', 'adm-gender',
         'adm-parent', 'adm-relation', 'adm-email', 'adm-phone',
-        'adm-address', 'adm-city', 'adm-state', 'adm-pincode', 'adm-scholarship'
+        'adm-address', 'adm-city', 'adm-state', 'adm-pincode'
       ];
 
       function saveProgressToSession() {
@@ -994,7 +985,6 @@
                         document.getElementById('adm-city').value + ", " + 
                         document.getElementById('adm-state').value + " - " + 
                         document.getElementById('adm-pincode').value;
-        const scholarshipApplied = document.getElementById('adm-scholarship').checked;
 
         if (window.trackOnestAnalytics) {
           window.trackOnestAnalytics('submit_admission_form', { studentName, grade, parentName });
@@ -1010,8 +1000,7 @@
             Relation: relation,
             Email: email,
             Phone: phone,
-            Address: address,
-            ScholarshipApplied: scholarshipApplied ? "Yes" : "No"
+            Address: address
           });
         }
 
