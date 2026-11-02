@@ -155,8 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Pre-defined questions -->
             <div class="p-3 bg-gray-50 dark:bg-amber-100/50 border-t border-primary/5 flex flex-wrap gap-2 justify-center select-none shrink-0">
                 <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="admissions">How to Apply?</button>
-                <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="fees">Fee Structure?</button>
-                <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="transport">Is bus available?</button>
+                <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="documents">Required Documents?</button>
+                <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="visit">Book Campus Visit?</button>
                 <button class="chat-opt bg-white border border-primary/20 hover:bg-primary hover:text-white text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer" data-q="human">Talk to Agent</button>
             </div>
         `;
@@ -184,15 +184,60 @@ document.addEventListener('DOMContentLoaded', () => {
         bubbleBtn.addEventListener('click', toggleChat);
         closeBtn.addEventListener('click', toggleChat);
 
+        // Markdown Link & Formatting Parser
+        function renderMarkdownToHtml(text) {
+            if (!text) return '';
+            let html = text;
+
+            // Convert Markdown links [Label](url) to styled clickable <a> tags
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, href) => {
+                const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+                const targetAttr = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+                return `<a href="${href}" ${targetAttr} class="text-[#735c00] hover:text-[#b45309] font-bold underline decoration-2 underline-offset-2 transition-colors cursor-pointer">${label}</a>`;
+            });
+
+            // Convert **bold** to <strong>
+            html = html.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+
+            // Convert newlines to <br/>
+            html = html.replace(/\n/g, '<br/>');
+
+            return html;
+        }
+
         // Predefined answers dictionary
         const ANSWERS = {
-            admissions: "Admissions for 2026-27 are open! You can submit our multi-step application form on the [Admissions Page](admissions.html). After submission, our panel will contact you for a parent-child interaction.",
-            fees: "Our fee structure is divided into easy term installments. Average annual tuition ranges from INR 40,000 to 65,000 depending on the grade. Complete schedules can be obtained by contacting the office or visiting our [Admissions Page](admissions.html).",
-            transport: "Yes, we run a secure GPS-enabled bus fleet covering Ratnagiri city and surrounding areas. The buses are monitored 24/7 with dedicated speed-limiting devices. Check route details on our [Campus & Facilities Page](campus-facilities.html).",
-            human: "You can reach our official administration desk directly at **+91 78880 56699** or email us at **info@onestgurukul.in**. We are also available on [WhatsApp](https://wa.me/917888056699)!"
+            admissions: "Admissions for the 2026-27 academic session are open! You can submit our multi-step application form directly on the [Admissions Page](admissions.html#application). After submission, our academic team will contact you for a friendly parent-child interaction.",
+            documents: "The standard documents required for admission include:\n• Student's Original Birth Certificate (and photocopy)\n• Previous school Progress Report / Transfer Certificate (for Class 1 onwards)\n• Aadhaar Card copies of student and parents\n• 4 passport-size photographs of the student\n\nYou can start your registration on the [Admissions Page](admissions.html#application) or submit copies in person at our school office.",
+            visit: "We warmly welcome you and your child to visit our campus in Nachane, Ratnagiri! You can schedule a guided walkthrough and interaction with our educators directly on our [Campus Visit Booking](admissions.html#campus-booking). Office hours: Monday to Saturday, 8:30 AM – 5:00 PM.",
+            classes: "O'Nest Gurukul provides schooling from Pre-Primary through Class 6+. Sections include Playgroup (2+ yrs), Nursery (3+ yrs), Jr. KG, Sr. KG, and Standard 1 to 6+. Explore our [Pre-Primary Stage](preprimary.html) and [Curriculum Details](students-life.html).",
+            transport: "Transport coordination details can be obtained directly from our helpline at **+91 87676 72478** or by visiting our [Campus & Facilities Page](campus-facilities.html).",
+            human: "You can reach our official administration desk directly at **+91 78880 56699** or **+91 87676 72478**, email us at [onestgurukulprimary@gmail.com](mailto:onestgurukulprimary@gmail.com), or chat with us on [WhatsApp](https://wa.me/917888056699)! You can also reach us through our [Contact Page](contact.html)."
         };
 
         const msgBox = document.getElementById('onest-chat-messages');
+
+        // Smooth scroll for in-page anchors inside chat drawer
+        msgBox.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetEl = document.querySelector(href);
+                if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+            } else if (href.includes('#')) {
+                const [page, hash] = href.split('#');
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                if (page === currentPage && hash) {
+                    e.preventDefault();
+                    const targetEl = document.getElementById(hash);
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
 
         // Handling user options click
         chatDrawer.querySelectorAll('.chat-opt').forEach(opt => {
@@ -229,8 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     botResponse.className = 'flex gap-2';
                     botResponse.innerHTML = `
                         <div class="w-8 h-8 rounded-full bg-secondary text-white shrink-0 flex items-center justify-center"><i class="bi bi-robot"></i></div>
-                        <div class="bg-gray-100 text-secondary p-3 rounded-2xl max-w-[80%] font-medium">
-                            ${ANSWERS[qKey]}
+                        <div class="bg-gray-100 text-secondary p-3 rounded-2xl max-w-[80%] font-medium leading-relaxed">
+                            ${renderMarkdownToHtml(ANSWERS[qKey])}
                         </div>
                     `;
                     msgBox.appendChild(botResponse);
