@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         banner.innerHTML = `
             <div class="px-3 shrink-0 flex items-center gap-1.5 z-10">
                 <span class="bg-black/25 text-white font-black text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
-                    <i class="bi bi-megaphone-fill text-[#facc15] animate-pulse"></i> Announcement
+                    <i class="bi bi-megaphone-fill text-[#facc15] animate-pulse"></i> Notice
                 </span>
             </div>
             <div class="onest-marquee-viewport" title="Hover to pause">
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${repeatedContent}
                 </div>
             </div>
-            <button id="onest-emergency-dismiss" class="shrink-0 px-3.5 hover:opacity-75 text-white text-xl font-bold cursor-pointer transition-opacity leading-none" aria-label="Dismiss Announcement" title="Dismiss announcement">&times;</button>
+            <button id="onest-emergency-dismiss" class="shrink-0 px-3.5 hover:opacity-75 text-white text-xl font-bold cursor-pointer transition-opacity leading-none" aria-label="Dismiss Notice" title="Dismiss notice">&times;</button>
         `;
 
         document.body.prepend(banner);

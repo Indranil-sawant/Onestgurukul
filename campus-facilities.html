@@ -7,7 +7,8 @@
   <title>Campus Facilities & Infrastructure | O'Nest Gurukul</title>
   <meta name="description"
     content="Explore O'Nest Gurukul's campus in Nachane, Ratnagiri: smart classrooms, STEM science labs, library, sports grounds, and GPS-tracked school bus fleet.">
-  <meta name="keywords" content="Campus Facilities O'Nest Gurukul, 360 Virtual Tour Ratnagiri school, school infrastructure Ratnagiri, digital classrooms Chiplun, school bus transport Ratnagiri, Karate ground, Paras Bagh organic garden">
+  <meta name="keywords"
+    content="Campus Facilities O'Nest Gurukul, 360 Virtual Tour Ratnagiri school, school infrastructure Ratnagiri, digital classrooms Chiplun, school bus transport Ratnagiri, Karate ground, Paras Bagh organic garden">
   <link rel="canonical" href="https://onestgurukul.in/campus-facilities.html">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="O'Nest Gurukul">
@@ -23,14 +24,16 @@
   <meta property="og:locale" content="en_IN">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Campus Facilities & Infrastructure | O'Nest Gurukul">
-  <meta property="og:description" content="Explore O'Nest Gurukul's campus in Nachane, Ratnagiri: smart classrooms, STEM science labs, library, sports grounds, and GPS-tracked school bus fleet.">
+  <meta property="og:description"
+    content="Explore O'Nest Gurukul's campus in Nachane, Ratnagiri: smart classrooms, STEM science labs, library, sports grounds, and GPS-tracked school bus fleet.">
   <meta property="og:image" content="https://onestgurukul.in/assets/img/school2.jpg">
   <meta property="og:url" content="https://onestgurukul.in/campus-facilities.html">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Campus Facilities & Infrastructure | O'Nest Gurukul">
-  <meta name="twitter:description" content="Serene green campus with modern STEM labs, library, and sports infrastructure in Ratnagiri, Maharashtra.">
+  <meta name="twitter:description"
+    content="Serene green campus with modern STEM labs, library, and sports infrastructure in Ratnagiri, Maharashtra.">
   <meta name="twitter:image" content="https://onestgurukul.in/assets/img/school2.jpg">
 
   <!-- Schema.org Structured Data -->
@@ -66,8 +69,11 @@
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="assets/img/onest.svg" rel="icon">
@@ -120,37 +126,58 @@
       font-family: 'Hanken Grotesk', sans-serif;
       color: #1f2937;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Libre Caslon Text', serif;
     }
+
     .glass-nav {
       background: rgba(253, 251, 247, 0.90);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
+
     .hover-lift {
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     }
+
     .hover-lift:hover {
       transform: translateY(-6px);
       box-shadow: 0 25px 45px -12px rgba(0, 33, 71, 0.14);
     }
+
     .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-14px) scale(1.02); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-14px) scale(1.02);
+      }
     }
+
     .floating-blob {
       animation: float 7s ease-in-out infinite;
     }
+
     /* Lightbox Modal */
     #facilities-lightbox {
       display: none;
@@ -163,25 +190,33 @@
       justify-content: center;
       padding: 1.5rem;
     }
+
     #facilities-lightbox.active {
       display: flex;
     }
+
     /* FAQ accordion */
     .faq-content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
     }
+
     .faq-item.active .faq-content {
       max-height: 480px;
     }
+
     .faq-item.active .faq-icon {
       transform: rotate(180deg);
     }
   </style>
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+<body
+  class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
 
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
@@ -197,39 +232,48 @@
     </div>
   </div>
   <script>
-    (function() {
-      function hidePreloader() {
-        var p = document.getElementById('onest-preloader');
-        if (p && !p.classList.contains('onest-preloader-hidden')) {
-          p.classList.add('onest-preloader-hidden');
-          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+      (function () {
+        function hidePreloader() {
+          var p = document.getElementById('onest-preloader');
+          if (p && !p.classList.contains('onest-preloader-hidden')) {
+            p.classList.add('onest-preloader-hidden');
+            setTimeout(function () { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+          }
         }
-      }
-      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
-      setTimeout(hidePreloader, 1200);
-    })();
+        window.addEventListener('load', function () { setTimeout(hidePreloader, 350); });
+        setTimeout(hidePreloader, 1200);
+      })();
   </script>
 
   <!-- Sticky TopNavBar (Exact 1:1 copy from index.html) -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] min-w-[58px] w-auto">
       </a>
       <nav class="hidden lg:flex items-center space-x-8">
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="index.html">Home</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="about.html">About Us</a>
-        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-base tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="students-life.html">Curriculum</a>
-        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-base tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="contact.html">Contact</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-base tracking-wide"
+          href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="students-life.html">Curriculum</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-base tracking-wide"
+          href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="contact.html">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
         <!-- Apply Now -->
-        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+        <a href="admissions.html"
+          class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
           Apply Now
         </a>
-        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg"
+          aria-label="Open Menu">
           <i class="bi bi-list text-3xl"></i>
         </button>
       </div>
@@ -237,8 +281,10 @@
   </header>
 
   <!-- Mobile Drawer Menu (Exact 1:1 copy from index.html) -->
-  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
-    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+  <div id="onest-home-mobile-menu"
+    class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close"
+      class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
       <i class="bi bi-x text-4xl"></i>
     </div>
     <ul class="onest-home-mobile-list flex flex-col gap-6 text-center text-xl font-bold">
@@ -246,52 +292,68 @@
       <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
       <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
       <li><a href="students-life.html" class="text-white/80 hover:text-[#facc15] transition-colors">Curriculum</a></li>
-      <li><a href="campus-facilities.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Campus &amp; Facilities</a></li>
+      <li><a href="campus-facilities.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Campus &amp;
+          Facilities</a></li>
       <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
-      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <li class="mt-4"><a href="admissions.html"
+          class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply
+          Now</a></li>
     </ul>
   </div>
 
-  <main>
+  <main id="main-content">
     <!-- ======================================================== -->
     <!-- SECTION 1: EDITORIAL CAMPUS HERO WITH INCREASED OPACITY  -->
     <!-- ======================================================== -->
-    <section class="relative min-h-[660px] lg:min-h-[86vh] flex items-center bg-secondary text-white pt-[115px] pb-24 overflow-hidden">
+    <section
+      class="relative min-h-[660px] lg:min-h-[86vh] flex items-center bg-secondary text-white pt-[115px] pb-24 overflow-hidden">
       <!-- Background Image with High Opacity & Gradient Texture -->
-      <div class="absolute inset-0 bg-cover bg-center opacity-45 transform scale-105 pointer-events-none" style="background-image: url('assets/ONEST/IMG_6145.JPG.jpeg');"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-[#001733]/95 via-secondary/85 to-secondary/70 pointer-events-none"></div>
-      <div class="absolute top-1/4 -right-28 w-[500px] h-[500px] bg-primary/25 rounded-full blur-3xl pointer-events-none floating-blob"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-45 transform scale-105 pointer-events-none"
+        style="background-image: url('assets/ONEST/IMG_6145.JPG.jpeg');"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[#001733]/95 via-secondary/85 to-secondary/70 pointer-events-none">
+      </div>
+      <div
+        class="absolute top-1/4 -right-28 w-[500px] h-[500px] bg-primary/25 rounded-full blur-3xl pointer-events-none floating-blob">
+      </div>
       <div class="absolute bottom-10 left-10 w-80 h-80 bg-accent/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <!-- Editorial Intro Left -->
           <div class="lg:col-span-7 space-y-6 text-left">
-            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 border border-white/25 text-[#facc15] text-xs font-extrabold uppercase tracking-widest backdrop-blur-md shadow-sm">
+            <div
+              class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 border border-white/25 text-[#facc15] text-xs font-extrabold uppercase tracking-widest backdrop-blur-md shadow-sm">
               <i class="bi bi-geo-alt-fill"></i> Green Campus &bull; Nachane, Ratnagiri
             </div>
-            
-            <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-white font-bold leading-[1.12] tracking-tight">
+
+            <h1
+              class="font-display text-3xl sm:text-5xl lg:text-6xl text-white font-bold leading-[1.12] tracking-tight">
               Where Learning Breathes in <span class="italic text-[#facc15]">Nature's Lap</span>
             </h1>
-            
+
             <p class="text-white/90 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal">
-              Set against the verdant slopes of Ratnagiri, O'NEST Gurukul unites traditional open-air learning with modern biophilic architecture. Here, children learn in bright, naturally lit spaces, explore under open skies, and develop strong values in a clean, peaceful environment.
+              Set against the verdant slopes of Ratnagiri, O'NEST Gurukul unites traditional open-air learning with
+              modern biophilic architecture. Here, children learn in bright, naturally lit spaces, explore under open
+              skies, and develop strong values in a clean, peaceful environment.
             </p>
 
             <!-- Verified Genuine Campus Highlights (2.5+ Acres & 200+ Students) -->
             <div class="grid grid-cols-3 gap-2 sm:gap-3.5 pt-2 max-w-lg">
-              <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
+              <div
+                class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
                 <i class="bi bi-geo-alt-fill text-xl sm:text-2xl text-[#facc15] block mb-0.5 sm:mb-1"></i>
                 <span class="text-base sm:text-2xl font-bold text-[#facc15] block leading-tight">2.5+ Acres</span>
                 <span class="text-[10px] sm:text-[11px] text-white/80 font-medium">Lush Campus</span>
               </div>
-              <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
+              <div
+                class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
                 <i class="bi bi-people-fill text-xl sm:text-2xl text-[#facc15] block mb-0.5 sm:mb-1"></i>
                 <span class="text-base sm:text-2xl font-bold text-[#facc15] block leading-tight">200+</span>
                 <span class="text-[10px] sm:text-[11px] text-white/80 font-medium">Students Enrolled</span>
               </div>
-              <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
+              <div
+                class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center sm:text-left hover:border-[#facc15]/50 transition-colors">
                 <i class="bi bi-arrow-repeat text-xl sm:text-2xl text-[#facc15] block mb-0.5 sm:mb-1"></i>
                 <span class="text-base sm:text-2xl font-bold text-[#facc15] block leading-tight">360° Tour</span>
                 <span class="text-[10px] sm:text-[11px] text-white/80 font-medium">Explore Online</span>
@@ -300,10 +362,12 @@
 
             <!-- Action CTAs -->
             <div class="flex flex-wrap items-center gap-4 pt-3">
-              <a href="#virtual-tour" class="bg-[#facc15] hover:bg-white text-secondary font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg text-sm flex items-center gap-2">
+              <a href="#virtual-tour"
+                class="bg-[#facc15] hover:bg-white text-secondary font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg text-sm flex items-center gap-2">
                 Launch 360° Virtual Tour <i class="bi bi-arrow-right-short text-xl"></i>
               </a>
-              <a href="contact.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-7 py-3.5 rounded-xl transition-all text-sm backdrop-blur-sm">
+              <a href="contact.html"
+                class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-7 py-3.5 rounded-xl transition-all text-sm backdrop-blur-sm">
                 Schedule Campus Visit
               </a>
             </div>
@@ -312,15 +376,23 @@
           <!-- Editorial Photography Right Card -->
           <div class="lg:col-span-5 reveal">
             <div class="relative group">
-              <div class="absolute -inset-2 bg-gradient-to-r from-[#facc15]/30 to-accent/30 rounded-[38px] blur-lg group-hover:blur-xl transition-all opacity-70"></div>
-              <div class="relative bg-white/10 backdrop-blur-md p-3.5 sm:p-4 rounded-[36px] border border-white/25 shadow-2xl">
-                <div class="rounded-[26px] overflow-hidden aspect-[16/11] relative cursor-pointer" onclick="openFacilitiesLightbox('assets/ONEST/hero_new_bg.jpg', 'O\'Nest Gurukul Main Building & Serene Landscape')">
-                  <img loading="lazy" decoding="async" src="assets/ONEST/hero_new_bg.jpg" alt="O'Nest Gurukul School Front Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                  <div class="absolute bottom-3 left-3 right-3 bg-secondary/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 text-left">
+              <div
+                class="absolute -inset-2 bg-gradient-to-r from-[#facc15]/30 to-accent/30 rounded-[38px] blur-lg group-hover:blur-xl transition-all opacity-70">
+              </div>
+              <div
+                class="relative bg-white/10 backdrop-blur-md p-3.5 sm:p-4 rounded-[36px] border border-white/25 shadow-2xl">
+                <div class="rounded-[26px] overflow-hidden aspect-[16/11] relative cursor-pointer"
+                  onclick="openFacilitiesLightbox('assets/ONEST/hero_new_bg.jpg', 'O\'Nest Gurukul Main Building & Serene Landscape')">
+                  <img loading="lazy" decoding="async" src="assets/ONEST/hero_new_bg.jpg"
+                    alt="O'Nest Gurukul School Front Campus"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                  <div
+                    class="absolute bottom-3 left-3 right-3 bg-secondary/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 text-left">
                     <p class="text-xs font-bold text-[#facc15] flex items-center gap-2">
                       <i class="bi bi-building-check"></i> Biophilic Architectural Geometry
                     </p>
-                    <p class="text-[11px] text-white/85 mt-0.5">Engineered for natural Konkan breeze and North-light daylighting</p>
+                    <p class="text-[11px] text-white/85 mt-0.5">Engineered for natural Konkan breeze and North-light
+                      daylighting</p>
                   </div>
                 </div>
               </div>
@@ -334,30 +406,37 @@
     <!-- SECTION 2: 360° INTERACTIVE IMMERSIVE CAMPUS TOUR        -->
     <!-- (INCREASED BACKGROUND OPACITY ~25%)                      -->
     <!-- ======================================================== -->
-    <section id="virtual-tour" class="py-24 bg-gradient-to-b from-[#fdfbf7] via-amber-50/20 to-[#fdfbf7] relative overflow-hidden border-t border-primary/10">
+    <section id="virtual-tour"
+      class="py-24 bg-gradient-to-b from-[#fdfbf7] via-amber-50/20 to-[#fdfbf7] relative overflow-hidden border-t border-primary/10">
       <!-- Background Gradient Texture -->
-      <div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-center">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto mb-10 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             Interactive Experience
           </span>
           <h2 class="font-display text-4xl sm:text-5xl text-secondary font-bold mb-4">
             Explore the Campus in 360°
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Walk through our grounds right from your screen. Drag in any direction to inspect the central academic building, amphitheater, and tree canopies.
+            Walk through our grounds right from your screen. Drag in any direction to inspect the central academic
+            building, amphitheater, and tree canopies.
           </p>
         </div>
 
         <!-- Scene Switcher Buttons -->
         <div class="flex flex-wrap justify-center items-center gap-3 mb-6 reveal">
-          <button id="btn-scene-1" onclick="switchPanoramaScene('scene1')" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-md bg-primary text-white flex items-center gap-2 border border-primary">
+          <button id="btn-scene-1" onclick="switchPanoramaScene('scene1')"
+            class="px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-md bg-primary text-white flex items-center gap-2 border border-primary">
             <i class="bi bi-building"></i> Scene 1: Main Building &amp; Amphitheater
           </button>
-          <button id="btn-scene-2" onclick="switchPanoramaScene('scene2')" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 flex items-center gap-2 border border-primary/20">
+          <button id="btn-scene-2" onclick="switchPanoramaScene('scene2')"
+            class="px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 flex items-center gap-2 border border-primary/20">
             <i class="bi bi-tree"></i> Scene 2: Courtyard &amp; Green Grounds
           </button>
         </div>
@@ -366,29 +445,35 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal text-left">
           <!-- 360 Container -->
           <div class="lg:col-span-8">
-            <div class="relative rounded-[32px] overflow-hidden border-4 border-white shadow-2xl bg-slate-900 h-[380px] sm:h-[480px]">
+            <div
+              class="relative rounded-[32px] overflow-hidden border-4 border-white shadow-2xl bg-slate-900 h-[380px] sm:h-[480px]">
               <!-- Canvas Track Container -->
               <div id="panorama-360-container" class="w-full h-full"></div>
 
               <!-- Controls Toolbar Overlay -->
               <div class="absolute top-4 right-4 z-20 flex gap-2">
-                <button onclick="togglePannellumAutoRotate()" id="btn-autorotate" title="Toggle Auto-Rotation" class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
+                <button onclick="togglePannellumAutoRotate()" id="btn-autorotate" title="Toggle Auto-Rotation"
+                  class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
                   <i class="bi bi-arrow-repeat text-lg"></i>
                 </button>
-                <button onclick="zoomPannellum(1)" title="Zoom In" class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
+                <button onclick="zoomPannellum(1)" title="Zoom In"
+                  class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
                   <i class="bi bi-zoom-in text-lg"></i>
                 </button>
-                <button onclick="zoomPannellum(-1)" title="Zoom Out" class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
+                <button onclick="zoomPannellum(-1)" title="Zoom Out"
+                  class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
                   <i class="bi bi-zoom-out text-lg"></i>
                 </button>
-                <button onclick="togglePannellumFullscreen()" title="Fullscreen" class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
+                <button onclick="togglePannellumFullscreen()" title="Fullscreen"
+                  class="w-10 h-10 rounded-xl bg-black/60 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center transition-colors shadow-md">
                   <i class="bi bi-arrows-fullscreen text-lg"></i>
                 </button>
               </div>
 
               <!-- Gesture Guidance Overlay -->
               <div class="absolute bottom-4 left-4 z-20 pointer-events-none">
-                <span class="bg-black/70 text-white font-bold text-xs px-4 py-2 rounded-full backdrop-blur-md shadow-md inline-flex items-center gap-2">
+                <span
+                  class="bg-black/70 text-white font-bold text-xs px-4 py-2 rounded-full backdrop-blur-md shadow-md inline-flex items-center gap-2">
                   <i class="bi bi-hand-index-thumb text-[#facc15] animate-bounce"></i> Click &amp; Drag across any angle
                 </span>
               </div>
@@ -396,35 +481,46 @@
           </div>
 
           <!-- Location Details Beside 360 -->
-          <div class="lg:col-span-4 bg-surface-card p-6 sm:p-7 rounded-[32px] border border-outline-variant shadow-xl space-y-4">
+          <div
+            class="lg:col-span-4 bg-surface-card p-6 sm:p-7 rounded-[32px] border border-outline-variant shadow-xl space-y-4">
             <div class="flex items-center justify-between border-b border-outline-variant pb-3">
               <h4 class="font-bold text-secondary text-sm uppercase tracking-wider flex items-center gap-2">
                 <i class="bi bi-geo-alt-fill text-primary"></i> 360° Key Locations
               </h4>
-              <span class="text-[10px] font-extrabold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">2 Panoramas</span>
+              <span class="text-[10px] font-extrabold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">2
+                Panoramas</span>
             </div>
 
             <!-- Scene 1 Selector Card -->
-            <div onclick="switchPanoramaScene('scene1')" class="cursor-pointer p-3.5 rounded-2xl bg-surface-container-low/60 hover:bg-primary/10 border border-outline-variant transition-all flex gap-3.5 items-center group">
-              <img loading="lazy" decoding="async" src="assets/img/infra (3).JPG" class="w-16 h-12 rounded-xl object-cover border border-white shadow-sm group-hover:scale-105 transition-transform" alt="Main Building">
+            <div onclick="switchPanoramaScene('scene1')"
+              class="cursor-pointer p-3.5 rounded-2xl bg-surface-container-low/60 hover:bg-primary/10 border border-outline-variant transition-all flex gap-3.5 items-center group">
+              <img loading="lazy" decoding="async" src="assets/img/infra (3).JPG"
+                class="w-16 h-12 rounded-xl object-cover border border-white shadow-sm group-hover:scale-105 transition-transform"
+                alt="Main Building">
               <div>
-                <h5 class="text-xs font-bold text-secondary group-hover:text-primary transition-colors">Academic Hub &amp; Main Vista</h5>
+                <h5 class="text-xs font-bold text-secondary group-hover:text-primary transition-colors">Academic Hub
+                  &amp; Main Vista</h5>
                 <span class="text-[11px] text-on-surface-variant">Entrance amphitheater and main atrium</span>
               </div>
             </div>
 
             <!-- Scene 2 Selector Card -->
-            <div onclick="switchPanoramaScene('scene2')" class="cursor-pointer p-3.5 rounded-2xl bg-surface-container-low/60 hover:bg-primary/10 border border-outline-variant transition-all flex gap-3.5 items-center group">
-              <img loading="lazy" decoding="async" src="assets/img/infra (5).JPG" class="w-16 h-12 rounded-xl object-cover border border-white shadow-sm group-hover:scale-105 transition-transform" alt="Courtyard">
+            <div onclick="switchPanoramaScene('scene2')"
+              class="cursor-pointer p-3.5 rounded-2xl bg-surface-container-low/60 hover:bg-primary/10 border border-outline-variant transition-all flex gap-3.5 items-center group">
+              <img loading="lazy" decoding="async" src="assets/img/infra (5).JPG"
+                class="w-16 h-12 rounded-xl object-cover border border-white shadow-sm group-hover:scale-105 transition-transform"
+                alt="Courtyard">
               <div>
-                <h5 class="text-xs font-bold text-secondary group-hover:text-primary transition-colors">Courtyard &amp; Tree Canopies</h5>
+                <h5 class="text-xs font-bold text-secondary group-hover:text-primary transition-colors">Courtyard &amp;
+                  Tree Canopies</h5>
                 <span class="text-[11px] text-on-surface-variant">Central gathering lawn and native trees</span>
               </div>
             </div>
 
             <div class="pt-3 border-t border-outline-variant space-y-2">
               <p class="text-xs text-on-surface-variant leading-relaxed">
-                <strong class="text-secondary">Spatial Design Insight:</strong> Open circular pavilions eliminate claustrophobic hallways, ensuring constant visual contact with sky, soil, and native greenery.
+                <strong class="text-secondary">Spatial Design Insight:</strong> Open circular pavilions eliminate
+                claustrophobic hallways, ensuring constant visual contact with sky, soil, and native greenery.
               </p>
             </div>
           </div>
@@ -438,40 +534,52 @@
     <!-- ======================================================== -->
     <section id="environment" class="py-24 bg-background relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Campus Setting
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Shaped by Pure Konkan Air &amp; Green Slopes
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              Located at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, on the calm outskirts of Ratnagiri, our campus creates a natural sanctuary. Free from urban highway exhaust and industrial congestion, children spend their formative school years breathing fresh maritime breezes and resting their eyes on rolling greenery.
+              Located at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, on the calm
+              outskirts of Ratnagiri, our campus creates a natural sanctuary. Free from urban highway exhaust and
+              industrial congestion, children spend their formative school years breathing fresh maritime breezes and
+              resting their eyes on rolling greenery.
             </p>
-            
+
             <!-- Compact Feature Chips (Not generic cards) -->
             <div class="space-y-3 pt-2">
-              <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm hover-lift">
-                <div class="w-10 h-10 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-lg shrink-0">
+              <div
+                class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm hover-lift">
+                <div
+                  class="w-10 h-10 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-lg shrink-0">
                   <i class="bi bi-wind"></i>
                 </div>
                 <div>
                   <h4 class="font-bold text-secondary text-sm">Natural Air Circulation &amp; Low Decibels</h4>
-                  <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">No traffic noise; quiet acoustic surroundings encourage deep concentration and calm behavior.</p>
+                  <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">No traffic noise; quiet acoustic
+                    surroundings encourage deep concentration and calm behavior.</p>
                 </div>
               </div>
 
-              <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm hover-lift">
-                <div class="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center text-lg shrink-0">
+              <div
+                class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm hover-lift">
+                <div
+                  class="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center text-lg shrink-0">
                   <i class="bi bi-shield-check"></i>
                 </div>
                 <div>
                   <h4 class="font-bold text-secondary text-sm">Dedicated Perimeter Fencing &amp; Monitored Access</h4>
-                  <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Gated campus boundary with verified staff and single-point visitor entry control.</p>
+                  <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Gated campus boundary with verified
+                    staff and single-point visitor entry control.</p>
                 </div>
               </div>
             </div>
@@ -479,8 +587,12 @@
 
           <!-- High-Res Photograph -->
           <div class="lg:col-span-6 reveal">
-            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-2xl group cursor-pointer hover-lift" onclick="openFacilitiesLightbox('assets/img/person/IMG-20260810-WA0336.jpg.jpeg', 'Gurukul Outdoor Learning Circle Against the Scenic Konkan Valley')">
-              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0336.jpg.jpeg" alt="Gurukul Outdoor Learning Circle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-2xl group cursor-pointer hover-lift"
+              onclick="openFacilitiesLightbox('assets/img/person/IMG-20260810-WA0336.jpg.jpeg', 'Gurukul Outdoor Learning Circle Against the Scenic Konkan Valley')">
+              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0336.jpg.jpeg"
+                alt="Gurukul Outdoor Learning Circle"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
@@ -493,12 +605,15 @@
     <!-- ======================================================== -->
     <section id="academic-sanctuaries" class="py-24 bg-surface-container-low/50 relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <!-- Header -->
         <div class="max-w-3xl mx-auto mb-16 text-center reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             Intellectual Sanctuaries
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
@@ -512,26 +627,37 @@
         <!-- Asymmetric Layout: 7-col dominant card + 5-col paired stack -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <!-- Dominant Feature: The Sunlit Classrooms (7 Cols) -->
-          <div class="lg:col-span-7 bg-surface-card rounded-[36px] overflow-hidden border border-outline-variant shadow-xl hover-lift reveal flex flex-col">
-            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer group" onclick="openFacilitiesLightbox('assets/img/infra (6).JPG', 'Spacious, Sunlit Gurukul Classroom with Modular Seating and Reading Corner')">
-              <img loading="lazy" decoding="async" src="assets/img/infra (6).JPG" alt="Sunlit Gurukul classroom with modular student desks, reading library, and nature view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md">
+          <div
+            class="lg:col-span-7 bg-surface-card rounded-[36px] overflow-hidden border border-outline-variant shadow-xl hover-lift reveal flex flex-col">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer group"
+              onclick="openFacilitiesLightbox('assets/img/infra (6).JPG', 'Spacious, Sunlit Gurukul Classroom with Modular Seating and Reading Corner')">
+              <img loading="lazy" decoding="async" src="assets/img/infra (6).JPG"
+                alt="Sunlit Gurukul classroom with modular student desks, reading library, and nature view"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md">
                 Primary Learning Halls
               </div>
             </div>
             <div class="p-8 space-y-4 flex-1 flex flex-col justify-between text-left">
               <div>
                 <h3 class="font-display text-2xl sm:text-3xl font-bold text-secondary">
-                  Spacious, Sunlit Gurukul Classrooms
+                  Spacious, Sunlit Gurukul Library
                 </h3>
                 <p class="text-on-surface-variant text-sm sm:text-base mt-2.5 leading-relaxed">
-                  Engineered with large windows that draw cool valley breezes across every desk. Ergonomic child-scale wooden furniture replaces rigid steel benches, allowing easy reconfiguration for debate circles, pair-work, or group projects.
+                  Engineered with large windows that draw cool valley breezes across every desk. Ergonomic child-scale
+                  wooden furniture replaces rigid steel benches, allowing easy reconfiguration for debate circles,
+                  pair-work, or group projects.
                 </p>
               </div>
-              <div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-sun text-primary"></i> Natural Daylighting</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-layout-sidebar-inset text-primary"></i> Wooden Furniture</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-soundwave text-primary"></i> Quiet Acoustics</span>
+              <div
+                class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-sun text-primary"></i>
+                  Natural Daylighting</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i
+                    class="bi bi-layout-sidebar-inset text-primary"></i> Wooden Furniture</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-soundwave text-primary"></i>
+                  Quiet Acoustics</span>
               </div>
             </div>
           </div>
@@ -539,29 +665,41 @@
           <!-- Paired Stack: STEM Hub & Reading Library (5 Cols) -->
           <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
             <!-- STEM & Science Discovery Hub -->
-            <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex-1 text-left group">
+            <div
+              class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex-1 text-left group">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full">
-                <div class="sm:col-span-5 aspect-[4/3] sm:aspect-auto overflow-hidden relative cursor-pointer" onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0444.jpg.jpeg', 'Hands-On STEM & Science Prototyping Hub')">
-                  <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0444.jpg.jpeg" alt="STEM Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="sm:col-span-5 aspect-[4/3] sm:aspect-auto overflow-hidden relative cursor-pointer"
+                  onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0444.jpg.jpeg', 'Hands-On STEM & Science Prototyping Hub')">
+                  <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0444.jpg.jpeg" alt="STEM Lab"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="sm:col-span-7 p-6 space-y-2 flex flex-col justify-center">
-                  <span class="text-[10px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-2.5 py-0.5 rounded-full w-fit">Inquiry Lab</span>
+                  <span
+                    class="text-[10px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-2.5 py-0.5 rounded-full w-fit">Inquiry
+                    Lab</span>
                   <h4 class="font-display text-xl font-bold text-secondary">STEM &amp; Science Discovery Hub</h4>
-                  <p class="text-xs text-on-surface-variant leading-relaxed">Equipped with microscopes, planetary models, and circuit components where science concepts are physically explored.</p>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">Equipped with microscopes, planetary
+                    models, and circuit components where science concepts are physically explored.</p>
                 </div>
               </div>
             </div>
 
             <!-- Children's Reading Haven -->
-            <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex-1 text-left group">
+            <div
+              class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex-1 text-left group">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full">
-                <div class="sm:col-span-5 aspect-[4/3] sm:aspect-auto overflow-hidden relative cursor-pointer" onclick="openFacilitiesLightbox('assets/ONEST/infra-school-library.jpg', 'Open-Stack Children\'s Reading Haven')">
-                  <img loading="lazy" decoding="async" src="assets/ONEST/infra-school-library.jpg" alt="Reading Library" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="sm:col-span-5 aspect-[4/3] sm:aspect-auto overflow-hidden relative cursor-pointer"
+                  onclick="openFacilitiesLightbox('assets/ONEST/infra-school-library.jpg', 'Open-Stack Children\'s Reading Haven')">
+                  <img loading="lazy" decoding="async" src="assets/ONEST/infra-school-library.jpg" alt="Reading Library"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="sm:col-span-7 p-6 space-y-2 flex flex-col justify-center">
-                  <span class="text-[10px] font-extrabold text-accent uppercase tracking-wider bg-accent/10 px-2.5 py-0.5 rounded-full w-fit">Bilingual Collection</span>
+                  <span
+                    class="text-[10px] font-extrabold text-accent uppercase tracking-wider bg-accent/10 px-2.5 py-0.5 rounded-full w-fit">Bilingual
+                    Collection</span>
                   <h4 class="font-display text-xl font-bold text-secondary">Children's Reading Library</h4>
-                  <p class="text-xs text-on-surface-variant leading-relaxed">Open low-stack shelves with Marathi and English literature, illustrated encyclopedias, and quiet reading alcoves.</p>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">Open low-stack shelves with Marathi and
+                    English literature, illustrated encyclopedias, and quiet reading alcoves.</p>
                 </div>
               </div>
             </div>
@@ -576,38 +714,49 @@
     <!-- ======================================================== -->
     <section id="panoramic-deck" class="py-24 bg-secondary relative overflow-hidden text-white">
       <!-- Background Image with High Opacity -->
-      <div class="absolute inset-0 bg-cover bg-center opacity-55 transform scale-105 pointer-events-none" style="background-image: url('assets/img/infra (7).JPG');"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/65 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-55 transform scale-105 pointer-events-none"
+        style="background-image: url('assets/img/infra (7).JPG');"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/65 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div class="lg:col-span-7 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-2 rounded-full border border-white/25 inline-block">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-2 rounded-full border border-white/25 inline-block">
               Open-Sky Pedagogy
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
               Panoramic Observation Decks &amp; Tree Amphitheaters
             </h2>
             <p class="text-white/95 text-base sm:text-lg leading-relaxed font-normal">
-              True education transcends enclosed walls. Our rooftop observation terraces and circular shaded lawns beneath mature neem trees host telescope nature sessions, poetry circles, shloka recitals, and environmental discussions.
+              True education transcends enclosed walls. Our rooftop observation terraces and circular shaded lawns
+              beneath mature neem trees host telescope nature sessions, poetry circles, shloka recitals, and
+              environmental discussions.
             </p>
             <p class="text-white/85 text-sm sm:text-base leading-relaxed font-normal">
-              Under the open sky, children learn that ideas are boundless, encouraging genuine inquiry and dialogue between students and teachers.
+              Under the open sky, children learn that ideas are boundless, encouraging genuine inquiry and dialogue
+              between students and teachers.
             </p>
             <div class="pt-2 flex flex-wrap gap-4">
-              <button onclick="openFacilitiesLightbox('assets/img/infra (7).JPG', 'Covered Observation Terrace with Panoramic Sahyadri Valley Views')" class="bg-[#facc15] hover:bg-white text-secondary font-bold px-6 py-3 rounded-xl transition-all shadow-md text-xs uppercase tracking-wider flex items-center gap-2">
+              <button
+                onclick="openFacilitiesLightbox('assets/img/infra (7).JPG', 'Covered Observation Terrace with Panoramic Sahyadri Valley Views')"
+                class="bg-[#facc15] hover:bg-white text-secondary font-bold px-6 py-3 rounded-xl transition-all shadow-md text-xs uppercase tracking-wider flex items-center gap-2">
                 <i class="bi bi-arrows-angle-expand"></i> View High-Res Deck Panorama
               </button>
             </div>
           </div>
 
           <div class="lg:col-span-5 reveal">
-            <div class="rounded-3xl p-6 sm:p-8 bg-white/15 backdrop-blur-md border border-white/25 shadow-2xl text-left space-y-4">
+            <div
+              class="rounded-3xl p-6 sm:p-8 bg-white/15 backdrop-blur-md border border-white/25 shadow-2xl text-left space-y-4">
               <h4 class="font-display text-xl font-bold text-[#facc15] flex items-center gap-2">
                 <i class="bi bi-sun"></i> Outdoor Learning &amp; Nature
               </h4>
               <p class="text-xs sm:text-sm text-white/90 leading-relaxed">
-                Ratnagiri's morning air provides the ideal setting for open-air Pranayama, natural botany sketches, and sunrise assembly before indoor academic sessions begin.
+                Ratnagiri's morning air provides the ideal setting for open-air Pranayama, natural botany sketches, and
+                sunrise assembly before indoor academic sessions begin.
               </p>
               <div class="pt-3 border-t border-white/15 grid grid-cols-2 gap-3 text-xs text-white/85">
                 <div><i class="bi bi-check-circle-fill text-[#facc15] mr-1"></i> Shaded Lawn Circles</div>
@@ -627,19 +776,23 @@
     <!-- ======================================================== -->
     <section id="living-science" class="py-24 bg-background relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto mb-16 text-center reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20 inline-block mb-3 shadow-sm">
             Parisar Prem &bull; Living Stewardship
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
             Learning with Soil, Seeds &amp; Living Canopy
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-3 font-normal">
-            At O'NEST Gurukul, environmental awareness is not memorized from a textbook—it is cultivated through direct daily stewardship.
+            At O'NEST Gurukul, environmental awareness is not memorized from a textbook—it is cultivated through direct
+            daily stewardship.
           </p>
         </div>
 
@@ -647,22 +800,27 @@
         <div class="bg-surface-card rounded-[36px] p-6 sm:p-10 border border-outline-variant shadow-xl mb-12 reveal">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div class="lg:col-span-6 space-y-5 text-left">
-              <span class="text-xs font-extrabold text-accent uppercase tracking-widest bg-accent/10 px-3 py-1 rounded-full">
+              <span
+                class="text-xs font-extrabold text-accent uppercase tracking-widest bg-accent/10 px-3 py-1 rounded-full">
                 Paras Bagh &bull; Student Kitchen Garden
               </span>
               <h3 class="font-display text-2xl sm:text-3xl font-bold text-secondary">
                 Hands in the Soil: Organic Farming &amp; Botany
               </h3>
               <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
-                In our student garden beds, children sow seeds, observe organic composting, and monitor plant growth without chemical fertilizers. They learn firsthand the patience required for food to grow and the value of caring for the soil.
+                In our student garden beds, children sow seeds, observe organic composting, and monitor plant growth
+                without chemical fertilizers. They learn firsthand the patience required for food to grow and the value
+                of caring for the soil.
               </p>
               <div class="grid grid-cols-2 gap-3 pt-2">
                 <div class="p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant text-left">
-                  <span class="text-base font-bold text-secondary block"><i class="bi bi-flower1 text-accent mr-1"></i> Herbarium</span>
+                  <span class="text-base font-bold text-secondary block"><i class="bi bi-flower1 text-accent mr-1"></i>
+                    Herbarium</span>
                   <span class="text-xs text-on-surface-variant">Observing native Konkan flora</span>
                 </div>
                 <div class="p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant text-left">
-                  <span class="text-base font-bold text-secondary block"><i class="bi bi-recycle text-primary mr-1"></i> Vermicompost</span>
+                  <span class="text-base font-bold text-secondary block"><i class="bi bi-recycle text-primary mr-1"></i>
+                    Vermicompost</span>
                   <span class="text-xs text-on-surface-variant">Recycling garden leaves into rich soil</span>
                 </div>
               </div>
@@ -670,11 +828,18 @@
 
             <!-- Two Photos Pairing for Story 1 -->
             <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-2 border-white shadow-md group cursor-pointer hover-lift" onclick="openFacilitiesLightbox('assets/img/evs.jpeg', 'Paras Bagh Student Kitchen Garden & Planting Beds')">
-                <img loading="lazy" decoding="async" src="assets/img/evs.jpeg" alt="Paras Bagh Garden Beds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="rounded-3xl overflow-hidden aspect-[4/3] border-2 border-white shadow-md group cursor-pointer hover-lift"
+                onclick="openFacilitiesLightbox('assets/img/evs.jpeg', 'Paras Bagh Student Kitchen Garden & Planting Beds')">
+                <img loading="lazy" decoding="async" src="assets/img/evs.jpeg" alt="Paras Bagh Garden Beds"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
-              <div class="rounded-3xl overflow-hidden aspect-[4/3] border-2 border-white shadow-md group cursor-pointer hover-lift" onclick="openFacilitiesLightbox('assets/img/recent/1P3A9216.JPG.webp', 'Botanical science research & herbarium exhibition by students')">
-                <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9216.JPG.webp" alt="Botanical Science Exhibition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="rounded-3xl overflow-hidden aspect-[4/3] border-2 border-white shadow-md group cursor-pointer hover-lift"
+                onclick="openFacilitiesLightbox('assets/img/recent/1P3A9216.JPG.webp', 'Botanical science research & herbarium exhibition by students')">
+                <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9216.JPG.webp"
+                  alt="Botanical Science Exhibition"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
             </div>
           </div>
@@ -683,29 +848,40 @@
         <!-- Story 2: Karwanchiwadi Tree Protection Legacy -->
         <div class="bg-secondary text-white rounded-[36px] p-6 sm:p-10 shadow-2xl relative overflow-hidden reveal">
           <!-- Background Gradient Texture -->
-          <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/75 pointer-events-none"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/75 pointer-events-none">
+          </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
             <div class="lg:col-span-7 space-y-5 text-left">
-              <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-1.5 rounded-full border border-white/25 inline-block">
+              <span
+                class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-1.5 rounded-full border border-white/25 inline-block">
                 KARWANCHIWADI TREE CONSERVATION
               </span>
               <h3 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
                 A Tree Saved. A New Home on Campus.
               </h3>
               <p class="text-white/95 text-sm sm:text-base leading-relaxed">
-                During the Karwanchiwadi road-widening work, a banyan tree faced the risk of being cut down. The O'NEST school management intervened to protect it. Instead of allowing the tree to be felled, it was uprooted and replanted on the school campus, preserving the tree while allowing infrastructure development to proceed.
+                During the Karwanchiwadi road-widening work, a banyan tree faced the risk of being cut down. The O'NEST
+                school management intervened to protect it. Instead of allowing the tree to be felled, it was uprooted
+                and replanted on the school campus, preserving the tree while allowing infrastructure development to
+                proceed.
               </p>
               <div class="p-4 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-left">
                 <p class="text-xs sm:text-sm font-semibold text-[#facc15] flex items-center gap-2">
-                  <i class="bi bi-tree-fill text-lg shrink-0"></i> A small but meaningful step towards protecting nature while making room for progress.
+                  <i class="bi bi-tree-fill text-lg shrink-0"></i> A small but meaningful step towards protecting nature
+                  while making room for progress.
                 </p>
               </div>
             </div>
 
             <div class="lg:col-span-5">
-              <div class="rounded-3xl overflow-hidden aspect-[3/4] sm:aspect-[4/3] border-4 border-white/25 shadow-2xl group cursor-pointer hover-lift" onclick="openFacilitiesLightbox('assets/img/person/IMG-20260810-WA0355.jpg.jpeg', 'The Replanted Banyan Tree thriving on the O\'Nest Gurukul Campus Grounds in Karwanchiwadi')">
-                <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0355.jpg.jpeg" alt="Replanted Banyan Tree on O'Nest Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="rounded-3xl overflow-hidden aspect-[3/4] sm:aspect-[4/3] border-4 border-white/25 shadow-2xl group cursor-pointer hover-lift"
+                onclick="openFacilitiesLightbox('assets/img/person/IMG-20260810-WA0355.jpg.jpeg', 'The Replanted Banyan Tree thriving on the O\'Nest Gurukul Campus Grounds in Karwanchiwadi')">
+                <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0355.jpg.jpeg"
+                  alt="Replanted Banyan Tree on O'Nest Campus"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               </div>
             </div>
           </div>
@@ -720,65 +896,89 @@
     <!-- ======================================================== -->
     <section id="arts-and-sports" class="py-24 bg-surface-container-low/40 relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="max-w-3xl mx-auto mb-16 text-center reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             Heritage &amp; Movement
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
             Cultural Performing Arts &amp; Martial Discipline
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-3 font-normal">
-            Physical vitality and cultural appreciation complement academic learning. Our campus provides dedicated arenas for traditional celebrations, stage expression, and martial arts.
+            Physical vitality and cultural appreciation complement academic learning. Our campus provides dedicated
+            arenas for traditional celebrations, stage expression, and martial arts.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           <!-- Pillar 1: Cultural & Performing Arts Stage -->
-          <div class="bg-surface-card rounded-[36px] p-6 sm:p-8 border border-outline-variant shadow-xl hover-lift reveal flex flex-col justify-between text-left">
+          <div
+            class="bg-surface-card rounded-[36px] p-6 sm:p-8 border border-outline-variant shadow-xl hover-lift reveal flex flex-col justify-between text-left">
             <div class="space-y-4">
               <div class="grid grid-cols-2 gap-3.5">
-                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group" onclick="openFacilitiesLightbox('assets/img/recent/NANDI 2.JPG.webp', 'Traditional Classical Ganesh Vandana Invocation Dance')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/NANDI 2.JPG.webp" alt="Traditional Classical Invocation Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  onclick="openFacilitiesLightbox('assets/img/recent/NANDI 2.JPG.webp', 'Traditional Classical Ganesh Vandana Invocation Dance')">
+                  <img loading="lazy" decoding="async" src="assets/img/recent/NANDI 2.JPG.webp"
+                    alt="Traditional Classical Invocation Dance"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group" onclick="openFacilitiesLightbox('assets/img/recent/VEER 1.JPG.webp', 'Primary Choir Historical Ballad Recital - Vedat Marathe Veer Daudale Saat')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/VEER 1.JPG.webp" alt="Primary Choir Historical Ballad Recital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  onclick="openFacilitiesLightbox('assets/img/recent/VEER 1.JPG.webp', 'Primary Choir Historical Ballad Recital - Vedat Marathe Veer Daudale Saat')">
+                  <img loading="lazy" decoding="async" src="assets/img/recent/VEER 1.JPG.webp"
+                    alt="Primary Choir Historical Ballad Recital"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-secondary">
                 Cultural &amp; Performing Arts Stage
               </h3>
               <p class="text-on-surface-variant text-sm leading-relaxed">
-                Dedicated spaces for traditional Indian cultural events, classical invocations, choral recitals, shloka chanting, and historic ballad performances (including our Annual Gathering and Shiv Jayanti). Students develop poise, stage confidence, and a grounded appreciation of Indian heritage.
+                Dedicated spaces for traditional Indian cultural events, classical invocations, choral recitals, shloka
+                chanting, and historic ballad performances (including our Annual Gathering and Shiv Jayanti). Students
+                develop poise, stage confidence, and a grounded appreciation of Indian heritage.
               </p>
             </div>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between text-xs text-primary font-bold">
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between text-xs text-primary font-bold">
               <span><i class="bi bi-music-note-beamed mr-1"></i> Classical Arts &amp; Choral Drama</span>
               <span>Heritage Stage</span>
             </div>
           </div>
 
           <!-- Pillar 2: Yoga Pavilion & Athletic Conditioning -->
-          <div class="bg-surface-card rounded-[36px] p-6 sm:p-8 border border-outline-variant shadow-xl hover-lift reveal flex flex-col justify-between text-left">
+          <div
+            class="bg-surface-card rounded-[36px] p-6 sm:p-8 border border-outline-variant shadow-xl hover-lift reveal flex flex-col justify-between text-left">
             <div class="space-y-4">
               <div class="grid grid-cols-2 gap-3.5">
-                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group" onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0405.jpg.jpeg', 'International Yoga Day Asana Practice & Flexibility Training')">
-                  <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0405.jpg.jpeg" alt="Yoga Asana Practice" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0405.jpg.jpeg', 'International Yoga Day Asana Practice & Flexibility Training')">
+                  <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0405.jpg.jpeg"
+                    alt="Yoga Asana Practice"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group" onclick="openFacilitiesLightbox('assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg', 'Annual Sports Meet & Athletic Championship Honors')">
-                  <img loading="lazy" decoding="async" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg" alt="Annual Sports Meet Honors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  onclick="openFacilitiesLightbox('assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg', 'Annual Sports Meet & Athletic Championship Honors')">
+                  <img loading="lazy" decoding="async" src="assets/ONEST/WhatsApp Image 2026-08-04 at 12.36.28 PM.jpeg"
+                    alt="Annual Sports Meet Honors"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-secondary">
                 Yoga Pavilion &amp; Athletic Conditioning
               </h3>
               <p class="text-on-surface-variant text-sm leading-relaxed">
-                Dedicated arenas for yogic flexibility, daily posture alignment, and physical stamina. Combined with open grounds for sprints, field events, and track meets, students develop endurance, team coordination, and healthy habits under certified physical mentors.
+                Dedicated arenas for yogic flexibility, daily posture alignment, and physical stamina. Combined with
+                open grounds for sprints, field events, and track meets, students develop endurance, team coordination,
+                and healthy habits under certified physical mentors.
               </p>
             </div>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between text-xs text-primary font-bold">
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between text-xs text-primary font-bold">
               <span><i class="bi bi-heart-pulse mr-1"></i> Yoga Asanas &amp; Physical Fitness</span>
               <span>Certified Mentorship</span>
             </div>
@@ -793,39 +993,54 @@
     <!-- ======================================================== -->
     <section id="biophilic-architecture" class="py-24 bg-background relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-6 reveal">
             <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-3xl overflow-hidden aspect-[3/4] border-4 border-white shadow-xl cursor-pointer group hover-lift" onclick="openFacilitiesLightbox('assets/ONEST/infra-glass-staircase.jpg', 'Sunlit Architectural Glass Stairwell with Panoramic Views')">
-                <img loading="lazy" decoding="async" src="assets/ONEST/infra-glass-staircase.jpg" alt="Glass Staircase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="rounded-3xl overflow-hidden aspect-[3/4] border-4 border-white shadow-xl cursor-pointer group hover-lift"
+                onclick="openFacilitiesLightbox('assets/ONEST/infra-glass-staircase.jpg', 'Sunlit Architectural Glass Stairwell with Panoramic Views')">
+                <img loading="lazy" decoding="async" src="assets/ONEST/infra-glass-staircase.jpg" alt="Glass Staircase"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               </div>
-              <div class="rounded-3xl overflow-hidden aspect-[3/4] border-4 border-white shadow-xl cursor-pointer group hover-lift" onclick="openFacilitiesLightbox('assets/img/infra (5).JPG', 'Students on the Sunlit Granite Glass Stairwell')">
-                <img loading="lazy" decoding="async" src="assets/img/infra (5).JPG" alt="Students in Stairwell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="rounded-3xl overflow-hidden aspect-[3/4] border-4 border-white shadow-xl cursor-pointer group hover-lift"
+                onclick="openFacilitiesLightbox('assets/img/infra (5).JPG', 'Students on the Sunlit Granite Glass Stairwell')">
+                <img loading="lazy" decoding="async" src="assets/img/infra (5).JPG" alt="Students in Stairwell"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               </div>
             </div>
           </div>
 
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Biophilic Architecture
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Sunlit Glass Stairwells &amp; Open Galleries
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              Unlike typical schools where windowless corridors feel dark and stifling, our architectural glass stairwells bathe passages in natural daylight. As students move between subjects, they remain connected with Ratnagiri’s hills and tree canopies.
+              Unlike typical schools where windowless corridors feel dark and stifling, our architectural glass
+              stairwells bathe passages in natural daylight. As students move between subjects, they remain connected
+              with Ratnagiri’s hills and tree canopies.
             </p>
             <div class="space-y-3 pt-2">
-              <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-surface-card border border-outline-variant shadow-sm">
+              <div
+                class="flex items-center gap-3 p-3.5 rounded-2xl bg-surface-card border border-outline-variant shadow-sm">
                 <i class="bi bi-brightness-high text-xl text-[#facc15]"></i>
-                <span class="text-xs sm:text-sm font-semibold text-secondary">Abundant natural daylight through large glass windows</span>
+                <span class="text-xs sm:text-sm font-semibold text-secondary">Abundant natural daylight through large
+                  glass windows</span>
               </div>
-              <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-surface-card border border-outline-variant shadow-sm">
+              <div
+                class="flex items-center gap-3 p-3.5 rounded-2xl bg-surface-card border border-outline-variant shadow-sm">
                 <i class="bi bi-shield-check text-xl text-accent"></i>
-                <span class="text-xs sm:text-sm font-semibold text-secondary">Toughened laminated safety glass with child-height handrails</span>
+                <span class="text-xs sm:text-sm font-semibold text-secondary">Toughened laminated safety glass with
+                  child-height handrails</span>
               </div>
             </div>
           </div>
@@ -840,31 +1055,40 @@
     <!-- ======================================================== -->
     <section id="safety-utilities" class="py-24 bg-surface-container-low/60 relative overflow-hidden">
       <!-- Background Texture with Increased Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-surface-container-low/95 via-surface-container-low/85 to-surface-container-low/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="max-w-3xl mx-auto mb-16 text-center reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             Safety &amp; Utilities
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
             Child Safety Protocols &amp; Healthy Utilities
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-3 font-normal">
-            Parents trust us with their children’s safety. We back that trust with practical safety drills, hygienic water, and attended first aid facilities.
+            Parents trust us with their children’s safety. We back that trust with practical safety drills, hygienic
+            water, and attended first aid facilities.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <!-- Real Fire Drill Photo Left -->
           <div class="lg:col-span-5 reveal">
-            <div class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-2xl group cursor-pointer hover-lift" onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260202-WA1115.jpg.jpeg', 'Regular Campus Fire Evacuation & Extinguisher Safety Training')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260202-WA1115.jpg.jpeg" alt="Fire Drill Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[4/3] border-4 border-white shadow-2xl group cursor-pointer hover-lift"
+              onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260202-WA1115.jpg.jpeg', 'Regular Campus Fire Evacuation & Extinguisher Safety Training')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260202-WA1115.jpg.jpeg"
+                alt="Fire Drill Training"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               <div class="p-3.5 bg-secondary text-white text-left">
                 <p class="text-xs font-bold text-[#facc15] flex items-center gap-1.5">
                   <i class="bi bi-shield-fill-check"></i> Verified Mock Fire Evacuation Drill
                 </p>
-                <p class="text-[11px] text-white/80 mt-0.5">Students trained in calm evacuation and real fire safety precautions</p>
+                <p class="text-[11px] text-white/80 mt-0.5">Students trained in calm evacuation and real fire safety
+                  precautions</p>
               </div>
             </div>
           </div>
@@ -872,36 +1096,44 @@
           <!-- Structured Specifications Matrix (Compact, NOT generic cards) -->
           <div class="lg:col-span-7 space-y-3.5 text-left reveal">
             <!-- Spec 1: RO Water -->
-            <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
-              <div class="w-10 h-10 rounded-xl bg-blue-100 text-secondary flex items-center justify-center text-lg shrink-0">
+            <div
+              class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-100 text-secondary flex items-center justify-center text-lg shrink-0">
                 <i class="bi bi-droplet-half"></i>
               </div>
               <div class="flex-1">
                 <div class="flex justify-between items-center">
                   <h4 class="font-bold text-secondary text-sm">RO Purified Drinking Water</h4>
-                  <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-bold">Tested Clean</span>
+                  <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-bold">Tested
+                    Clean</span>
                 </div>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Commercial-grade multi-stage Reverse Osmosis filtration units deliver safe, clean drinking water across all student floors.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Commercial-grade multi-stage Reverse
+                  Osmosis filtration units deliver safe, clean drinking water across all student floors.</p>
               </div>
             </div>
 
-            <!-- Spec 2: Solar Energy -->
-            <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
-              <div class="w-10 h-10 rounded-xl bg-amber-100 text-primary flex items-center justify-center text-lg shrink-0">
-                <i class="bi bi-sun-fill"></i>
+            <!-- Spec 2: Fire Safety Drills -->
+            <div
+              class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
+              <div
+                class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-lg shrink-0">
+                <i class="bi bi-fire"></i>
               </div>
               <div class="flex-1">
                 <div class="flex justify-between items-center">
-                  <h4 class="font-bold text-secondary text-sm">Rooftop Solar PV Installation</h4>
-                  <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded-full font-bold">Solar Powered</span>
+                  <h4 class="font-bold text-secondary text-sm">Fire Drills &amp; Evacuation Safety</h4>
+                  <span class="text-[10px] bg-red-50 text-red-700 px-2 py-0.5 rounded-full font-bold">Emergency Ready</span>
                 </div>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Rooftop solar panels harness clean Konkan sunshine, supporting school energy needs with eco-friendly renewable power.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Regular mock evacuation drills, fire extinguisher demonstrations, and clear exit protocols train students and staff in calm, rapid emergency response.</p>
               </div>
             </div>
 
             <!-- Spec 3: Hygiene & Medical -->
-            <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
-              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-accent flex items-center justify-center text-lg shrink-0">
+            <div
+              class="p-4 rounded-2xl bg-surface-card border border-outline-variant shadow-sm flex items-start gap-4 hover-lift">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-100 text-accent flex items-center justify-center text-lg shrink-0">
                 <i class="bi bi-heart-pulse-fill"></i>
               </div>
               <div class="flex-1">
@@ -909,7 +1141,8 @@
                   <h4 class="font-bold text-secondary text-sm">First Aid Medical Care &amp; Hygiene Standards</h4>
                   <span class="text-[10px] bg-emerald-50 text-accent px-2 py-0.5 rounded-full font-bold">Attended</span>
                 </div>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Attended first aid room with pediatric supplies, tie-ups with nearby doctors, and child-height handwashing stations.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Attended first aid room with pediatric
+                  supplies, tie-ups with nearby doctors, and child-height handwashing stations.</p>
               </div>
             </div>
           </div>
@@ -926,171 +1159,287 @@
     <!-- ======================================================== -->
     <section id="campus-gallery" class="py-24 bg-background relative overflow-hidden">
       <!-- Background Texture -->
-      <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-center">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto mb-12 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             School Life &amp; Campus Gallery
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
             The Life &amp; Spirit of O'NEST Gurukul
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-3 font-normal leading-relaxed">
-            An authentic photographic journey across our 2.5+ acre campus, academic discoveries, science exhibitions, cultural performances, and sports championships.
+            An authentic photographic journey across our 2.5+ acre campus, academic discoveries, science exhibitions,
+            cultural performances, and sports championships.
           </p>
         </div>
 
         <!-- Interactive Filter Bar -->
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 reveal">
-          <button type="button" class="gallery-filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-secondary text-white border border-secondary" onclick="filterGallery('all', this)">
+          <button type="button"
+            class="gallery-filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-secondary text-white border border-secondary"
+            onclick="filterGallery('all', this)">
             All Moments <span class="ml-1 px-2 py-0.5 text-[11px] rounded-full bg-white/20">16</span>
           </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('campus', this)">
+          <button type="button"
+            class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant"
+            onclick="filterGallery('campus', this)">
             🌿 Campus &amp; Nature
           </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('academics', this)">
+          <button type="button"
+            class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant"
+            onclick="filterGallery('academics', this)">
             📚 Academic Life
           </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('science', this)">
+          <button type="button"
+            class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant"
+            onclick="filterGallery('science', this)">
             🔬 Science Exhibition
           </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('cultural', this)">
+          <button type="button"
+            class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant"
+            onclick="filterGallery('cultural', this)">
             🎭 Annual Day &amp; Arts
           </button>
-          <button type="button" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant" onclick="filterGallery('sports', this)">
+          <button type="button"
+            class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all shadow-sm bg-white text-secondary hover:bg-primary/10 border border-outline-variant"
+            onclick="filterGallery('sports', this)">
             🏆 Sports &amp; Athletics
           </button>
         </div>
 
         <!-- Curated Gallery Grid (1 Video + 16 Authentic Unique Photos) -->
         <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-left">
-          
+
           <!-- ITEM 1: ACADEMIC RESEARCH - MARITIME & HERITAGE EXHIBIT -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/img/recent/1P3A9220.JPG.webp', 'Konkan Maritime &amp; Fort Heritage Project Exhibition: Student research displays exploring regional geography, maritime history of Ratnagiri, aquaculture, and fort architecture.', 'Academic Research')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9220.JPG.webp" alt="Konkan Marine &amp; Fort Heritage Exhibition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Academic Inquiry</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="academics"
+            onclick="openFacilitiesLightbox('assets/img/recent/1P3A9220.JPG.webp', 'Konkan Maritime &amp; Fort Heritage Project Exhibition: Student research displays exploring regional geography, maritime history of Ratnagiri, aquaculture, and fort architecture.', 'Academic Research')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9220.JPG.webp"
+              alt="Konkan Marine &amp; Fort Heritage Exhibition"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Academic
+                Inquiry</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Marine &amp; Fort Heritage Exhibit</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Student research on Konkan coastal ecology, forts, and navigation.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Student research on Konkan coastal ecology, forts, and
+                navigation.</p>
             </div>
           </div>
 
           <!-- ITEM 2: CAMPUS ARCHITECTURE - GLASS STAIRWELL -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="campus" onclick="openFacilitiesLightbox('assets/ONEST/infra-students-stairwell.jpg', 'Sunlit Glass Stairwell: Generous architectural glazing filling corridors with natural daylight and views into woodland canopies.', 'Modern Architecture')">
-            <img loading="lazy" decoding="async" src="assets/ONEST/infra-students-stairwell.jpg" alt="Sunlit Glass Stairwell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🌿 Architecture</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="campus"
+            onclick="openFacilitiesLightbox('assets/ONEST/infra-students-stairwell.jpg', 'Sunlit Glass Stairwell: Generous architectural glazing filling corridors with natural daylight and views into woodland canopies.', 'Modern Architecture')">
+            <img loading="lazy" decoding="async" src="assets/ONEST/infra-students-stairwell.jpg"
+              alt="Sunlit Glass Stairwell"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🌿
+                Architecture</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Sunlit Glass Stairwell</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Direct visual connection to the surrounding woodland canopy.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Direct visual connection to the surrounding woodland
+                canopy.</p>
             </div>
           </div>
 
           <!-- ITEM 3: CAMPUS ARCHITECTURE - MAIN STEPS -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="campus" onclick="openFacilitiesLightbox('assets/img/infra-(2).jpg', 'Main Campus Entrance: Terraced laterite steps welcoming students to the modern 2.5-acre hillside campus.', 'Campus Facade')">
-            <img loading="lazy" decoding="async" src="assets/img/infra-(2).jpg" alt="Campus Entrance Steps" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🌿 Campus Entrance</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="campus"
+            onclick="openFacilitiesLightbox('assets/img/infra-(2).jpg', 'Main Campus Entrance: Terraced laterite steps welcoming students to the modern 2.5-acre hillside campus.', 'Campus Facade')">
+            <img loading="lazy" decoding="async" src="assets/img/infra-(2).jpg" alt="Campus Entrance Steps"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🌿 Campus
+                Entrance</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Main Entrance Steps</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Terraced laterite masonry welcoming students each morning.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Terraced laterite masonry welcoming students each
+                morning.</p>
             </div>
           </div>
 
           <!-- ITEM 4: ACADEMIC LIFE - LIBRARY INQUIRY -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/ONEST/infra-library-attentive.jpg', 'Library Reference Inquiry: Students engrossed in literature and self-paced research within the Gurukul reading library.', 'Knowledge Vault')">
-            <img loading="lazy" decoding="async" src="assets/ONEST/infra-library-attentive.jpg" alt="Library Reading Inquiry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Academic Life</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="academics"
+            onclick="openFacilitiesLightbox('assets/ONEST/infra-library-attentive.jpg', 'Library Reference Inquiry: Students engrossed in literature and self-paced research within the Gurukul reading library.', 'Knowledge Vault')">
+            <img loading="lazy" decoding="async" src="assets/ONEST/infra-library-attentive.jpg"
+              alt="Library Reading Inquiry"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Academic
+                Life</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Library Inquiry &amp; Reading</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Deep focus and self-paced discovery in our curated book collection.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Deep focus and self-paced discovery in our curated book
+                collection.</p>
             </div>
           </div>
 
           <!-- ITEM 5: ACADEMIC LIFE - ECOLOGICAL TERRAIN MODEL -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0448.jpg.jpeg', 'Hands-on Ecological Modeling: A student meticulously creating a comparative forest and conservation terrain model.', 'Applied Geography')">
-            <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0448.jpg.jpeg" alt="Hands-on Ecological Terrain Modeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Applied Pedagogy</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="academics"
+            onclick="openFacilitiesLightbox('assets/ONEST/IMG-20260810-WA0448.jpg.jpeg', 'Hands-on Ecological Modeling: A student meticulously creating a comparative forest and conservation terrain model.', 'Applied Geography')">
+            <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0448.jpg.jpeg"
+              alt="Hands-on Ecological Terrain Modeling"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Applied
+                Pedagogy</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Ecological Diorama Workshop</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Crafting 3D terrain models to understand afforestation and climate.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Crafting 3D terrain models to understand afforestation
+                and climate.</p>
             </div>
           </div>
 
           <!-- ITEM 6: ACADEMIC LIFE - CEREMONIAL SAMAI LIGHTING -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/img/recent/1P3A8978.JPG.webp', 'Ceremonial Samai Lamp Lighting: Faculty and leadership inaugurating academic and cultural functions in keeping with timeless traditions.', 'Gurukul Tradition')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A8978.JPG.webp" alt="Ceremonial Lamp Lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Gurukul Tradition</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="academics"
+            onclick="openFacilitiesLightbox('assets/img/recent/1P3A8978.JPG.webp', 'Ceremonial Samai Lamp Lighting: Faculty and leadership inaugurating academic and cultural functions in keeping with timeless traditions.', 'Gurukul Tradition')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A8978.JPG.webp"
+              alt="Ceremonial Lamp Lighting"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Gurukul
+                Tradition</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Auspicious Lamp Lighting</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Inaugurating school gatherings with reverence and cultural grace.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Inaugurating school gatherings with reverence and
+                cultural grace.</p>
             </div>
           </div>
 
           <!-- ITEM 7: SCIENCE - WARLI ARCHITECTURE EXHIBITION -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="science" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM.jpeg', 'Warli Village Architecture Installation: A grand scale model celebrating indigenous Konkan mud architecture, thatched roofing, and tribal motifs.', 'Science & Cultural Arts')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM.jpeg" alt="Warli Village Architecture Exhibition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science &amp; Culture</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="science"
+            onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM.jpeg', 'Warli Village Architecture Installation: A grand scale model celebrating indigenous Konkan mud architecture, thatched roofing, and tribal motifs.', 'Science & Cultural Arts')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM.jpeg"
+              alt="Warli Village Architecture Exhibition"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science &amp;
+                Culture</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Warli Architecture Village</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Scale architectural models celebrating Konkan tribal heritage.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Scale architectural models celebrating Konkan tribal
+                heritage.</p>
             </div>
           </div>
 
           <!-- ITEM 8: SCIENCE - STUDENT PRESENTATION TO TRUSTEES -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="science" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM (1).jpeg', 'Student Project Presentation: A primary student confidently demonstrating his environmental science diorama to visiting trustees and guests.', 'Science Exhibition')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM (1).jpeg" alt="Student Presentation at Science Exhibition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science Exhibition</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="science"
+            onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM (1).jpeg', 'Student Project Presentation: A primary student confidently demonstrating his environmental science diorama to visiting trustees and guests.', 'Science Exhibition')">
+            <img loading="lazy" decoding="async"
+              src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.30 PM (1).jpeg"
+              alt="Student Presentation at Science Exhibition"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science
+                Exhibition</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Presenting to Trustees &amp; Guests</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Articulating scientific observations with clarity and poise.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Articulating scientific observations with clarity and
+                poise.</p>
             </div>
           </div>
 
           <!-- ITEM 9: SCIENCE - ATMOSPHERIC SCIENCE STATION -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="science" onclick="openFacilitiesLightbox('assets/img/recent/1P3A9208.JPG.webp', 'Atmospheric Science Station: Students presenting experimental apparatus on air properties, atmospheric pressure, and water purity.', 'Research Station')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9208.JPG.webp" alt="Atmospheric Science Station" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science Exhibition</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="science"
+            onclick="openFacilitiesLightbox('assets/img/recent/1P3A9208.JPG.webp', 'Atmospheric Science Station: Students presenting experimental apparatus on air properties, atmospheric pressure, and water purity.', 'Research Station')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9208.JPG.webp"
+              alt="Atmospheric Science Station"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🔬 Science
+                Exhibition</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Atmospheric Science Station</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Apparatus on air pressure, filtration, and water conservation.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Apparatus on air pressure, filtration, and water
+                conservation.</p>
             </div>
           </div>
 
           <!-- ITEM 10: CULTURAL - FOLK DANCE PERFORMANCE -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg', 'Folk Dance Performance: Students performing in vibrant traditional Maharashtrian attire with saffron phetas under dynamic stage illumination.', 'Annual Day Celebration')">
-            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg" alt="Annual Day Folk Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="cultural"
+            onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg', 'Folk Dance Performance: Students performing in vibrant traditional Maharashtrian attire with saffron phetas under dynamic stage illumination.', 'Annual Day Celebration')">
+            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg"
+              alt="Annual Day Folk Dance"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Annual Day</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Folk Dance Celebration</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Vibrant regional choreography on the illuminated school stage.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Vibrant regional choreography on the illuminated school
+                stage.</p>
             </div>
           </div>
 
           <!-- ITEM 11: CULTURAL - SAVE TREES DRAMA -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.', 'Theatrical Arts')">
-            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg" alt="Save Trees Theatrical Drama Performance at O'Nest Gurukul" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Annual Day Drama</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="cultural"
+            onclick="openFacilitiesLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.', 'Theatrical Arts')">
+            <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg"
+              alt="Save Trees Theatrical Drama Performance at O'Nest Gurukul"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Annual Day
+                Drama</span>
               <h4 class="text-base font-bold mt-0.5 text-white">'Save Trees' Stage Play</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Student conservation drama with LED backdrops and props.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Student conservation drama with LED backdrops and
+                props.</p>
             </div>
           </div>
 
           <!-- ITEM 12: CULTURAL - SCHOOL CHOIR INVOCATION -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="cultural" onclick="openFacilitiesLightbox('assets/img/recent/1P3A0102.JPG.webp', 'School Choir Invocation: Students singing classical prayers and hymns in serene harmony before the Sant Dnyaneshwar backdrop.', 'Musical Choir')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A0102.JPG.webp" alt="School Choir Invocation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Musical Invocation</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="cultural"
+            onclick="openFacilitiesLightbox('assets/img/recent/1P3A0102.JPG.webp', 'School Choir Invocation: Students singing classical prayers and hymns in serene harmony before the Sant Dnyaneshwar backdrop.', 'Musical Choir')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A0102.JPG.webp" alt="School Choir Invocation"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🎭 Musical
+                Invocation</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Classical Choir Chorus</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Harmonious choral prayer dedicated to Sant Dnyaneshwar.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Harmonious choral prayer dedicated to Sant Dnyaneshwar.
+              </p>
             </div>
           </div>
 
           <!-- ITEM 13: SPORTS - TUG OF WAR LINEUP -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="sports" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.27 PM.jpeg', 'Tug-of-War House Team Lineup: Determined student athletes ready at the competition rope on the red laterite sports ground.', 'Sports Day Athletics')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.27 PM.jpeg" alt="Tug-of-War House Team Lineup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="sports"
+            onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.27 PM.jpeg', 'Tug-of-War House Team Lineup: Determined student athletes ready at the competition rope on the red laterite sports ground.', 'Sports Day Athletics')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.27 PM.jpeg"
+              alt="Tug-of-War House Team Lineup"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🏆 Sports Day</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Tug-of-War Team Ready</h4>
               <p class="text-xs text-white/80 line-clamp-2 mt-1">House competitors set for their championship match.</p>
@@ -1098,32 +1447,55 @@
           </div>
 
           <!-- ITEM 14: SPORTS - VICTORY HUDDLE CELEBRATION -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="sports" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.26 PM.jpeg', 'Sports Day Victory Celebration Huddle: Joyful student team jumping together in celebration after winning their championship event.', 'Team Championship')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.26 PM.jpeg" alt="Sports Day Victory Team Huddle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🏆 Team Spirit</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="sports"
+            onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.26 PM.jpeg', 'Sports Day Victory Celebration Huddle: Joyful student team jumping together in celebration after winning their championship event.', 'Team Championship')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.26 PM.jpeg"
+              alt="Sports Day Victory Team Huddle"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🏆 Team
+                Spirit</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Victory Celebration Huddle</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Joyful teammates celebrating their championship triumph.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Joyful teammates celebrating their championship
+                triumph.</p>
             </div>
           </div>
 
           <!-- ITEM 15: SPORTS - COACH & ATHLETES TUG OF WAR -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="sports" onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.19 PM.jpeg', 'Sports Coach & Athletes in Action: Faculty sports mentor pulling the rope alongside student team members during house competitions.', 'Sports Mentorship')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.19 PM.jpeg" alt="Sports Coach and House Team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🏆 Sports Mentorship</span>
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="sports"
+            onclick="openFacilitiesLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.19 PM.jpeg', 'Sports Coach & Athletes in Action: Faculty sports mentor pulling the rope alongside student team members during house competitions.', 'Sports Mentorship')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.19 PM.jpeg"
+              alt="Sports Coach and House Team"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">🏆 Sports
+                Mentorship</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Coach &amp; Athletes in Action</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Shoulder-to-shoulder house spirit on the sports field.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Shoulder-to-shoulder house spirit on the sports field.
+              </p>
             </div>
           </div>
 
           <!-- ITEM 16: ACADEMIC LIFE - PARENTS & CHILDREN EXHIBITION -->
-          <div class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal" data-category="academics" onclick="openFacilitiesLightbox('assets/img/recent/1P3A9255.JPG.webp', 'Parents & Children Academic Exhibition Tour: Families admiring research posters, Konkan flora documentation, and student marine biology charts.', 'Community Engagement')">
-            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9255.JPG.webp" alt="Parents and Children Academic Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+          <div
+            class="gallery-item rounded-3xl overflow-hidden aspect-[4/3] border border-outline-variant shadow-md group cursor-pointer hover-lift relative bg-white transition-all duration-300 reveal"
+            data-category="academics"
+            onclick="openFacilitiesLightbox('assets/img/recent/1P3A9255.JPG.webp', 'Parents & Children Academic Exhibition Tour: Families admiring research posters, Konkan flora documentation, and student marine biology charts.', 'Community Engagement')">
+            <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9255.JPG.webp"
+              alt="Parents and Children Academic Tour"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span class="text-[11px] font-extrabold uppercase tracking-widest text-primary-light">📚 Community</span>
               <h4 class="text-base font-bold mt-0.5 text-white">Parent Exhibition Tour</h4>
-              <p class="text-xs text-white/80 line-clamp-2 mt-1">Families engaging with student inquiry and flora research.</p>
+              <p class="text-xs text-white/80 line-clamp-2 mt-1">Families engaging with student inquiry and flora
+                research.</p>
             </div>
           </div>
 
@@ -1137,7 +1509,8 @@
     <section class="py-24 bg-surface-container-low/40 relative overflow-hidden">
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-3 shadow-sm">
             Parent Guidance
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
@@ -1151,45 +1524,58 @@
         <div class="max-w-3xl mx-auto space-y-4 text-left">
           <!-- FAQ 1 -->
           <div class="faq-item bg-surface-card rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
-            <button class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none" onclick="toggleFaq(this)">
+            <button
+              class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none"
+              onclick="toggleFaq(this)">
               <span>Can parents visit and tour the campus before applying?</span>
               <i class="bi bi-chevron-down faq-icon text-primary transition-transform duration-300"></i>
             </button>
             <div class="faq-content px-6 pb-6 text-sm text-on-surface-variant leading-relaxed">
-              Yes, absolutely! We encourage parents to visit during working hours (Monday to Saturday, 9:00 AM to 4:00 PM). Our admissions coordinator will guide you through the classrooms, science labs, library, and grounds.
+              Yes, absolutely! We encourage parents to visit during working hours (Monday to Saturday, 9:00 AM to 4:00
+              PM). Our admissions coordinator will guide you through the classrooms, science labs, library, and grounds.
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="faq-item bg-surface-card rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
-            <button class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none" onclick="toggleFaq(this)">
+            <button
+              class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none"
+              onclick="toggleFaq(this)">
               <span>What measures are taken for student physical safety and security?</span>
               <i class="bi bi-chevron-down faq-icon text-primary transition-transform duration-300"></i>
             </button>
             <div class="faq-content px-6 pb-6 text-sm text-on-surface-variant leading-relaxed">
-              The campus is secured with perimeter fencing, gated security guards, and CCTV surveillance at entry and exit corridors. All staff members undergo thorough background verification.
+              The campus is secured with perimeter fencing, gated security guards, and CCTV surveillance at entry and
+              exit corridors. All staff members undergo thorough background verification.
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="faq-item bg-surface-card rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
-            <button class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none" onclick="toggleFaq(this)">
+            <button
+              class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none"
+              onclick="toggleFaq(this)">
               <span>Are drinking water and sanitation facilities hygienic?</span>
               <i class="bi bi-chevron-down faq-icon text-primary transition-transform duration-300"></i>
             </button>
             <div class="faq-content px-6 pb-6 text-sm text-on-surface-variant leading-relaxed">
-              Yes, our water is purified via a multi-stage commercial Reverse Osmosis (RO) filtration unit that is tested regularly. Separate, sanitized washrooms with child-height handwashing stations are maintained on every floor.
+              Yes, our water is purified via a multi-stage commercial Reverse Osmosis (RO) filtration unit that is
+              tested regularly. Separate, sanitized washrooms with child-height handwashing stations are maintained on
+              every floor.
             </div>
           </div>
 
           <!-- FAQ 4 -->
           <div class="faq-item bg-surface-card rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
-            <button class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none" onclick="toggleFaq(this)">
+            <button
+              class="w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-secondary text-base sm:text-lg focus:outline-none"
+              onclick="toggleFaq(this)">
               <span>How does the school handle medical emergencies or first aid?</span>
               <i class="bi bi-chevron-down faq-icon text-primary transition-transform duration-300"></i>
             </button>
             <div class="faq-content px-6 pb-6 text-sm text-on-surface-variant leading-relaxed">
-              We have an equipped first aid room on campus. Several faculty members are trained in first aid. For any advanced medical needs, we maintain active tie-ups with reputable clinics and hospitals in Ratnagiri.
+              We have an equipped first aid room on campus. Several faculty members are trained in first aid. For any
+              advanced medical needs, we maintain active tie-ups with reputable clinics and hospitals in Ratnagiri.
             </div>
           </div>
         </div>
@@ -1202,25 +1588,32 @@
     <!-- ======================================================== -->
     <section class="py-24 bg-secondary text-white relative overflow-hidden text-center">
       <!-- Background Image with High Opacity -->
-      <div class="absolute inset-0 bg-cover bg-center opacity-35 pointer-events-none" style="background-image: url('assets/img/school.png');"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/80 to-secondary pointer-events-none"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-35 pointer-events-none"
+        style="background-image: url('assets/img/school.png');"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/80 to-secondary pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10">
         <div class="max-w-3xl mx-auto space-y-6">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-2 rounded-full border border-white/25 inline-block">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-[#facc15] bg-white/15 px-4 py-2 rounded-full border border-white/25 inline-block">
             Experience In Person
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
             Schedule Your Guided Campus Tour
           </h2>
           <p class="text-white/85 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Witness the joy, serenity, and inspiring Gurukul learning atmosphere of O'NEST Gurukul at Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639.
+            Witness the joy, serenity, and inspiring Gurukul learning atmosphere of O'NEST Gurukul at Wadekar Wadi,
+            Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639.
           </p>
           <div class="flex flex-wrap justify-center gap-4 pt-3">
-            <a href="contact.html" class="bg-[#facc15] hover:bg-white text-secondary font-bold px-8 py-4 rounded-xl transition-all shadow-xl text-sm flex items-center gap-2">
+            <a href="contact.html"
+              class="bg-[#facc15] hover:bg-white text-secondary font-bold px-8 py-4 rounded-xl transition-all shadow-xl text-sm flex items-center gap-2">
               Book a Guided Visit <i class="bi bi-arrow-right-short text-xl"></i>
             </a>
-            <a href="admissions.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-8 py-4 rounded-xl transition-all text-sm backdrop-blur-sm">
+            <a href="admissions.html"
+              class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-8 py-4 rounded-xl transition-all text-sm backdrop-blur-sm">
               Admissions 2026-27 Overview
             </a>
           </div>
@@ -1235,30 +1628,44 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-10 w-auto">
+            <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="O'Nest Gurukul Logo"
+              class="h-10 w-auto">
             <div>
               <h4 class="font-display font-bold text-lg text-white">O'NEST GURUKUL</h4>
               <p class="text-xs text-primary-light font-semibold">School of Excellence</p>
             </div>
           </div>
           <p class="text-white/70 text-xs leading-relaxed">
-            A serene eco-campus nurturing academic clarity, environmental stewardship, and grounded values in Nachane, Ratnagiri.
+            A serene eco-campus nurturing academic clarity, environmental stewardship, and grounded values in Nachane,
+            Ratnagiri.
           </p>
           <div class="flex items-center gap-3 pt-2">
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
+            <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="Follow O'Nest Gurukul on Instagram" aria-label="Follow O'Nest Gurukul on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="contact.html"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="contact.html"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="admin.html"
+              class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm"
+              title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i
+                class="bi bi-shield-lock-fill text-xs"></i></a>
           </div>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Quick Navigation
+          </h4>
           <ul class="space-y-2 text-xs text-white/70">
             <li><a href="index.html" class="hover:text-primary-light transition-colors">Home</a></li>
             <li><a href="about.html" class="hover:text-primary-light transition-colors">About O'Nest Gurukul</a></li>
-            <li><a href="preprimary.html" class="hover:text-primary-light transition-colors">Pre-Primary Section</a></li>
-            <li><a href="students-life.html" class="hover:text-primary-light transition-colors">Curriculum &amp; Academics</a></li>
+            <li><a href="preprimary.html" class="hover:text-primary-light transition-colors">Pre-Primary Section</a>
+            </li>
+            <li><a href="students-life.html" class="hover:text-primary-light transition-colors">Curriculum &amp;
+                Academics</a></li>
             <li><a href="campus-facilities.html" class="text-primary-light font-semibold">Campus Facilities</a></li>
             <li><a href="admissions.html" class="hover:text-primary-light transition-colors">Admission Process</a></li>
             <li><a href="contact.html" class="hover:text-primary-light transition-colors">Contact Us</a></li>
@@ -1275,20 +1682,25 @@
             <li>Children's Reading Library</li>
             <li>Paras Bagh Kitchen Garden</li>
             <li>Karate &amp; Athletics Grounds</li>
-            <li>Solar Powered Eco Campus</li>
+            <li>Fire Drills &amp; Emergency Safety</li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Contact &amp; Location</h4>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Contact &amp;
+            Location</h4>
           <p class="text-xs text-white/70 leading-relaxed">
-            <i class="bi bi-geo-alt-fill text-primary-light mr-1.5"></i> Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639
+            <i class="bi bi-geo-alt-fill text-primary-light mr-1.5"></i> Wadekar Wadi, Ambeshet Road, near Hanuman
+            Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639
           </p>
           <p class="text-xs text-white/70 mt-2">
-            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> +91 94220 78900
+            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> <strong>Admission Desk:</strong> <a href="tel:+917888056699" class="hover:underline">+91 7888056699</a>
           </p>
-          <p class="text-xs text-white/70 mt-2">
-            <i class="bi bi-envelope-fill text-primary-light mr-1.5"></i> info@onestgurukul.org
+          <p class="text-xs text-white/70 mt-1">
+            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> <strong>Office:</strong> +91 8767672478
+          </p>
+          <p class="text-xs text-white/70 mt-1">
+            <i class="bi bi-envelope-fill text-primary-light mr-1.5"></i> onestgurukulprimary@gmail.com
           </p>
           <div class="mt-4 p-3 bg-white/5 rounded-xl border border-white/10 text-[11px] text-white/60">
             Campus Tour Hours: Mon - Sat: 9:00 AM - 4:00 PM
@@ -1296,9 +1708,17 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50">
+      <div
+        class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50">
         <p>&copy; 2026 O'Nest Gurukul, Ratnagiri. All Rights Reserved.</p>
-        <p class="mt-2 sm:mt-0">Designed for Holistic Educational Growth.</p>
+        <div class="mt-4 sm:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
+          <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+          <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
+          <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
+          <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
+          <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1306,14 +1726,20 @@
   <!-- Lightbox Modal Container -->
   <div id="facilities-lightbox" onclick="closeFacilitiesLightbox()" class="transition-opacity duration-300">
     <div class="relative max-w-4xl w-full mx-auto" onclick="event.stopPropagation()">
-      <button class="absolute -top-12 right-0 text-white text-3xl hover:text-amber-400 transition-colors focus:outline-none" onclick="closeFacilitiesLightbox()" aria-label="Close Lightbox">
+      <button
+        class="absolute -top-12 right-0 text-white text-3xl hover:text-amber-400 transition-colors focus:outline-none"
+        onclick="closeFacilitiesLightbox()" aria-label="Close Lightbox">
         <i class="bi bi-x-lg"></i>
       </button>
       <div class="bg-black/60 rounded-3xl p-3 border border-white/20 shadow-2xl backdrop-blur-xl">
-        <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Enlarged view" class="w-full max-h-[75vh] object-contain rounded-2xl mx-auto shadow-inner">
+        <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Enlarged view"
+          class="w-full max-h-[75vh] object-contain rounded-2xl mx-auto shadow-inner">
         <div class="mt-4 px-3 pb-2 text-center">
-          <span id="lightbox-category" class="inline-block text-[11px] font-extrabold uppercase tracking-widest text-amber-300 bg-amber-400/10 px-3.5 py-1 rounded-full mb-1 border border-amber-300/30">O'Nest Gurukul</span>
-          <p id="lightbox-caption" class="text-white text-sm sm:text-base font-semibold mt-1 leading-relaxed max-w-2xl mx-auto"></p>
+          <span id="lightbox-category"
+            class="inline-block text-[11px] font-extrabold uppercase tracking-widest text-amber-300 bg-amber-400/10 px-3.5 py-1 rounded-full mb-1 border border-amber-300/30">O'Nest
+            Gurukul</span>
+          <p id="lightbox-caption"
+            class="text-white text-sm sm:text-base font-semibold mt-1 leading-relaxed max-w-2xl mx-auto"></p>
         </div>
       </div>
     </div>
@@ -1600,9 +2026,9 @@
       const container = document.getElementById('panorama-360-container');
       if (!container) return;
       if (!document.fullscreenElement) {
-        container.requestFullscreen().catch(() => {});
+        container.requestFullscreen().catch(() => { });
       } else {
-        document.exitFullscreen().catch(() => {});
+        document.exitFullscreen().catch(() => { });
       }
     }
 
@@ -1612,4 +2038,5 @@
     });
   </script>
 </body>
+
 </html>

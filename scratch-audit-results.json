@@ -1,0 +1,215 @@
+{
+  "missingAssets": [],
+  "emptyOrHashHrefs": [
+    {
+      "file": "about.html",
+      "href": "#"
+    },
+    {
+      "file": "about.html",
+      "href": "#"
+    },
+    {
+      "file": "about.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "admissions.html",
+      "href": "#"
+    },
+    {
+      "file": "campus-facilities.html",
+      "href": "#"
+    },
+    {
+      "file": "campus-facilities.html",
+      "href": "#"
+    },
+    {
+      "file": "campus-facilities.html",
+      "href": "#"
+    },
+    {
+      "file": "contact.html",
+      "href": "#"
+    },
+    {
+      "file": "contact.html",
+      "href": "#"
+    },
+    {
+      "file": "contact.html",
+      "href": "#"
+    },
+    {
+      "file": "contact.html",
+      "href": "#"
+    },
+    {
+      "file": "contact.html",
+      "href": "#"
+    },
+    {
+      "file": "index.html",
+      "href": "#"
+    },
+    {
+      "file": "index.html",
+      "href": "#"
+    },
+    {
+      "file": "index.html",
+      "href": "#"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "#"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "#"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "#"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "#"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "#"
+    },
+    {
+      "file": "students-life.html",
+      "href": "#"
+    },
+    {
+      "file": "students-life.html",
+      "href": "#"
+    },
+    {
+      "file": "students-life.html",
+      "href": "#"
+    }
+  ],
+  "duplicateIds": {},
+  "placeholdersAndTodos": [],
+  "allHrefs": [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css",
+    "https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap",
+    "assets/css/theme-base.css",
+    "index.html",
+    "about.html",
+    "preprimary.html",
+    "students-life.html",
+    "campus-facilities.html",
+    "contact.html",
+    "admissions.html",
+    "legal/privacy-policy.html",
+    "legal/terms-and-conditions.html",
+    "legal/disclaimer.html",
+    "legal/accessibility.html",
+    "legal/copyright.html",
+    "https://onestgurukul.in/about.html",
+    "https://fonts.googleapis.com",
+    "https://fonts.gstatic.com",
+    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
+    "assets/img/onest.svg",
+    "assets/img/apple-touch-icon.png",
+    "#",
+    "admin.html",
+    "index.html#notices-board",
+    "campus-facilities.html#download-hub",
+    "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap",
+    "https://onestgurukul.in/admissions.html",
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap",
+    "assets/css/onest-admissions.css",
+    "#application",
+    "#process",
+    "https://onestgurukul.in/campus-facilities.html",
+    "https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap",
+    "#virtual-tour",
+    "https://onestgurukul.in/contact.html",
+    "https://maps.google.com",
+    "tel:+917888056699",
+    "mailto:onestgurukulprimary@gmail.com",
+    "https://wa.me/917888056699",
+    "https://onestgurukul.in/",
+    "assets/ONEST/hero_bg_1.jpg",
+    "assets/css/onest-home.css",
+    "#notices-board",
+    "about.html#faculty",
+    "https://www.instagram.com/onestgurukul/",
+    "${item.pdfUrl}",
+    "${n.pdfUrl}",
+    "https://onestgurukul.in/preprimary.html",
+    "students-life.html#achievements",
+    "https://onestgurukul.in/students-life.html",
+    "#how-learning-happens",
+    "https://calendar.google.com",
+    "../index.html",
+    "privacy-policy.html",
+    "terms-and-conditions.html",
+    "disclaimer.html",
+    "accessibility.html",
+    "copyright.html",
+    "../THIRD-PARTY-LICENSES.md"
+  ],
+  "telLinks": [
+    {
+      "file": "contact.html",
+      "href": "tel:+917888056699"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "tel:+917888056699"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "tel:+917888056699"
+    },
+    {
+      "file": "preprimary.html",
+      "href": "tel:+917888056699"
+    }
+  ],
+  "mailtoLinks": [
+    {
+      "file": "contact.html",
+      "href": "mailto:onestgurukulprimary@gmail.com"
+    }
+  ],
+  "waLinks": [
+    {
+      "file": "contact.html",
+      "href": "https://wa.me/917888056699"
+    }
+  ]
+}

@@ -42,3 +42,6 @@
 - [Campus Facilities](https://onestgurukul.in/campus-facilities.html): 360° virtual tour, classroom features, sports arena, and safety standards.
 - [About Us](https://onestgurukul.in/about.html): Founding mission, educational philosophy, and mentor leadership.
 - [Contact & Location](https://onestgurukul.in/contact.html): Campus address, Google Maps directions, phone helplines, and visitor booking.
+- [Student Media Policy](https://onestgurukul.in/legal/student-media-policy.html): Child photograph safeguards, parental consent options, and digital privacy rules under DPDP Act 2023.
+- [Privacy Policy](https://onestgurukul.in/legal/privacy-policy.html): Institutional data protection and enquiry handling.
+- [Terms & Conditions](https://onestgurukul.in/legal/terms-and-conditions.html): Terms of website use and enrollment policies.

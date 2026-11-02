@@ -134,6 +134,9 @@
 
 <body>
 
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
+
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
     <div class="onest-preloader-inner">
@@ -205,6 +208,9 @@
     </ul>
   </div>
 
+
+    <!-- Main Content Area -->
+    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="onest-admissions-hero pt-[160px]">
@@ -575,6 +581,8 @@
         <p style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">We'll send the official prospectus link directly to your inbox.</p>
         
         <form id="prospectus-lead-form" style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- Honeypot anti-spam trap -->
+          <input type="text" id="pr-hp" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label style="font-size: 11px; font-weight: bold; color: #002147; text-transform: uppercase;">Your Full Name</label>
             <input type="text" id="pr-name" class="onest-admissions-input" placeholder="Name" required>
@@ -594,6 +602,7 @@
         </form>
       </div>
     </div>
+    </main>
 
     <!-- Footer -->
     <footer class="onest-admissions-footer">
@@ -603,8 +612,15 @@
             <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="Logo"
               style="height: 40px; margin-bottom: 24px; filter: brightness(0) invert(1);">
             <p style="color: #a3a3a3;">Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639</p>
-            <p style="margin-top: 16px;"><strong>Phone:</strong> +91 8767672478</p>
+            <p style="margin-top: 16px;"><strong>Admission Helpline:</strong> <a href="tel:+917888056699" style="color: inherit; text-decoration: underline;">+91 7888056699</a></p>
+            <p><strong>Office / Transport:</strong> +91 8767672478</p>
             <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
+            <div style="display: flex; gap: 12px; margin-top: 16px;">
+              <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer" style="color: #fff; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="Follow O'Nest Gurukul on Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="contact.html" style="color: #fff; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="Facebook (Coming Soon)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="contact.html" style="color: #fff; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="YouTube (Coming Soon)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="admin.html" style="color: #facc15; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);" title="Admin CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill"></i></a>
+            </div>
           </div>
           <div class="onest-admissions-footer-col">
             <h4>Quick Links</h4>
@@ -619,22 +635,30 @@
             <h4>Academics</h4>
             <ul>
               <li><a href="preprimary.html">Pre-Primary</a></li>
-              <li><a href="#">Primary</a></li>
-              <li><a href="#">Middle School</a></li>
-              <li><a href="#">Senior School</a></li>
+              <li><a href="students-life.html">Primary Stage</a></li>
+              <li><a href="students-life.html">Middle School</a></li>
+              <li><a href="students-life.html">Senior School</a></li>
             </ul>
           </div>
           <div class="onest-admissions-footer-col">
             <h4>Resources</h4>
             <ul>
-              <li><a href="#">Parent Portal</a></li>
-              <li><a href="#">News & Updates</a></li>
-              <li><a href="#">School Policies</a></li>
+              <li><a href="admin.html">Admin CMS Portal</a></li>
+              <li><a href="index.html#notices-board">News &amp; Updates</a></li>
+              <li><a href="campus-facilities.html#download-hub">School Policies</a></li>
             </ul>
           </div>
         </div>
         <div class="onest-admissions-footer-bottom">
           <p>&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+          <div style="margin-top: 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 12px; font-weight: bold; opacity: 0.65;">
+            <a href="legal/privacy-policy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+            <a href="legal/terms-and-conditions.html" style="color: inherit; text-decoration: none;">Terms &amp; Conditions</a>
+            <a href="legal/student-media-policy.html" style="color: inherit; text-decoration: none;">Student Media Policy</a>
+            <a href="legal/disclaimer.html" style="color: inherit; text-decoration: none;">Developer Disclaimer</a>
+            <a href="legal/accessibility.html" style="color: inherit; text-decoration: none;">Accessibility Statement</a>
+            <a href="legal/copyright.html" style="color: inherit; text-decoration: none;">Copyright Notice</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -660,6 +684,15 @@
 
       document.getElementById('prospectus-lead-form').addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Honeypot spam interceptor
+        const hp = document.getElementById('pr-hp')?.value;
+        if (hp) {
+          console.warn("Spam lead intercepted via honeypot.");
+          closeProspectusModal();
+          return;
+        }
+
         const name = document.getElementById('pr-name').value;
         const email = document.getElementById('pr-email').value;
         const phone = document.getElementById('pr-phone').value;
@@ -678,15 +711,9 @@
           });
         }
 
-        alert("✓ Lead registered! Your download of the O'Nest Gurukul Prospectus will begin shortly.");
+        alert("✓ Thank you, " + name + "! Your prospectus request has been recorded. Our admissions overview has been sent to " + email + ", and our admissions desk (+91 7888056699) will assist you with any questions.");
         closeProspectusModal();
-
-        // Simulate file download trigger
-        const a = document.createElement('a');
-        a.href = '#'; // Mock pdf link
-        a.innerHTML = 'Download';
-        a.setAttribute('download', 'Onest_Gurukul_Prospectus.pdf');
-        console.log("Downloading Prospectus PDF...");
+        document.getElementById('prospectus-lead-form').reset();
       });
 
 

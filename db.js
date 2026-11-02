@@ -127,9 +127,9 @@
         ],
         achievements: [
             { id: "a-1", title: "State Environmental Excellence Award", awardee: "O'Nest Gurukul Eco Club", category: "Academics", year: "2025-26", description: "Conferred by TV9 Marathi & Maharashtra Pollution Control Board for campus green initiatives.", image: "assets/ONEST/IMG-20251029-WA0472.jpg.jpeg", status: "published" },
-            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg", status: "published" },
+            { id: "a-2", title: "1st Rank All India Classical Dance", awardee: "Vidmayee Jayant Mane", category: "Arts", year: "2026", description: "Clinched the 1st prize trophy at 'Nritya Anubhuti' National Cultural Dance Contest.", image: "assets/ONEST/IMG-20260810-WA0439.jpg.jpeg?v=2", status: "published" },
             { id: "a-3", title: "National Olympiad Merit Awards", awardee: "Science & Maths Olympians", category: "Academics", year: "2025-26", description: "High percentiles, medals, and certificates achieved in Science Olympiad Foundation (SOF) national assessments.", image: "assets/ONEST/WhatsApp Image 2026-08-04 at 12.37.32 PM.jpeg", status: "published" },
-            { id: "a-4", title: "State Karate & Martial Arts Honors", awardee: "Gurukul Martial Arts Team", category: "Sports", year: "2025-26", description: "Gold & silver medals in state-level Karate kata and kumite demonstrations under black-belt mentors.", image: "assets/img/recent/VEER 1.JPG.webp", status: "published" }
+            { id: "a-4", title: "Annual Cultural Gathering & Choral Recital", awardee: "Primary Choir & Cultural Ensemble", category: "Cultural", year: "2025-26", description: "Stirring stage choral performance and historic theatrical recital of 'Vedat Marathe Veer Daudale Saat' at the Annual Cultural Gathering.", image: "assets/img/recent/VEER 1.JPG.webp", status: "published" }
         ],
         testimonials: [
             { id: "t-1", name: "Mr. Rajesh Shirke", role: "Parent", text: "O'Nest Gurukul has transformed my daughter's attitude towards learning. The classrooms are modern, but the values taught are traditional and deep.", photo: "assets/img/person/draw (3).jpg" }

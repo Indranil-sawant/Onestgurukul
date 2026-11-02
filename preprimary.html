@@ -221,6 +221,9 @@
 
 <body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
+
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
     <div class="onest-preloader-inner">
@@ -290,7 +293,7 @@
     </ul>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION (Cinematic Illustration + Dynamic Child Photomontage) -->
     <section class="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-sky-100/70 via-white to-amber-100/40 flex items-center pt-[110px] pb-16">
@@ -332,12 +335,15 @@
               </span>
             </div>
 
-            <div class="flex flex-wrap gap-4 pt-3">
+            <div class="flex flex-wrap items-center gap-4 pt-3">
               <a href="contact.html" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-lg flex items-center gap-2">
                 🌈 Book a School Tour <i class="bi bi-chevron-right"></i>
               </a>
               <a href="admissions.html" class="bg-white hover:bg-secondary hover:text-white text-secondary border border-secondary/20 px-8 py-4 rounded-2xl font-bold hover:scale-95 transition-all shadow-md">
                 🎨 Apply for 2026-27
+              </a>
+              <a href="tel:+917888056699" class="bg-white/90 hover:bg-white text-secondary hover:text-primary border border-primary/20 px-5 py-3.5 rounded-2xl font-bold text-xs flex items-center gap-2 shadow-sm transition-all hover:scale-95">
+                <i class="bi bi-telephone-fill text-accent text-sm"></i> Admission Desk: +91 7888056699
               </a>
             </div>
           </div>
@@ -425,7 +431,7 @@
           <div class="bg-background rounded-[28px] border border-sky-200/60 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-left flex flex-col justify-between group">
             <div>
               <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-primary/10">
-                <img loading="lazy" decoding="async" src="assets/ONEST/preprimary-craft-activity.jpg" alt="Nursery fine motor crafts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img loading="lazy" decoding="async" src="assets/ONEST/preprimary-craft-activity.jpg" alt="Nursery fine motor crafts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 25%;">
                 <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-sky-blue shadow-sm">
                   Age 2.5 – 3.5 Yrs
                 </span>
@@ -803,9 +809,9 @@
           </div>
 
           <!-- Gallery Item 7: Cultural Pageantry & Little Legends -->
-          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0762.jpg.jpeg', 'Cultural Pageantry: Chhatrapati Shivaji Maharaj & Little Angels')">
+          <div class="polaroid rotate-[-2deg] cursor-pointer" onclick="openLightbox('assets/ONEST/IMG-20260810-WA0762.jpg.jpeg', 'Fancy Dress Celebration: Little Legends &amp; Theme Characters')">
             <div class="aspect-[4/3] overflow-hidden rounded-xl relative group">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0762.jpg.jpeg" alt="Shivaji Maharaj & Angels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0762.jpg.jpeg" alt="Fancy Dress Little Legends" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" style="object-position: center top !important;">
               <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="bi bi-arrows-fullscreen text-2xl"></i>
               </div>
@@ -854,6 +860,9 @@
           <a href="admissions.html" class="bg-primary-light text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
             Apply Now <i class="bi bi-arrow-right"></i>
           </a>
+          <a href="tel:+917888056699" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all flex items-center gap-2">
+            <i class="bi bi-telephone-fill text-primary-light"></i> Admission Desk: +91 7888056699
+          </a>
           <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
             Schedule a Visit
           </a>
@@ -872,13 +881,14 @@
         </a>
         <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Rd, Abhyudhya Nagar, Chinchkhari – 415639, Ratnagiri</p>
         <div class="space-y-2 text-sm text-white/90">
+          <p><strong>Admission Desk:</strong> <a href="tel:+917888056699" class="hover:underline">+91 7888056699</a></p>
           <p><strong>Phone:</strong> +91 8767672478</p>
           <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
         </div>
         <div class="flex items-center gap-3 pt-2">
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Follow O'Nest Gurukul on Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="contact.html" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="contact.html" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
         </div>
       </div>
@@ -904,13 +914,21 @@
         <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
         <ul class="space-y-4 text-sm font-semibold">
           <li><a href="admin.html" class="text-[#facc15] hover:text-white transition-colors font-bold flex items-center gap-1.5"><i class="bi bi-shield-lock-fill"></i> Admin CMS Portal</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+          <li><a href="index.html#notices-board" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="campus-facilities.html#download-hub" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-white/10 mt-16 pt-6 text-center">
       <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
+        <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
+        <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
+        <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
+        <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
+      </div>
     </div>
   </footer>
 

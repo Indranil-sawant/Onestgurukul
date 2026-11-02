@@ -7,7 +7,8 @@
   <title>Curriculum & Student Life | O'Nest Gurukul Ratnagiri</title>
   <meta name="description"
     content="Explore CBSE-aligned academics and student life at O'Nest Gurukul, Ratnagiri: hands-on STEM learning, sports, arts, financial literacy, and Gurukul values.">
-  <meta name="keywords" content="Curriculum O'Nest Gurukul, CBSE curriculum Ratnagiri, experiential learning Konkan, STEM school Ratnagiri, sports karate school Chiplun, values education Maharashtra, holistic schooling Ratnagiri">
+  <meta name="keywords"
+    content="Curriculum O'Nest Gurukul, CBSE curriculum Ratnagiri, experiential learning Konkan, STEM school Ratnagiri, sports karate school Chiplun, values education Maharashtra, holistic schooling Ratnagiri">
   <link rel="canonical" href="https://onestgurukul.in/students-life.html">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="O'Nest Gurukul">
@@ -23,14 +24,16 @@
   <meta property="og:locale" content="en_IN">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Curriculum & Student Life | O'Nest Gurukul Ratnagiri">
-  <meta property="og:description" content="Explore CBSE-aligned academics and student life at O'Nest Gurukul, Ratnagiri: hands-on STEM learning, sports, arts, financial literacy, and Gurukul values.">
+  <meta property="og:description"
+    content="Explore CBSE-aligned academics and student life at O'Nest Gurukul, Ratnagiri: hands-on STEM learning, sports, arts, financial literacy, and Gurukul values.">
   <meta property="og:image" content="https://onestgurukul.in/assets/img/school2.jpg">
   <meta property="og:url" content="https://onestgurukul.in/students-life.html">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Curriculum & Student Life | O'Nest Gurukul Ratnagiri">
-  <meta name="twitter:description" content="Nurturing future leaders through experiential academics, sports, and holistic character building in Ratnagiri.">
+  <meta name="twitter:description"
+    content="Nurturing future leaders through experiential academics, sports, and holistic character building in Ratnagiri.">
   <meta name="twitter:image" content="https://onestgurukul.in/assets/img/school2.jpg">
 
   <!-- Schema.org Structured Data -->
@@ -66,8 +69,11 @@
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="assets/img/onest.svg" rel="icon">
@@ -124,42 +130,64 @@
       font-family: 'Hanken Grotesk', sans-serif;
       color: #1f2937;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Libre Caslon Text', serif;
     }
+
     .glass-nav {
       background: rgba(253, 251, 247, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
+
     .luxury-shadow {
       box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.06);
     }
+
     .hover-lift {
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     }
+
     .hover-lift:hover {
       transform: translateY(-8px);
       box-shadow: 0 30px 60px -20px rgba(115, 92, 0, 0.12);
       border-color: rgba(250, 204, 21, 0.4);
     }
+
     .reveal {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
+
     /* Ambient Glow Blobs */
     @keyframes float {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-20px) scale(1.05); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-20px) scale(1.05);
+      }
     }
+
     .floating-blob {
       animation: float 8s ease-in-out infinite;
     }
+
     /* Animated footprints vertical tracker */
     .footprint-track {
       position: absolute;
@@ -170,12 +198,14 @@
       bottom: 0;
       z-index: 0;
     }
+
     @media (min-width: 1024px) {
       .footprint-track {
         left: 50%;
         transform: translateX(-50%);
       }
     }
+
     .footprint-dot {
       width: 16px;
       height: 16px;
@@ -186,6 +216,7 @@
       left: -6px;
       transition: all 0.4s ease;
     }
+
     /* Lightbox Modal */
     #curriculum-lightbox {
       display: none;
@@ -198,16 +229,20 @@
       justify-content: center;
       padding: 1.5rem;
     }
+
     #curriculum-lightbox.active {
       display: flex;
     }
+
     /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
     }
+
     ::-webkit-scrollbar-track {
       background: #fdfbf7;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #735c00;
       border-radius: 5px;
@@ -215,7 +250,11 @@
   </style>
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+<body
+  class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
+
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
 
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
@@ -231,39 +270,48 @@
     </div>
   </div>
   <script>
-    (function() {
-      function hidePreloader() {
-        var p = document.getElementById('onest-preloader');
-        if (p && !p.classList.contains('onest-preloader-hidden')) {
-          p.classList.add('onest-preloader-hidden');
-          setTimeout(function() { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+      (function () {
+        function hidePreloader() {
+          var p = document.getElementById('onest-preloader');
+          if (p && !p.classList.contains('onest-preloader-hidden')) {
+            p.classList.add('onest-preloader-hidden');
+            setTimeout(function () { if (p && p.parentNode) p.parentNode.removeChild(p); }, 450);
+          }
         }
-      }
-      window.addEventListener('load', function() { setTimeout(hidePreloader, 350); });
-      setTimeout(hidePreloader, 1200);
-    })();
+        window.addEventListener('load', function () { setTimeout(hidePreloader, 350); });
+        setTimeout(hidePreloader, 1200);
+      })();
   </script>
 
   <!-- Sticky TopNavBar (Exact 1:1 copy from index.html) -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10 h-[90px] transition-all duration-300">
     <div class="flex justify-between items-center h-full px-gutter max-w-container-max mx-auto">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-[75px] min-w-[58px] w-auto">
       </a>
       <nav class="hidden lg:flex items-center space-x-8">
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="index.html">Home</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="about.html">About Us</a>
-        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-base tracking-wide" href="preprimary.html">⭐ Pre-Primary</a>
-        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-base tracking-wide" href="students-life.html">Curriculum</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="campus-facilities.html">Campus &amp; Facilities</a>
-        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide" href="contact.html">Contact</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="index.html">Home</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="about.html">About Us</a>
+        <a class="text-[#FF6B9D] font-extrabold hover:scale-105 transition-transform text-base tracking-wide"
+          href="preprimary.html">⭐ Pre-Primary</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 text-base tracking-wide"
+          href="students-life.html">Curriculum</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="campus-facilities.html">Campus &amp; Facilities</a>
+        <a class="text-secondary/80 font-bold hover:text-primary transition-colors text-base tracking-wide"
+          href="contact.html">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
         <!-- Apply Now -->
-        <a href="admissions.html" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
+        <a href="admissions.html"
+          class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:scale-95 transition-transform hidden md:inline-block text-sm shadow-md border border-primary/20">
           Apply Now
         </a>
-        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg" aria-label="Open Menu">
+        <button id="onest-home-mobile-toggle" class="lg:hidden p-2 text-secondary hover:bg-primary/10 rounded-lg"
+          aria-label="Open Menu">
           <i class="bi bi-list text-3xl"></i>
         </button>
       </div>
@@ -271,8 +319,10 @@
   </header>
 
   <!-- Mobile Drawer Menu (Exact 1:1 copy from index.html) -->
-  <div id="onest-home-mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
-    <div id="onest-home-mobile-close" class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
+  <div id="onest-home-mobile-menu"
+    class="fixed inset-0 z-[100] bg-secondary text-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-center p-gutter">
+    <div id="onest-home-mobile-close"
+      class="absolute top-8 right-8 text-white/80 cursor-pointer p-2 hover:bg-white/10 rounded-full">
       <i class="bi bi-x text-4xl"></i>
     </div>
     <ul class="onest-home-mobile-list flex flex-col gap-6 text-center text-xl font-bold">
@@ -280,33 +330,42 @@
       <li><a href="about.html" class="text-white/80 hover:text-[#facc15] transition-colors">About Us</a></li>
       <li><a href="preprimary.html" class="text-white/80 hover:text-[#facc15] transition-colors">⭐ Pre-Primary</a></li>
       <li><a href="students-life.html" class="text-[#facc15] border-b-2 border-[#facc15] pb-1">Curriculum</a></li>
-      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp; Facilities</a></li>
+      <li><a href="campus-facilities.html" class="text-white/80 hover:text-[#facc15] transition-colors">Campus &amp;
+          Facilities</a></li>
       <li><a href="contact.html" class="text-white/80 hover:text-[#facc15] transition-colors">Contact</a></li>
-      <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
+      <li class="mt-4"><a href="admissions.html"
+          class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply
+          Now</a></li>
     </ul>
   </div>
 
-  <main>
+  <main id="main-content">
     <!-- HERO SECTION (Cinematic Story Opening) -->
-    <section class="relative min-h-[500px] lg:h-[85vh] lg:min-h-[560px] overflow-hidden bg-black text-white flex items-center pt-[90px] pb-12 lg:pb-0">
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg');"></div>
+    <section
+      class="relative min-h-[500px] lg:h-[85vh] lg:min-h-[560px] overflow-hidden bg-black text-white flex items-center pt-[90px] pb-12 lg:pb-0">
+      <div class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('assets/ONEST/IMG-20260810-WA0436(1).jpg.jpeg');"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent"></div>
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 text-left">
         <div class="max-w-3xl space-y-5 lg:space-y-6">
-          <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-[10px] sm:text-xs bg-white/10 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/20 inline-block">
+          <span
+            class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-[10px] sm:text-xs bg-white/10 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/20 inline-block">
             🎬 A Day in the Life of an O'Nest Student
           </span>
           <h1 class="font-display text-3xl sm:text-5xl md:text-7xl text-white font-bold leading-tight">
-            Every Big Dream <br/><span class="text-primary-light">Begins With a Smile.</span>
+            Every Big Dream <br /><span class="text-primary-light">Begins With a Smile.</span>
           </h1>
           <p class="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
-            Follow the journey of our students through an ordinary day filled with extraordinary discoveries, music, sports, nature, and deep friendships.
+            Follow the journey of our students through an ordinary day filled with extraordinary discoveries, music,
+            sports, nature, and deep friendships.
           </p>
           <div class="flex flex-wrap gap-4 pt-2">
-            <a href="#how-learning-happens" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm shadow-md">
+            <a href="#how-learning-happens"
+              class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm shadow-md">
               Explore Our Pedagogy <i class="bi bi-arrow-down-short text-lg"></i>
             </a>
-            <a href="admissions.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm backdrop-blur-sm">
+            <a href="admissions.html"
+              class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-xl font-bold inline-block hover:scale-95 transition-all text-sm backdrop-blur-sm">
               Admissions 2026-27
             </a>
           </div>
@@ -321,35 +380,45 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Teaching Methodology
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Learning That Goes Beyond Textbooks
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              At O'NEST Gurukul, true education begins when curiosity is unlocked. Rather than passive rote memorization, children are encouraged to ask <em>why</em>, debate in circles, test hypotheses, and build real-life understanding.
+              At O'NEST Gurukul, true education begins when curiosity is unlocked. Rather than passive rote
+              memorization, children are encouraged to ask <em>why</em>, debate in circles, test hypotheses, and build
+              real-life understanding.
             </p>
             <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed font-normal">
-              Our teachers act as attentive mentors, ensuring every child participates actively in discussions, explores creative ideas without fear of mistakes, and applies scientific logic to the world around them.
+              Our teachers act as attentive mentors, ensuring every child participates actively in discussions, explores
+              creative ideas without fear of mistakes, and applies scientific logic to the world around them.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/70 text-left hover-lift">
                 <i class="bi bi-lightbulb-fill text-2xl text-primary mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-base">Inquiry &amp; Logic</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Understanding mathematical patterns and scientific principles through concrete observation.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Understanding mathematical patterns and
+                  scientific principles through concrete observation.</p>
               </div>
               <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/70 text-left hover-lift">
                 <i class="bi bi-chat-heart-fill text-2xl text-accent mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-base">Participatory Circles</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Every student speaks, questions, and builds confidence in small supportive groups.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Every student speaks, questions, and
+                  builds confidence in small supportive groups.</p>
               </div>
             </div>
           </div>
 
           <div class="lg:col-span-6 reveal">
-            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0757.jpg.jpeg', 'Students collaborating on interactive Number Name mathematics and logic puzzles')">
-              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0757.jpg.jpeg" alt="Students solving Number Name math puzzles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift"
+              onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0757.jpg.jpeg', 'Students collaborating on interactive Number Name mathematics and logic puzzles')">
+              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0757.jpg.jpeg"
+                alt="Students solving Number Name math puzzles"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
           </div>
         </div>
@@ -362,46 +431,61 @@
     <section id="practical-learning" class="py-24 bg-surface-container-low/40 relative overflow-hidden">
       <div class="container mx-auto px-gutter max-w-container-max text-center">
         <div class="max-w-3xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
             Applied Pedagogy
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
             From Ideas to Real Experiences
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg mt-4 font-normal">
-            Concepts become unforgettable when children touch, build, and exhibit them. Our students create scaled architectural fort models, ancient civilization dioramas, and environmental herbarium collections.
+            Concepts become unforgettable when children touch, build, and exhibit them. Our students create scaled
+            architectural fort models, ancient civilization dioramas, and environmental herbarium collections.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <!-- Diorama Project -->
-          <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
-            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A9131 (1).JPG.webp', 'Students presenting Indus Valley civilization architecture, irrigation, and trade systems')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9131 (1).JPG.webp" alt="Harappan civilization diorama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+          <div
+            class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/1P3A9131 (1).JPG.webp', 'Students presenting Indus Valley civilization architecture, irrigation, and trade systems')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9131 (1).JPG.webp"
+                alt="Harappan civilization diorama"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                 History &amp; Civilizations
               </div>
             </div>
             <div class="p-6 pt-0 space-y-2">
               <h3 class="font-display text-2xl font-bold text-secondary">Historical Dioramas &amp; Social Studies</h3>
               <p class="text-on-surface-variant text-sm leading-relaxed">
-                Students construct tactile clay layouts of ancient Harappan drainage systems, granaries, and town planning, linking historical facts with hands-on architectural creation.
+                Students construct tactile clay layouts of ancient Harappan drainage systems, granaries, and town
+                planning, linking historical facts with hands-on architectural creation.
               </p>
             </div>
           </div>
 
           <!-- Transportation & Engineering Project -->
-          <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
-            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A9170.JPG.webp', 'Students presenting George Stephenson\'s 1853 steam engine and modern bullet train engineering models')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9170.JPG.webp" alt="Students presenting Railway Engineering Models" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+          <div
+            class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant hover-lift reveal group space-y-4">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/1P3A9170.JPG.webp', 'Students presenting George Stephenson\'s 1853 steam engine and modern bullet train engineering models')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9170.JPG.webp"
+                alt="Students presenting Railway Engineering Models"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                 Engineering &amp; History
               </div>
             </div>
             <div class="p-6 pt-0 space-y-2">
-              <h3 class="font-display text-2xl font-bold text-secondary">Applied History &amp; Transportation Engineering</h3>
+              <h3 class="font-display text-2xl font-bold text-secondary">Applied History &amp; Transportation
+                Engineering</h3>
               <p class="text-on-surface-variant text-sm leading-relaxed">
-                Students construct operating mechanical and railway models, demonstrating the evolution from George Stephenson's 1853 steam locomotive to futuristic high-speed rail.
+                Students construct operating mechanical and railway models, demonstrating the evolution from George
+                Stephenson's 1853 steam locomotive to futuristic high-speed rail.
               </p>
             </div>
           </div>
@@ -416,42 +500,55 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-6 reveal">
-            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260422-WA0552.jpg.jpeg', 'Students creating environmental Earth Day awareness artwork')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260422-WA0552.jpg.jpeg" alt="Students environmental awareness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260422-WA0552.jpg.jpeg', 'Students creating environmental Earth Day awareness artwork')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260422-WA0552.jpg.jpeg"
+                alt="Students environmental awareness"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
           </div>
 
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Values &amp; Character
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Growing in Knowledge and Character
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              Education without character is incomplete. Every classroom interaction and outdoor activity at O'NEST Gurukul reinforces practical life skills: honest communication, team cooperation, responsibility for the environment, and genuine empathy.
+              Education without character is incomplete. Every classroom interaction and outdoor activity at O'NEST
+              Gurukul reinforces practical life skills: honest communication, team cooperation, responsibility for the
+              environment, and genuine empathy.
             </p>
-            
+
             <div class="space-y-3 pt-2">
-              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+              <div
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-people-fill text-xl text-primary"></i>
                 <div>
                   <h4 class="text-sm font-bold text-secondary">Teamwork &amp; Mutual Respect</h4>
-                  <p class="text-xs text-on-surface-variant">Working in pairs to build models and celebrating each other's milestone achievements.</p>
+                  <p class="text-xs text-on-surface-variant">Working in pairs to build models and celebrating each
+                    other's milestone achievements.</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+              <div
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-tree-fill text-xl text-accent"></i>
                 <div>
                   <h4 class="text-sm font-bold text-secondary">Environmental Responsibility (Parisar Prem)</h4>
-                  <p class="text-xs text-on-surface-variant">Active care for campus greenery, zero food wastage, and tree adoption.</p>
+                  <p class="text-xs text-on-surface-variant">Active care for campus greenery, zero food wastage, and
+                    tree adoption.</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
+              <div
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-shield-check text-xl text-secondary"></i>
                 <div>
                   <h4 class="text-sm font-bold text-secondary">Courage &amp; Resilience (Dhairya)</h4>
-                  <p class="text-xs text-on-surface-variant">Embracing challenges in public speaking, sports meets, and experimental problem-solving.</p>
+                  <p class="text-xs text-on-surface-variant">Embracing challenges in public speaking, sports meets, and
+                    experimental problem-solving.</p>
                 </div>
               </div>
             </div>
@@ -467,32 +564,41 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Hands-on Inquiry
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Experiential Science &amp; Ecological Modeling
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              Children internalize scientific concepts by constructing tangible physical models. Rather than reading abstract textbook chapters, students actively craft three-dimensional dioramas representing forest ecosystems, habitats, and environmental cycles.
+              Children internalize scientific concepts by constructing tangible physical models. Rather than reading
+              abstract textbook chapters, students actively craft three-dimensional dioramas representing forest
+              ecosystems, habitats, and environmental cycles.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div class="p-5 rounded-2xl bg-surface-card border border-outline-variant text-left hover-lift">
                 <i class="bi bi-flower1 text-2xl text-accent mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-base">Ecosystem Modeling</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Designing living habitats, flora-fauna relationships, and soil conservation models.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Designing living habitats, flora-fauna
+                  relationships, and soil conservation models.</p>
               </div>
               <div class="p-5 rounded-2xl bg-surface-card border border-outline-variant text-left hover-lift">
                 <i class="bi bi-diagram-3-fill text-2xl text-primary mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-base">Collaborative Inquiry</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Working in small peer teams to paint, structure, and articulate scientific observations.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Working in small peer teams to paint,
+                  structure, and articulate scientific observations.</p>
               </div>
             </div>
           </div>
 
           <div class="lg:col-span-6 reveal">
-            <div class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift" onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0447.jpg.jpeg', 'Students collaboratively building and painting a 3D environmental ecosystem diorama')">
-              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0447.jpg.jpeg" alt="Students building 3D environmental ecosystem diorama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[16/11] border-4 border-white shadow-xl group cursor-pointer hover-lift"
+              onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0447.jpg.jpeg', 'Students collaboratively building and painting a 3D environmental ecosystem diorama')">
+              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0447.jpg.jpeg"
+                alt="Students building 3D environmental ecosystem diorama"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
           </div>
         </div>
@@ -502,26 +608,35 @@
     <!-- ======================================================== -->
     <!-- NEW SECTION 5: FINANCIAL LITERACY & BAL BAZAAR (BUSINESS EDUCATION) -->
     <!-- ======================================================== -->
-    <section id="financial-business-education" class="py-24 bg-white relative overflow-hidden border-t border-primary/10">
+    <section id="financial-business-education"
+      class="py-24 bg-white relative overflow-hidden border-t border-primary/10">
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           <!-- Left: 2-Card Photo Showcase -->
           <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
             <!-- Card 1: Bal Bazaar -->
-            <div class="rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-square border-4 border-white shadow-xl group cursor-pointer hover-lift relative"
+            <div
+              class="rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-square border-4 border-white shadow-xl group cursor-pointer hover-lift relative"
               onclick="openCurriculumLightbox('assets/learnings/WhatsApp Image 2026-10-16 at 12.50.35 PM.jpeg', 'Bal Bazaar: Fresh vegetable market simulation where students trade using play currency and calculate real change')">
-              <img loading="lazy" decoding="async" src="assets/learnings/WhatsApp Image 2026-10-16 at 12.50.35 PM.jpeg" alt="Bal Bazaar Vegetable Market Roleplay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute bottom-3 left-3 right-3 bg-secondary/85 text-white p-2.5 rounded-xl backdrop-blur-sm text-xs font-bold">
+              <img loading="lazy" decoding="async" src="assets/learnings/WhatsApp Image 2026-10-16 at 12.50.35 PM.jpeg"
+                alt="Bal Bazaar Vegetable Market Roleplay"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute bottom-3 left-3 right-3 bg-secondary/85 text-white p-2.5 rounded-xl backdrop-blur-sm text-xs font-bold">
                 🥬 Bal Bazaar: Fresh Produce Market
               </div>
             </div>
 
             <!-- Card 2: Toy & Retail Commerce -->
-            <div class="rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-square border-4 border-white shadow-xl group cursor-pointer hover-lift relative"
+            <div
+              class="rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-square border-4 border-white shadow-xl group cursor-pointer hover-lift relative"
               onclick="openCurriculumLightbox('assets/learnings/financial learnigs.jpeg', 'Business &amp; Retail Commerce: Operating toy and stationery counters, inventory sorting, and cash transactions')">
-              <img loading="lazy" decoding="async" src="assets/learnings/financial learnigs.jpeg" alt="Business and Retail Commerce Roleplay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute bottom-3 left-3 right-3 bg-secondary/85 text-white p-2.5 rounded-xl backdrop-blur-sm text-xs font-bold">
+              <img loading="lazy" decoding="async" src="assets/learnings/financial learnigs.jpeg"
+                alt="Business and Retail Commerce Roleplay"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute bottom-3 left-3 right-3 bg-secondary/85 text-white p-2.5 rounded-xl backdrop-blur-sm text-xs font-bold">
                 🏪 Retail Commerce &amp; Currency Trade
               </div>
             </div>
@@ -529,39 +644,47 @@
 
           <!-- Right: Educational Philosophy & Pillars -->
           <div class="lg:col-span-6 space-y-6 text-left reveal">
-            <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
               Co-Curricular Highlight
             </span>
             <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
               Financial Literacy &amp; Early Business Education
             </h2>
             <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-normal">
-              Money awareness and entrepreneurial acumen shouldn't wait until adulthood. At O'Nest Gurukul, our extra-curricular curriculum integrates simulated marketplaces like <strong>Bal Bazaar (बाल बाजार)</strong>, empowering children to master mental arithmetic, transaction ethics, budgeting, and commercial collaboration in a playful yet structured setting.
+              Money awareness and entrepreneurial acumen shouldn't wait until adulthood. At O'Nest Gurukul, our
+              extra-curricular curriculum integrates simulated marketplaces like <strong>Bal Bazaar (बाल
+                बाजार)</strong>, empowering children to master mental arithmetic, transaction ethics, budgeting, and
+              commercial collaboration in a playful yet structured setting.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-cash-coin text-2xl text-accent mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-sm">Currency &amp; Mental Math</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Handling play Indian rupee denominations, verifying totals, and issuing exact change under real-time conditions.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Handling play Indian rupee
+                  denominations, verifying totals, and issuing exact change under real-time conditions.</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-piggy-bank-fill text-2xl text-primary mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-sm">Budgeting &amp; Savings</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Distinguishing essential needs from discretionary wants, developing personal savings discipline early.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Distinguishing essential needs from
+                  discretionary wants, developing personal savings discipline early.</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-briefcase-fill text-2xl text-secondary mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-sm">Entrepreneurial Acumen</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Understanding inventory cost, retail markup, customer relationship skills, and fair trade etiquette.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Understanding inventory cost, retail
+                  markup, customer relationship skills, and fair trade etiquette.</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-surface-card border border-outline-variant hover-lift">
                 <i class="bi bi-people-fill text-2xl text-[#8c0a46] mb-2 block"></i>
                 <h4 class="font-bold text-secondary text-sm">Social Negotiation</h4>
-                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Communicating respectfully with shopkeepers and buyers, building vocal confidence and social poise.</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Communicating respectfully with
+                  shopkeepers and buyers, building vocal confidence and social poise.</p>
               </div>
             </div>
           </div>
@@ -594,18 +717,24 @@
         <!-- CHAPTER 1: GOOD MORNING -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 01 : 🌅 Good Morning</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">The Best Days Always Begin With A Smile</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 01 : 🌅 Good
+              Morning</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">The Best Days Always
+              Begin With A Smile</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              The school bus rolls in, and the air fills with laughter. Teachers greet every child by name at the gate, welcoming them into a green campus flooded with morning sunshine.
+              The school bus rolls in, and the air fills with laughter. Teachers greet every child by name at the gate,
+              welcoming them into a green campus flooded with morning sunshine.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "We step off the bus, wave goodbye to mom and dad, and wave hello to a day full of possibilities."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0409.jpg.jpeg', 'O\'Nest Gurukul Primary students gathered together with morning smiles in the school campus lobby')">
-              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0409.jpg.jpeg" alt="Primary students morning smiles at school" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/person/IMG-20260810-WA0409.jpg.jpeg', 'O\'Nest Gurukul Primary students gathered together with morning smiles in the school campus lobby')">
+              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260810-WA0409.jpg.jpeg"
+                alt="Primary students morning smiles at school" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -613,18 +742,24 @@
         <!-- CHAPTER 2: ASSEMBLY & YOGA -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 02 : 🧘 Morning Assembly &amp; Yoga</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Focus, Shlokas &amp; Yogic Energy</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 02 : 🧘 Morning
+              Assembly &amp; Yoga</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Focus, Shlokas &amp;
+              Yogic Energy</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              A calm circle of breathing cycles and prayers. We align our thoughts with morning yoga postures, Tadasana, Surya Namaskar, celebrating student birthdays and listening to the thought of the day.
+              A calm circle of breathing cycles and prayers. We align our thoughts with morning yoga postures, Tadasana,
+              Surya Namaskar, celebrating student birthdays and listening to the thought of the day.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Starting the morning with deep breaths and shlokas sets the tone for calm and focus."
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0406.jpg.jpeg', 'Morning yoga session - Tadasana and posture alignment')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg" alt="Morning yoga demonstration" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0406.jpg.jpeg', 'International Yoga Day - Ushtrasana and morning posture alignment')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0406.jpg.jpeg"
+                alt="International Yoga Day asana demonstration" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -632,18 +767,27 @@
         <!-- CHAPTER 3: CLASSROOM ADVENTURE -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 03 : 📚 Modern Classroom Learning</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Spacious, Well-Ventilated Classrooms</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 03 : 📚 Modern
+              Classroom Learning</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Spacious,
+              Well-Ventilated Classrooms</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              Step inside spacious, well-ventilated classrooms designed with large windows that welcome natural light and continuous fresh valley breezes. Equipped with ergonomic child-scale modular furniture and interactive learning corners, students stay refreshed, active, and fully engaged in every lesson.
+              Step inside spacious, well-ventilated classrooms designed with large windows that welcome natural light
+              and continuous fresh valley breezes. Equipped with ergonomic child-scale modular furniture and interactive
+              learning corners, students stay refreshed, active, and fully engaged in every lesson.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
-              "With continuous natural airflow, bright daylight, and comfortable spaces, learning feels joyful and focused."
+              "With continuous natural airflow, bright daylight, and comfortable spaces, learning feels joyful and
+              focused."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/img/study_session.jpg', 'Attentive primary classroom reading and interactive concept discussion in a bright, well-ventilated classroom')">
-              <img loading="lazy" decoding="async" src="assets/img/study_session.jpg" alt="Primary classroom interactive learning in a bright, well-ventilated classroom" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/study_session.jpg', 'Attentive primary classroom reading and interactive concept discussion in a bright, well-ventilated classroom')">
+              <img loading="lazy" decoding="async" src="assets/img/study_session.jpg"
+                alt="Primary classroom interactive learning in a bright, well-ventilated classroom"
+                class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -651,18 +795,24 @@
         <!-- CHAPTER 4: DISCOVERY LAB -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 04 : 🔬 Space &amp; Discovery Lab</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Young Minds, Real Science</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 04 : 🔬 Space &amp;
+              Discovery Lab</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Young Minds, Real
+              Science</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              Curious eyes creating 3D planetary models, orbital mechanisms, and chemistry dioramas. Our lab is an innovation workspace for solar designs, ecosystem dioramas, and robotics.
+              Curious eyes creating 3D planetary models, orbital mechanisms, and chemistry dioramas. Our lab is an
+              innovation workspace for solar designs, ecosystem dioramas, and robotics.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Hands-on experiments help us turn space theories into working reality."
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0453.jpg.jpeg', 'Hands-on 3D planetary space and science model project')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0453.jpg.jpeg" alt="Discovery science & space model lab" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0453.jpg.jpeg', 'Hands-on 3D planetary space and science model project')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0453.jpg.jpeg"
+                alt="Discovery science & space model lab" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -670,18 +820,24 @@
         <!-- CHAPTER 5: CREATIVE STUDIO -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 05 : 🎨 Classical Arts &amp; Dance</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Expressing Heritage &amp; Grace</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 05 : 🎨 Classical Arts
+              &amp; Dance</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Expressing Heritage
+              &amp; Grace</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              Traditional Bharatanatyam mudras, rhythm, and costumes. Here, children develop cultural pride and stage confidence, winning national-level classical dance championships.
+              Traditional Bharatanatyam mudras, rhythm, and costumes. Here, children develop cultural pride and stage
+              confidence, winning national-level classical dance championships.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "We explore emotion and build cultural discipline with every mudra and rhythm."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0441.jpg.jpeg', 'Classical Bharatanatyam performing arts and stage expression')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0441.jpg.jpeg" alt="Classical Bharatanatyam arts" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0441.jpg.jpeg', 'Classical Bharatanatyam performing arts and stage expression')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0441.jpg.jpeg"
+                alt="Classical Bharatanatyam arts" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -689,18 +845,24 @@
         <!-- CHAPTER 6: PARENT-CHILD WORKSHOPS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 06 : 🏮 Creative Pottery &amp; Diya Craft</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Parents &amp; Children Creating Together</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 06 : 🏮 Creative
+              Pottery &amp; Diya Craft</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Parents &amp; Children
+              Creating Together</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              A heartwarming collaborative workshop where parents and students paint festive diyas, craft models, and celebrate family bonds in a supportive classroom community.
+              A heartwarming collaborative workshop where parents and students paint festive diyas, craft models, and
+              celebrate family bonds in a supportive classroom community.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Parent-child collaboration makes learning a shared family joy."
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0454.jpg.jpeg', 'Parent-child festive diya painting and craft workshop')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0454.jpg.jpeg" alt="Parent child diya painting workshop" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0454.jpg.jpeg', 'Parent-child festive diya painting and craft workshop')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0454.jpg.jpeg"
+                alt="Parent child diya painting workshop" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -708,18 +870,24 @@
         <!-- CHAPTER 7: SPORTS & PLAYGROUND -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 07 : ⚽ Annual Sports &amp; Karate</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">House Flags, Sprints &amp; Martial Arts</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 07 : ⚽ Annual Sports
+              &amp; Athletics</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">House Flags &amp;
+              Tug of War</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              The sports complex comes alive with House flag parades, track races, and karate martial arts competitions. Students learn teamwork, physical stamina, and sportsmanship.
+              The sports ground comes alive with House flag parades, tug-of-war face-offs, sprints, and team athletics.
+              Students learn teamwork, physical stamina, and sportsmanship.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "We train hard, represent our Houses with honor, and celebrate every victory."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/img/students-sports.png', 'Annual Sports Day celebrations and martial arts demonstrations')">
-              <img loading="lazy" decoding="async" src="assets/img/students-sports.png" alt="Annual Sports Day award and house flags" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/students-sports.png', 'Annual Sports Day - House Tug of War and Team Athletics')">
+              <img loading="lazy" decoding="async" src="assets/img/students-sports.png"
+                alt="Annual Sports Day Tug of War and Athletics" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -727,18 +895,24 @@
         <!-- CHAPTER 8: NATURE & GARDENING -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 08 : 🌱 Tree Plantation &amp; Eco Club</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Planting Trees, Nurturing Earth</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 08 : 🌱 Tree Plantation
+              &amp; Eco Club</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Planting Trees,
+              Nurturing Earth</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              Students get their hands dirty planting indigenous trees, adopting saplings, studying organic farming, and developing real ecological stewardship.
+              Students get their hands dirty planting indigenous trees, adopting saplings, studying organic farming, and
+              developing real ecological stewardship.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Learning to care for nature helps us grow into responsible global citizens."
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0460.jpg.jpeg', 'Eco Club native tree plantation and adoption drive')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0460.jpg.jpeg" alt="Eco Club tree plantation" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0460.jpg.jpeg', 'Eco Club native tree plantation and adoption drive')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0460.jpg.jpeg"
+                alt="Eco Club tree plantation" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -746,18 +920,24 @@
         <!-- CHAPTER 9: FRIENDSHIP & CELEBRATIONS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 09 : 🤝 Rakhis For Soldiers &amp; Values</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Empathy, Gratitude &amp; Patriotism</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 09 : 🤝 Rakhis For
+              Soldiers &amp; Values</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Empathy, Gratitude
+              &amp; Patriotism</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              Students handmade hundreds of tricolor Rakhis with personal thank-you letters sent to Indian soldiers guarding our borders, instilling deep national gratitude and empathy.
+              Students handmade hundreds of tricolor Rakhis with personal thank-you letters sent to Indian soldiers
+              guarding our borders, instilling deep national gratitude and empathy.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Expressing gratitude to our real heroes builds character and compassion."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0374_rotated2.jpg', 'Handmade Rakhis for Indian soldiers national gratitude initiative')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0374_rotated2.jpg" alt="Rakhis for Soldiers initiative" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0374_rotated2.jpg', 'Handmade Rakhis for Indian soldiers national gratitude initiative')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0374_rotated2.jpg"
+                alt="Rakhis for Soldiers initiative" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -765,18 +945,24 @@
         <!-- CHAPTER 10: ACHIEVEMENTS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 lg:order-2 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 10 : 🏆 State &amp; Inter-School Laurels</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Celebrating Every Milestone</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 10 : 🏆 State &amp;
+              Inter-School Laurels</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">Celebrating Every
+              Milestone</h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              From TV9 State Environmental honors and SOF Olympiad certificates to Inter-School Championship trophies, we celebrate every student accomplishment on stage.
+              From TV9 State Environmental honors and SOF Olympiad certificates to Inter-School Championship trophies,
+              we celebrate every student accomplishment on stage.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Every effort is recognized, building confidence and character."
             </div>
           </div>
           <div class="lg:col-span-7 lg:order-1">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/img/person/IMG-20260808-WA0384.jpg.jpeg', 'Inter-School Championship Trophy felicitation and stage honors')">
-              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260808-WA0384.jpg.jpeg" alt="Inter-school championship trophy felicitation" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/person/IMG-20260808-WA0384.jpg.jpeg', 'Inter-School Championship Trophy felicitation and stage honors')">
+              <img loading="lazy" decoding="async" src="assets/img/person/IMG-20260808-WA0384.jpg.jpeg"
+                alt="Inter-school championship trophy felicitation" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -784,18 +970,24 @@
         <!-- CHAPTER 11: PATRIOTIC ASSEMBLY & HOME TIME -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal pl-12 lg:pl-0">
           <div class="lg:col-span-5 space-y-6 text-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 11 : 🌇 Celebrations &amp; Home Time</span>
-            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">"See You Tomorrow!"</h3>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest block">Chapter 11 : 🌇 Celebrations
+              &amp; Home Time</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-secondary tracking-tight">"See You Tomorrow!"
+            </h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base">
-              As national celebration assemblies wrap up and the golden sunset covers the amphitheater steps, school buses line up and students wave goodbye with full hearts.
+              As national celebration assemblies wrap up and the golden sunset covers the amphitheater steps, school
+              buses line up and students wave goodbye with full hearts.
             </p>
             <div class="border-l-4 border-primary-light/50 pl-4 py-1 italic text-secondary/70 text-sm font-medium">
               "Waving goodbye after a day full of happy learning memories."
             </div>
           </div>
           <div class="lg:col-span-7">
-            <div class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0431.jpg.jpeg', 'Patriotic celebration and evening school dismissal')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0431.jpg.jpeg" alt="Patriotic celebration and evening assembly" class="w-full h-full object-cover">
+            <div
+              class="relative z-10 bg-white rounded-3xl overflow-hidden aspect-[16/10] border-4 border-white shadow-md hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0431.jpg.jpeg', 'Patriotic celebration and evening school dismissal')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0431.jpg.jpeg"
+                alt="Patriotic celebration and evening assembly" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -810,7 +1002,8 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
             Science &amp; Innovation
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
@@ -824,10 +1017,15 @@
         <!-- Asymmetric Editorial Composition -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <!-- Featured Large Master Photograph (7 cols) -->
-          <div class="lg:col-span-7 bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex flex-col group">
-            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.26 PM.jpeg', 'O\'Nest Gurukul Science &amp; Academic Exhibition Hall featuring student working models, hydroelectric dam, and ecological displays')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.26 PM.jpeg" alt="Science Exhibition Hall with student working models" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+          <div
+            class="lg:col-span-7 bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex flex-col group">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.26 PM.jpeg', 'O\'Nest Gurukul Science &amp; Academic Exhibition Hall featuring student working models, hydroelectric dam, and ecological displays')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.26 PM.jpeg"
+                alt="Science Exhibition Hall with student working models"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                 Exhibition Grand Hall
               </div>
             </div>
@@ -837,13 +1035,19 @@
                   Student-Led Scientific Inquiry &amp; Working Prototypes
                 </h3>
                 <p class="text-on-surface-variant text-sm sm:text-base mt-2 leading-relaxed">
-                  Students turn abstract textbook concepts into tangible discovery. From working hydroelectric dams and renewable energy systems to biodiversity dioramas and seed germination studies, children explain scientific mechanisms with clarity and confidence.
+                  Students turn abstract textbook concepts into tangible discovery. From working hydroelectric dams and
+                  renewable energy systems to biodiversity dioramas and seed germination studies, children explain
+                  scientific mechanisms with clarity and confidence.
                 </p>
               </div>
-              <div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-cpu text-primary"></i> Working Prototypes</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-droplet text-primary"></i> Hydroelectric Models</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-chat-dots text-primary"></i> Student Presentations</span>
+              <div
+                class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-cpu text-primary"></i>
+                  Working Prototypes</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-droplet text-primary"></i>
+                  Hydroelectric Models</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-chat-dots text-primary"></i>
+                  Student Presentations</span>
               </div>
             </div>
           </div>
@@ -851,48 +1055,80 @@
           <!-- Two Supporting Photographs & Event Details (5 cols) -->
           <div class="lg:col-span-5 flex flex-col gap-6 h-full">
             <!-- Supporting Card 1: Renewable Energy Demonstration -->
-            <div class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
+            <div
+              class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full flex-1">
-                <div class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg', 'Primary student demonstrating a working renewable wind energy and smart street model to visiting parents')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg" alt="Student demonstrating renewable energy model to parents" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div
+                  class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer"
+                  onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg', 'Primary student demonstrating a working renewable wind energy and smart street model to visiting parents')">
+                  <img loading="lazy" decoding="async"
+                    src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg"
+                    alt="Student demonstrating renewable energy model to parents"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                  <div class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
+                  <div
+                    class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
                     <i class="bi bi-arrows-angle-expand"></i> Tap to view
                   </div>
                 </div>
                 <div class="sm:col-span-7 p-6 sm:p-7 text-left flex flex-col justify-between flex-1">
                   <div class="space-y-2">
-                    <span class="text-[10px] sm:text-[11px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full inline-block">Live Demonstration</span>
-                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">Renewable Energy &amp; Smart Circuits</h4>
-                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Young learners present functioning wind turbines and smart lighting circuits to parents and visiting evaluators.</p>
+                    <span
+                      class="text-[10px] sm:text-[11px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full inline-block">Live
+                      Demonstration</span>
+                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">Renewable Energy &amp; Smart
+                      Circuits</h4>
+                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Young learners present
+                      functioning wind turbines and smart lighting circuits to parents and visiting evaluators.</p>
                   </div>
-                  <div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
-                    <span class="inline-flex items-center gap-1.5 text-primary font-semibold"><i class="bi bi-gear-wide-connected"></i> Student Prototype</span>
-                    <span class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg', 'Primary student demonstrating a working renewable wind energy and smart street model to visiting parents')"><i class="bi bi-zoom-in"></i> View Photo</span>
+                  <div
+                    class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
+                    <span class="inline-flex items-center gap-1.5 text-primary font-semibold"><i
+                        class="bi bi-gear-wide-connected"></i> Student Prototype</span>
+                    <span
+                      class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
+                      onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.20.27 PM.jpeg', 'Primary student demonstrating a working renewable wind energy and smart street model to visiting parents')"><i
+                        class="bi bi-zoom-in"></i> View Photo</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Supporting Card 2: National Science Day Presentation -->
-            <div class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
+            <div
+              class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full flex-1">
-                <div class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg', 'National Science Day collaborative inquiry teams presenting hands-on chemistry and science experiments')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg" alt="National Science Day student presentation team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div
+                  class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer"
+                  onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg', 'National Science Day collaborative inquiry teams presenting hands-on chemistry and science experiments')">
+                  <img loading="lazy" decoding="async"
+                    src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg"
+                    alt="National Science Day student presentation team"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                  <div class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
+                  <div
+                    class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
                     <i class="bi bi-arrows-angle-expand"></i> Tap to view
                   </div>
                 </div>
                 <div class="sm:col-span-7 p-6 sm:p-7 text-left flex flex-col justify-between flex-1">
                   <div class="space-y-2">
-                    <span class="text-[10px] sm:text-[11px] font-extrabold text-accent uppercase tracking-wider bg-emerald-50 text-accent px-3 py-1 rounded-full inline-block">National Science Day</span>
-                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">Collaborative Science Quest</h4>
-                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Student inquiry teams demonstrate chemistry solutions, reaction dynamics, and analytical problem-solving.</p>
+                    <span
+                      class="text-[10px] sm:text-[11px] font-extrabold text-accent uppercase tracking-wider bg-emerald-50 text-accent px-3 py-1 rounded-full inline-block">National
+                      Science Day</span>
+                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">Collaborative Science Quest
+                    </h4>
+                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Student inquiry teams
+                      demonstrate chemistry solutions, reaction dynamics, and analytical problem-solving.</p>
                   </div>
-                  <div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
-                    <span class="inline-flex items-center gap-1.5 text-accent font-semibold"><i class="bi bi-flask"></i> Applied Chemistry</span>
-                    <span class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-accent transition-colors" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg', 'National Science Day collaborative inquiry teams presenting hands-on chemistry and science experiments')"><i class="bi bi-zoom-in"></i> View Photo</span>
+                  <div
+                    class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
+                    <span class="inline-flex items-center gap-1.5 text-accent font-semibold"><i class="bi bi-flask"></i>
+                      Applied Chemistry</span>
+                    <span
+                      class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-accent transition-colors"
+                      onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.31 PM.jpeg', 'National Science Day collaborative inquiry teams presenting hands-on chemistry and science experiments')"><i
+                        class="bi bi-zoom-in"></i> View Photo</span>
                   </div>
                 </div>
               </div>
@@ -909,7 +1145,8 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
             Cultural &amp; Performing Arts
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
@@ -923,19 +1160,28 @@
         <!-- Celebratory Layout: Dominant Stage View + Paired Performance Highlights -->
         <div class="space-y-8">
           <!-- Dominant Grand Stage Card -->
-          <div class="bg-surface-card rounded-[36px] overflow-hidden border border-outline-variant shadow-xl hover-lift reveal group">
-            <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.27 PM.jpeg', 'Annual Day cultural invocation: Student choir performing Saraswati Vandana on the illuminated open-air stage')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.27 PM.jpeg" alt="Annual Day Saraswati Vandana stage choir performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 text-left text-white pointer-events-none">
-                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest bg-primary text-white px-3 py-1 rounded-full inline-block mb-2">
+          <div
+            class="bg-surface-card rounded-[36px] overflow-hidden border border-outline-variant shadow-xl hover-lift reveal group">
+            <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.27 PM.jpeg', 'Annual Day cultural invocation: Student choir performing Saraswati Vandana on the illuminated open-air stage')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.27 PM.jpeg"
+                alt="Annual Day Saraswati Vandana stage choir performance"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 text-left text-white pointer-events-none">
+                <span
+                  class="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest bg-primary text-white px-3 py-1 rounded-full inline-block mb-2">
                   Stage Invocation &bull; Annual Day
                 </span>
                 <h3 class="font-display text-xl sm:text-3xl font-bold leading-tight">
                   Saraswati Vandana Choral Invocation
                 </h3>
                 <p class="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl hidden sm:block">
-                  A soulful start to our Annual Day festivities as primary and middle school students recite the ancient hymn in synchronized harmony with live Indian classical accompaniment.
+                  A soulful start to our Annual Day festivities as primary and middle school students recite the ancient
+                  hymn in synchronized harmony with live Indian classical accompaniment.
                 </p>
               </div>
             </div>
@@ -944,49 +1190,72 @@
           <!-- Paired Performance Highlights Below -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <!-- Folk Dance Performance Card -->
-            <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
-              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg', 'Vibrant traditional folk dance performance by primary students celebrating regional cultural heritage')">
-                <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg" alt="Traditional folk dance performance by students on Annual Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 25%;">
-                <div class="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+            <div
+              class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
+              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+                onclick="openCurriculumLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg', 'Vibrant traditional folk dance performance by primary students celebrating regional cultural heritage')">
+                <img loading="lazy" decoding="async"
+                  src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.28 PM.jpeg"
+                  alt="Traditional folk dance performance by students on Annual Day"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style="object-position: center 25%;">
+                <div
+                  class="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                   Folk Dance Showcase
                 </div>
               </div>
               <div class="p-6 pt-0 space-y-2">
                 <h4 class="font-display text-xl font-bold text-secondary">Regional Folk Dance &amp; Heritage</h4>
                 <p class="text-on-surface-variant text-sm leading-relaxed">
-                  Students dressed in traditional embroidered ghagra cholis and Maharashtrian attire perform rhythmic dance choreography celebrating Konkan traditions, rain festivals, and national unity.
+                  Students dressed in traditional embroidered ghagra cholis and Maharashtrian attire perform rhythmic
+                  dance choreography celebrating Konkan traditions, rain festivals, and national unity.
                 </p>
               </div>
             </div>
 
             <!-- Environmental Stage Play / Save Trees Card -->
-            <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
-              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.')">
-                <img loading="lazy" decoding="async" src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg" alt="Save Trees Environmental Theatrical Drama Performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 30%;">
-                <div class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+            <div
+              class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
+              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+                onclick="openCurriculumLightbox('assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg', '\'Save Trees\' Theatrical Drama: An inspiring environmental stage presentation advocating nature conservation before a full audience.')">
+                <img loading="lazy" decoding="async"
+                  src="assets/exhibition/WhatsApp Image 2026-10-15 at 3.21.33 PM.jpeg"
+                  alt="Save Trees Environmental Theatrical Drama Performance"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style="object-position: center 30%;">
+                <div
+                  class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                   Eco Drama Showcase
                 </div>
               </div>
               <div class="p-6 pt-0 space-y-2">
                 <h4 class="font-display text-xl font-bold text-secondary">'Save Trees' Environmental Drama</h4>
                 <p class="text-on-surface-variant text-sm leading-relaxed">
-                  An inspiring student stage presentation advocating environmental protection, forest conservation, and tree plantation with full student ensemble acting.
+                  An inspiring student stage presentation advocating environmental protection, forest conservation, and
+                  tree plantation with full student ensemble acting.
                 </p>
               </div>
             </div>
 
             <!-- Folk Drama & Ballad Recital Card -->
-            <div class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
-              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.31 PM.jpeg', 'Vibrant traditional celebration and stage expression by students')">
-                <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.31 PM.jpeg" alt="Folk drama and ballad performance on stage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+            <div
+              class="bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group space-y-4">
+              <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+                onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.31 PM.jpeg', 'Vibrant traditional celebration and stage expression by students')">
+                <img loading="lazy" decoding="async"
+                  src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.21.31 PM.jpeg"
+                  alt="Folk drama and ballad performance on stage"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div
+                  class="absolute top-4 left-4 bg-secondary/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                   Dramatic Ensemble
                 </div>
               </div>
               <div class="p-6 pt-0 space-y-2">
                 <h4 class="font-display text-xl font-bold text-secondary">Theatrical Expressions &amp; Folk Ballads</h4>
                 <p class="text-on-surface-variant text-sm leading-relaxed">
-                  Dressed in traditional dhotis and saffron phetas, children portray heroic tales and cultural legends through choral dialogue, rhythm, and expressive stage storytelling.
+                  Dressed in traditional dhotis and saffron phetas, children portray heroic tales and cultural legends
+                  through choral dialogue, rhythm, and expressive stage storytelling.
                 </p>
               </div>
             </div>
@@ -1002,7 +1271,8 @@
       <div class="container mx-auto px-gutter max-w-container-max">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-emerald-50 text-accent px-4 py-2 rounded-full border border-emerald-200 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-accent bg-emerald-50 text-accent px-4 py-2 rounded-full border border-emerald-200 inline-block mb-4 shadow-sm">
             Athletics &amp; Sports Day
           </span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-secondary font-bold leading-tight">
@@ -1016,10 +1286,15 @@
         <!-- High-Energy Sports Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <!-- Featured Action Shot: Tug-of-War Valley Arena (7 cols) -->
-          <div class="lg:col-span-7 bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex flex-col group">
-            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.30 PM.jpeg', 'Annual Sports Day Tug-of-War championship match on the outdoor campus grounds overlooking Konkan hills')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.30 PM.jpeg" alt="Annual Sports Day Tug-of-War match on campus grounds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+          <div
+            class="lg:col-span-7 bg-surface-card rounded-[32px] overflow-hidden border border-outline-variant shadow-lg hover-lift reveal flex flex-col group">
+            <div class="aspect-[16/10] overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.30 PM.jpeg', 'Annual Sports Day Tug-of-War championship match on the outdoor campus grounds overlooking Konkan hills')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.30 PM.jpeg"
+                alt="Annual Sports Day Tug-of-War match on campus grounds"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div
+                class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                 Valley Sports Arena
               </div>
             </div>
@@ -1029,13 +1304,19 @@
                   Inter-House Tug-of-War &amp; Outdoor Athletics
                 </h3>
                 <p class="text-on-surface-variant text-sm sm:text-base mt-2 leading-relaxed">
-                  On the open red laterite sports ground overlooking the scenic Nachane hills, students compete in high-stakes Tug-of-War showdowns, relays, and field sprints. Guided by physical education mentors, every child discovers physical resilience and true team solidarity.
+                  On the open red laterite sports ground overlooking the scenic Nachane hills, students compete in
+                  high-stakes Tug-of-War showdowns, relays, and field sprints. Guided by physical education mentors,
+                  every child discovers physical resilience and true team solidarity.
                 </p>
               </div>
-              <div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-trophy text-primary"></i> House Flag Rivalries</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-people text-primary"></i> Team Coordination</span>
-                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-heart-pulse text-primary"></i> Physical Stamina</span>
+              <div
+                class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant text-xs text-secondary font-semibold">
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-trophy text-primary"></i>
+                  House Flag Rivalries</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i class="bi bi-people text-primary"></i>
+                  Team Coordination</span>
+                <span class="px-3 py-1 bg-surface-container-low rounded-lg"><i
+                    class="bi bi-heart-pulse text-primary"></i> Physical Stamina</span>
               </div>
             </div>
           </div>
@@ -1043,48 +1324,79 @@
           <!-- Two Supporting Photographs: Team Huddle & Determination (5 cols) -->
           <div class="lg:col-span-5 flex flex-col gap-6 h-full">
             <!-- Supporting Card 1: Team Spirit & Huddle -->
-            <div class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
+            <div
+              class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full flex-1">
-                <div class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg', 'Joyful student team huddle and celebration embodying friendship, grit, and team spirit')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg" alt="Student team huddle and celebration on Sports Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div
+                  class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer"
+                  onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg', 'Joyful student team huddle and celebration embodying friendship, grit, and team spirit')">
+                  <img loading="lazy" decoding="async"
+                    src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg"
+                    alt="Student team huddle and celebration on Sports Day"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                  <div class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
+                  <div
+                    class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
                     <i class="bi bi-arrows-angle-expand"></i> Tap to view
                   </div>
                 </div>
                 <div class="sm:col-span-7 p-6 sm:p-7 text-left flex flex-col justify-between flex-1">
                   <div class="space-y-2">
-                    <span class="text-[10px] sm:text-[11px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full inline-block">Team Camaraderie</span>
-                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">The Power of the Team Huddle</h4>
-                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Students celebrate victories together and lift one another up, learning that genuine sportsmanship outlasts every score.</p>
+                    <span
+                      class="text-[10px] sm:text-[11px] font-extrabold text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full inline-block">Team
+                      Camaraderie</span>
+                    <h4 class="font-display text-xl font-bold text-secondary leading-snug">The Power of the Team Huddle
+                    </h4>
+                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Students celebrate victories
+                      together and lift one another up, learning that genuine sportsmanship outlasts every score.</p>
                   </div>
-                  <div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
-                    <span class="inline-flex items-center gap-1.5 text-primary font-semibold"><i class="bi bi-trophy"></i> House Unity</span>
-                    <span class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg', 'Joyful student team huddle and celebration embodying friendship, grit, and team spirit')"><i class="bi bi-zoom-in"></i> View Photo</span>
+                  <div
+                    class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
+                    <span class="inline-flex items-center gap-1.5 text-primary font-semibold"><i
+                        class="bi bi-trophy"></i> House Unity</span>
+                    <span
+                      class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
+                      onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.16 PM.jpeg', 'Joyful student team huddle and celebration embodying friendship, grit, and team spirit')"><i
+                        class="bi bi-zoom-in"></i> View Photo</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Supporting Card 2: Rope Pull Grit & Focus -->
-            <div class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
+            <div
+              class="bg-surface-card rounded-[28px] overflow-hidden border border-outline-variant shadow-md hover-lift reveal group flex-1 flex flex-col">
               <div class="grid grid-cols-1 sm:grid-cols-12 h-full flex-1">
-                <div class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg', 'House team competitors pulling with grit and unity under the encouragement of teachers and peers')">
-                  <img loading="lazy" decoding="async" src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg" alt="House team students competing in Tug-of-War" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div
+                  class="sm:col-span-5 h-56 sm:h-full min-h-[200px] sm:min-h-0 overflow-hidden relative cursor-pointer"
+                  onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg', 'House team competitors pulling with grit and unity under the encouragement of teachers and peers')">
+                  <img loading="lazy" decoding="async"
+                    src="assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg"
+                    alt="House team students competing in Tug-of-War"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                  <div class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
+                  <div
+                    class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm sm:hidden flex items-center gap-1">
                     <i class="bi bi-arrows-angle-expand"></i> Tap to view
                   </div>
                 </div>
                 <div class="sm:col-span-7 p-6 sm:p-7 text-left flex flex-col justify-between flex-1">
                   <div class="space-y-2">
-                    <span class="text-[10px] sm:text-[11px] font-extrabold text-secondary uppercase tracking-wider bg-secondary/10 px-3 py-1 rounded-full inline-block">House Championships</span>
+                    <span
+                      class="text-[10px] sm:text-[11px] font-extrabold text-secondary uppercase tracking-wider bg-secondary/10 px-3 py-1 rounded-full inline-block">House
+                      Championships</span>
                     <h4 class="font-display text-xl font-bold text-secondary leading-snug">Grit, Effort &amp; Focus</h4>
-                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Each house team digs in their heels with united focus, cheered on by teachers, classmates, and parents.</p>
+                    <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Each house team digs in their
+                      heels with united focus, cheered on by teachers, classmates, and parents.</p>
                   </div>
-                  <div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
-                    <span class="inline-flex items-center gap-1.5 text-secondary font-semibold"><i class="bi bi-lightning-charge"></i> Tug-of-War Finale</span>
-                    <span class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-secondary transition-colors" onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg', 'House team competitors pulling with grit and unity under the encouragement of teachers and peers')"><i class="bi bi-zoom-in"></i> View Photo</span>
+                  <div
+                    class="pt-3 border-t border-outline-variant/60 flex items-center justify-between text-xs text-secondary font-medium mt-3">
+                    <span class="inline-flex items-center gap-1.5 text-secondary font-semibold"><i
+                        class="bi bi-lightning-charge"></i> Tug-of-War Finale</span>
+                    <span
+                      class="text-[11px] text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-secondary transition-colors"
+                      onclick="openCurriculumLightbox('assets/img/recent/WhatsApp Image 2026-10-15 at 3.41.29 PM.jpeg', 'House team competitors pulling with grit and unity under the encouragement of teachers and peers')"><i
+                        class="bi bi-zoom-in"></i> View Photo</span>
                   </div>
                 </div>
               </div>
@@ -1097,77 +1409,109 @@
     <!-- ACHIEVEMENT SHOWCASE SECTION -->
     <section id="achievements" class="py-24 bg-background relative overflow-hidden">
       <!-- Background Texture with Opacity -->
-      <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95 pointer-events-none">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max text-center relative z-10">
         <div class="max-w-3xl mx-auto mb-14 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
             Trophies &amp; Accolades
           </span>
           <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Achievement Showcase</h2>
           <p class="text-on-surface/85 mt-4 leading-relaxed text-sm md:text-base">
-            Year-on-year distinction in state environmental leadership, national classical arts, Olympiad assessments, and athletic competitions.
+            Year-on-year distinction in state environmental leadership, national classical arts, Olympiad assessments,
+            and athletic competitions.
           </p>
         </div>
 
         <!-- 4 Complete Achievement Cards (Eliminating Empty Columns) -->
         <div id="achievements-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
           <!-- Award 1 -->
-          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0461.jpg.jpeg', 'State Environmental Excellence Award - O\'Nest Gurukul Eco Club')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0461.jpg.jpeg" alt="State Environmental Excellence Award Tree Plantation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Environment • 2025-26</span>
+          <div
+            class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0461.jpg.jpeg', 'State Environmental Excellence Award - O\'Nest Gurukul Eco Club')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0461.jpg.jpeg"
+                alt="State Environmental Excellence Award Tree Plantation"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Environment
+                • 2025-26</span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
                 <h4 class="font-bold text-secondary text-base mb-1">State Environmental Excellence Award</h4>
                 <p class="text-[11px] text-primary font-bold mb-2">Awardee: O'Nest Gurukul Eco Club</p>
-                <p class="text-xs text-on-surface-variant leading-relaxed">Conferred by TV9 Marathi &amp; Maharashtra Pollution Control Board for campus tree plantation and green initiatives.</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Conferred by TV9 Marathi &amp; Maharashtra
+                  Pollution Control Board for campus tree plantation and green initiatives.</p>
               </div>
             </div>
           </div>
 
           <!-- Award 2 -->
-          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A0109.JPG.webp', 'State Choral Ballad Recital Distinction - Primary Girls Choir Ensemble')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A0109.JPG.webp" alt="Primary Girls Choir Ballad Recital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Performing Arts • 2026</span>
+          <div
+            class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/1P3A0109.JPG.webp', 'State Choral Ballad Recital Distinction - Primary Girls Choir Ensemble')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A0109.JPG.webp"
+                alt="Primary Girls Choir Ballad Recital"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Performing
+                Arts • 2026</span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
                 <h4 class="font-bold text-secondary text-base mb-1">State Choral Ballad Recital Distinction</h4>
                 <p class="text-[11px] text-primary font-bold mb-2">Awardee: Primary Girls Choir Ensemble</p>
-                <p class="text-xs text-on-surface-variant leading-relaxed">Honored at the State Inter-School Heritage Cultural Meet for a stirring patriotic ballad performance of Rani Lakshmibai.</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Honored at the State Inter-School Heritage
+                  Cultural Meet for a stirring patriotic ballad performance of Rani Lakshmibai.</p>
               </div>
             </div>
           </div>
 
           <!-- Award 3 -->
-          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0427.jpg.jpeg', 'National Olympiad Merit Awards - Science &amp; Maths Olympians')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0427.jpg.jpeg" alt="National Olympiad Merit Awards felicitation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Academics • 2025-26</span>
+          <div
+            class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/ONEST/IMG-20260810-WA0427.jpg.jpeg', 'National Olympiad Merit Awards - Science &amp; Maths Olympians')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0427.jpg.jpeg"
+                alt="National Olympiad Merit Awards felicitation"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Academics
+                • 2025-26</span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
                 <h4 class="font-bold text-secondary text-base mb-1">National Olympiad Merit Awards</h4>
                 <p class="text-[11px] text-primary font-bold mb-2">Awardee: Science &amp; Maths Olympians</p>
-                <p class="text-xs text-on-surface-variant leading-relaxed">High percentiles, medals, and certificates achieved in Science Olympiad Foundation (SOF) national assessments.</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">High percentiles, medals, and certificates
+                  achieved in Science Olympiad Foundation (SOF) national assessments.</p>
               </div>
             </div>
           </div>
 
           <!-- Award 4 -->
-          <div class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('assets/img/recent/1P3A9233.JPG.webp', 'Heritage &amp; Historical Research Commendation - Primary Social Science Scholars')">
-              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9233.JPG.webp" alt="Heritage &amp; Historical Research Commendation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Heritage • 2025-26</span>
+          <div
+            class="bg-white rounded-3xl border border-primary/15 shadow-sm text-left hover-lift overflow-hidden flex flex-col group">
+            <div class="h-44 overflow-hidden relative cursor-pointer"
+              onclick="openCurriculumLightbox('assets/img/recent/1P3A9233.JPG.webp', 'Heritage &amp; Historical Research Commendation - Primary Social Science Scholars')">
+              <img loading="lazy" decoding="async" src="assets/img/recent/1P3A9233.JPG.webp"
+                alt="Heritage &amp; Historical Research Commendation"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">Heritage
+                • 2025-26</span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
                 <h4 class="font-bold text-secondary text-base mb-1">Heritage &amp; Historical Research Commendation</h4>
                 <p class="text-[11px] text-primary font-bold mb-2">Awardee: Primary Social Science Scholars</p>
-                <p class="text-xs text-on-surface-variant leading-relaxed">Commended by visiting academic jury for exhaustive archival research and presentation on Great Women in Indian History.</p>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Commended by visiting academic jury for
+                  exhaustive archival research and presentation on Great Women in Indian History.</p>
               </div>
             </div>
           </div>
@@ -1179,39 +1523,59 @@
     <section id="calendar" class="py-24 bg-surface-container-low/40 relative">
       <div class="container mx-auto px-gutter max-w-container-max">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
+          <span
+            class="text-xs uppercase tracking-[0.25em] font-extrabold text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 inline-block mb-4 shadow-sm">
             School Schedule
           </span>
           <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Interactive Event Calendar</h2>
-          <p class="text-on-surface/85 mt-4 leading-relaxed">Filter and browse upcoming exams, parent-teacher meetings, sports, annual events, and school holidays.</p>
+          <p class="text-on-surface/85 mt-4 leading-relaxed">Filter and browse upcoming exams, parent-teacher meetings,
+            sports, annual events, and school holidays.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
           <!-- Calendar Filter Control & Google sync -->
-          <div class="lg:col-span-4 bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-            <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2">Filter Events</h4>
+          <div
+            class="lg:col-span-4 bg-white dark:bg-amber-50 p-6 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+            <h4 class="font-bold text-secondary text-sm uppercase tracking-wider border-b border-primary/10 pb-2">Filter
+              Events</h4>
             <div class="flex flex-col gap-2">
-              <button class="cal-filter-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white" data-cat="all">All Events</button>
-              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Exam">Examinations</button>
-              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Holiday">Holidays</button>
-              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="PTM">PTM Schedules</button>
-              <button class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10" data-cat="Activity">Activities & Sports</button>
+              <button
+                class="cal-filter-btn active text-left px-3 py-2 rounded-lg text-xs font-bold bg-primary text-white"
+                data-cat="all">All Events</button>
+              <button
+                class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10"
+                data-cat="Exam">Examinations</button>
+              <button
+                class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10"
+                data-cat="Holiday">Holidays</button>
+              <button
+                class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10"
+                data-cat="PTM">PTM Schedules</button>
+              <button
+                class="cal-filter-btn text-left px-3 py-2 rounded-lg text-xs font-bold text-secondary/80 hover:bg-primary/10"
+                data-cat="Activity">Activities & Sports</button>
             </div>
-            
+
             <div class="pt-4 border-t border-primary/10">
-              <a href="https://calendar.google.com" target="_blank" rel="noopener" class="w-full bg-[#facc15] hover:bg-secondary hover:text-white text-secondary font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-all">
+              <a href="https://calendar.google.com" target="_blank" rel="noopener"
+                class="w-full bg-[#facc15] hover:bg-secondary hover:text-white text-secondary font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-all">
                 <i class="bi bi-google"></i> Sync to Google Calendar
               </a>
             </div>
           </div>
 
           <!-- Monthly grid & Agenda list (Right) -->
-          <div class="lg:col-span-8 bg-white dark:bg-amber-50/50 p-6 md:p-8 rounded-[32px] border border-primary/10 shadow-lg space-y-6">
+          <div
+            class="lg:col-span-8 bg-white dark:bg-amber-50/50 p-6 md:p-8 rounded-[32px] border border-primary/10 shadow-lg space-y-6">
             <div class="flex justify-between items-center border-b border-primary/5 pb-3">
-              <h4 id="calendar-month-year" class="font-display font-bold text-lg text-secondary">School Calendar Agenda</h4>
+              <h4 id="calendar-month-year" class="font-display font-bold text-lg text-secondary">School Calendar Agenda
+              </h4>
               <div class="flex gap-2">
-                <button class="view-mode-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-secondary text-white" data-mode="agenda">Agenda View</button>
-                <button class="view-mode-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 text-secondary" data-mode="grid">Grid View</button>
+                <button
+                  class="view-mode-btn active text-[10px] font-bold px-3 py-1.5 rounded-full bg-secondary text-white"
+                  data-mode="agenda">Agenda View</button>
+                <button class="view-mode-btn text-[10px] font-bold px-3 py-1.5 rounded-full bg-gray-100 text-secondary"
+                  data-mode="grid">Grid View</button>
               </div>
             </div>
 
@@ -1225,36 +1589,19 @@
     </section>
 
     <!-- FACULTY SHOWCASE & DIRECTORY SECTION -->
-    <section id="faculty" class="py-24 bg-background relative overflow-hidden">
-      <div class="container mx-auto px-gutter max-w-container-max">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block mb-4 shadow-sm">
-            Mentors &amp; Educators
-          </span>
-          <h2 class="font-display text-4xl md:text-5xl text-secondary font-bold">Faculty Directory</h2>
-          <p class="text-on-surface/85 mt-4 leading-relaxed">Dedicated academic leaders specializing in modern learning strategies, sciences, and child parenting.</p>
-        </div>
 
-        <div class="space-y-8 reveal">
-          <div class="w-full max-w-5xl mx-auto rounded-[32px] border-4 border-white overflow-hidden shadow-2xl relative">
-            <img loading="lazy" decoding="async" src="assets/ONEST/IMG_6175.JPG.jpeg" alt="O'Nest Gurukul Faculty and Mentors Team" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-6 left-8 right-8 text-center text-white pointer-events-none">
-              <h3 class="text-2xl font-display font-bold">O'Nest Gurukul Mentors</h3>
-              <p class="text-sm opacity-90 mt-1">Our dedicated team of educators working together to shape the future.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FINAL CTA (Emotional Closing) -->
     <section class="py-24 relative overflow-hidden bg-secondary text-white text-center">
-      <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('assets/img/campus3.png');"></div>
-      <div class="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] pointer-events-none floating-blob"></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-15"
+        style="background-image: url('assets/img/campus3.png');"></div>
+      <div
+        class="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] pointer-events-none floating-blob">
+      </div>
 
       <div class="container mx-auto px-gutter max-w-container-max relative z-10 space-y-6">
-        <span class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
+        <span
+          class="text-primary-light font-extrabold uppercase tracking-[0.25em] text-xs bg-white/10 px-4 py-2 rounded-full border border-white/20 inline-block floating-badge">
           Every Child Deserves Days Like These
         </span>
         <h2 class="font-display text-4xl md:text-6xl text-white font-bold leading-tight">Begin Their Journey Today</h2>
@@ -1262,10 +1609,12 @@
           Give your child an education filled with curiosity, confidence, friendships, and happy learning memories.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
+          <a href="admissions.html"
+            class="bg-[#facc15] text-secondary px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-95 transition-all shadow-lg flex items-center gap-2">
             Apply for Admission <i class="bi bi-arrow-right"></i>
           </a>
-          <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
+          <a href="contact.html"
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:scale-95 transition-all">
             Book a Campus Visit
           </a>
         </div>
@@ -1279,7 +1628,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="O'Nest Gurukul Logo" class="h-10 w-auto">
+            <img loading="lazy" decoding="async" src="assets/img/onest.svg" alt="O'Nest Gurukul Logo"
+              class="h-10 w-auto">
             <div>
               <h4 class="font-display font-bold text-lg text-white">O'NEST GURUKUL</h4>
               <p class="text-xs text-primary-light font-semibold">School of Excellence</p>
@@ -1289,28 +1639,42 @@
             Cultivating inquisitive minds, grounded values, and holistic human development in Nachane, Ratnagiri.
           </p>
           <div class="flex items-center gap-3 pt-2">
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
+            <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="Follow O'Nest Gurukul on Instagram" aria-label="Follow O'Nest Gurukul on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="contact.html"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="contact.html"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
+              title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="admin.html"
+              class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm"
+              title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i
+                class="bi bi-shield-lock-fill text-xs"></i></a>
           </div>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Quick Navigation
+          </h4>
           <ul class="space-y-2 text-xs text-white/70">
             <li><a href="index.html" class="hover:text-primary-light transition-colors">Home</a></li>
             <li><a href="about.html" class="hover:text-primary-light transition-colors">About O'Nest Gurukul</a></li>
-            <li><a href="preprimary.html" class="hover:text-primary-light transition-colors">Pre-Primary Section</a></li>
-            <li><a href="students-life.html" class="text-primary-light font-semibold">Curriculum &amp; Academics</a></li>
-            <li><a href="campus-facilities.html" class="hover:text-primary-light transition-colors">Campus Facilities</a></li>
+            <li><a href="preprimary.html" class="hover:text-primary-light transition-colors">Pre-Primary Section</a>
+            </li>
+            <li><a href="students-life.html" class="text-primary-light font-semibold">Curriculum &amp; Academics</a>
+            </li>
+            <li><a href="campus-facilities.html" class="hover:text-primary-light transition-colors">Campus
+                Facilities</a></li>
             <li><a href="admissions.html" class="hover:text-primary-light transition-colors">Admission Process</a></li>
             <li><a href="contact.html" class="hover:text-primary-light transition-colors">Contact Us</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Academic Pillars</h4>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Academic Pillars
+          </h4>
           <ul class="space-y-2 text-xs text-white/70">
             <li>Playgroup &amp; Nursery</li>
             <li>Kindergarten (LKG &amp; UKG)</li>
@@ -1323,15 +1687,20 @@
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Contact &amp; Location</h4>
+          <h4 class="font-display font-bold text-white text-base mb-4 border-b border-white/10 pb-2">Contact &amp;
+            Location</h4>
           <p class="text-xs text-white/70 leading-relaxed">
-            <i class="bi bi-geo-alt-fill text-primary-light mr-1.5"></i> Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639
+            <i class="bi bi-geo-alt-fill text-primary-light mr-1.5"></i> Wadekar Wadi, Ambeshet Road, near Hanuman
+            Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639
           </p>
           <p class="text-xs text-white/70 mt-2">
-            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> +91 94220 78900
+            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> <strong>Admission Desk:</strong> <a href="tel:+917888056699" class="hover:underline">+91 7888056699</a>
           </p>
-          <p class="text-xs text-white/70 mt-2">
-            <i class="bi bi-envelope-fill text-primary-light mr-1.5"></i> info@onestgurukul.org
+          <p class="text-xs text-white/70 mt-1">
+            <i class="bi bi-telephone-fill text-primary-light mr-1.5"></i> <strong>Office:</strong> +91 8767672478
+          </p>
+          <p class="text-xs text-white/70 mt-1">
+            <i class="bi bi-envelope-fill text-primary-light mr-1.5"></i> onestgurukulprimary@gmail.com
           </p>
           <div class="mt-4 p-3 bg-white/5 rounded-xl border border-white/10 text-[11px] text-white/60">
             Visiting Hours: Mon - Sat: 9:00 AM - 4:00 PM
@@ -1339,9 +1708,17 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50">
+      <div
+        class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50">
         <p>&copy; 2026 O'Nest Gurukul, Ratnagiri. All Rights Reserved.</p>
-        <p class="mt-2 sm:mt-0">Designed for Holistic Educational Growth.</p>
+        <div class="mt-4 sm:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
+          <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+          <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
+          <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
+          <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
+          <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1349,10 +1726,12 @@
   <!-- Lightbox Modal Container -->
   <div id="curriculum-lightbox" onclick="closeCurriculumLightbox()">
     <div class="relative max-w-4xl w-full mx-auto" onclick="event.stopPropagation()">
-      <button class="absolute -top-12 right-0 text-white text-3xl hover:text-[#facc15]" onclick="closeCurriculumLightbox()" aria-label="Close Lightbox">
+      <button class="absolute -top-12 right-0 text-white text-3xl hover:text-[#facc15]"
+        onclick="closeCurriculumLightbox()" aria-label="Close Lightbox">
         <i class="bi bi-x-lg"></i>
       </button>
-      <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Enlarged view" class="w-full max-h-[80vh] object-contain rounded-2xl border-2 border-white/30 shadow-2xl">
+      <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="Enlarged view"
+        class="w-full max-h-[80vh] object-contain rounded-2xl border-2 border-white/30 shadow-2xl">
       <p id="lightbox-caption" class="text-center text-white text-sm font-semibold mt-3"></p>
     </div>
   </div>
@@ -1439,10 +1818,10 @@
         list.slice(0, 4).forEach(a => {
           const card = document.createElement('div');
           card.className = 'bg-white rounded-3xl border border-primary/10 shadow-sm text-left hover-lift overflow-hidden flex flex-col group';
-          
+
           const imgHtml = a.image ? `
-            <div class="h-44 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('${a.image}', '${a.title} - ${a.awardee}')">
-              <img loading="lazy" decoding="async" src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="h-52 sm:h-56 overflow-hidden relative cursor-pointer" onclick="openCurriculumLightbox('${a.image}', '${a.title} - ${a.awardee}')">
+              <img loading="lazy" decoding="async" src="${a.image}" alt="${a.title}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
               <span class="absolute top-3 left-3 text-[9px] bg-secondary/90 text-primary-light font-black px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow">${a.category} • ${a.year}</span>
             </div>
           ` : '';
@@ -1481,12 +1860,12 @@
 
           container.innerHTML = '<div class="space-y-4"></div>';
           const listDiv = container.querySelector('.space-y-4');
-          
+
           filtered.forEach(e => {
             const dateObj = new Date(e.date);
             const day = dateObj.getDate() || '15';
             const month = dateObj.toLocaleString('en-US', { month: 'short' }) || 'Oct';
-            
+
             let color = 'border-l-primary';
             if (e.category === 'Holiday') color = 'border-l-red-500';
             if (e.category === 'Exam') color = 'border-l-purple-500';
@@ -1516,7 +1895,7 @@
           const monthIndex = now.getMonth();
           const firstDay = new Date(year, monthIndex, 1).getDay();
           const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
-          
+
           let gridHTML = '<div class="grid grid-cols-7 gap-2 text-center text-xs">';
           const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
           dayNames.forEach(d => gridHTML += `<div class="font-bold text-primary p-2">${d}</div>`);
@@ -1528,7 +1907,7 @@
             const dateStr = `${year}-0${monthIndex + 1}-${day < 10 ? '0' + day : day}`;
             const dayEvents = events.filter(e => e.date === dateStr);
             const hasEvent = dayEvents.length > 0;
-            
+
             let cellClass = "p-3 rounded-xl border border-primary/5 bg-gray-50/50 hover:bg-primary/10 cursor-pointer relative flex items-center justify-center font-semibold text-secondary";
             let dot = '';
 
@@ -1580,4 +1959,5 @@
     });
   </script>
 </body>
+
 </html>

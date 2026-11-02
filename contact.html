@@ -176,6 +176,9 @@
 
 <body class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
+
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
     <div class="onest-preloader-inner">
@@ -244,7 +247,7 @@
       <li class="mt-4"><a href="admissions.html" class="bg-[#facc15] text-secondary px-8 py-3.5 rounded-xl block shadow-lg font-extrabold hover:bg-white transition-colors">Apply Now</a></li>
     </ul>
   </div>
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION -->
     <section class="relative min-h-[500px] lg:h-[80vh] lg:min-h-[550px] overflow-hidden bg-black text-white flex items-center pt-[90px] pb-12 lg:pb-0">
@@ -285,9 +288,9 @@
             <div>
               <div class="w-10 h-10 rounded-xl bg-emerald-50 text-accent border border-emerald-100 flex items-center justify-center text-lg mb-4"><i class="bi bi-telephone-fill"></i></div>
               <h4 class="font-bold text-secondary text-base">Admission Desk</h4>
-              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">+91 8767672478</p>
+              <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">+91 7888056699</p>
             </div>
-            <a href="tel:+918767672478" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Call Desk →</a>
+            <a href="tel:+917888056699" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Call Desk →</a>
           </div>
           <!-- Card 3 -->
           <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-primary/10 hover-lift text-left shadow-sm flex flex-col justify-between">
@@ -314,7 +317,7 @@
               <h4 class="font-bold text-secondary text-base">WhatsApp Desk</h4>
               <p class="text-on-surface-variant text-xs mt-2 leading-relaxed">Instant answers for admissions on WhatsApp.</p>
             </div>
-            <a href="https://wa.me/918767672478" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Chat Online →</a>
+            <a href="https://wa.me/917888056699" class="text-primary text-xs font-bold mt-4 inline-block hover:underline">Chat Online →</a>
           </div>
         </div>
       </div>
@@ -345,6 +348,8 @@
           <div class="lg:col-span-6 bg-white/95 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-[32px] border border-primary/10 shadow-lg relative overflow-hidden reveal">
             <h3 class="font-display text-2xl font-bold text-secondary mb-6 text-left">Send us a Message</h3>
             <form id="onest-contact-form" action="https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec" method="POST" target="hidden_iframe" class="space-y-4 text-left">
+              <!-- Honeypot anti-spam trap -->
+              <input type="text" name="hp_website" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="text-xs uppercase tracking-wider text-secondary font-bold block mb-1">Parent's Name</label>
@@ -439,7 +444,7 @@
               <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-open:rotate-180 transition-transform"><i class="bi bi-chevron-down"></i></span>
             </summary>
             <p class="text-on-surface-variant text-sm mt-4 leading-relaxed">
-              You can book a visit directly by selecting "Book a Campus Visit" in the inquiry form, or call our admissions counsellor at +91 8767672478.
+              You can book a visit directly by selecting "Book a Campus Visit" in the inquiry form, or call our admissions counsellor at +91 7888056699.
             </p>
           </details>
 
@@ -492,13 +497,14 @@
         </a>
         <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639</p>
         <div class="space-y-2 text-sm text-white/90">
+          <p><strong>Admission Desk:</strong> +91 7888056699</p>
           <p><strong>Phone:</strong> +91 8767672478</p>
           <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
         </div>
         <div class="flex items-center gap-3 pt-2">
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Follow O'Nest Gurukul on Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="contact.html" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="contact.html" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors" title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           <a href="admin.html" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm" title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i class="bi bi-shield-lock-fill text-xs"></i></a>
         </div>
       </div>
@@ -524,13 +530,21 @@
         <h4 class="text-primary-light mb-6 uppercase tracking-wider font-bold text-sm">Resources</h4>
         <ul class="space-y-4 text-sm font-semibold">
           <li><a href="admin.html" class="text-[#facc15] hover:text-white transition-colors font-bold flex items-center gap-1.5"><i class="bi bi-shield-lock-fill"></i> Admin CMS Portal</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
-          <li><a href="#" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
+          <li><a href="index.html#notices-board" class="text-white/70 hover:text-white transition-colors">News &amp; Updates</a></li>
+          <li><a href="campus-facilities.html#download-hub" class="text-white/70 hover:text-white transition-colors">School Policies</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-white/10 mt-16 pt-6 text-center">
       <p class="text-white/60 text-xs font-semibold">&copy; Copyright <strong>Onest Gurukul</strong>. All Rights Reserved</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
+        <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
+        <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
+        <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
+        <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
+      </div>
     </div>
   </footer>
 
@@ -563,6 +577,15 @@
       if (form) {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
+
+          // Anti-spam honeypot check
+          const honeypot = form.querySelector('[name="hp_website"]')?.value;
+          if (honeypot) {
+            console.warn("Spam submission intercepted via honeypot.");
+            alert("✓ Your message has been received! Our admissions desk will be in touch shortly.");
+            form.reset();
+            return;
+          }
 
           const submitBtn = form.querySelector('button[type="submit"]');
           if (submitBtn) {

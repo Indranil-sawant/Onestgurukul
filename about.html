@@ -224,6 +224,9 @@
 <body
   class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
+
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
     <div class="onest-preloader-inner">
@@ -306,7 +309,7 @@
           Now</a></li>
     </ul>
   </div>
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION -->
     <section
@@ -693,19 +696,20 @@
         </a>
         <p class="text-white/70 text-sm leading-relaxed">Wadekar Wadi, Ambeshet Road, near Hanuman Mandir, Abhyudhya Nagar, Nachane, Maharashtra 415639</p>
         <div class="space-y-2 text-sm text-white/90">
-          <p><strong>Phone:</strong> +91 8767672478</p>
+          <p><strong>Admission Desk:</strong> <a href="tel:+917888056699" class="hover:text-primary-light transition-colors">+91 7888056699</a></p>
+          <p><strong>Office / Transport:</strong> +91 8767672478</p>
           <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
         </div>
         <div class="flex items-center gap-3 pt-2">
-          <a href="#"
+          <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#"
+            title="Follow O'Nest Gurukul on Instagram" aria-label="Follow O'Nest Gurukul on Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="contact.html"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#"
+            title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="contact.html"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           <a href="admin.html"
             class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm"
             title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i
@@ -752,6 +756,7 @@
       <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
         <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
         <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
         <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
         <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>

@@ -374,6 +374,9 @@
 <body
   class="bg-background text-on-surface font-body selection:bg-primary-light selection:text-secondary overflow-x-hidden">
 
+  <!-- Keyboard Accessible Skip Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#735c00] focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:shadow-xl focus:font-bold focus:outline-none">Skip to main content</a>
+
   <!-- Branded Preloader -->
   <div id="onest-preloader" aria-hidden="true">
     <div class="onest-preloader-inner">
@@ -458,7 +461,7 @@
     </ul>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION -->
     <section
@@ -941,7 +944,7 @@
           <div class="lg:col-span-5 space-y-6 text-left reveal">
             <span
               class="text-xs uppercase tracking-[0.25em] font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20 inline-block shadow-sm">
-              Live Announcements
+              Official Notices &amp; Circulars
             </span>
             <h2
               class="font-display text-4xl md:text-5xl lg:text-6xl text-secondary font-bold leading-[1.1] tracking-tight">
@@ -1588,16 +1591,15 @@
                 <i class="bi bi-sun-fill"></i>
               </div>
               <span
-                class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Renewable
-                Energy</span>
-              <h3 class="text-xl font-bold text-secondary mt-3 mb-2">Save Energy & Ewaste Management</h3>
+                class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Energy
+                Conservation</span>
+              <h3 class="text-xl font-bold text-secondary mt-3 mb-2">Save Energy &amp; E-Waste Management</h3>
               <p class="text-on-surface-variant text-sm leading-relaxed">
-                Rooftop solar panel installations provide renewable energy for the campus while offering students a
-                practical, real-life demonstration of clean power generation and reduced carbon footprint.
+                Through sunlit, naturally ventilated learning spaces and active switch-off habits, students learn mindful energy conservation and responsible e-waste disposal practices.
               </p>
             </div>
             <div class="pt-4 mt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-bold text-amber-600">
-              <i class="bi bi-check2-circle"></i> Clean Solar Power Generation
+              <i class="bi bi-check2-circle"></i> Energy Conservation &amp; E-Waste Awareness
             </div>
           </div>
         </div>
@@ -2474,11 +2476,11 @@
           <!-- Award 2: National Dance 1st Rank -->
           <div
             class="bg-white rounded-3xl border border-primary/10 overflow-hidden shadow-sm hover-lift flex flex-col text-left group">
-            <div class="h-48 overflow-hidden relative cursor-pointer"
-              onclick="openLightbox('assets/ONEST/IMG-20260810-WA0439.jpg.jpeg', 'Nritya Anubhuti All India Cultural Dance Contest - 1st Rank Trophy')">
-              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0439.jpg.jpeg"
+            <div class="h-52 sm:h-56 overflow-hidden relative cursor-pointer"
+              onclick="openLightbox('assets/ONEST/IMG-20260810-WA0439.jpg.jpeg?v=2', 'Nritya Anubhuti All India Cultural Dance Contest - 1st Rank Trophy')">
+              <img loading="lazy" decoding="async" src="assets/ONEST/IMG-20260810-WA0439.jpg.jpeg?v=2"
                 alt="National Dance Winner Trophy"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
               <div
                 class="absolute top-3 left-3 bg-amber-600 text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
                 🥇 1st Rank National
@@ -2963,19 +2965,20 @@
           Nagar, Nachane, Maharashtra 415639</p>
 
         <div class="space-y-2 text-sm text-white/90">
-          <p><strong>Phone:</strong> +91 8767672478</p>
+          <p><strong>Admission Desk:</strong> <a href="tel:+917888056699" class="hover:text-primary-light transition-colors">+91 7888056699</a></p>
+          <p><strong>Office / Transport:</strong> +91 8767672478</p>
           <p><strong>Email:</strong> onestgurukulprimary@gmail.com</p>
         </div>
         <div class="flex items-center gap-3 pt-2">
-          <a href="#"
+          <a href="https://www.instagram.com/onestgurukul/" target="_blank" rel="noopener noreferrer"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#"
+            title="Follow O'Nest Gurukul on Instagram" aria-label="Follow O'Nest Gurukul on Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="contact.html"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#"
+            title="Facebook (Coming Soon - Contact via School Desk)" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="contact.html"
             class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#facc15] hover:text-secondary transition-colors"
-            title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            title="YouTube (Coming Soon - Contact via School Desk)" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           <a href="admin.html"
             class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#facc15] hover:bg-[#facc15] hover:text-secondary transition-all shadow-sm"
             title="Admin &amp; Staff CMS Portal" aria-label="Admin CMS Portal"><i
@@ -3022,6 +3025,7 @@
       <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-bold">
         <a href="legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="legal/terms-and-conditions.html" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="legal/student-media-policy.html" class="hover:text-white transition-colors">Student Media Policy</a>
         <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Developer Disclaimer</a>
         <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility Statement</a>
         <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright Notice</a>
@@ -3163,8 +3167,9 @@
         const list = await DB.getNotices();
 
 
-        // Filter
+        // Filter: Notice board strictly displays Notices & Circulars, excluding standalone Announcements
         let filtered = list.filter(n => {
+          if (n.type === 'Announcement') return false;
           const matchCat = noticeFilter === 'all' || n.category === noticeFilter;
           const matchSearch = n.title.toLowerCase().includes(noticeSearchQuery) ||
             n.content.toLowerCase().includes(noticeSearchQuery);
