@@ -3121,8 +3121,8 @@
           container.innerHTML = '';
 
           topItems.forEach(item => {
-            const isAnnounce = (item.type === 'Announcement') || (item.category && item.category.toLowerCase().includes('announc'));
-            const typeLabel = item.type || (isAnnounce ? 'Announcement' : (item.category || 'Notice'));
+            const isAnnounce = (item.type === 'Announcement') || (item.category && (item.category.toLowerCase() === 'events' || item.category.toLowerCase() === 'admission' || item.category.toLowerCase().includes('announc')));
+            const typeLabel = isAnnounce ? 'Announcement' : (item.type || item.category || 'Notice');
             const itemDiv = document.createElement('div');
             itemDiv.className = `hero-announcement-item ${item.pinned ? 'is-pinned' : ''} p-3 sm:p-3.5 rounded-2xl`;
             itemDiv.innerHTML = `
@@ -3167,9 +3167,10 @@
         const list = await DB.getNotices();
 
 
-        // Filter: Notice board strictly displays Notices & Circulars, excluding standalone Announcements
+        // Filter: Notice board strictly displays Notices & Circulars, excluding standalone Announcements and Events
         let filtered = list.filter(n => {
           if (n.type === 'Announcement') return false;
+          if (n.category && (n.category.toLowerCase() === 'events' || n.category.toLowerCase() === 'admission' || n.category.toLowerCase() === 'announcement')) return false;
           const matchCat = noticeFilter === 'all' || n.category === noticeFilter;
           const matchSearch = n.title.toLowerCase().includes(noticeSearchQuery) ||
             n.content.toLowerCase().includes(noticeSearchQuery);

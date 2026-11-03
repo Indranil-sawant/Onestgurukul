@@ -157,6 +157,7 @@
         // --- 1. NOTICES API ---
         getNotices: async function (includeAllStatus = false) {
             const client = getSupaClient();
+            let supaItems = [];
             if (client) {
                 try {
                     let query = client.from('notices').select('*');
@@ -167,34 +168,62 @@
 
                     const { data, error } = await query;
                     if (!error && data) {
-                        return data.map(item => ({
-                            id: item.id,
-                            title: item.title,
-                            type: item.type || (item.category === 'Admission' ? 'Announcement' : 'Notice'),
-                            content: item.content,
-                            category: item.category,
-                            pinned: item.pinned,
-                            createdAt: item.created_at ? item.created_at.split('T')[0] : '',
-                            expiresAt: item.expires_at || '',
-                            pdfUrl: item.pdf_url || '#',
-                            status: item.status
-                        }));
+                        supaItems = data.map(item => {
+                            let type = item.type;
+                            let cleanContent = item.content || '';
+                            if (cleanContent.startsWith('<!--type:Announcement-->')) {
+                                type = 'Announcement';
+                                cleanContent = cleanContent.replace('<!--type:Announcement-->', '').trim();
+                            } else if (cleanContent.startsWith('<!--type:Notice-->')) {
+                                type = 'Notice';
+                                cleanContent = cleanContent.replace('<!--type:Notice-->', '').trim();
+                            } else if (!type) {
+                                const cat = (item.category || '').toLowerCase();
+                                if (cat === 'admission' || cat === 'events' || cat === 'announcement' || cat.includes('carnival')) {
+                                    type = 'Announcement';
+                                } else {
+                                    type = 'Notice';
+                                }
+                            }
+
+                            return {
+                                id: item.id,
+                                title: item.title,
+                                type: type,
+                                content: cleanContent,
+                                category: item.category || 'General',
+                                pinned: !!item.pinned,
+                                createdAt: item.created_at ? item.created_at.split('T')[0] : '',
+                                expiresAt: item.expires_at || '',
+                                pdfUrl: item.pdf_url || '#',
+                                status: item.status
+                            };
+                        });
                     }
                 } catch (err) {
                     console.warn("Supabase fetch notices failed, fallback to static defaults:", err);
                 }
             }
-            // Fallback
-            return DEFAULT_CONTENT.notices.filter(n => includeAllStatus || n.status === 'published');
+
+            // Combine with default notices (avoiding duplicates) so the Notice Board always has official notices
+            const defaults = DEFAULT_CONTENT.notices.filter(n => includeAllStatus || n.status === 'published');
+            if (supaItems.length > 0) {
+                const supaIds = new Set(supaItems.map(i => i.id));
+                const nonDuplicateDefaults = defaults.filter(d => !supaIds.has(d.id));
+                return [...supaItems, ...nonDuplicateDefaults];
+            }
+            return defaults;
         },
 
         addNotice: async function (notice) {
             const client = getSupaClient();
             const itemType = notice.type || 'Announcement';
+            const cleanContent = (notice.content || '').replace(/<!--type:(Announcement|Notice)-->/g, '').trim();
+            const payloadContent = `<!--type:${itemType}-->${cleanContent}`;
             if (client) {
                 const payload = {
                     title: notice.title,
-                    content: notice.content,
+                    content: payloadContent,
                     category: notice.category || 'General',
                     pinned: !!notice.pinned,
                     pdf_url: notice.pdfUrl || '#',
@@ -214,11 +243,13 @@
                 }
                 const saved = res.data && res.data[0] ? res.data[0] : notice;
                 saved.type = itemType;
+                saved.content = cleanContent;
                 return saved;
             }
             // Offline local fallback
             notice.id = 'n_' + Date.now();
             notice.type = itemType;
+            notice.content = cleanContent;
             DEFAULT_CONTENT.notices.unshift(notice);
             return notice;
         },
@@ -226,10 +257,12 @@
         updateNotice: async function (id, notice) {
             const client = getSupaClient();
             const itemType = notice.type || 'Announcement';
+            const cleanContent = (notice.content || '').replace(/<!--type:(Announcement|Notice)-->/g, '').trim();
+            const payloadContent = `<!--type:${itemType}-->${cleanContent}`;
             if (client) {
                 const payload = {
                     title: notice.title,
-                    content: notice.content,
+                    content: payloadContent,
                     category: notice.category,
                     pinned: !!notice.pinned,
                     pdf_url: notice.pdfUrl,
@@ -249,11 +282,12 @@
                 }
                 const updated = res.data && res.data[0] ? res.data[0] : notice;
                 updated.type = itemType;
+                updated.content = cleanContent;
                 return updated;
             }
             const idx = DEFAULT_CONTENT.notices.findIndex(n => n.id === id);
             if (idx !== -1) {
-                DEFAULT_CONTENT.notices[idx] = Object.assign(DEFAULT_CONTENT.notices[idx], notice, { type: itemType });
+                DEFAULT_CONTENT.notices[idx] = Object.assign(DEFAULT_CONTENT.notices[idx], notice, { type: itemType, content: cleanContent });
             }
             return notice;
         },
