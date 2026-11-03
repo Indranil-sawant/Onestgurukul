@@ -136,9 +136,9 @@
         ],
         settings: {
             emergencyBannerActive: true,
-            emergencyBannerText: "Admissions Open for Academic Year 2026-27 | Playgroup to Standard 6 | Call +91 7888056699 | O'NEST Gurukul Ratnagiri",
-            emergencyBannerPriority: "gold",
-            marqueeDirection: "ltr",
+            emergencyBannerText: "Diwali Carnival on 3rd November 2026",
+            emergencyBannerPriority: "green",
+            marqueeDirection: "rtl",
             analyticsEnabled: true,
             googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbzIgaSGhIEqaYXMKXwenaGYxP_CBFaQhVAteQE0Yg7VL1VWnFkLy4Ndpvq8fklxwPZusw/exec",
             language: "en"
