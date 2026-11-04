@@ -8,56 +8,7 @@
 
     // Static default content fallback
     const DEFAULT_CONTENT = {
-        notices: [
-            {
-                id: "n-1",
-                title: "Admissions Open for Academic Year 2026-27",
-                type: "Announcement",
-                content: "Registrations for grades Nursery to Class 10 are now open. Parents can submit the online application form or visit the school office.",
-                category: "Admission",
-                pinned: true,
-                createdAt: "2026-07-15",
-                expiresAt: "2026-10-31",
-                pdfUrl: "#",
-                status: "published"
-            },
-            {
-                id: "n-2",
-                title: "Parent-Teacher Meeting (PTM) - Term 1",
-                type: "Notice",
-                content: "The first PTM of the academic year is scheduled for next Saturday, August 1st. Report cards will be shared and student progress discussed.",
-                category: "Academic",
-                pinned: true,
-                createdAt: "2026-07-20",
-                expiresAt: "2026-08-02",
-                pdfUrl: "#",
-                status: "published"
-            },
-            {
-                id: "n-3",
-                title: "Annual Sports Meet 2026 Schedule",
-                type: "Notice",
-                content: "Our Annual Sports Meet selections will begin on August 5th. All students interested in track, football, and badminton events should register with the sports coordinator.",
-                category: "Sports",
-                pinned: false,
-                createdAt: "2026-07-18",
-                expiresAt: "2026-08-15",
-                pdfUrl: "#",
-                status: "published"
-            },
-            {
-                id: "n-4",
-                title: "CBSE Mandatory Disclosure Updated",
-                type: "Notice",
-                content: "The official CBSE mandatory disclosure docs for the year 2026 have been updated in the document hub as per guidelines.",
-                category: "General",
-                pinned: false,
-                createdAt: "2026-07-10",
-                expiresAt: "",
-                pdfUrl: "#",
-                status: "published"
-            }
-        ],
+        notices: [],
         events: [
             { id: "e-1", title: "School Reopens - Term I", date: "2026-06-15", category: "Academic", description: "Classes begin for all students.", status: "published" },
             { id: "e-2", title: "Independence Day Celebration", date: "2026-08-15", category: "Activity", description: "Flag hoisting ceremony, cultural parade, and music performances by students.", status: "published" },
@@ -205,14 +156,10 @@
                 }
             }
 
-            // Combine with default notices (avoiding duplicates) so the Notice Board always has official notices
-            const defaults = DEFAULT_CONTENT.notices.filter(n => includeAllStatus || n.status === 'published');
-            if (supaItems.length > 0) {
-                const supaIds = new Set(supaItems.map(i => i.id));
-                const nonDuplicateDefaults = defaults.filter(d => !supaIds.has(d.id));
-                return [...supaItems, ...nonDuplicateDefaults];
+            if (client) {
+                return supaItems;
             }
-            return defaults;
+            return DEFAULT_CONTENT.notices.filter(n => includeAllStatus || n.status === 'published');
         },
 
         addNotice: async function (notice) {
